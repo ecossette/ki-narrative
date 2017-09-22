@@ -101,22 +101,27 @@ SCENE 01
     = attention_attention
         -   <i>"The National Weather Service has issued a severe thunderstorm warning for western portions of the Evermore Ruent Basin. All small craft in the area should make all immediate and necessary preparations to return to shore."</i>
             
-            * "Ok, good, that confirms what we saw...["]well to the west of us," says Julian relieved.
-            -- CHR_JUL_SML
-            -- CHR_TRO_REL
+            * ["Ok, good, that confirms what we saw," says Alexis.] -> confirms_phone
+          
             
-            "Wait there's more..."
             
-                ** <i>A severe thunderstorm watch[..."] has been issued for Laketown and all areas of the lake west of Brodaht Island. All mariners are advised to make plans to return to shore as dangerous storms may develop rapidly with little or no warning."</i> 
-                    -> severe_watch
+    = confirms_phone         
+    -   CHR_ALX_SML
+    -   CHR_TRO_REL
+    -   "That storm is well to the west of us," she says. 
+    -   "Wait, there's more..." says Troy.
+    test
+        * [The radio alerts again.]
+            -> severe_watch
             
     = severe_watch
         - CHR_TRO_REL
         - CHR_ALX_REL
+         <i>A severe thunderstorm watch[..."] has been issued for Laketown and all areas of the lake west of Brodaht Island. All mariners are advised to make plans to return to shore as dangerous storms may develop rapidly with little or no warning."</i> 
+        
         - "Well, gang, looks like we should start heading back to Laketown."
             
-            
-        "Agreed," says Alexis. "We don't want to get caught out on the lake in storm like that."
+        - "Agreed," says Alexis. "We don't want to get caught out on the lake in storm like that."
             
             *   "Rats!"[] Julian is bummed.
                 -> horizon_clouds
