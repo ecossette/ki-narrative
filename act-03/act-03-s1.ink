@@ -92,9 +92,9 @@ SCENE 01
         - CHR_TRO_REL
         -   Suddenty the radio transmits a high-pitched alert quickly followed by sound of their cell phones receiving emergency text alerts as well. 
         
-            "My phone says a severe thunderstorm warning was just issued," says Alexis.
+
             
-                * ["<i>Attention! Attention!</i>" the radio message begins.]
+                * ["<i>Attention! Attention!</i>" the radio message begins.] -> attention_attention
                 
            
             
@@ -138,7 +138,7 @@ SCENE 01
     = wind_shift
         -   CHR_ALX_REL
         -   CHR_MIA_REL
-        -   "I think the wind just shifted."
+        -   "I think the wind just shifted," she says.
         -   "Feels cooler, too," Mia says, shivering a bit. 
             
             * [Alexis checks her phone.] 
@@ -154,9 +154,13 @@ SCENE 01
         -   <i>"A large and dangerous thunderstorm has formed to the south Laketown. This storm is currently stationary and is capable of producing golf ball size hail, damaging winds, and frequent lightning."</i>
         
             *  [Troy faces a dilemma.]
-            --   CHR_TRO_REL
+                -> tro_dilemma
             
-            "Since the storm is stationary and south of Laketown, we may be able to get back to the marina safely, says Troy. "On the other hand, if that storm starts moving north, we'd run right into it on our present course."
+    = tro_dilemma         
+    -   CHR_TRO_REL
+    -   "Since the storm is stationary and south of Laketown, we may be able to get back to the marina safely, says Troy. "On the other hand, if that storm starts moving north, we'd run right into it on our present course."
+    
+        Troy decides to...
             
                 * [Continue on same course toward Laketown.]
                     -> continue_to_laketown
@@ -165,17 +169,11 @@ SCENE 01
                     -- CHR_TRO_REL
                     -- CHR_ALX_REL
                 
-                    "I don't like the sound of that," says Troy. "I think we'll be better off changing course."
+                    "That storm is sure to move," says Troy. "And until we know what direction it takes, I think our safest course is to avoid it and Laketown for now."
                     
-                    "I agree," says Alexis.
+                        ** ["I agree," says Alexis.]
                     
-                        ** "Yes!"[] says Julian with a grin. "More time on the boat!"
-                            -- CHR_JUL_SML
-                            *** [Troy continues.]
-                    
-                    
-                    
-                    -> avoid_storm
+                         -> avoid_storm
  
 == continue_to_laketown ==
     - CHR_ALX_REL
@@ -183,13 +181,13 @@ SCENE 01
 
     -   "Do you think we can beat that storm back to Laketown," asks Alexis.
     
-        "We're sure going to try," say Troy, increasing the Lakesong's speed. The engine whines in response, creating a big wake. 
+        "We're sure going to try," say Troy, increasing the Lakesong's speed. The engine whines in response, as the boat picks up additional speed creating a large wake. 
         
                 * [Onwards!]
                     -> choppy
             
         = choppy
-        - As the boat continues on course to Lakesong, the water becomes very choppy. Troy has no choice but to back off the throttle to keep his passengers from being bounced around too severely.
+        - As the boat continues straight on to Lakesong, the water becomes very choppy. Troy has no choice but to back off the throttle to keep his passengers from being bounced around too severely.
         
                 * [Troy issues a command.]
                     -> sit_centerline
@@ -204,27 +202,31 @@ SCENE 01
                 
                 
         =   grows_darker        
-        -   Troy turns on the Lakesong's navigation lights. A few raindrops begin to fall. 
+        -   Troy turns on the Lakesong's navigation lights. A few raindrops begin to fall. The boat presses on toward the ever-darkening shore still out of sight to the south. 
         
-                * [The <i>Lakesong</i> presses on.]
+                * [Alexis is concerned.]
                     -> press_on
                 
         = press_on
         -   CHR_ALX_SAD
         -   CHR_TRO_REL
         -   "Troy, shouldn't we be seeing Laketown and the shoreline by now?" asks Alexis.
-        
-            "Normally, yes," answers Troy. "But I think Laketown and the entire shore is wrapped in rain."
             
-                * [Everyone looks concerned.]
-                    -> look_concerned
-                
-        = look_concerned
-        - CHR_ALX_SAD
-        - CHR_TRO_REL
+                * ["Normally, yes," says Troy.]
+                    -> normally_yes
+            
+        = normally_yes 
+        -   CHR_ALX_SAD
+        -   CHR_TRO_REL
+        "But I think Laketown and the entire shore is wrapped in rain," he says. 
+        
         -   "Do you still think we can make it to Laketown through this?" asks Alexis while Mia and Julian look on wide-eyed.
         
-            Troy looks at the sky before answering. Troy decides to:
+                * [Troy considers the situation.]
+                    -> tro_considers_choices
+                
+        = tro_considers_choices
+        - They should be getting close to Laketown, but the shoreline is still not visible in the current conditions. Troy has a difficult decision.
         
         // need to randomize these choices  
         
@@ -280,9 +282,9 @@ SCENE 01
 === choice_press_on_into_storm ===  
     -   CHR_TRO_REL
     -   CHR_ALX_REL
-    -   "I feel good about making it back to the marina before it gets severe," declares Troy. 
+    -   "I feel good about making it back to the marina before it gets severe," says Troy with confidence. 
     
-            * Alexis agrees.[]"You have more experience on the Lake than all of us."
+            * Alexis hopes he's right.[]"You have more experience on the Lake than all of us."
                 -> lightning_choices
             
         === lightning_choices ===
@@ -293,7 +295,7 @@ SCENE 01
                 * Alexis checks her phone again.[] "There's a tremendous amount of lightening in the severe area of the storm."
                     -> lightning_choices
         
-                * Troy scans the horizon.[] "I do hear thunder in the distance, but I'm not seeing any lightening bolts," says Troy.
+                * Troy scans the horizon.[] "I do hear thunder in the distance, but I'm not seeing any lightning bolts," says Troy.
                     -> lightning_choices
         
                 *  []  -> strikes_far

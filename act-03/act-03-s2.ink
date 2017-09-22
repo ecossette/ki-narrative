@@ -75,7 +75,7 @@ SCENE 02
         
     = steer_to_north 
     -   CHR_TRO_REL
-    -   Troy sets the <i>Lakesong</i> on a northerly course. The the water starts to get a choppy. Troy keeps the bow of the boat at 45 degrees angles to waves to help smooth things out. 
+    -   Troy sets the <i>Lakesong</i> on a northerly course. The water starts to get a choppy. Troy keeps the bow of the boat at 45 degrees angles to waves to help smooth things out. 
     
             * The skies continue to darken[.] as the storms close in. The thunder is louder and more frequent. A few raindrops begin to fall. ->
         
