@@ -110,44 +110,53 @@ SCENE 01
     -   CHR_TRO_REL
     -   "That storm is well to the west of us," she says. 
     -   "Wait, there's more..." says Troy.
-    test
-        * [The radio alerts again.]
-            -> severe_watch
+
+            *   [The radio alerts again.]
+                -> severe_watch
             
     = severe_watch
         - CHR_TRO_REL
         - CHR_ALX_REL
-         <i>A severe thunderstorm watch[..."] has been issued for Laketown and all areas of the lake west of Brodaht Island. All mariners are advised to make plans to return to shore as dangerous storms may develop rapidly with little or no warning."</i> 
-        
-        - "Well, gang, looks like we should start heading back to Laketown."
+         <i>"A severe thunderstorm watch has been issued for Laketown and all areas of the lake west of Brodaht Island. All mariners are advised to make plans to return to shore as dangerous storms may develop rapidly with little or no warning."</i>
+         
+            * [Troy adjusts course.]
+            -- CHR_TRO_REL
+            -- CHR_ALX_REL
+            "It's time for us to head back to Laketown," says Troy.
+            "Agreed," says Alexis. "We have clear skies now, but we don't want to risk getting caught out on the lake in a severe storm."
             
-        - "Agreed," says Alexis. "We don't want to get caught out on the lake in storm like that."
+                ** [Onward!] -> horizon_clouds
             
-            *   "Rats!"[] Julian is bummed.
-                -> horizon_clouds
+          
             
     = horizon_clouds
-        - CHR_JUL_SAD
-        - CHR_TRO_SML
-        -"Cheer up, Jules, tomorrow is another day!" Troy tells him as he puts  the <i>Lakesong</i> on a heading back to the marina at Laketown. 
+    -   As the Lakesong makes steady progress back toward shore, dark clouds begin to build over the horizon ahead of the boat..   
             
-        On the horizon directly in front of the <i>Lakesong</i> dark clouds begin to build. 
-            
-            * "Did you feel that?"[] asks Alexis.  "I think the wind just shifted."
+            * ["Did you feel that?" asks Alexis.]  
                 -> wind_shift
             
     = wind_shift
-        - CHR_ALX_REL
-        - CHR_MIA_REL
-        -  "Feels cooler, too," Mia says, shivering a bit. 
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
+        -   "I think the wind just shifted."
+        -   "Feels cooler, too," Mia says, shivering a bit. 
             
-            * [They check their phone apps.] "Looks like storms are forming just south of Laketown now and are moving toward us," says Alexis. 
+            * [Alexis checks her phone.] 
+             -   CHR_ALX_REL
+              -   CHR_MIA_REL
             
-              ** [The radio alerts again.] 
+            "Looks like a storm has popped up just south of Laketown," says Alexis. "That would explain the clouds and the wind and temperature changes we felt."
+            
+              ** [The radio alerts.] 
                     -> storm_over_laketown
               
     = storm_over_laketown          
-        -   <i>"A large and dangerous thunderstorm has formed to the south Laketown. This storm is capable of production golf ball size hail and damaging winds."</i>
+        -   <i>"A large and dangerous thunderstorm has formed to the south Laketown. This storm is currently stationary and is capable of producing golf ball size hail, damaging winds, and frequent lightning."</i>
+        
+            *  [Troy faces a dilemma.]
+            --   CHR_TRO_REL
+            
+            "Since the storm is stationary and south of Laketown, we may be able to get back to the marina safely, says Troy. "On the other hand, if that storm starts moving north, we'd run right into it on our present course."
             
                 * [Continue on same course toward Laketown.]
                     -> continue_to_laketown
