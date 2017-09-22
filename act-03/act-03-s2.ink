@@ -13,7 +13,7 @@ SCENE 02
 
 == avoid_storm ==
     - CHR_TRO_REL
-    - "We'll head East-Northeast toward Brodaht Island," says Troy. "That was on the edge of the watch area, so we should be safe there."
+    - "We'll head East-Northeast toward Brodaht Island," says Troy pushing the wheel over. "That was on the edge of the watch area, so we should be safe there."
     
         * "Are you sure about that?"[] says Alexis pointing toward dark clouds gathering to the east.-> sure_about_east
         

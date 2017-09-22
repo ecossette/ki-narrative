@@ -218,7 +218,7 @@ SCENE 01
         = normally_yes 
         -   CHR_ALX_SAD
         -   CHR_TRO_REL
-        "But I think Laketown and the entire shore is wrapped in rain," he says. 
+        -   "But I think Laketown and the entire shore is wrapped in rain," he says. 
         
         -   "Do you still think we can make it to Laketown through this?" asks Alexis while Mia and Julian look on wide-eyed.
         
@@ -234,47 +234,50 @@ SCENE 01
                     -> choice_press_on_into_storm
                 
                 + [Turn away from the storm toward open water.]
-                    "I don't think we should risk it," declares Troy. "I hear thunder but I don't see any nearby lightening strikes but still..."
-                        -> lightning_no
+                    -> turn_away_from_storm
                 
                 + [Consult the radar on the phone app.]
                     -> consult_radar
         
         
+        
+        = turn_away_from_storm
+        -   CHR_TRO_REL
+        -   CHR_ALX_REL
+            "I don't think we should risk it," says Troy. "I hear thunder. Although I don't see any nearby lightening strikes, it's just not worth the risk to the boat or ourselves."
+            
+            "You don't want to get strike by lightning in a boat," says Alexis.
+            
+                * [Troy changes course.]
+                    -> avoid_storm
+            
+            
+        
         = consult_radar 
         -   CHR_TRO_REL
         -   CHR_ALX_REL
-        -   "Alexis, what does your the radar on your phone show?"
-        -   "Laketown's getting wet but the red stuff—the severe area—is still behind it."
+        -   "Alexis, what does the radar on your phone show?"
+        -   "Laketown's getting wet but the red area—the severe portion of the storm—is still behind it."
             "What about lightning strikes?" asks Troy.
-            "Numerous and frequent in the red area," replies Alexis. 
+            "Numerous and frequent in the red area," says Alexis. 
             
-                * [Troy shakes his head.] "I'm getting worried about the lightning as we approach," he says.
-                    -> lightning_no
+                * [Troy shakes his head.] 
+                    -> tro_worried_lightning
+                
+ 
         
-        
-        
-        = lightning_no
-        -   CHR_TRO_REL
-        -   CHR_ALX_REL
-        -   "You don't want to get strike by lightning in a boat," says Alexis.
-            
-                * ["Exactly"]
-                    -> lightning_strike
-        
+== tro_worried_lightning ==
+    -   CHR_TRO_REL
+    -   "I'm worried about the possibility of lightning strikes, if we continue on towards Laketown," says Troy.<> -> lightning_strike
+
+
 == lightning_strike ==
-        - CHR_TRO_REL
         - "A lightning strike could damage our electronics—including the radio and engine controls—as well as possibly damaging the hull."
         
-             * "Or us!"[] says Mia.
-                -> or_us
+            "Not to mention possibly damaging us!" says Mia
         
-        = or_us 
-        - CHR_MIA_SML
-        - CHR_JUL_REL
-        -   "Let's turn around already!" says Julian. 
-            
-                * [Troy turns the wheel.]
+    
+             * ["Let's turn around already!" says Julian.] 
                     -> avoid_storm
 
 
@@ -284,15 +287,17 @@ SCENE 01
     -   CHR_ALX_REL
     -   "I feel good about making it back to the marina before it gets severe," says Troy with confidence. 
     
-            * Alexis hopes he's right.[]"You have more experience on the Lake than all of us."
+        "OK," says Alexis with less confidence, but she trusts Troy. "You have more experience on the water than all of us combined," she says. 
+        
+            * [Onwards!]
                 -> lightning_choices
             
-        === lightning_choices ===
+=== lightning_choices ===
         -   CHR_TRO_REL
         -   CHR_ALX_REL
-        - {The minutes pass as the <i>Lakesong</i> continues toward the growing storm in the direction of Laketown.| The sky ahead is ominously dark, but so far the rain has held off.| "Hmmm...," say Alexis. There are no other boats in view on the Lake.}
+        - {The minutes pass as the <i>Lakesong</i> continues toward Laketown and the growing storm. | The sky ahead is ominously dark, but so far the rain has held off.| The sound of thunder grows louder.}
     
-                * Alexis checks her phone again.[] "There's a tremendous amount of lightening in the severe area of the storm."
+                * Alexis checks her phone again.[] "There's a tremendous amount of lightning in the severe area of the storm."
                     -> lightning_choices
         
                 * Troy scans the horizon.[] "I do hear thunder in the distance, but I'm not seeing any lightning bolts," says Troy.
@@ -301,26 +306,33 @@ SCENE 01
                 *  []  -> strikes_far
                 
 === strikes_far ===
-    -   CHR_TRO_REL
+  //  -   CHR_TRO_REL
     -    "{The lightning is still on the inland side of Laketown, away from us.|We seem far enough away|As long as we move faster than the storm...}," says Troy. 
     
-        *   "Ten miles {away|far}?" asks Mia.[] "I read that lightning can strike up to ten miles outside of a storm."
-            -- CHR_MIA_REL
-            -- CHR_TRO_REL
+        *   ["More that ten miles away?" asks Mia.] 
+        -- CHR_MIA_REL
+        -- CHR_TRO_REL
+        
+            "I read that lightning can strike up to ten miles outside of a storm," she says.
+            
             -> strikes_far
         
-        *   "I'm not so sure, says Alexis.[] "Am I the only one who thinks we are cutting it awfully close?"
+        *   ["I'm not so sure, says Alexis.] 
             -- CHR_ALX_SAD
             -- CHR_TRO_REL
+            "Am I the only one who thinks we are cutting it awfully close?" says Alexis.
+        
             -> strikes_far
         
-        *   [] -> come_this_far
+        *   []  -> come_this_far
             
 === come_this_far ===
-    -   CHR_JUL_REL
-    -   "Yeah, we've come this far, right?" adds Julian. "Besides we know we'll be safe once we get to shore."
+        * ["Yeah, we've come this far, right?" says Julian.]
+        
+        --  CHR_JUL_REL
+        --  "Besides we know we'll be safe once we get to shore," says Julian, as another peal of thunder rolls in the distance. 
     
-        * [Troy pauses to consider what he's heard.]
+        ** [Troy pauses to consider what he's heard.]
             -> final_decision_storm
 
 === final_decision_storm ===
@@ -333,15 +345,13 @@ SCENE 01
                 ->stil_continue_to_laketown
             
             + [Turn away from the storm and Laketown.]
-                -> tro_worried_lightening
+                -> tro_worried_lightning
 
-== tro_worried_lightening ==
-    -   CHR_TRO_REL
-    -   "I'm worried about the possibility of lightning strikes, if we continue on towards Laketown," says Troy.<> -> lightning_strike
+
        
             
 === stil_continue_to_laketown ===
-    -   The <i>Lakesong</i> continues to speed toward Lakesong, as does the storm.
+    -   The minutes pass as the <i>Lakesong</i> continues steadily toward the shore. Although the thunder is loud and visibility is reduced, the friends are still dry and not impacted by the storm.
     
         * [After a while, Troy notices something.]
             -> no_red_right_yet
@@ -370,9 +380,9 @@ VAR is_radio_damaged = true
                 -> check_passenger_health
         
 == check_passenger_health == 
-    - CHR_TRO_REL
+    - CHR_TRO_SUR
         {|"We'll check the <i>Lakesong</i> for damage after accounting for ourselves," says Troy.| "Glad the two of you are OK," says Troy, "and I'm fine myself." Troy looks to Mia who hasn't said anything.}
-            * [Alexis responds.] "I'm fine but that radio antenna? No so much," says Alexis pointing to the top of the Lakesong. "Look, the fiberglass is completely melted!"
+            * [Alexis responds.] "I'm fine but that radio antenna? Not so much," says Alexis pointing to the top of the Lakesong. "Look, the fiberglass is completely melted!"
                 -> check_passenger_health
         
             *   Julian responds[.], as there's another crack and flash of lightning in the near distance.
@@ -385,14 +395,14 @@ VAR is_radio_damaged = true
 == how_is_mia ==        
         - CHR_MIA_SAD
         - CHR_TRO_REL
-            * ["Mia?"] Mia doesn't answer and looks dazed.
+            * ["Mia?"] 
                 -- CHR_MIA_SAD
                 -- CHR_ALX_REL
-                
+                Mia doesn't answer and looks dazed.
                 "Mia!" Alexis shouts at the unresponsive Mia. "Are you OK?"
                 "Sorry, I can barely hear you," replies Mia. "I have a loud ringing in my ears and my legs and arms feel funny."
         
-                ** "Funny how?"[] asks Alexis.
+                ** ["Funny how?" asks Alexis.]
              -> funny_how
         
         = funny_how
@@ -400,16 +410,16 @@ VAR is_radio_damaged = true
         -   CHR_ALX_SAD
             "I dunno... sorta weak I guess," says Mia. "You know that feeling like when your leg is asleep? Like that."
             
-                * "You may have been hit with 'side-flash'[."]," says Troy. "The effects usually wear off in less than hour."
+                * ["You may have been hit with 'side-flash'," says Troy.] 
                     -> side_flash
                 
                 = side_flash
                 - CHR_TRO_REL
                 - CHR_MIA_SML
-            
-                    * "Yeah, I'm sure I'll be fine[."]," says Mia. "I'm feeling better already."
+                - "The effects usually wear off in less than hour," he says. 
+                "Yeah, I'm sure I'll be fine," says Mia. "I'm starting to feel better already."
     
-                        "Good!" says Troy. "Let's hope we can say the same for the Lakesong. A direct strike can cause considerably damage."
+                "Good!" says Troy. "Let's hope we can say the same for the Lakesong. A direct strike can cause considerably damage."
             
                             *** [Troy checks the radio first.] 
                             -> radio_is_toast
@@ -435,23 +445,25 @@ VAR is_radio_damaged = true
     
         "That's good news!" says Troy. "No damage to the engine's electronic controls." 
         
-            * "No hull damage[."]," reports Alexis, while Troy flips on the navigation lights that had gone out with the strike.
-                -> lucky_no_damage
+            * ["No hull damage," reports Alexis]
             
-            = lucky_no_damage
-            -   CHR_ALX_REL
-            -   CHR_TRO_SML
-            -   "Looks like we were lucky!" says Troy.
-                
-                ** "Lucky?"[] asks Julian. 
-                
-                    "Yes, lucky," says Troy. <> -> lightning_strike
+        = no_lights_damage
+        -   CHR_ALX_SML
+        -   CHR_TRO_REL
+        -   Troy flips on the navigation lights that had gone out with the strike and smiles when they illuminate. The lightning strike didn't damage the boat's electrical systems. 
+             
+            "Looks like we were lucky!" says Troy. "This could have been a lot worse. I made a poor decision to keep going. Without being able to see the shore, I must have misjudged the distance."
+            
+                * [Troy puts the boat into forward gear.]
+                    -> avoid_storm
+            
+            
     
 == engine_damage ==
     -   CHR_TRO_ANG
     -   The Lakesong's engine cut off when the lightning struck. Troy attempts to start the engine, but it doesn't turn over. He tries again. Still nothing. Troy curses. 
     
-        * "Uh-oh, that doesn't sound good[."], says Alexis. 
+        * ["Uh-oh, that doesn't sound good," says Alexis.] 
             -> engine_fried
         
         = engine_fried
@@ -477,19 +489,16 @@ VAR is_radio_damaged = true
             "The safest thing to do now is call the marine patrol by phone, drop anchor—so we don't drift—and stand by with VDS to help the marine patrol locate us," says Troy. 
             
                 * [Prepare for rescue.]
-                After anchoring the boat and calling the marine patrol, the four friends huddle together as the rain comes down hard. The thunder makes it impossible to talk. They are wet, cold, and disappointed, especially Troy. He made a poor decision that  put them in a dangerous situation.
+                After anchoring the boat and calling the marine patrol, the four friends huddle together as the rain comes down hard. The thunder makes it impossible to talk. They are wet, cold, and disappointed, especially Troy. He misjudged the distance to shore and made a poor decision that put them all in a dangerous situation.
         
                     ** [Rewind the story and make a different decision.]
                         <i>Previously...</i>
                         Alexis worries they can't outrun the storm. Mia reminds Troy that lightening can strike far from the center of a storm. Julian thinks they may as well press on.
                         
-                            *** [Troy pauses to consider what he's heard.]
-                                -> final_decision_storm
+                            *** [Troy decides to change course.]
+                                -> tro_worried_lightning
                         
                         
-                    
-        
-
 
 == hole_in_boat ==
     -   CHR_ALX_SUR
