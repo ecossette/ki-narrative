@@ -642,11 +642,12 @@ SCENE 02
             // insert study guide here, upon student close, launch minigame
             FPO: study guide will insert here
                 ** [OK]
+                -> after_dropping_anchor
         * [Go directly to the anchoring activity.] 
             // insert anchor minigame here
             FPO: anchoring minigame will insert here
                 ** [OK]
         
-    -> DONE
+                -> after_dropping_anchor
     
     // link up with === after_dropping_anchor s03 when stiching scenes togethernk up with === after_dropping_anchor s03 when stiching scenes together

@@ -8,16 +8,17 @@ SCENE 03
 
 === after_dropping_anchor ===
     -   CHR_TRO_REL
-    -   After successfully anchoring the the <i>Lakesong</i>,Troy does another quick check for leaks.
+    -   After successfully anchoring the the <i>Lakesong</i>, Troy does another quick check for leaks.
     
-            * "OK. No sign of leaking[."]," says Troy. "And that's good news."
+            * ["OK. No sign of leaking," says Troy.]
                 -> fog_less_thick_maybe
             
     = fog_less_thick_maybe
     -   CHR_TRO_REL
     -   CHR_ALX_REL
+    -   "That's good news," he says. "Taking on water is the most likely problem after running aground."
     -   "More good news," says Alexis. "The fog seems less thick now." 
-    -   "Agreed," says Troy. 
+    -   "Agreed," says Troy. "It's still thick, but I can see twice as far as when we first entered the fog." 
     
             * ["Look over there!" says Julian.]
                 -> what_see_nothing
@@ -33,87 +34,99 @@ SCENE 03
             
     = unlikely_far_from_shore
     -   CHR_TRO_REL
-    -
-    -   "Our last position before we losing visibility had us pretty far from shore."
+    -   CHR_JUL_SUR
+    -   "Our last position before losing visibility had us pretty far from shore," he says.
     
         "Look! There it is again," says Julian, pointing.
     
             * ["I see it, too," says Mia.]
                 -> see_it_too
     = see_it_too
-    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   CHR_TRO_REL
-    -   "Looks like a small beach surrounded by woodland," says Alexis. 
+    -   "Looks like a small beach surrounded by woodland," says Mia.. 
             
         "It has to be in island," says Troy. 
             
-            *   "Kalkomey Isle?"[] Julian wonders.
+            *   ["Kalkomey Isle?" Julian wonders.]
                 -> is_ki
                         
     = is_ki
     -   CHR_JUL_SML
     -   CHR_TRO_REL
-    -   "Considering there are hundreds of islands scattered around the lake, it's highly unlikely that is Kalkomey Isle," says Troy. 
+    -   "Doubtful," says Troy. "There are hundreds islands scattered around the lake." 
                         
              - (opts)                
-                * [Julian makes a face.]
+                * [Julian is certain.]
                 -- CHR_JUL_SAD
                 "The evidence is clear," says Julian.-> fog
                 
                 * (fog) ["C'mon, Troy, look..."] {"Going north? Check. Fog? Check. Loss of cell signal? Check."|He looks at Mia and Alexis for support, but neither says a word.}
                 
-                * {fog} [But Troy isn't convinced.] -> tro_not_convinced
+                * {fog} [Troy isn't convinced.] -> tro_not_convinced
                         
             -   -> opts
     
 == tro_not_convinced ==
     -   CHR_ALX_SML
-    -   "Anyone up for exploring the island?" asks Alexis. "I mean we aren't going anywhere until this fog lifts?"
-        
-        The responses to Alexis suggestion are mixed. 
+    -   "Whatever island it is, let's go explore it!" says Alexis. "I mean we aren't going anywhere until this fog lifts anyway. What do you think?"
             
         - (opts)
-            *   "No flipping way!"[] says Julian. "What if Troy's wrong and that <i>is</i> Kalkomey Isle? Mutant creatures are not on my list of entertainment choices."
+            *   ["No flipping way!" says Julian.]
                 -- CHR_JUL_REL
+                "What if Troy's wrong and that <i>is</i> Kalkomey Isle? Mutant creatures are not on my list of entertainment preferences."
+                
         
-            *   "We do have the paddleboards[."]," says Troy. "And the boat is anchored securely. As long as we didn't venture too far..."
+            *   ["We do have the paddleboards," says Troy.]
                 -- CHR_TRO_REL
+                "And the boat is anchored securely. As long as we didn't venture too far..."
+                
             
-            *   "Won't it be dark soon?"[] asks Mia.
-                "Not for awhile," says Troy. "The fog and overcast make it seem later than it is. Still we would need to keep an eye on the time."
+            *   ["Won't it be dark soon?" asks Mia.]
                 -- CHR_MIA_REL
                 -- CHR_TRO_REL
+                "Not for awhile," says Troy. "The fog and overcast make it seem later than it is. Still we would need to keep an eye on the time."
+                
             *   {loop} [Alexis has heard enough.]
                     -> done
             
         - (loop)
             { -> opts | -> opts | }
-             -   CHR_ALX_REL    
-            Alexis looks at her friends and holds out her hands.
+               
+            Alexis looks at her friends with a mischievous smile.
         - (done)
-       
-            *  ["So..." says Alexis.]
-            -> make_explore_decision
+        -   CHR_ALX_SML 
+           "So...." says Alexis. "Are we going to go explore that island or not?" she asks.
+           // -> make_explore_decision
             
-    == make_explore_decision == 
-    -   CHR_ALX_REL
-    -   "Are we going to go explore that island or not?"
+   // == make_explore_decision == 
+    //-   CHR_ALX_REL
+    //-   
             
-            * [Do it.]
+            * [Paddleboard to the island.]
                 -> go_to_island
-            * [Don't do it.]
+            * [Don't paddleboard to the the island.]
                 -> no_go_island
-            * [Flip a coin.]
+            * [Flip a coin to decide.]
                 -> flip_go_island
                         
 
 === go_to_island === 
 VAR explore_island = true
-    -   "Yes!" says Alexis. "Let's get those paddleboards in the water and check out the island."
+    -   CHR_ALX_SML
+    -   "Yes!" says Alexis. "Let's get those paddleboards off the racks and into the water."
+         
+            * [Launch the paddleboards.]
+            -> paddleboard_safety
     
-    -   As they pull the two paddleboards off the racks, Troy reminds his friends of basic paddleboard safety. 
                         
-            * "When you're on a paddleboard[..."], you're still a boater," says Troy. "So you need to follow the same safe practices, including wearing a PFD."
+            
+
+== paddleboard_safety == 
+    -   CHR_TRO_REL
+    -   Before setting off, Troy reminds his friends of basic paddleboard safety. 
+       
+        "When you're on a paddleboard, you're still a boater," says Troy. "So you need to follow the same safe practices, including wearing a PFD."
                             
                 ** [ Review paddlesports safety information.]
                     // launch paddlesport review here
@@ -126,11 +139,10 @@ VAR explore_island = true
     -   CHR_TRO_REL
     -   Because they can't decide nor completely agree, they decide to flip a coin.
     
-        "OK, so heads we go down the path, and tails we go back to the boat," says Troy. 
+        "OK, so heads we go explore the island, and tails we stay here on the boat until the fog clears," says Troy. 
         
-            * Troy tosses the coin[.] up into the air, and it falls back into the sand to reveal...
-            
-                
+            * [Troy tosses the coin.] 
+
     
                 { shuffle:
                    - -> heads
@@ -141,17 +153,17 @@ VAR explore_island = true
     
     = heads
     -   CHR_ALX_SML
-    
+ 
         * "Heads it is!" says Alexis.[]
             -- CHR_ALX_SML
             -- CHR_JUL_SAD
         
-            "Two out of three?" asks Julian, but Alexis shakes him off.
+            "Two out of three?" asks Julian, but Alexis shakes him off. "Let's get these paddleboards off the racks"
+            
+                ** [Launch the paddleboards.]
+                -> paddleboard_safety
+            
         
-            "Let's go," she says and heads toward the path. Mia, Troy, and a reluctant Julian follow her.
-        
-                ** [Down the path.]
-                    -> enter_the_path
         
     
     
@@ -162,8 +174,8 @@ VAR explore_island = true
             - CHR_ALX_SAD
             "It is what it is," says Alexis with a disappointed shrug. 
         
-            * [Mount the paddleboards to return.]
-            -> mount_paddle_return_early
+            * [Begin waiting.]
+            -> no_go_island
         
         
 == on_paddeboards ==
@@ -171,29 +183,31 @@ VAR explore_island = true
                         
             * They arrive on the small beach[.], and a few things immediately catch their attention as they look around.
         
+           
             - (opts)
-                *   [An old dock.]
-                    -- CHR_TRO_REL
+             {|From what they are finding, it is clear they are not the only ones to have visited the island.| But it is not clear how recently the island has seen other visitors.}
+                *   [Explore object 1: An old dock.]
+                    -- CHR_ALX_REL
                     -- CHR_TRO_REL
                     "Hey, this looks like an old dock hidden beneath this overgrowth," says Alexis, peeling back tree limbs.
                     "But, look!" says Troy. "Parts of it are brand new."
                         
-                        ** ["Someone must be still using it."]
+                        ** ["Someone must be still using it," says Alexis]
                 
-                *   [A hidden rake.] 
+                *   [Explore object 2: A hidden rake.] 
                     -- CHR_MIA_REL
                     -- CHR_JUL_REL
                     Mia sees a handle sticking out of the brush. She find it's connected to rake. 
                     "Who would hide a rake out here?" wonders Mia.
                     "Maybe to rake away footprints?" says Julian. 
-                        ** ["Eww, that's creepy."]
+                        ** ["Eww, that's creepy," says Mia.]
                 
-                *   [An old sign.] 
+                *   [Explore object 3: An old sign.] 
                     -- CHR_TRO_REL
                     -- CHR_MIA_REL
                     Troy finds an sign laying face down, and picks it up. 
                 
-                    "What's it say, Troy?"
+                    "What's it say, Troy?" asks Mia.
                     "Most of it is washed out," he says. "Looks like part of a logo and the words 'GENETICS' and "FIELD STUDY."
                         ** [Julian's eyes open wide.]
                 
@@ -204,11 +218,10 @@ VAR explore_island = true
                 { -> opts | -> opts | }
                 Done exploring, the friends gather at the center of the beach.
                 
-                    * [Troy speaks first.]
                 
             - (done)
             - CHR_TRO_SUR
-            -   "If this is Kalkomey Isle, it sure doesn't appear to be abandoned," says Troy. "Somebody's certainly been here recently."
+            -   "If this is Kalkomey Isle, it sure doesn't appear to be abandoned," says Troy. "Somebody's certainly been here before."
             
                 As the fog slowly dissipates, more of the island becomes visible.
                 
@@ -220,7 +233,7 @@ VAR explore_island = true
     -   CHR_ALX_SML
     -   Alexis point to a narrow footpath leading into the woods and deeper into the island.
     
-        "Let's see where the path leads." 
+        "Let's see where the path leads!" she says 
     
             *   [Follow the path. It's still too foggy to boat away from the island.]
                 -> follow_the_path
