@@ -15,12 +15,13 @@ SCENE 02
     - CHR_TRO_REL
     - "We'll head East-Northeast toward Brodaht Island," says Troy pushing the wheel over. "That was on the edge of the watch area, so we should be safe there."
     
-        * "Are you sure about that?"[] says Alexis pointing toward dark clouds gathering to the east.-> sure_about_east
+        * ["Maybe not, look," says Alexis.] -> sure_about_east
         
             
     = sure_about_east
     -   CHR_ALX_REL
     -   CHR_TRO_REL
+    -   Alexis points toward dark clouds gathering to the east. "Looks like another storm is building to the east now."
     -   "You're right," says Troy. "That doesn't look promising." 
     
         { is_radio_damaged:
@@ -47,26 +48,29 @@ SCENE 02
         
     = radio_bust_try_cell
  
-    -   Troy looks at the damaged radio.
-    -   "With the radio busted, we'll need to rely on our phones. What does the radar show, Alexis?"
+    *   [Troy looks at the damaged radio.]
+        - CHR_TRO_REL
+        -   "With the radio busted, we'll need to rely on our phones. What does the radar show, Alexis?"
         
-            * "The signal is very weak," says Alexis.[] "Too weak to download the radar image, but there's a new severe thunderstorm alert that includes the Brodaht Island to the east." 
+            ** ["The signal is very weak," says Alexis.] 
+                CHR_ALX_REL
+                CHR_TRO_REL
+                "Too weak to download the radar image," she says,  "but there's a new severe thunderstorm alert that includes the Brodaht Island to the east." 
                 - CHR_ALX_REL
             
-                 ** ["So much for that idea."] -> no_worries_not_so_bad
+                 ** [Mia, Julian, and Alexis are worried.] -> no_worries_not_so_bad
     
     
     = no_worries_not_so_bad
     -   CHR_TRO_REL
-    -   Mia, Julian, and Alexis look grim. 
     -   "Don't worry. Things are not be as bad as they look," says Troy. 
             
          - (opts)
-            *    ["But we're surrounded!"] 
+            *    ["But we're surrounded!" says Julian.] 
                 "We're not entirely surrounded. We can still go north." says Troy. -> multiplying
                 -- CHR_TRO_REL
             
-            *    (multiplying) ["But the storms are multiplying!"] "{The storms are multiplying, but they are still relatively small in terms of total area|It's big lake, so we should have plenty of room to maneuver}." 
+            *    (multiplying) ["But the storms are multiplying!" says Mia.] "{The storms are multiplying, but they are still relatively small in terms of total area|It's big lake, so we should have plenty of room to maneuver}." 
                 -- CHR_TRO_REL
             
             *    {multiplying} [Steer to the north.] -> steer_to_north
@@ -77,7 +81,7 @@ SCENE 02
     -   CHR_TRO_REL
     -   Troy sets the <i>Lakesong</i> on a northerly course. The water starts to get a choppy. Troy keeps the bow of the boat at 45 degrees angles to waves to help smooth things out. 
     
-            * The skies continue to darken[.] as the storms close in. The thunder is louder and more frequent. A few raindrops begin to fall. ->
+            * The skies continue to darken[.] to the south, west, and east, as the storms close in. The thunder is louder and more frequent. A few raindrops begin to fall. ->
         
                 ** [Speed up to gain distance on the storms.]
                 ~ fuel_guage = fuel_guage - 5
@@ -117,59 +121,52 @@ SCENE 02
         Following Troy's instruction to keep a sharp lookout, the friends make several observations. 
         
         - (opts)
-            *   "It feels colder[."]," says Mia. 
-                "It does," says Alexis. "But at least we aren't wet... yet." 
-                    -- CHR_MIA_SAD
-                    -- CHR_ALX_REL
-            
-            *   "I've lost cell phone signal[."]," says Julian.
-                "Me too!" says Mia. Alexis says the same. 
-                    -- CHR_JUL_SUR
-                    -- CHR_ALX_REL
-            
-            *   "We're still boxed in[."]," says Alexis, "And none of the storms appear to be weakening."
-                "But they do seem to be moving generally easterly," says Troy. "I think we can continue to stay just out of their reach."
+            *   ["It feels colder," says Mia.] 
+                 -- CHR_MIA_SAD
                 -- CHR_ALX_REL
-                -- CHR_TRO_REL
+                "It does," says Alexis. "But at least we aren't wet... yet." 
+                   
             
-            *   {loop} [Enough observing.] 
+            *   ["I've lost cell phone signal," says Alexis.]
+                -- CHR_ALX_SUR
+                -- CHR_MIA_SUR
+                "Me too!" says Mia. Julian says the same. 
+                  
+            
+            *   ["We're definitley boxed in!" says Julian.] 
+                -- CHR_JUL_SUR
+                -- CHR_TRO_REL
+                "And none of the storms appear to be weakening," she says.
+                
+               
+            
+            *   {loop} [Onwards!] 
                 ->done
         
         - (loop)
-            {-> opts | -> opts}
-            "But we have to continue north, right?" ask Mia?
+            {-> opts | -> opts |}
+            - CHR_TRO_REL
+            "I think we can continue to stay just out of reach of the storms," says Troy.
         - (done) 
-        - CHR_TRO_REL
+        
             There's a sudden streak of lightening in the near distance followed immediately by a loud crash of thunder so strong that it shakes the boat.
+
             
-            "Under the circumstances," says Troy, "continuing north is our only option."
-            
-            * [Onwards!]
+            * ["Fog dead ahead!" shouts Julian.]
                 -> fog_appears
             
 ==  fog_appears ==
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
-    -   "Fog dead ahead!" shouts Julian.
-    -   "I see it, too," Troy says as he eases back on the throttle slowing their approach to the looming fog back ahead.
-    
-        * ["Fog?" asks Mia.]
-            -> fog_no_suprise
-        
+    -   "I see it, too," Troy says as he eases back on the throttle slowing their approach to the looming fog bank ahead.
+        "Fog shouldn't be a surprise," says Alexis. "Everyone's been telling us about 'fog in the north' all day."
        
-== fog_no_suprise
-    - CHR_ALX_REL
-    - CHR_MIA_REL
-    -  "Fog shouldn't be too much of a surprise, reall," says Alexis. "Everyone's been telling us about 'fog in the north' all day."
-    
-            * Mia agrees[.] but has questions.
-             
-            -- CHR_MIA_REL
+
                 - (opts)
-                    **    ["Can we avoid it?"] 
-                        "As long as we have storms pursuing and blocking us on three sides, our only open water option remains northward and into the fog." says Troy. -> safe_in_fog
+                    **    ["Can we avoid it?" asks Julian.] 
+                        "As long as we have storms pursuing and blocking us on three sides, our only open water option remains northward and into the fog."  Troy keeps one hand on the wheel on one on the throttle. -> safe_in_fog
                     
-                    **    (safe_in_fog) ["Is it safe to enter?"] "{We'll have reduced visibility, but we should be fine|We'll go very slowly and keep an careful lookout while our visibility is limited}." 
+                    **    (safe_in_fog) ["Is it safe to enter?" asks Mia.] "{We'll have reduced visibility, but we should be fine|We'll go very slowly and keep a careful lookout while our visibility is limited}," says Troy.
                     
                     **    {safe_in_fog} [Enter the fog.] -> enter_the_fog
                 
@@ -177,7 +174,7 @@ SCENE 02
 
 == enter_the_fog ==
     -   CHR_TRO_REL
-    -   Troy slows the <i>Lakesong</i> to a crawl, as the fog envelopes the boat. The three friends continue acting as lookouts for Troy—Alexis on the bow, Mia on port, and Julian on starboard.        
+    -   Troy slows the <i>Lakesong</i> to a crawl, as the fog envelopes the boat. The three friends continue acting as lookouts—Alexis on the bow, Mia on port, and Julian on starboard.        
         
         * ["Log!"]
             -> log_ahead
@@ -185,23 +182,21 @@ SCENE 02
         = log_ahead
         -   CHR_ALX_REL
         -   CHR_TRO_REL
-        -   "Troy there's a floating log straight ahead!," says Alexis. 
+        -   "There's a floating log straight ahead!," says Alexis. 
         
             "Are we clear on starboard, Julian?" ask Troy. 
             
-                * "All clear!"[] says Julian. "At least as near as I can see, which is only about 20 feet."
+                * ["All clear!" says Julian.] 
                     -- CHR_JUL_REL
+                    --  CHR_TRO_REL
+                    "At least as near as I can see," says Julian, "which is only about 10 feet."
                 
-                    ** ["Understood."]
-                        -> understood_log
-                    
-        = understood_log
-        -   CHR_TRO_REL
-        -   "Understood," says Troy who avoids the floating log by easing the <i>Lakesong</i> to the right—the starboard side. 
+
+                     "Understood," says Troy who avoids the floating log by easing the <i>Lakesong</i> to the right—the starboard side. 
         
-            As they continue into the fog, thunder claps loudly behind them urging them onward. 
+                As they continue into the fog, thunder claps loudly behind, urging them onward. 
             
-                * ["Nav marker!"]
+                    ** ["Nav marker!"]
                     -> nav_marker
                 
         = nav_marker
@@ -211,17 +206,15 @@ SCENE 02
         
             "What's it say?" asks Troy. 
             
-            * ["I can't see yet."]
+            * ["It's a white marker with a diamond—"]
                 -> nav_danger_area
             
         = nav_danger_area
         - CHR_MIA_REL
         - CHR_ALX_SUR
-        - "OK, I see it now... it's a white marker with a diamond—"
+        -  "That marks a danger area!" says Alexis excitedly, cutting Mia off.
             
-            "That's marks a danger area!" says Alexis cutting Mia off.
-            
-            Mia squints into the fog. "Now I can read it. It says 'rock'."
+            Mia squints into the fog. "It says 'rock'."
             
             * [Troy steers clear.]
                 -> nav_danger_clear
@@ -230,7 +223,7 @@ SCENE 02
         -   CHR_TRO_REL
         -   Troy steers clear of the lateral marker and the hidden rock by again moving the <i>Lakesong</i> to the right, just as Julian shouts from his starboard watch.
         
-            * "I've got a marker coming into view..." says Julian.[]
+            * ["I've got a marker coming into view..." says Julian.]
                 -> nav_danger_sand
             
         = nav_danger_sand
@@ -238,7 +231,7 @@ SCENE 02
         -   "It says, 'Danger Sa—"
             Julian is interrupted by a loud scraping sound. The boat shudders to a stop forcing them all to hang on.
             
-            "Sandbar," says Julian finishing his warning a moment too late. 
+            "...Sandbar," says Julian finishing his warning a moment too late. 
             
             * [Troy immediately cuts the engine.]
                 -> run_aground
@@ -259,20 +252,20 @@ SCENE 02
                         -> aground_all_ok
                 
                 + [Put the boat in reverse ASAP]
-                    Troy's first instinct it to put the boat immediately into reverse, but he remembers his first priority after grounding is to check on his passengers.
+                    Besides the fact that putting the boat in reverse could actually worsen the situation, the first priority after grounding is to make sure no one is injured.
                         -> aground_all_ok
                 
             
 == aground_all_ok ==
     -   CHR_TRO_REL
     -   (opts)
-            *    ["Is everyone OK?"] 
+            *    ["Is everyone OK?" asks Troy?] 
                 Everyone is fine after hitting the sandbar. 
                 "Just a little shaken is all," says Alexis. "But is the <i>Lakesong</i> OK?
                     -- CHR_ALX_SAD
                     -> leaks
             
-            *    (leaks) ["What about the boat?"] "{Checking for leaks is my second priority|Running is aground is never good for a boat}," says Troy with a worried expression.
+            *    (leaks) ["What about the boat?" asks Julian.] "{Checking for leaks is my second priority after making sure we are all OK|Running is aground is never good for a boat}," says Troy with a worried expression.
                    
             
             *    {leaks} [Check for leaks.] -> check_leaks
@@ -288,9 +281,9 @@ SCENE 02
     
     = no_leaks_so_far
     -   CHR_TRO_REL
-    -   "It looks like we got lucky," says Troy. "No sign of leaking. It helps that we were going slowly and the sand had some give."
+    -   "Whew, everthing seems fine," says Troy. "No sign of leaking. It helps that we were going slowly and the sand was soft and had some give."
     
-            *   "So we're good?"[] asks Julian.
+            *   ["So we're good?" asks Julian.]
                 -> so_far_good_if
     
     = so_far_good_if
@@ -301,7 +294,8 @@ SCENE 02
                 -> mia_jul_worried
         
     = mia_jul_worried
-    -   CHR_TRO_REL
+    -   CHR_JUL_SAD
+    -   CHR_MIA_SAD
     -   Sensing the worry, Troy promptly gets his passengers thinking about the next task—freeing the Lakesong.
     
             * ["I need the three of you to move to the stern."] 
@@ -310,7 +304,7 @@ SCENE 02
     
     = weight_stern
     -   CHR_TRO_REL
-    -   "At the the stern, your weight is at farthest area away from the point of impact. That will help."
+    -   "At the the stern, your weight is at farthest area away from the point of impact," says Troy. "That will help us to free the boat."
                 
                 * [Troy reaches for a boat hook.]
                     -> troy_will_push_off 
@@ -318,9 +312,9 @@ SCENE 02
     = troy_will_push_off
     -   CHR_MIA_REL
     -   CHR_TRO_REL
-    -   "What are you going to do, Troy?" asks Mia, as the three wait at the stern per Troy's instructions.
+    -   "What are you going to do with that?" ask Mia, as the three wait at the stern per Troy's instructions.
     
-        "I'm going to attempt to push us off."
+        "I'm going to attempt to push us off with this boat hook."
          
             * Troy moves to the bow and heaves.[]
                 -> random_push_off
@@ -408,14 +402,14 @@ SCENE 02
     
     = start_engine_and_fog
     -   CHR_TRO_REL
-    -   "The engine seems fine at idle," declares Troy. "I'm going to put it in reverse to back away from the sandbar, but with this fog, I'll need you three to again keep a lookout."
+    -   "The engine seems fine at idle," declares Troy. "I'm going to put it in reverse to back away from the sandbar, but with this fog, I'll need you three to keep lookout again."
     
         * [Reverse the engine.]
             -> reverse_and_manuever
         
     = reverse_and_manuever
     -   CHR_TRO_REL
-    -   Troy puts the <i>Lakesong</i> in reverse, very slowly at first then gradually increasing speed. Content with that test, he eases into forward gear while he and his three spotters keep a lookout for dangers lurking in the fog. 
+    -   Troy puts the <i>Lakesong</i> in reverse, very slowly at first then gradually increasing speed. Content with that test, he eases into forward gear turning away from the sandbar while he and his three spotters keep a lookout for dangers lurking in the fog. 
     
             * [Troy is satisfied.] 
                 -> satisified_idles
@@ -425,9 +419,13 @@ SCENE 02
     -   CHR_ALX_SML
     -   Satisfied, Troy lets the engine idle.
     -   "Does everything seem OK?" asks Alexis. 
-        "I think so, Alexis," says Troy. "Still I can't say with 100% certainty. The propeller seems fine. But if the shaft is bent, it could take awhile before problems start."
         
-            * Troy notices Mia flinch.[]  
+            * ["I think so," says Troy.] 
+            -   CHR_TRO_REL
+            -   CHR_MIA_SAD
+            "Still I can't say with 100% certainty," he says. "The propeller seems fine. But if the shaft is bent, it could take awhile before problems start."
+        
+            Troy notices Mia frown.
   
                 ** ["Don't worry, I'm not going to ask..." says Mia. "I don't want to know."]
                 -> no_worry_back
@@ -462,23 +460,24 @@ SCENE 02
         
         "Speaking of getting back to Laketown, do you hear that?" asks Alexis.
         
-            * "I don't hear anything," says Mia.[]
+            * ["I don't hear anything," says Mia.]
                 -> hear_nothing
     
     = hear_nothing
     -   CHR_ALX_SML
     -   CHR_MIA_SML
-    -   "Exactly. The thunder is no longer getting closer."
+    -   "Just the the same old thunder in the distance," says Mia. 
+    -   "Exactly," says Alexis. "The thunder is still there, in the distance, but it's not getting closer."
         
-        "You're right!" says Mia. 
+        "You're right!" says Mia.  
         
-            * ["And that means can anchor and wait for the fog lift," says Troy.]
+            * ["We'll drop anchor," says Troy.]
                 -> no_fog_chances
             
     = no_fog_chances
     -   CHR_TRO_REL
     -   CHR_MIA_REL
-    -   "After hitting that sandbar, I don't want to take anymore chances in the fog unless it's our only option." 
+    -   "If we aren't in any immediate danger from any of the storms, we'll just stay put until the fog lifts, says Troy. "After hitting that sandbar, I don't want to take anymore chances in the fog unless it's our only option." 
         
         Mia notices Julian is unusually quiet and staring off into space at the stern of the boat. Mia decides to...
         
@@ -527,7 +526,7 @@ SCENE 02
     -   CHR_TRO_ANG
     -   "Troy what is it? What's wrong?" asks Alexis. 
     
-        * ["Carbon monoxide!"]
+        * ["Carbon monoxide!" says Troy.]
             -> carbon_monoxide
     
     = carbon_monoxide
@@ -537,7 +536,9 @@ SCENE 02
     
         "Carbon monoxide can be deadly," says Mia. 
         
-            * "Yes, it can be[."]," says Troy. "Idling is situation known for carbon monoxide poisoning, especially with the fog and no breeze at all." 
+            * ["Yes, it can be," says Troy.] 
+            CHR_TRO_SAD
+            "Idling is situation known for carbon monoxide poisoning," says Troy, "especially with the fog and no breeze at all." 
 
            
                 ** [Review all the "CO Poisoning Situations."]
@@ -552,14 +553,8 @@ SCENE 02
     
     = put_all_danger
     -   CHR_TRO_ANG
-    -   "I put us all in danger by standing still and idling like that, especially Julian who was at the stern, closest to the exhaust.
-    
-            * [Troy is angry with himself.]
-                -> all_make_mistakes
-        
-    = all_make_mistakes
-    -   CHR_ALX_SAD
-    -   CHR_TRO_ANG
+    -   CHR_ALX_REL
+    -   "I put us all in danger of carbon monoxide by standing still and idling like that, especially Julian who was at the stern, closest to the exhaust.
     -   "We all make mistakes," says Alexis, but Troy shakes his head. 
         
         "CO can make you sick in seconds," he says. "There's no mistaking that."
@@ -570,7 +565,7 @@ SCENE 02
 == co_symptoms_present == 
     -   CHR_TRO_REL
     -   CHR_JUL_REL
-    -   Troy wants to determine if Julian is presenting any symptoms of carbon monoxide poisoning.
+    -   Troy wants to determine if Julian is presenting any symptoms of carbon monoxide poisoning. He asks Julian a series of questions.
     
         - (opts)
         
@@ -588,20 +583,20 @@ SCENE 02
                     --   CHR_TRO_REL
                     --   CHR_JUL_REL
             
-            *   {loop} "I'm fine, Troy, trust me[."]," says Julian.
+            *   {loop} "I'm fine, trust me[."]," says Julian.
                 -> done 
         
         - (loop)
             { -> opts | -> opts | }
             
             Troy nods his head. "You're not showing any symptoms of CO poisoning," he says.
-            "I'm fine, Troy," says Julian. 
+            "Like I said, I'm fine," says Julian. 
         - (done)
         -   CHR_TRO_SUR
         -   CHR_JUL_REL
             "I agree, Jules, you're fine," says Troy. "And that's a relief."
             
-                * Troy turns to Mia and Alexis.
+                * [Troy turns to Mia and Alexis.]
                     -> co_symptoms_others
             
 == co_symptoms_others ==

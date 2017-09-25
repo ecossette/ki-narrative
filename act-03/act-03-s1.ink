@@ -42,9 +42,9 @@ SCENE 01
             ---CHR_ALX_SML
             "I didn't realize how much fun that would be" she says. "I could jet ski all day long." 
                
-    // We require the player to ask at least one question
+   
     *    {loop} [End the discussions.]
-        -> done
+            -> done
 - (loop)
     // loop a few times before the guard gets bored
     { -> opts | -> opts | }
@@ -54,7 +54,7 @@ SCENE 01
 - (done)
     - CHR_TRO_SML
     
-    "Now that we've water skiied and jet skiied" says Troy, bringing the Lakesong to a stop. "Let's give each of you the chance to drive the boat. Well go in alphabetically order... Alexis come on over."
+    "Now that we've water skiied and jet skiied" says Troy, bringing the Lakesong to a stop. "Let's give each of you a chance to drive the boat. Well go in alphabetically order... Alexis come on over."
     
      * [Alexis takes the wheel wearing a big smile.] Alexis takes her turn, and is followed by Julian and Mia who each spend time at the Lakesong's helm.
      
@@ -125,7 +125,7 @@ SCENE 01
             "It's time for us to head back to Laketown," says Troy.
             "Agreed," says Alexis. "We have clear skies now, but we don't want to risk getting caught out on the lake in a severe storm."
             
-                ** [Onward!] -> horizon_clouds
+                ** [Head to shore.] -> horizon_clouds
             
           
             
@@ -139,13 +139,13 @@ SCENE 01
         -   CHR_ALX_REL
         -   CHR_MIA_REL
         -   "I think the wind just shifted," she says.
-        -   "Feels cooler, too," Mia says, shivering a bit. 
+        -   "Feels cooler, too," says Mia, shivering. 
             
             * [Alexis checks her phone.] 
              -   CHR_ALX_REL
               -   CHR_MIA_REL
             
-            "Looks like a storm has popped up just south of Laketown," says Alexis. "That would explain the clouds and the wind and temperature changes we felt."
+            "Looks like a storm has popped up just south of Laketown," says Alexis. "That would explain the clouds as well as wind and temperature changes we felt."
             
               ** [The radio alerts.] 
                     -> storm_over_laketown
@@ -202,15 +202,15 @@ SCENE 01
                 
                 
         =   grows_darker        
-        -   Troy turns on the Lakesong's navigation lights. A few raindrops begin to fall. The boat presses on toward the ever-darkening shore still out of sight to the south. 
+        -   Troy turns on the Lakesong's navigation lights. A few raindrops begin to fall. Steadily the boat presses on toward the ever-darkening shore still out of sight to the south. 
         
-                * [Alexis is concerned.]
+                * [Alexis is impatient.]
                     -> press_on
                 
         = press_on
         -   CHR_ALX_SAD
         -   CHR_TRO_REL
-        -   "Troy, shouldn't we be seeing Laketown and the shoreline by now?" asks Alexis.
+        -   "Troy, shouldn't we be seeing Laketown and the shoreline by now?" asks Alexis. "Feels like we've been cruising for quite a while."
             
                 * ["Normally, yes," says Troy.]
                     -> normally_yes
@@ -220,7 +220,7 @@ SCENE 01
         -   CHR_TRO_REL
         -   "But I think Laketown and the entire shore is wrapped in rain," he says. 
         
-        -   "Do you still think we can make it to Laketown through this?" asks Alexis while Mia and Julian look on wide-eyed.
+        -   "You're still feeling good about beating the storm?" asks Alexis while Mia and Julian look on wide-eyed.
         
                 * [Troy considers the situation.]
                     -> tro_considers_choices
@@ -287,7 +287,7 @@ SCENE 01
     -   CHR_ALX_REL
     -   "I feel good about making it back to the marina before it gets severe," says Troy with confidence. 
     
-        "OK," says Alexis with less confidence, but she trusts Troy. "You have more experience on the water than all of us combined," she says. 
+        "OK," says Alexis with less enthusiasm, but she trusts Troy. "You have more experience on the water than all of us combined," she says. 
         
             * [Onwards!]
                 -> lightning_choices
@@ -351,9 +351,9 @@ SCENE 01
        
             
 === stil_continue_to_laketown ===
-    -   The minutes pass as the <i>Lakesong</i> continues steadily toward the shore. Although the thunder is loud and visibility is reduced, the friends are still dry and not impacted by the storm.
+    -   They anxiously search the horizon for signs of shoreline.  Although the thunder is loud and visibility is reduced, the friends are still dry and have not been impacted directly by the storm.
     
-        * [After a while, Troy notices something.]
+        * [After a while, Troy becomes troubled.]
             -> no_red_right_yet
         
         = no_red_right_yet
@@ -426,7 +426,7 @@ VAR is_radio_damaged = true
         
         = radio_is_toast
         -   CHR_TRO_REL
-        -   "Well, gang, as expected after seeing what that lightning bolt did to the antenna, the radio is toast," declares Troy. "Let's do a quick check of the rest of the boat—and I mean quick because that storm is bearing down!"
+        -   "Well, gang, as expected after seeing what that lightning bolt did to the antenna, the radio is toast," declares Troy. "Let's do a quick check of the rest of the boat—and I mean quick because it seems that storm is moving towards us now!"
         
             * [They quickly inspect the boat.]
 
