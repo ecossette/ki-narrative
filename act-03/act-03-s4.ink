@@ -6,22 +6,21 @@ SCENE 04
 */
 
 === enter_the_path ===
-   
+// SND bring in buzzing sound very low   
     -   CHR_ALX_SUR
     -   The path winds deeper into the island.
         "Look at the size of those trees!" says Alexis. 
         
-            * ["Sshh... listen? You hear that?"]
+            * ["Sshh... listen? You hear that?" says Mia]
                 -> hear_that
         
         = hear_that
+// SND buzzing sound a bit louder but still in distance
         -   CHR_ALX_REL
         -   CHR_MIA_REL
-        -   Mia stops and holds up her hand, cupping her ear, listening... 
-                                    
-            "You hear it, Mia?" asks Alexis. "It's a buzzing from up there." Alexis points up to the top of hill the path has wound around.  
+        -   Mia stops and holds up her hand, cupping her ear, listening... Mia points up to the top of the hill the path is winding around. "It's a buzzing from up there."
             
-                *   ["Probably just a bee hive," says Troy.]
+                *   ["Probably just a bee hive, a large bee hive," says Troy.]
                     -> just_bee_hive
         
         
@@ -35,8 +34,9 @@ SCENE 04
                     -> jul_mumbles
                 
         = jul_mumbles
+// SND buzzing sound go to slow fade out
         -   CHR_JUL_SAD
-        -   From the rear, Julian scans the tree canopy above, his eyes darting side to side quickly. "Part falcon, part bat, part hornet..." he mumbles to himself. 
+        -   From the rear, Julian scans the trees above, his eyes darting side to side quickly. "Part falcon, part bat, part hornet..." he mumbles to himself. 
             
             "What's that Julian?" asks Troy. 
             
@@ -46,11 +46,11 @@ SCENE 04
         = jul_nothing
         -   CHR_JUL_SAD
         -   CHR_TRO_REL
-        -   "I was just thinking how I signed up to go boating and not nature hiking."
+        -   "I was just thinking how I signed up to go boating and not nature hiking," says Julian.
         
-            "I hear you," says Troy. "We'll head back soon. The fog seems to be breaking up finally."
+            "I hear you," says Troy. "We'll head back soon. The fog seems to be breaking up, finally."
             
-                *   ["Look there's a clearing ahead."]
+                *   ["Look there's a clearing ahead," says Alexis.]
                     -> clearing_ahead
                 
         = clearing_ahead
@@ -60,9 +60,9 @@ SCENE 04
         
             "What a view!" says Alexis. "I didn't realize we climbed so high."
             
-            "The fog is mostly gone up here," says Troy, "but look how it's still lingering in patches in the cove below."
+            "The fog is mostly gone up here," says Troy, "but look how it's still lingering in patches in that large cove below."
             
-                * ["Look there's a boat entering the cove."]
+                * ["Look there's a boat entering the cove," says Alexis.]
                     -> boat_in_cove
         
         = boat_in_cove  
@@ -72,14 +72,14 @@ SCENE 04
         
             "That's a good sized boat," says Alexis. "But where are they headed?"
             
-                *   ["What the heck?"]
+                *   ["What the heck?" says Troy.]
                     -> going_run_aground
                 
         = going_run_aground
         -   CHR_TRO_SUR
-        -   "They are going to run aground!" says Troy.
+        -   "They are going to run aground!"
         
-            But the boat doesn't run aground. Instead it vanishes where the fog and shoreline meet. 
+            But the boat doesn't run aground. Instead it simply vanishes where the fog and shoreline meet. 
             
                 *   ["Did you see that?" asks Alexis.]
                     -> see_that
@@ -90,6 +90,8 @@ SCENE 04
         -   "I see it but I don't believe it," says Troy. "Maybe it's just hidden by the fog?"
         
             *   Suddenly the last of fog clears away[.] revealing a bright blue afternoon sky and the lush beauty of the island. The boat is nowhere to be found.
+// SND can bring back in some bird sounds, not too loud
+// SND also bring in buzzing sound, distant
         
                 **  "How strange," says Troy[.], looking out over the empty cove.
                 
@@ -98,14 +100,15 @@ SCENE 04
                     -> everybody_looks_tro
                     
             = everybody_looks_tro
+// SND increasing buzzing
             *   [Everyone turns to Troy.]
                 -- CHR_TRO_REL
             
                 "OK," says Troy. "When I say run, run."
             
-                    ** [Got it!"]
+                    ** [Got it!" they say in unison.]
                     
-                        *** [RUN!!!]
+                        *** ["RUN!!!"]
                             -> run_away
                         
   
@@ -137,6 +140,7 @@ SCENE 04
 // end strange birds tunnel         
         
 === run_away ===
+// SND drones/buzzing closing in
     -   Mia, Alexis, Julian, and Troy begin running back to the forest opening. The pursuing flying creatures close in with their terrible buzzing sound. 
     
             * The creatures dive[.] and swoop in low. The friends run stooped over to avoid the creatures' sharp, falcon-like talons. 
@@ -165,10 +169,13 @@ SCENE 04
         
         = reenter_forest_path
         -   Although harassed the entire way by the flying creatures, the friends make it to the path at the edge of the forest.
+// SND remove much of drone/buzz
         
               
         
                 * [They push on.] Several determined creatures continue the chase down the path and into the forest, while the rest of the swarm circles menacingly above the treetops.
+// SND just a few drones remain
+        
                 
                     ** [Continue running.]
                         -> creatures_turn_back
@@ -186,7 +193,7 @@ SCENE 04
         
         = mia_photo_burst
         -    Mia reaches for her phone and takes a quick photo burst of the departing creatures.
-                        
+// SND fade out the drones/buzz                        
             * ["Good thinking, Mia!" says Alexis.]
                 -> catch_breath
             
@@ -221,6 +228,7 @@ SCENE 04
     
 
 === no_go_island ===
+// SND just light water bg sounds here
     -   Having decided not to explore the island, the friends pass the time  waiting for the fog to clear by playing cards. 
     
         * [The fog begins to clear.]
@@ -235,13 +243,15 @@ SCENE 04
     
 == fog_clears ==
     -   While the island remains foggy, over the lake and around the <i>Lakesong</i> the fog finally begins to burn off. 
+// SND can bring back bird sounds here
     
         *  ["Prepare to retrieve the anchor," says Troy.]
             -> prepare_retrieve_anchor
         
 
 === prepare_retrieve_anchor ===
-// this is dual use. used after isle exploration as well. 
+// this is dual use. used after isle exploration as well.
+// SND engine sound
     -   CHR_TRO_REL
     -   "I'll position the boat directly over the anchor, while Julian pulls in the line," says Troy.
     
@@ -252,11 +262,13 @@ SCENE 04
     -   CHR_TRO_REL
     -   At a slow speed, Troy maneuvers the boat directly over the anchor, the first step to safely retrieve an anchor.
         
-            * ["OK, Julian. Pull in the line."]
+            * ["OK, Julian," says Troy. "Pull in the line."]
                 -> pull_in_line
     
     = pull_in_line
-    -   "And pull it straight up," says Troy. "That should break it free."
+    -   CHR_TRO_REL
+    -   CHR_JUL_REL
+    -   "And pull it straight up," he says. "That should break it free."
     
     
             * Julian tugs on the line[.] but it doesn't budge. 
@@ -340,7 +352,7 @@ SCENE 04
         = good_plan_no_sand  
         -   CHR_TRO_REL
         -   CHR_ALX_SML
-        -   "We don't want to risk hitting another sandbar.
+        -   "We don't want to risk hitting another sandbar," she says. 
             
             "Or anything else," says Troy. "Those storms might have churned up debris."
             
@@ -359,6 +371,7 @@ SCENE 04
        
        
 == ls_travels_east ==  
+// bring in some bird ounds
     -   CHR_MIA_REL
     -   More of the island comes into view on the port side, as the fog continues to burn off.
             
@@ -388,25 +401,26 @@ SCENE 04
         = no_cross_paths
         -   CHR_ALX_REL
         -   CHR_TRO_REL
-        -   "And we are in no danger of crossing paths at this speed and distance."
+        -   "But we are in no danger of crossing paths at this speed and distance," he says.
                 
-                * "That boat looks to be heading straight for the cove," says Alexis.
+             "That boat looks to be heading straight for the cove," says Alexis.
                 
-                    The friends look on as the other boat slips into the fog and out of view.
+            The friends look on as the other boat slips into the fog and out of view.
                 
                     ** [The <i>Lakesong</i> continues.]
                         -> draws_abeam
         
         = draws_abeam
+// SND back to clear weather sounds: birds, water, engine
         -   The last of the fog burns off just as the <i>Lakesong</i> draws abeam the mouth of the cove. The blue sky and warm afternoon sun is a welcome sight to the friends, who take in the lush beauty of the tranquil island.  
                  
-                        * ["Hey, where did that other boat go?"]
+                        * ["Hey, where did that other boat go?" says Alexis.]
                             -> where_other_boat
         
         = where_other_boat
         -   CHR_ALX_SAD
         -   CHR_TRO_SUR
-        -   "A large boat like that just can't disappear," says Alexis, scanning the empty cove.
+        -   "A large boat like that just can't disappear," she says, scanning the empty cove.
         -    "And we'd have seen it coming back out," says Troy. "That's strange." 
         
                 * ["Know what else is strange?"]
@@ -417,11 +431,13 @@ SCENE 04
 === creatures_appear_again ===
     -   It isn't long before the last of the fog clears. The four friends have a clear view of the island, and anything on the island has a clear view of them. 
     
-            * "Don't look now but here come those creatures again!"
+            * ["Oh, no!" says Julian.] 
                 -> tro_on_it_turns
             
 === tro_on_it_turns ===
+// SND intro buzzing sound in distance
     -   CHR_TRO_REL
+    -   "Here come those creatures again!" Julian points over the island. 
     -   "On it," says Troy, turning the wheel to put the <i>Lakesong</i> on a course due south and away from the island. "Can I get some lookout help? These are unfamiliar waters."
     
         - (opts)
@@ -436,6 +452,7 @@ SCENE 04
 
 == eye_creatures ==
 // this is where you can rejoin from explore island track
+// SND drone sounds getting closer
     -   CHR_JUL_SUR
     -   Julian keeps his eyes aft of the boat, tracking the rapidly approaching swarm that has cleared the island and now flies over open water in pursuit of the boat. 
     
@@ -447,11 +464,11 @@ SCENE 04
 == tro_yes_no ==        
     -   CHR_TRO_REL
     -   CHR_JUL_ANG
-         "I'm still worried about possible propeller shaft damage from running aground," says Troy. "And I wouldn't want to break down here just at the moment, would you?"
+         "I'm still worried about possible propeller shaft damage from running aground," says Troy. "And we don't want to break down right here, right now!"
          
         {
             - yes_engine_problem:
-                * [Julian agrees. "No, you're right. I wouldn't."] -> tro_reconsiders_speed
+                * [Julian agrees. "I can't argue with that."] -> tro_reconsiders_speed
                 
             - else:
                 -> jul_persists
@@ -526,6 +543,7 @@ SCENE 04
             
     
 === post_shudder_full ===
+// SND put drone sound more distant
     -   The <i>Lakesong</i> continues to move quickly over the water, gaining more and more distance from the odd, flying creatures chasing them. 
     
             { shuffle:
@@ -542,7 +560,7 @@ SCENE 04
     
         *    Suddenly, an alarms sounds[.], and the engine cuts out, leaving only the buzzing of the rapidly approaching creatures.
             -> what_happened_engine
-        
+// SND kill engine sound      
         
         = what_happened_engine
         -   CHR_ALX_SUR
@@ -557,6 +575,7 @@ SCENE 04
         -   "I've never heard that alarm before." Troy tries restarting the engine but has no success. "It's completely dead."
             
                     ** "And so are we," says Julian[.], as the flying creature quickly catch up to the stricken <i>Lakesong</i>.  
+// SND creatures/buzzing close
                     -> creatures_circle
         
         = creatures_circle
@@ -564,22 +583,23 @@ SCENE 04
         -   CHR_ALX_ANG
         -   "They aren't trying to harm us, though," says Mia watching the creatures as they begin flying in a circular pattern a hundred feet or so overhead. "They are just circling."
             
-                * ["Like vultures."] -> like_vultures
+                * ["Like vultures," says Alexis.] -> like_vultures
         
         = like_vultures
         -   CHR_ALX_ANG
         -   CHR_JUL_SUR
-        -   "Like vultures," says Alexis with a shudder. 
+        -   Alexis shudders as the menacing creatures continue circling the stricken boat.
             
             "Look a boat!" says Julian pointing north toward the island.
             
-            * ["That's a speedboat!"] 
+            * ["That's a speedboat!" says Troy.] 
                 -> rescue_us
             
         = rescue_us
         -   CHR_TRO_SUR
         -   CHR_MIA_REL
-        -   "And it's coming really fast," says Troy.
+// SND speedboat approach
+        -   "And it's coming really fast," he Troy.
         -   "Coming to rescue us, I hope," says Mia. 
             
              * ["It would appear not," says Alexis.] -> appear_not
@@ -587,6 +607,7 @@ SCENE 04
         = appear_not
         -   CHR_ALX_ANG
         -   CHR_TRO_ANG
+// SND kill speedboat
         -   As the speed boat draws close to the Lakesong, the friends see what Alexis means. Inside the speedboat are three figures in black ski masks hiding their faces.
             
                 * ["Put your hands up and prepare to be boarded."]
@@ -607,6 +628,7 @@ SCENE 04
                 
                     
 === chased_keep_current ===
+// SND buzzing closer
     -   CHR_TRO_REL
     -   Troy keeps the current speed for now. He knows he still has time to evaluate the Lakesong's condition before the swarm of creatures overtakes the boat.
     
@@ -682,6 +704,7 @@ SCENE 04
         * ["Fifty yards!"]
           -- CHR_JUL_SUR
           -- CHR_TRO_REL
+// SND buzzing much closer
           Julian shouts over the increasing buzzing sound of the flying creatures as they get closer and closer to the fleeing boat. 
                         
                         ** [Troy nudges the throttle again.] 
@@ -712,7 +735,9 @@ SCENE 04
                         
                 }
         
-        = mia_photo_burst 
+        = mia_photo_burst
+// SND creature sounds fading
+        -   CHR_MIA_REL
         -   With her phone's camera, Mia takes a quick photo burst of the departing creatures.
         
              * ["Good thinking, Mia!"]
@@ -726,6 +751,8 @@ SCENE 04
         
         
         = are_kidding_me
+// SND buzz/creatures done
+        -   CHR_JUL_SUR
         -   Julian saw things differently. "Those creatures were like right freaking on top of us!" he says. 
             
                 * ["More like {distance}," says Alexis.]
@@ -748,22 +775,17 @@ SCENE 04
         = more_like
         -   CHR_ALX_REL
         -   CHR_JUL_SAD
-        -   "But {distance} is close enough, believe me." She can excuse Julian exaggerating a bit this time. The creatures gave everyone a fright.
+        -   "But {distance} is close enough, believe me." She can excuse Julian's exaggeration under the circumstances. The creatures gave everyone a fright.
                 
-                * ["And that shudder?"]
+                * ["And that shudder?" asks Mia.]
                 
         
         = and_the_shudder
-        - CHR_MIA_WRD
-        - "What was that shudder we felt, Troy?" asks Mia. "The prop shaft?"
+        -   CHR_MIA_WRD
+        -   CHR_TRO_REL
+            "Was that caused by the prop shaft?" she asks.
             
-                * [Troy shakes his head.]
-                    -> suspect_current
-                
-        = suspect_current
-        - CHR_MIA_REL
-        - CHR_TRO_REL
-        -   "I don't think so, Mia... I think it was just a cross current, but now is a good time to check again for any damage from running aground earlier."
+            "I don't think so, Mia... I think it was just a cross current, but now is a good time to check again for any damage from running aground earlier."
         
                 * [Troy brings the <i>Lakesong</i> to a stop and inspects the boat.]
                     -> inspect_for_damage

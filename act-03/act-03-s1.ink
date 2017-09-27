@@ -8,6 +8,7 @@ SCENE 01
 
 
 === discussion_after_houseboat
+// SND mix of low engine, water, birds...
     - As the <i>Lakesong</i> planes the surface of the lake, the friends talk among themselves.
 
 - (opts)
@@ -150,7 +151,8 @@ SCENE 01
               ** [The radio alerts.] 
                     -> storm_over_laketown
               
-    = storm_over_laketown          
+    = storm_over_laketown  
+    // SND sound of thunder in distance (far) their should be a rumble then nothing for at least 10-15 secs then another
         -   <i>"A large and dangerous thunderstorm has formed to the south Laketown. This storm is currently stationary and is capable of producing golf ball size hail, damaging winds, and frequent lightning."</i>
         
             *  [Troy faces a dilemma.]
@@ -187,6 +189,8 @@ SCENE 01
                     -> choppy
             
         = choppy
+// SND bring storms sounds closer but still distant, still infrequent rumbles
+// SND fade out the bird sounds if not already out
         - As the boat continues straight on to Lakesong, the water becomes very choppy. Troy has no choice but to back off the throttle to keep his passengers from being bounced around too severely.
         
                 * [Troy issues a command.]
@@ -293,6 +297,7 @@ SCENE 01
                 -> lightning_choices
             
 === lightning_choices ===
+// SND storm much louder and closer here
         -   CHR_TRO_REL
         -   CHR_ALX_REL
         - {The minutes pass as the <i>Lakesong</i> continues toward Laketown and the growing storm. | The sky ahead is ominously dark, but so far the rain has held off.| The sound of thunder grows louder.}
@@ -351,6 +356,7 @@ SCENE 01
        
             
 === stil_continue_to_laketown ===
+// SND Storm even closer
     -   They anxiously search the horizon for signs of shoreline.  Although the thunder is loud and visibility is reduced, the friends are still dry and have not been impacted directly by the storm.
     
         * [After a while, Troy becomes troubled.]
@@ -367,6 +373,7 @@ SCENE 01
 
 == lightning_strike_occurs ==
 VAR is_radio_damaged = true
+// SND kill engine sound, keep storm going
 
     -   CHR_MIA_SUR
     -   CHR_JUL_SUR

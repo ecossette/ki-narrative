@@ -12,6 +12,7 @@ SCENE 02
 
 
 == avoid_storm ==
+// SND storms continue sounding in distance
     - CHR_TRO_REL
     - "We'll head East-Northeast toward Brodaht Island," says Troy pushing the wheel over. "That was on the edge of the watch area, so we should be safe there."
     
@@ -91,6 +92,7 @@ SCENE 02
             
      
 == speed_up ==
+// SND storms close and far, try to create sense that there are multiple storms at various distances
     - CHR_TRO_REL
     - Troy nudges the throttle forward, trying to gain some distance on the rapidly approaching storms. This will increase his fuel consumption, but he considers the risk worthwhile. 
     
@@ -173,6 +175,7 @@ SCENE 02
                 -     -> opts
 
 == enter_the_fog ==
+// SND boat motor sound should be low RPM here, storms distant but there
     -   CHR_TRO_REL
     -   Troy slows the <i>Lakesong</i> to a crawl, as the fog envelopes the boat. The three friends continue acting as lookouts—Alexis on the bow, Mia on port, and Julian on starboard.        
         
@@ -237,6 +240,7 @@ SCENE 02
                 -> run_aground
                 
 == run_aground == 
+// SND cut engine sounds
         -   CHR_TRO_ANG
         -   "We've run aground!" says Troy.
         
@@ -396,6 +400,7 @@ SCENE 02
     -   "Now that we're clear of the sandbar," Troy says to the three friends who are still gathered on the stern. "I'm going to start the engine to make sure everything is OK after our mishap."
     
             * Troy starts the engine[.], and lets it idle, listening for anything that sounds out of the ordinary. 
+// SND engine idle/low
         
                 ** [The fog remains very thick.]
                 -> start_engine_and_fog
@@ -464,6 +469,7 @@ SCENE 02
                 -> hear_nothing
     
     = hear_nothing
+// SND storms more distant than before
     -   CHR_ALX_SML
     -   CHR_MIA_SML
     -   "Just the the same old thunder in the distance," says Mia. 
@@ -515,6 +521,7 @@ SCENE 02
     = holy_crap_co
     -   CHR_JUL_SAD
     -   CHR_TRO_ANG
+// SND kill engine
     -   Tro immediately cuts off the engine. 
         "Julian, move away from the stern right now!" yells Troy.
        

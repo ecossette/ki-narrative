@@ -179,9 +179,12 @@ VAR explore_island = true
         
         
 == on_paddeboards ==
+// SND paddling
     -   Troy and Mia navigate one board, while Alexis and Julian take the other. 
                         
             * They arrive on the small beach[.], and a few things immediately catch their attention as they look around.
+
+// SND mysterious island
         
            
             - (opts)
@@ -235,10 +238,10 @@ VAR explore_island = true
     
         "Let's see where the path leads!" she says 
     
-            *   [Follow the path. It's still too foggy to boat away from the island.]
+            *   [Follow the path as it's still too foggy to boat away from the island.]
                 -> follow_the_path
             
-            *   [Return to the <i>Lakesong</i> and wait for the fog to clear.]
+            *   [Return to the boat and wait for the fog to clear.]
                 -> return_boat_wait
     
     = return_boat_wait 
@@ -249,16 +252,14 @@ VAR explore_island = true
             
                             
     = follow_the_path 
-    -   CHR_JUL_SML
+    -   CHR_JUL_REL
     -   Alexis, Mia, and Troy walk toward the start of the path.
         
-            * ["Hey, hold up," says Julian.]
-                -> jul_hold_up
-    = jul_hold_up
-    -   CHR_JUL_REL
-        "Maybe I should stay behind to, you know, look after the boat?"
+           "Hey, hold up," says Julian.  "Maybe I should stay behind to, you know, look after the boat?"
+  
+       
         
-            * ["The <i>Lakesong</i> will be fine."] 
+            * ["The  boat will be fine," says Troy.] 
                 -> boat_well_anchored
                 
                    
@@ -266,14 +267,9 @@ VAR explore_island = true
    = boat_well_anchored
     -   CHR_TRO_REL
     -   CHR_JUL_REL
-    -   "The boat is well-anchored," says Troy. "Besides I think it's safer if we all stick to together."
+    -   "The <i>Lakesong</i> is well-anchored," he says. "Besides I think it's safer if we all stick to together."
         
-        * ["Well, since you put it that way, bro."]
-                    -> jul_since_that_way
-    
-     = jul_since_that_way
-    -   CHR_JUL_SML
-    -   "I mean if the boat is OK and all," says Julian, catching up with his friends as they set off.  
+      "Well, since you put it that way, bro," says Julian. "I mean if the boat is OK and all." Julian falls into lines with his friends as they walk to the start of the path. 
     
             * [Down the path.]
                 -> enter_the_path

@@ -23,6 +23,7 @@ SCENE 05
                 -> make_way_laketown
     
     = make_way_laketown
+// general open water sounds
     -   The Lakesong cruises south toward Laketown as a beautiful sunset fills the western sky. 
                         
         * [The friends discuss what happened.]
@@ -124,7 +125,7 @@ SCENE 05
                 
         = tro_points_photo
         -   CHR_TRO_SUR
-        -   "Something mechanical." Troy points to a spot on the photo. "Look here... That looks like a propeller." Alexis nods in agreement but Julian looks doubtful. 
+        -   "Something mechanical." Troy points to a spot on the photo. "Look here... To me that looks like a propeller." Alexis nods in agreement but Julian looks doubtful. 
                               
             * ["Could be," says Mia.]
                 -> when_home_photo
@@ -162,8 +163,10 @@ SCENE 05
                             -> return_marina_day_one
                         
 === return_marina_day_one
+// SND bring in dock sounds
+// SND no bird sounds since it's after dark
     -   CHR_MPO_REL
-    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The keeps gesturing toward an empty slip while woman looks on with a sad expression. Captain Garcia nods and takes notes.
+    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The keeps gesturing toward an empty slip, while woman looks on with a sad expression. Captain Garcia nods and takes notes.
                     
             *   [Dock the Lakesong.] 
                 // launch the docking activity again Here
@@ -171,6 +174,7 @@ SCENE 05
                 -> after_docking_ahoy
                 
 == after_docking_ahoy
+// SND kill engine sound but keep regular dock sounds
     -   CHR_TRO_REL
     -   With the Lakesong successfully docked, Troy instructs his three friends on the tasks needed to secure the boat for the night.
     
