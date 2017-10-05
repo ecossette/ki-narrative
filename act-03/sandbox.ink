@@ -2,7 +2,47 @@ VAR robbery_question_loop = true
 VAR ask_robbery_questions = false
 
 
--> test_loop
+-> know_else_strange
+
+=== know_else_strange ===
+        - CHR_MIA_REL
+        - CHR_ALX_REL
+        - Mia points high over the island. "Look at those strange birds over there in the distance."
+        Alexis nods in agreement and makes a couple observations.
+
+        - (opts)
+            *    ["They don't fly like birds."]
+                -- CHR_ALX_REL
+                "They're flying more like a swarm than a flock..." -> creatures
+
+            *    (creatures) ["They don't sound like birds."] {Alexis notices something else. "And that sound! Birds don't buzz like that."| says Alexis, "more like really large bees."}
+
+            *    {creatures} ["Those are the creatures!"] -> coming_this_way_fast
+
+        -     -> opts
+
+        = coming_this_way_fast
+        -   CHR_JUL_SUR
+
+
+== is_ki == 
+    -   CHR_JUL_SML
+    -   CHR_TRO_REL
+    -   "That's doubtful," says Troy. "There are <i>hundreds</i> of islands scattered all over the lake."
+
+             - (opts)
+                * [Julian is certain.]
+                -- CHR_JUL_SAD
+                "The evidence is clear," says Julian. -> fog
+
+                * (fog) ["C'mon, Troy, look..."] {"Going north? Check. Fog? Check. Loss of cell signal? Check."| He looks at Mia and Alexis for support, but neither says a word.}
+
+                * {fog} [Troy isn't convinced.] -> tro_not_convinced
+
+            -   -> opts
+
+== tro_not_convinced ==
+- temp
 
 == test_loop ==
 
