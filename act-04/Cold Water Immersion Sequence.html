@@ -11,77 +11,951 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Cold Water Immersion Sequence" startnode="5" creator="Twine" creator-version="2.0.11" ifid="EFE38ED5-BC2E-4E8A-A073-C4101D727EBA" format="Harlowe" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Floating in water" tags="" position="406,107">[[has tether]]
+<tw-storydata name="Cold Water Immersion Sequence" startnode="78" creator="Twine" creator-version="2.0.11" ifid="EFE38ED5-BC2E-4E8A-A073-C4101D727EBA" format="Harlowe" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+
+
+
+
+
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+
+
+
+
+
+
+
+</script><tw-passagedata pid="1" name="Floating in water" tags="" position="482,107">[[has tether]]
 [[doesn&#39;t have tether]]
 
 [[kayaks overturn]]</tw-passagedata>
-<tw-passagedata pid="2" name="has tether" tags="" position="471,275">[[signal in pocket]] 
-[[cannot signal for help]] </tw-passagedata>
-<tw-passagedata pid="3" name="doesn&#39;t have tether" tags="" position="316,275">[[kayak floats away]]</tw-passagedata>
-<tw-passagedata pid="4" name="kayak floats away" tags="" position="316,425">[[signal in pocket]]
-[[signal in bag]]</tw-passagedata>
-<tw-passagedata pid="5" name="kayaks overturn" tags="" position="231,62">[[Floating in water]] </tw-passagedata>
-<tw-passagedata pid="6" name="signal in pocket" tags="" position="432,550">[[no kayak, hypothermia severe]]
-[[has kayak, hypothermia mild]]</tw-passagedata>
-<tw-passagedata pid="7" name="signal in bag" tags="" position="151,586">[[cannot signal for help]]
+<tw-passagedata pid="2" name="has tether" tags="" position="471,250">With the tether, they can stay with the kayaks which helps reduce cold water exposure.
+
+But we need to check if they can signal for help, i.e, they needed to choose a signal--whistle or VDS--before setting off.
+
+If has a signal and signal accessible
+	good: [[has signal has kayak]] 
+
+If has signal and not accessible OR doesn&#39;t have signal
+	bad: [[has signal no has kayak]] </tw-passagedata>
+<tw-passagedata pid="3" name="doesn&#39;t have tether" tags="" position="298,232">Without a tether, the kayaks float away (after they lose grip in cold water.
+
+
+[[kayak floats away]]</tw-passagedata>
+<tw-passagedata pid="4" name="kayak floats away" tags="" position="215,425">The kayaks float away.
+
+If has a signal and signal accessible
+	good: [[has signal no has kayak]] 
+
+If has signal and not accessible OR doesn&#39;t have signal
+	bad: [[no has signal no has kayak]] 
+
 </tw-passagedata>
-<tw-passagedata pid="8" name="cannot signal for help" tags="" position="145,801">Long wait for rescue
-Severe hypothermia
-
-[[Rescue occurs]]
-</tw-passagedata>
-<tw-passagedata pid="9" name="no kayak, hypothermia severe" tags="" position="372,690">long wait
-
-[[Rescue occurs]] </tw-passagedata>
-<tw-passagedata pid="10" name="has kayak, hypothermia mild" tags="" position="530,690">Short wait
-
-[[Rescue occurs]] </tw-passagedata>
-<tw-passagedata pid="11" name="Rescue by Mia and Alexis" tags="" position="1010,13">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="12" name="Rescue Cletus(bad)" tags="" position="1010.0001,138">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="13" name="Rescue Cletus (good)" tags="" position="1011,263">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="14" name="Rescue I&amp;M" tags="" position="1012,402">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="15" name="Rescue by Mac" tags="" position="1014,531">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="16" name="weather conditions" tags="" position="415,939">[[fog clears]]
+<tw-passagedata pid="5" name="kayaks overturn" tags="" position="329,82">[[Floating in water]] </tw-passagedata>
+<tw-passagedata pid="6" name="weather conditions" tags="" position="67,843">[[fog clears]]
 [[fog persists]]</tw-passagedata>
-<tw-passagedata pid="17" name="fog clears" tags="" position="474,1097">RANDOMIZER
+<tw-passagedata pid="7" name="fog clears" tags="" position="361,1101">Shortly after the fog clears, Mia and Alexis see a single object high overhead. They suspect it is a drone. 
 
- [[drones appear]]
+A short while later, the player chooses what happens next (or do we make this a random shuffle?)
+
+ [[drone creatures appear]]
 
  [[ see VDS flare ]]
 
  [[ see signal mirror]]</tw-passagedata>
-<tw-passagedata pid="18" name="fog persists" tags="" position="335,1096">[[hear fog horn]]</tw-passagedata>
-<tw-passagedata pid="19" name="drones appear" tags="" position="474,1247">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="20" name=" see VDS flare " tags="" position="624,1250">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="21" name=" see signal mirror" tags="" position="774,1247">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="22" name="hear fog horn" tags="" position="335,1246">respond with own horn
+<tw-passagedata pid="8" name="fog persists" tags="" position="213,1137">[[hear fog horn]]</tw-passagedata>
+<tw-passagedata pid="9" name="drone creatures appear" tags="" position="499,1469">Per previous instructions from Troy, if they drones appear Alexis is to give them a ruse--she&#39;ll take the Lakesong due south away from the island then, after the drones give up the chase, make a long, slow loop back toward the cove. 
 
-[[ discover Mac ]]
-[[ discover Cletus(bad) ]]
-[[ discover Cletus(good)]]
-[[ discover I&amp;M]]
-</tw-passagedata>
-<tw-passagedata pid="23" name=" discover Mac " tags="" position="81,1260">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="24" name=" discover Cletus(bad) " tags="" position="91,1419">Cletus is on a PWC. 
-
-[[Cletus says go]] </tw-passagedata>
-<tw-passagedata pid="25" name=" discover Cletus(good)" tags="" position="251,1415">Cletus says need to get away from there. Not safe. 
-
-[[Cletus says go]]</tw-passagedata>
-<tw-passagedata pid="26" name=" discover I&amp;M" tags="" position="390,1403">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="27" name="Rescue occurs" tags="" position="838,826">Was a long wait.
-
-Was a short wait.</tw-passagedata>
-<tw-passagedata pid="28" name=" fog clears " tags="" position="76,1797">Cletus tows his PWC.
-Takes over Lakesong. 
-Calls on walky talky.
+As she loops back, we&#39;ll randomize what happens...
+	[[Randomizer after drawn from cove]]
 
 </tw-passagedata>
-<tw-passagedata pid="29" name="Cletus says go" tags="" position="251,1565">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="30" name="Julian unconscious " tags="" position="1205,121">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="31" name="Troy unconscious" tags="" position="1202,262">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="32" name="Both unconscious" tags="" position="1199,408">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="33" name="Rescue Mac (bad)" tags="" position="1015,678">Double-click this passage to edit it.</tw-passagedata>
+<tw-passagedata pid="10" name=" see VDS flare " tags="" position="624,1382">They see a VDS flare in the far distaince indicating a boater in trouble, however the direction the flare is not where they would be expecting to see Julian and Troy. It&#39;s too far away and in the opposite direction.
+
+Alexis and Mia have to consider the following and then make a decision:
+
++ they are obligated to help another boater unless doing so puts them or their passengers in danger.
+
++ while it is unlikely considering the distance and direction, the signal could be from Julian and Troy.
+
++ if it the signal isn&#39;t from Julian/Troy, then leaving the cove could actually be dangerous for Julian/Troy as they could miss out on recovering them after their kayak mission; that would release them of their duty to help the other boater in distress.
+
+
+The player must choose:
+
+	If investigate the signal,
+		[[Randomizer after drawn from cove]]
+
+	Else,
+		[[Don&#39;t investigate signal]]</tw-passagedata>
+<tw-passagedata pid="11" name=" see signal mirror" tags="" position="825,1406">They see a flashing in the far distance which *might* be from a signal mirror indicating a boater in trouble, however the direction the signal is coming from is not where they would be expecting to see Julian and Troy. It&#39;s too far away and in the opposite direction.
+
+Alexis and Mia have to consider the following and then make a decision:
+
++ they are obligated to help another boater unless doing so puts them or their passengers in danger.
+
++ while it is unlikely considering the distance and direction, the signal could be from Julian and Troy.
+
++ if it the signal isn&#39;t from Julian/Troy, then leaving the cove could actually be dangerous for Julian/Troy as they could miss out on recovering them after their kayak mission; that would release them of their duty to help the other boater in distress.
+
+
+The player must choose:
+
+	If investigate the signal,
+		[[Randomizer after drawn from cove]]
+
+	Else,
+		[[Don&#39;t investigate signal]]</tw-passagedata>
+<tw-passagedata pid="12" name="hear fog horn" tags="" position="354,1360">After hearing the fog horn, Mia and Alexis are compelled (per boating safety best practices) to respond with their own horn.
+
+After several more horn exchanges, the player is given a choice:
+
+	See another boat appear out of the fog
+	Never see the other boat which fades back into the fog.
+
+If choose see other boat, we&#39;ll randomize who is in the other boat,
+
+	[[ discover Mac ]]
+	[[ discover Cletus]]
+	[[ discover I&amp;M]]
+
+Else if choose never see other boat, we&#39;ll return to the cove and wait.
+
+	[[Return to cove and wait]] </tw-passagedata>
+<tw-passagedata pid="13" name=" discover Mac " tags="" position="79,1274">&quot;Guess it&#39;s no suprise to run into you out here,&quot; says Mia. &quot;How&#39;s the fishing.&quot;
+
+&quot;Fair to midling,&quot; says Mac. &quot;You folks doing some fishing yourselves?&quot; Mac smiles. 
+
+
+[[Where are the boys?]]</tw-passagedata>
+<tw-passagedata pid="14" name=" discover Cletus" tags="" position="220,1407">&quot;What are you doing out here? Thought you were scared of the mutant creatures.&quot;
+
+&quot;Deathly scared,&quot; says Cletus. &quot;But them mutants can&#39;t fly in the fog and there&#39;s some pretty good fishing out this way. Might I should ask you the same question though. What are you doing out here?&quot;
+
+[[Where are the boys?]]</tw-passagedata>
+<tw-passagedata pid="15" name=" discover I&amp;M" tags="" position="273.0001,1532">&quot;What are you doing out here?&quot;
+
+&quot;Oh, probably the same as you. Looking for clues for that reward.&quot;
+
+[[Where are the boys?]]</tw-passagedata>
+<tw-passagedata pid="16" name="Rescue occurs" tags="" position="655,600">If the wait was short and Mia and Alexis were delayed
+	jump to rescue shuffle
+	
+If the wait was short and Mia and Alexis were NOT delayed
+
+	[[Rescue by Alx and Mia]] 
+	
+	
+If the wait was long
+
+	Shuffle the possibilities for how can rescue. (The premise is they were difficult to see in the water and others were in area either by chance or because they were also looking for Julian and Troy.)
+	
+	We&#39;ll randomize who finds them
+	
+
+	[[ Rescue Cletus]] 
+	[[ Rescue I&amp;M]] 
+	[[ Rescue by Mac]] 
+	// Mia and Alexis are also a possibility 
+
+
+</tw-passagedata>
+<tw-passagedata pid="17" name="Julian unconscious" tags="" position="1315,169">[[Medavac to hospital]]</tw-passagedata>
+<tw-passagedata pid="18" name="Troy unconscious" tags="" position="1323,331">[[Medavac to hospital]]</tw-passagedata>
+<tw-passagedata pid="19" name="Both unconscious" tags="" position="1320,456">[[Medavac to hospital]]</tw-passagedata>
+<tw-passagedata pid="20" name="see pwc on beach" tags="" position="559,1656">
+If came here via drones
+	escape drones and circle back the see...
+
+Else
+	never find the source of the signal but see..
+	
+See pwc on the island beach
+
+[[creates possibility others involved]]</tw-passagedata>
+<tw-passagedata pid="21" name="see mac on beach" tags="" position="411,1630">If came here via drones
+	escape drones and circle back the see...
+
+Else
+	never find the source of the signal but see..
+	
+See Mac on the beach (through binoculars)
+
+
+
+[[creates possibility others involved]]</tw-passagedata>
+<tw-passagedata pid="22" name="Randomizer after drawn from cove" tags="" position="642.0001,1511">After being drawn from the cove (by drones) or having choosen to investigate a possible distress signal, we&#39;ll randomize what Mia and Alexis see next:
+
+
+
+[[see mac on beach]]
+
+[[see cletus on beach]] 
+
+[[see pwc on beach]]
+
+[[see mac boat distance]]
+
+[[see I&amp;M boat distance]]
+
+[[See nothing]] </tw-passagedata>
+<tw-passagedata pid="23" name="see mac boat distance" tags="" position="870,1773">If came here via drones
+	escape drones and circle back the see...
+
+Else
+	never find the source of the signal but see..
+	
+See Mac on boat in distance (through binoculars)
+
+
+
+
+
+[[creates possibility others involved]]</tw-passagedata>
+<tw-passagedata pid="24" name="see I&amp;M boat distance" tags="" position="1038.0001,1766">If came here via drones
+	escape drones and circle back the see...
+
+Else
+	never find the source of the signal but see..
+	
+See Ian and Maura on boat in distance (through binoculars)
+
+
+
+[[creates possibility others involved]]</tw-passagedata>
+<tw-passagedata pid="25" name="Don&#39;t investigate signal" tags="" position="923,1193">They choose not to investigate the signal.
+
+The signle drone continues to fly high overhead.
+
+[[Return to cove and wait]] </tw-passagedata>
+<tw-passagedata pid="26" name="Mystery Unsolved" tags="" position="3559,569">Contratulatory text here along lines of...
+
+For now The Mystery of Kalkomey Isle remains unsolved, but with {if accomplice is not Mac: Detective Mac else: Captain Garcia} and the police on the case, its only a matter of time before the thieves are brought to justice.
+
+Meanwhile, you&#39;ve completed all your boating safety achievements and are now ready to take the final exam.
+
+Will include all the badges/congrats splash screen.
+
+[[Proceed to Final Exam]] </tw-passagedata>
+<tw-passagedata pid="27" name="Medavac to hospital" tags="" position="1460,402">[[Mia and Alexis pilot back to dock]]</tw-passagedata>
+<tw-passagedata pid="28" name="Pilot Lakesong Back to dock" tags="" position="1412,711">The &#39;encounter&#39; mini-game is played. 
+
+Final docking mini is played.
+
+All boat education badges are 100% complete.
+
+[[Full memory after rescue]] </tw-passagedata>
+<tw-passagedata pid="29" name="Both OK" tags="" position="1208,706">Result of quick rescue and/or proper survival methods and equiptment. 
+
+If player followed Mia/Alexis path, we&#39;ll provide exposition about the above since player will not have experienced the problems/solutions of Julian and Troy on their kayak journey.  
+			
+
+[[Pilot Lakesong Back to dock]]</tw-passagedata>
+<tw-passagedata pid="30" name="Full memory after rescue" tags="" position="1601,725">[[Tell Police Everything]] </tw-passagedata>
+<tw-passagedata pid="31" name="Radio Lakesong to Inform of Rescue" tags="" position="1072,406">Will actually combine these two events in INK:
+check health and then radio Lakesong.
+
+
+[[Victim Health Check]]</tw-passagedata>
+<tw-passagedata pid="32" name="Friends Split Up" tags="" position="61.0001,203">Recap that plan is to split up.
+Julian and Troy wil
+
+[[Mia and Alexis stay with boat]]
+[[Julian and Troy investigate island]]</tw-passagedata>
+<tw-passagedata pid="33" name="Julian and Troy investigate island" tags="" position="186,90">After leaving the Lakesong Julian and Troy:
+
++ discover hidden/secret tributary leading deeper into island
++ they follow the tributary in their kayaks it goes deeper and deeper into island. 
++ they hear sounds, mechanical around a bend in tributary
++ leave kayaks and investigate on foot, making slow progress through the dense forest undergrowth
++ eventually they see a cave where several people are working on a boat. &quot;It&#39;s a boat chop shop. Those are the boat thieves!&quot;
++ &quot;And look that&#39;s--&quot; before Julian can say who it is Troy interrupts, &quot;yes but sshhhh... We can&#39;t let them hear us.&quot;
++ &quot;Look someone&#39;s coming.&quot; A small boat motors into view. They can&#39;t see who is driving. &quot;You&#39;ll never guess what I just found&quot; the boat driver says as he pulls into the cave but they can&#39;t hear anymore over the sounds of work. The voices are muffled.
++ Julian and Troy slowly and quietely return to their kayaks. 
++ they paddle back out into the cove 
+
+
+
+[[kayaks overturn]]</tw-passagedata>
+<tw-passagedata pid="34" name="Mia and Alexis stay with boat" tags="" position="61,359">[[weather conditions]]</tw-passagedata>
+<tw-passagedata pid="35" name="creates possibility others involved" tags="" position="809,1969">[[Return to cove and wait]] </tw-passagedata>
+<tw-passagedata pid="36" name="Where are the boys?" tags="" position="140,1552">Whomever they encounter will ask will ask why Mia and Alexis are by themselves?
+
+If I&amp;M
+	Maura say, &quot;I certainly wouldn&#39;t want to kayak out here. This water is freezing!&quot;
+
+Where are your two friends, the guys?
+
+Whomever they encounter will take notice of the missing kayaks and will say something like &quot;Didn&#39;t you have kayaks in those racks when I saw you this morning at the marina?&quot;
+
+This will set up two possible later outcomes:
+
+1. Whomever they encounter might suspect the guys are investigating the island on kayaks. 
+
+2. Mia and Alexis may suspect that whomever they encounter is somehow involved in the boat robberies. 
+
+
+[[creates possibility others know boys on island]]</tw-passagedata>
+<tw-passagedata pid="37" name="creates possibility others know boys on island" tags="" position="287,1755">[[Return to cove and wait]] </tw-passagedata>
+<tw-passagedata pid="38" name="Return to cove and wait" tags="" position="717,861">If returning to cove from fog condition where player choose not to encounter another boat, we&#39;ll clear the fog.
+
+	[[fog clears]] 
+	
+Else,
+(will need some brief exposition here to account for possible waiting, i.e, if we know it&#39;s going to be a long wait because of conditions already established vis-a-vis the boys and their kayaks, will need to establish that Mia and Alexis are getting anxious/worried.)
+
+	[[Rescue occurs]] 
+	
+	
+
+Also we&#39;ll check here to see what player has seen already based on previous choice to follow Julian and Troy in the kayaks or follow Mia and Alexis in the Lakesong.</tw-passagedata>
+<tw-passagedata pid="39" name="Victim Health Check" tags="" position="1135,558">If condition is severe
+	shuffle 50/50 both or 1 of the 2
+
+	[[Both unconscious]]
+	[[Troy unconscious]]
+	[[Julian unconscious]]
+	
+If condition is moderate
+	
+	neither unconcious but need immediate medical attention
+	
+[[ both conscious, need med]]</tw-passagedata>
+<tw-passagedata pid="40" name="Rescue by Alx and Mia" tags="" position="903,682">If the wait was short,
+	we know 
+		[[Both OK]]
+
+Else wait was wrong and we need to do a
+	[[Victim Health Check]]</tw-passagedata>
+<tw-passagedata pid="41" name="Mia and Alexis pilot back to dock" tags="" position="1504,534">Mia and Alexis proceed back to the dock in Laketown along while the helicopter takes Julian and Troy directly to the hospital.
+
+
+The &#39;encounter&#39; mini-game is played. 
+
+Final docking mini is played.
+
+[[Learn status of J &amp; T]] </tw-passagedata>
+<tw-passagedata pid="42" name="Learn status of J &amp; T" tags="" position="1638,533">At the dock they are met by Captain Garcia.
+
+Learn who rescued Julian and Troy if it wasn&#39;t Mia and Alexis.
+
+If player followed Mia and Alexis
+	then will need to provide exposition on what went wrong on the kayak path that caused them to trouble e.g., couldn&#39;t signal and/or didn&#39;t have kayaks which lead to long exposure in cold water. The police can present this as part of &#39;who rescued exposition&#39; e.g., &quot;they were found without their kayaks and with no signaling device.&quot;
+		if Mia and Alexis recall them taking some signal device
+			then police can suggest maybe in drybag that was lost 				with kayaks
+			
+			
+Else continue...
+
+[[Police ask why there?]] </tw-passagedata>
+<tw-passagedata pid="43" name="suspect Mac" tags="" position="2578,629">[[Thanks for info]] </tw-passagedata>
+<tw-passagedata pid="44" name="suspect I&amp;M" tags="" position="2586,446">[[Thanks for info]] </tw-passagedata>
+<tw-passagedata pid="45" name="suspect Cletus" tags="" position="2619,257">[[Thanks for info]] </tw-passagedata>
+<tw-passagedata pid="46" name="Tell Police Everything" tags="" position="1785,739">Troy and Julian recount their tale to the police, including seeing Mr. Willard in the cave with the stolen boats.
+
+Captain Garcia initiates an immediate police search of Kalkomey Island. 
+
+If saw something = true
+	[[M&amp;A saw something]]
+If nothing or only saw drones
+	[[M&amp;A saw nothing]]</tw-passagedata>
+<tw-passagedata pid="47" name="See nothing" tags="" position="963,1509">Then see nothing out of the ordinary after either following possible signal or being drawn from the area near cove by a signal.
+
+
+[[Return to cove and wait]] </tw-passagedata>
+<tw-passagedata pid="48" name="Mystery Partially Solved" tags="" position="3562,713">Brief recap that the mystery is partially solved.
+
+Willard in custody but conviction not certain and so far no accomplices. 
+
+Game ends here with student player congratulated for role played in partically solving mystery and for completing their boating education requirements. 
+
+All that is need is to complete the final exam.
+
+[[Proceed to Final Exam]] </tw-passagedata>
+<tw-passagedata pid="49" name="Proceed to Final Exam" tags="" position="3766,647">Students will be shunted outside of the Unity game environment here to be handed off to the LMS for the final and/or practice final. </tw-passagedata>
+<tw-passagedata pid="50" name="Mystery Solved" tags="" position="3560,855">
+
+
+
+
+
+
+Congrats splash screen on solving the mystery and completing all the boating achievement awards.
+
+Now there is just one more step before getting your boater education certificate.... take the final.
+
+Don&#39;t worry, completing the adventure has prepared you well-prepared.
+
+[[Proceed to Final Exam]] </tw-passagedata>
+<tw-passagedata pid="51" name="nobody suspect" tags="" position="2453,746">[[Thanks for info]] </tw-passagedata>
+<tw-passagedata pid="52" name="Thanks for info" tags="" position="2783.3333333333335,711.6666666666667">If suspected someone....
+	Captain Garcia notes what the friends have told him.
+
+	&quot;Thanks, we&#39;ll look into that.&quot;
+	
+Else if no suspect,
+	&quot;If you think of or remember something else, call us ASAP.&quot;
+
+[[accomplice randomizer]]</tw-passagedata>
+<tw-passagedata pid="53" name="accomplice randomizer" tags="" position="2930,718">We will randomize who the accomplice is.
+
+// purpose of randomization is to vary the possible endings among students playing the game (and taking the course) so there are fewer chances of &quot;spoilers.&quot; 
+
+ I think we need to preclude rescuer from being game-selected as accomplice //
+
+
+
+Accomplice is Cletus (60% chance)
+Accomplice is Ian and Maura (30% chance)
+Accomplice is Mac (10% chance)
+
+
+[[Solving Logic]] </tw-passagedata>
+<tw-passagedata pid="54" name="no has signal no has kayak" tags="" position="218,574">//Having the kayak is generally a helpfulthing, but we&#39;ll figure that out via the coming logic //
+
+[[Long rescue wait logic]] </tw-passagedata>
+<tw-passagedata pid="55" name="has signal has kayak" tags="" position="658,255">Having both a way to signal and ability to use kayak to keep body out of water (and makes more likely to be seen) they are eligible for a short wait for rescue.
+
+[[short wait rescue]]
+
+</tw-passagedata>
+<tw-passagedata pid="56" name="has signal no has kayak" tags="" position="411,425">//Losing the kayak is a a bad thing, but we&#39;ll figure that out via the coming logic //
+
+[[Long rescue wait logic]]</tw-passagedata>
+<tw-passagedata pid="57" name="short wait rescue" tags="" position="621,436">[[Rescue occurs]]</tw-passagedata>
+<tw-passagedata pid="58" name=" Rescue Cletus" tags="" position="905,211">[[Radio Lakesong to Inform of Rescue]]  </tw-passagedata>
+<tw-passagedata pid="59" name=" Rescue I&amp;M" tags="" position="897,527">[[Radio Lakesong to Inform of Rescue]]</tw-passagedata>
+<tw-passagedata pid="60" name=" Rescue by Mac" tags="" position="903,378">[[Radio Lakesong to Inform of Rescue]]</tw-passagedata>
+<tw-passagedata pid="61" name=" both conscious, need med" tags="" position="1325,581">[[Medavac to hospital]] </tw-passagedata>
+<tw-passagedata pid="62" name="see cletus on beach" tags="" position="692,1693">If came here via drones
+	escape drones and circle back the see...
+
+Else
+	never find the source of the signal but see..
+	
+See Cletus on the beach (through binoculars)
+
+
+
+[[creates possibility others involved]]</tw-passagedata>
+<tw-passagedata pid="63" name="no memory at all" tags="" position="1891,358">The police say that neither Julian nor Troy have any memory of what happened while they were kayaking. 
+
+The police ask if Mia or Alexis saw anything while they were near the island.
+
+
+If player followed the Mia and Alexis path, the game will print what they saw based on the knot played.
+
+	[[M&amp;A saw something]] (other than drones)
+	
+Else if player followed kayak path we&#39;ll do a shuffle and return one of these
+
+	M&amp;A saw something (link above)
+	[[M&amp;A saw nothing]] (or saw only drones)
+			</tw-passagedata>
+<tw-passagedata pid="64" name="limited memory" tags="" position="1901,519">Captain Garcia informs them that only one the two gentleman have any memory of what happened.
+
+
+	Mr. Iglesias--Julian--has limited memory.
+		[[Julian recalls tributary]]
+	
+	Mr. Spaulding--Troy--has limited memory.
+		[[Troy recalls cave]]</tw-passagedata>
+<tw-passagedata pid="65" name="M&amp;A saw something" tags="" position="2218,370">If NOT rescued by Mia and Alexis:
+
+
+	  If who they saw is same as who rescued:
+		  &quot;Lucky {who_saw} was out there to find your friends 		when they did. A few minutes longer and they may have died.&quot;
+		  go to continue
+
+	  Else if who they saw is not same as who rescued:
+		&quot;Kalkomey Island sure was a busy place today,&quot; says 			Captain Garcia.
+		go to continue
+
+Else if rescue by Mia and Alexis
+
+	They explain what they saw. 
+		go to continue
+	
+
+=== continue ===
+If {who_saw} is I&amp;M:
+(will mention if seen at distance or up close in fog)
+	&quot;That&#39;s the same couple caught in the Circle of Death yesterday, right?&quot; 
+	if rescued by I&amp;M
+	&quot;Yes, I guess that makes us even.&quot;
+	else
+	&quot;Yes.&quot;
+	
+	&quot;There not from around here, are they?&quot; Captain Garcia asks.
+	
+	&quot;No, they&#39;re from Oceanside. They&#39;re living on a houseboat.&quot;
+	
+
+
+If {who_saw} is Mac:
+(will mention if seen distance, on beach, or up close in fog)
+	&quot;Mac?&quot;
+	&quot;He&#39;s that guy with the beard who lives out on and island. As least that&#39;s what he told us.&quot;
+	&quot;You have any reason not to believe him?
+	&quot;No, not really.&quot;
+	
+	
+	He told us he likes to fish up in the north part of the lake.&quot;
+	Captain Garcia continues writing in his notebook. 
+	
+
+If {who_saw} is Cletus:
+(will mention if seen distance, on beach, or up close in fog)
+&quot;Cletus, the dock hand?&quot; Captain Garcia seems surprised. &quot;How well do you know him?&quot;
+&quot;We ran into him at Willard&#39;s store. He told us to stay away from Kalkomey Island.&quot;
+
+
+If {who_saw} is the PWC on beach:
+	&quot;But no idea who&#39;s it belonged, too.&quot;
+	&quot;No.&quot;
+	If friends had ventured to beach in act 3:
+	&quot;If I recall that&#39;s a fairly small beach, and I&#39;d always heard the undergrowth on Kalkomey Isle really thick.&quot;
+		Mention the path.
+			we&#39;ll set a variable here that can help for mystery solve later
+		Don&#39;t mention the path.
+		
+
+[[anything else to add?]]
+		
+
+Captain Garcia thanks them and asks that if they think of or remember anything else to contact him ASAP.</tw-passagedata>
+<tw-passagedata pid="66" name="M&amp;A saw nothing" tags="" position="2309,520">
+If what they saw were drones:
+	We only saw more drones.
+	Capt. Garcia notes this.
+	
+Else
+	Neither Mia nor Alexis saw anything on while waiting for Julian and Troy. 
+	
+[[anything else to add?]] </tw-passagedata>
+<tw-passagedata pid="67" name="Julian recalls tributary" tags="" position="2031,632">Julian recalls finding the hidden tributary that led furhter into the island but he doesn&#39;t remember any details. Troy has no memory of anything after leaving the Lakesong and waking up in the hosptital. 
+
+The police ask if Mia or Alexis saw anything while they were near the island.
+
+
+If player followed the Mia and Alexis path, the game will print what they saw based on the knot played.
+
+	[[M&amp;A saw something]] (other than drones)
+	
+Else if player followed kayak path we&#39;ll do a shuffle and return one of these
+
+	M&amp;A saw something (link above)
+	[[M&amp;A saw nothing]] (or saw only drones)</tw-passagedata>
+<tw-passagedata pid="68" name="Troy recalls cave" tags="" position="2031,499">Troy recalls seeing a cave but his memory is fuzzy. Julian can remember nothing.
+
+&quot;Hmm... maybe the cave is where they launch the drones from.&quot;
+
+&quot;If they are drones,&quot; Captain Garcia says. 
+
+The police ask if Mia or Alexis saw anything while they were near the island.
+
+
+If player followed the Mia and Alexis path, the game will print what they saw based on the knot played.
+
+	[[M&amp;A saw something]] (other than drones)
+	
+Else if player followed kayak path we&#39;ll do a shuffle and return one of these
+
+	M&amp;A saw something (link above)
+	[[M&amp;A saw nothing]] (or saw only drones)</tw-passagedata>
+<tw-passagedata pid="69" name="Police ask why there?" tags="" position="1767,534">Mia and Alexis tell Captain Garcia they suspected that Kalkomey Isle had something to do with the robberies.
+
+They fill captain garcia in on what they saw yesterday including the flying creatures and dissappearing boat.
+
+&quot;And you didn&#39;t think to tell the police this info?&quot;
+
+&quot;We thought you&#39;d think we were crazy or just imagining things... we wanted to get more info on our own before saying more. THat&#39;s why we went out there today.&quot;
+
+They ask what the guys told them.
+
+Captain Garcia says that the cold water immersion and loss of conciousness has affect their memories.
+
+Their unconscious state will be a determinant in the acuteness of their memory loss.
+
+If both were unconcious
+ 	
+	[[no memory at all]]
+ 
+If only one unconcious
+	[[limited memory]]
+</tw-passagedata>
+<tw-passagedata pid="70" name="anything else to add?" tags="" position="2437,374">This is an opportunity for the player to name a character they have been suspcious of as they story has unfolded.
+
+[[suspect Mac]]
+[[suspect I&amp;M]]
+[[suspect Cletus]]
+[[nobody suspect]]</tw-passagedata>
+<tw-passagedata pid="71" name="Solving Logic" tags="" position="3071,718">// I think we need to preclude rescuer from being game-selected as accomplice//
+
+&amp;&amp; = and
+|| = or
+== is DNE
+
+// no memory loss means they identify Willard //
+
+
+If {memory_loss} = &quot;none&quot; AND {saw_something} = true AND {suspect_whom} = {accomplice_is}
+	Go to 
+	[[Willard and accomplices]] (full_memory)
+
+If {memory_loss} = &quot;none&quot; AND {saw_something} = true AND {suspect_whom} == {accomplice_is}
+	Go to
+	[[Willard only]]
+
+
+// full memory loss means up to luck //
+
+
+If {memory_loss} = &quot;full&quot; AND {saw_something} = true AND {suspect_whom} = {accomplice_is}
+	Go to 
+	[[Accomplice then Willard]] (fast_capture)
+
+If {memory_loss} = &quot;full&quot; AND {saw_something} = true AND {suspect_whom} == {accomplice_is}
+	Go to 
+	[[Suspect missing]] (suspect_missing)
+
+If {memory_loss} = &quot;full&quot; AND {saw_something} = false AND {suspect_whom} == {accomplice_is}
+	Go to
+	[[no leads]] (no_leads)
+
+// partial memory loss, cave memory //
+
+If {memory_loss} = &quot;remember_cave&quot; AND {saw_something} = true AND {suspect_whom} = {accomplice_is}
+	Go to
+	[[Accomplice then Willard]] (no_cave_but_suspect)
+	
+
+If {memory_loss} = &quot;remember_cave&quot; AND {saw_something} = false AND {suspect_whom} = {accomplice_is}
+	Go to 
+	[[Suspect missing]] (no_cave_suspect_gone)
+	
+
+If {memory_loss} = &quot;remember_cave&quot; AND {saw_something} = false AND {suspect_whom} == {accomplice_is}
+	Go to 
+	[[no leads]] (no_cave_no_leads)
+
+// partial memory loss, tributary memory //
+
+If {memory_loss} = &quot;remember_tributary&quot; AND {saw_something} = true AND {suspect_whom} = {accomplice_is}
+	Go to
+	[[Willard and accomplices]] (tributary_cave_accomplice)
+	
+If {memory_loss} = &quot;remember_tributary&quot; AND {saw_something} = false AND {suspect_whom} = {accomplice_is}
+	Go to 
+	[[Willard, Suspect missing]] (tributary_suspect_missing)
+	
+If {memory_loss} = &quot;remember_tributary&quot; AND {saw_something} = false AND {suspect_whom} == {accomplice_is}
+	Go to
+	[[no leads]] (tributary_willard_gone)
+
+
+
+
+</tw-passagedata>
+<tw-passagedata pid="72" name="Willard and accomplices" tags="" position="3280,665">// if there was full memory, the police will arrest Willard immediately and the friends will see that happen while still on dock on the evening of Day 2.//
+
+Several days later, we join the friends who are discussing the fantastic news that the boat robbery case was solved.
+
+// we will bring either Mac or Captain Garcia in per check below//
+
+If {accomplice_is} = &quot;Mac&quot;
+	then {police_recap} =&quot;Captain Garcia&quot;
+	go to (garcia)
+Else
+	then {police_recap} = &quot;Mac&quot;
+	 go to (mac)
+
+(mac)
+Mac appears w/o his beard and much to the friends&#39; surprise he introduces himself as Detective MacIntyre. 
+
+// check to see if kids thought Mac was suspicious //
+If {suspect_whom}=&quot;Mac&quot;
+Mac makes a joke about the friends suspecting him, but says no hard feelings as suspecting him meant he was doing his job, i.e., he needed to poke into everyone&#39;s business.
+
+// for case of (tributary_cave_accomplice) //
+Several days later, we join the friends--including Julian and Troy who&#39;ve recovered from their bout with hypothermia--on the dock discussing the fantastic news that the boat robbery case was solved.
+
+{police_recap} will explain that they found the secret passage to the hidden tributary from the cove, as Julian had remembered, which led them to the cave where they found the most recent stolen boat along with evidence implicating Mr. Willard. Meanwhile their tip on {accomplice_is} proved fruitful as well. They caught {accomplice_is} as he/they were planning to escape. 
+
+
+great work!
+	we&#39;ll have brief exposition implicating the accomplice to Willard and the depth of the dacoity which will vary per accomplice.
+	
+[[Mystery Solved]] </tw-passagedata>
+<tw-passagedata pid="73" name="Willard only" tags="" position="3270,932">// if there was full memory, the police will arrest Willard immediately and the friends will see that happen while still on dock on the evening of Day 2.//
+
+Several days later, we join the friends who are discussing the  news that Mr. Willard was brought into custody thanks to the Tory and Julian&#39;s eyewittness account.
+
+// we will bring either Mac or Captain Garcia in per check below//
+
+If {accomplice_is} = &quot;Mac&quot;
+	then {police_recap} =&quot;Captain Garcia&quot;
+	go to (garcia)
+Else
+	then {police_recap} = &quot;Mac&quot;
+	 go to (mac)
+
+(mac)
+Mac appears w/o his beard and much to the friends&#39; surprise he introduces himself as Detective MacIntyre. 
+
+// check to see if kids thought Mac was suspicious //
+If {suspect_whom}=&quot;Mac&quot;
+Mac makes a joke about the friends suspecting him, but says no hard feelings as suspecting him meant he was doing his job, i.e., he needed to poke into everyone&#39;s business.
+
+{police_recap} will explain they believe Willard wasn&#39;t working alone, and are hopeful he&#39;ll finger who was in it with him in a plea for a lighter sentence. 
+
+In any case, the information you provided definitely played a role in helping us bring Willard in. Between that and the recovery of {couples_name}&#39;s boat, that reward is as good as yours.
+
+[[Mystery Partially Solved]] </tw-passagedata>
+<tw-passagedata pid="74" name="Accomplice then Willard" tags="" position="3207,1073">Several days later, we join the friends--including Julian and Troy who&#39;ve recovered from their bout with hypothermia--on the dock discussing the fantastic news that the police broke open the robbery case and arrested both {accomplice_is} and much to their suprsise Mr.Willard. 
+
+// we will bring either Mac or Captain Garcia in per check below//
+
+If {accomplice_is} = &quot;Mac&quot;
+	then {police_recap} =&quot;Captain Garcia&quot;
+	go to (garcia)
+Else
+	then {police_recap} = &quot;Mac&quot;
+	 go to (mac)
+
+(mac)
+Mac appears w/o his beard and much to the friends&#39; surprise he introduces himself as Detective MacIntyre. 
+
+// check to see if kids thought Mac was suspicious //
+If {suspect_whom}=&quot;Mac&quot;
+Mac makes a joke about the friends suspecting him, but says no hard feelings as suspecting him meant he was doing his job, i.e., he needed to poke into everyone&#39;s business.
+	
+
+
+// if coming from (fast_capture) thread //
+
+{police_recap} will explain that they found because of their tip, they were able to catch {accomplice_is} just as they were trying to make a quick getaway.  And after taking {accomplice_is} in for questioning, he/they gave confessed they were in it with Mr. Willard. 
+
+
+// if coming from (no_cave_but_suspect) thread //
+{police_recap} tells the friends that the searched the island but were unable to find the cave Troy remembered seeing. They did, however, find a crashed drone that has been stylized to look like an odd creature from a distance. This corroborates their story and suggested that the island may have been the thieves&#39; lair. They then followed up on {suspect_whom}, because of their tip, and were able to catch {accomplice_is} just as they were trying to make a quick getaway. And after taking {accomplice_is} in for questioning, he/they gave confessed they were in it with Mr. Willard. 
+
+
+great work!
+	we&#39;ll have brief exposition implicating the accomplice to Willard and the depth of the dacoity which will vary per accomplice.
+	
+[[Mystery Solved]] </tw-passagedata>
+<tw-passagedata pid="75" name="Suspect missing" tags="" position="3267.0001,539">Several days later, we join the friends--including Julian and Troy who&#39;ve recovered from their bout with hypothermia--on the dock discussing the news that there remain no leads in the ongoing boat robbery investigation.
+
+// we will bring either Mac or Captain Garcia in per check below//
+
+If {accomplice_is} = &quot;Mac&quot;
+	then {police_recap} =&quot;Captain Garcia&quot;
+	go to (garcia)
+Else
+	then {police_recap} = &quot;Mac&quot;
+	 go to (mac)
+
+(mac)
+Mac appears w/o his beard and much to the friends&#39; surprise he introduces himself as Detective MacIntyre. 
+
+// check to see if kids thought Mac was suspicious //
+If {suspect_whom}=&quot;Mac&quot;
+Mac makes a joke about the friends suspecting him, but says no hard feelings as suspecting him meant he was doing his job, i.e., he needed to poke into everyone&#39;s business.
+
+// this is for case of full memory loss (suspect_missing) //
+
+{police_recap} tells the friends that unfortunately there are no leads at all in the case. They did follow up on {suspect_whom}, but {he/they} have/has gone missing. That&#39;s the bad news. The good news is there have been no additional robberies. Maybe the thieves have gone into hiding. 
+
+
+// this if for the case of (no_cave_suspect_gone) //
+{police_recap} tells the friends that the searched the island but were unable to find the cave Troy remembered seeing. They did, however, find a crashed drone that has been stylized to look like an odd creature from a distance. This corroborates their story and suggest that the island may have been the thieves&#39; lair. They did follow up on {suspect_whom}, but {he/they} have/has gone missing.
+
+
+//Troy and Julian want to thank rescuer(s)//
+// first need check if rescuer is suspect //
+If {who_rescue} = {who_suspect} then skip this part
+Else do this part
+
+(thank_rescuers)
+&quot;Have you seen {who_rescued} around?,&quot; asks Troy. &quot;We&#39;ve never had a chance to say thanks for rescuing the two of us.&quot;
+
+If {who_rescued} = {accomplice is}
+	&quot;Can&#39;t say that I have, now that you mention it,&quot; says {police_recap}. &quot;And that&#39;s odd since {who_rescued} was/were around here all the time.&quot;
+
+Else,
+	&quot;Sure have,&quot; says {police_recap}. &quot;Look! Here {who_rescued} come/comes now.&quot;
+	
+	The friends wave at {who_rescued}.
+
+(continue)
+
+&quot;Well, I&#39;ll leave you get on with your day and it looks to be a really nice one!&quot; says {police_recap}.
+
+The friends say goodbye and continue to ready the Lakesong for departure.
+
+&quot;One more thing...&quot; says {police_recap}. &quot;You don&#39;t plan on heading out to Kalkomey Isle today do you?&quot;
+
+&quot;No, sir, we sure dont. We&#39;ve had quite enough of Kalkomey Isle.&quot;
+
+
+[[Mystery Unsolved]] </tw-passagedata>
+<tw-passagedata pid="76" name="no leads" tags="" position="3219,403">Several days later, we join the friends--including Julian and Troy who&#39;ve recovered from their bout with hypothermia--on the dock discussing the news that there remain no leads in the ongoing boat robbery investigation.
+
+// we will bring either Mac or Captain Garcia in per check below//
+
+If {accomplice_is} = &quot;Mac&quot;
+	then {police_recap} =&quot;Captain Garcia&quot;
+	go to (garcia)
+Else
+	then {police_recap} = &quot;Mac&quot;
+	 go to (mac)
+
+(mac)
+Mac appears w/o his beard and much to the friends&#39; surprise he introduces himself as Detective MacIntyre. 
+
+// check to see if kids thought Mac was suspicious //
+If {suspect_whom}=&quot;Mac&quot;
+Mac makes a joke about the friends suspecting him, but says no hard feelings as suspecting him meant he was doing his job, i.e., he needed to poke into everyone&#39;s business.
+	
+if (tributary_willard_gone)
+{police_recap} tells the friends that they found the hidden tributary leading from the cove and followed it to a cave where--as you probably saw on the news--we found the {couples_name}&#39;s stolen boat. The thieves had nearly completed their work of making it look an entirely different boat. We suspect they were then selling these boats in Oceanside. 
+
+As you probably also saw in the news, we found some evidence to the cave to make Mr. Willard a person of interest, unfortuntely, he can&#39;t be located currently. 
+
+After a bit more on the above {police_recap} tells the friends how helpful they&#39;ve been and that they&#39;ll most likely get some reward since at least one stolen boat was recovered. 
+
+continue at (thank_resuers)
+
+
+
+if (no_cave_no_leads)
+{police_recap} tells the friends that the searched the island but were unable to find the cave Troy remembered seeing. They did, however, find a crashed drone that has been stylized to look like an odd creature from a distance. This corroborates their story and suggest that the island may have the thieves&#39; lair. 
+-&gt; continue to (no_leads)
+
+(no_leads)
+{police_recap} tells the friends that unfortunately there are no leads at all in the case. That&#39;s the bad news. The good news is there have been no additional robberies. Maybe the thieves have gone into hiding. 
+
+
+
+//Troy and Julian want to thank rescuer(s)//
+// first need check if rescuer is suspect //
+If {who_rescue} = {who_suspect} then skip this part
+Else do this part
+
+(thank_rescuers)
+&quot;Have you seen {who_rescued} around?,&quot; asks Troy. &quot;We&#39;ve never had a chance to say thanks for rescuing the two of us.&quot;
+
+If {who_rescued} = {accomplice is}
+	&quot;Can&#39;t say that I have, now that you mention it,&quot; says {police_recap}. &quot;And that&#39;s odd since {who_rescued} was/were around here all the time.&quot;
+
+Else,
+	&quot;Sure have,&quot; says {police_recap}. &quot;Look! Here {who_rescued} come/comes now.&quot;
+	
+	The friends wave at {who_rescued}.
+
+(continue)
+&quot;Well, I&#39;ll leave you get on with your day and it looks to be a really nice one!&quot; says {police_recap}.
+
+The friends say goodbye and continue to ready the Lakesong for departure.
+
+&quot;One more thing...&quot; says {police_recap}. &quot;You don&#39;t plan on heading out to Kalkomey Isle today do you?&quot;
+
+&quot;No, sir, we sure dont. We&#39;ve had quite enough of Kalkomey Isle.&quot;
+
+
+[[Mystery Unsolved]] 
+
+
+
+
+	
+	
+</tw-passagedata>
+<tw-passagedata pid="77" name="Willard, Suspect missing" tags="" position="3274,797">Several days later, we join the friends--including Julian and Troy who&#39;ve recovered from their bout with hypothermia--on the dock discussing the increbible news that Mr. Willard has been taken into custody as a suspect in the boat robberies. 
+
+// we will bring either Mac or Captain Garcia in per check below//
+
+If {accomplice_is} = &quot;Mac&quot;
+	then {police_recap} =&quot;Captain Garcia&quot;
+	go to (garcia)
+Else
+	then {police_recap} = &quot;Mac&quot;
+	 go to (mac)
+
+(mac)
+Mac appears w/o his beard and much to the friends&#39; surprise he introduces himself as Detective MacIntyre. 
+
+// check to see if kids thought Mac was suspicious //
+If {suspect_whom}=&quot;Mac&quot;
+Mac makes a joke about the friends suspecting him, but says no hard feelings as suspecting him meant he was doing his job, i.e., he needed to poke into everyone&#39;s business.
+
+// this branch stems from (tributary_suspect_missing)//
+
+{police_recap} will explain that they found the secret passage to the hidden tributary from the cove, as Julian had remembered, which led them to the cave where they found the most recent stolen boat along with evidence implicating Mr. Willard. Meanwhile per their tip on {accomplice_is} they went to question them, but he/they are missing. 
+
+We are pretty sure Willard wasn&#39;t working alone, and are hopeful he&#39;ll finger who was in it with him in a plea for a lighter sentence. 
+
+In any case, the information you provided definitely played a role in helping us bring Willard in. Assuming he&#39;s found guilty, you&#39;ll get the reward. 
+
+[[Mystery Partially Solved]] </tw-passagedata>
+<tw-passagedata pid="78" name="Day 2 begins" tags="" position="31,39">// summary of events that begin act 4 (day 2) and lead up to the main action where the friends split up //
+
+Troy arrives early to fix radio. It&#39;s taking him a bit longer than expected. 
+
+While Troy his work he hears shouts. A small fire has broken out on a neighboring boat. Troy grabs an extinguisher and leaps into action.
+Launch fire suppression minigame.
+//upon completion add to 5.0 achievement//
+
+Friends arrive but Troy is still working on radio. The friends comment on the kayaks now in the racks instead of the paddleboards from yesterday. 
+
+There is a lot of activity on dock, as several people are taking their boats out of water.
+
+Launch review and learning activities for launching and retrieving a boat from trailer.
+// coincides with related 3.0 achievement //
+
+Troy fixes radio and they castoff. Add additional pre-departure check for backfire flame arrestor. 
+Lanch review material.
+// after review add to 2.0 achievement //
+
+Troy informs them that they must refuel before getting underway.
+
+They dock at fueling depot.
+launch fueling review.
+launch fueline minigame
+//after minigame complete, add to 3.0 achievement //
+
+Leaving the dock they pass a small boat with hunters.
+launch review of 6.4 hunting/fishing from boats
+//upon complete add to achievment 6.0 //
+
+They arrive off of Kalkomey Isle, where they initiate the plan they hatced the day before plan.
+
+Recap plan: friends will split up. Julian and Troy will explore the cove and try to figure out how that boat dissappeared. Mia and Alexis will stay with the Laksong and pick them up at the agree rendezvous point and time. 
+
+Before setting out the player we will look at the items in Troy pre-packed in the emergency kits they&#39;ll take with them on the Kayaks. 
+// launch that minigame here //
+
+After the minigame, we&#39;ll be emphatic about having player choose to keep signal device on their person or keeping it in the emergency dry sack. 
+[[Friends Split Up]] 
+
+
+</tw-passagedata>
+<tw-passagedata pid="79" name="Long rescue wait logic" tags="" position="456.0001,558">Once entering the &quot;long wait for rescue&quot; path, we&#39;ll some logic and some randoms (e.g, has signal, but loss of dexterity makes impossible to use) to determine what level of hypothermia they end up with.
+
+//these details and logic TBD //
+
+The result will be:
+{hypothermia} = &quot;moderate&quot;
+{hypothermia} = &quot;severe&quot;
+
+[[Rescue occurs]]</tw-passagedata>
 </tw-storydata>
 
 
