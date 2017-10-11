@@ -2,7 +2,61 @@ VAR robbery_question_loop = true
 VAR ask_robbery_questions = false
 
 
--> know_else_strange
+-> lucky_how
+
+== lucky_how ==
+     - (opts)
+                *    ["I could have been worse?" shouts Mia loudly, her ears still ringing.]
+                    -- CHR_TRO_REL
+                     "It's not uncommon for a lightning strike to damage the electronics, the engine, and a lightning strike can even put a hole in the boat," he says. -> lucky
+    
+                *    (lucky) ["Let's not make a habit of tempting fate," says Alexis.] {Troy looks around the boat. "I wouldn't want to roll the dice like that again, as chances are we be a lot worse off than just a busted radio."|"Yes, we really did get lucky this time."}
+    
+                *    {lucky} [Alexis looks at Mia and mouths the world 'lucky.'] -> bad_decision
+
+        -     -> opts
+
+        = bad_decision
+        - temp
+
+== not_easy_decision ==
+
+        - (opts)
+                *    ["You said before that shore is the first option," says Mia.]
+                    -- CHR_TRO_REL
+                     "As long as that storm south of Laketown doesn't decide to move north over the lake, making for shore is the best option." he says. -> depends
+    
+                *    (depends) ["This feels like an 'it depends'" says Julian.] {Troy estimates their distance from Laketown. "It really depends on how far we are from Laketown."|"But if that storm moves, we'd need to make sure we are docked and secured before it hits."}
+    
+                *    {depends} [Troy pauses a couple beats to think it over.] -> tro_makes_his_choice
+
+        -     -> opts
+
+        = tro_makes_his_choice
+        -   CHR_JUL_SUR
+
+
+
+
+
+== if_holds_fine ==
+
+        - (opts)
+                *    ["The shore is safer?" Mia asks Troy.]
+                    -- CHR_TRO_REL
+                     "Generally, returning to shore is the best course of action, but like anything it depends," he says. -> avoid
+    
+                *    (avoid) ["Can't we stay on the lake and avoid the storm?" asks Julian.] {As an experienced boater, Troy knows there is some gray area. "Shore is the first option, but depending on the conditions, sometimes it may be best to ride a storm out in open water."|"If you're already caught in a storm, wind and waves can make approaching the shore a more dangerous option."}
+    
+                *    {avoid} [Head to shore.] -> horizon_clouds
+
+        -     -> opts
+
+        = horizon_clouds
+        -   CHR_JUL_SUR
+
+
+
 
 === know_else_strange ===
         - CHR_MIA_REL
