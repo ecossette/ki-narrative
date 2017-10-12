@@ -2,7 +2,48 @@ VAR robbery_question_loop = true
 VAR ask_robbery_questions = false
 
 
--> lucky_how
+-> fueling_depot
+
+== fueling_depot ==
+    -  The Lakesong arrives at the fuel dock and slide alongide one of the empty pumps and dock. Just ahead of them at the next pump they see Cletus fueling a boat. The friends tie up and go on to the dock. 
+ 
+     - (opts)
+                *    [ Cletus checks out the Lakesong.]
+                    -- CHR_TRO_REL
+                     Cletus gives their boat a long stare from bow to stern and back again.  -> stare
+    
+                *    (stare) [Cletus greets them.] {"Didn't get enough yesterday, eh?" he says.|"Those are some nice looking kayaks you've got there," he says. "Going to do some exploring?"}
+    
+                *    {stare} [Troy shrugs.] -> temp
+
+        -     -> opts
+
+        = temp
+        - "Only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good."
+        
+        
+
+
+
+
+
+== dog_in_boat ==
+    -  "Look there two dogs in that boat," says Mia, as they pass a small, flat-bottomed boat off their starboard side. "And one's a puppy!'
+ 
+     - (opts)
+                *    [ "Those are retrievers," says Troy. ]
+                    -- CHR_TRO_REL
+                     "That's a duck hunting boat and the puppy is learning how to behave on the water," he says.  -> dog
+    
+                *    (dog) [Troy gives the horn two quick toots.] {Troy's passing signal startles the puppy. "The dogs need to get accustomed to being in a boat the same as you or me."|"Anglers and hunters are boaters, too, as are their four-legged passengers."}
+    
+                *    {dog} They exchange 'Ahoys' and waves.[] -> temp
+
+        -     -> opts
+
+        = temp
+        - temp
+
 
 == lucky_how ==
      - (opts)
