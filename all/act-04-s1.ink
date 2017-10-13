@@ -210,12 +210,86 @@ SCENE 01
     
                 *    (lookout) ["The cove should be straight ahead," says Troy.] {"I spent some time studying the charts last night, and the sandbars are all to west, near the beach, but still..."|"We know there's more than sandbars out here."}
     
-                *    {lookout} [Approach the cove.] -> approach_cove
+                *    {lookout} [They continue into the fog.] -> fog_talk
 
         -     -> opts
 
-        = approach_cove
-        - temp  
+ === fog_talk ===
+    The Lakesong continues straight ahead into the fog where Troy expects to find the cove. 
+
+        - (opts)
+                *    [ Four pairs of eyes scan the area ahead.]
+                    -- CHR_TRO_REL
+                     Troy has the throttle just a bit over idle, keeping their speed to a minimum in the reduced visibility.  -> birds
+    
+                *    (birds) ["The fog isn't as bad as yesterday," says Alexis.] {"Looks like we've got about 100 yards of visibility, give or take," says Troy. "Enough for us to launch without being seen."|"The fog should burn off later," he says, "making it easier to find each other."}
+    
+                *    {birds} [The sound of birds...] -> bird_sounds
+        -     -> opts
+
+== bird_sounds ==
+    -   The sound of birds announces their proximity to the island. 
+        "There's the cove!" says Troy. "Per the plan, we'll launch the kayaks from there."
+        
+            * [ Review the plan.]
+                -> review_plan
+            
+== review_plan ==
+    -   "Let's go over the plan one more time," says Troy.
+        
+        - (opts)
+            *    [The kayaks.] "Troy and Julian will head out in the kayaks to investigate the shoreline of the cove, and spend up to two hours looking for clues to what happened to the boat we saw dissappear yesterday," says Alexis.
+            *    [The Lakesong.]
+                "Mia and Alexis will stay with the Lakesong," says Julian. "They'll wait away from the island for the fog to clear—if it clears—and return for us in two hours unless we signal for pickup sooner."
+            *    [The rendezvous.]
+                "We'll return to the cove in two hours—or sooner, if we see a signal—to meet Troy and Julian and recover the kayaks," says Mia.  
+            // We require the player to ask at least one question
+            *    {loop} [Got it!] 
+                -> done
+        - (loop) 
+            // loop a few times before the guard gets bored
+            { -> opts | -> opts | }
+            Troy nods and looks at his watch.
+        - (done)
+            "Good, we are all clear on the plan, so let's get started," he says reaching for two dry float bags and tossing one to Julian. "I've prepared a few supplies for the two of us to take on the kayaks."
+            
+                * [Julian opens his bag to see what's inside.]
+                    -> jul_opens
+                
+                * [Julian catches the bag but doesn't look inside.]
+                    -> before_set_off
+            
+            
+        = jul_opens
+        -   Inside the dry float bag Troy prepared, Julian finds the following items: a waterproof flashlight, waterproof red signal flares, a signal mirror, a whistle, a rope, a knife, a bottle of water, a granola bar, and kayak tether.
+            
+                * ["Before we set off..."]
+                    -> before_set_off
+        
+        = jul_no_opens
+        -   "That's a lot of stuff," says Julian holding the bag up but not opening it.
+            
+                * [Troy nods.]
+                    -> before_set_off
+
+        
+        = before_set_off
+        "Before we set off take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PDF pockets, says Troy. "Oh and grab the kayak leash as well." 
+
+            * ["And you've got the walky talky?" asks Julian.]
+            
+        = no_two_way
+        "Unfortunately, no," says Troy. "I couldn't get my old set to work, and went I stopped by Willard's store this morning to get a new one, he said they were sold out."
+        
+        Alexis frowns and Mia is about to speak... 
+        Troy anticipates their concerns.  "Isnt' that going to make it a lot harder to find you?"
+        
+        Julian begins stashing signals into his pockets.
+        
+
+        
+        
+        
             
                 
 

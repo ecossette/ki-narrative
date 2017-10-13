@@ -2,7 +2,93 @@ VAR robbery_question_loop = true
 VAR ask_robbery_questions = false
 
 
--> fueling_depot
+-> review_plan
+
+== review_plan ==
+    -   "Let's go over the plan one more time," says Troy.
+        
+        - (opts)
+            *    [The Kayaks.] "Troy and Julian will head out in the kayaks to investigate the shoreline of the cove, and spend up to two hours looking for clues to what happened to the boat we saw dissappear yesterday," says Alexis.
+            *    [The Lakesong.]
+                "Mia and Alexis will stay with the Lakesong," says Julian. "They'll wait away from the island for the fog to clear—if it clears—and return for us in two hours unless we signal for pickup sooner."
+            *    [The Rendezvous.]
+                "We'll return to the cove in two hours—or sooner, if we see a signal—to meet Troy and Julian and recover the kayaks," says Mia.  
+            // We require the player to ask at least one question
+            *    {loop} [Got it!] 
+                -> done
+        - (loop) 
+            // loop a few times before the guard gets bored
+            { -> opts | -> opts | }
+            Troy nods and looks at his watch.
+        - (done)
+            "Good, we are all clear on the plan, so let's get started," he says reaching for two dry float bags and tossing one to Julian. "I've prepared a few supplies for the two of us to take."
+            
+                * [Julian opens his bag to see what's inside.]
+                    -> jul_opens
+                
+                * [Julian catches the bag but doesn't look inside.]
+            
+            
+        = jul_opens
+        -   Inside the dry float bag Troy prepared, Julian finds the following items: a waterproof flashlight, waterproof red signal flares, a signal mirror, a whistle, a rope, a knife, a bottle of water, a granola bar, and kayak tether.
+            
+                * ["Before we set off..."]
+                    -> before_set_off
+        
+        = jul_no_opens
+        -   "That's a lot of stuff," says Julian holding the bag up but not opening it.
+            
+                * [Troy nods.]
+                    -> before_set_off
+
+        
+        = before_set_off
+        "Before we set off take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PDF pockets, says Troy. "Oh and grab the kayak leash as well." 
+
+            * "And you've got the walky talky?" asks Julian.
+
+
+=== fog_talk ===
+    The Lakesong continues straight ahead into the fog where Troy expects to find the cove. 
+
+        - (opts)
+                *    [ Four pairs of eyes scan the area ahead.]
+                    -- CHR_TRO_REL
+                     Troy has the throttle just a bit over idle, keeping their speed to a minimum in the reduced visibility.  -> birds
+    
+                *    (birds) ["The fog isn't as bad as yesterday," says Alexis.] {"Looks like we've got about 100 yards of visibility, give or take," says Troy. "Enough for us to launch without being seen."|"The fog should burn off later," he says, "making it easier to find each other."}
+    
+                *    {birds} [The sound of birds...]
+        -     -> opts
+
+        = temp
+        - The sound of birds announces their proximity to the island. 
+        
+        "There's the cove!" says Troy. "Per the plan, we'll launch the kayaks from there."
+
+
+=== arrive_ki ===
+    -   The journey north to Kalkomey Isle takes quite awhile, but when they finally arrive all four agree that it felt quicker than expected. That the weather had been excellent—both warm and sunny—helped, too, at least until they hit the fog. 
+
+        - (opts)
+                *    [ Troy slows the boat.]
+                    -- CHR_TRO_REL
+                     As the Lakesong slows, the sound of the engine decreases allowing Troy to speak in a quiet voice. "Let's keep a sharp lookout," he says.  -> lookout
+    
+                *    (lookout) ["The cove should be straight ahead," says Troy.] {"I spent some time studying the charts last night, and the sandbars are all to west, near the beach, but still..."|"We know there's more than sandbars out here."}
+    
+                *    {lookout} [Approach the cove.] -> temp
+
+        -     -> opts
+
+        = temp
+        - "Only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good.
+
+
+
+
+
+
 
 == fueling_depot ==
     -  The Lakesong arrives at the fuel dock and slide alongide one of the empty pumps and dock. Just ahead of them at the next pump they see Cletus fueling a boat. The friends tie up and go on to the dock. 
@@ -19,7 +105,13 @@ VAR ask_robbery_questions = false
         -     -> opts
 
         = temp
-        - "Only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good."
+        - "Only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good." 
+        
+        Nothing more is said.
+        
+            * [Fuel the boat.]
+            
+            
         
         
 
