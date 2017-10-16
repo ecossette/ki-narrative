@@ -247,7 +247,7 @@ SCENE 01
             *    {loop} [Got it!] 
                 -> done
         - (loop) 
-            // loop a few times before the guard gets bored
+            // loop a few times 
             { -> opts | -> opts | }
             Troy nods and looks at his watch.
         - (done)
@@ -274,19 +274,104 @@ SCENE 01
 
         
         = before_set_off
-        "Before we set off take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PDF pockets, says Troy. "Oh and grab the kayak leash as well." 
+        "Before we set off take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PDF pockets, says Troy. "Grab the kayak leash as well." 
 
             * ["And you've got the walky talky?" asks Julian.]
+                -> no_two_way
             
-        = no_two_way
-        "Unfortunately, no," says Troy. "I couldn't get my old set to work, and went I stopped by Willard's store this morning to get a new one, he said they were sold out."
+== no_two_way ==
+    -   "Unfortunately, no," says Troy. "I couldn't get my old two-way radio set to work. I stopped by Willard's store this morning to get a new one, but he said they were sold out."
+    
+        At this news Alexis frowns and both she and Mia give Troy looks of concern.
         
-        Alexis frowns and Mia is about to speak... 
-        Troy anticipates their concerns.  "Isnt' that going to make it a lot harder to find you?"
-        
-        Julian begins stashing signals into his pockets.
         
 
+         - (opts)
+                *    ["The walky-talkies were part of the plan," says Alexis.]
+                    -- CHR_TRO_REL
+                     Troy anticipated the concerns about the lack of a two-way radio, which was part of the original play, so he is prepared to smooth the situation over. -> signals
+    
+                *    (signals) [Julian begins stashing signals into his life jacket pockets.] {"Don't worry. We have the other signals," says Troy, nodding toward Julian, who is looking for a spot for the whistle, "so even if we can't find each other right away, locating us—even in fog—shouldn't be a problem."| "Plus the fog is going to clear," he says. "I'm sure of it." }
+    
+                *    {signals} ["I hope the fog doesn't clear," says Julian.] -> hope_for_fog
+        -     -> opts
+
+        = hope_for_fog
+        -   "The fog is our cover," he says. "We can't be seen by man nor creature." Julian scans the foggy overhead nervously. 
+        
+        -   "Based on the photo Mia enlarged and cleaned-up," says Alexis, "I'm as convinced as Troy that there really are no creatures, just drones."
+        
+            * [ "Creatures, drones, thieves... same dif" says Julian.]
+                -> all_reason_for_cover
+        
+== all_reason_for_cover ==
+    {"And all the more reason for cover," adds Julian.| "Being spotted makes me nervous," says Julian.|}
+
+    *    [Mia agrees.] 
+        
+            "Julian's right about that," she says. "The fog would provide great cover."
+    
+        -> all_reason_for_cover
+    *    [Alexis disagrees.] 
+        "But fog will make it much harder to find and recover you and the kayaks," says Alexis. "And after hitting the sandbar yesterday with Troy at the helm, the idea of piloting the boat in the fog while looking for the kayaks makes make me nervous." 
+        -> all_reason_for_cover
+    
+    *    -> fog_or_no
+    
+== fog_or_no ==
+    -   * "For or no fog, it's all good," says Troy.[] "The plan accounts for both possibilities..."  
+    
+        - (opts)
+            *    "If the fog sticks around[..."], we'll stay in the cove and wait." says Troy. "When you enter the cove in the boat, use the horn to give the signal. Remember the signal?"
+            
+                    ** [Alexis mimics the signal.]
+                        "Right, good, give two short toots of the horn, count to 3 and give one long toot," says Troy.  "When we hear your signal, we'll blow the whistle. Give two quick toots to acknowledge it. If you don't hear us, repeat your signal and we'll send a flare."
+                        
+            *    ["If the fog clears..."]
+                "Or I should say 'when the fog clears,' keep the boat away from the island until the two hour mark, then come in and pick us up," says Troy. "Since it may be easier for us to see you, we'll start by using the signal mirror and whistle to get your attention on the boat. If that doesnt' work, we'll shoot off a flare."  
+                
+            *    ["If the Lakesong is spotted..."]
+                You're unlikely to be seen in the fog, but when things clear, you'll be visible but so will everythig else," says Troy. "You'll be able to see a boat coming from a distance, same with the drones. Do what you need to do to evade contact and then circle back for us when you can."  
+            
+            // We require the player to ask at least one question
+            *    {loop} [Alexis cuts Troy off.] 
+                -> done
+        - (loop) 
+            // loop 
+            { -> opts | -> opts | }
+            Alexis takes a deep breath. 
+        - (done)
+            "OK, OK, I've got it," says Alexis, "But I'm still going to be nervous driving the boat."
+            
+                ["You've got this, Alexis," says Troy.]
+                    -> got_this_alexis
+        
+        =   got_this_alexis
+            "Stay slow in the fog and keep a good lookout," says Troy. "And we know the that cove and the approach to it are free of sandbars, so now worries there."
+            
+                * [Julian and Troy enter the kayaks.]
+                    -> continue_adventure
+                
+                
+=== continue_adventure === 
+        -   "See you in two hours, give or take," says Troy, as he and Julian push off from the boat and beging paddling toward the shoreline.
+        
+            "Good luck!" Mia and Alexis say in unison, as Alexis starts the Lakesong's engine and prepares to depart the cove. 
+            
+            Contine the adventure by...
+            
+                    * Following Julian and Troy in the kayaks.
+                        -> follow_kayaks
+                        // this will continue in a4s2
+                        
+                    * Following Mia and Alexis in the boat. 
+                        -> follow_boat
+                        // this will continue in a4s3
+    
+
+            
+            
+            
         
         
         
