@@ -2,7 +2,32 @@ VAR robbery_question_loop = true
 VAR ask_robbery_questions = false
 
 
--> all_reason_for_cover
+-> follow_or_no
+
+=== follow_or_no ===
+    -   { "That's the question, isn't it?" says Troy, who begins to think out loud.| Troy then considers the alternative.|} 
+    
+    *    "If we follow the stream[..."], we could find the thieves hideout but we also run the risk of being seen—or worse–getting caught by the thieves. On the other hand, the more we learn, the better chance we have of getting the reward. -> follow_or_no
+    
+    *    "If we don't follow the stream[..."], we probably have enough clues now to give to the police and probably get the reward. But we still have well over an hour before the rendezvous time, and the idea of killing time in the cove waiting isn't very appealing. -> follow_or_no 
+    
+    *    -> decision_stream
+    
+    = decision_stream
+    *  [Troy asks for Julian's opinion.]
+        "I won't lie. The idea of running into the thieves scares the crap out of me," says Julian. "But these kayaks are really quiet and stealthy... I imagine we would hear the thieves long before they'd hear us."
+    
+    *  [Troy decides without Julian's input.] 
+
+
+== monkey_eyes_him ==
+// this probably need to treated as a tunnel
+    
+    -   "There's a monkey!" says Troy astonished.
+        "Correction. <i>Monkies</i>." says Julian pointing up into the trees as several small hairy bodies skitter through the branches.        
+
+           
+
 
 === find_help ===
 
@@ -71,12 +96,6 @@ VAR ask_robbery_questions = false
             
             Contine the adventure by...
             
-                    * Following Julian and Troy in the kayaks.
-                        -> follow_kayaks
-                        
-                    * Following Mia and Alexis in the boat. 
-                        -> follow_boat
-    
 
  
 

@@ -11,7 +11,8 @@
         As they continue cruising, Troy conducts a couple of 'what if' emergency drills with the group. He also reminds his friends on the importance of keeping a proper lookout—looking <i>and</i> listening—at all times.
     //otherwise it sounded like the number of eyes was relevant
     
-        * "Hey, what's that?"[] Mia asks suddenly. 
+           * ["Hey, what's that?" Mia asks suddenly.] 
+            -> mia_asks_pointing
         
         = mia_asks_pointing
         -   CHR_MIA_SUR
@@ -19,6 +20,7 @@
             // SOUND boat circle of death in distance, lower volume, should be very much in distance
             
             * Troy throttles back[.]
+                -> throttle_back_slow
             
         = throttle_back_slow
         -   CHR_TRO_REL
