@@ -2,22 +2,80 @@ VAR robbery_question_loop = true
 VAR ask_robbery_questions = false
 
 
--> follow_or_no
+-> clang_heard
+
+== clang_heard ==
+        
+        - (opts)
+        *    [Julian looks at Troy wide-eyed.]
+            Troy puts his figer to his lips.  -> silent
+        
+        *    (silent) [Nobody moves a muscle.] {They both know the sound they heard wasn't from monkeys or birds.  While distant, the clang was unmistakably a clang of metal on metal, the sound of human activity.| Listening...}
+        
+        *    {silent} [Overhead a buzzing...] -> overhead_buzzing
+        
+        -     -> opts
+
+== overhead_buzzing ==
+    - Overhead they hear a buzzing eerily similar to what they heard yesterday, but the tree canopy is too thick for them to see if it's one or more of the disguised drones. They do not hear another clang. 
+    
+     Troy pulls alongside Julian and says, "I think we should go a little further."
+        
+        - (opts)
+        *    [Julian continues to look overhead.]
+            "I guess it all depends on how you define 'a little' further," he says.  -> silent
+        
+        *    (silent) [Julian looks at the stream ahead.] {"Remember that we still need to row back to the cove, and you are kind of slow, dude... I'm just saying." | "A clang like we heard can travel really far, so I doubt the thieves are too close."}
+        
+        *    {silent} [Troy paddles forward.] -> tro_so_slow
+        
+        -     -> opts
+        
+        
+    = tro_so_slow
+    - "Since I'm so slow, I better get a head start," says Troy grinning. 
 
 === follow_or_no ===
     -   { "That's the question, isn't it?" says Troy, who begins to think out loud.| Troy then considers the alternative.|} 
     
-    *    "If we follow the stream[..."], we could find the thieves hideout but we also run the risk of being seen—or worse–getting caught by the thieves. On the other hand, the more we learn, the better chance we have of getting the reward. -> follow_or_no
+    *    "If we follow the stream[..."], we could find the thieves hideout but we also run the risk of being seen—or worse—getting caught by the thieves," says Troy. "On the other hand, the more we learn, the better chance we have of getting the reward." -> follow_or_no
     
-    *    "If we don't follow the stream[..."], we probably have enough clues now to give to the police and probably get the reward. But we still have well over an hour before the rendezvous time, and the idea of killing time in the cove waiting isn't very appealing. -> follow_or_no 
+    *    "If we don't follow the stream[..."], we probably have enough clues now to give to the police and probably get the reward," says Troy. "But we still have well over an hour before the rendezvous time, and the idea of killing time in the cove waiting isn't very appealing." -> follow_or_no 
     
     *    -> decision_stream
     
-    = decision_stream
+== decision_stream ==
     *  [Troy asks for Julian's opinion.]
-        "I won't lie. The idea of running into the thieves scares the crap out of me," says Julian. "But these kayaks are really quiet and stealthy... I imagine we would hear the thieves long before they'd hear us."
-    
+        -> jul_opinion_stream
+       
     *  [Troy decides without Julian's input.] 
+        -> final_decision_stream
+
+== jul_opinion_stream ==
+    -   "I won't lie. The idea of running into the thieves scares the crap out of me," says Julian. "But these kayaks are really quiet and stealthy... I imagine we would hear the thieves long before they'd hear us."
+        -> final_decision_stream
+    
+
+
+== final_decision_stream ==
+    {
+        - final_decision_stream: Troy agres with both of Julian's points and refactors all the pros and cons before deciding to...
+        
+        - else: Troy doesn't ask for Julian's opinion, deciding to make the decistion himself. Julian can agree or disagree after hearing Troy's decision to...
+
+    }
+
+        * [ Turn back to the cove without following the stream.]
+        
+        * [ Follow the stream and try to learn more.]
+        
+
+
+        
+
+
+
+
 
 
 == monkey_eyes_him ==

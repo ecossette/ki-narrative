@@ -78,15 +78,24 @@
     = get_a_load
     -   Troy emerges from beneath the vine curtain expecting to see the cove's shoreline and is suprised when he sees...
     
-            * [A monkey sitting on the trunk of fallen tree.] 
+            * [A pair of eyes staring back at him.] 
+                // go to monkey tunnel
+                
+                -> monkey_watching ->
+                
+                    **  [Troy and Julian look at stream ahead of them.]
+            
+            * [ Julian looking up into a tree.]
+                // julian says a 'creature' crashed drone
             
             * [A dark stream bending into the forest.]
+                // both above eventually get back to stream
             
-== monkey_eyes_him ==
+=== monkey_eyes_him ===
 // this probably need to treated as a tunnel
     
-    -   "There's a monkey!" says Troy astonished.
-        "Correction. <i>Monkeys</i>." says Julian pointing up into the trees as several small hairy bodies skitter through the branches.        
+    -   "That's a monkey!" says Troy astonished to find a monkey sitting on a fallen log looking at him.
+        "Correction. <i>Monkeys</i>." says Julian pointing up into the trees as several small hairy bodies skitter through the high branches.        
 
             * The monkey watches Troy[.], and Troy watches the monkey.
                 -> monkey_watching
@@ -97,7 +106,7 @@
         *    [The monkey shrieks.] 
             The monkey shrieks and leaps to the next tree. -> ducks
         
-        *    (ducks) [The monkey grabs something.]{Troy ducks and a large pine cone splashes into the water behind Troy after just missing his head.| Troy watches as the monkey scurries from tree to tree and vanishes into the forest.}
+        *    (ducks) [The monkey grabs something.]{Troy ducks and a large pine cone splashes into the water behind Troy after just missing his head.| Troy watches as the monkey scurries from one tree to the next along the bank.}
         
         *    {ducks} [Julian laughs.] -> monkey_arm
         
@@ -105,11 +114,14 @@
 
 
     = monkey_arm
-    -   "That monkey has a pretty good arm," he says.
+    -   "That monkey has a pretty good arm," he says, watching the monkey take off along the tree tops. 
     -   "Surprisingly accurate, too," says Troy. "Can this thing get any weirder? What are monkeys even doing on this island?
-        "Left over from the research, I suppose," answers Julian. 
+        "Left over from the research, I suppose," answers Julian.
+        
+        // return from where tunnel was called
+        ->->
             
-            * [Troy and Julian look at stream ahead of them.]
+            
             
         
 === dark_stream ===        
@@ -173,24 +185,29 @@
                 -> follow_boat
 
 === go_stream ===
-    -  Julian isn't suprised by Troy's decision. He knew Troy wouldn't be able to resist exploring the stream. Still, now that the decision is made, he's a little apprehensive. What if they do run into the thieves? 
+    -  Julian isn't suprised by Troy's decision. He knew Troy wouldn't be able to resist exploring the stream. Still, now that the decision is made, Julian is a little apprehensive. What if they do run into the thieves? 
     
-            * [Enter the stream.]
+            * [Paddle into the stream.]
+                -> enter_stream
             
         = enter_stream
-        "How deep do you suppose this is," says Julian in a hushed voice while looking down into the dark water.
+        The two kayaks move effortlessly through the stream's waters, and pass through several bends as the waterway winds into the island.
+        
+        "How deep do you suppose this is," says Julian in a hushed voice, looking down into the dark water.
         
         "Deep enough for a large power boat," says Troy, "but not deep enough to handle the keel of a sailboat is my guess."
         
-        "Ah, right," says Julian. "That would explain why no sailboats have been stolen."
-        
-            * [The stream continues.]
+            * ["Oh, right," says Julian.] 
+                -> stream_continues
+       
             
         =   stream_continues
-        -   The guys begin to sweat as they continue paddling deeper into the island following the stream as it twists and turns. The fog has cleared—at least this far inland—and occassionaly sunlight filters through the canopy of trees, warming the air considerably. 
+        -   "That would explain why no sailboats have been stolen,"  says Julian, catching Troy's point on the depth.  
         
-                [The forest is alive with sound.]
-                -> forest_alive_sound
+        -   The guys begin to sweat as they continue paddling deeper into the island following the stream as it twists and turns. The fog has cleared—at least this far inland—and occassionally sunlight filters through the canopy of trees, warming the air considerably. 
+        
+                * [The forest is alive with sound.]
+                    -> forest_alive_sound
                     
                 
         =   forest_alive_sound
@@ -203,15 +220,115 @@
                 "Those monkeys are especially loud," says Troy. "And if feels like they're following us."
                 
                 - else:
-                "I swear I keep hearing monkey calls," says Troy, "but that's not possible."
+                    * ["I swear I keep hearing monkeys," says Troy.] 
+                        -> swear_hear_monkey
                 
-                "Really?" says Julian
+                
                 
                 
             
             }
             
+        = swear_hear_monkey
+        "But that's impossible," he says. "There are no wild monkeys south of the Atlas Mountains."
+         
+            * "Really?" says Julian.[] "Then how do you explain that?" says Julian pointing to stream bank ahead. 
             
+                ** [Troy looks.]
+                -> monkey_eyes_him ->
+                
+                 ***  [Troy and Julian look at stream ahead of them.]
+                    -> how_far_stream_goes
+         
+         
+== how_far_stream_goes ==
+    -   "How far do you think it goes?" wonders Julian.
+        "I don't know, but we'll need to turn back soon," says Troy. "Mia and Alexis will be looking for us at the rendezvous time."
+        
+            * ["Lets see what's around the next big bend." suggests Julian.] 
+                -> next_bend
+            
+        = next_bend    
+            "If it turns out to be just more of the same, we'll head back," he says. 
+            
+                * ["OK. Sounds good," says Troy.]
+                    -> around_next_bend
+            
+        = around_next_bend
+        -   Julian leads the way with Troy close behind. The bend looks similar to the others they've paddle through, and they approach as they have others with the hope of finding something interesting on the other side.  Passing the first few bends they were nervous, wondering if the thieves would be just around the corner, but so far each bend has only revealed the same thing—more stream going on and on to the next bend. 
+        
+                * They steer around the bend and find[...] more stream leading to yet another bend 50 yards to so further along. 
+                
+                    "Well, I guess that's it, then," says Troy, dropping his paddle to being his pivot turn to reverse direction. 
+                    
+                        ** [CLANG!]
+                            -> clang_heard
+                        
+ == clang_heard ==
+        
+        - (opts)
+        *    [Julian looks at Troy wide-eyed.]
+            Troy puts his figer to his lips.  -> silent
+        
+        *    (silent) [Nobody moves a muscle.] {They both know the sound they heard wasn't from monkeys or birds.  While distant, the clang was unmistakably a clang of metal on metal, the sound of human activity.| Listening...}
+        
+        *    {silent} [Overhead a buzzing...] -> overhead_buzzing
+        
+        -     -> opts
+
+== overhead_buzzing ==
+    - Overhead they hear a buzzing eerily similar to what they heard yesterday, but the tree canopy is too thick for them to see if it's one or more of the disguised drones. They do not hear another clang. 
+    
+     Troy pulls alongside Julian and says, "I think we should go a little further."
+        
+        - (opts)
+        *    [Julian continues to look overhead.]
+            "I guess it all depends on how you define 'a little' further," he says.  -> slow
+        
+        *    (slow) [Julian looks at the stream ahead.] {"Remember that we still need to row back to the cove, and you are kind of slow, dude... I'm just saying." | "A clang like we heard can travel really far, so I doubt the thieves are too close."}
+        
+        *    {slow} [Troy paddles forward.] -> tro_so_slow
+        
+        -     -> opts
+        
+        
+    = tro_so_slow
+    - "Since I'm so slow, I better get a head start," says Troy grinning. 
+    
+        Julian pulls in behind Troy and they paddle forward down the middle of the stream and around the next bend. And then around yet another. And then they hear...
+        
+                * [The sound of an engine.]
+                
+    =   jul_bolts
+        Upon hearing the engine, Julian instinctively goes into fight or flight mode and pivots his kayak, the muscles on his neck tense in preparation to paddle away quickly to escape. 
+        
+            *   ["Wait!" says Troy trying to whisper-yell.]
+            
+    =   think_generator        
+    -   "That's not a boat motor," he says. "I think it's a generator. And it's coming from over there." Troy points into the forest on the left bank. Also on the same bank, Troy spots a sandy area. "C'mon, let's pull up on to that sand."
+    
+            * [Julian looks at Troy in disbelief.]
+            
+    = jul_disbelief
+        {"Wait, you want to go on foot?" says Julian.| Julian is still skeptical. "We're faster on the water," he says."|}
+                
+                    The stream leads to the sound. So we can't take the kayaks any further safely and see what is going on. 
+                    
+                    The forest gives us cover. We can shortcut through on foot, take a quick peek, and then paddle straight back to the cove. 
+                    
+                    
+                
+                
+        
+                
+        
+                
+        
+                
+            
+            
+            
+            -> DONE
         
         
 
