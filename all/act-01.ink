@@ -8,7 +8,7 @@ VAR parts = 0
 --------------------------------------------------------------------------------*/
 
 //-> intro
--> go_stream
+-> kayaks_strewn
 === intro ===
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.
     *   [- next -]

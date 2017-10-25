@@ -215,7 +215,7 @@ SCENE 01
         -     -> opts
 
  === fog_talk ===
-    The Lakesong continues straight ahead into the fog where Troy expects to find the cove. 
+    The Lakesong continues straight ahead into the fog where Troy expects to find the cove. A couple of times the boat shudders briefly as it meets some cross currents.
 
         - (opts)
                 *    [ Four pairs of eyes scan the area ahead.]
@@ -291,7 +291,7 @@ SCENE 01
                     -- CHR_TRO_REL
                      Troy anticipated the concerns about the lack of a two-way radio, which was part of the original play, so he is prepared to smooth the situation over. -> signals
     
-                *    (signals) [Julian begins stashing signals into his life jacket pockets.] {"Don't worry. We have the other signals," says Troy, nodding toward Julian, who is looking for a spot for the whistle, "so even if we can't find each other right away, locating us—even in fog—shouldn't be a problem."| "Plus the fog is going to clear," he says. "I'm sure of it." }
+                *    (signals) [Julian begins stashing signals into his life jacket pockets.] {"Don't worry. We have the other signals," says Troy, nodding toward Julian, who is looking for a good spot to clip the safety whistle, "so even if we can't find each other right away, locating us—even in fog—shouldn't be a problem."| "Plus the fog is going to clear," he says. "I'm sure of it." }
     
                 *    {signals} ["I hope the fog doesn't clear," says Julian.] -> hope_for_fog
         -     -> opts
