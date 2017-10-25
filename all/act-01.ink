@@ -1965,15 +1965,5 @@ VAR pfd_tryer = "Mia"
             
             * [Onward!]
                 -- SYS_QUIZ_2
-                -> board_lakesong_again
+                -> approaching_lakesong
 
-=== board_lakesong_again ===
-   
-   -    THIS IS THE END OF ACT 01 
-   -    Thank you for reviewing and testing this beta version of <i>The Mystery of Kalkomey Isle</i>. Your help and feedback is much appreciated. 
-   
-   
-   -> DONE 
-
-
--> END

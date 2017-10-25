@@ -463,7 +463,7 @@
                 * [Julian steps on a dry bag.]
                 Julian picks up the dry bag, and sees it was emptied. He scans the forest floor, hoping to salvage something. -> rope
                 
-                * (rope) [Troy reaches for the rope.] {Reaching for the rope, Troy quickly unties the kayaks.| Julian finds a small piece of discarded wrapper from the granola bar.} 
+                * (rope) [Troy reaches for the rope.] {After reaching for the rope, Troy quickly unties the kayaks.| Julian finds a small piece of discarded wrapper from the granola bar.} 
                 
                 * {rope} ["The monkeys!" says Troy.]
                     ->the_monkeys
@@ -491,13 +491,13 @@
                     
             * [Troy looks at his watch.]
             "We're about 20 minutes late," says Troy.
-            "Do you think they're out there and we just can't see them in the fog?" asks Julian. 
+            "Do you think the Lakesong is out there and we just can't see it in the fog?" asks Julian. 
             
                 ** ["Doubful," says Troy.]
                     -> doubtful_in_cove
                 
 == doubtful_in_cove ==
-    -   "The plan was for them to leave the cove if we missed the rendezvous time and return again later," says Troy. "And if I know Alexis, she's sticking 100% to the plan."
+    -   "The plan was for Mia and Alexis to leave the cove if we missed the rendezvous time and return again later," says Troy. "And if I know Alexis, she's sticking 100% to the plan."
     
         - (opts)
             * [Julian pulls out the whistle.] 
@@ -505,17 +505,18 @@
             
             * (survey) [Troy surveys the situation.] {Troy doesn't think the Lakesong is close enough to hear a whistle or see a flare, but he wonders if the thieves are.| They both know signalling could get the boat's attention, but it could also get the attention of the thieves.} 
             
-            * {survey} [Make a decision.]-> whistle_decision
+            * {survey} [To blow or not to blow?]-> whistle_decision
         
         -   -> opts    
             
         = whistle_decision
-        -   "Considering the fog," says Troy, "the whistle has the best chance of getting someone's attention, but whose?"
+        -   "Considering the fog," says Troy, "the whistle has the best chance of getting someone's attention, but whose—the good guys or the bad guys?"
                 
                 * [Blow the whistle.]
                     -> blow_whistle
                 
                 * [Don't blow the whistle.]
+                    -> no_blow_whistle
                 
                 
 == blow_whistle ==
@@ -539,21 +540,29 @@
             
             -   -> opts
         
+== no_blow_whistle ==
+    -   "Let's wait on the whistle, for now," says Troy. "I don't want to risk the thieves hearing it. I think our best option is to get out of the cove." 
+    
+            * [Troy begins paddling.]
+            -> best_option_leave_cove
+
+
 == best_option_leave_cove ==
     -   "But the plan was to meet in the cove," says Julian. "So why are we leaving?"
-    -   "If today is like what we saw yesterday, then the cove is one of the last places the fog lingers," says Troy. "If it's clear beyond the cove we may be able to spot the Lakesong ourselves."
+    -   "If today is like what we saw yesterday, then the cove is where the fogs lingers making it one of the last places to clear," says Troy. "If it's clear beyond the cove we may be able to spot the Lakesong ourselves."
     
             *  [Julian agrees.]
                 -> jul_agrees_leave
             
         = jul_agrees_leave
-        -   "And if we sent off a flare, there's a better chance the girls could see it," says Julian picking up his pace.
+        -   "And if we sent off a flare," says Julian, "there's a better chance the girls could see it out in the clear."
+            "Exactly," says Troy. "Plus we put some distance between us and the entrance to the hidden stream."
         
                 * [Paddle out of the cove.]
                     -> out_of_cove
                 
 == out_of_cove ==
-    -   Troy was right about the fog. Shortly after clearing cove they break into much clearer conditions. There is still patchy fog in spots, but visibility is much better. 
+    -   Troy was right about the fog. Shortly after clearing cove they break into clearer conditions. There is still patchy fog in spots, but visibility is much improved. 
     
         "I don't see anything," says Julian scanning the horizon.
             
@@ -561,34 +570,52 @@
                 -> get_binocs
             
         = get_binocs
-        -   "I've got a pair in my dry bag..." he says, reaching for the bag and then getting a surprise. 
+        -   "I've got a pair in my dry bag..." he says, reaching for where he left it.
         
-        -   "What's the matter?" asks Julian, "Did the monkeys get your bag, too?"
+            - (opts)
+            
+                * [Troy feels around.]
+                    Troy feels around inside his kayak's hull and gets a surprise. -> water
+            
+                * (water) [Troy looks troubled.] {"That's weird... " he says.| "The bag is soaked."}
+                
+        
+                * {water} ["What?" says Julian.] -> temp
+                
+            - -> opts
+                
+        = temp
+        -   Troy looks inside his kayak and his face drops.
         
                 * ["I'm taking on water!" says Troy.]
+                    -> taking_on_water
                 
 == taking_on_water ==
         -   "I'm taking on water!" says Troy.
-        -   "So am I!" says Julian.
+        -   "So am I!" says Julian looking at his own kayak in disbelief. "What's going on?"
         
-        -       * ["The monkeys!"]
+              * ["The monkeys!"]
+                -> monkeys_drain
             
         = monkeys_drain    
-        -   "The monkeys must have taken the drain plugs!" says Troy. "We better hope we spot the Lakesong soon."
+        -   "The monkeys must have taken the drain plugs!" says Troy. "Now we really need to hope we spot the Lakesong soon."
         
             "This water is freezing!" says Julian.
         
-                * [They are in a predicamanent.]
+                * [The two kayakers are in a predicament.]
                     -> in_predicament
                 
 == in_predicament ==
-        -   As the kayaks become heavier from taking on water, the ride lower causing even more water to enter by way of the exposed drain holes. Soon the kayaks will sink.
+        -   As the kayaks become heavier from taking on water, they ride lower causing even more water to enter by way of the exposed drain holes. Soon the kayaks will sink.
         
             Troy needs to make a quick decision:
         
-                * Send off the flares immediately.
+                * [Send off the flares immediately.]
+                    -> send_flares_now
+                    
                 
-                * Try to find something to plug the drain holes.
+                * [Try to plug the drain holes.]
+                    -> try_plug
         
         
 ===  send_flares_now ===
@@ -597,15 +624,42 @@
         "'When we're in the water'!" exclaims Julian, as Troy's red flare arcs into the sky. Regaining his composure, Julian sends off one of his flares as well.
         
             * ["Look!" says Troy.]
+                -> drifting_from_cove
             
+
+=== try_plug ===
+    -   "Maybe we can find something to plug the hole?" says Troy.
+    -   "Great idea," says Julian. "Maybe my emptry dry bag will work?" He grabs his dry bag.
+      
+        - (opts)
+            
+            *   [Julian makes a face.]
+                Julian frowns as it the realization hits home. "I can't reach the hole," he says. ->reach
+                 //Julian reaches his arm out stretching toward the seven o'clock position... 
+            
+            *   (reach)  [Julian rolls the bag.]{Julian rolls the bag into a tight cylinder and then reaches his arm out, stretching toward the seven o'clock position but his arm isn't long enough.|"The bag might work, but I'd need to get out of the kayak to jam it in."}
+            
+            *   {reach} ["I've got more bad news," says Troy.] -> drifting_from_cove
+        
+        - -> opts
+        
+        
+
 === drifting_from_cove === 
     -   "Look how far back the cove is," says Troy. "We must be drifting in a current." 
     
         Julian doesn't answer as he's preoccupied with staying afloat.
         
-        "Make sure your lanyard is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks."
+            *  ["Check your lanyard," says Troy.]
+                -> check_lanyard
+        
+        = check_lanyard
+        -   "Make sure your lanyard is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks."
+        
+            Julian double-checks his landyard just before...
         
             * [Both kayaks capsize!]
+                -> capsized
             
 === capsized ===
     -   As their kayaks flip over, both Julian and Troy are plunged into the cold waters surrounding the island. Julian gasps from the shock of the cold shock and accidentally inhales water. Troy fights off his own panic by focusing on his breath and reaching for his kayak. Staying with the kayaks will make it easier for someone to find and rescue them. 
@@ -619,10 +673,54 @@
             * [Troy looks at his watch.]
             
         = tro_check_time
-        -   Troy notes the time on his waterproof watch. Unfortunatley, Troy realizes that Julian's 'freezing to death' expression is not an exaggeration. Troy guesses the water temperature 
+        -   Troy notes the time on his waterproof watch. Unfortunatley, Troy realizes that Julian's 'freezing to death' expression is not an exaggeration. Troy guesses the water temperature is around fifty degrees—give or take—which doesn't give them much time before bad things start to happen. 
+
+// we'll go to the review and/or minigame here
+        
+                * [Review the stages of cold water immersion.]
+                    FPO: study guide for hypothermia inserts here.
+                        ** [OK]
+                        
+                * [Skip the review and go directly to the activity.]
+                    FPO: minigame for hypothermia will insert here.
+                        ** [OK]
         
         
+=== awaiting_rescue ===
+    -   After just a few minutes, Troy is already sensing a loss of dexterity as he prepares to send off another flare. Removing the flare from his PFD pocket is difficult, and launching it even more so. 
+    
+            * [Troy launches the flare.]
+                -> second_flare
+            
+            
+        = second_flare
+        Troy is dissapointed that the flare didn't go as high as he wanted. His loss of manual dexterity affected his aim. 
         
+            "How long... do you... think until... we... rescued?" asks Julian.
+            
+            * ["Not long."]
+                -> not_long_until
+        
+        = not_long_until
+        -   "Not long," says Troy trying to lift Julian's spirits. Troy knows Julian's difficulty speaking is due to fatigue and shock. Troy remains hopeful but glancing at the shoreline, he is more and more alarmed at how far from the cove they continue to drift. Will Mia and Alexis find them this far away?
+        
+            "I hope so," says Julian breathlessly, "because it's... it's getting... harder to... hang on."
+            
+                *   ["Let's huddle together," says Troy.]
+                    -> huddle_together
+            
+        = huddle_together
+        -   "Huddling... conserve our... heat," says Troy who is also finding it difficult to speak. He knows he should attach the kayak landyard to his life jacket, but the task seems too difficult. Everything is so difficult.
+        
+            Troy also realizes that he needs to launch another flare to account for their drifting position. He decides he'll do that in just a minute, after he rests a bit...
+        
+               * [They huddle together.]
+               The huddle together. Huddling helps them conserve body heat as well as helping their morale. They are in it together. They just need to hang on...
+               
+                    ** [Mia and Alexis are searching for them.]
+                    // this will link up with Mia and Alexis searching for them after not finding them at first rendezvous hour.
+        
+
             
             -> DONE
         
