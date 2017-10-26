@@ -1,7 +1,7 @@
 === follow_kayaks ===
 -    The kayaks slide into the fog and quickly lose sight of the Lakesong. Julian is an experienced rower, and Troy has to work to keep pace. They reach the cove's shoreline and proceed to circumnavigate the cove, keeping an eye for anything out of the ordinary. 
 
-        *  [15, 20, 30 minutes pass...]
+        *  [The minutes pass... 15, 20, then 30 minutes...]
         After half an hour they've managed to search roughly half of the cove, but haven't found anything at all, despite the fog being much lighter along the isle's shore, giving them good visibility. 
         
             Julian stops paddling, and then pivots his kayak about until he is facing back in the direction from which he came. 
@@ -86,11 +86,32 @@
                     **  [Troy and Julian look at stream ahead of them.]
             
             * [ Julian looking up into a tree.]
-                // julian says a 'creature' crashed drone, comment on how life creature wouldn't be intact
+                // julian says a 'creature' crashed drone, comment on how live creature wouldn't be intact
             
             * [A dark stream bending into the forest.]
+                -> dark_stream
                 // both above eventually get back to stream
             
+
+=== julian_tree_looking ==
+    -   Troy follows Julian's eyes and discovers what caught his attention.
+        "It's one of the creatures," says Julian. "But no worries. It's dead."
+        "The drone must have crashed." Troy catches Julian's skeptical face. "C'mon, Jules, this pretty much proves the drone theory."
+        
+            * "Really?" says Julian.
+                -> no_props
+        
+        = no_props
+        "It's pretty high up, but I don't see any properellers, do you?"
+        "No, maybe they broke off when it crashed," says Troy. "But when the last time you've seen a bird, bee, or bat crash? And if it were leaving matter, it would have decayed or been eaten by something else."
+        
+        "I'm just glad it's dead whatever it is," says Julian. 
+        
+        
+        
+
+
+
 === monkey_eyes_him ===
 // this probably need to treated as a tunnel
     
@@ -179,12 +200,38 @@
                 
         
 === no_go_stream ===
-    -   Julian is relieved but also a little disspointed. He assumed Troy would want to explore the stream for sure. 
-    
-        They paddle back under the camouflage and take the kayaks to the other side of the cove, putting distance between themselves and the vine curtain hiding the stream in case the thieves enter or exit through it. The fog persists and they both hope Mia and Alexis will be on time. 
+    -   Julian is relieved but also a little disspointed. <>
         
-            * [Follow Mia and Alexis in the boat.]
+        {
+            - no_go_stream: He assumed Troy would want to go a little futher upstream for sure. 
+            
+             * They paddle all the way back[.] to the camouflaged entry point to the stream <>
+            
+            - else: He assumed Troy would want to explore the stream for sure.
+            They paddle back under the camouflage <>
+            
+        }    
+            
+    -   and take the kayaks to the other side of the cove, putting distance between themselves and the vine curtain hiding the stream in case the thieves enter or exit through it. The fog persists {no_go_stream:, though it's more patchy than before,} and they both hope Mia and Alexis will be on time. 
+    
+        {
+        
+             - no_go_stream:
+                
+                * [Wait for Mia and Alexis]
+                    -> wait_for_mia_alexis
+
+// need to join the above to Mia and Alexis in Lakesong as they begin their return to the cove. will have the girls hear a boat just as they are about to toot the horn signal.       
+            
+            - else:
+            
+                * [Follow Mia and Alexis in the boat.]
                 -> follow_boat
+        
+        }
+        
+        
+            
 
 === go_stream ===
     -  Julian isn't suprised by Troy's decision. He knew Troy wouldn't be able to resist exploring the stream. Still, now that the decision is made, Julian is a little apprehensive. What if they do run into the thieves? 
@@ -270,7 +317,15 @@
             
                 * ["OK. Sounds good," says Troy.]
                     -> around_next_bend
-            
+                
+                * ["No, let's turn back," says Troy.]
+                    -> turn_back_before_cave
+                
+   
+        
+        
+        
+        
         = around_next_bend
         -   Julian leads the way with Troy close behind. The bend looks similar to the others they've paddle through, and they approach it as they have others with the hope of finding something interesting on the other side.  Passing the first few bends earlier, they were nervous, wondering if the thieves would be just around the corner, but so far each bend has only revealed the same thing—more stream going on and on to the next bend. 
         
@@ -280,6 +335,10 @@
                     
                         ** [CLANG!]
                             -> clang_heard
+  
+  
+  === turn_back_before_cave ===
+    -   -> no_go_stream 
                         
  == clang_heard ==
     -   A CLANG ripples through the forest and everything goes still.
@@ -629,7 +688,7 @@
 
 === try_plug ===
     -   "Maybe we can find something to plug the hole?" says Troy.
-    -   "Great idea," says Julian. "Maybe my emptry dry bag will work?" He grabs his dry bag.
+    -   "OK," says Julian. "My emptry dry bag might work." He grabs his dry bag.
       
         - (opts)
             
@@ -648,13 +707,13 @@
 === drifting_from_cove === 
     -   "Look how far back the cove is," says Troy. "We must be drifting in a current." 
     
-        Julian doesn't answer as he's preoccupied with staying afloat.
+        Julian doesn't answer as he's become preoccupied with staying afloat.
         
             *  ["Check your lanyard," says Troy.]
                 -> check_lanyard
         
         = check_lanyard
-        -   "Make sure your lanyard is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks."
+        -   "Make sure your lanyard is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks if we dump."
         
             Julian double-checks his landyard just before...
         
