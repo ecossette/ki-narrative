@@ -9,7 +9,7 @@
                 * ["You see something?" asks Troy.]
                     -> jul_stops_paddling
             
-== jul_stops_paddling
+== jul_stops_paddling ==
     -   "May be something, may be nothing," he says.
     
         - (opts)
@@ -35,7 +35,7 @@
                 -> tro_impressed
             
     =   tro_impressed
-    -   "I hadn't noticed that," says Troy, impressed by Julian's focus and seriousness.
+    -   "I hadn't noticed that," says Troy, suprised by Julian's focus.
     
         Julian paddles right up and then into the vines, the bow of his kayak slipping through the greenery.
         
@@ -63,10 +63,10 @@
                 -> vine_questions
 
 == vine_questions ==
-    -   As Julian slips beneath the camouflage and out of view, Troy can't help but wonder what happened to the reluctant Julian from the day before.
+    -   As Julian slips beneath the camouflage and out of view, Troy wonders what happened to the reluctant Julian from the day before. Maybe Julian just loves kayaking? 
         
         - (opts)
-        *    [Troy hesitates.] 
+        *    [Troy checks out the net.] 
             Troy pauses to inspect the net up close. -> call
         
         *    (call) [Troy paddles forward.]{Troy grabs the netting and slowly inches forward to slip under.| As with the disguised drones, he can't help but be impressed with the craftmanship.}
@@ -87,6 +87,7 @@
             
             * [ Julian looking up into a tree.]
                 // julian says a 'creature' crashed drone, comment on how live creature wouldn't be intact
+                -> julian_tree_looking
             
             * [A dark stream bending into the forest.]
                 -> dark_stream
@@ -96,16 +97,20 @@
 === julian_tree_looking ==
     -   Troy follows Julian's eyes and discovers what caught his attention.
         "It's one of the creatures," says Julian. "But no worries. It's dead."
-        "The drone must have crashed." Troy catches Julian's skeptical face. "C'mon, Jules, this pretty much proves the drone theory."
         
-            * "Really?" says Julian.
-                -> no_props
+            *   ["That drone must have crashed," says Troy.] 
+            Troy catches Julian's skeptical face. "C'mon, Jules, this pretty much proves the drone theory."
+        
+                ** ["Really?" says Julian.]
+                    -> no_props
         
         = no_props
-        "It's pretty high up, but I don't see any properellers, do you?"
-        "No, maybe they broke off when it crashed," says Troy. "But when the last time you've seen a bird, bee, or bat crash? And if it were leaving matter, it would have decayed or been eaten by something else."
+        "It's pretty high up," says Julian, "but I don't see any propellers, do you?"
+        "No... maybe they broke off when it crashed," says Troy. "But when's the last time you've seen a bird, bee, or bat crash into a tree? And if it were living matter, it would have decayed or been eaten by something else."
         
-        "I'm just glad it's dead whatever it is," says Julian. 
+            * ["Well, I'm just glad it's dead," says Julian.] 
+            Julian turns his attention to the stream.
+                -> dark_stream
         
         
         
@@ -155,9 +160,9 @@
                 -> follow_or_no
         
 === follow_or_no ===
-    -   { "That's the question, isn't it?" says Troy, who begins to think out loud.| Troy then considers the alternative.|} 
+    -   { "That's the question, isn't it?" says Troy, thinking out loud.| Troy then considers the alternative.|} 
     
-    *    "If we follow the stream[..."], we could find the thieves hideout but we also run the risk of being seen—or worse—getting caught by the thieves," says Troy. "On the other hand, the more we learn, the better chance we have of getting the reward." -> follow_or_no
+    *    "If we follow the stream[..."], we could find the thieves' hideout, but we also run the risk of being seen—or worse—getting caught by the thieves," says Troy. "On the other hand, the more we learn, the better chance we have of getting the reward." -> follow_or_no
     
     *    "If we don't follow the stream[..."], we probably have enough clues now to give to the police and probably get the reward," says Troy. "But we still have well over an hour before the rendezvous time, and the idea of killing time in the cove waiting isn't very appealing." -> follow_or_no 
     
