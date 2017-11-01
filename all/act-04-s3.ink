@@ -1,18 +1,3 @@
-
-
-
-=== wait_for_mia_alexis
-// Troy and Julian returned to the cove after turning back from following the stream far enough to encounter thieves. We'll join the girls on the Lakesong. 
-
--   To be written: join Mia and Alexis on Lakesong as the rendezvous hour approaches and they make their way to the cove. They'll find the cove full of patchy fog such that they can't see the entire cove. They'll need to use the signal horn. As they are about to blow the signal, they hear a boat motor, but can't see a boat. They boat sound gets closer and then slowly fades in the distance. After recovering the two boys, they'll all discuss hearing this boat. Troy and Julian will tell the girls about the hidden stream. 
-
-// randomizer needed for that girls saw as player will not have accompanied them. 
-
-    They'll take the Lakesong back to Laketown. 
-    
--> DONE
-
-
 === follow_boat ===
 - Mia and Alexis watch as Julian and Troy paddle off in the kayaks and dissappear behind the fog. Alexis starts the Lakesong's engine and slowly takes the boat out of the cove while Mia helps, providing a steady lookout to the waters ahead.
 
@@ -148,7 +133,7 @@
         
         - who_fog_is_mac:
         * ["A lot of mistakes are made in the fog," Mac says.]
-            "What seems clear around you is nothing but mist, error, and confusion beyond," says Mac wearing serious expression. 
+            "What seems clear around you is nothing but mist, error, and confusion beyond," says Mac wearing a serious expression. 
             
             Neither Mia nor Alexis is much in the mood for Mac's tendency to speak in riddles. Though Mac seems harmless enough. He had mentioned that he fishes out this way.
             -> fog_notices
@@ -170,16 +155,16 @@
             { 
                 - who_fog_is_cletus:
                 **  [Cletus looks up at the Lakesong.]
-                    {who_fog} looks up the Lakesong which rides higher in the water than his own boat.
+                    {who_fog} looks up the Lakesong which rides higher in the water than his own boat.-> fidgets
                 
                 - who_fog_is_mac:
                 
                 ** [Mac looks up at the Lakesong.]
-                {who_fog} looks up the Lakesong which rides higher in the water than his own boat.
+                {who_fog} looks up the Lakesong which rides higher in the water than his own boat.-> fidgets
                 
                 - who_fog_is_ian:
                 ** [Ian looks up at the Lakesong.]
-                {who_fog} looks up the Lakesong which rides higher in the water than his own boat.
+                {who_fog} looks up the Lakesong which rides higher in the water than his own boat.->fidgets
     
             }
             
@@ -195,7 +180,7 @@
     
     -   (opts)
         
-        ** He stares at the empty kayak racks.[] 
+        * He stares at the empty kayak racks.[] <> 
             {
                 - who_fog_is_cletus: "Fog's bad in a boat... worse in a kayak." {who_fog} says.-> looks
                 
@@ -205,12 +190,20 @@
             
             }
         
-        ** (looks) [He looks from Alexis to Mia.] {He looks from Alexis to Mia and back. "Two girls alone in boat and out here of all places?" | "These waters can be deadly."} 
+        * (looks) [He looks from Alexis to Mia.] {He looks from Alexis to Mia and back. "Two girls alone in boat and out here of all places?" | "These waters can be deadly."} 
         
-        ** {looks} [Alexis is frozen.] -> frozen
-        ** {looks} [Alexis deflects.]
-    
+       * {looks} [Alexis feels her stomach clench.] -> alx_hesistates
+        
+       
     - -> opts
+        
+        = alx_hesistates 
+        -   Alexis feels her stomach clench and...
+        
+        **  [... and stands frozen in place.]
+        **  [... pauses for a moment the deflects.] -> deflects
+    
+        
         
         = frozen
         -   Alexis is frozen in place, and Mia can see the hesitation in Alexis's face. 
@@ -220,31 +213,35 @@
        
         
         = deflects
-        -   "Yeah, I'm not much of paddler myself," says Alexis with what Mia know is a nervous giggle. 
-        
+        -   "Yeah, I'm not much of paddler myself," says Alexis with what Mia knows is a nervous giggle. "That's why... uh... we don't have... you know paddles or anything..." {who_saw} just watches as Alexis trails off. 
+                
                 * [Mia steps forward.]
                 -> mia_steps_forward
             
         = mia_steps_forward
-        -   "As dangerous as this fog is," says Mia, breaking her silence. "There's a worse menance..." she says and pauses for effect. 
+        -   "As dangerous as this fog is," says Mia, coming forward to help Alexis. "There's a worse menance..." she says and pauses for effect. 
         
              { 
                 - who_fog_is_cletus:
                 *   "Well, well, well, the little one speaks," says Cletus[.] sarcastically with a look halfway between a sneer and a grin. "Do enlighten me."
+                    -> co_is_what
                    
                 
                 - who_fog_is_mac:
                 *   Mac turns his attention to Mia[.], waiting for her to continue.
+                      -> co_is_what
                 
                 - who_fog_is_ian:
                 *   "You don't say?" says Ian[.] with an amused expression. "And what is that?"
+                      -> co_is_what
     
             }
         
         = co_is_what
-        -   "Carbon monoxide," says Mia, remembering the incident yesterday in the fog, "so we can't sit here idling all day. Let's go, Alexis!"
+            * "Carbon monoxide," says Mia[.], remembering the incident yesterday in the fog, "so we can't sit here idling all day. Let's go, Alexis!"
             
-                *   [Alexis takes Mia's cue.]
+                    **   [Alexis takes Mia's cue.]
+                    -> alx_takes_cue
                 
         = alx_takes_cue
         -   Alexis takes Mia's cue and pushes the throttle forward. The Lakesong cautiously but steadily eases away from {who_fog} and his boat. 
@@ -252,28 +249,43 @@
         
             { 
                 - who_fog_is_cletus:
-                *    "See ya!" she says to Cletus[.], as the Lakesong slips back into the fog
-                while Cletus looks on suprised at the sudden departure.
+                *    "See ya!" she says to Cletus[.], as the Lakesong slips back into the fog while Cletus looks on frowning at the sudden departure.
+                    -> once_safely_away
                    
                 
                 - who_fog_is_mac:
-                *   "See you around, Mac," she says as the Lakesong slips into the fog while Mac looks on nodding his head at the sudden departure
+                *   "See you around, Mac," she says[.], as the Lakesong slips into the fog while Mac looks on suprised at the sudden departure.
+                    -> once_safely_away
                 
                 - who_fog_is_ian:
-                *   "Hasta la vista, Ian," she says as the Lakeson slips into the fog while Ian looks on amused by the sudden departure. 
+                *   "Hasta la vista, Ian," she says[.], as the Lakeson slips into the fog while Ian looks on amused by the sudden departure. 
+                    -> once_safely_away
     
             }
         
-== great_thinking ==
-    -   "That was some quick thinking back there," Alexis tells Mia. "Thanks!"
-        "What was that all about anyway?" asks Mia. "You don't normally get flustered like that."
+== once_safely_away ==
+    -   After leaving {who_saw} and his boat behind in the fog, Alexis lets out a long breath.
+        
+            *   ["Thanks," she says to Mia.] 
+                -> great_thinking
+                
+
+        = great_thinking 
+        -   "That was some quick thinking back there with that carbon monoxide line," Alexis tells Mia. "I owe you one." 
+        
+            * ["Well, the CO thing has the benefit of being true," says Mia.]
+                -> flustered
+        
+        = flustered
+        
+        "But happened back there anyway?" asks Mia. "I've never seen you get so flustered."
                 
             - (opts)
                 
-                *   [Alexis smiles.] 
-                    I guess flustered is one way to put it," she says.  
+                *   [Alexis frowns.] 
+                    "I guess flustered is one way to put it," she says. -> feel 
                 
-                *   (feel) [Alexis shakes her head.] {"Something just didn't feel right."|"And all those not so subtle references to kayaks?"}
+                *   (feel) [Alexis shakes her head.] {"I don't know. Something just didn't feel right about that encounter."|"I was definitely thrown off... I mean all those not so subtle references to kayaks?"}
                
                 *   {feel} [Mia nods.]
                 -> mia_agrees
@@ -283,7 +295,8 @@
             = mia_agrees
             -   "You're worried {who_saw} figured out that Julian and Troy are off on the kayaks exploring Kalkomey Isle?" Mia asks. 
             
-                    * "Aren't you?"
+                    * ["Aren't you?" responds Alexis.]
+                        -> depends_if_thief
             
             = depends_if_thief
             -   "Depends," says Mia. "Do you suspect {who_saw} of being involved in the boat robberies?"
@@ -291,44 +304,118 @@
             
             { 
                 - who_fog_is_cletus:
-                *    Cletus? Hell yeah I do. 
-                    One he's like straight up creepy. Two what's he doing out here creeping around? 
+                *    ["Cletus? Um, yeah, I mean look..."] 
+                    "One, he's like straight up creepy, am I right?" says Alexis. "Two, what's he doing out here creeping around in the fog?" 
                     
-                    Mia laughs. 
-                    You mean creeping around out here same as we are?
+                       "You mean creeping around out here same as we are?" says Mia.
                     
-                    Alexis smiles.
-                    True... but we're not creepy. 
+                            ** ["True... but..." Alexis smirks.] 
+                            "There's a difference between us and Cletus," says Alexis. "We're not creepy."
+                            
+                                 ***  [Mia laughs.] 
+                                    -> hope_know_more
+                            
                 
                 - who_fog_is_mac:
-                *   Mac? Maybe...
-                    I mean he sure seems to be up in everyone's business... always asking questions.
-                    But he told us he comes out this way fishing.
-                    True... but I didn't notice any fishing rods in you boat did you?
-                        No, but I wasn't really paying attention. I couldn't say one way or the other. 
+                *   ["Mac? Maybe..."]
+                    "I mean {who_saw} sure seems to be up in everyone's business... always asking questions."
+                    
+                        ** ["But he told us he comes out this way fishing," says Mia.]
+                            
+                            *** ["True... but..." says Alexis.] 
+                                "I didn't notice any fishing rods in {who_saw}'s boat did you?" asks Alexis.
+                        
+                                **** ["No, but I wasn't really paying attention."] 
+                                     "There certainly could have been fishing poles in his boat," says Mia.
+                                     
+                                        ***** [Alexis nods and checks the time.]
+                                                -> hope_know_more
+                                        
                 
                 - who_fog_is_ian:
-                *   Ian, well...
-                    Where's Maura? They seemed attached at the hip. 
-                    Don't you think it's curious that yesterday Maura said they'd never been to Kalkomey Isle because it's always too foggy and today we find Ian out here in the fog?
+                *   ["Ian, well... I don't know..."]
+                    "It's just that it seemed strange that Maura wasn't with him. What's he doing out here alone in the fog?"
+                    
+                        ** ["You mean like us?" asks Mia.] 
+                            "You mean like us, out here alone in the fog?" asks Mia.
+                    
+                                *** [Alexis snorts. "Ok, you've got me there."]
+                                    -> hope_know_more
                     
     
             }   
-               
+            
+            -> DONE  
                 
-            Did you notice he no longer had those fuel cannisters on his boat? 
-                I did, but that was hours ago that we saw him at the docks. 
-            Did you notice any fishing rods?
-            Don't you think it's curious that yesterday Maura said they'd never been to Kalkomey Isle because it's always too foggy and today we find Ian out here in the fog? 
-                
-                
-        Hopefully, we'll know more once they guys report in.
-        Speaking of, it's time to head back to the cove," says Alexis. "And look the fog is breaking up!"
+            = hope_know_more    
+            -   "Hopefully, we'll know more about the boat robberies once they guys report in," says Mia.
+            
+                * [Speaking of the guys," says Alexis.]
+                "It's time to head back to the cove," says Alexis. "And look! The fog is finally breaking up!"
         
+                    ** [Reverse direction.]
+                    
+            = reverse_direction
+            -   Although the fog is breaking up, it's still patchy, so Alexis gives a prolonged toot with the Lakesong's before beginning her slow turn back towards the island. 
         
+                    * [Return to the cove.]
+            
+            = return_to_cove
+            -   The remaining fogs burns off on their cruise back to the island giving them plenty of visibility. They encounter no other boats. 
+            
+                    *   [As they near the cove...]
+                        -> nearing_the_cove
+            
+=== nearing_the_cove ===
+    -   As they near the cove, they are not surprised to find that it's still shrouded in fog. 
+                
+            -   (opts)
+                
+                *  [Mia takes a couple photos.] 
+                    Mia takes a couple photos of the last of fog shimmering in the cove against the bright green of the island. -> shudders
+                        
+                *   (shudders) [The boat shudders.] {The boat shudders and Mia grabs for a rail to steady herself, as they quickly pass through the same cross current they've felt before.| "It's really pretty," she says.} 
+                        
+                *   {shudders} [Alexis slows the boat.]
+                    -> use_the_horn
+                        
+            -   -> opts  
+            
+            
+            
+            = use_the_horn
+            "We'll need to signal with the horn per the plan," says Alexis easing back on the throttle as the visibility once again decreases, "but Julian was right that the fog will help us stay hidden." 
+            
+                *  The Lakesong slips into the foggy cove.[]
+            
+                -   (opts2)
+                    
+                    **  [Keep a sharp lookout.]
+                        Mia helps Alexis keep a sharp lookout. -> slow
+                        
+                    **  (slow) [Slow down even more.] {Alexis brings the throttle back almost to idle, giving the boat its slowest possible forward speed so as not to accidentally overrun the kayaks.| Alexis suspects Troy and Julian will be waiting closer to the shore, but the kayaks could be anywhere in the cove.}
+                        
+                    **  {slow} [Listen.]
+                                -> listen
+                
+               -    -> opts2
+  
     
-    
-    
+            = listen
+            -   They both listen intently for the possiblity of another boat or maybe a signal from the guys. 
+            
+                * [Alexis moves the throttle to idle.]
+                "This is far enough, she says. "If they're in the cove they'll have heard the engine and be waiting for our signal."
+                
+                    ** [Alexis gives the signal.]
+                        -> gives_signal
+                    
+            = gives_signal
+            -   Alexis gives three quick toots with the horn, waits three seconds and then gives a long one, the agreed upon signal. 
+            
+                *  [There is no response.]
+                
+            
 
     
     
