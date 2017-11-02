@@ -205,9 +205,95 @@ With the cove still shrouded in fog, the visibility is limited. They won't be ab
             "At least there's only one," say Mia. "And it's leaving us alone."
             
                 *   [At least for now, they both think to themselves.] 
+                    -> make_way_cove
+                
+=== make_way_cove ===
+    -   The object—drone or bird—is still visible but has moved much further to the east as Mia, Alexis, and the Lakesong continue their west-northwesterly loop back to the cove with the hope of finding Julian and Alexis waiting in the kayaks. 
+    
+            The fog in the cove has...
+            
+                *   [... stubbornly persisted.]
+                    -> stubbonrly_persisted
+                    
+                *   [... finally begun to burn off.] 
+                    -> finally_begun_burnoff
+                   
                 
                 
+== stubbonrly_persisted ==
+    -   Approaching the cove, Mia and Alexis see that it's every bit as foggy as it was before.
+        
+        "With the fog hanging on," says Alexis, "we'll need to rely on the horn signal again.".
+            
+        -   (opts)
+            
+                *   [Mia shivers.]
+                "It's always gets colder in this part," says Mia shivering, as the boat shudders in the cross-current. -> skyward
+                
+                *   (skyward) [Mia looks skyward.] {"At least the fog will be good cover again." | "If that is a drone, it would have an excellent view of a clear cove."}
                 
                 
+                * {skyward} [Reduce speed.] 
+                    -> who_rescues_shuffle
+       
+        -   -> opts
+                
+== finally_begun_burnoff
+    -   Approaching the cove, Mia and Alexis see that the fog is rapidly burning off.
+        
+        "At the rate that fog is burning off," says Alexis, "we should have enough visibility to eyeball the kayaks."
+            
+            
+             -   (opts)
+            
+                *   [Mia shivers.]
+                "It's always gets colder in this part," says Mia shivering, as the boat shudders in the cross-current. -> skyward
+                
+                *   (skyward) [Mia looks skyward.] {Mia looks skyward. "If that's a drone, though, it'll have clear view of the cove, too." | "When we see the kayaks, we'll need to get them on board and get moving, assuming that's a drone."}
+                
+                
+                * {skyward} [Reduce speed.] 
+                    -> who_rescues_shuffle
+       
+        -   -> opts
+            
+                
+                
+=== who_rescues_shuffle ===          
+    -   put the rescue shuffle here   
+    
+        {shuffle:
+        
+            - -> cletus_rescues
+            
+            - -> mia_alexis_rescues
+            
+            - -> mac_rescues
+            
+            - -> ian_rescues
+        
+        
+        
+        }
+
+=== cletus_rescues ===
+    - cletus is the rescuer
+    -> DONE
+
+=== mia_alexis_rescues ===
+    - mia and alexis are the rescuer
+    -> DONE
+    
+=== mac_rescues ===
+    - mac is the rescuer
+    -> DONE
+    
+=== ian_rescues ===
+    - ian is the rescuer
+    
+    
+
+
+
 
 -> DONE

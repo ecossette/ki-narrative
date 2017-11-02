@@ -10,7 +10,8 @@ VAR parts = 0
 //-> intro
 //-> kayaks_strewn
 //-> how_far_stream_goes
--> nearing_the_cove
+//-> nearing_the_cove
+-> the_fog_clears
 === intro ===
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.
     *   [- next -]

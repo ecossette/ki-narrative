@@ -10,6 +10,7 @@
         After some time passes...
     
             * [The fog begins to clear.]
+                -> the_fog_clears
             
             * [ The fog persists.]
                 -> fog_persists
