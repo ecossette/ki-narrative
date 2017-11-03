@@ -1,11 +1,11 @@
 === follow_boat ===
-- Mia and Alexis watch as Julian and Troy paddle off in the kayaks and dissappear behind the fog. Alexis starts the Lakesong's engine and slowly takes the boat out of the cove while Mia helps, providing a steady lookout to the waters ahead.
+- Mia and Alexis watch as Julian and Troy paddle off in the kayaks and dissappear behind the fog. Alexis starts the <i>Lakesong's</i> engine and slowly takes the boat out of the cove while Mia helps, providing a steady lookout to the waters ahead.
 
         * [ Beyond the cove.]
             -> beyond_cove
         
     = beyond_cove
-    -   Per the the plan, Alexis takes the Lakesong away from the cove and puts some distance between the boat and the island. Alexis plans to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. 
+    -   Per the the plan, Alexis takes the <i>Lakesong</i> away from the cove and puts some distance between the boat and the island. Alexis plans to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. 
     
         After some time passes...
     
@@ -26,7 +26,7 @@
            
             *   (fuel) [Mia asks about the fuel.] {"How's the fuel situation?" she asks.| "We've got awhile to go still."}
             
-            * {fuel} [Alexis checks the fuel guage.] -> good_on_fuel
+            * {fuel} [Alexis checks the fuel gauge.] -> good_on_fuel
             
         -   -> opts
             
@@ -44,7 +44,7 @@
             - (opts)    
                 
                 *   [Mia looks at Alexis.]
-                Mia looks at Alexis with an anxious expession. -> throttle
+                Mia looks at Alexis with an anxious expression. -> throttle
                 
                 * (throttle)  [Alexis reaches for the throttle.] {Alexis reaches for the throttle and brings the boat to idle.| Neither wants to risk a collision with the other boat, but both would prefer to keep their own presence unknown under the circumstances. }
                 
@@ -62,7 +62,7 @@
                         -> sound_own_engine
                     
             = sound_own_engine
-            -   With their own engine running, they can't hear another boat, but they need to keep it running to be prepared to manuever immediately if a collision were imminent. 
+            -   With their own engine running, they can't hear another boat, but they need to keep it running to be prepared to maneuver immediately if a collision were imminent. 
             
                 Then they hear it.
                 
@@ -76,7 +76,7 @@
                         -> alx_toots
             
             = alx_toots
-            -   Alexis responds with a single prolonged blast from the Lakesong's horn indicating their position to the other vessel hidden in the fog. 
+            -   Alexis responds with a single prolonged blast from the <i>Lakesong's</i> horn indicating their position to the other vessel hidden in the fog. 
             
                 A couple more advisory toots are exchanged until gradually they see another boat appear out of the fog.
                 
@@ -84,7 +84,7 @@
                         -> fog_meet_randomizer
 
 === fog_meet_randomizer ===
-   
+~ where_saw = "fog"
  
        { shuffle:
 	            
@@ -102,7 +102,7 @@
 
 === who_fog_is_cletus ===
     VAR chr = "CLT"
-    VAR who_saw = "Cletus"
+    ~ who_saw = "Cletus"
     -   It's Cletus in the boat they saw him fueling earlier. 
 
     -   -> fog_discussion ("Cletus")
@@ -125,7 +125,7 @@
     - CHR_{chr}_REL  
     
         * ["Ahoy," says Alexis in reply.] 
-        "Sure is foggy, isn't it?" she adds but immediatley regrets it. Don't act nervous she thinks to herself. 
+        "Sure is foggy, isn't it?" she adds but immediately regrets it. Don't act nervous she thinks to herself. 
     
     {
         - who_fog_is_cletus:
@@ -156,20 +156,20 @@
             { 
                 - who_fog_is_cletus:
                 **  [Cletus looks up at the Lakesong.]
-                    {who_fog} looks up the Lakesong which rides higher in the water than his own boat.-> fidgets
+                    {who_fog} looks up the <i>Lakesong</i> which rides higher in the water than his own boat.-> fidgets
                 
                 - who_fog_is_mac:
                 
                 ** [Mac looks up at the Lakesong.]
-                {who_fog} looks up the Lakesong which rides higher in the water than his own boat.-> fidgets
+                {who_fog} looks up the <i>Lakesong</i> which rides higher in the water than his own boat.-> fidgets
                 
                 - who_fog_is_ian:
                 ** [Ian looks up at the Lakesong.]
-                {who_fog} looks up the Lakesong which rides higher in the water than his own boat.->fidgets
+                {who_fog} looks up the <i>Lakesong</i> which rides higher in the water than his own boat.->fidgets
     
             }
             
-             **  (fidgets)  [Alexis fidgets.] {Alexis fidgets while nervously wondering if he remembers that Julian, Troy, and the kayaks were on the Lakesong back at the marina.| Whisps of fog drift between the two boats.}
+             **  (fidgets)  [Alexis fidgets.] {Alexis fidgets while nervously wondering if he remembers that Julian, Troy, and the kayaks were on the <i>Lakesong</i> back at the marina.| Wisps of fog drift between the two boats.}
              
              **  {fidgets} [Mia watches in silence.]
                         -> fog_notices_actions
@@ -220,7 +220,7 @@
                 -> mia_steps_forward
             
         = mia_steps_forward
-        -   "As dangerous as this fog is," says Mia, coming forward to help Alexis. "There's a worse menance..." she says and pauses for effect. 
+        -   "As dangerous as this fog is," says Mia, coming forward to help Alexis. "There's a worse menace..." she says and pauses for effect. 
         
              { 
                 - who_fog_is_cletus:
@@ -245,21 +245,21 @@
                     -> alx_takes_cue
                 
         = alx_takes_cue
-        -   Alexis takes Mia's cue and pushes the throttle forward. The Lakesong cautiously but steadily eases away from {who_fog} and his boat. 
+        -   Alexis takes Mia's cue and pushes the throttle forward. The <i>Lakesong</i> cautiously but steadily eases away from {who_fog} and his boat. 
         
         
             { 
                 - who_fog_is_cletus:
-                *    "See ya!" she says to Cletus[.], as the Lakesong slips back into the fog while Cletus looks on frowning at the sudden departure.
+                *    "See ya!" she says to Cletus[.], as the <i>Lakesong</i> slips back into the fog while Cletus looks on frowning at the sudden departure.
                     -> once_safely_away
                    
                 
                 - who_fog_is_mac:
-                *   "See you around, Mac," she says[.], as the Lakesong slips into the fog while Mac looks on suprised at the sudden departure.
+                *   "See you around, Mac," she says[.], as the <i>Lakesong</i> slips into the fog while Mac looks on surprised at the sudden departure.
                     -> once_safely_away
                 
                 - who_fog_is_ian:
-                *   "Hasta la vista, Ian," she says[.], as the Lakeson slips into the fog while Ian looks on amused by the sudden departure. 
+                *   "Hasta la vista, Ian," she says[.], as the <i>Lakesong</i> slips into the fog while Ian looks on amused by the sudden departure. 
                     -> once_safely_away
     
             }
@@ -357,7 +357,7 @@
                     ** [Reverse direction.]
                     
             = reverse_direction
-            -   Although the fog is breaking up, it's still patchy, so Alexis gives a prolonged toot with the Lakesong's before beginning her slow turn back towards the island. 
+            -   Although the fog is breaking up, it's still patchy, so Alexis gives a prolonged toot with the <i>Lakesong's</i> before beginning her slow turn back towards the island. 
         
                     * [Return to the cove.]
             

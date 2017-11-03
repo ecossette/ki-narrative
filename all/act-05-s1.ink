@@ -1,4 +1,6 @@
 === recovery_fine_aboard_boat===
+// this is draft
+FPO - PLACEHOLDER DRAFT START OF ACT 5
     -   After safely boarding the Lakesong, Alexis immediately begins driving the Lakesong out of the cove while Julian and Alexis finish securing the kayaks. 
                 
                     Julian and Troy tell their story.

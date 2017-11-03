@@ -5,40 +5,69 @@
 
 
 === wait_for_mia_alexis ===
-// Troy and Julian returned to the cove after turning back from following the stream far enough to encounter thieves. We'll join the girls on the Lakesong. 
-
--   To be written: join Mia and Alexis on Lakesong as the rendezvous hour approaches and they make their way to the cove. They'll find the cove full of patchy fog such that they can't see the entire cove. They'll need to use the signal horn. As they are about to blow the signal, they hear a boat motor, but can't see a boat. They boat sound gets closer and then slowly fades in the distance. After recovering the two boys, they'll all discuss hearing this boat. Troy and Julian will tell the girls about the hidden stream. 
-// alt to above the above
-Troy and Julian wait for Mia and Alexis.
-With the cove still shrouded in fog, the visibility is limited. They won't be able to see the Lakesong enter, nor will Mia and Alexis be able to spot the kayaks. They'll rely on sound signals. 
-
-        In the distance, they hear the sound of a boat engine.
+// Troy and Julian returned to the cove after turning back from following the stream far enough to encounter thieves. We'll join the girls on the <i>Lakesong</i>.  
+-   Troy and Julian wait for Mia and Alexis. With the cove still shrouded in fog, the visibility is limited. They won't be able to see the <i>Lakesong</i> enter, nor will Mia and Alexis be able to spot the kayaks. 
+    
+        * [They'll rely on sound signals.]
+            -> sound_rely
         
-        The sound become louder as it approaches. 
-        That must be them now! Julian says and he reaches for the whistle. 
-        Hold up, says Troy. That doesn't sound like the Lakesong... 
-        They both wait, hidden in the fog as the unknown boat approaches then recedes deeper into the cove where it slows then picks up again before gradually fading out. 
+    = sound_rely
+    -   In the distance, they hear the sound of a boat engine.
+        The sound becomes louder as it approaches. 
+            
+            * ["That must be them now!" says Julian.]
+                -> reaches_for_whistle
+    
+    = reaches_for_whistle
+    Excited by the sound of the approaching boat, Julian reaches for the whistle.
         
-            They must have gone up the stream! That change in engine pitch was them slowing to go through the vine curatain. 
-            The thieves must have a hideout in there. We just didn't go far enough. 
+            * ["Hold up! says Troy.] 
+            Julian stops. 
+            "That doesn't sound like the Lakesong," says Troy. 
+        
+                ** [They both wait.]
+                    -> hidden_fog
+                
+    = hidden_fog
+    -   Hidden in the fog, they can't see the boat, but the can hear it as it approaches and then recedes deeper into the cove away from them. They hear the engine slow for a moment, then pick up again before gradually fading out. 
+        
+            * ["They must have gone up the stream!" says Julian.] 
+            "That change in engine pitch was them slowing to go through the vine curtain," says Troy agreeing with Julian. 
             
-            We're lucky we didn't get caught on the stream.
-            And we're lucky it's still foggy.
+            "The thieves must have a hideout in there," says Julian. "We just didn't go far enough."
             
-           After a few minutes they hear another boat approaching.
-           
-           Now that sounds more like the Lakesong, says Troy. But let's wait for the signal.
-           
-           Toot. Toot.
-           
-           They hear two short toots of a boat horn.
-           "One thousand one, one thousand two,..." Julian counts aloud, "one thousand three—"
-           
-            Tooooot.
-            One long toot is heard at the three second mark. 
-            That's them! Troy nods. Blow the whistle.
+                ** [Troy nods.]
+                    -> realization
+    
+    = realization
+    -   Troy nods and a look of realization crosses his face. "We're lucky we didn't get caught on that stream," he says.
             
-                * [Aboard the Lakesong.]
+        "And we're lucky it's still foggy," says Julian.
+        
+            * [A few minutes more...]
+                -> second_boat
+    
+    = second_boat        
+    -   After a few minutes they hear another boat approaching.
+           
+        "Now that sounds more like the Lakesong," says Troy. "But let's wait for the signal."
+           
+            * [Toot. Toot.]
+                -> toot_toot
+            
+    = toot_toot
+    - They hear two short toots of a boat horn.
+    "One thousand one, one thousand two,..." Julian counts aloud, "one thousand three—"
+           
+            * [Tooooot.]
+                -> long_toot
+    
+    = long_toot
+    - One long toot is heard at the three second mark. 
+    "That's them!" says Julian. 
+    Troy smiles. "OK. Blow the whistle!"
+            
+            * [Aboard the Lakesong.]
                     -> recovery_fine_aboard_boat
                     
                 
@@ -65,7 +94,7 @@ With the cove still shrouded in fog, the visibility is limited. They won't be ab
 == use_the_horn ==
     -   "We'll need to signal with the horn per the plan," says Alexis easing back on the throttle as the visibility once again decreases, "but Julian was right that the fog will help us stay hidden." 
             
-            *  The Lakesong slips into the foggy cove.[]
+            *  The <i>Lakesong</i> slips into the foggy cove.[]
             
                 -   (opts)
                     
@@ -81,7 +110,7 @@ With the cove still shrouded in fog, the visibility is limited. They won't be ab
   
     
             = listen
-            -   They both listen intently for the possiblity of another boat or maybe a signal from the guys. 
+            -   They both listen intently for the possibility of another boat or maybe a signal from the guys. 
             
                 * [Alexis moves the throttle to idle.]
                 "This is far enough, she says. "If they're in the cove, they'll have heard us and be waiting for our signal."
@@ -116,7 +145,7 @@ With the cove still shrouded in fog, the visibility is limited. They won't be ab
             - (opts)
                 
                     * [Try again.]
-                    Alexis gives it one final shot. The horn blares as the Lakesong floats in silence, barely moving in the still cove. -> give_up
+                    Alexis gives it one final shot. The horn blares as the <i>Lakesong</i> floats in silence, barely moving in the still cove. -> give_up
                 
                     * (give_up) [Give up.] {"We have to face the facts," says Alexis. "They aren't in the cove." Mia lets out a frustrated sigh.|"Again nothing," says Alexis with an edge of anxiety in her voice.} 
                 
@@ -127,7 +156,7 @@ With the cove still shrouded in fog, the visibility is limited. They won't be ab
     
     
 == leave_cove ==
--   "That was the plan," says Alexis as the Lakesong slips out of the cove. "If we don't find them at the appointed time, we leave the cove and return in an hour."
+-   "That was the plan," says Alexis as the <i>Lakesong</i> slips out of the cove. "If we don't find them at the appointed time, we leave the cove and return in an hour."
             
             -   (opts)
             
@@ -151,7 +180,7 @@ With the cove still shrouded in fog, the visibility is limited. They won't be ab
                 -> fine
                 
             *   (fine) [Alexis increases speed.] 
-            {Alexis increases speed, leaving the cove behind. "I'm sure they're fine, Mia," says Alexis with a confident tone, sensing Mia's stress over the Julian and Troy absence.|"They obviuosly found something, went off on foot, and lost track of time." Alexis says."That's why Troy planned for two different meeting times."}
+            {Alexis increases speed, leaving the cove behind. "I'm sure they're fine, Mia," says Alexis with a confident tone, sensing Mia's stress over the Julian and Troy absence.|"They obviously found something, went off on foot, and lost track of time." Alexis says."That's why Troy planned for two different meeting times."}
             
             *   {fine} [Mia says nothing more.]
                 -> putting_island_behind
@@ -208,7 +237,7 @@ With the cove still shrouded in fog, the visibility is limited. They won't be ab
                     -> make_way_cove
                 
 === make_way_cove ===
-    -   The object—drone or bird—is still visible but has moved much further to the east as Mia, Alexis, and the Lakesong continue their west-northwesterly loop back to the cove with the hope of finding Julian and Alexis waiting in the kayaks. 
+    -   The object—drone or bird—is still visible but has moved much further to the east as Mia, Alexis, and the <i>Lakesong</i> continue their west-northwesterly loop back to the cove with the hope of finding Julian and Alexis waiting in the kayaks. 
     
             The fog in the cove has...
             
@@ -278,18 +307,22 @@ With the cove still shrouded in fog, the visibility is limited. They won't be ab
 
 === cletus_rescues ===
     - cletus is the rescuer
+    will continue in act 5
     -> DONE
 
 === mia_alexis_rescues ===
     - mia and alexis are the rescuer
+    will continue in act 5
     -> DONE
     
 === mac_rescues ===
     - mac is the rescuer
+    will continue in act 5
     -> DONE
     
 === ian_rescues ===
     - ian is the rescuer
+    will continue in act 5
     
     
 

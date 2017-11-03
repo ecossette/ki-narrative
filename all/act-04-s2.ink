@@ -1,5 +1,5 @@
 === follow_kayaks ===
--    The kayaks slide into the fog and quickly lose sight of the Lakesong. Julian is an experienced rower, and Troy has to work to keep pace. They reach the cove's shoreline and proceed to circumnavigate the cove, keeping an eye for anything out of the ordinary. 
+-    The kayaks slide into the fog and quickly lose sight of the <i>Lakesong</i>. Julian is an experienced rower, and Troy has to work to keep pace. They reach the cove's shoreline and proceed to circumnavigate the cove, keeping an eye for anything out of the ordinary. 
 
         *  [The minutes pass... 15, 20, then 30 minutes...]
         After half an hour they've managed to search roughly half of the cove, but haven't found anything at all, despite the fog being much lighter along the isle's shore, giving them good visibility. 
@@ -35,7 +35,7 @@
                 -> tro_impressed
             
     =   tro_impressed
-    -   "I hadn't noticed that," says Troy, suprised by Julian's focus.
+    -   "I hadn't noticed that," says Troy, surprised by Julian's focus.
     
         Julian paddles right up and then into the vines, the bow of his kayak slipping through the greenery.
         
@@ -59,7 +59,7 @@
     = jul_eases_forward
     -   "Disguised drones, camouflage..." says Julian. "Somebody thought of everything, but they didn't count on kayaks." Julian lifts the netting and paddles under it.
         
-            * [Troy watches Julian dissappear behind the camouflage.]
+            * [Troy watches Julian disappear behind the camouflage.]
                 -> vine_questions
 
 == vine_questions ==
@@ -69,14 +69,14 @@
         *    [Troy checks out the net.] 
             Troy pauses to inspect the net up close. -> call
         
-        *    (call) [Troy paddles forward.]{Troy grabs the netting and slowly inches forward to slip under.| As with the disguised drones, he can't help but be impressed with the craftmanship.}
+        *    (call) [Troy paddles forward.]{Troy grabs the netting and slowly inches forward to slip under.| As with the disguised drones, he can't help but be impressed with the craftsmanship.}
         
         *    {call} ["Get a load of this," says Julian.] -> get_a_load
         
         -     -> opts
 
     = get_a_load
-    -   Troy emerges from beneath the vine curtain expecting to see the cove's shoreline and is suprised when he sees...
+    -   Troy emerges from beneath the vine curtain expecting to see the cove's shoreline and is surprised when he sees...
     
             * [A pair of eyes staring back at him.] 
                 // go to monkey tunnel
@@ -183,9 +183,9 @@
 
 == final_decision_stream ==
     {
-        - final_decision_stream: Troy agres with both of Julian's points and refactors all the pros and cons before deciding to...
+        - final_decision_stream: Troy agrees with both of Julian's points and re-factors all the pros and cons before deciding to...
         
-        - else: Troy doesn't ask for Julian's opinion, deciding to make the decistion himself. Julian can agree or disagree after hearing Troy's decision to...
+        - else: Troy doesn't ask for Julian's opinion, deciding to make the decision himself. Julian can agree or disagree after hearing Troy's decision to...
 
     }
 
@@ -205,10 +205,10 @@
                 
         
 === no_go_stream ===
-    -   Julian is relieved but also a little disspointed. <>
+    -   Julian is relieved but also a little disappointed. <>
         
         {
-            - no_go_stream: He assumed Troy would want to go a little futher upstream for sure. 
+            - no_go_stream: He assumed Troy would want to go a little further upstream for sure. 
             
              * They paddle all the way back[.] to the camouflaged entry point to the stream <>
             
@@ -226,7 +226,7 @@
                 * [Wait for Mia and Alexis]
                     -> wait_for_mia_alexis
 
-// need to join the above to Mia and Alexis in Lakesong as they begin their return to the cove. will have the girls hear a boat just as they are about to toot the horn signal.       
+// need to join the above to Mia and Alexis in <i>Lakesong</i> as they begin their return to the cove. will have the girls hear a boat just as they are about to toot the horn signal.       
             
             - else:
             
@@ -239,7 +239,7 @@
             
 
 === go_stream ===
-    -  Julian isn't suprised by Troy's decision. He knew Troy wouldn't be able to resist exploring the stream. Still, now that the decision is made, Julian is a little apprehensive. What if they do run into the thieves? 
+    -  Julian isn't surprised by Troy's decision. He knew Troy wouldn't be able to resist exploring the stream. Still, now that the decision is made, Julian is a little apprehensive. What if they do run into the thieves? 
     
             * [Paddle into the stream.]
                 -> enter_stream
@@ -274,7 +274,7 @@
         -   "I believe the water around the island is cold," explains Troy. "That's the snow melt river water flowing down into the lake from the Atlas Mountains, but this stream is flowing from somewhere in the island, so it's warmer."
             
         
-                * The guys begin to sweat[.], as they continue paddling deeper into the island following the stream along its many twists, turns, and bends. The fog has cleared—at least this far inland—and occassionally sunlight filters through the canopy of trees, warming the air considerably. 
+                * The guys begin to sweat[.], as they continue paddling deeper into the island following the stream along its many twists, turns, and bends. The fog has cleared—at least this far inland—and occasionally sunlight filters through the canopy of trees, warming the air considerably. 
         
                     ** [The forest is alive with sound.]
                         -> forest_alive_sound
@@ -350,7 +350,7 @@
     
         - (opts)
         *    [Julian looks at Troy wide-eyed.]
-            Troy puts his figer to his lips.  -> silent
+            Troy puts his finger to his lips.  -> silent
         
         *    (silent) [Troy is statue still.] {They both know the sound they heard wasn't from monkeys or birds.  While distant, the clang was unmistakably a clang of metal on metal, the sound of human activity.| Listening...}
         
@@ -410,7 +410,7 @@
                 *   -> jul_accepts
                 
     = jul_accepts
-        *   Julian accepts Troy's reasoning[.], and they both paddle to the the sandy area and climb out of their kayaks. This causes quite a stir among the monkeys who begin vocalizing and stirring around noisely in the tree tops. 
+        *   Julian accepts Troy's reasoning[.], and they both paddle to the the sandy area and climb out of their kayaks. This causes quite a stir among the monkeys who begin vocalizing and stirring around noisily in the tree tops. 
         
             "I hope those monkeys don't give us away," say Julian. 
             
@@ -434,9 +434,9 @@
             * [Into the woods...] -> toward_sound
             
     =   toward_sound
-    -   Troy and Julian quickly set off into the woods in the direction of the persistant engine sound Troy things is a generator. 
+    -   Troy and Julian quickly set off into the woods in the direction of the persistent engine sound Troy things is a generator. 
     
-        After several minutes of picking their way carefully through the thick underbrush, ahead they see the stream again, doubling back as Troy expected. In addition to the engine sound, they can now hear the sound of power tools and the occassional muffled voice. 
+        After several minutes of picking their way carefully through the thick underbrush, ahead they see the stream again, doubling back as Troy expected. In addition to the engine sound, they can now hear the sound of power tools and the occasional muffled voice. 
         
                 * [The thieves hideaway.]
                     -> thieves_hideaway
@@ -448,7 +448,7 @@
          - (opts)
             *    [A cave!] The stream fronts a large sandstone bluff rising straight up to the equivalent of several building stories in height and out of which is carved a large cave and several smaller ones each with a waterway connecting cave and stream.
             *    [The stolen boat!]
-                The boat they saw vanish yesterday sits atop several hull supports in a makeshift drydock inside the largest of several caves.
+                The boat they saw vanish yesterday sits atop several hull supports in a makeshift dry dock inside the largest of several caves.
             *    [Two thieves at work!]
                 Two figures are hard at work on the stolen boat hidden in the largest cave. One works on the far side, only his or her legs are visible under the raised hull. The other, a man, on the near side, works with his back to Julian and Troy. 
             // We require the player to ask at least one question
@@ -555,9 +555,9 @@
                     
             * [Troy looks at his watch.]
             "We're about 20 minutes late," says Troy.
-            "Do you think the Lakesong is out there and we just can't see it in the fog?" asks Julian. 
+            "Do you think the <i>Lakesong</i> is out there and we just can't see it in the fog?" asks Julian. 
             
-                ** ["Doubful," says Troy.]
+                ** ["Doubtful," says Troy.]
                     -> doubtful_in_cove
                 
 == doubtful_in_cove ==
@@ -567,7 +567,7 @@
             * [Julian pulls out the whistle.] 
                 Julian looks at Troy with the whistle at the ready. -> survey
             
-            * (survey) [Troy surveys the situation.] {Troy doesn't think the Lakesong is close enough to hear a whistle or see a flare, but he wonders if the thieves are.| They both know signalling could get the boat's attention, but it could also get the attention of the thieves.} 
+            * (survey) [Troy surveys the situation.] {Troy doesn't think the <i>Lakesong</i> is close enough to hear a whistle or see a flare, but he wonders if the thieves are.| They both know signalling could get the boat's attention, but it could also get the attention of the thieves.} 
             
             * {survey} [To blow or not to blow?]-> whistle_decision
         
@@ -584,13 +584,13 @@
                 
                 
 == blow_whistle ==
-    -   Julian gives the whistle a good blast and all 120 decibals of sound spread out, broadcasting their location. 
+    -   Julian gives the whistle a good blast and all 120 decibels of sound spread out, broadcasting their location. 
     
         *   [They wait and listen...]
             -> hoping_hear
         
         = hoping_hear
-        They listen hoping for a response from the Lakesong's horn to indicate that Mia and Alexis are nearby, but they hear nothing except the natural sounds of the cove. 
+        They listen hoping for a response from the <i>Lakesong's</i> horn to indicate that Mia and Alexis are nearby, but they hear nothing except the natural sounds of the cove. 
         
              -   (opts)
                 
@@ -613,7 +613,7 @@
 
 == best_option_leave_cove ==
     -   "But the plan was to meet in the cove," says Julian. "So why are we leaving?"
-    -   "If today is like what we saw yesterday, then the cove is where the fogs lingers making it one of the last places to clear," says Troy. "If it's clear beyond the cove we may be able to spot the Lakesong ourselves."
+    -   "If today is like what we saw yesterday, then the cove is where the fogs lingers making it one of the last places to clear," says Troy. "If it's clear beyond the cove we may be able to spot the <i>Lakesong</i> ourselves."
     
             *  [Julian agrees.]
                 -> jul_agrees_leave
@@ -662,7 +662,7 @@
                 -> monkeys_drain
             
         = monkeys_drain    
-        -   "The monkeys must have taken the drain plugs!" says Troy. "Now we really need to hope we spot the Lakesong soon."
+        -   "The monkeys must have taken the drain plugs!" says Troy. "Now we really need to hope we spot the <i>Lakesong</i> soon."
         
             "This water is freezing!" says Julian.
         
@@ -693,7 +693,7 @@
 
 === try_plug ===
     -   "Maybe we can find something to plug the hole?" says Troy.
-    -   "OK," says Julian. "My emptry dry bag might work." He grabs his dry bag.
+    -   "OK," says Julian. "My empty dry bag might work." He grabs his dry bag.
       
         - (opts)
             
@@ -720,7 +720,7 @@
         = check_lanyard
         -   "Make sure your lanyard is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks if we dump."
         
-            Julian double-checks his landyard just before...
+            Julian double-checks his lanyard just before...
         
             * [Both kayaks capsize!]
                 -> capsized
@@ -737,7 +737,7 @@
             * [Troy looks at his watch.]
             
         = tro_check_time
-        -   Troy notes the time on his waterproof watch. Unfortunatley, Troy realizes that Julian's 'freezing to death' expression is not an exaggeration. Troy guesses the water temperature is around fifty degrees—give or take—which doesn't give them much time before bad things start to happen. 
+        -   Troy notes the time on his waterproof watch. Unfortunately, Troy realizes that Julian's 'freezing to death' expression is not an exaggeration. Troy guesses the water temperature is around fifty degrees—give or take—which doesn't give them much time before bad things start to happen. 
 
 // we'll go to the review and/or minigame here
         
@@ -758,7 +758,7 @@
             
             
         = second_flare
-        Troy is dissapointed that the flare didn't go as high as he wanted. His loss of manual dexterity affected his aim. 
+        Troy is disappointed that the flare didn't go as high as he wanted. His loss of manual dexterity affected his aim. 
         
             "How long... do you... think until... we... rescued?" asks Julian.
             
@@ -774,7 +774,7 @@
                     -> huddle_together
             
         = huddle_together
-        -   "Huddling... conserve our... heat," says Troy who is also finding it difficult to speak. He knows he should attach the kayak landyard to his life jacket, but the task seems too difficult. Everything is so difficult.
+        -   "Huddling... conserve our... heat," says Troy who is also finding it difficult to speak. He knows he should attach the kayak lanyard to his life jacket, but the task seems too difficult. Everything is so difficult.
         
             Troy also realizes that he needs to launch another flare to account for their drifting position. He decides he'll do that in just a minute, after he rests a bit...
         

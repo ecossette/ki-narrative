@@ -33,7 +33,7 @@ SCENE 01
                     -> fire_contained
                     
 == fire_contained ==
-// need add to emergency procedures achievment here
+// need add to emergency procedures achievement here
 
     -   With the fire extinguished, Troy returns to the Lakesong, leaving the investigation to the cause of the fire with the fire department who arrived moments ago and thanked Troy for his quick action. 
     
@@ -50,7 +50,7 @@ SCENE 01
         * ["Good morning!" says Troy. "Ready and rested?"]
     
     == kayaks_racked ==
-    Alexis notices that two kayaks are now in the Lakesong's racks instead of the paddleboards from yesterday. 
+    Alexis notices that two kayaks are now in the <i>Lakesong's</i> racks instead of the paddleboards from yesterday. 
      - (opts)
                 *    ["So 'Operation Kayak' is a go?" says Alexis.]
                     -- CHR_TRO_REL
@@ -109,7 +109,7 @@ SCENE 01
         -> toward_fuel
         
 == toward_fuel ==
-    -   Troy eases the Lakesong clear of the dock and makes way at <i>slow, no wake speed</i>. 
+    -   Troy eases the <i>Lakesong</i> clear of the dock and makes way at <i>slow, no wake speed</i>. 
     
         They pass a boat ramp busy with morning activity. 
  
@@ -135,14 +135,14 @@ SCENE 01
             ** [OK.] -> proceed_to_fueling
     
 == proceed_to_fueling ==
-    -   Troy pilots the Lakesong toward the marina's fuel station. As the friends discovered during the pre-departure check, the boat need to be topped off with fuel before heading out for the day.
+    -   Troy pilots the <i>Lakesong</i> toward the marina's fuel station. As the friends discovered during the pre-departure check, the boat need to be topped off with fuel before heading out for the day.
     
             * [Fuel the boat.]
                 FPO: the fueling minigame will launch here. 
                 -> after_fueling
                 
 == after_fueling ==
-    -   After fueling, Troy steers the Lakesong into the channel and heads for open waters. Along they way the encounter several other boats entering and leaving the channenl including Mac in his small boat and Maura and Ian in one of their speedboats. Everyone is wearing PFDs and practicing good seamanship. 
+    -   After fueling, Troy steers the <i>Lakesong</i> into the channel and heads for open waters. Along they way the encounter several other boats entering and leaving the channenl including Mac in his small boat and Maura and Ian in one of their speedboats. Everyone is wearing PFDs and practicing good seamanship. 
     
         * [They wave as they pass.]
         
@@ -172,7 +172,7 @@ SCENE 01
             
  
 == fueling_depot ==
-    -  The Lakesong arrives at the fuel dock and slide alongide one of the empty pumps and dock. Just ahead of them at the next pump they see Cletus fueling a boat. The friends tie up and go on to the dock. 
+    -  The <i>Lakesong</i> arrives at the fuel dock and slide alongide one of the empty pumps and dock. Just ahead of them at the next pump they see Cletus fueling a boat. The friends tie up and go on to the dock. 
  
      - (opts)
                 *    [ Cletus checks out the Lakesong.]
@@ -206,7 +206,7 @@ SCENE 01
         - (opts)
                 *    [ Troy slows the boat.]
                     -- CHR_TRO_REL
-                     As the Lakesong slows, the sound of the engine decreases allowing Troy to speak in a quiet voice. "Let's keep a sharp lookout in this fog," he says.  -> lookout
+                     As the <i>Lakesong</i> slows, the sound of the engine decreases allowing Troy to speak in a quiet voice. "Let's keep a sharp lookout in this fog," he says.  -> lookout
     
                 *    (lookout) ["The cove should be straight ahead," says Troy.] {"I spent some time studying the charts last night, and the sandbars are all to west, near the beach, but still..."|"We know there's more than sandbars out here."}
     
@@ -215,7 +215,7 @@ SCENE 01
         -     -> opts
 
  === fog_talk ===
-    The Lakesong continues straight ahead into the fog where Troy expects to find the cove. A couple of times the boat shudders briefly as it meets some cross currents.
+    The <i>Lakesong</i> continues straight ahead into the fog where Troy expects to find the cove. A couple of times the boat shudders briefly as it meets some cross currents.
 
         - (opts)
                 *    [ Four pairs of eyes scan the area ahead.]
@@ -238,7 +238,7 @@ SCENE 01
     -   "Let's go over the plan one more time," says Troy.
         
         - (opts)
-            *    [The kayaks.] "Troy and Julian will head out in the kayaks to investigate the shoreline of the cove, and spend up to two hours looking for clues to what happened to the boat we saw dissappear yesterday," says Alexis.
+            *    [The kayaks.] "Troy and Julian will head out in the kayaks to investigate the shoreline of the cove, and spend up to two hours looking for clues to what happened to the boat we saw disappear yesterday," says Alexis.
             *    [The Lakesong.]
                 "Mia and Alexis will stay with the Lakesong," says Julian. "They'll wait away from the island for the fog to clear—if it clears—and return for us in two hours unless we signal for pickup sooner."
             *    [The rendezvous.]
@@ -328,10 +328,10 @@ SCENE 01
                         "Right, good, give two short toots of the horn, count to 3 and give one long toot," says Troy.  "When we hear your signal, we'll blow the whistle. Give two quick toots to acknowledge it. If you don't hear us, repeat your signal and we'll send a flare."
                         
             *    ["If the fog clears..."]
-                "Or I should say 'when the fog clears,' keep the boat away from the island until the two hour mark, then come in and pick us up," says Troy. "Since it may be easier for us to see you, we'll start by using the signal mirror and whistle to get your attention on the boat. If that doesnt' work, we'll shoot off a flare."  
+                "Or I should say 'when the fog clears,' keep the boat away from the island until the two hour mark, then come in and pick us up," says Troy. "Since it may be easier for us to see you, we'll start by using the signal mirror and whistle to get your attention on the boat. If that doesn't' work, we'll shoot off a flare."  
                 
-            *    ["If the Lakesong is spotted..."]
-                You're unlikely to be seen in the fog, but when things clear, you'll be visible but so will everythig else," says Troy. "You'll be able to see a boat coming from a distance, same with the drones. Do what you need to do to evade contact and then circle back for us when you can."  
+            *    ["If the <i>Lakesong</i> is spotted..."]
+                You're unlikely to be seen in the fog, but when things clear, you'll be visible but so will everything else," says Troy. "You'll be able to see a boat coming from a distance, same with the drones. Do what you need to do to evade contact and then circle back for us when you can."  
             
             // We require the player to ask at least one question
             *    {loop} [Alexis cuts Troy off.] 
@@ -354,9 +354,9 @@ SCENE 01
                 
                 
 === continue_adventure === 
-        -   "See you in two hours, give or take," says Troy, as he and Julian push off from the boat and beging paddling toward the shoreline.
+        -   "See you in two hours, give or take," says Troy, as he and Julian push off from the boat and begin paddling toward the shoreline.
         
-            "Good luck!" Mia and Alexis say in unison, as Alexis starts the Lakesong's engine and prepares to depart the cove. 
+            "Good luck!" Mia and Alexis say in unison, as Alexis starts the <i>Lakesong's</i> engine and prepares to depart the cove. 
             
             Contine the adventure by...
             
