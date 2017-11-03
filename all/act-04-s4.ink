@@ -1,3 +1,4 @@
+
 // the flog clears user choice path developes here
 
 === the_fog_clears ===
@@ -71,6 +72,9 @@
             
             = alexis_plan
             -   Alexis reveals plan
+            
+            
+            -> DONE
         
     
 === sees_mirror ===
