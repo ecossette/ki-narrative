@@ -31,31 +31,32 @@ SCENE 05
         * The friends remain quiet.
             -> no_discuss_the_isle
 
-    = discuss_the_isle
+== discuss_the_isle ==
     -   CHR_MIA_REL
     -   "So how's everyone feeling after our first visit to Kalkomey Isle?" Mia asks her friends.
 
         -   (opts)
 
                 * ["Very happy," says Julian.]
-                -   CHR_MIA_SUR
-                -   CHR_JUL_SML
+                --   CHR_MIA_SUR
+                --   CHR_JUL_SML
                     "Happy?" asks a surprised Mia.
                     "Yes, I'm happy that my first visit to Kalkomey Isle is also my <i>last</i> visit to Kalkomey Isle."
 
                 * ["Intrigued," says Alexis.]
-                -   CHR_ALX_REL
+                --   CHR_ALX_REL
                     "A disappearing boat? Flying creatures? That's intriguing," says Alexis. {enter_the_path: "And from what we saw on the beach, Kalkomey Isle is not abandoned."}
 
                 * ["Frustrated," says Troy.]
-                -   CHR_TRO_REL
+                --   CHR_TRO_REL
                     "If we knew the engine was going to OK," says Troy, briefly looking back toward the island, "we might have gotten a better look at those creatures."
+                        -> done
 
                 *    {loop} [Enough talking.]
                             -> done
 
         -   (loop)
-            { -> opts | -> opts | }
+            { -> opts | -> opts | ->opts }
             - CHR_TRO_REL
             Troy looks at his watch and the sinking sun.
 
@@ -76,7 +77,7 @@ SCENE 05
                     -> mia_photos_look
 
 
-    = no_discuss_the_isle
+== no_discuss_the_isle ==
     -   Everyone is lost in their thoughts as the <i>Lakesong</i> cruises steadily along. Nobody says anything for several minutes—until Troy remembers the photos.
 
             *   ["Hey, what about those photos you took, Mia?"]

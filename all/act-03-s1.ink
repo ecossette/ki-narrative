@@ -74,26 +74,26 @@ SCENE 01
         -   CHR_TRO_REL
         "Looks like the forecast for afternoon storms was right after all," she says.
         "Sure seems like it," says Troy. "I'd hoped they'd hold off until late afternoon, so we'd get to enjoy the full day."
-        
+
             -> q_have_go_back
 
-== q_have_go_back ==    
+== q_have_go_back ==
 
         - (opts)
                 *    ["We have to go back?" asks Julian.]
                     -- CHR_TRO_REL
                      "We don't have to go back right now," he says, "but we do need to monitor the situation." Troy scans the skies around the boat. -> clouds
-    
+
                 *    (clouds) ["But those clouds are really far away," says Mia.] { Troy senses the dissapointment as his friends realize the weather could cut their afternoon on the lake short. "The clouds are far away, but things can change quickly out here."|"Accumulating dark clouds, shifting winds, and the sound of distant thunder are some of the things we'll be watching for."}
-    
-                *    {clouds} ["We may end up OK," says Alexis.] 
+
+                *    {clouds} ["We may end up OK," says Alexis.]
                     ->  weather_maybe_ok
 
         -     -> opts
-            
-            
-            
-     
+
+
+
+
 
     = weather_maybe_ok
         - CHR_ALX_REL
@@ -103,17 +103,17 @@ SCENE 01
 
             * ["If that holds, we'll be fine," says Troy.]
             -> if_holds_fine
-    
-    = if_holds_fine 
+
+    = if_holds_fine
     -   CHR_TRO_REL
-        "As long as there are no storms between us and the shore," he says, "we'll be able to get back to to shore and not get stuck in storm while on the lake." 
+        "As long as there are no storms between us and the shore," he says, "we'll be able to get back to to shore and not get stuck in storm while on the lake."
 
                 * [The radio alerts!]
                     -> radio_alerts
-    
-    
-    
-    
+
+
+
+
     = radio_alerts
         - CHR_ALX_REL
         - CHR_TRO_REL
@@ -121,7 +121,7 @@ SCENE 01
 
 
 
-                * ["<i>Attention! Attention!</i>" the radio message begins.] -> attention_attention
+                * [<i>"Attention! Attention!</i>" the radio message begins.] -> attention_attention
 
 
 
@@ -136,7 +136,7 @@ SCENE 01
     -   CHR_ALX_SML
     -   CHR_TRO_REL
     -   "That storm is well to the west of us," she says.
-    -   "Wait, there's more..." says Troy.
+    -   "Wait, there's more," says Troy.
 
             *   [The radio alerts again.]
                 -> severe_watch
@@ -148,28 +148,28 @@ SCENE 01
 
             * [Troy adjusts course.]
                 -> shore_safest
- 
- == shore_safest 
+
+ == shore_safest
     -- CHR_TRO_REL
     -- CHR_ALX_REL
- 
+
         "It's time for us to head back to Laketown," says Troy.
         "Agreed," says Alexis. "We have clear skies now, but we don't want to risk getting caught out on the lake during a severe storm."
-        
+
         - (opts)
                 *    ["The shore is safer?" Mia asks Troy.]
                     -- CHR_TRO_REL
-                     "Generally, returning to shore is the best course of action, but like anything it depends," he says. -> avoid
-    
+                     "Generally, returning to shore is the best course of action, but like anything, it depends," he says. -> avoid
+
                 *    (avoid) ["Can't we stay on the lake and avoid the storm?" asks Julian.] {As an experienced boater, Troy knows there is some gray area. "Shore is the first option, but depending on the conditions, sometimes it may be best to ride a storm out in open water."|"If you're already caught in a storm, wind and waves can make approaching the shore a more dangerous option."}
-    
+
                 *    {avoid} [Head to shore.] -> horizon_clouds
 
         -     -> opts
-        
+
 
     = horizon_clouds
-    -   The mood is sombre as the <i>Lakesong</i> makes steady progress back toward shore. Dark clouds begin to build over the horizon ahead of the boat, matching the mood. Everyone is dissapointed with the change in plans due to the weather. 
+    -   The mood is sombre as the <i>Lakesong</i> makes steady progress back toward shore. Dark clouds begin to build over the horizon ahead of the boat, matching the mood. Everyone is dissapointed with the change in plans.
 
             * ["Did you feel that?" asks Alexis.]
                 -> wind_shift
@@ -184,7 +184,7 @@ SCENE 01
              -   CHR_ALX_REL
               -   CHR_MIA_REL
 
-            "Looks like a storm has popped up just south of Laketown," says Alexis. "That would explain the clouds, as well as wind and temperature changes we felt."
+            "Looks like a storm has popped up just south of Laketown," says Alexis. "That would explain the clouds, as well as the wind and temperature changes we felt."
 
               ** [The radio alerts.]
                     -> storm_over_laketown
@@ -207,21 +207,21 @@ SCENE 01
                 *    ["You said before that shore is the first option," says Mia.]
                     -- CHR_TRO_REL
                      "As long as that storm south of Laketown doesn't decide to move north over the lake, making for shore is the best option." he says. -> depends
-    
-                *    (depends) ["This feels like an 'it depends'" says Julian.] {Troy estimates their distance from Laketown. "It really depends on how far we are from Laketown."|"But if that storm moves, we'd need to make sure we are docked and secured before it hits."}
-    
+
+                *    (depends) ["This feels like an 'it depends,'" says Julian.] {Troy estimates their distance from Laketown. "It really depends on how far we are from Laketown."|"But if that storm moves, we'd need to make sure we are docked and secured before it hits."}
+
                 *    {depends} [Troy pauses a couple beats to think it over.] -> tro_makes_his_choice
 
         -     -> opts
-        
+
         // "You said before that shore is the first option," says Mia.
         // "This feels like an 'it depends'" says Julian.
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
     = tro_makes_his_choice
     -   It's not an easy decision, but Troy decides to...
 
@@ -252,7 +252,7 @@ SCENE 01
         = choppy
 // SND bring storms sounds closer but still distant, still infrequent rumbles
 // SND fade out the bird sounds if not already out
-        - As the boat continues straight on to Laketown, the water becomes very choppy. Troy has no choice but to back off the throttle and slow down to keep his passengers from being bounced around too severely. 
+        - As the boat continues straight on to Laketown, the water becomes very choppy. Troy has no choice but to back off the throttle and slow down to keep his passengers from being bounced around too severely.
 
                 * [Troy issues a command.]
                     -> sit_centerline
@@ -426,7 +426,7 @@ SCENE 01
         = no_red_right_yet
         - CHR_TRO_ANG
         "Still no sign of the channel markers," Troy says, frustrated. "We should be seeing 'Red Right Returning' anytime now."
-        
+
             * [Troy continues to seach for the channal markers.]
                 -> lightning_strike_occurs
 
@@ -440,7 +440,7 @@ VAR is_radio_damaged = true
     -   CHR_JUL_SUR
     - Suddenly, there is an enormous crack of lightning!
 
-   
+
     -   Mia, Alexis, and Julian each let out a scream.
 
         "What in the world?" Alexis says, shaken up.
@@ -525,33 +525,33 @@ VAR is_radio_damaged = true
 
             * ["Looks like we got lucky!" says Troy.]
                 -> lucky_how
-            
+
 == lucky_how ==
 -   CHR_TRO_SML
      - (opts)
                 *    ["It could have been worse?" shouts Mia loudly, her ears still ringing.]
                     -- CHR_TRO_REL
                      "It's not uncommon for a lightning strike to damage the electronics, the engine, and a lightning strike can even put a hole in the boat," he says. -> lucky
-    
+
                 *    (lucky) ["Let's not make a habit of tempting fate," says Alexis.] {Troy looks around the boat. "I wouldn't want to roll the dice like that again, as chances are we'd be a lot worse off than just a busted radio."|"Yes, we really did get lucky this time."}
-    
+
                 *    {lucky} [Alexis looks at Mia and mouths the world 'lucky.'] -> bad_decision
 
         -     -> opts
 
         = bad_decision
         -   CHR_TRO_SUR
-        -   "I made a bad decision," say Troys. "I thought the storm was stationary, so I figured we could outrace it and get back to shore ahead of it." 
-            
+        -   "I made a bad decision," say Troys. "I thought the storm was stationary, so I figured we could outrace it and get back to shore ahead of it."
+
             * [Troy puts the boat into forward gear.]
                     -> why_bad_decision
-        
+
         = why_bad_decision
         "When we couldn't see the shore nor any sign of the channel markers after all that time," continues Troy, "I should have realized we wouldn't get back to shore in time."
-        
+
             * [The Lakesong moves away from shore.]
             -> avoid_storm
-        
+
 == engine_damage ==
     -   CHR_TRO_ANG
     -   The <i>Lakesong's</i> engine cut off when the lightning struck. Troy attempts to start the engine, but it doesn't turn over. He tries again. Still nothing. Troy curses.

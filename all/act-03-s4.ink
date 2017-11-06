@@ -38,7 +38,7 @@ SCENE 04
         -   CHR_JUL_SAD
         -   From the rear, Julian scans the trees above, his eyes darting side to side quickly. "Part falcon, part bat, part hornet..." he mumbles to himself.
 
-            "What's that Julian?" asks Troy.
+            "What's that, Julian?" asks Troy.
 
                 * ["Oh, nothing..."]
                     -> jul_nothing
@@ -50,7 +50,7 @@ SCENE 04
 
             "I hear you," says Troy. "We'll head back soon. The fog seems to be breaking up, finally."
 
-                *   ["Look there's a clearing ahead," says Alexis.]
+                *   ["Look, there's a clearing ahead," says Alexis.]
                     -> clearing_ahead
 
         = clearing_ahead
@@ -62,7 +62,7 @@ SCENE 04
 
             "The fog is mostly gone up here," says Troy, "but look how it's still lingering over the water down there."
 
-                * ["Look, there's a boat entering the cove," says Alexis.]
+                * ["There's a boat entering the cove," says Alexis.]
                     -> boat_in_cove
 
         = boat_in_cove
@@ -429,8 +429,8 @@ SCENE 04
 // SND intro buzzing sound in distance
     -   CHR_TRO_REL
     -   "Those creatures are coming this way!" Julian points over the island. {run_away:"Here we go again!"}
-    
-    
+
+
     -   "On it," says Troy, turning the wheel to put the <i>Lakesong</i> on a course due south and away from the island. "Can I get some lookout help? These are unfamiliar waters."
 
         - (opts)
@@ -507,13 +507,13 @@ SCENE 04
 === chased_go_full ===
     -   CHR_TRO_REL
     -   Troy jams the throttle forward and the engine responds with a pleasing growl. The Lakesong's bow rises into plowing mode, so Troy continues adding power until he brings the boat into a faster planing mode.
-    
+
     // we'll insert a quick just in time learning review option here.
-    
+
         * [ Read more about how hulls operate.]
             FPO: link to study guide for hull modes will insert here.
                 ** [OK] -> losing_them
-        
+
         * [ Continue without reviewing hull modes.]
                 -> losing_them
 
@@ -777,6 +777,7 @@ SCENE 04
         -   "But {distance} is close enough, believe me." She can excuse Julian's exaggeration under the circumstances. The creatures gave everyone a fright.
 
                 * ["And that shudder?" asks Mia.]
+                  -> and_the_shudder
 
 
         = and_the_shudder

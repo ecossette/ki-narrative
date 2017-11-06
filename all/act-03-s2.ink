@@ -86,7 +86,7 @@ SCENE 02
                 ~ fuel_guage = fuel_guage - 5
                 -> speed_up
                 ** [Maintain current speed to save fuel.]
-                -> speed_up
+                -> maintain_speed
 
 
 == speed_up ==
@@ -397,7 +397,7 @@ SCENE 02
     -   CHR_TRO_REL
     -   "Now that we're clear of the sandbar," Troy says, "I'm going to start the engine to make sure everything is OK after our mishap."
 
-            * Troy starts the engine[.], and lets it idle, listening for anything that sounds out of the ordinary.
+            * Troy starts the engine[.] and lets it idle, listening for anything that sounds out of the ordinary.
 // SND engine idle/low
 
                 ** [The fog remains very thick.]
@@ -492,7 +492,7 @@ SCENE 02
 
 
     = ask_jul_ok
-    -   CHR_JUL_SUR
+    -   CHR_JUL_SAD
     -   CHR_MIA_REL
     -   "Julian, you're awfully quiet," says Mia. "What's up?"
 
@@ -638,19 +638,19 @@ SCENE 02
     -   "If any of us had symptoms, we'd need to seek medical attention ASAP," says Troy. "Instead, we can wait here until the fog lifts."
 
         * [Onwards!]
-        
+
         // SYS launch quiz 3.1 here
         // after quiz complete proceed to == anchoring_review ==
             FPO: Quiz launches here.
                 ** [OK.]
                     -> anchoring_review
-        
-        
+
+
 
 
 == anchoring_review ==
     Having decided to sit tight and wait for the fog to clear, the friends make preparations to drop anchor.
-    
+
     -   Before continuing you have two choices:
 
         * [Review the material on anchoring.]

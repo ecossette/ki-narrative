@@ -127,7 +127,7 @@ VAR explore_island = true
     -   Before setting off, Troy reminds his friends about basic paddleboard safety.
 
         "When you're on a paddleboard, you're still a boater," says Troy. "So you need to follow the same safety practices, including wearing a PFD."
-        
+
         -> on_paddeboards
 
 
@@ -184,7 +184,7 @@ VAR explore_island = true
 
 
             - (opts)
-             {|From what they've found, it's clear they are not the only ones who have visited the island.| But it is not clear how recently the island has seen other visitors.}
+             {|From what they've found, it's clear they are not the only ones who have visited the island.| It is not clear how recently the island has seen other visitors.}
                 *   [Explore object 1: An old dock.]
                     -- CHR_ALX_REL
                     -- CHR_TRO_REL
