@@ -1,11 +1,15 @@
 === follow_boat ===
-- Mia and Alexis watch as Julian and Troy paddle off in the kayaks and disappear behind the fog. Alexis starts the <i>Lakesong's</i> engine and slowly takes the boat out of the cove while Mia provides a steady lookout to the waters ahead.
+    -   CHR_MIA_REL
+    -   CHR_ALX_REL
+    - Mia and Alexis watch as Julian and Troy paddle off in the kayaks and disappear behind the fog. Alexis starts the <i>Lakesong's</i> engine and slowly takes the boat out of the cove while Mia provides a steady lookout to the waters ahead. 
 
         * [ Beyond the cove.]
             -> beyond_cove
 
     = beyond_cove
-    -   Following the plan, Alexis takes the <i>Lakesong</i> away from the cove and puts some distance between the boat and the island. Alexis plans to make slow circles as they wait for the appointed rendezvous time with Julian and Troy.
+
+    -   CHR_ALX_REL
+    -   Following the plan, Alexis takes the <i>Lakesong</i> away from the cove and puts some distance between the boat and the island. Alexis plans to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. Alexis gives the horn a prolonged blast every two minutes.
 
         After some time passes...
 
@@ -17,6 +21,8 @@
 
 
 == fog_persists ==
+    -   CHR_MIA_REL
+    -   CHR_ALX_REL
     -   "I was hoping the fog would clear up by now," says Alexis. "But no luck."
 
         - (opts)
@@ -31,6 +37,8 @@
         -   -> opts
 
         = good_on_fuel
+        -   CHR_MIA_REL
+        -   CHR_ALX_REL
         -   "We're good," says Alexis. "At this speed, we're conserving quite a bit."
             "Maybe we should take the boat further out," says Mia. "This fog is kind of depressing."
             "Yeah, I was thinking the same—"
@@ -39,11 +47,14 @@
                     -> boat_horn
 
 == boat_horn ==
-        -   Alexis is interrupted by the sound of boat horn in the near distance, somewhere in the fog. They are both startled.
+    -   CHR_MIA_SUR
+    -   CHR_ALX_SUR
+        -   Alexis is interrupted by the sound of a prolonged blast from a boat horn in the near distance, somewhere in the fog. They are both startled.
 
             - (opts)
 
                 *   [Mia looks at Alexis.]
+                -   CHR_MIA_SAD
                 Mia looks at Alexis with an anxious expression. -> throttle
 
                 * (throttle)  [Alexis reaches for the throttle.] {Alexis reaches for the throttle and brings the boat to idle.| Neither wants to risk a collision with the other boat, but both would prefer to keep their own presence hidden, under the circumstances. }
@@ -53,10 +64,25 @@
 
            - -> opts
 
-            =   wait_horn
-            -   "Wait," says Mia. "Not yet... let's see if it's actually coming our way."
+==   wait_horn ==
+    -   CHR_ALX_REL        
+        -   (opts)
+        
+            *   [Alexis hesistates.]
+                Alexis hesitates for a moment, a part of her not wanting to give away their location, but her responsibility in this situation is clear.-> rule
+        
+            *   (rule) [Alexis recalls the rule.] {She remembers the Coast Guard regs—<i>A power-driven vessel making way through the water shall sound at intervals of not more than 2 minutes one prolonged blast.</i>| The 2 minute mark approaches...}
+            
+            *   {rule} [Alexis gives the prolonged blast.]
+                -> prolonged_blast
+        
+        
+        -   -> opts
 
-                Alexis agrees. There's a chance they are not on an intersecting path with the other vessel. The second horn signal will either be closer or farther away.
+                    
+            = prolonged_blast
+            -   CHR_ALX_REL
+            -   Alexis sounds the Lakesong's then waits and hopes. There's a chance they are not on an intersecting path with the other vessel. The second horn signal will either be closer or farther away.
 
                     * [The only sound is their own engine.]
                         -> sound_own_engine
@@ -103,6 +129,7 @@
 === who_fog_is_cletus ===
     VAR chr = "CLT"
     ~ who_saw = "Cletus"
+    -   CHR_CLT_REL
     -   It's Cletus, in the boat they saw him fueling earlier.
 
     -   -> fog_discussion ("Cletus")
@@ -110,6 +137,7 @@
 === who_fog_is_mac ===
    ~ chr = "DID"
    ~ who_saw = "Mac"
+    -   CHR_DID_REL
     -   It's Mac in his small boat.
 
     - -> fog_discussion ("Mac")
@@ -117,23 +145,28 @@
 === who_fog_is_ian ===
     ~ chr = "IAN"
     ~ who_saw = "Ian"
+    -   CHR_IAN_REL
     -   It's Ian, but Maura isn't with him.
 
     - -> fog_discussion ("Ian")
 
 === fog_discussion (who_fog) ===
     - CHR_{chr}_REL
+    - CHR_ALX_REL
 
         * ["Ahoy," says Alexis in reply.]
         "Sure is foggy, isn't it?" she adds but immediately regrets it. Don't act nervous, she thinks to herself.
 
     {
         - who_fog_is_cletus:
-        * ["You could say that," says Cletus.] "Never know what can creep up on you in the fog," he says. If Cletus is trying to intimidate the two girls, it's working. Neither feels comfortable out there alone in the fog with him.
+        * ["You could say that," says Cletus.] 
+        CHR_{chr}_REL
+        "Never know what can creep up on you in the fog," he says. If Cletus is trying to intimidate the two girls, it's working. Neither feels comfortable out there alone in the fog with him.
             -> fog_notices
 
         - who_fog_is_mac:
         * ["It's easy to make mistakes in the fog," Mac says.]
+        CHR_{chr}_REL
             "And around you, I see nothing but mist, error, and confusion," says Mac. He's wearing a serious expression.
 
             Neither Mia nor Alexis is in the mood for Mac's tendency to speak in riddles—though Mac seems harmless enough. He had mentioned that he fishes out this way.
@@ -141,13 +174,14 @@
 
         - who_fog_is_ian:
         * [Ian smiles. "Sure is," he says.]
+        CHR_{chr}_REL
             "That's why not too many people come out this way," says Ian. "It's a good place to find yourself in a bad spot."
             -> fog_notices
 
     }
 
     = fog_notices
-
+    - CHR_{chr}_REL
      *  The two boats idle[.] a couple boat lengths apart, both stopped but drifting slightly in the current.
 
             - (opts)
@@ -177,6 +211,8 @@
 
 
     = fog_notices_actions
+    -   CHR_MIA_REL
+    -   CHR_{chr}_REL
     -   Mia silently watches {who_fog} as ...
 
     -   (opts)
@@ -199,6 +235,7 @@
     - -> opts
 
         = alx_hesistates
+        -   CHR_ALX_SAD
         -   Alexis feels her stomach clench and...
 
         **  [... and stands frozen in place.]
@@ -207,6 +244,7 @@
 
 
         = frozen
+        -   CHR_ALX_SAD
         -   Alexis is frozen in place, and Mia can see the hesitation in Alexis's face.
 
                 * [Mia steps forward.]
@@ -214,12 +252,15 @@
 
 
         = deflects
+        -   CHR_ALX_SML
         -   "Yeah, I'm not much of paddler myself," says Alexis with what Mia knows is a nervous giggle. "That's why... uh... we don't have... you know paddles or anything..." {who_saw} just watches as Alexis trails off.
 
                 * [Mia steps forward.]
                 -> mia_steps_forward
 
         = mia_steps_forward
+        -   CHR_MIA_REL
+        -   CHR_{chr}_REL
         -   "As dangerous as this fog is," says Mia, coming forward to help Alexis. "There's a worse menace..." she says and pauses for effect.
 
              {
@@ -239,6 +280,7 @@
             }
 
         = co_is_what
+        -   CHR_MIA_REL
             * "Carbon monoxide," says Mia[.], remembering the incident yesterday in the fog, "so we can't sit here idling all day. Let's go, Alexis!"
 
                     **   [Alexis takes Mia's cue.]
@@ -265,6 +307,7 @@
             }
 
 == once_safely_away ==
+    -   CHR_ALX_REL
     -   After leaving {who_saw} and his boat behind in the fog, Alexis lets out a long breath.
 
             *   ["Thanks," she says to Mia.]
@@ -272,13 +315,16 @@
 
 
         = great_thinking
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
         -   "That was some quick thinking back there with that carbon monoxide line," Alexis tells Mia. "I owe you one."
 
             * ["Well, the CO thing has the benefit of being true," says Mia.]
                 -> flustered
 
         = flustered
-
+        -   CHR_ALX_ANG
+        -   CHR_MIA_REL
         "But happened back there, anyway?" asks Mia. "I've never seen you get so flustered."
 
             - (opts)
@@ -294,12 +340,16 @@
             - -> opts
 
             = mia_agrees
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
             -   "You're worried {who_saw} figured out that Julian and Troy are off on the kayaks exploring Kalkomey Isle?" Mia asks.
 
                     * ["Aren't you?" responds Alexis.]
                         -> depends_if_thief
 
             = depends_if_thief
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
             -   "Depends," says Mia. "Do you suspect {who_saw} of being involved in the boat robberies?"
 
 
@@ -349,9 +399,12 @@
             -> DONE
 
             = hope_know_more
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
             -   "Hopefully, we'll know more about the boat robberies once the guys report in," says Mia.
 
                 * [Speaking of the guys," says Alexis.]
+                --   CHR_ALX_SML
                 "It's time to head back to the cove," says Alexis. "And look! The fog is finally breaking up!"
 
                     ** [Reverse direction.]

@@ -2,13 +2,16 @@
 // the flog clears user choice path develops here
 
 === the_fog_clears ===
--   In the open waters away from the island, the fog clears, giving Mia and Alexis good visibility from the deck of the <i>Lakesong.</i>
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
+    -   In the open waters away from the island, the fog clears, giving Mia and Alexis good visibility from the deck of the <i>Lakesong.</i>
 
     To kill time until their planned rendezvous with the kayaks...
 
     -   (opts)
 
         * [Mia takes a turn at the helm.]
+            -- CHR_MIA_SML
             "I still think I like jet-skiing the most," she says. "But I've got to admit this is pretty awesome!" -> loops
 
         * (loops) [Alexis loops in wide circles.] {The boat cruises nicely, making wide, crisscrossing loops, and the time passes quickly as the girls enjoy taking turns at the wheel.| Just as Alexis did, Mia cruises in lazy circles. "I couldn't fall asleep last night, so I finished the boat education course and got my certificate." Alexis smiles at the excitement in Mia's voice, but then...}
@@ -21,6 +24,8 @@
     -   -> opts
 
     = attention
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   "What is it?" asks Mia, seeing Alexis look past her.
 
         Alexis reaches for the binoculars. "Look over there," she says pointing. Mia looks and sees in the distance...
@@ -35,11 +40,14 @@
 -> DONE
 
 === sees_creatures ===
+    -   CHR_ALX_REL
+    -   CHR_MIA_SUR
     -   "It's the creatures!" Mia exclaims. "I mean the drones," she adds, correcting herself.
 
         "Six of one... half a dozen of the other," says Alexis taking the wheel and hitting the throttle. "Either way, we're outta here."
 
         *  [The engine revs.]
+        -   CHR_ALX_REL
         -   The engine revs and the boat zooms south.
 
             But Alexis had been planning for just this possibility, and she has something up her sleeve. Estimating their current position with respect to the objects in pursuit...
@@ -57,11 +65,14 @@
             -   ->  opts
 
 == what_doing ==
+    -   CHR_MIA_SUR
+    -   CHR_ALX_REL
     -   "Why are you slowing and turning?" asks Mia in a panic. "It's like you want them to catch us."
 
             - (opts)
 
                 * [Alexis grins.]
+                --  CHR_ALX_SML
                 "I want them to chase us, not catch us," she says. -> what
 
                 * (what) [Mia's face if full of doubt.] {"Trust me. I have a plan." Alexis makes a small adjustment to the throttle while keeping an eye on the pursuers.| "You know... a little cat and mouse action." }
@@ -71,6 +82,7 @@
             -   -> opts
 
 == alexis_plan ==
+    -   CHR_ALX_REL  
     -   "Look, we know we can outrun them because we proved that yesterday," Alexis says. "But I'm guessing they also have a range limit and a limited flying time."
 
         -   (opts)
@@ -87,23 +99,27 @@
         -   -> opts
 
 == visualize_tri ==
+    -   CHR_MIA_REL
     -   Mia nods as she visualizes a triangle with the path of the pursuing swarm forming the hypotenuse.
 
         "The creature-drones have to cover more and more distance to catch us," she says, "but at our speed, they can't."
 
         *   ["Bingo!" says Alexis.]
+            -- CHR_ALX_SML
             "And we can still increase speed if needed," Mia says. "Meanwhile, we stay close to the island the whole time."
 
                 ** [Alexis's plan pays off.]
                     -> plan_works
 
         = plan_works
+        -   CHR_ALX_REL
         -   Eventually, the creature-drones abandon their pursuit and peel off on a course straight back to the island.
 
                 * ["Running low on power I suspect," Alexis says.]
                 "Carrying that extra weight of the disguise has to degrade their flight time and speed," says Alexis.
 
                     ** ["Speaking of time...?" says Mia.]
+                    --  CHR_ALX_REL
 
                     Alexis checks her watch.
 
@@ -129,6 +145,8 @@
         -   -> opts
 
 == boat_in_distance ==
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   "That's a boat for sure," says Alexis. Mia hands her the binoculars.
 
             * ["Recognize the driver?" Mia asks.]
@@ -159,6 +177,8 @@
 
 
 == i_think_it_is ==
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   "I think it's {who_saw}," says Alexis.
 
         * ["That's what I thought, too," says Mia.]
@@ -202,6 +222,9 @@
 
 === sees_mirror ===
 ~ what_distract = "flashing"
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
+
     -   "Something's flashing," says Mia. "Do you think it's someone signaling with a mirror?
 
             * ["Could be," says Alexis.]
@@ -220,6 +243,8 @@
         -   -> opts
 
 == investigate_flash_or_not ==
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   "Do we investigate or not?" asks Alexis.
         The two friends consider the possibilities.
 
@@ -251,6 +276,8 @@
 
 === sees_flare ===
 ~ what_distract = "red smoke"
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   "Is that smoke?" asks Mia.
     -   "Yeah, and it looks reddish," says Alexis, "It could be from a flare."
 
@@ -267,6 +294,8 @@
         -   ->  opts
 
 == investigate_smoke_or_not ==
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   "If we think that's from someone in distress," says Alexis, "we're going to have to go that way and check it out."
 
             * ["But we're not sure," says Mia.]
@@ -288,12 +317,15 @@
 
 
 == investigate  ==
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   Having decided to investigate the mysterious {what_distract}, Alexis adjusts the <i>Lakesong's</i> course.
         "This will take us back toward where we were yesterday, right?" asks Mia.
             * ["Yes," says Alexis.]
                 -> to_beach
 
         = to_beach
+        -   CHR_ALX_REL
         -   "The {what_distract} looks to be back toward that beach," says Alexis. "We'll need to keep a good lookout for the hazard markers over near the sandbars."
 
                 * [The <i>Lakesong</i> cruises west.]
@@ -304,6 +336,7 @@
         -   Eventually, they do approach the same beach, but they are farther out, where the water is deeper. They encounter no sandbars or other hazards.
 
                 *   ["Strange," says Alexis.]
+                    -- CHR_ALX_SAD
                     "There's no longer any sign of {what_distract} {sees_flare: or anyone in distress}," Alexis says with a sigh. "I guess this was a goose chase after all."
 
                 ** [Alexis turns the wheel.]
@@ -354,6 +387,8 @@
 
 
 == i_think_on_beach ==
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   "I'm not one hundred percent, but I think it's {who_saw}," says Alexis.
 
         * ["That's what I thought, too," says Mia.]
@@ -402,6 +437,8 @@
 
 
 == no_investigate ==
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   Since it's not clear that the {what_distract} they saw was actually some sort of signal, Mia and Alexis choose not to investigate. They are concerned about the safety of their own fellow crew members—Julian and Troy on the kayaks—and want to be certain to meet at the planned time in the cove.
 
             * [They wait and circle.]

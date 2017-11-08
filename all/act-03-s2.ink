@@ -176,7 +176,16 @@ SCENE 02
 // SND boat motor sound should be low RPM here, storms distant but there
     -   CHR_TRO_REL
     -   Troy slows the <i>Lakesong</i> to a crawl, and the fog envelopes the boat. The three friends continue acting as lookouts—Alexis on the bow, Mia on port, and Julian on starboard.
-
+    
+        * [Troy sounds the horn.]
+            -> fog_horn
+    
+        
+        = fog_horn
+        - Troy gives one prolonged blast with the boat's horn—the signal used by powered boats when underway in reduced visibility. He'll continue signaling at two minute intervals while the foggy conditions prevail.
+        
+        
+        
         * ["Log!"]
             -> log_ahead
 
@@ -276,7 +285,7 @@ SCENE 02
 
     = check_leaks
     - CHR_TRO_REL
-    - Troy gives the <i>Lakesong</i> a careful but quick check for leaks.
+    - Troy gives the <i>Lakesong</i> a careful but quick check for leaks, and also gives the sound signal for a boat restricted in her ability to manuever—two prolonged blasts in succession with an interval of about 2 seconds between them.
 
         * [Troy wipes his brow.]
             -> no_leaks_so_far
@@ -359,7 +368,7 @@ SCENE 02
 
    = heaves_many
    // will remove this after testing complete
-   DEBUG: Heave attempts = {heave_attempts}
+   //DEBUG: Heave attempts = {heave_attempts}
    -    CHR_TRO_SUR
    -    Finally, the <i>Lakesong</i> breaks free from the stubborn sandbar! Relieved, the three friends simultaneously shout, "Hooray!"
 
@@ -368,7 +377,7 @@ SCENE 02
 
    = heave_second_try
    // will remove this after testing complete
-   DEBUG: Heave attempts = {heave_attempts}
+   //DEBUG: Heave attempts = {heave_attempts}
     -   CHR_TRO_SUR
     -   On the second attempt, the <i>Lakesong</i> breaks free! Relieved, the three friends simultaneously shout, "Hooray!"
 
@@ -382,8 +391,8 @@ SCENE 02
 
     -   {Despite Troy's heave, the <i>Lakesong</i> doesn't budge.|The second attempt is as fruitless as the first. The boat remains stuck.|"I think I felt it budge a little," says Troy, as he prepares himself for a third effort.| Still, the <i>Lakesong</i> remains stuck. Troy is frustrated, but he has to keep trying.|The boat is firmly stuck, and Troy stops to take a break. Julian gives it a try, but he has no luck. Troy prepares for another heave.| Again, the boat doesn't move. Mia, Alexis, and Julian are starting to look a little panicked.|Troy has no choice but to keep trying to free the <i>Lakesong.</i>}
 
-        //// will remove this after testing complete
-        DEBUG: Heave attempts = {heave_attempts}
+        // will remove this after testing complete
+        //DEBUG: Heave attempts = {heave_attempts}
 
         + Troy heaves again.[]
             -> random_push_off
@@ -397,7 +406,7 @@ SCENE 02
     -   CHR_TRO_REL
     -   "Now that we're clear of the sandbar," Troy says, "I'm going to start the engine to make sure everything is OK after our mishap."
 
-            * Troy starts the engine[.] and lets it idle, listening for anything that sounds out of the ordinary.
+            * Troy starts the engine[.] and lets it idle, listening for anything that sounds out of the ordinary. He also gives two prolonged blasts in succession, the signal for a power-driven vessel underay but stopped and making no way through the water.
 // SND engine idle/low
 
                 ** [The fog remains very thick.]
