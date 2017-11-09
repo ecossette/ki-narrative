@@ -5,6 +5,7 @@
             - As they begin the journey back to Laketown, Julian and Troy tell the two girls about finding the vine curtain and the hidden stream beyond. They also mention hearing—but not seeing—a boat enter the cove shortly before Mia and Alexis arrived. 
             
                 ** [Mia and Alexis tell their story.]
+                    -> mia_alx_tell_story
                     
 == mia_alx_tell_story
     -   As the boat cruises south into a warm, late-afternoon breeze, Mia and Alexis describe their two hours waiting for the rendezvous with the kayaks. They begin by saying...
@@ -76,6 +77,7 @@
                 and they didn't see anything of interest while waiting to rendezvous with the kayaks. They also mention how on two seperate occassions they heard the single, prolonged blast indicative of a powered vessel underway in fog.
                 
                     *   ["Hmmm..." says Troy.]
+                        -> quick_recovery_fog_exp
                     
                 - else:
                     'this is your else statement.'
@@ -102,35 +104,42 @@
 === quick_recovery_fog_exp ===
     -   "Hmmm..." says Troy. "I wonder if those signals were from the same boat we heard enter the cove?"
     
-        "We'll never know," says Alexis. "Do you think we have enough info to give to the police?" she says while offering the helm back to Troy."
+        "We'll never know," says Alexis. "Do you think we have enough info to give to the police?" she says while offering the helm back to Troy.
             
         -   (opts)
             
-            *   [Troy nods]
+            *   ["Do we have enough?"]
                 Troy nods. "We definitely have enough info to go to the police, but is it enough to lead the reward? That I don't know," he says. -> steps
             
-            *   (steps) [Troy steps forward to take the wheel.] {Troy steps forward to take the wheel but reconsiders. "You can keep driving... that is, if you want to," he says. Alexis grins and nods.|"We'll just have to wait and see."}
+            *   (steps) [Troy steps forward to take the wheel.] {Troy steps forward to take the wheel but reconsiders. "You can keep driving... that is, if you want to," he says. Alexis grins.|"We'll just have to wait and see."}
             
             *   {steps} [Troy checks off what they know.]
+                -> tro_checks_off
             
         -   -> opts
             
 == tro_checks_off ==
-    -   One, we know about the hidden stream," says Troy. "Two, we know about the drones disguised as creatures. Both suggest that something fishy is going on."
+    -   "One, we know about the hidden stream," says Troy. "Two, we know about the drones disguised as creatures. Both suggest that something fishy is going on."
     
         -   (opts)
         
-            *   [Mia remembers the beach.]
+            *  [Mia reflects.]
+                
                 {
                     - no_go_island:
-                    Remembering the beach, Mia says, "Kind of makes me wish now that we'd explored the beach yesterday." -> photos
+                     
+                    "Kind of makes me wish now that we'd explored the beach yesterday," she says remembering the beach. -> photos
                 
+                    - go_to_island:
+                    "I wonder if the beach path connects to wherever the stream leads?" she says remembering the beach. -> photos
+                    
                     - else:
-                    Remembering the beach, Mia says, "I wonder if the beach path connects to wherever the stream leads?" -> photos
+                    Mia reflects on what Troy has said, wondering if what they've discovered will turn out helfpul. -> photos 
+                    
                 }
                 
             
-            *   (photos) [Mia remembers the photos.] {She looks at her phone. "We'll need to show the photos to the police, too," she says.|something}
+            *   (photos) [Mia remembers the photos.] {Mia looks at her phone. "We'll need to show the photos to the police, too," she says.| "I'm sure the police will find the so-called creatures very interesting."}
               
             
             *   {photos} [Troy looks back at the island.]
@@ -145,24 +154,29 @@
         "Let's hear it for safe and sound," says Alexis, keeping the Lakesong on a steady course home.
         
             ** ["On the topic of safety..." says Mia.]
+                -> topic_safety
             
     =   topic_safety
     -   "Did I already mention that I got my boating education certificate last night when I completed the course," says Mia with a coy grin.
     
-        Julian snorts. "Only about 10 times now," he says but in a well-meaning way. He can't help but share in Mia's enthusiasm.
+            * [Julian snorts.]
+            Julian snorts. "Only about 10 times now," he says but in a well-meaning way. He can't help but share in Mia's enthusiasm.
         
-            * [Alexis smiles.]
-            --  "We get the hint, Mia," Alexis says with a smile looking at Troy and nodding her head toward the wheel. Troy smiles and winks in answer to the unasked question.
+            ** [Alexis smiles.]
+            ---  "We get the hint, Mia," Alexis says with a smile looking at Troy and nodding her head toward the wheel. Troy smiles and winks in answer to the unasked question.
             
                 "Captain Chen, you have the con," says Alexis stepping aside. 
             
-                ** [Mia beams.]
+                *** [Mia beams.]
+                    -> mia_beams
+    
     = mia_beams
     -   "Really?" she says stepping forward with a big smile on her face. "I can drive for awhile?"
     
-            *"Absolutely," says Troy[.], as Mia takes the wheel. "One a beautiful day like this, we'll probably encounter plenty of traffic as we get closer to the marina," he says. "It'll be a good chance for you to put your knowledge to the test."
+            *"Absolutely," says Troy[.], as Mia takes the wheel. "On a beautiful day like this, we'll probably encounter plenty of traffic as we get closer to the marina," he says. "It'll be a good chance for you to put your knowledge to the test."
             
-                ** "Bring it!" says Mia.
+                ** ["Bring it!" says Mia.]
+                Link to a5s2 here.
             
             
             -> DONE
