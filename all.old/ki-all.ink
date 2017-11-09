@@ -9,7 +9,6 @@ INCLUDE act-05.ink
   VAR where_saw = "null"
   VAR what_distract = "null"
   VAR fog_condition = "null"
- 
 
 
 

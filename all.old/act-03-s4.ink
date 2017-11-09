@@ -8,7 +8,8 @@ SCENE 04
 === enter_the_path ===
 // SND bring in buzzing sound very low
     -   CHR_ALX_SUR
-    -   The path winds deeper into the island.
+    -   The path winds deeper into the island and is thick with a carpet of decaying leaves. 
+        
         "Look at the size of those trees!" says Alexis.
 
             * ["Shh... listen? You hear that?" asks Mia.]
