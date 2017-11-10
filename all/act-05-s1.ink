@@ -2,7 +2,7 @@
     -   After safely boarding the Lakesong, Alexis immediately begins driving the Lakesong out of the cove, while Julian and Alexis finish securing the kayaks. 
                 
             * [Julian and Troy tell their story.]
-            - As they begin the journey back to Laketown, Julian and Troy tell the two girls about finding the vine curtain and the hidden stream beyond. They also mention hearing—but not seeing—a boat enter the cove shortly before Mia and Alexis arrived. 
+            - As they begin the journey back to Laketown, Julian and Troy tell the two girls about finding the vine curtain{monkey_eyes_him:, the monkeys, } {julian_tree_looking:, the crashed drone,} and the hidden stream beyond. They also mention hearing—but not seeing—a boat enter the cove shortly before Mia and Alexis arrived. 
             
                 ** [Mia and Alexis tell their story.]
                     -> mia_alx_tell_story
@@ -26,9 +26,9 @@
                         
                     {shuffle:
                        
-                       //-    -> quick_recovery_saw_c
-                       //-    -> quick_recovery_saw_mc
-                       //-    -> quick_recovery_saw_i
+                       -    -> quick_recovery_saw_c
+                       -    -> quick_recovery_saw_mc
+                       -    -> quick_recovery_saw_i
                        -    -> quick_recovery_saw_0
         
                      }
@@ -70,6 +70,7 @@
     -> mia_alx_tell_story_2
 
 == mia_alx_tell_story_2
+    -   DEBUG: {who_saw}
     -   The girls begin by explaining how the fog {fog_condition} <> 
     
             {
@@ -80,31 +81,196 @@
                         -> quick_recovery_fog_exp
                     
                 - else:
-                    'this is your else statement.'
+                  and for quite a while they saw nothing at all, slowly cruising through the fog and sounding the horn every two minutes.
+                  -> quick_recovery_fog_met
             
             
             }
     
-    
-                            
-                  /*  Mia and Alexis tell their story. 
-                    
-                    Mia and Alexis explain how the fog {cleared|persisted} and of their {encounter with | sighting of} {who_saw} {where|}. 
-                        if fog:
-                            we are pretty sure {who_saw} realized the two of you were off on the kayaks.
-                        if clear:
-                            if on beach and went to beach: I wonder if the beach connects to wherever the stream leads?
-                                    if went to path: remember those ATV tracks we saw?
-                            if on beach but no go beach: In hindsight, I wish we would have explored the beach yesterday. 
-                            
-                    Return to Laketown. */
 -> DONE
             
             
-=== quick_recovery_fog_exp ===
-    -   "Hmmm..." says Troy. "I wonder if those signals were from the same boat we heard enter the cove?"
+=== quick_recovery_fog_met ===
+    -   "And then you'll never guess who we ran into?" says Alexis.
     
-        "We'll never know," says Alexis. "Do you think we have enough info to give to the police?" she says while offering the helm back to Troy.
+            * [Troy is surprised.]
+    
+            "Wait, you ran into someone out here? In the fog?" Troy is surprised.
+        
+                ** ["Who?" asks Julian.]
+                    -> tell_who_saw
+                
+        
+        = tell_who_saw
+        -   "{who_saw}" says Mia. 
+        
+        {
+        
+            - quick_recovery_saw_c:
+            "Kind of strange to find {who_saw} out here after all his stories about how spooky Kalkomey Isle is," says Julian.
+                ** ["That's what we thought, too," says Mia.]
+                    -> that_not_all
+        
+            -   quick_recovery_saw_mc:
+            "Well, I guess that's not too suprising," says Troy. "He did say he comes out this way to fish."
+                
+                -> that_not_all
+        
+            - quick_recovery_saw_i:
+            "That's a coincidence," says Troy. "I mean, just yesterday {who_saw} said he'd never been to Kalkomey Isle."
+                ** ["Technically, it was Maura who said that," says Julian.]
+                    "Well, it was just {who_saw} on the boat," says Mia. "No sign of Maura."
+                    -> that_not_all
+        
+        }
+        
+        
+    = that_not_all
+    -   "That's not all," says Alexis. "We are pretty sure {who_saw} realized the two of you were off on the kayaks."
+    
+        "I wonder if that was {who_saw} on the boat we heard in the cove?" says Julian.
+            -> quick_recovery_fog_exp
+
+
+
+
+=== quick_recovery_fog_exp ===
+    -   
+    {
+        - quick_recovery_saw_0:
+        "Hmmm..." says Troy. "I wonder if those signals were from the same boat we heard enter the cove?"
+        
+            * ["We'll never know," says Alexis.]
+                -> think_we_have_enough
+    
+        - else:
+        
+        * [Troy looks puzzled.] 
+        -> that_would_mean
+    
+    }
+    
+== that_would_mean ==
+    -   "But that would mean {who_saw} knows about the hidden stream and is probably connected to the robberies," says Troy. He shakes his head, troubled by the idea.
+    
+            * ["You don't think..." says Mia.] 
+                -> you_think_involved
+            
+        = you_think_involved
+        -   "You don't think {who_saw} could be involved in this, do you?" asks Mia.
+        
+        Troy answers with...
+    
+    
+        * ["Yes."]
+            "Yes, but only in the sense that really everyone is possible suspect other than the four of us," says Troy. "Besides we don't even know if that was {who_saw}'s boat in the cove." 
+            
+            {
+                - quick_recovery_saw_c:
+                ** [Alexis gives a Troy a skeptical face.]
+                    "I know Cletus may give off a suspicious vibe," he says in response to Alexis's expression, "but we can't go around making assumptions just by how people look."
+                    
+                        *** [Alexis smirks.]
+                            -> alexis_casts_doubt
+            
+                - else:
+                ** [Alexis shrugs.]
+                    -> alexis_casts_doubt
+            
+            }
+        
+        
+    
+        * ["No."]
+            "No, because first of all we don't know if it was {who_saw} driving the boat we heard in the cove," says Troy. <>
+    
+            
+            {
+                - quick_recovery_saw_c:
+                    Alexis makes a 'whatever' face. "I know Cletus may give off a suspicious vibe," he says looking at Alexis, "but we can't go around making assumptions just by how people look, right?"
+                 
+                    ** [Alexis shrugs.]
+                        -> alexis_casts_doubt
+            
+                - quick_recovery_saw_ma:
+                    "And Mac is the one person who told us he comes up this way."
+                    
+                    ** [Alexis shrugs.]
+                        -> alexis_casts_doubt
+                
+                - quick_recovery_saw_i:
+                    "And once we got to know Ian, he seemed like a good guy."
+                    
+                    ** [Alexis shrugs.]
+                        -> alexis_casts_doubt
+           
+            }
+            
+    
+        * "Maybe." 
+        "Maybe..." says Troy. "Realistically we have nothing to suggest {who_saw} is involved,  but you can't rule anyone out. Troy smiles. "Other than the four of us, of course."
+        
+            ** [Alexis nods.]
+                -> alexis_casts_doubt
+    
+    
+
+
+
+== alexis_casts_doubt ==
+    {
+                - quick_recovery_saw_c:
+                "You've to to admit, though, that Cletus is like straight up creepy, right?" says Alexis. "And what's he doing out here creeping around in the fog?"
+
+                       "You mean creeping around out here, the same as we were?" says Troy with a teasing grin.
+
+                            ** ["True... but..." Alexis says.]
+                                -> alx_true_but
+                            
+
+
+                - quick_recovery_saw_ma:
+                "{who_saw} sure seems to be up in everyone's business, though..." says Alexis, "always asking questions and popping up everywhere."
+
+                        * [Troy grins.]
+                            -> tro_responds_doubt
+                                               
+
+
+                - quick_recovery_saw_i:
+                -   "Yeah, that's true, I guess," says Alexis conceding Troy's point. "I just didn't expect to see him out here alone in the fog."
+            
+
+                        * [Troy grins.]
+                            -> tro_responds_doubt
+                                    
+
+
+            }
+    -> DONE
+    
+        = alx_true_but   
+        -   "There's a difference between us and Cletus," says Alexis with a grin of her own. "We're not creepy."
+
+            *  [Troy laughs.]
+            "I gather Cletus isn't too fond of us either," he says. "All we can do is tell the police what we know." 
+                                    
+                **  [Alexis makes a course adjustment.]
+                    -> think_we_have_enough
+ 
+ 
+ 
+ == tro_responds_doubt ==
+    -   CHR_TRO_REL
+    -   "{who_saw} could be thinking that same thing about running into you and Mia in the fog," says Troy with a teasing grin. "All we can do is tell the police what we know."
+    
+            * [Alexis makes a course adjustment.]
+                -> think_we_have_enough
+
+    
+
+== think_we_have_enough ==
+    -   Alexis turns slightly to starboard to avoid a lateral marker ahead marking a rock. "Do you think we have enough info to give to the police?" she says, offering the helm back to Troy.
             
         -   (opts)
             
@@ -176,7 +342,7 @@
             *"Absolutely," says Troy[.], as Mia takes the wheel. "On a beautiful day like this, we'll probably encounter plenty of traffic as we get closer to the marina," he says. "It'll be a good chance for you to put your knowledge to the test."
             
                 ** ["Bring it!" says Mia.]
-                Link to a5s2 here.
+                -> encounter_activity
             
             
             -> DONE
