@@ -13,7 +13,28 @@ INCLUDE act-05.ink
 
 
 
+/*  CHARACTER FULL NAMES
 
+
+Alexis Baker
+Mia Chen
+Julian del Castillo
+Troy Kelton
+
+Percey Willard
+
+Cletus Bluin
+
+Mac / Detective Scott McLeod 
+
+Ian Murphey
+Maura Gallagher
+
+Captain "Jim" Santiago Garcia
+
+
+
+*/
 
 
 

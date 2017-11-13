@@ -197,8 +197,8 @@ SCENE 05
         -   CHR_DID_SAD
             - (opts)
 
-                *   [Mac frowns.]
-                    "We've had another boat robbery," he says bitterly.-> storm
+                *   ["Sad news..."]
+                    "Well, that's some sad news, you see, as we've had another boat robbery," he says bitterly.-> storm
 
                 *   (storm) ["The storm hit hard..."] "{As bad as the storm was, it wasn't enough to deter the thieves|They used the storm as cover to strike again}."
 

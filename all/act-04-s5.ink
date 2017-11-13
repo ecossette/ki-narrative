@@ -175,6 +175,11 @@
             -   -> opts
 
 
+=== join_mia_alx_second_attempt ===
+// this is where we'll join from capsized kayaks.
+    -   temp 
+
+
 == leave_cove ==
     -   CHR_ALX_REL
     -   CHR_MIA_SAD
@@ -210,6 +215,8 @@
                 -> putting_island_behind
 
         -   -> opts
+
+
 
 == putting_island_behind ==
     -   CHR_ALX_REL

@@ -1,3 +1,7 @@
+
+
+
+
 === recovery_fine_aboard_boat===
     -   After safely boarding the Lakesong, Alexis immediately begins driving the Lakesong out of the cove, while Julian and Alexis finish securing the kayaks. 
                 
@@ -35,14 +39,14 @@
                         
     ->  DONE
 === quick_recovery_fog_clears ===
- ~ fog_condition = "cleared"
-                    ~ where_saw ="beach"
+~ fog_condition = "cleared"
+~ where_saw ="on a boat in the distance"
                        
                     {shuffle:
                        
                        -    -> quick_recovery_saw_c
                        -    -> quick_recovery_saw_mc
-                       -    -> quick_recovery_saw_ma
+                       -    -> quick_recovery_saw_i
                        -    -> quick_recovery_saw_0
         
                      }   
@@ -61,10 +65,10 @@
 ~ who_saw = "Ian"
     -> mia_alx_tell_story_2
 
-== quick_recovery_saw_ma ==
+/* == quick_recovery_saw_ma ==
 ~ who_saw = "Maura"
     -> mia_alx_tell_story_2
-
+*/
 == quick_recovery_saw_0 ==
 ~ who_saw = "nobody"
     -> mia_alx_tell_story_2
@@ -80,9 +84,29 @@
                     *   ["Hmmm..." says Troy.]
                         -> quick_recovery_fog_exp
                     
-                - else:
-                  and for quite a while they saw nothing at all, slowly cruising through the fog and sounding the horn every two minutes.
+                
+                
+                - quick_recovery_fog_clears && quick_recovery_saw_0:
+                quickly—quicker than expected—but despite having good visibility they saw nothing out of the ordinary while taking turns at the helm and cruising in large circles, killing time until the rendezvous hour with the kayaks.
+                
+                        *   ["Somebody else was out here," says Troy.]
+                            -> somebody_else
+                
+                
+                -   quick_recovery_fog_persists:
+                and for quite a while they saw nothing at all, slowly cruising through the fog and sounding the horn every two minutes.
                   -> quick_recovery_fog_met
+                
+                -   quick_recovery_fog_clears:
+                cleared quickly after leaving the cove and how they took turns at the helm, cruising the boat in large circles while killing time waiting for the rendezvous hour with the kayaks. 
+                
+                    "For quite a while we saw nothing at all..." says Mia.
+                    -> quick_recovery_clear_exp
+                
+                
+                - else:
+                  DEBUG: this 'else' shouldn't be possible.
+                  -> DONE
             
             
             }
@@ -90,25 +114,59 @@
 -> DONE
             
             
+=== quick_recovery_clear_exp ===
+        *   ["Uh-oh, sounds like there's more," says Troy.]
+        
+            "A little bit," says Mia. "We saw the creatures again." 
+            
+        -   (opts)
+            
+            
+            *   [Julian looks skyward.] 
+                Julian can't help but look up to make sure there are no creatures about. -> grins
+            
+            *   (grins) [Alexis grins.] {Alexis grins. "Don't worry, we had no trouble outrunning them."| "And, as we suspected, the creature-drones, have a limited range and flying time," says Alexis.}
+            
+            *   {grins} ["Right," says Mia.]
+                -> quick_recovery_clear_met
+        
+        -   -> opts    
+            
+            
+
+=== quick_recovery_clear_met ===
+    "Right, Alexis put us on a heading that forced the drones to max out to try to catch us," says Mia, "Not long after that, they dropped the chase. That's when we saw {who_saw}" says Mia. 
+    
+    "At least we are pretty sure it was {who_saw}," says Alexis. "He was {where_saw}, and heading away from us."
+
+        
+       *    ["Interesting..." says Troy.]
+            -> tell_who_saw
+
+
+
+
 === quick_recovery_fog_met ===
     -   "And then you'll never guess who we ran into?" says Alexis.
     
             * [Troy is surprised.]
     
-            "Wait, you ran into someone out here? In the fog?" Troy is surprised.
+            "Wait, you ran into someone out here? In the fog?" says Troy surprised.
         
                 ** ["Who?" asks Julian.]
-                    -> tell_who_saw
+                   
+                    
+                          "{who_saw}," says Mia. "All of sudden there he was."
+                            -> tell_who_saw
                 
         
-        = tell_who_saw
-        -   "{who_saw}" says Mia. 
+== tell_who_saw ==
         
         {
         
             - quick_recovery_saw_c:
-            "Kind of strange to find {who_saw} out here after all his stories about how spooky Kalkomey Isle is," says Julian.
-                ** ["That's what we thought, too," says Mia.]
+            "Kind of strange to find {who_saw} out here after all his stories about how spooky Kalkomey Isle is," says Troy.
+                ** "That's what we thought, too," says Mia.[]
                     -> that_not_all
         
             -   quick_recovery_saw_mc:
@@ -124,8 +182,38 @@
         
         }
         
+    -> DONE
+    
+== that_not_all ==
+    
+    {
+    
+        - quick_recovery_fog_clears: -> jul_thinks_cove
         
-    = that_not_all
+        - quick_recovery_fog_persists: -> who_saw_kayaks
+    
+    
+    }
+    
+    
+    = jul_thinks_cove
+    
+    -   (opts)
+        
+            *   [Julian scans the horizon.]
+                Julian reaches for the binoculars and does a 360 degree scan. -> cove
+            
+            *   (cove) [Julian thinks about the cove.] {"Do you think the boat we heard in the cove was the same one you saw?" says Julian.|"Doesn't seem to be anyone else out here, but the cove is still foggy."}
+            
+            *   {cove} ["Hmmm," says Troy.] 
+                -> that_would_mean
+        
+        -   ->  opts
+    
+    
+    
+    
+    = who_saw_kayaks
     -   "That's not all," says Alexis. "We are pretty sure {who_saw} realized the two of you were off on the kayaks."
     
         "I wonder if that was {who_saw} on the boat we heard in the cove?" says Julian.
@@ -192,7 +280,7 @@
                     ** [Alexis shrugs.]
                         -> alexis_casts_doubt
             
-                - quick_recovery_saw_ma:
+                - quick_recovery_saw_mc:
                     "And Mac is the one person who told us he comes up this way."
                     
                     ** [Alexis shrugs.]
@@ -220,7 +308,7 @@
 == alexis_casts_doubt ==
     {
                 - quick_recovery_saw_c:
-                "You've to to admit, though, that Cletus is like straight up creepy, right?" says Alexis. "And what's he doing out here creeping around in the fog?"
+                "You've to to admit, though, that Cletus is like straight up creepy, right?" says Alexis. "And what's he doing out here creeping around{quick_recovery_fog_met: in the fog}?"
 
                        "You mean creeping around out here, the same as we were?" says Troy with a teasing grin.
 
@@ -229,7 +317,7 @@
                             
 
 
-                - quick_recovery_saw_ma:
+                - quick_recovery_saw_mc:
                 "{who_saw} sure seems to be up in everyone's business, though..." says Alexis, "always asking questions and popping up everywhere."
 
                         * [Troy grins.]
@@ -238,7 +326,7 @@
 
 
                 - quick_recovery_saw_i:
-                -   "Yeah, that's true, I guess," says Alexis conceding Troy's point. "I just didn't expect to see him out here alone in the fog."
+                "Yeah, that's true, I guess," says Alexis conceding Troy's point. "I just didn't expect to see him out here alone{quick_recovery_fog_met: in the fog}."
             
 
                         * [Troy grins.]
@@ -262,19 +350,34 @@
  
  == tro_responds_doubt ==
     -   CHR_TRO_REL
-    -   "{who_saw} could be thinking that same thing about running into you and Mia in the fog," says Troy with a teasing grin. "All we can do is tell the police what we know."
+    
+    {
+        - quick_recovery_fog_persists:
+        "{who_saw} could be thinking that same thing about running into you and Mia in the fog," says Troy with a teasing grin. "All we can do is tell the police what we know."
+    
+        -   quick_recovery_fog_clears:
+        "Maybe {who_saw} would be thinking the same thing if he saw you and Mia out here spinning in circles?" says Troy with a teasing grin. "All we can do is tell the police what we know."
+    
+    }
+    
     
             * [Alexis makes a course adjustment.]
                 -> think_we_have_enough
 
     
+== somebody_else ==
+    -   "Somebody was in that boat Julian and I heard," says Troy. "But I guess we'll never know who."
+    
+            * [Alexis makes a course adjustment.]
+                -> think_we_have_enough
+
 
 == think_we_have_enough ==
     -   Alexis turns slightly to starboard to avoid a lateral marker ahead marking a rock. "Do you think we have enough info to give to the police?" she says, offering the helm back to Troy.
             
         -   (opts)
             
-            *   ["Do we have enough?"]
+            *   ["Do we have enough?" Troy repeats the question.]
                 Troy nods. "We definitely have enough info to go to the police, but is it enough to lead the reward? That I don't know," he says. -> steps
             
             *   (steps) [Troy steps forward to take the wheel.] {Troy steps forward to take the wheel but reconsiders. "You can keep driving... that is, if you want to," he says. Alexis grins.|"We'll just have to wait and see."}
@@ -289,18 +392,18 @@
     
         -   (opts)
         
-            *  [Mia reflects.]
+            *  [Mia considers the stream.]
                 
                 {
                     - no_go_island:
                      
-                    "Kind of makes me wish now that we'd explored the beach yesterday," she says remembering the beach. -> photos
+                    "Kind of makes me wish that we'd explored the beach yesterday, after finding that stream today," she says remembering the beach. -> photos
                 
                     - go_to_island:
                     "I wonder if the beach path connects to wherever the stream leads?" she says remembering the beach. -> photos
                     
                     - else:
-                    Mia reflects on what Troy has said, wondering if what they've discovered will turn out helfpul. -> photos 
+                    Mia reflects on what Troy has said, wondering if what they've discovered will really turn out to be helfpul. -> photos 
                     
                 }
                 
