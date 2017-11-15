@@ -177,7 +177,10 @@
 
 === join_mia_alx_second_attempt ===
 // this is where we'll join from capsized kayaks.
-    -   temp 
+    -   Earlier Mia and Alexis had entered the cove at the arranged meeting time. After not finding Julian and Troy in the cove after several signalling attempts, Mia and Alexis leave the cove.
+    
+        * ["That was the plan," says Alexis.]
+            -> leave_cove
 
 
 == leave_cove ==
@@ -282,14 +285,14 @@
             The fog in the cove has...
 
                 *   [... stubbornly persisted.]
-                    -> stubbonrly_persisted
+                    -> stubbornly_persisted
 
                 *   [... finally begun to burn off.]
                     -> finally_begun_burnoff
 
 
 
-== stubbonrly_persisted ==
+== stubbornly_persisted ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   Approaching the cove, Mia and Alexis see that it's every bit as foggy as it was before.
@@ -305,11 +308,11 @@
 
 
                 * {skyward} [Reduce speed.]
-                    -> who_rescues_shuffle
+                    -> second_entry_cove ("fog")
 
         -   -> opts
 
-== finally_begun_burnoff
+== finally_begun_burnoff ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   Approaching the cove, Mia and Alexis see that the fog is rapidly burning off.
@@ -326,7 +329,7 @@
 
 
                 * {skyward} [Reduce speed.]
-                    -> who_rescues_shuffle
+                    -> second_entry_cove ("clear") 
 
         -   -> opts
 

@@ -750,11 +750,11 @@
                 * (water) [Troy looks troubled.] {"That's weird... " he says.| "The bag is soaked."}
 
 
-                * {water} ["What?" says Julian.] -> temp
+                * {water} ["What?" says Julian.] -> inside
 
             - -> opts
 
-        = temp
+        = inside
         -   CHR_TRO_SAD
         -   Troy looks inside his kayak and his face drops.
 
@@ -794,6 +794,7 @@
 
 
 ===  send_flares_now ===
+// sending flares now leads to less severe hypothermia condition later
     -   CHR_TRO_REL
     -   CHR_JUL_SUR
     -   "We need to send off the flares now!" says Troy. "Before it's more difficult when we're in the water."
@@ -805,6 +806,7 @@
 
 
 === try_plug ===
+// waiting to signal leads to greater chance of severe hypothermia
     -   CHR_TRO_REL
     -   "Maybe we can find something to plug the hole?" says Troy.
     -   "OK," says Julian. "My empty dry bag might work." He grabs his dry bag.
@@ -872,14 +874,23 @@
 
 === awaiting_rescue ===
     -   CHR_TRO_SAD
-    -   After just a few minutes, Troy is already sensing a loss of dexterity as he prepares to send off another flare. Removing the flare from his PFD pocket is difficult, and launching it even more so.
+    -   After just a few minutes, Troy is already sensing a loss of dexterity as he prepares to send off a{send_flares_now:nother} flare. Removing the flare from his PFD pocket is difficult, and launching it even more so.
 
             * [Troy launches the flare.]
                 -> second_flare
 
 
         = second_flare
-        Troy is disappointed that the flare didn't go as high as he wanted. His loss of manual dexterity affected his aim.
+        Troy is disappointed that the flare didn't go as high as he wanted. His loss of manual dexterity affected his aim. He's not sure it went high enough for anyone to see. <>
+        
+            {
+            
+                - send_flares_now: Troy is glad he and Julian launched the the first flares before they capsized.
+                
+                - try_plug: Troy realizes in hindsight that he and Julian should have sent off flares earlier instead of wasting time trying to plug the holes. 
+            
+            }
+            
 
             "How long... do you... think until... we're... rescued?" asks Julian.
 
@@ -889,21 +900,94 @@
         = not_long_until
         -   "Not long," says Troy, trying to lift Julian's spirits. Troy knows Julian's difficulty speaking is due to fatigue and shock. Troy remains hopeful—but glancing at the shoreline, he is more and more alarmed at how far from the cove they continue to drift. Will Mia and Alexis find them this far away?
 
-            "I hope so," says Julian breathlessly, "because it's... it's getting... harder to... hang on."
 
+            -   (opts)
+                    
+                *   ["I hope so, because..."]
+                "I hope so, because..." says Julian breathlessly.-> clings
+                
+                *   (clings) [Julian clings to his oar.] {Julian clings to the oar attached by lanyard to his kayak. "... it's getting difficult to hang on."|"... I can't... hold..."}
+                
+                *   {clings} [Julian loses his grip.]
+                    -> loses_kayak
+              
+            -   -> opts  
+            
+== loses_kayak == 
+    -   Julian loses his grip, and his oar and kayak begin drifting away. 
+                
+                   
+            -   (opts)        
+                    
+                *   [Troy's right hand grips his own lanyard.] 
+                    Troy keeps a tight grip on his own lanyard with his right hand.
+                
+                *   (reaches) [Troy reaches out.] {With his left hand, Troy reaches and grabs Julian by his PFD, pulling him close.| He hadn't attached it to his oar but instead was planning to attach it to his PFD.} 
+                
+                *   {reaches} [Troy wants to attach the lanyard.]
+                    -> lanyard_attach
+            
+            -   -> opts 
+
+
+            
+== lanyard_attach ==
+        -   Troy knows he should attach the kayak lanyard to his life-jacket. Staying with the remaining kayak helps their chances of being seen and will help them get more of their bodies out of the water—if they can somehow gather the strength to lift themselves on top of the overturned kayak. 
+        
+            -   (opts)
+            
+                *   [Troy considers letting go of Julian.]
+                Troy considers letting go of Julian for a second so that he can try two hands with the lanyard, but he can't risk losing Julian.  
+                
+                *   (struggle) [Troy struggles with the landyard.] {Troy struggles to attach the lanyard with one hand. He's lost up to 80% of his dexterity and strenth since hitting the water.| He'll just need to find a way to do it Troy tells himself.}
+                
+                
+                *   {struggle} [Troy's chances are modest.]
+                    -> lanyard_struggle
+               
+        
+        
+        
+        = lanyard_struggle 
+        -   Troy's chances to attach the lanyard to his PFD are modest at best. In his present condition—with his loss of dexterity and strength—he only has a fifty-fifty chance of success—no different than the flip of a coin. 
+        
+                *   [Reveal Troy's fate.]
+                
+        = tro_fate
+        
+            {
+                - shuffle:
+                
+                - -> keep_remaining_kayak
+                - -> lose_remaining_kayak
+            
+            
+            }
+            
+               
+               
+               
+               
+               
                 *   ["Let's huddle together," says Troy.]
                     -> huddle_together
 
         = huddle_together
         -   "Huddling... conserve our... heat," says Troy, who is also finding it difficult to speak. He knows he should attach the kayak lanyard to his life jacket, but the task seems too difficult. Everything is so difficult.
 
-            Troy also realizes that he needs to launch another flare to account for their drifting position. He decides he'll do that in just a minute, after he rests a bit...
+                
+            
+            
+            
+        
+        Troy also realizes that he needs to launch another flare to account for their drifting position. He decides he'll do that in just a minute, after he rests a bit...
 
                * [They huddle together.]
                They huddle together. Huddling helps them conserve body heat—and helps their morale. They are in it together. They just need to hang on...
 
-                    ** [Mia and Alexis are searching for them.]
+                    ** [Mia and Alexis are out there, somewhere...]
                     // this will link up with Mia and Alexis searching for them after not finding them at first rendezvous hour.
+                        -> join_mia_alx_second_attempt
 
 
 
