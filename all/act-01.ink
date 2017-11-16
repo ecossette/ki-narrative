@@ -14,7 +14,7 @@ VAR parts = 0
 //-> the_fog_clears
 //-> wait_for_mia_alexis
 //-> day_two_begins
--> recovery_fine_aboard_boat
+-> make_way_cove
 
 === intro ===
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.

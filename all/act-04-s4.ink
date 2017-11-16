@@ -1,4 +1,3 @@
-
 // the flog clears user choice path develops here
 
 === the_fog_clears ===

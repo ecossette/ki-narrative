@@ -203,7 +203,7 @@
 == tweak_plan ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   "Accounting for the time we spent in the cove, it's really less than an hour before we'd return," says Alexis. "But that does seem like a long time. Let's shoot for thirty minutes instead."
+    -   "Accounting for the time we spent in the cove, it's really less than an hour before we'd return," says Alexis. "But that does seem like a long time."
 
         - (opts)
 

@@ -143,7 +143,7 @@
                 // says, clearly, into the...
                     -- CHR_TRO_REL
                         
-                    "This is the powered boat <i>Lakesong</i>, <i>Lakesong<i>, <i>Lakesong</i>, call letters Whiskey Sierra 2-3-2-3 Romeo Bravo. MAYDAY this is the <i>Lakesong</i>. We've encountered an unmanned boat in a death circle. Repeat we have encountered unmanned boat in death circle. No sign of victims."
+                    "This is the powered boat <i>Lakesong</i>, <i>Lakesong<i>, <i>Lakesong</i>, Whiskey Sierra 2-3-2-3 Romeo Bravo. MAYDAY <i>Lakesong</i>. Little Kelton Island bears 90 degrees magnetic-distance 2 miles.  We've encountered an unmanned boat in a death circle. Repeat we have encountered unmanned boat in death circle. No sign of victims."
                         
                             ** [Troy releases the transmit button and waits.]
                                 -> police_response
@@ -158,7 +158,7 @@
                         -> channel_68
         = channel_68  
         -   CHR_TRO_REL
-        -   While Alexis, Mia and Julian continue to scan the surface for survivors, Troy provides additional details to the Marine Patrol officers including their location.
+        -   While Alexis, Mia and Julian continue to scan the surface for survivors, Troy provides additional details to the Marine Patrol officers including additional details on their estimated location.
                      
             *   [The marine police respond.] "We are en route, <i>Lakesong</i>. ETA 10 minutes. Stay clear and let us know if the situation changes, over."
                 
