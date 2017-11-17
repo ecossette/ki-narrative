@@ -11,6 +11,7 @@ INCLUDE act-05.ink
   VAR fog_condition = "null"
   VAR rescue_boat = "null"
   VAR rescue_call_sign ="null"
+  VAR hypo_condition = "fine"
  
 
 

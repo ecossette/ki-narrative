@@ -143,7 +143,7 @@
                 // says, clearly, into the...
                     -- CHR_TRO_REL
                         
-                    "This is the powered boat <i>Lakesong</i>, <i>Lakesong<i>, <i>Lakesong</i>, Whiskey Sierra 2-3-2-3 Romeo Bravo. MAYDAY <i>Lakesong</i>. Little Kelton Island bears 90 degrees magnetic-distance 2 miles.  We've encountered an unmanned boat in a death circle. Repeat we have encountered unmanned boat in death circle. No sign of victims."
+                    "This is the <i>Lakesong</i>, <i>Lakesong<i>, <i>Lakesong</i>, Whiskey Sierra 2-3-2-3 Romeo Bravo. MAYDAY <i>Lakesong</i>. Little Kelton Island bears 90 degrees magnetic-distance 2 miles.  We've encountered an unmanned boat in a death circle. Repeat we have encountered unmanned boat in death circle. No sign of victims. Lakesong is a 32 foot cabin cruiser with a white hull with a green stripe."
                         
                             ** [Troy releases the transmit button and waits.]
                                 -> police_response

@@ -9,133 +9,197 @@
             
             * [The cove remains frustratingly still.]
         
-            Mia and Alexis exchange worried looks.
-            
-            "We're now well past the second meeting hour," says Mia. 
-            
-                ** [We need to make decision, says Alexis.] 
+    
            
                 
         
     - "clear": 
         Mia and Alexis enter the cove, but there is no sign of the kayaks. On the off chance that Julian and Troy are hunkered down somewhere out of sight along the shoreline, Alexis signals with the boat's horn. 
         
-            * Nothing, says Mia frustrated[.], as she and Alexis exchange worried looks.   
-            
-            // let's do an if here, and only show the indecision if the player is not coming from kayaks paths
-                
-                ** "We need to make a decision."
+            * ["Nothing and more nothing," says Mia frustrated.]
       
       }   
       
       -> DONE
       
-      
-        == decision_call ==
+== no_response_hour_two ==
+
+    -   (opts)
+        
+        *   [Alexis fidgets and checks her watch.]
+        "We're now past the second meeting hour," she says.-> glances
+        
+        *   (glances) Mia and Alexis exchange nervous glances. {Mia looks at Alexis, her face creased with worry. Alexis feels the same. "We're going to need to make a decision," says Alexis.| "Way late for the first hour and late for the second." Alexis sighs.}
+        
+        *   {glances} ["What's to decide?" asks Mia.] 
+            -> decision_call
+        
+    -   -> opts
+        
+== decision_call ==
+    -   "Well, we have two options, says Alexis. "One, we can call the marine patrol and report them as missing right now, or we can wait a little longer, maybe take a look outside the cove?"
                 
-                We have two options, says Alexis. We can call the marine patrol and report them as missing now or we can wait a little longer.
-                
-                    "Wait?" Mia questions Alexis. 
-                    "But why would we wait?" asks Mia.
+        -   (opts)    
+            
+            *   ["Why wait?" Mia questions Alexis.] 
+                "I don't understand why we'd wait," says Mia shaking her head.-> plan
                     
-                    "The plan was to call." {"The plan was to call for help if they were overdue, right?"| "They are definitely overdue."}
+            *   (plan) ["The plan was to call."] {"The plan was to call for help if they were overdue, right?"|"They are definitely overdue," says Mia, no doubt in her voice.}
                     
-                    "Well... it depends," says Alexis. 
+            *   ["Well... it depends," says Alexis.] 
+                -> how_overdue
+                    
+        -   -> opts
+        
+== how_overdue ==
+    -   "They're an hour overdue from the <i>first</i> meeting time, says Alexis, "But they are only, what, a few minutes overdue from the second meeting time?" Alexis is fidgety and keeps checking her watch.
+        
+        -   (opts)
+        
+            *   [Mia checks her own watch.]
+            "They're more than a 'few' minutes overdue," says Mia checking her own watch. 
+            
+            *   (arms) [Mia crosses her arms in frustration.] {She crosses her arms in frustration with Alexis but then has a realization. "You're worried that if you call now and we find them a few minutes later that you'll be thought of as overreacting?" says Mia.|"I get it—you don't want to be called 'hysterical.'"}
+        
+            *   {arms} [Alexis sighs.] 
+                -> no_panic_rule
+        
+        -   -> opts
+
+==  no_panic_rule ==
+    -   "Something like that," says Alexis. "I mean isn't the first rule of an emergency situation 'don't panic'?"
+    
+        Mia agrees with the sentiment but not its application in this case. "But they <i>are</i> overdue," she says. 
+        
+            * [Alexis again checks the time.]
+            
+            
+        {
+            - follow_boat:
+            -> make_call_decision
+                   
+            - else:
+            -> call_report_overdue    
+        
+        }
+            
+            
+== make_call_decision ==
+// this decision is only presented to player if they followed the boat and not the kayaks
+    -   Alexis again checks the time, and then her face takes on the calm of expression that comes with having made a decision. She decides to... 
+    
+         ** [Call the marine patrol right now.]
+            -> call_report_overdue
+                
+        ** [Take a look outside the cove first.] 
+    
+
+== call_report_overdue ==
+    -   "You're right, says Alexis{follow_kayaks:, her face reflecting the calmness that comes with having made a decision}. "And we can keep searching for Julian and Troy after we alert the marine police."        
+           
+        * [Alexis reaches for the radio.]
+        -- Alexis reaches for the radion and checks that it's tuned to the emergency channel—number 16.
+            
+            ** ["Pan, Pan Pan," she says.]
+                -> pan_pan_call_01
+            
+        = pan_pan_call_01
+        -   "Pan, Pan Pan," Alexis says into the transmitter, using the signal (pronounced 'Pahn') for an incident of less gravity than a Mayday signal. (Mayday is reserved for situations where the loss of a vessel or persons is imminent.) 
+            
+                * ["This is Lakesong, Lakesong, Lakesong."]
+                -- Alexis continues the pan-pan distress call. "Whiskey Sierra 2-3-2-3. Midway, south side of Kalkomey Isle bearing north 500 meters.  We have 2 persons in kayaks who are well overdue. Lakesong is a 32 foot cabin cruiser—white hull with a green stripe. Over."
+            
+                    ** [They wait for a response.] 
+                    -> no_response_pan
+                    
+        = no_response_pan 
+        -   There is no immediate response to the pan-pan call, so Alexis waits 15 seconds—per regulation—then repeats the pan-pan distress call on Channel 16. Again there is no response. 
+        
+            * [She notes the time.]
+            
+            {
+                -stubbornly_persisted:
+                Alexis notes that time as well as the fact that the last of the fog has cleared out of the cove. Alexis can see it's empty—No sign of the Julian and Troy in the kayaks.
+                
+                - else:
+               Alexis notes the time and takes a final look around the cove. There is no sign of the Julian and Troy in the kayaks. 
+            
+            }
+            
+            
+                ** [Alexis pushes the trottle forward.]
+                -> leave_cove_after_pan_call
+                
+
+== leave_cove_after_pan_call == 
+    -   Alexis pushes the throttle forward and puts the boat on a course to exit the cove. 
+                
+        "Aren't you going to try the radio again?" asks Mia.
+        
+            * ["We will."]
+            "Per the regs, we need to wait two minutes after our first two calls before trying again," says Alexis. "in the meantime I want to get us out into open water. The island may be interfering with our radio signal."
+            
+                ** [Leave the cove.]
+                Once in open water, Alexis repeats the Pan-Pan distress call at the proper two minute mark. 
+
+                    *** [The radio squawks to life.]
+                        -> radio_squawk
                     
         
-        They are an hour overdue from the first meeting time, says Alexis, "But they are only, what, a few minutes overdue from the second meeting time?" Alexis is fidgety and keeps checking her watch.
+        = radio_squawk
+        But what they hear is not what they were expecting. 
         
+            * ["MAYDAY, MAYDAY, MAYDAY!"]
+            
+
+=== who_rescues_shuffle ===
+    -   put the rescue shuffle here
+
+        {shuffle:
+
+            - -> cletus_rescues
+
+            - -> mia_alexis_rescues
+
+            - -> mac_rescues
+
+            - -> ian_rescues
+
+
+
+        }
+
+=== cletus_rescues ===
+    - cletus is the rescuer
+    will continue in act 5
+    -> DONE
+
+=== mia_alexis_rescues ===
+    - mia and alexis are the rescuer
+    will continue in act 5
+    -> DONE
+
+=== mac_rescues ===
+    - mac is the rescuer
+    will continue in act 5
+    -> DONE
+
+=== ian_rescues ===
+    - ian is the rescuer
+    will continue in act 5
+
+
+
         
-        
-            Mia thinks she understands her friend's indecision.
-            
-            Are you worried that if you call and we find them ten minutes later that you'll be thought of as overreacting? 
-            
-            Something like that, says Alexis. I mean isn't the first rule of an emergency situation 'don't panic'?
-            
-            
-            // give the player a choice here to call only if didn't follow kayaks.
-            
-                Call the marine patrol right now.
-                
-                Take a look outside the cove first. 
-            
-            
-            // jump here if followed kayaks
-            "They are overdue," says Mia. "Let's call. Better safe than sorry."
-            
-            You're right! says Alexis. "And we can keep searching for Julian and Troy after we alert the marine police."
-            
-            Alexis reaches for the radio and checks that it's tuned to the emergency channel—number 16.
-            
-            * ["Pan, Pan Pan," she says.]
-            using the signal (pronounced 'Pahn') for an incident of less gravity than a Mayday signal. (Mayday is reserved for situation where loss of vessel or person is imminent.) 
-            
-            This is the powered boat <i>Lakesong</i>, <i>Lakesong<i>, <i>Lakesong</i>, call letters Whiskey Sierra 2-3-2-3 Romeo Bravo. South side of Kalkomey Isle. We have 2 persons in kayaks who are well overdue. Lakesong is a 32 foot cabin cruiser—white hull with green stripe.  Over.
-            
-            There is no response. 
-            
-            Alexis waits 15 seconds—per regulation—then repeats the Pan-Pan distress call on Channel 16. Again there is no response. She notes the time.
-            
-            // if foggy
-                the last of the fog has cleared out of the cove and Alexis can see it's empty. No sign of the kayaks.
-                
-            // else 
-            Alexis takes a final look at around the cove. No sign of the kayaks.
-            
-            She pushes the trottle forward
-            and puts the boat on a course to exit the cove.
-                
-            
-            Aren't you going to try the radio again?
-            We will in two minutes—per the reg—in the meantime I want to get us out into open water. The island may be interfering with our radio signal.
-            
-            Leave the cove. 
-            
-            Once in open water, Alexis repeats the Pan-Pan distress call at the proper two minute mark. 
-            
-/*
-Possible rescue conditions for follow kayaks path:
----------------------------------------------------
-
-have kayaks and got off early flare = hypo moderate / no memory loss / rescue by MA possible
-have kayaks but did not get off early flare = hypo moderate / at least one has memory loss / rescue by MA possible
-no kayak and got off early flare = hypo moderate / at least one has memory loss / no MA rescue possible
-
-no kayak and no early flare = hypo severe / memory loss both / no MA rescue possible. 
-
-Possible rescue conditions for follow MA:
-------------------------------------------
-
-call for help right away = hypo moderate / no memory loss 
-wait to call for help = hypo extreme / full memory loss
-
-Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for following boat path? For now, the answer is NO.
-
-
-
-    */
-            
-            
        
             
-            The radio squacks to life.
             
-            // let's random here on whether marine patrol response or a Mayday signal. 
-            
-                // marine Patrol
-                state the nature of your emergency
+
                 
-                
-                // MAYDAY
-                // will need random on who is giving signal
-                "MAYDAY, MAYDAY, MAYDAY!" It's not what they were expecting. 
-                
-                * Another vessel is in distress. 
                 
               
               // we can dual use this for both cases where rescue is other.
-              MAYDAY, MAYDAY, MAYDAY! This is the powered boat [variable] call letters [variable] I've recovered two males from the water presenting symptoms of extreme hypothermia. Request immediate assistance. Repeat request immediate assistance. Life or death situation. Over.
+              MAYDAY, MAYDAY, MAYDAY! This is the powered boat [variable] call letters [variable] I've recovered two males from the water presenting symptoms of extreme hypothermia. Request immediate emergency medical assistance. Life or death situation. Over.
               
               "Oh my God!" says Mia. 
               That's Julian and Troy!. Alexis nods, her mouth open, shocked by the news.
@@ -205,7 +269,12 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
     
     
 == search_more_wait_call ==
+// waiting to call has a influence on the medical condition of the boys once they are rescued, otherwise the narrative flow doesn't change. 
+
+
     -   temp
+    
+    -> DONE
     
     
     

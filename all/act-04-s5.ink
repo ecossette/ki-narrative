@@ -335,42 +335,6 @@
 
 
 
-=== who_rescues_shuffle ===
-    -   put the rescue shuffle here
-
-        {shuffle:
-
-            - -> cletus_rescues
-
-            - -> mia_alexis_rescues
-
-            - -> mac_rescues
-
-            - -> ian_rescues
-
-
-
-        }
-
-=== cletus_rescues ===
-    - cletus is the rescuer
-    will continue in act 5
-    -> DONE
-
-=== mia_alexis_rescues ===
-    - mia and alexis are the rescuer
-    will continue in act 5
-    -> DONE
-
-=== mac_rescues ===
-    - mac is the rescuer
-    will continue in act 5
-    -> DONE
-
-=== ian_rescues ===
-    - ian is the rescuer
-    will continue in act 5
-
 
 
 
