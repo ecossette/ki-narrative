@@ -1,4 +1,4 @@
-// the flog clears user choice path develops here
+// the flog clears user choice path develops here, this path can lead to seeing nothing.
 
 === the_fog_clears ===
     -   CHR_ALX_REL
@@ -144,6 +144,7 @@
         -   -> opts
 
 == boat_in_distance ==
+~ where_saw = DISTANCE
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   "That's a boat for sure," says Alexis. Mia hands her the binoculars.
@@ -163,15 +164,15 @@
 
 
 === cletus_in_distance ===
-~ who_saw = "Cletus"
+~ who_saw = CLETUS
     -> i_think_it_is
 
 === mac_in_distance ===
- ~ who_saw = "Mac"
+ ~ who_saw = MAC
     -> i_think_it_is
 
 === ian_in_distance ===
- ~ who_saw = "Ian"
+ ~ who_saw = IAN
     -> i_think_it_is
 
 
@@ -356,6 +357,7 @@
 
 
 == someone_on_beach ==
+~ where_saw = BEACH
    -    "There's somebody there alright," says Alexis. Mia hands her the binoculars.
 
             * ["Do you recognize who it is?" Mia asks.]
@@ -373,15 +375,15 @@
 
 
 === cletus_on_beach ===
-~ who_saw = "Cletus"
+~ who_saw = CLETUS
     -> i_think_on_beach
 
 === mac_on_beach ===
- ~ who_saw = "Mac"
+ ~ who_saw = MAC
     -> i_think_on_beach
 
 === maura_on_beach ===
- ~ who_saw = "Maura"
+ ~ who_saw = MAURA
     -> i_think_on_beach
 
 

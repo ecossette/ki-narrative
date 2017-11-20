@@ -26,7 +26,7 @@
 
 === quick_recovery_fog_persists ===
 ~ fog_condition = "persisted"
-~ where_saw = "water"    
+~ where_saw = FOG    
                         
                     {shuffle:
                        
@@ -40,7 +40,7 @@
     ->  DONE
 === quick_recovery_fog_clears ===
 ~ fog_condition = "cleared"
-~ where_saw ="on a boat in the distance"
+~ where_saw = DISTANCE
                        
                     {shuffle:
                        
@@ -54,15 +54,15 @@
     ->  DONE
 
 == quick_recovery_saw_c ==
-~ who_saw = "Cletus"
+~ who_saw = CLETUS
     -> mia_alx_tell_story_2
 
 == quick_recovery_saw_mc ==
-~ who_saw = "Mac"
+~ who_saw = MAC
     -> mia_alx_tell_story_2
 
 ==  quick_recovery_saw_i ==
-~ who_saw = "Ian"
+~ who_saw = IAN
     -> mia_alx_tell_story_2
 
 /* == quick_recovery_saw_ma ==
@@ -70,7 +70,7 @@
     -> mia_alx_tell_story_2
 */
 == quick_recovery_saw_0 ==
-~ who_saw = "nobody"
+~ who_saw = NOBODY
     -> mia_alx_tell_story_2
 
 == mia_alx_tell_story_2

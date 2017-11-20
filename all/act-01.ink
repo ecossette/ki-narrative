@@ -8,13 +8,11 @@ VAR parts = 0
 --------------------------------------------------------------------------------*/
 
 //-> intro
-//-> kayaks_strewn
-//-> how_far_stream_goes
-//-> nearing_the_cove
-//-> the_fog_clears
-//-> wait_for_mia_alexis
-//-> day_two_begins
--> make_way_cove
+
+//-> make_way_cove
+
+-> temp_var_set_hypothermia_tree
+//-> boat_in_distance
 
 === intro ===
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.

@@ -154,6 +154,7 @@
 
 === who_rescues_shuffle ===
     -   put the rescue shuffle here
+// should we reverse the likelihood of rescue to the likelihood of being accomplice? cletus 10% ian 30% mac 60% ?
 
         {shuffle:
 
@@ -171,7 +172,7 @@
 
 === cletus_rescues ===
     - cletus is the rescuer
-    ~ rescuer = "Cletus"
+    ~ rescuer = CLETUS
     ~ rescue_boat = "Munlock"
     ~ rescue_call_sign = "Romeo Foxtrot 57-80"
     ~ rescue_boat_type = "24 foot Seaark"
@@ -188,7 +189,7 @@
 
 === mac_rescues ===
     - mac is the rescuer
-    ~ rescuer = "Mac"
+    ~ rescuer = MAC
     ~ rescue_boat = "Beachleaf"
     ~ rescue_call_sign = "Delta India 31-40"
     ~ rescue_boat_type = "12 foot all purpose fishing boat"
@@ -197,7 +198,7 @@
 
 === ian_rescues ===
     - ian is the rescuer
-    ~ rescuer = "Ian"
+    ~ rescuer = IAN
     ~ rescue_boat = "Shamrockit"
     ~ rescue_call_sign = "AM 22-08"
     ~ rescue_boat_type = "18 foot bowrider"

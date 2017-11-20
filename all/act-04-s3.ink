@@ -21,6 +21,7 @@
 
 
 == fog_persists ==
+// the fog persists user path that leads to meeting someone in the fog.
     -   CHR_MIA_REL
     -   CHR_ALX_REL
     -   "I was hoping the fog would clear up by now," says Alexis. "But no luck."
@@ -110,7 +111,7 @@
                         -> fog_meet_randomizer
 
 === fog_meet_randomizer ===
-~ where_saw = "fog"
+~ where_saw = FOG
 
        { shuffle:
 
@@ -128,7 +129,7 @@
 
 === who_fog_is_cletus ===
     VAR chr = "CLT"
-    ~ who_saw = "Cletus"
+    ~ who_saw = CLETUS
     -   CHR_CLT_REL
     -   It's Cletus, in the boat they saw him fueling earlier.
 
@@ -136,7 +137,7 @@
 
 === who_fog_is_mac ===
    ~ chr = "DID"
-   ~ who_saw = "Mac"
+   ~ who_saw = MAC
     -   CHR_DID_REL
     -   It's Mac in his small boat.
 
@@ -144,7 +145,7 @@
 
 === who_fog_is_ian ===
     ~ chr = "IAN"
-    ~ who_saw = "Ian"
+    ~ who_saw = IAN
     -   CHR_IAN_REL
     -   It's Ian, but Maura isn't with him.
 

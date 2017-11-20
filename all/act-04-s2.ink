@@ -795,7 +795,7 @@
 
 ===  send_flares_now ===
 // sending flares now leads to less severe hypothermia condition later
-~ flare_early = "yes"
+~ flare_early = 1
     -   CHR_TRO_REL
     -   CHR_JUL_SUR
     -   "We need to send off the flares now!" says Troy. "Before it's more difficult when we're in the water."
@@ -808,7 +808,7 @@
 
 === try_plug ===
 // waiting to signal leads to greater chance of severe hypothermia
-~ flare_early = "no"
+~ flare_early = 0
     -   CHR_TRO_REL
     -   "Maybe we can find something to plug the hole?" says Troy.
     -   "OK," says Julian. "My empty dry bag might work." He grabs his dry bag.
@@ -976,7 +976,7 @@
             
        
 === lose_remaining_kayak ===
-~  kayak_status = "lost"
+~  kayak_status = 0
     -   Troy is unable to attach the landyard to his PFD and in his final effort he loses hold of the landyard and the kayak is lost. 
      
             * [Focus on survival.]
@@ -985,7 +985,7 @@
 
 
 === keep_remaining_kayak ===
-~ kayak_status = "kept"
+~ kayak_status = 1
     -   Troy is able to attach the lanyard! 
     
         Now Troy can turn his attention to the most important thing:
