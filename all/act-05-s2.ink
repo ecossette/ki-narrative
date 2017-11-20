@@ -159,7 +159,7 @@
 
             - -> cletus_rescues
 
-            - -> mia_alexis_rescues
+            //- -> mia_alexis_rescues
 
             - -> mac_rescues
 
@@ -171,43 +171,57 @@
 
 === cletus_rescues ===
     - cletus is the rescuer
-    will continue in act 5
-    -> DONE
+    ~ rescuer = "Cletus"
+    ~ rescue_boat = "Munlock"
+    ~ rescue_call_sign = "Romeo Foxtrot 57-80"
+    ~ rescue_boat_type = "24 foot Seaark"
+    ~ rescue_boat_color = "gray"
+    
+    -> rescuer_mayday_call
 
-=== mia_alexis_rescues ===
+/* === mia_alexis_rescues ===
     - mia and alexis are the rescuer
     will continue in act 5
     -> DONE
+*/
+
 
 === mac_rescues ===
     - mac is the rescuer
-    will continue in act 5
-    -> DONE
+    ~ rescuer = "Mac"
+    ~ rescue_boat = "Beachleaf"
+    ~ rescue_call_sign = "Delta India 31-40"
+    ~ rescue_boat_type = "12 foot all purpose fishing boat"
+    ~ rescue_boat_color = "green"
+    -> rescuer_mayday_call
 
 === ian_rescues ===
     - ian is the rescuer
-    will continue in act 5
+    ~ rescuer = "Ian"
+    ~ rescue_boat = "Shamrockit"
+    ~ rescue_call_sign = "AM 22-08"
+    ~ rescue_boat_type = "18 foot bowrider"
+    ~ rescue_boat_color = "red"
+    -> rescuer_mayday_call
 
 
-
-        
-       
-            
-            
-
-                
-                
-              
-              // we can dual use this for both cases where rescue is other.
-              MAYDAY, MAYDAY, MAYDAY! This is the powered boat [variable] call letters [variable] I've recovered two males from the water presenting symptoms of extreme hypothermia. Request immediate emergency medical assistance. Life or death situation. Over.
-              
-              "Oh my God!" says Mia. 
+=== rescuer_mayday_call ===
+    It's another boat in distress!
+    
+    "This is {rescue_boat}, {rescue_boat}, {rescue_boat}, {rescue_call_sign}. Kalkomey Isle bears 270 degrees magnetic distince one-half mile. I've recovered two males from the water with symptoms of extreme hypothermia. Alive but unresponsive. Request immediate emergency medical assistance. {rescue_boat} is {rescue_boat_type} {rescue_boat_color} hull. Over.
+    
+            * ["Oh my God!" says Mia.] 
               That's Julian and Troy!. Alexis nods, her mouth open, shocked by the news.
               
-              The radio sqwuaks a reply.
-              Marine Patrol copies that [variable]. Two males recovered with extreme hypothermia symptoms. Immediate help needed. Please switch to working channel 68 for continued transmission.. Over.
+                ** [The radio sqwuaks a reply.]
+                
+        = mp_reply
+        "Marine Patrol copies that {rescue_boat}. Two males recovered presenting symptoms of extreme hypothermia. Immediate help needed. Please switch to working channel 68 for continued transmission. Over."
               
               Copy Marine Police. [Variable] switching to working channel 68 for continued transmission. Out.
+              
+              
+              
               
               Alexis switches the radio to 68 to follow the transimission and joins it in progress.
               
