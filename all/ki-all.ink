@@ -16,12 +16,16 @@ INCLUDE act-05.ink
     VAR rescue_call_sign ="null"
     VAR rescue_boat_type = "null"
     VAR rescue_boat_color = "null"
-    VAR hypo_severity = 0
+    VAR hypo_severity = -1
     VAR suspect_whom = UNKNOWN
     VAR accomplice = UNKNOWN
+    VAR who_lost_memory = NOBODY
+    VAR what_remember = UNKNOWN
     
     CONST BEACH = "beach"
     CONST FOG = "fog"
+    CONST STREAM = "stream"
+    CONST CAVE = "cave"
     CONST DISTANCE = "distance"
     CONST NOWHERE = "nowhere"
     CONST UNKNOWN = "unkown"
@@ -31,6 +35,10 @@ INCLUDE act-05.ink
     CONST IAN = "Ian"
     CONST MAURA = "Maura"
     CONST MAURA_AND_IAN = "Maura and Ian"
+    CONST TROY = "Troy"
+    CONST JULIAN = "Julian"
+    
+    
     
 
 

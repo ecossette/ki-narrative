@@ -1,7 +1,6 @@
 
 
 
-
 === recovery_fine_aboard_boat===
     -   After safely boarding the Lakesong, Alexis immediately begins driving the Lakesong out of the cove, while Julian and Alexis finish securing the kayaks. 
                 
@@ -13,6 +12,16 @@
                     
 == mia_alx_tell_story
     -   As the boat cruises south into a warm, late-afternoon breeze, Mia and Alexis describe their two hours waiting for the rendezvous with the kayaks. They begin by saying...
+    
+
+/*
+Here we need to account for having actually followed Mia and Alexis.
+
+
+
+*/
+
+
     
                 * [The fog persisted.]
                 ->  quick_recovery_fog_persists
@@ -223,8 +232,14 @@
 
 
 === quick_recovery_fog_exp ===
-    -   
+    -  
+    // add another for follow kayaks
+    
     {
+        - leave_kayak_path_early:
+         * [Troy looks puzzled.] 
+            -> that_would_mean
+        
         - quick_recovery_saw_0:
         "Hmmm..." says Troy. "I wonder if those signals were from the same boat we heard enter the cove?"
         
@@ -242,8 +257,14 @@
     -   "But that would mean {who_saw} knows about the hidden stream and is probably connected to the robberies," says Troy. He shakes his head, troubled by the idea.
     
             * ["You don't think..." says Mia.] 
+                {leave_kayak_path_early:
+                 -> maybe_all_suspect
+                
+                -else:
                 -> you_think_involved
-            
+                }
+        
+        
         = you_think_involved
         -   "You don't think {who_saw} could be involved in this, do you?" asks Mia.
         
@@ -295,14 +316,21 @@
             }
             
     
-        * "Maybe." 
+        * ["Maybe."] 
         "Maybe..." says Troy. "Realistically we have nothing to suggest {who_saw} is involved,  but you can't rule anyone out. Troy smiles. "Other than the four of us, of course."
         
             ** [Alexis nods.]
                 -> alexis_casts_doubt
     
     
-
+== maybe_all_suspect ==
+    -   "You don't think {who_saw} could be involved in this, do you?" asks Mia.
+    
+            * ["Let's hope not," says Troy.] 
+            - "Let's hope not," says Troy. "We have nothing to suggest {who_saw} is involved,  but you can't rule anyone out. Troy smiles. "Other than the four of us, of course."
+            
+                ** [Alexis makes a course adjustment.]
+                -> think_we_have_enough
 
 
 == alexis_casts_doubt ==

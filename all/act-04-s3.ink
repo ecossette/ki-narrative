@@ -6,9 +6,31 @@
         * [ Beyond the cove.]
             -> beyond_cove
 
-    = beyond_cove
+
+=== leave_kayak_path_early ===
+// this thread account for the player choice NOT to explore the stream at all.
+// will need to account for having seen stream for the solve matrix later
+// will need to account for this case and branch off to a path where the girls find them in the cove.
+
+-   Following the plan, after leaving Julian and Troy to investigate the cove on the kayaks, Alexis had taken the <i>Lakesong</i> away from the cove to put some distance between the boat and the island. Alexis intends to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. Alexis gives the horn a prolonged blast every two minutes.
+
+    After some time passes...
+
+            * [The fog begins to clear.]
+                -> the_fog_clears
+
+            * [ The fog persists.]
+                -> fog_persists
+
+
+
+=== beyond_cove ===
 
     -   CHR_ALX_REL
+    
+    
+    
+    
     -   Following the plan, Alexis takes the <i>Lakesong</i> away from the cove and puts some distance between the boat and the island. Alexis plans to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. Alexis gives the horn a prolonged blast every two minutes.
 
         After some time passes...

@@ -137,8 +137,26 @@
             = gives_signal
             -   Alexis gives three quick toots with the horn, waits three seconds and then gives a long one, the agreed upon signal.
 
-                *  [There is no response.]
+                {
+                
+                    - leave_kayak_path_early:
+                    *  [They hear the whistle!]
+                        -> hear_whistle
+                
+                    - else:
+                    *  [There is no response.]
                     -> no_response
+                
+                
+                }
+                
+
+            = hear_whistle
+            -   Shortly after hearing the whistle, Mia and Alexis see Julian and Troy appear out of the fog and preperations are made to recover the two guys and the kayaks.
+            
+                * [Back on board.]
+                     -> recovery_fine_aboard_boat
+                
 
 == no_response ==
     -   CHR_ALX_REL

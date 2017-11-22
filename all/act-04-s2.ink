@@ -245,11 +245,11 @@
 
         }
 
-    -   and take the kayaks to the other side of the cove, putting distance between themselves and the vine curtain in case the thieves enter or exit through it. The fog persists {no_go_stream:, though it's more patchy than before,} and they both hope Mia and Alexis will be on time.
+    -   and take the kayaks to the other side of the cove, putting distance between themselves and the vine curtain in case the thieves enter or exit through it. The fog persists {turn_back_before_cave:, though it's more patchy than before,} and they both hope Mia and Alexis will be on time.
 
         {
 
-             - no_go_stream:
+             - turn_back_before_cave:
 
                 * [Wait for Mia and Alexis]
                     -> wait_for_mia_alexis

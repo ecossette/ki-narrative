@@ -128,7 +128,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
 == pwc_pfd_mia ==
     -   CHR_MIA_REL
     -   CHR_MIA_SAD
-    -   After slippig on the vest from Ian, Mia frowns.
+    -   After slipping on the vest from Ian, Mia frowns.
     // Cut stuff. I guessed how the images work, double check I've not broken anything
                     "Look, it's too big," says Mia, pulling at the shoulder of the life jacket. 
                * ["C'mon, Mia!" says Julian.] -> fussy_mia
