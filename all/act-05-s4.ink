@@ -49,6 +49,19 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
 
     */
     
+
+=== report_to_police ===
+    -   temp 
+    
+    -> DONE
+
+
+=== met_by_police ==
+    - temp 
+    
+    -> DONE
+
+
 === temp_set_path_followed ===
     - DEBUG: Set the path followed.
     
@@ -169,6 +182,12 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
     
         will need to advise Mia and Alexis of the severity. the police can do this at the dock along with a guess of what happened in the case where the boys' memory has been effected. can also have boys tell in the case where there is memory.
     */
+    
+    // NEED AN if here to account for hypo severity already set for 3 based on waiting. === search_more_wait_call
+    
+    
+    
+    
     
     {shuffle:
     

@@ -145,7 +145,7 @@ the story will flow in/out of this tunnel on several occasion during play
         -> completed_casting_off
 
 == completed_casting_off ==
-    -   You've successfully cast off!
+    -   Everyone smiles as the boat slips away from the dock with a successful cast off!
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
         + [Onwards!]
     -    ->->

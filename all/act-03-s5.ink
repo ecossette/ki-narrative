@@ -170,8 +170,9 @@ SCENE 05
     -   Entering the marina at <i>slow, no wake speed,</i> the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock. The man keeps gesturing toward an empty slip, while the woman looks on with a sad expression. Captain Garcia nods and takes notes.
 
             *   [Dock the <i>Lakesong.</i>]
+                 -> docking_wind_direction ->
                 // launch the docking activity again Here
-                // need build another tunnel similar to casting off?
+d
                 -> after_docking_ahoy
 
 == after_docking_ahoy

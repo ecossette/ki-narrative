@@ -1,6 +1,7 @@
 // the flog clears user choice path develops here, this path can lead to seeing nothing.
 
 === the_fog_clears ===
+~ fog_condition = CLEAR
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   In the open waters away from the island, the fog clears, giving Mia and Alexis good visibility from the deck of the <i>Lakesong.</i>
@@ -144,6 +145,7 @@
         -   -> opts
 
 == boat_in_distance ==
+~ what_saw = BOAT
 ~ where_saw = DISTANCE
     -   CHR_ALX_REL
     -   CHR_MIA_REL
@@ -221,7 +223,7 @@
 
 
 === sees_mirror ===
-~ what_distract = "flashing"
+~ what_distract = FLASHING
     -   CHR_ALX_REL
     -   CHR_MIA_REL
 
@@ -275,7 +277,7 @@
 
 
 === sees_flare ===
-~ what_distract = "red smoke"
+~ what_distract = SMOKE
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   "Is that smoke?" asks Mia.
@@ -310,8 +312,11 @@
                     They decide to...
 
                         **** [Pass.]
+                            ~ investigate_distraction = 0
                             -> no_investigate
+                            
                         **** [Investigate.]
+                            ~ investigate_distraction = 1
                             -> investigate
 
 

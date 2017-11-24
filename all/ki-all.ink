@@ -7,8 +7,9 @@ INCLUDE act-05.ink
 
     VAR who_saw = NOBODY
     VAR where_saw = NOWHERE
-    VAR what_distract = "null"
-    VAR fog_condition = "null"
+    VAR what_saw = UNKNOWN
+    VAR what_distract = UNKNOWN
+    VAR fog_condition = UNKNOWN
     VAR kayak_status = 0
     VAR flare_early = 0
     VAR rescuer = UNKNOWN
@@ -21,10 +22,15 @@ INCLUDE act-05.ink
     VAR accomplice = UNKNOWN
     VAR who_lost_memory = NOBODY
     VAR what_remember = UNKNOWN
+    VAR investigate_distraction = 0
     
     CONST BEACH = "beach"
+    CONST FLASHING = "flashing"
+    CONST SMOKE = "red smoke"
     CONST FOG = "fog"
+    CONST CLEAR = "clear"
     CONST STREAM = "stream"
+    CONST BOAT = "boat"
     CONST CAVE = "cave"
     CONST DISTANCE = "distance"
     CONST NOWHERE = "nowhere"

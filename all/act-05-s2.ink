@@ -29,7 +29,7 @@
         *   [Alexis fidgets and checks her watch.]
         "We're now past the second meeting hour," she says.-> glances
         
-        *   (glances) Mia and Alexis exchange nervous glances. {Mia looks at Alexis, her face creased with worry. Alexis feels the same. "We're going to need to make a decision," says Alexis.| "Way late for the first hour and late for the second." Alexis sighs.}
+        *   (glances) [Mia and Alexis exchange nervous glances.] {Mia looks at Alexis, her face creased with worry. Alexis feels the same. "We're going to need to make a decision," says Alexis.| "Way late for the first hour and late for the second." Alexis sighs.}
         
         *   {glances} ["What's to decide?" asks Mia.] 
             -> decision_call
@@ -92,6 +92,7 @@
             -> call_report_overdue
                 
         ** [Take a look outside the cove first.] 
+            -> search_more_wait_call
     
 
 == call_report_overdue ==
@@ -101,9 +102,14 @@
         -- Alexis reaches for the radion and checks that it's tuned to the emergency channel—number 16.
             
             ** ["Pan, Pan Pan," she says.]
-                -> pan_pan_call_01
+                -> pan_pan_call_01 ->
+                
+                -> leave_cove_after_pan_call
             
-        = pan_pan_call_01
+
+=== pan_pan_call_01 ===
+// this is a tunnel we'll reuse 
+
         -   "Pan, Pan Pan," Alexis says into the transmitter, using the signal (pronounced 'Pahn') for an incident of less gravity than a Mayday signal. (Mayday is reserved for situations where the loss of a vessel or persons is imminent.) 
             
                 * ["This is Lakesong, Lakesong, Lakesong."]
@@ -121,6 +127,9 @@
                 -stubbornly_persisted:
                 Alexis notes that time as well as the fact that the last of the fog has cleared out of the cove. Alexis can see it's empty—No sign of the Julian and Troy in the kayaks.
                 
+                - search_more_wait_call:
+                Alexis notes the time, her face full of concern. 
+                
                 - else:
                Alexis notes the time and takes a final look around the cove. There is no sign of the Julian and Troy in the kayaks. 
             
@@ -128,7 +137,7 @@
             
             
                 ** [Alexis pushes the trottle forward.]
-                -> leave_cove_after_pan_call
+                - ->-> 
                 
 
 == leave_cove_after_pan_call == 
@@ -150,28 +159,30 @@
         But what they hear is not what they were expecting. 
         
             * ["MAYDAY, MAYDAY, MAYDAY!"]
+                -> who_rescues_shuffle
             
 
 === who_rescues_shuffle ===
-    -   put the rescue shuffle here
 // should we reverse the likelihood of rescue to the likelihood of being accomplice? cletus 10% ian 30% mac 60% ?
 
         {shuffle:
 
             - -> cletus_rescues
 
-            //- -> mia_alexis_rescues
-
+            - -> mac_rescues
+            - -> mac_rescues
+            - -> mac_rescues
+            - -> mac_rescues
             - -> mac_rescues
 
             - -> ian_rescues
-
-
+            - -> ian_rescues
+            - -> ian_rescues
 
         }
 
 === cletus_rescues ===
-    - cletus is the rescuer
+    - DEBUG: cletus is the rescuer
     ~ rescuer = CLETUS
     ~ rescue_boat = "Munlock"
     ~ rescue_call_sign = "Romeo Foxtrot 57-80"
@@ -180,15 +191,10 @@
     
     -> rescuer_mayday_call
 
-/* === mia_alexis_rescues ===
-    - mia and alexis are the rescuer
-    will continue in act 5
-    -> DONE
-*/
 
 
 === mac_rescues ===
-    - mac is the rescuer
+    - DEBUG: mac is the rescuer
     ~ rescuer = MAC
     ~ rescue_boat = "Beachleaf"
     ~ rescue_call_sign = "Delta India 31-40"
@@ -197,7 +203,7 @@
     -> rescuer_mayday_call
 
 === ian_rescues ===
-    - ian is the rescuer
+    - DEBUG: ian is the rescuer
     ~ rescuer = IAN
     ~ rescue_boat = "Shamrockit"
     ~ rescue_call_sign = "AM 22-08"
@@ -207,91 +213,121 @@
 
 
 === rescuer_mayday_call ===
-    It's another boat in distress!
+    Mia and Alexis share suprised looks. It's another boat in distress!
     
-    "This is {rescue_boat}, {rescue_boat}, {rescue_boat}, {rescue_call_sign}. Kalkomey Isle bears 270 degrees magnetic distince one-half mile. I've recovered two males from the water with symptoms of extreme hypothermia. Alive but unresponsive. Request immediate emergency medical assistance. {rescue_boat} is {rescue_boat_type} {rescue_boat_color} hull. Over.
+        * "This is {rescue_boat}, {rescue_boat}, {rescue_boat}, {rescue_call_sign}.["] Kalkomey Isle bears 270 degrees magnetic distince one-half mile. I've recovered two males from the water with symptoms of extreme hypothermia. Alive but unresponsive. Request immediate emergency medical assistance. {rescue_boat} is a {rescue_boat_type}, {rescue_boat_color} hull. Over.
     
-            * ["Oh my God!" says Mia.] 
-              That's Julian and Troy!. Alexis nods, her mouth open, shocked by the news.
+            ** ["Oh my God!" says Mia.] 
+            -- "Oh, my God!" says Mia. "That's Julian and Troy." Alexis nods, her mouth open, shocked by the news.
               
-                ** [The radio sqwuaks a reply.]
+                *** [The radio squawks a reply.]
+                    -> mp_reply
                 
         = mp_reply
         "Marine Patrol copies that {rescue_boat}. Two males recovered presenting symptoms of extreme hypothermia. Immediate help needed. Please switch to working channel 68 for continued transmission. Over."
               
-              Copy Marine Police. [Variable] switching to working channel 68 for continued transmission. Out.
-              
-              
-              
-              
-              Alexis switches the radio to 68 to follow the transimission and joins it in progress.
-              
-              "... one caucasion male approximate age 18, one hispanic male maybe 17 or 18 both are unresponsive and breathing is irregular."
-              
-              Copy that [var]. Medavac chopper en-route. ETA 25 minutes. Over.
-              
-              [vessel] copies. Awaiting medavac chopper. E-P-I-R-B actviated. Over.
-              
-              [Vessel] keep channel open for instructions from the helo. Over.
-              
-              Roger. [vessel] keeping channel open. 
-              
-              
-              Mia begins to sob. 
-              Mia begins to sob while Alexis—jaw clenched—instinctively sets a course toward Laketown. 
-              
-              "They're g-g-gonna be OK, right?" {"Right? They're gonna be OK?" asks Mia but she knows it's a rhetorical question. They have no way of knowing.| second phrase}
-              
-                .Alexis reaches toward the radio.
-                And turns back to channel 16. "We need to tell the marine patrol it's Julian and Troy," she says. 
+            * ["Copy that Marine Police."] "{rescue_boat} switching to working channel 68 for continued transmission. Out."
+            
+                ** [Alexis takes a deep breath.]
+                    -> switch_to_68
                 
-                Mia brightens.
-                    "What if it isn't? asks Mia. 
-                Alexis turns to Mia, her own eyes filling with tears. 
+        = switch_to_68
+        -   Alexis takes deep breath to collect her wits, and then switches the boat's radio to channel 68 to follow the transmission and joins it in porgree.
+              
+            "... correct both are unresponsive and breathing is irregular," says the voice of the rescuer.
+             
+                ** "Copy that {rescue_boat}.[] "Medavac chopper en-route. ETA 25 minutes. Over."
+                    -> mia_sob
+              
+        = mia_sob
+            
+            -   (opts) 
+              
+                * [Mia begins to sob.] 
+                    Mia begins to sob while Alexis—jaw clenched—instinctively sets a course toward Laketown. -> ok
+              
+                * (ok) ["They're g-g-gonna be OK, right?"] {"Right? They're gonna be OK?" asks Mia but she knows it's a rhetorical question. They have no way of knowing.| Alexis shivers thinking how cold the water must have been for Julian and Troy awaiting rescue.}
+              
+                *   {ok} [Alexis reaches toward the radio.]
+                        -> need_report
+               
+        
+            -   -> opts 
                 
-                Alexis grabs the transmitter, and Mia droops. 
+            
+        = need_report        
+        Alexis turns the radio back to channel 16. "We need to tell the marine patrol it's Julian and Troy," she says. 
+        
+            - (opts2)
+            
+            * ["Maybe it's not them?"]
+                "What if it isn't Julain and Troy?" asks Mia, her face brigtening with the possibility. "I mean what about the kayaks?"
+                
+            *   (turns) [Alexis turns to Mia.] {Alexis turns to Mia, her own eyes filling with tears.|"They were in kayaks... they didn't mention kayaks..." Mia tries to convince herself.}
+                
+            *   {turns} [Alexis grabs the transmitter.] 
+                -> post_rescue_pan_call
                 
                 "Pan-pan-pan...."
-                
+               
+            -   -> opts2 
         // need a case where Mia and Alexis find them.
                 
               -> DONE  
               
               
-              
-              
-              
-              
-            
-            
-            
-                    
-                
-               
-
-== call_marine_patrol_now ==   
-    -   "Let's call for help now," says Mia. "Better safe than sorry."
-        "I agree," says Alexis. "And we can keep searching in the mean time."
+=== post_rescue_pan_call ===              
+    -   Alexis grabs the transmitter, and Mia droops. 
+    
+        "Pan, Pan Pan. This is Lakesong, Lakesong, Lakesong."
         
-            Alexis reaches for the radio.
+            * [The marine police respond.]
             
-                // we'll do a random here on whether they have a chance to call it it in. 
-                
-                She calls it in.
-                    
-                Before she can begin her message the radio crackles to life.
-                Mayday Mayday 
-                
-                -> DONE
+        
+    = mp_response
+    -   After responding, the marine police ask Alexis to switch to channel 70, where she updates them on the likelihood that Julian and Troy are the rescued victims of the cold water immersion.
     
-    
-== search_more_wait_call ==
+            * ["Copy that Laksong."]
+            -   "The medavace chopper is on they. Advise that you return to Laketown immediately and directly. Over."
+        
+                "Copy that.," says Alexis. "Lakesong returning to Laketown. Lakesong out."
+                
+                    ** [Alexis nudges the throttle forward.]
+                        -> return_post_rescue
+              
+              
+            
+=== search_more_wait_call ===
 // waiting to call has a influence on the medical condition of the boys once they are rescued, otherwise the narrative flow doesn't change. 
+~   hypo_severity = 3
 
-
-    -   temp
+    - Alexis takes the boat out of the cove, and they scan up and down the coast of the island but see nothing. Alexis notes the direction of the current, and follows it east, figuring that Troy and Julian would have gone with the current. A few minutes pass then a few more but there's no sign of Julian, Troy, nor the kayaks. 
     
-    -> DONE
+            * [Alexis reaches for the radio.]
+            
+                -> pan_pan_call_01 ->
+                
+            -> throttle_more_east 
+            
+        = throttle_more_east
+        -   Alexis pushes on the throttle giving them more speed. She thinks it unlikely the kayaks could have gone so far east, but she want to make sure.
+        
+            "Aren't you going to try the radio again?" asks Mia.
+        
+            * ["We will."]
+            "Per the regs, we need to wait two minutes after our first two calls before trying again," says Alexis. "In the meantime, we'll continue searching along the current."
+            
+
+                    ** [The radio squawks to life.]
+                        -> radio_squawk
+                    
+        
+        = radio_squawk
+        But what they hear is not what they were expecting. 
+        
+            * ["MAYDAY, MAYDAY, MAYDAY!"]
+                -> who_rescues_shuffle
+  
     
 
    

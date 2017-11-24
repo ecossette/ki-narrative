@@ -15,6 +15,7 @@
 -   Following the plan, after leaving Julian and Troy to investigate the cove on the kayaks, Alexis had taken the <i>Lakesong</i> away from the cove to put some distance between the boat and the island. Alexis intends to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. Alexis gives the horn a prolonged blast every two minutes.
 
     After some time passes...
+            * DEBUG[] -> recovery_fine_aboard_boat
 
             * [The fog begins to clear.]
                 -> the_fog_clears
@@ -44,6 +45,7 @@
 
 == fog_persists ==
 // the fog persists user path that leads to meeting someone in the fog.
+~ fog_condition = FOG
     -   CHR_MIA_REL
     -   CHR_ALX_REL
     -   "I was hoping the fog would clear up by now," says Alexis. "But no luck."
@@ -72,22 +74,24 @@
 == boat_horn ==
     -   CHR_MIA_SUR
     -   CHR_ALX_SUR
-        -   Alexis is interrupted by the sound of a prolonged blast from a boat horn in the near distance, somewhere in the fog. They are both startled.
+    -   Alexis is interrupted by the sound of a prolonged blast from a boat horn in the near distance, somewhere in the fog. They are both startled.
 
             - (opts)
 
                 *   [Mia looks at Alexis.]
-                -   CHR_MIA_SAD
+                --   CHR_MIA_SAD
                 Mia looks at Alexis with an anxious expression. -> throttle
 
-                * (throttle)  [Alexis reaches for the throttle.] {Alexis reaches for the throttle and brings the boat to idle.| Neither wants to risk a collision with the other boat, but both would prefer to keep their own presence hidden, under the circumstances. }
+                * (throttle)  [Alexis reaches for the throttle.] {Alexis reaches for the throttle and brings the boat to idle.| Neither wants to risk a collision with the other boat, but both would prefer to keep their own presence hidden, under the circumstances.}
 
                 *   {throttle} [Alexis eyes the horn.]
                         -> wait_horn
 
-           - -> opts
+           -    -> opts
+           
+           -> DONE
 
-==   wait_horn ==
+==  wait_horn ==
     -   CHR_ALX_REL        
         -   (opts)
         
@@ -431,11 +435,13 @@
                 "It's time to head back to the cove," says Alexis. "And look! The fog is finally breaking up!"
 
                     ** [Reverse direction.]
+                        -> reverse_direction
 
             = reverse_direction
             -   Although the fog is breaking up, it's still patchy, so Alexis gives a prolonged toot with the <i>Lakesong's</i> horn before beginning her slow turn back towards the island.
 
                     * [Return to the cove.]
+                        -> return_to_cove
 
             = return_to_cove
             -   The remaining fogs burns off during their cruise back to the island, giving them plenty of visibility. They encounter no other boats.

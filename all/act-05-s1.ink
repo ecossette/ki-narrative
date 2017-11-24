@@ -1,27 +1,41 @@
 
 
 
-=== recovery_fine_aboard_boat===
-    -   After safely boarding the Lakesong, Alexis immediately begins driving the Lakesong out of the cove, while Julian and Alexis finish securing the kayaks. 
+=== recovery_fine_aboard_boat ===
+    -   With everyone safely aboard, Alexis immediately begins driving the Lakesong out of the cove, while Julian and Alexis finish securing the kayaks. 
                 
             * [Julian and Troy tell their story.]
             - As they begin the journey back to Laketown, Julian and Troy tell the two girls about finding the vine curtain{monkey_eyes_him:, the monkeys, } {julian_tree_looking:, the crashed drone,} and the hidden stream beyond. They also mention hearing—but not seeing—a boat enter the cove shortly before Mia and Alexis arrived. 
             
                 ** [Mia and Alexis tell their story.]
-                    -> mia_alx_tell_story
+                    
+                    {leave_kayak_path_early:
+                    DEBUG: this should be the leave kayak path early 'IF'
+                        
+                        *** [DEBUG: Fog clears]
+                        ~fog_condition = CLEAR
+                        ~ who_saw = MAURA 
+                        ~ what_saw = BOAT
+                        ~ where_saw = BEACH
+                        ~ investigate_distraction = 0
+                        ~ what_distract = SMOKE
+                        VAR saw_creatures = 0
+                        -> mia_alexis_recap
+                        
+                        *** [DEBUG: fog persists]
+                        ~fog_condition = FOG
+                        ~who_saw = CLETUS
+                        -> mia_alexis_recap
+
+                    - else:
+                        -> mia_alx_tell_story
+                    }
+                    
+                    
                     
 == mia_alx_tell_story
     -   As the boat cruises south into a warm, late-afternoon breeze, Mia and Alexis describe their two hours waiting for the rendezvous with the kayaks. They begin by saying...
     
-
-/*
-Here we need to account for having actually followed Mia and Alexis.
-
-
-
-*/
-
-
     
                 * [The fog persisted.]
                 ->  quick_recovery_fog_persists
@@ -33,8 +47,89 @@ Here we need to account for having actually followed Mia and Alexis.
                 -> quick_recovery_fog_clears
                     
 
+
+=== mia_alexis_recap ===
+// this is an abridged retelling, since the player will have followed Mia and Alexis.
+// retell briefly to loop in Julian and Troy.
+
+    {
+        - fog_persists || fog_condition == FOG:
+        Mia begins by telling the guys how the fog persisted and that for quite a while they saw nothing at all, slowly cruising through the fog and sounding the horn every two minutes.
+            
+                * ["And then..." says Alexis.]
+                    -> quick_recovery_fog_met
+            
+            
+        - the_fog_clears || fog_condition == CLEAR:
+        They begin by saying that the fog cleared quickly after leaving the cove and how they took turns at the helm, cruising the boat in large circles while killing time waiting for the rendezvous hour with the kayaks. 
+                
+                    * ["For quite a while we saw nothing at all..." says Mia.]
+                    
+                    {sees_creatures || saw_creatures ==1:
+                        -> quick_recovery_clear_exp
+                        
+                     - else:
+                     // need go to we saw {what_distract} 
+                        -> recap_saw_signal
+                    
+                    }
+                    
+                    
+    
+    }
+
+
+->  DONE
+
+    = recap_saw_signal
+    -   Mia continues, "And then we saw—or thought we saw—a {what_distract} signal in the distance."
+    
+        "Really?" Troy says surprised. "Did you investigate?"
+        
+            {
+                - investigate_distraction == 0:
+                    ** [Alexis shakes her head.]
+                        -> alx_expl_invest_no
+                
+                - investigate_distraction == 1:
+                    ** [Alexis nods.]
+                        -> alx_expl_invest_yes
+                
+                - else:
+                    DEBUG: this condition shouldn't be possible.
+            
+            }
+        
+
+    -> DONE
+
+    = alx_expl_invest_no
+    -   "No, we didn't," says Alexis. "We weren't entirely sure it was a signal, and we didn't want to risk missing the rendezvous with you."
+    
+        "I'm glad of that," says Troy. "I wouldn’t have wanted to hang around in the 				cove waiting."
+        
+            ** [ Alexis makes a course adjustment.]
+                -> think_we_have_enough
+
+    
+    
+    = alx_expl_invest_yes
+    -   "Yes, and that's where things get really interesting," says Alexis. "We never found the cause of the {what_distract}, but we saw {who_saw} on the {where_saw}."
+    
+            ** ["How strange!" says Troy.]
+                -> complicated
+            
+    = complicated
+    -   "{who_saw} on the beach, vanishing boats, drones..." says Troy. "Kalkomey Isle sure is a mysterious place."
+    
+        **  ["You don't think ..." says Mia.]
+            -> maybe_all_suspect
+
+
+
+
 === quick_recovery_fog_persists ===
-~ fog_condition = "persisted"
+~ fog_condition = FOG
 ~ where_saw = FOG    
                         
                     {shuffle:
@@ -48,7 +143,7 @@ Here we need to account for having actually followed Mia and Alexis.
                         
     ->  DONE
 === quick_recovery_fog_clears ===
-~ fog_condition = "cleared"
+~ fog_condition = CLEAR
 ~ where_saw = DISTANCE
                        
                     {shuffle:
@@ -98,7 +193,7 @@ Here we need to account for having actually followed Mia and Alexis.
                 - quick_recovery_fog_clears && quick_recovery_saw_0:
                 quickly—quicker than expected—but despite having good visibility they saw nothing out of the ordinary while taking turns at the helm and cruising in large circles, killing time until the rendezvous hour with the kayaks.
                 
-                        *   ["Somebody else was out here," says Troy.]
+                        *   ["Somebody else was out here, though," says Troy.]
                             -> somebody_else
                 
                 
@@ -126,6 +221,9 @@ Here we need to account for having actually followed Mia and Alexis.
 === quick_recovery_clear_exp ===
         *   ["Uh-oh, sounds like there's more," says Troy.]
         
+            
+            
+            
             "A little bit," says Mia. "We saw the creatures again." 
             
         -   (opts)
@@ -173,17 +271,18 @@ Here we need to account for having actually followed Mia and Alexis.
         
         {
         
-            - quick_recovery_saw_c:
+            - quick_recovery_saw_c || who_saw == CLETUS:
             "Kind of strange to find {who_saw} out here after all his stories about how spooky Kalkomey Isle is," says Troy.
                 ** "That's what we thought, too," says Mia.[]
+ 
                     -> that_not_all
         
-            -   quick_recovery_saw_mc:
+            -   quick_recovery_saw_mc || who_saw == MAC:
             "Well, I guess that's not too suprising," says Troy. "He did say he comes out this way to fish."
                 
                 -> that_not_all
         
-            - quick_recovery_saw_i:
+            - quick_recovery_saw_i || who_saw == IAN:
             "That's a coincidence," says Troy. "I mean, just yesterday {who_saw} said he'd never been to Kalkomey Isle."
                 ** ["Technically, it was Maura who said that," says Julian.]
                     "Well, it was just {who_saw} on the boat," says Mia. "No sign of Maura."
@@ -201,11 +300,14 @@ Here we need to account for having actually followed Mia and Alexis.
         
         - quick_recovery_fog_persists: -> who_saw_kayaks
     
+        - leave_kayak_path_early && fog_condition == FOG: -> who_saw_kayaks
+        
+        - leave_kayak_path_early && fog_condition == CLEAR: -> jul_thinks_cove
     
     }
     
     
-    = jul_thinks_cove
+== jul_thinks_cove ==
     
     -   (opts)
         
@@ -222,7 +324,7 @@ Here we need to account for having actually followed Mia and Alexis.
     
     
     
-    = who_saw_kayaks
+== who_saw_kayaks ==
     -   "That's not all," says Alexis. "We are pretty sure {who_saw} realized the two of you were off on the kayaks."
     
         "I wonder if that was {who_saw} on the boat we heard in the cove?" says Julian.
@@ -232,11 +334,11 @@ Here we need to account for having actually followed Mia and Alexis.
 
 
 === quick_recovery_fog_exp ===
-    -  
-    // add another for follow kayaks
+  
+  
     
     {
-        - leave_kayak_path_early:
+        - leave_kayak_path_early || leave_kayak_path_early:
          * [Troy looks puzzled.] 
             -> that_would_mean
         
@@ -252,6 +354,8 @@ Here we need to account for having actually followed Mia and Alexis.
         -> that_would_mean
     
     }
+    
+    
     
 == that_would_mean ==
     -   "But that would mean {who_saw} knows about the hidden stream and is probably connected to the robberies," says Troy. He shakes his head, troubled by the idea.
@@ -317,7 +421,7 @@ Here we need to account for having actually followed Mia and Alexis.
             
     
         * ["Maybe."] 
-        "Maybe..." says Troy. "Realistically we have nothing to suggest {who_saw} is involved,  but you can't rule anyone out. Troy smiles. "Other than the four of us, of course."
+        "Maybe..." says Troy. "Realistically we have nothing to suggest {who_saw} is involved,  but you can't rule anyone out." Troy smiles. "Other than the four of us, of course."
         
             ** [Alexis nods.]
                 -> alexis_casts_doubt
@@ -327,7 +431,7 @@ Here we need to account for having actually followed Mia and Alexis.
     -   "You don't think {who_saw} could be involved in this, do you?" asks Mia.
     
             * ["Let's hope not," says Troy.] 
-            - "Let's hope not," says Troy. "We have nothing to suggest {who_saw} is involved,  but you can't rule anyone out. Troy smiles. "Other than the four of us, of course."
+            - "Let's hope not," says Troy. "We have nothing to suggest {who_saw} is involved,  but we can't rule anyone out." Troy smiles. "Other than the four of us, of course."
             
                 ** [Alexis makes a course adjustment.]
                 -> think_we_have_enough
@@ -425,10 +529,10 @@ Here we need to account for having actually followed Mia and Alexis.
                 {
                     - no_go_island:
                      
-                    "Kind of makes me wish that we'd explored the beach yesterday, after finding that stream today," she says remembering the beach. -> photos
+                    "Kind of makes me wish that we'd explored the beach yesterday, after finding that stream today," she says remembering the beach. {where_saw == BEACH: "especially after what we saw today."} -> photos
                 
                     - go_to_island:
-                    "I wonder if the beach path connects to wherever the stream leads?" she says remembering the beach. -> photos
+                    "I wonder if the beach path connects to wherever the stream leads?" she says remembering the beach. {where_saw == BEACH: "especially after what we saw today."} -> photos
                     
                     - else:
                     Mia reflects on what Troy has said, wondering if what they've discovered will really turn out to be helfpul. -> photos 

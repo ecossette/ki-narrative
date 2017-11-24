@@ -184,7 +184,16 @@ SCENE 01
 
 
 == fueling_depot ==
-    -  The <i>Lakesong</i> arrives at the fuel dock and slides alongside one of the empty pumps. Just ahead of them, at the next pump, they see Cletus filling several large fuel containters on the deck of a boat. The friends tie up and step onto the dock.
+    -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
+        
+        * [ Dock to at teh fuel station.] 
+         
+            -> docking_wind_direction ->
+            
+            -> next_pump
+    
+    = next_pump
+    -   The friends tie up and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat. 
 
      - (opts)
                 *    [ Cletus checks out the <i>Lakesong.</i>]
