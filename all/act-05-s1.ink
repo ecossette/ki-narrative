@@ -2,6 +2,7 @@
 
 
 === recovery_fine_aboard_boat ===
+~ hypo_severity = -1
     -   With everyone safely aboard, Alexis immediately begins driving the Lakesong out of the cove, while Julian and Alexis finish securing the kayaks. 
                 
             * [Julian and Troy tell their story.]

@@ -13,9 +13,11 @@ VAR parts = 0
 
 //-> temp_var_set_hypothermia_tree
 //->  set_kayak_conditions_for_no_follow
-//-> temp_debug_solve_matrix
+-> temp_debug_solve_matrix
 //-> boat_in_distance
--> make_call_decision
+//-> approach_discuss_suspicion
+ //   -> met_by_police
+ //   -> captain_departs
 
 === intro ===
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.

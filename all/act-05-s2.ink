@@ -248,15 +248,22 @@
               
                 * (ok) ["They're g-g-gonna be OK, right?"] {"Right? They're gonna be OK?" asks Mia but she knows it's a rhetorical question. They have no way of knowing.| Alexis shivers thinking how cold the water must have been for Julian and Troy awaiting rescue.}
               
-                *   {ok} [Alexis reaches toward the radio.]
-                        -> need_report
+                *   {ok} [Review the stages of cold water immersion.]
+                        -> cold_water_review_mandatory
                
         
             -   -> opts 
                 
             
+        = cold_water_review_mandatory
+        // launch the cold water immersion review here. this is a mandatory review for the player on this path. when finished send student to =need_report
+        
+            FPO: study guide for hypothermia inserts here.
+                        ** [OK]
+                        -> need_report
+        
         = need_report        
-        Alexis turns the radio back to channel 16. "We need to tell the marine patrol it's Julian and Troy," she says. 
+        -   Alexis turns the radio back to channel 16. "We need to tell the marine patrol it's Julian and Troy," she says. 
         
             - (opts2)
             

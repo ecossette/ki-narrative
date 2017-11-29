@@ -17,12 +17,14 @@ INCLUDE act-05.ink
     VAR rescue_call_sign ="null"
     VAR rescue_boat_type = "null"
     VAR rescue_boat_color = "null"
-    VAR hypo_severity = -1
+    VAR hypo_severity = -2 
     VAR suspect_whom = UNKNOWN
     VAR accomplice = UNKNOWN
     VAR who_lost_memory = NOBODY
     VAR what_remember = UNKNOWN
     VAR investigate_distraction = 0
+    VAR police_finale = NOBODY
+    VAR on_kayaks_saw = STREAM
     
     CONST BEACH = "beach"
     CONST FLASHING = "flashing"
@@ -43,6 +45,8 @@ INCLUDE act-05.ink
     CONST MAURA_AND_IAN = "Maura and Ian"
     CONST TROY = "Troy"
     CONST JULIAN = "Julian"
+    CONST GARCIA = "Captain Garcia"
+    CONST WILLARD = "Willard"
     
     
     
@@ -61,7 +65,7 @@ Percey Willard
 
 Cletus Bluin
 
-Mac / Detective Scott McLeod 
+Mac / Detective Scott MacLeod 
 
 Ian Murphey
 Maura Gallagher

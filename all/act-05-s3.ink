@@ -66,11 +66,11 @@
             
 === encounter_activity ===
 // put encounter mini here
-    -   With Mia at the helm, the Lakesong faces many encounter on the return home.
+    -   With Mia at the helm, the Lakesong faces many encounters on the return home.
     
         * [Review boating encounters.]
             -- FPO: Study guide material for "encountering" inserts here.
-            
+            // in game, if player chooses review, send them to the encounter minigame upon close of the review.
                 ** [OK]
                     -> return_marina_day_two
     
@@ -83,7 +83,143 @@
         
     -> DONE
     
+=== approach_discuss_suspicion ===
+    -   As the Laketown marina comes into view on the shoreline, <>
+    
+        {
+        
+            - recovery_fine_aboard_boat:
+            the four friends discuss the robberies and what they know so far. 
+        
+            - return_post_rescue:
+            Mia and Alexis discuss the robberies and what they know so far.  
+            
+            - else:
+            they discuss the robberies and what they know so far.
+        
+        }
+        
+    The topic turns to their suspicions, and after some back and forth, they decide that they...
+        
+            * [Suspect someone.]
+                // we'll set the accomplice here
+                -> accomplice_randomizer ->
+                -> suspect_yes
+            
+            * [Suspect nobody.]
+                // we'll set the accomplice here
+            -> accomplice_randomizer ->
+                -> suspect_no
+            
+    
+    = suspect_no
+    ~ suspect_whom = NOBODY
+    -   Despite what they may have seen in the past two days, they are in agreement that they have no idea who is behind the robberies.
+    
+    
+            * [Enter the marina channel.]
+                -> return_marina_day_two
+    
+    
+    
+    = suspect_yes
+    -   After some back and forth, they finally agree on a suspect. 
+        // we'll go to the accomplice tunnel to get the accomplice first
+        
+        -> suspect_someone_choices
+            
+
+
+
+=== suspect_someone_choices ====
+// This is where we'll give the player a chance to assign suspicion. 
+// let's randomize the suspect choice list
+        
+            + [Suspect Cletus.]
+                ~ suspect_whom = CLETUS
+                -> tell_police_unsure 
+             
+               
+            /** Suspect Ian.[]
+             ~ suspect_whom = IAN 
+              -> the_suspect_is*/
+              
+            /** Suspect Maura[]
+             ~ suspect_whom = MAURA 
+              -> the_suspect_is*/
+              
+            + [Suspect Maura and Ian.]
+             ~ suspect_whom = MAURA_AND_IAN 
+             -> tell_police_unsure 
+            
+              
+            + [Suspect Mac]
+             ~ suspect_whom = MAC
+             -> tell_police_unsure 
+              
+
+                
+    
+       
+
+=== tell_police_unsure ===
+    -   Although in agreement on their suspicion of {suspect_whom}, they are still unsure if they should share that suspicion with the police. They have no proof but only a hunch.  
+
+    
+            *  [Enter the marina channel.]
+                    -> return_marina_day_two
+    
+
+
+
+=== accomplice_randomizer ===
+// randomize the accomplice to Willard's thievery 
+// use as a tunnel
+
+
+
+    {shuffle:
+    
+        - -> cletus
+        - -> cletus
+        - -> cletus
+        - -> cletus 
+        - -> cletus  
+        - -> cletus
+        - -> maura_and_ian
+        - -> maura_and_ian
+        - -> maura_and_ian
+        - -> mac
+    
+    
+    }
+
+
+
+== cletus ==
+        ~ accomplice = CLETUS
+        -> accomplice_is
+    
+== maura_and_ian ==
+        ~ accomplice = MAURA_AND_IAN
+        -> accomplice_is
+    
+== mac ==
+        ~ accomplice = MAC
+        -> accomplice_is
+    
+
+== accomplice_is ==
+    //~ accomplice = CLETUS
+    //- The accomplice is {accomplice}
+    
+    ->->    
+      
+
 === return_marina_day_two ===
+    -   DEBUG accomplice is {accomplice}
+        DEBUG suspect is {suspect_whom}
+    
     -   After successfully bringing the Lakesong back home, Mia continues between the green and red channel markers on each side at 'slow, no wake' speed as she approaches the dock.
     
             * [Dock the boat.]
@@ -98,9 +234,12 @@
                         
                     - else:
                     DEBUG: this else condition should not be possible.
+                    * [DEBUG: GO TO 'REPORT TO POLICE"] -> report_to_police
+                    * [DEBUG: GO TO 'MET BY POLICE"] -> met_by_police
                 }
             
  
+    -> DONE
 /****** 
 
 docking tunnel 
@@ -113,30 +252,30 @@ the story will flow in/out of this tunnel on several occasion during play
     -   A quick check of the wind and current reveals the following conditions.
     
         * There is <b>no</b> wind or current.
-            -> no_wind
+            -> docking_no_wind
         * The wind and current direction is <b>toward</b> the dock.
-            -> wind_toward_dock
+            -> docking_wind_toward_dock
         * The wind and current direction is <b>away</b> from the dock. 
-            -> wind_away_dock
+            -> docking_wind_away_dock
     
 
 == docking_no_wind ==
     -   Interaction minigame for the situation "there is no wind or current" will be added here.
         * [OK]
-            -> completed_casting_off
+            -> docking_completed
     
 == docking_wind_toward_dock ==
     -   Interaction minigame for the situation "the wind and current is toward the dock" will be added here.
         * [OK]
-            -> completed_casting_off
+            -> docking_completed
 
 == docking_wind_away_dock == 
     -   Interaction minigame for the situation "the wind and current is away from the dock" will be added here. 
         * [OK]
-        -> completed_casting_off
+        -> docking_completed
 
 == docking_completed==
-    -   Everyone smiles as the boat slips away from the dock with a successful cast off!
+    -   Smiles and high fives are exchanged as the boat is successsfuly docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
         + [Onwards!]
     -    ->->
