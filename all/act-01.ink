@@ -18,6 +18,7 @@ VAR parts = 0
 //-> approach_discuss_suspicion
  //   -> met_by_police
  //   -> captain_departs
+ //-> text_alert
 
 === intro ===
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.

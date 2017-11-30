@@ -21,10 +21,12 @@ INCLUDE act-05.ink
     VAR suspect_whom = UNKNOWN
     VAR accomplice = UNKNOWN
     VAR who_lost_memory = NOBODY
+    VAR who_has_memory = NOBODY
     VAR what_remember = UNKNOWN
     VAR investigate_distraction = 0
     VAR police_finale = NOBODY
     VAR on_kayaks_saw = STREAM
+    VAR saw_monkey = 0
     
     CONST BEACH = "beach"
     CONST FLASHING = "flashing"

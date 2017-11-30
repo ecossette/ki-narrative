@@ -198,7 +198,7 @@ the story will flow in/out of this tunnel on several occasion during play
                         -> done
                     - (loop)
             // loop a few times
-                     { -> opts | -> opts | -> opts }
+                     { -> opts | -> opts | -> opts | }
                     ** [The visibility is great today!] "I can already see the end of the channel," says Alexis.  
                        -- CHR_ALX_SML
                       

@@ -92,7 +92,7 @@
 
             * [A pair of eyes staring back at him.]
                 // go to monkey tunnel
-
+                ~ saw_monkey = 1
                 -> monkey_watching ->
 
                     **  [Troy and Julian look at stream ahead of them.]
@@ -184,6 +184,7 @@
                 -> follow_or_no
 
 === follow_or_no ===
+~ on_kayaks_saw = STREAM
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   { "That's the question, isn't it?" says Troy, thinking out loud.| Troy then considers the alternative.|}
@@ -545,6 +546,7 @@
                     -> it_is_willard
 
         = it_is_willard
+        ~ on_kayaks_saw = WILLARD
         -   CHR_WLD_REL
             "Mr. Willard!" they say in unison.
 

@@ -312,7 +312,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
      
         
         = mac_recover
-        -   "Mr. Mackensie?" Mia asks. "Oh, is that Mac?"
+        -   "Mr. MacKensie?" Mia asks. "Oh, is that Mac?"
         
             "Yes, everyone calls him Mac," says the Captain. "He's an islander, real nice fellow."
             
@@ -893,10 +893,12 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
         
             -
             ~ who_lost_memory = TROY
+            ~ who_has_memory = JULIAN
             ~ what_remember = STREAM
             
             - 
             ~ who_lost_memory = JULIAN
+            ~ who_has_memory = TROY
             ~ what_remember = CAVE
         
         }
