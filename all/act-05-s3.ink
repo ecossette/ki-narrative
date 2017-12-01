@@ -27,7 +27,7 @@
         
             *   (anxious) [Alexis decides to distract Mia.] {She decides to distract Mia by giving her something to focus on other than worrying about Julian and Troy.| She is every bit as anxious and worried as Mia but know there is nothing they can do now but get back to safe and sound to Laketown themselves.}
             
-            *   {anxious} ["Doy want to drive?" Alexis asks.]
+            *   {anxious} ["Do you want to drive?" Alexis asks.]
         
         
         -   -> opts 
@@ -275,7 +275,7 @@ the story will flow in/out of this tunnel on several occasion during play
         -> docking_completed
 
 == docking_completed==
-    -   Smiles and high fives are exchanged as the boat is successsfuly docked.
+    -   Smiles and high fives are exchanged as the boat is successfully docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
         + [Onwards!]
     -    ->->

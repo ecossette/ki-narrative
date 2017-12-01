@@ -215,7 +215,7 @@
 === rescuer_mayday_call ===
     Mia and Alexis share suprised looks. It's another boat in distress!
     
-        * "This is {rescue_boat}, {rescue_boat}, {rescue_boat}, {rescue_call_sign}.["] Kalkomey Isle bears 270 degrees magnetic distince one-half mile. I've recovered two males from the water with symptoms of extreme hypothermia. Alive but unresponsive. Request immediate emergency medical assistance. {rescue_boat} is a {rescue_boat_type}, {rescue_boat_color} hull. Over.
+        * "This is {rescue_boat}, {rescue_boat}, {rescue_boat}, {rescue_call_sign}.["] Kalkomey Isle bears 270 degrees magnetic distance one-half mile. I've recovered two males from the water with symptoms of extreme hypothermia. Alive but unresponsive. Request immediate emergency medical assistance. {rescue_boat} is a {rescue_boat_type}, {rescue_boat_color} hull. Over.
     
             ** ["Oh my God!" says Mia.] 
             -- "Oh, my God!" says Mia. "That's Julian and Troy." Alexis nods, her mouth open, shocked by the news.
@@ -232,7 +232,7 @@
                     -> switch_to_68
                 
         = switch_to_68
-        -   Alexis takes deep breath to collect her wits, and then switches the boat's radio to channel 68 to follow the transmission and joins it in porgree.
+        -   Alexis takes deep breath to collect her wits, and then switches the boat's radio to channel 68 to follow the transmission and joins it in progress.
               
             "... correct both are unresponsive and breathing is irregular," says the voice of the rescuer.
              
@@ -268,7 +268,7 @@
             - (opts2)
             
             * ["Maybe it's not them?"]
-                "What if it isn't Julain and Troy?" asks Mia, her face brigtening with the possibility. "I mean what about the kayaks?"
+                "What if it isn't Julain and Troy?" asks Mia, her face brightening with the possibility. "I mean what about the kayaks?"
                 
             *   (turns) [Alexis turns to Mia.] {Alexis turns to Mia, her own eyes filling with tears.|"They were in kayaks... they didn't mention kayaks..." Mia tries to convince herself.}
                 
@@ -295,7 +295,7 @@
     -   After responding, the marine police ask Alexis to switch to channel 70, where she updates them on the likelihood that Julian and Troy are the rescued victims of the cold water immersion.
     
             * ["Copy that Laksong."]
-            -   "The medavace chopper is on they. Advise that you return to Laketown immediately and directly. Over."
+            -   "The medavac chopper is on they. Advise that you return to Laketown immediately and directly. Over."
         
                 "Copy that.," says Alexis. "Lakesong returning to Laketown. Lakesong out."
                 

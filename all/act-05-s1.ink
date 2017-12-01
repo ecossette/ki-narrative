@@ -184,7 +184,7 @@
     
             {
                 - quick_recovery_fog_persists && quick_recovery_saw_0:
-                and they didn't see anything of interest while waiting to rendezvous with the kayaks. They also mention how on two seperate occassions they heard the single, prolonged blast indicative of a powered vessel underway in fog.
+                and they didn't see anything of interest while waiting to rendezvous with the kayaks. They also mention how on two separate occasions they heard the single, prolonged blast indicative of a powered vessel underway in fog.
                 
                     *   ["Hmmm..." says Troy.]
                         -> quick_recovery_fog_exp
@@ -279,7 +279,7 @@
                     -> that_not_all
         
             -   quick_recovery_saw_mc || who_saw == MAC:
-            "Well, I guess that's not too suprising," says Troy. "He did say he comes out this way to fish."
+            "Well, I guess that's not too surprising," says Troy. "He did say he comes out this way to fish."
                 
                 -> that_not_all
         

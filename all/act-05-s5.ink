@@ -41,12 +41,15 @@
     -> DONE 
 
 === temp_debug_solve_matrix ===
-~ hypo_severity = 0
+~ hypo_severity = 3
 ~ who_saw = MAC
-~ what_remember = STREAM
+~ where_saw = FOG
+~ what_remember = UNKNOWN
+~ who_has_memory = NOBODY 
+~ who_lost_memory = TROY
 ~ suspect_whom = CLETUS
 ~ accomplice = CLETUS 
-~ on_kayaks_saw = WILLARD
+//~ on_kayaks_saw = STREAM
 
 
 hypo severity is {hypo_severity}
@@ -127,7 +130,7 @@ what_remember is {what_remember}
 -> DONE
 
 === on_dock_day_03 ===
-    - Several days later, we join the friends on the Lakesong preparing for another day on the lake by running through their pre-departure checklist.
+    - Several days later, we join the friends on the Lakesong preparing for another day on the lake by running through their pre-departure safety checklist.
     
         {
             // hypo 3
@@ -174,12 +177,12 @@ what_remember is {what_remember}
         -   "So have either of you had any more of your memory return?" asks Mia.
         
                 {
-                    - who_has_memory == JULIAN:
+                    - hypo_severity == 1 && who_has_memory == JULIAN:
                         
                         * [Yeah, a little bit...," says Julian.]
                         -> hypo_01_memory
                     
-                    - who_has_memory == TROY:
+                    - hypo_severity == 1 && who_has_memory == TROY:
                     
                         * [Yeah, a little bit...," says Troy.]
                         -> hypo_01_memory
@@ -199,7 +202,7 @@ what_remember is {what_remember}
                     -> hypo_00_memory
         
         = hypo_neg01_chat
-        -   "It's oddly quiet around here this morning," says Mia. "No sign of Mac, Ian and Maura, nor Cletus."
+        -   "It's oddly quiet around here this morning," says Mia. "No sign of Mac, Ian and Maura...not even creepy Cletus."
             
                 * ["Yeah, says Troy."]
                     -> hypo_neg01_memory
@@ -231,28 +234,31 @@ what_remember is {what_remember}
 
     
 == hypo_01_memory ==
-    -   "Yeah, a little bit," says {who_has_memory}. "This morning in addition to remembering the {what_remember} I told the police about I had a fuzzy memory of <>
+    -   "Yeah, a little bit," says {who_has_memory}. "This morning in addition to remembering the {what_remember} that I told the police about, I also had a fuzzy memory of <>
     
                 {
                     - julian_tree_looking && not monkey_watching:
-                    seeing a crashed drone stuck high in a tree.
+                    seeing a crashed drone stuck high in a tree." {who_has_memory} checks the lights.
                     
                         * ["Now that you mention it..."]
                     
                     - julian_tree_looking && monkey_watching:
-                    seeing a crashed drone in a tree and—I know this is going to sound crazy—seeing monkeys."
+                    seeing a crashed drone in a tree and—I know this is going to sound crazy—seeing monkeys." {who_has_memory} checks the bilge.
                     
                         * ["Monkeys!?]
+                            -> monkeys
                     
                     - monkey_watching:
                     seeing—I know this is going to sound crazy—seeing monkeys."
                     
                         * ["Monkeys!?]
+                            -> monkeys
                     
                     - else:
-                    paddling in fog but nothing else...well, other than the memory of being cold, terribly cold." 
+                    paddling in fog," {who_has_memory} says while checking the ignition cutoff lanyard. "But nothing else...well, other than the memory of being cold, terribly cold." 
                 
-                        * ["Yeah, I remember the cold.]
+                        * ["Yeah, I remember the cold."]
+                            -> remember_cold
                 
                 }
         
@@ -284,18 +290,34 @@ what_remember is {what_remember}
             }
             
             
-        
+        = remember_cold
+        DEBUG: what remember = {what_remember}
+        who saw = {who_saw}
+        -   "Yeah, I rememember the cold, too," says {who_lost_memory}. "I think I'll remember that for the rest of my life."
        
-    
+             {
+            
+                - what_remember == CAVE:
+                     
+                    * ["Ahoy, there!" someone hollers.]
+                      -> no_warrant
+                    
+                - else:
+                
+                    * [Alexis's phone chimes.]
+                    -> text_alert
+            
+            }
     
 == hypo_02_memory ==
     -   Troy looks at Julian who shakes his head.
-        "Not really," says {who_has_memory}. "I still just have the fuzzy memory of the {what_remember} that I told the police about."
+        "Not really," says {who_has_memory}. "I still have just the fuzzy memory of the {what_remember} that I told the police about."
         
             * ["That's more than I've got."]
+                -> more_than_i
             
         = more_than_i
-        -   "That's more than I've got," says {who_lost_memory}. "Well, other than the memory of being cold, terribly cold."
+        -   "That's more than I've got," says {who_lost_memory}. "Well, other than the memory of being cold, terribly cold." {who_lost_memory} shivers thinking about it. "I don't think I'll ever forget that."
         
             {
             
@@ -317,16 +339,20 @@ what_remember is {what_remember}
 
 == text_alert ==
     -   Alexis checks her phone. 
-    -   "It's a breaking news alert," says Alexis swiping the banner to read more, her eyes go wide and she reads aloud...
+    -   "It's a breaking news alert," says Alexis swiping the banner to read more, her eyes go wide and she reads the text headline aloud...
     
         DEBUG   
         hypo is {hypo_severity}
         suspect is {suspect_whom}
         accomplice is {accomplice}
+        what_remember is {what_remember}
+        who saw is {who_saw}
     
             * ["Laketown police announce..."]
-                -> announce_capture_willard_plus
         
+           
+           
+           
            {
             
                 - hypo_severity == 0 && who_saw == NOBODY && suspect_whom != accomplice:
@@ -335,6 +361,10 @@ what_remember is {what_remember}
                 - hypo_severity == 0 && who_saw !=NOBODY && accomplice != suspect_whom:
                     -> announce_capture_willard_only
                     
+                - hypo_severity == 1 || hypo_severity == 2 && what_remember == STREAM && who_saw == NOBODY && accomplice == suspect_whom:
+                     -> announce_capture_willard_only
+                
+                
                 - else:
                     -> announce_capture_willard_plus
             
@@ -342,6 +372,7 @@ what_remember is {what_remember}
             }
         
            
+        
         
     
         = announce_capture_willard_plus
@@ -382,7 +413,7 @@ what_remember is {what_remember}
                         -> accomplice_suprise_sort
                     
                 - else:
-                    * The arrest of Mr. Willard is suprising[.], as none of the friends had suspected him.
+                    * The arrest of Mr. Willard is surprising[.], as none of the friends had suspected him.
                         -> accomplice_suprise_sort
             }
     
@@ -396,7 +427,7 @@ what_remember is {what_remember}
                         -> no_accomplice_suprise
                     
                 - else:
-                    * The arrest of Mr. Willard is suprising[.], as none of the friends had suspected him.
+                    * The arrest of Mr. Willard is surprising[.], as none of the friends had suspected him.
                         -> no_accomplice_suprise
             }
         
@@ -414,25 +445,25 @@ what_remember is {what_remember}
                     -> accomplice_suprise_sort
                 
             - else:
-                * The arrest of Mr. Willard is suprising[.], as none of the friends had suspected him.
+                * The arrest of Mr. Willard is surprising[.], as none of the friends had suspected him.
                     -> accomplice_suprise_sort
         }
     
             
 == accomplice_suprise_sort ==    
             
-            * The arrest of {accomplice}  <>
+            * The arrest of {accomplice}[.]  <>
             
             {
             
                 - suspect_whom != accomplice:
-                is {on_kayaks_saw != WILLARD:also} surprising {on_kayaks_saw == WILLARD:, however,} as they had suspected {suspect_whom}.
+                is {on_kayaks_saw != WILLARD:also} surprising{on_kayaks_saw == WILLARD:, however}, as they had suspected {suspect_whom}.
                 
                 - suspect_whom == accomplice && on_kayaks_saw == WILLARD:             
-                doesn't surprise them either. Afterall, they had been suspicious of {suspect_whom}.
+                doesn't surprise them either. After all, they had been suspicious of {suspect_whom}.
             
                 - suspect_whom == accomplice && on_kayaks_saw != WILLARD:
-                doesn't suprise them, though, because they had been suspcious of {suspect_whom}.
+                doesn't suprise them, though, because they had been suspicious of {suspect_whom}.
             
             }
             
@@ -444,14 +475,16 @@ what_remember is {what_remember}
         {
             - on_kayaks_saw == WILLARD:
                 * That no one else was arrested is troublesome[.], as Troy and Julian had told the police about seeing someone else at the boat chop shop operation in the cave.
+                    -> ahoy_there_holler
                    
                 
             - else:
                 * They wonder if more arrests will come[.], because it seems unlikely that Mr. Willard was working alone.
+                    -> ahoy_there_holler
                     
         }
 
-        -> ahoy_there_holler
+        
 
 == ahoy_there_holler ==
     * ["Ahoy there!" someone yells from the dock.]
@@ -480,9 +513,9 @@ what_remember is {what_remember}
         
         
 == det_mac ==
-        - "The one and only!" says the clean shaven and smartly dressed version of Mac standing before them.
+        - "The one and only!" says the clean-shaved and smartly dressed version of Mac standing before them.
         
-            *  ["Allow me to reintroduce myself," he says.]
+            *  ["Allow me to <i>re</i>introduce myself," he says.]
             
             "I'm Detective Scott MacLeod," he says. "But you can still just call me Mac."
             
@@ -510,7 +543,7 @@ what_remember is {what_remember}
                 *   [Julian does a fist pump.]
                     Julian does a fist pump. "Solving the mystery, now that's what I'm talking about!" he says, imagining the boat reward. -> surprised
                 
-                *   (surprised) [Mac grins.] {Mac breaks into a grin watching each of them process the news. | "Captain Del Castillo... yeah, I like it."}
+                *   (surprised) [Mac grins.] {Mac breaks into a grin watching each of the four process the news. | "Captain Del Castillo... yeah, I like it."}
                 
                 * {surprised} [Mac continues...]
                     -> police_summary
@@ -538,19 +571,22 @@ what_remember is {what_remember}
         }
         
         = found_stream_saw
-        -   "We found the hidden stream and the cave, just as you described, and caught Willard red-handed with the stolen boat," says {police_finale}. "But we didn't find anyone else."
+        -   "We found the hidden stream and the cave, just as you described, and caught Willard red-handed with the stolen boat," says {police_finale}. "Although, we didn't find anyone else at the cave."
         
-                * ["But we saw one other person," says Julian.]
+                * ["But we saw another person there," says Julian.]
+                    -> saw_one_other
                 
         = saw_one_other
-        -   "But we never saw a face," he says. 
+        -   "But we saw another person there," says Julian.
+            "Not a face, though." Troy reminds him. "We only saw legs."
         
-                * "Right," says {police_finale}.
+                * "Right," says {police_finale} nodding.
+                    -> accomplice_resolve
         
         = found_stream_remembered
-        -   "We found the hidden stream that you reported {what_remember == STREAM:remembering, Julian,} and followed it to a cave," says {police_finale}.  "There we found the most recent stolen boat and a chop shop operation."
+        -   "We found the hidden stream that you reported {what_remember == STREAM:remembering, Julian,} and followed it to a cave," says {police_finale}. "There we found the most recent stolen boat and a chop shop operation."
             
-            Next {police_finale} goes on to discuss...
+            The friends exchange surprised looks, as {police_finale} focuses on...
             
             -   (opts)    
                 
@@ -568,50 +604,122 @@ what_remember is {what_remember}
         -> DONE
          
 == accomplice_resolve == 
-        -   "Willard wouldn't tell us anything about who he was working with," says {police_finale}. <>
+    -   "We tried to get Willard to tell us who else he was working with...," says {police_finale} pausing due to the sound of a passing boat. {police_finale} nods to the boat's operator as she passes.
+    
+            * [The four friends anxiously wait.]
+                -> willard_no_say
+        
+        = willard_no_say
+        - As the sound of the boat engine fades, {police_finale} resumes his story.
+        "Willard wouldn't tell us anything about who he was working with," says {police_finale}. <>
         
             {
         
             // suspect match 
             -  suspect_whom == accomplice:
-                "But based on your hunch about {suspect_whom}, one thing led to another and we found enough evidence to point to {suspect_whom} as well."
+                "But based on your hunch about {suspect_whom}, well, one thing led to another and we found enough evidence to point to {suspect_whom} as well!" {police_finale} grins.
                 
                     * ["That's great news!" says Troy.]
-                        -> up_to_da
+                      
+                        -> accomplice_found
             
             
             
             // no match but not nobody
+            - suspect_whom == MAC && accomplice != MAC:
+              "Obviously, I couldn't follow your hunch about me." Mac smiles. "So that leaves us empty handed on an accomplice. Though we are confident Willard will tell us more eventually."
+              
+                    * ["At least you got Mr. Willard," says Alexis.]
+                        -> accomplice_not_found
+                    
+            
             - suspect_whom != accomplice && suspect_whom != NOBODY:
-                "We did follow your hunch about {suspect_whom}, but that came up empty."
-                    -> accomplice_not_found
+                "We did follow your hunch about {suspect_whom}, but that came up empty." {police_finale}'s eyes brighten. "But we are hopeful that Willard will eventually tell us more."
+                    
+                    * ["At least you got Mr. Willard," says Alexis.]
+                        -> accomplice_not_found
             
             // friends had no suspicions 
             - else:   
-                "We don't have any suspects on Willard's accomplices, but we're hopeful he'll start to talk soon." 
-                    -> accomplice_not_found
+                "So we have no leads there, but we believe he'll tell us soon enough." {police_finale} nods to express his confidence.
+                    
+                     * ["At least you got Mr. Willard," says Alexis.]
+                      
+                        -> accomplice_not_found
             
             }
 
-        = up_to_da
-        -   "Great news, indeed," says {police_finale}. "Now it's up to the district attorney to make the case in court to a jury." 
-                    
-                * [Julian grins.]
-                    -> accomplice_found
-
-
 
 == accomplice_not_found ==
-    -   temp
-    
-        The friends are overjoyed.
+    -   "Indeed, the arrest of Willard is a milestone for the case," says {police_finale}. "Now it's up to the district attorney to convince a jury at the trial. It'll definitely help, though, if we can also arrest whomever else is involved." 
+                    
+            -   (opts)
         
-        And the reward?
+                *   [Julian wonders.]
+                    Julian wonders if not finding all the thieves will affect the reward. -> looks
+                
+                
+                *   (looks) [Julian looks at this friends in expectation.] {He looks at his friends in expectation, hoping someone else will bring up the reward.| Surely capturing Willard is a big deal, he imagines.}
+                
+                *   {looks} ["And the reward?" he asks.]
+                    -> ask_reward
+            
+            -   -> opts
+            
+            = ask_reward
+                "And the reward?" asks Julian after realizing nobody else was going to.
+                
+                {police_finale}'s expression suggests he'd forgotten about the reward.
+                
+                -   (opts2)    
+                    
+                    *   ["Of course, there is a reward..." he says.]
+                    "Of course, there is a reward in knowing boaters can once again enjoy the water without worrying about their boats being stolen," {police_finale} says. -> water
+                    
+                    *   (water) [He looks northward out over the water.] {He looks northward out over the water and pauses before saying, "The four of you have no doubt played a role in helping us to bring Willard in...", he begins but trails off.| "Not to mention the reward in seeing justice served..." The words hang in the air.} 
+                    
+                    *   {water} [Julian slumps.]
+                        -> slumps
+                
+                -   -> opts2
+                
+            = slumps
+            -   Julian slumps. The way {police_finale} has worded things, make him expects bad news about the reward.
+                    
+                {police_finale} lets his words hang in the air for a moment and then...
+                    
+                -   (opts3)
+                    
+                        *   [... he grins.]
+                            "And there is the issue of your trespassing on private property," says {police_finale}. -> eyes
+                        
+                        *   (eyes) [... his eyes narrow on Julian.] {His eyes narrow on Julian and Julian gulps.|"We'll need to address that for sure."}
+                        
+                        *   {eyes} ["B-but," stammers Julian.]
+                            -> stammers
+                    
+                -   -> opts3    
+                
+            = stammers    
+            -   "B-but," stammers Julian.        
+                
+                "But..." says {police_finale} holding up his hand. "I've submitted the paperwork for your well-deserved reward."
+                    
+                     * ["Yeessssss!" says Julian.]
         
-        -> DONE
-        
+                        The friends are overjoyed with the news and celebrate with a series of hoots, high fives and a couple of horn toots courtesy of Julian. 
+         
+                        ** [Onwards!] 
+                        -> the_end_partial_solved
+
+      
 
 == accomplice_found ==
+    "Great news, indeed," says {police_finale}. "Now it's up to the district attorney to make the case in court to a jury." 
+                    
+                * [Julian grins.]
+    
+    
     -   "Does this mean what I think it means?" asks Julian.
     
         {police_finale} nods in agreement and speaks of...
@@ -628,7 +736,7 @@ what_remember is {what_remember}
         -   -> opts
         
         = speaking_of_boats
-        -   "And speaking of boats...," says Julian, hinting with raised eyebrows and a nodding head.
+        -   Julian forces a smile, as he was hoping {police_finale} would mention the reward. "And speaking of boats...," says Julian, hinting with raised eyebrows and a nodding head.
         
                 * ["Of course!"]
                     -> reminded_me
@@ -646,7 +754,7 @@ what_remember is {what_remember}
         
                 The friends are overjoyed with the news and celebrate with a series of hoots, high fives and a couple of horn toots courtesy of Julian. 
          
-                * [Onwards!] 
+                    ** [Onwards!] 
                     -> the_end_solved
         
         
@@ -655,11 +763,19 @@ what_remember is {what_remember}
     "Detective?" says Alexis, her face flushing with embarrassment.
     
         * ["That's right," he says.]
+            -> detective_business
         
     = detective_business
     -   "I heard y'all thought I was suspicious," he says with a good-natured laugh. "No hard feelings. Working undercover it's my job to get into everyone's business."
     
         *   [Alexis is relieved.]
+            -> alx_relieved
+        
+    = alx_relieved
+    -   Alexis is relieved to hear that Mac didn't take their suspicion personally, and in hindsight wonders why they didn't figure it was {accomplice} involved with Willard.
+    
+            * [Mac resumes his recap...]
+        
         ->->
     
     -> DONE 
@@ -732,7 +848,7 @@ what_remember is {what_remember}
 === no_leads ===
 // this is a no solve situation
     -   "Nothing," says Troy.
-    -   "Ditto," says Julian. "Well. other than the memory of being cold, terribly cold." 
+    -   "Ditto," says Julian. "Well. other than the memory of being cold, terribly cold." Julian shivers thinking about it. "I don't think I'll ever forget that."
         
             * ["I have this feeling..., says Troy.]
                 -> tro_has_feeling
@@ -791,19 +907,38 @@ what_remember is {what_remember}
     
     = not_enough
     "Not enough in the photos, according the the judge, to justify a search on private property," he says. <> 
-        
+    
             {
                 
-                - who_saw != NOBODY && who_saw != suspect_whom:
-                "We've been trying to locate {who_saw}, but we've had no luck, so far." Anticipating a reaction, Captain Garcia adds, "And seeing {who_saw} {where_saw} and not be able to locate {who_saw} is not enough for a warrant." 
+                -  who_saw == suspect_whom && suspect_whom != accomplice:
+                "We've been trying to locate {who_saw}, but we've had no luck, so far." Anticipating a reaction, Captain Garcia adds, "And seeing {who_saw} <> 
+                    {
+                        - where_saw == BEACH:
+                        on a {where_saw} and later not being able to locate {who_saw} is not enough for a warrant." 
+                        
+                        - where_saw == FOG || where_saw == DISTANCE:
+                        on a boat in the {where_saw} and later not being able to locate {who_saw} is not enough for a warrant."
+                        
+                        - where_saw == BOAT:
+                        on a boat and later not being able to locate {who_saw} is not enough for a warrant."
+                    
+                    }
+                
+                - suspect_whom == accomplice:
+                "As for your suspicion of {suspect_whom}, well he is a person of interest at this point." Captain Garcia frowns. "We can't locate him currently."
+                
                 
                 - suspect_whom == NOBODY:
                 "And with no suspects... well, we've got nothing. "
+                
                 
                 - else:
                 "And as for your suspicion of {suspect_whom}, well, that came up empty, too." 
             
             }
+    
+ 
+    
     
     
         *   [The Captain looks skyward.]
@@ -822,9 +957,38 @@ what_remember is {what_remember}
     
 
     
+
 === the_end_solved ===
-    -  FPO: solving screen inserts here. 
-    -> DONE
+    -  This concludes The Mystery of Kalkomey Isle interactive boating education course.
+    
+        * You were successful in solving the mystery[!], and you have successfully completed all of your boat education achievements which qualifies you to take the final exam.
+    
+            ** Congratulations![]
+                You'll be given to the opportunity to take a Practice Exam or proceed directly the final. Good luck!
+        
+                *** [Onwards!]
+                    FPO: Hand off to final exam course LMS occurs here.
+                    
+                -> END
+
+
+
+
+=== the_end_partial_solved ===
+    -  This concludes The Mystery of Kalkomey Isle interactive boating education course.
+    
+        * You were successful in partially solving the mystery[...], and you have successfully completed all of your boat education achievements which qualifies you to take the final exam.
+    
+            ** Congratulations![]
+                You'll be given to the opportunity to take a Practice Exam or proceed directly the final. Good luck!
+        
+                *** [Onwards!]
+                    FPO: Hand off to final exam course LMS occurs here.
+                    
+                -> END
+    
+    
+
 
 
 
@@ -837,7 +1001,7 @@ what_remember is {what_remember}
         You'll be given to the opportunity to take a Practice Exam or proceed directly the final. Good luck!
         
                 *** [Onwards!]
-                    FPO: Handoff to final exam course LMS occurs here.
+                    FPO: Hand off to final exam course LMS occurs here.
                     
                 -> END
                     

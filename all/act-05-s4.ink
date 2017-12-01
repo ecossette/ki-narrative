@@ -58,7 +58,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
             
     
     = police_welcome
-    -   After brief reintroductions and an exhcange of pleasentries, they tell the Captain everthing about their two visits to Kalkomey Isle. Captain Garcia listens intently occassionally muttering a "hmmm" or an "interesting" while taking notes on a small notepad. 
+    -   After brief reintroductions and an exchange of pleasantries, they tell the Captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently occasionally muttering a "hmmm" or an "interesting" while taking notes on a small notepad. 
     
         *   "And that's everything," says Troy[.], concluding the recap of events.
     
@@ -68,9 +68,9 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
         -   (opts)
             
             *   [He leans back in his chair.] 
-                He leans back in his chair. "Flying drones disguised as mutant creatures, dissappearing boats..." The friends exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you... it's just that," he trails off. -> dark
+                He leans back in his chair. "Flying drones disguised as mutant creatures, disappearing boats..." The friends exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you... it's just that," he trails off. -> dark
             
-            *   (dark) [His face grows dark.] {Captain Garcia's face grows dark. "You know Kalkomey Isle is private property?" he says. "You could be fined—or worse—for tresspassing."| Captain Garcia is about to say more, but he changes his mind.}
+            *   (dark) [His face grows dark.] {Captain Garcia's face grows dark. "You know Kalkomey Isle is private property?" he says. "You could be fined—or worse—for trespassing."| Captain Garcia is about to say more, but he changes his mind.}
             
             *   {dark} [ "Private property?!" ]
                 -> private_property
@@ -79,7 +79,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
     
     
     = private_property
-    - "Private property?" says a suprised Troy speaking for the group. "We didn't know!"
+    - "Private property?" says a surprised Troy speaking for the group. "We didn't know!"
     
         "I can understand that, as it's not marked as such on the charts," says the Captain. {no_go_island: "And from what you say, you never did set foot on the island itself.} "Though private property it is."
         
@@ -118,7 +118,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
         
     = no_suspicion
     -   "No, sir, we sure don't," says Troy, shaking his head. 
-        "Understood," says Captain Garcia, "it's in our hands now. You did the right thing by coming in, but rememember what I asked—No more visits to Kalkomey Isle."
+        "Understood," says Captain Garcia, "it's in our hands now. You did the right thing by coming in, but remember what I asked—No more visits to Kalkomey Isle."
         
             * [They agree and depart.]
                 -> conclude_day_two
@@ -143,7 +143,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
     
         -   (opts2)
     
-            *   [Alexis hesistates.]
+            *   [Alexis hesitates.]
              Alexis hesitates. "OK, 'suspicion' is probably a bit much," she says.  -> hesitates 
             
             *   (hesitates) [Alexis looks to her friends for support.] {Alexis looks to her friends for support.  "Well, we discussed this on the way in and well...It's more like just, I dunno, a feeling or something."|"I can't really explain it... we don't have anything concrete."} 
@@ -469,7 +469,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
     
 
 === girls_recap_to_captain ===       
-    -   Mia and Alexis tell the Captain everthing about their two visits to Kalkomey Isle. Captain Garcia listens intently occassionally muttering a "hmmm" or an "interesting" while taking notes on a small notepad. 
+    -   Mia and Alexis tell the Captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently occasionally muttering a "hmmm" or an "interesting" while taking notes on a small notepad. 
     
             *   ["And that's everything," says Alexis.]
                 -> end_story
@@ -483,9 +483,9 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
         -   (opts)
             
             *   [He flips through his notes.] 
-                He flips though his notes. "Flying drones disguised as mutant creatures, dissappearing boats..." The friends exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you... it's just that," he trails off. -> dark
+                He flips though his notes. "Flying drones disguised as mutant creatures, disappearing boats..." The friends exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you... it's just that," he trails off. -> dark
             
-            *   (dark) [His face grows dark.] {Captain Garcia's face grows dark. "You know Kalkomey Isle is private property?" he says. "You could be fined—or worse—for tresspassing."| Captain Garcia is about to say more, but he changes his mind.}
+            *   (dark) [His face grows dark.] {Captain Garcia's face grows dark. "You know Kalkomey Isle is private property?" he says. "You could be fined—or worse—for trespassing."| Captain Garcia is about to say more, but he changes his mind.}
             
             *   {dark} [ "Private property?!" ]
                 -> private_property
@@ -533,7 +533,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
         
     = no_suspicion
     -   "No, sir, we sure don't," says Alexis.
-        "Understood," says Captain Garcia, "it's in our hands now. You did the right thing by coming in, but rememember what I asked—No more visits to Kalkomey Isle."
+        "Understood," says Captain Garcia, "it's in our hands now. You did the right thing by coming in, but remember what I asked—No more visits to Kalkomey Isle."
         
             * [They agree and depart.]
                 -> conclude_day_two
@@ -543,7 +543,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
     
         -   (opts2)
     
-            *   [Alexis hesistates.]
+            *   [Alexis hesitates.]
              Alexis hesitates. "OK, 'suspicion' is probably a bit much," she says.  -> hesitates 
             
             *   (hesitates) [Alexis looks to Mia for support.] {Alexis looks at Mia for support. "Well, we discussed this on the way in and well...It's more like just, I dunno, a feeling or something."|"We can't really explain it... we don't have anything concrete."} 
@@ -582,7 +582,7 @@ Q: SHOULD there be a happy path option, i.e, recover kayaks in cove for followin
             *   ["No, we're not sure," says Mia.]
                 Mia speaks up. "No we're not sure, not sure at all. It's just a hunch, remember?" she says.-> blush
             
-            *    (blush) [Alexis blushes at the Captain's pushback.] {Alexis blushes as the Captain's pushback and doesn't say anything.| "I'll admit the rescue does complicate things."}
+            *    (blush) [Alexis blushes at the Captain's push back.] {Alexis blushes as the Captain's push back and doesn't say anything.| "I'll admit the rescue does complicate things."}
     
             *   {blush} ["Got it," says the Captain.]
     
