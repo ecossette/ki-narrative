@@ -1,7 +1,9 @@
-// a5s3
 
 === return_post_rescue ===
-    -   SYS_QUIZ_8
+    -   SYS_QUIZ_28
+    -> return_post_rescue_2
+    
+=== return_post_rescue_2 ===
     -   CHR_ALX_REL
     -   Alexis adjusts the throttle, giving the boat a little more speed for the return to Laketown. The afternoon sky is bright blue, and the Lakesong casts a long shadow across the rippling waters of the lake. Under different circumstances, it would be the ideal conditions for boating.
 
@@ -66,31 +68,25 @@
 
                 ** ["Bring it!" says Mia.]
                 -> encounter_activity
-
-
-    -> DONE
-
-
-
+            
+            
 === encounter_activity ===
 // put encounter mini here
     -   CHR_MIA_SML
     -   With Mia at the helm, the Lakesong faces many encounters on the return home.
 
         * [Review boating encounters.]
-            -- FPO: Study guide material for "encountering" inserts here.
-            // in game, if player chooses review, send them to the encounter minigame upon close of the review.
+            - SYS_PDF_41
                 ** [OK]
-                    -> return_marina_day_two
+                    -> encounter_mini
+    
+        * [Go directly to the encountering activity.]
+                    -> encounter_mini
 
-        * [Go directly to the "Encountering Other Vessels" activity.]
-
-            -- FPO: The "encountering" minigame inserts here.
-
-                ** [OK]
-                     -> return_marina_day_two
-
-    -> DONE
+                     
+=== encounter_mini ===
+    - SYS_MINIGAME_40
+    -> return_marina_day_two
 
 === approach_discuss_suspicion ===
     -   CHR_MIA_REL
@@ -248,12 +244,11 @@
                     * [DEBUG: GO TO 'REPORT TO POLICE"] -> report_to_police
                     * [DEBUG: GO TO 'MET BY POLICE"] -> met_by_police
                 }
+            
+ 
+/****** 
 
-
-    -> DONE
-/******
-
-docking tunnel
+docking tunnel 
 the story will flow in/out of this tunnel on several occasion during play
 
 ******/
@@ -261,38 +256,38 @@ the story will flow in/out of this tunnel on several occasion during play
 
 === docking_wind_direction ===
     -   A quick check of the wind and current reveals the following conditions.
-
-        * There is <b>no</b> wind or current.
-            -> docking_no_wind
-        * The wind and current direction is <b>toward</b> the dock.
-            -> docking_wind_toward_dock
-        * The wind and current direction is <b>away</b> from the dock.
-            -> docking_wind_away_dock
-
-
-== docking_no_wind ==
-    -   Interaction minigame for the situation "there is no wind or current" will be added here.
+        {do_wind_none} * There is <b>no</b> wind or current.
+            -> no_wind_s5
+        {do_wind_toward} * The wind and current direction is <b>toward</b> the dock.
+            -> wind_toward_dock_s5
+        {do_wind_away} * The wind and current direction is <b>away</b> from the dock. 
+            -> wind_away_dock_s5
+    
+// launch the docking activity again Here
+// need build another tunnel similar to casting off?
+    = no_wind_s5
+    ~ do_wind_none = false
+    -   SYS_MINIGAME_4_41
+        * [OK]
+            -> docking_completed
+    
+    = wind_toward_dock_s5
+    ~ do_wind_toward = false
+    -   SYS_MINIGAME_5_41
         * [OK]
             -> docking_completed
 
-== docking_wind_toward_dock ==
-    -   Interaction minigame for the situation "the wind and current is toward the dock" will be added here.
+    = wind_away_dock_s5
+    ~ do_wind_away = false
+    -   SYS_MINIGAME_6_41
         * [OK]
             -> docking_completed
 
-== docking_wind_away_dock ==
-    -   Interaction minigame for the situation "the wind and current is away from the dock" will be added here.
-        * [OK]
-        -> docking_completed
 
 == docking_completed==
-    -   Smiles and high fives are exchanged as the boat docks successfully.
+    -   Smiles and high fives are exchanged as the boat is successfully docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
-        + [Onwards!]
-    -    ->->
-
-// ****** end docking tunnel ******
-
-
-
-    -> DONE
+    * [Onwards!]
+        -> report_to_police
+    
+    

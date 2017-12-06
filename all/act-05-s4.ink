@@ -692,7 +692,18 @@ wait to call for help = hypo extreme / full memory loss
 === captain_departs ===
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   After the Captain departs, Mia and Alexis begin a cross-check that the boat is secure for the night. 
+    -   After the Captain departs, Mia and Alexis begin a maintenance check on the boat.
+    
+            * [Review the <i>Vessel Maintenance</i> material.]
+             // study guide inserts
+                FPO: Vessel maint. study guide inserts here.
+                    ** [OK]
+                        -> cross_check
+    
+    
+    = cross_check   
+    After completing the maintenance tasks, Mia and Alexis begin a final cross-check that the boat is secure for the night. 
+
 
 
         -   (opts)

@@ -11,6 +11,7 @@ VAR houseboat_st = 0
 == pwc_return_houseboat ==
     -   CHR_ALX_SML
      // SOUND pwc generic
+    - SYS_SOUND_19
     -   Ian, Mia, and Julian return to the houseboat on the PWCs. 
         
             * "Let the water skiing commence!"[] shouts an enthusiastic Alexis.
@@ -20,15 +21,14 @@ VAR houseboat_st = 0
         -   Before we rejoin the friends, let's do a quick review of the safety issues related to <i>water skiing, towed devices, and wake sports</i>.
         
             * [Launch the review.]
-            //SG for 6.2 water skiing, towed devices, and wake sports
-                FPO: review of water skiing, towed devices, and wake sports inserts here.
+                - SYS_PDF_16
                     ** [OK]
                     -> mia_pwc_choice
         
         
         = mia_pwc_choice
         // bump up other activities badge here
--   SYS_ACHIEVE_6_2
+        -   SYS_ACHIEVE_6_2
         // SOUND water generic continue until next sound
         -   CHR_IAN_REL
         -   But before they can get started, Ian has to make some adjustments.
@@ -133,12 +133,14 @@ VAR houseboat_st = 0
                     * ["All right."]
                     //dialled back enthuasiasm as it's just for the hand signals.
                     // go to water-skiing mini
-                        ** [FPO: water-skiing signals minigame inserts here.]
-                        -> skiing_time
+                        -- SYS_MINIGAME_15
+                        ** [Onward]
+                            -> skiing_time
 
 
 == skiing_time ==
     // SOUND pwc generic mixed with PWC passby and acceleration
+    //- SYS_SOUND_20
     - After a successful review of skier hand signals, the water skiing begins. Everyone takes a turn.
     //trim where you can
 
@@ -157,25 +159,46 @@ VAR houseboat_st = 0
                 * The friends say goodbye[.] to Maura and Ian then begin preparations for casting off from the houseboat. 
                 
                     ** [Cast off.]
-                        -> co_wind_direction ->
+                        -> co_wind_direction_2
                         
-                        -> after_co_houseboat
-
+=== co_wind_direction_2 ===
+    -   The friends check the wind and current and find the following conditions.
     
-        = after_co_houseboat 
+        {co_wind_none} * There is <b>no</b> wind or current.
+            -> no_wind_2
+        {co_wind_toward} * The wind and current direction is <b>toward</b> the dock.
+            -> wind_toward_dock_2
+        {co_wind_away} * The wind and current direction is <b>away</b> from the dock. 
+            -> wind_away_dock_2
+    
+== no_wind_2 ==
+    ~ co_wind_none = false
+    -   SYS_MINIGAME_1_16
+        * [OK]
+            -> after_co_houseboat
+    
+== wind_toward_dock_2 ==
+    ~ co_wind_toward = false
+    -   SYS_MINIGAME_2_16
+        * [OK]
+            -> after_co_houseboat
+
+== wind_away_dock_2 == 
+    ~ co_wind_away = false
+    -   SYS_MINIGAME_3_16
+        * [OK]
+            -> after_co_houseboat
+
+
+== after_co_houseboat ==
         // SOUND generic boat ending
+        // SYS_SOUND_21
         -   After casting off, the <i>Lakesong</i> heads out towards open water.
 
         * [Onwards!]
             // launch quiz 2.2 here
-            -- SYS_QUIZ_4                        
+            -- SYS_QUIZ_04                        
             -> discussion_after_houseboat
                     
-
-
-
-    
-
-    
 //        THIS ENDS ACT 2 
         

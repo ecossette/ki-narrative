@@ -5,6 +5,3 @@ INCLUDE act-02-s4.ink
 INCLUDE act-02-s5.ink
 INCLUDE act-02-s6.ink
 
--> approaching_lakesong
-
-

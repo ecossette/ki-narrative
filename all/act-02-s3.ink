@@ -9,14 +9,10 @@
         = drills
         -   CHR_TRO_REL
         As they continue cruising, Troy conducts a couple of 'what if' emergency drills with the group. He also reminds his friends on the importance of keeping a proper lookout—looking <i>and</i> listening—at all times.
-        
-            *   ["Situational awareness," says Troy.]
+    //otherwise it sounded like the number of eyes was relevant
     
-        = sit_aware
-        -   "Situation awareness," says Troy, "just knowing what's going on around you, is one of keys to safe boating."     
-    
-                * ["Hey, what's that?" Mia asks suddenly.] 
-                -> mia_asks_pointing
+           * ["Hey, what's that?" Mia asks suddenly.] 
+            -> mia_asks_pointing
         
         = mia_asks_pointing
         // add to safe boat op 
@@ -24,9 +20,10 @@
         -   CHR_MIA_SUR
         -   "Over there!" she says, pointing straight out from the <i>Lakesong's</i> port side.
             // SOUND boat circle of death in distance, lower volume, should be very much in distance
+            -- SYS_SOUND_02
             
             * Troy throttles back[.]
-                -> throttle_back_slow
+            -> throttle_back_slow
             
         = throttle_back_slow
         -   CHR_TRO_REL
@@ -115,6 +112,7 @@
 == approach_cod ==           
     - CHR_JUL_SUR
     // SOUND bring up volume a bit on circle of death
+    - SYS_SOUND_03
     - They see a speedboat violently racing around in a tight circle.
     - "There's nobody in that boat!" yells Julian.
     //aboard doesn't sound natural in this emergency context
@@ -134,6 +132,7 @@
         
         = cod_explain_later
         - CHR_TRO_REL
+        - SYS_SOUND_04
         "I'll explain later. Mia, keep looking to see if you can spot anyone in the water," commands Troy. He brings the <i>Lakesong</i> to a full stop a safe distance from the dangerously circling, unmanned boat.
        
         
@@ -229,6 +228,7 @@
             
             == how_long_loop
             -   CHR_TRO_REL
+            -   SYS_SOUND_05
             -   CHR_JUL_SAD
             -   Meanwhile the unmanned boat continues its dizzying loop. The sound grates on everyone's nerves, especially Julian's.
                 // SOUND can increase circle of death volume here then bring it back down a bit after next choices
@@ -245,6 +245,7 @@
                 -     -> opts
                 
            = idea_circle
+           -    SYS_SOUND_06
            -    CHR_ALX_SML
            -    CHR_TRO_REL
            - "I have an idea," says Alexis. "Whoever was in the boat may have been thrown to the other side, where we can't see." 
@@ -261,6 +262,7 @@
                             -> see_head
             = see_head
             // SOUND add ambient engine to the mix again
+                - SYS_SOUND_07
                 - CHR_MIA_REL
                 - CHR_ALX_SML
                 - Mia points in the distance to where someone is bobbing in the water.
@@ -294,6 +296,7 @@
                 -> recovery_mini
                 
 == recovery_mini ==
+    - SYS_MINIGAME_12
     * [FPO: recover minigame will insert here.]
     -> recovery_loop
     //shouldn't this link to === recovery_loop === instead? I skipped to correctly having reduced speed.
@@ -387,6 +390,7 @@
    
 == turn_the_boat ==
     // SOUND nudge up circle of death volume
+    -   SYS_SOUND_08
     -   CHR_TRO_REL
     -   {Troy turns the boat and slowly approaches the woman in the water...|Troy comes around again, this time he approaches...|In his third attempt, Troy only has one approach direction he hasn't tried...}
              
@@ -466,11 +470,3 @@
             -> recover_victim_1
 
 /*  ****** END OF 2.3 ***** */
-
-
-/*------------------------
-
-SCENE 04
-
-*/
-

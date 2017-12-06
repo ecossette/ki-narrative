@@ -37,7 +37,6 @@
             * [Red smoke.]
                 -> sees_flare
 
--> DONE
 
 === sees_creatures ===
     -   CHR_ALX_REL
@@ -216,10 +215,6 @@
 
                 ** [They turn their attention to the cove ahead.]
                     -> nearing_the_cove
-
-
-
-            -> DONE
 
 
 === sees_mirror ===
@@ -437,11 +432,6 @@
 
 
 
-            -> DONE
-
-
-
-
 == no_investigate ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
@@ -452,3 +442,5 @@
 
                 ** [Return to the cove.]
                     -> nearing_the_cove
+                    
+                    

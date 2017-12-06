@@ -1,3 +1,5 @@
+VAR parts = 0
+
 
 /*--------------------------------------------------------------------------------
 
@@ -6,17 +8,6 @@
 --------------------------------------------------------------------------------*/
 
 -> intro
-
-//-> make_way_cove
-
-//-> temp_var_set_hypothermia_tree
-//->  set_kayak_conditions_for_no_follow
-//-> temp_debug_solve_matrix
-//-> boat_in_distance
-//-> approach_discuss_suspicion
- //   -> met_by_police
- //   -> captain_departs
- //-> text_alert
 
 === intro ===
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.
@@ -151,7 +142,7 @@
 
 === parts_of_a_boat_review ===
 // launch the study guide POB review, upon exit send student to segue screen where we'll confirm that review is complete and student will launch POB minigame
-- SYS_PDF_1
+- SYS_PDF_01
     -> pob_post_review 
 
 
@@ -161,7 +152,7 @@
 
 === pob_mini ===
 // launch POB minigame here. upon success move student to start of s2 === aboard_first_time ===
-    -   SYS_MINIGAME_1
+    -   SYS_MINIGAME_01
     -> aboard_first_time
 
 
@@ -227,7 +218,7 @@
 
 === cp_pdf_info ===
 //  Here we'll launch into the study guide to the Capacity Plate info. Upon exit return student to === ls_no_cp ===
-    -   SYS_PDF_2
+    -   SYS_PDF_02
         -> ls_no_cp
     
 === ls_no_cp ===
@@ -365,7 +356,7 @@
     -   Before starting the pre-departure checklist, let's make sure you're familiar with the items on the checklist.
     
         * [Launch Study Guide ] 
-            -- SYS_PDF_3
+            -- SYS_PDF_03
         //Launch the modal for the pre-departure checklist study guide info. Upon student close, send them to post_predep_check_sg
         
         -> post_predep_check_sg
@@ -501,7 +492,7 @@
 
 == review_pob_yes ==
 // launch the parts of a boat PDF content here. upon student close continue to begin_pfd_count
-    -   SYS_PDF_1
+    -   SYS_PDF_04
     -> begin_pfd_count
         
 == begin_pfd_count ==
@@ -677,7 +668,7 @@
 
 == fe_review ==
 // launch study guide FE material. upon finish move student to == jul_finishes ==
-    - SYS_PDF_7
+    - SYS_PDF_05
         -> jul_finishes
 
 == jul_finishes ==
@@ -701,7 +692,7 @@
 
 === review_checklist_minigame
 // Launch the checklist minigame here. Upon successful completion of the minigame send student forward to === review_forgot ===
-    - SYS_MINIGAME_2
+    - SYS_MINIGAME_02
     -> review_forgot
 
 === review_forgot ===
@@ -949,7 +940,7 @@
     -    CHR_TRO_REL
     -    CHR_ALX_CUR
     * ["Let's hope not," says Alexis.] 
-        -- SYS_QUIZ_1
+        -- SYS_QUIZ_01
         -> meet_willard
 
 /*--------------------------------------------------------------------------------
@@ -1113,8 +1104,8 @@
 === pfd_learning_activity ===
 //  launch the PFD learning activity (minigame) here
 //  upon succsussful completion of minigame, send student to sizing_who_first
-    - SYS_MINIGAME_3
-    -> DONE
+    - SYS_MINIGAME_03
+    -> sizing_who_first
    
 
 /*--------------------------------------------------------------------------------
@@ -1506,7 +1497,7 @@ VAR pfd_tryer = "Mia"
 
       
         * ["I'd like to see one," says Mia.]
-            --- SYS_PDF_8
+            --- SYS_PDF_06
              -> where_you_headed
         * ["No thanks, we're good," says Troy.]
             -> where_you_headed
@@ -1949,6 +1940,7 @@ VAR pfd_tryer = "Mia"
     -   CHR_CLT_ANG
     -   "If you're smart, you'll stay clear of Kalkomey Isle," says Cletus, having the last word.
     -   Troy nods politely while Mia, Alexis, and Julian avoid eye contact with each other so as not to laugh. 
+    - SYS_ACHIEVE_7_1
             * [Mr. Willard shrugs.]
                 -> have_been_stories
 
@@ -1993,6 +1985,6 @@ VAR pfd_tryer = "Mia"
         -- "Let's forget about Kalkomey Isle and focus on casting off!" Troy declares.
             
             * [Onward!]
-                -- SYS_QUIZ_2
+                -- SYS_QUIZ_02
                 -> approaching_lakesong
 

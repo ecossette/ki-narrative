@@ -7,7 +7,6 @@ SCENE 03
 
 
 === after_dropping_anchor ===
--   SYS_QUIZ_5
     -   CHR_TRO_REL
     -   After successfully anchoring the <i>Lakesong</i>, Troy does another quick check for leaks.
 

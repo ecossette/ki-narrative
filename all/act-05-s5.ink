@@ -25,7 +25,6 @@ what_remember is {what_remember}
 
 
 === on_dock_day_03 ===
-    -   SYS_QUIZ_9
     {
 
         -   who_has_memory == TROY:
@@ -34,22 +33,19 @@ what_remember is {what_remember}
         -   who_has_memory == JULIAN:
             ~ chr="JUL"
     }
-
-
+    -   SYS_QUIZ_09
+    -> on_dock_day_03_2
+    
+    
+=== on_dock_day_03_2 ===
     - Several days later, we join the friends on the Lakesong preparing for another day on the lake by running through their pre-departure safety checklist.
     
         * [Complete pre-departure checklist.]
-            -> trip_planning_achieved
-        // upon taking choice above we'll complete their trip planning achievment then pass along to sorter
-        
-        = trip_planning_achieved
         -   SYS_ACHIEVE_2_5
             -> hypo_severity_sorter
+        // upon taking choice above we'll complete their trip planning achievment then pass along to sorter
         
-        
-        
-        
-        
+
     = hypo_severity_sorter
         {
             // hypo 3

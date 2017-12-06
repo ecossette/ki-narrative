@@ -515,11 +515,16 @@ SCENE 04
     // we'll insert a quick just in time learning review option here.
 
         * [ Read more about how hulls operate.]
-            FPO: link to study guide for hull modes will insert here.
-                ** [OK] -> losing_them
-
+            - SYS_PDF_22
+            ** [OK]
+                -> hull_activity
+        
         * [ Continue without reviewing hull modes.]
-                -> losing_them
+            -> hull_activity
+                
+    = hull_activity
+        * [HULL minigame should go here]
+            -> losing_them
 
     = losing_them
     -   CHR_JUL_SML

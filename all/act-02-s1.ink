@@ -1,4 +1,3 @@
-d
 /*------------------------
 
 ACT 02 BEGINS
@@ -11,9 +10,6 @@ VAR knowledge_man_alone = false
 VAR knows_strangers_name = false
 
 //-> approaching_lakesong
-
-
-
 
 === approaching_lakesong ===
 // SOUND general dock sounds as used in Act 1
@@ -376,11 +372,5 @@ VAR knows_strangers_name = false
             
             * ["Prepare to cast off!"]
                 -> prepare_to_castoff_review
-            
-/*------------------------
-
-SCENE 02
-
-*/
- 
-
+                
+                

@@ -651,15 +651,10 @@ SCENE 02
     -   "If any of us had symptoms, we'd need to seek medical attention ASAP," says Troy. "Instead, we can wait here until the fog lifts."
 
         * [Onwards!]
-
         // SYS launch quiz 3.1 here
-        // after quiz complete proceed to == anchoring_review ==
-            FPO: Quiz launches here.
-                ** [OK.]
-                    -> anchoring_review
-
-
-
+            -- SYS_QUIZ_05
+            ** [OK.]
+            -> anchoring_review
 
 == anchoring_review ==
     Having decided to sit tight and wait for the fog to clear, the friends make preparations to drop anchor.
@@ -668,14 +663,17 @@ SCENE 02
 
         * [Review the material on anchoring.]
             // insert study guide here, upon student close, launch minigame
-            FPO: study guide will insert here
-                ** [OK]
-                -> after_dropping_anchor
-        * [Go directly to the anchoring activity.]
+            -- SYS_PDF_21
+            ** [OK]
+                -> anchoring_mini
+                
+        * [Go directly to the anchoring activity.] 
             // insert anchor minigame here
-            FPO: anchoring minigame will insert here
-                ** [OK]
+            -> anchoring_mini
 
-                -> after_dropping_anchor
-
-   
+== anchoring_mini ==
+-   SYS_MINIGAME_22
+*   [Onward]
+    -> after_dropping_anchor
+    
+    // link up with === after_dropping_anchor s03 when stiching scenes togethernk up with === after_dropping_anchor s03 when stiching scenes together

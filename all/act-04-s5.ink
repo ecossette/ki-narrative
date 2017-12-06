@@ -1,9 +1,6 @@
 // Act 04, Scene 5
 // recovery occurs in this scene
 
-
-
-
 === wait_for_mia_alexis ===
 // Troy and Julian returned to the cove after turning back from following the stream far enough to encounter thieves. We'll join the girls on the <i>Lakesong</i>.
     -   CHR_JUL_REL
@@ -109,7 +106,6 @@
 
 
 == use_the_horn ==
-
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   "We'll need to give the coded signal, according to the plan," says Alexis. She eases back on the throttle as visibility once again decreases. "But Julian was right that the fog will help us stay hidden."
@@ -197,7 +193,6 @@
                             -> leave_cove
 
             -   -> opts
-
 
 
 === join_mia_alx_second_attempt ===
@@ -335,7 +330,7 @@
 
 
                 * {skyward} [Reduce speed.]
-                    -> second_entry_cove ("fog")
+                    -> second_entry_cove_fog
 
         -   -> opts
 
@@ -356,15 +351,6 @@
 
 
                 * {skyward} [Reduce speed.]
-                    -> second_entry_cove ("clear") 
+                    -> second_entry_cove_clear
 
         -   -> opts
-
-
-
-
-
-
-
-
--> DONE

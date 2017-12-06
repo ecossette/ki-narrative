@@ -4,8 +4,7 @@ INCLUDE act-03.ink
 INCLUDE act-04.ink
 INCLUDE act-05.ink
 
-    VAR parts = 0
-    
+
     VAR who_saw = NOBODY
     VAR where_saw = NOWHERE
     VAR what_saw = UNKNOWN
@@ -28,6 +27,13 @@ INCLUDE act-05.ink
     VAR police_finale = NOBODY
     VAR on_kayaks_saw = STREAM
     VAR saw_monkey = 0
+    VAR co_wind_none = true
+    VAR co_wind_away = true
+    VAR co_wind_toward = true
+    VAR do_wind_none = true
+    VAR do_wind_away = true
+    VAR do_wind_toward = true
+
     
     CONST BEACH = "beach"
     CONST FLASHING = "flashing"

@@ -4,6 +4,7 @@
 -   SYS_ACHIEVE_4_2
     -   CHR_ALX_REL
     -   CHR_JUL_REL
+    -   SYS_SOUND_09
     // SOUND ambient no engine, continue circle of death
     -   With the <i>Lakesong's</i> engine stopped, Alexis and Julian carefully pull the first victim, a young woman, over the stern and onto the <i>Lakesong's</i> deck. 
             * "Hi, I'm Maura[."]." the young woman says, flashing a tired smile. "Thanks for rescuing me."
@@ -25,6 +26,7 @@
             
             //wouldn't they ask if there was anyone else in the boat with them at this point? Or recognise them from earlier?
     
+            --  SYS_SOUND_10
             *   Troy restarts the Lakesong[.] and maneuvers into position to recover Ian. 
             // SOUND kill no engine, replace with engine, maintain circle of death
                 -> how_long
@@ -57,6 +59,7 @@
                 
                 * Troy cuts the engine[.], and they pull Ian over the <i>Lakesong's</i> stern to safety. 
                 // SOUND ambient no engine, reduce vol a bit on circle
+                    -- SYS_SOUND_11
                     -> recover_victim_2
                     
             == recover_victim_2
@@ -75,6 +78,7 @@
         -   CHR_TRO_REL
         -   CHR_MAU_REL
         // SOUND let's bring circle of death vol way down as it could get distracting over the next long narrative part
+        -   SYS_SOUND_12
         -   "I better advise the Marine Patrol that we've recovered two passengers safe and sound." 
                         
             "You called the police!" exclaims Maura.
@@ -214,40 +218,41 @@
             -> alcohol_mini
             
         = alcohol_mini
-            * [FPO-Alcohol learning activity goes here]
-                -> field_sobriety
+            - SYS_MINIGAME_13
+            -> field_sobriety
         
                              
 
-        = field_sobriety 
-        -   CHR_MPO_REL
-        -   CHR_IAN_REL
-        -   Captain Garcia performs several seated sobriety tests on Ian, closely observing Ian's gaze, cognitive ability, and coordination. 
-        
-            * [Finally, Captain Garcia speaks.]
-                -> passed_fst
+== field_sobriety ==
+-   CHR_MPO_REL
+-   CHR_IAN_REL
+-   Captain Garcia performs several seated sobriety tests on Ian, closely observing Ian's gaze, cognitive ability, and coordination. 
+
+    * [Finally, Captain Garcia speaks.]
+        -> passed_fst
             
-        = passed_fst    
-            "OK, Mr. Murphey, you passed."
-      
-            // SOUND Kill circle of death
-                * The background noise of the runaway engine stops[.], and Captain Garcia's radio crackles to life: "Runaway boat secured, Captain. We roped it."
-                    --   CHR_MPO_REL
-                    --   CHR_IAN_SML
+    = passed_fst    
+        "OK, Mr. Murphey, you passed."
+  
+        // SOUND Kill circle of death
+            * The background noise of the runaway engine stops[.], and Captain Garcia's radio crackles to life: "Runaway boat secured, Captain. We roped it."
+                --   SYS_SOUND_13
+                --   CHR_MPO_REL
+                --   CHR_IAN_SML
+            
+                "Now that's the best thing I've heard all day," Ian says with a relieved smile. 
                 
-                    "Now that's the best thing I've heard all day," Ian says with a relieved smile. 
-                    
-                    ** [Captain Garcia considers Ian's comment.]
-                        -> capn_considers
-                
-        = capn_considers
-        -   CHR_MPO_REL
-        -   CHR_MAU_REL
-        
-        - "We stopped your boat by jamming the propeller with a rope," says Captain Garcia. "Your engine is going to need some work."
-        //how does he know that was how they did it? Or is that the way they always do it?
-        
-                -> how_home
+                ** [Captain Garcia considers Ian's comment.]
+                    -> capn_considers
+            
+    = capn_considers
+    -   CHR_MPO_REL
+    -   CHR_MAU_REL
+    
+    - "We stopped your boat by jamming the propeller with a rope," says Captain Garcia. "Your engine is going to need some work."
+    //how does he know that was how they did it? Or is that the way they always do it?
+    
+            -> how_home
         
 == how_home ==
         -  CHR_IAN_REL
@@ -313,7 +318,7 @@
                 
 === quiz_2_1 ===
 // launch quiz 2.1 here, after quiz proceed to houseboat_in_view
-    - SYS_QUIZ_3
+    - SYS_QUIZ_03
     -> houseboat_in_view
 
 /*------------------------

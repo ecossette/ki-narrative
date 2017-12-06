@@ -86,9 +86,6 @@
 
     }
 
-
-->  DONE
-
     = recap_saw_signal
     -   CHR_MIA_REL
     -   Mia continues, "And then we saw—or thought we saw—a {what_distract} signal in the distance."
@@ -108,10 +105,6 @@
                     DEBUG: this condition shouldn't be possible.
 
             }
-
-
-    -> DONE
-
     = alx_expl_invest_no
     -   CHR_TRO_REL
     -   CHR_ALX_REL
@@ -586,7 +579,10 @@
         -   -> opts
 
     = tro_safe_sound
-    -   SYS_QUIZ_8
+    -   SYS_QUIZ_18
+    -> tro_safe_sound_2
+    
+=== tro_safe_sound_2 ===
     -   CHR_TRO_REL
     -   Troy watches as Kalkomey Isle slowly grows smaller in the distance. "It was a successful mission," he says. "In the end, we know more than we did yesterday, and we're on our way home safe and sound."
 
@@ -622,5 +618,3 @@
                 ** ["Bring it!" says Mia.]
                 -> encounter_activity
 
-
-            -> DONE

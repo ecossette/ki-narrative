@@ -106,10 +106,7 @@
         "The steps we need to take to cast off," he says, "depend on the direction of the wind or current."
             
             * [Check the conditions.]
-   
-                 -> co_wind_direction ->
-                    
-            -> depart_dock_day_1
+                 -> co_wind_direction
 
 /****** 
 
@@ -121,26 +118,29 @@ the story will flow in/out of this tunnel on several occasion during play
 === co_wind_direction ===
     -   The friends check the wind and current and find the following conditions.
     
-        * There is <b>no</b> wind or current.
-            -> no_wind
-        * The wind and current direction is <b>toward</b> the dock.
-            -> wind_toward_dock
-        * The wind and current direction is <b>away</b> from the dock. 
-            -> wind_away_dock
+        {co_wind_none} * There is <b>no</b> wind or current.
+            -> no_wind_s2
+        {co_wind_toward} * The wind and current direction is <b>toward</b> the dock.
+            -> wind_toward_dock_s2
+        {co_wind_away} * The wind and current direction is <b>away</b> from the dock. 
+            -> wind_away_dock_s2
     
 
-== no_wind ==
-    -   Interaction minigame for the situation "there is no wind or current" will be added here.
+== no_wind_s2 ==
+    ~ co_wind_none = false
+    -   SYS_MINIGAME_1_10
         * [OK]
             -> completed_casting_off
     
-== wind_toward_dock ==
-    -   Interaction minigame for the situation "the wind and current is toward the dock" will be added here.
+== wind_toward_dock_s2 ==
+    ~ co_wind_toward = false
+    -   SYS_MINIGAME_2_10
         * [OK]
             -> completed_casting_off
 
-== wind_away_dock == 
-    -   Interaction minigame for the situation "the wind and current is away from the dock" will be added here. 
+== wind_away_dock_s2 == 
+    ~ co_wind_away = false
+    -   SYS_MINIGAME_3_10
         * [OK]
         -> completed_casting_off
 
@@ -204,7 +204,7 @@ the story will flow in/out of this tunnel on several occasion during play
                         -> done
                     - (loop)
             // loop a few times
-                     { -> opts | -> opts | -> opts | }
+                     { -> opts | -> opts | -> opts }
                     ** [The visibility is great today!] "I can already see the end of the channel," says Alexis.  
                        -- CHR_ALX_SML
                       
@@ -246,9 +246,9 @@ the story will flow in/out of this tunnel on several occasion during play
                 -- CHR_TRO_REL
                 -- "We're not producing any wake, so we should be fine to overtake him even though he's low and loaded."
                 
-                ** ["We should toot the horn, right?" says Alexis?]
+                ** [a]
                     
-                    *** [Review sound devices requirments.]
+                    *** [Review sound devices requirements.]
                     // link to sound producing requirement SG 
                         FPO: study guide material inserts here.
                             **** [OK] -> sound_requirement
@@ -260,7 +260,7 @@ the story will flow in/out of this tunnel on several occasion during play
             = sound_requirement
             - CHR_ALX_REL
             - CHR_TRO_REL
-            -   "We should toot the horn[."] to signal our intent, right?" checks Alexis.       
+            -   "We should toot the horn to signal our intent, right?" checks Alexis.       
                     
                     
                     ***"That's right," answers Troy.[] "One toot if we intend to pass on his port side, two toots if we go to his starboard."
@@ -277,6 +277,7 @@ the story will flow in/out of this tunnel on several occasion during play
 == before_tro_can_fin == 
         -   CHR_TRO_SUR
         // SOUND speed boat pass by. you may need to trigger this to occur some number of second after page load so that user can orient and begin reading before the sound cuts in. Play only once. After speed boat pass revert to ambient engine (or than can always be playing underneath speedboat pass)
+        -   SYS_SOUND_01
         //actually, you want the sound straight away, as he's cut off in the previous page.
         -   The sound of a loud outboard motor cuts Troy off. A boat is rapidly overtaking the <i>Lakesong</i> on her starboard side. 
         
@@ -412,13 +413,8 @@ the story will flow in/out of this tunnel on several occasion during play
         
 === aton_mini ===
 // ATON aids to navigation system minigame will go here
-
     - SYS_MINIGAME_11
     * [Onward]
-    -> proper_lookout
-
-/*------------------------
-
-SCENE 03
-
-*/
+        -> proper_lookout
+        
+        

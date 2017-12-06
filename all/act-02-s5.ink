@@ -1,6 +1,6 @@
 
-
 === houseboat_in_view ===
+//- SYS_SCENE_4_1
 The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another power boat, larger than the one in tow, and several personal water craft (PWCs).
 
     * "Are those solar panels?" asks Mia[.], pointing to the roof of the houseboat.
@@ -34,14 +34,14 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         Done, they gather in front of the PWCs.
         //How does Ian secure the boat if he's on the Lakesong? Probably doesn't matter?
         // SOUND Ambient no engine
-            
+        // (Isn't the engine already cut here?)
             ** ["OK, who wants to drive first?" asks Ian.]
                 -> drive_first
             
     = drive_first
     -   CHR_MIA_REL
     -   CHR_IAN_REL
-    -   Mia surprises everyone when she volunteers. 
+    -   Mia suprises everyone when she volunteers. 
             
         "Great!" says Ian. "Have you been jet skiing with a PWC before?"
 
@@ -110,6 +110,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
             * "Well..." replies Maura[.], a smile flickering at the corner of her mouth. "Some things you just have to learn the hard way."
             //what happens in Vegas etc - I always associate this phrase with something dodgy, rather than a mistake.
             //I like it better in the website than playing in Ink, maybe I'm being over picky? :)
+            --  SYS_SCENE_4_3
             --   CHR_IAN_SML
             --   CHR_MAU_REL
         
@@ -160,7 +161,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         -  While Alexis, Maura, and Troy make preparations to water ski, Mia, Julian, and Ian attach their engine cut-off switch lanyards and jet away from the houseboat.
         //maybe don't use 'spin' here when you had the death spin earlier
         // SOUND pwc generic
-           
+        - SYS_SOUND_14
             * Mia is very cautious at first[...] but quickly gains confidence.
                 -> mia_confident
                 
@@ -169,6 +170,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         = mia_confident
         VAR did_capsize_pwc = 0
         // SOUND pwc generic
+        // already playing that sound
         - CHR_MIA_REL
         - She gradually increases her speed and maneuvering until...
         //maneuverability <-- not quite the right word. That's the ability to maneuver rather than the amount she is maneuvering, right? (hence change)
@@ -198,11 +200,13 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
 
 == julian_revs_pwc ==
     // SOUND throw in pwc passby (loop it if it sounds ok)
+    - SYS_SOUND_15
     -   CHR_JUL_SML
     -   As they circle back to the houseboat to pick up the skiers, Julian starts showing off.
     
             * Julian revs his PWC[.], and speeds toward Mia's wake to jump it.
                 // SOUND pwc accleration
+                - SYS_SOUND_16
                 -- CHR_JUL_SML
 
                 ** This is a dangerous maneuver[.]. Ian waves and yells in an attempt to warn Julian off. Julian doesn't notice.
@@ -214,6 +218,8 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
                 
         = jul_airborne 
         //  SOUND PWC generic
+        // Also fades out PWC acceleration
+        -   SYS_SOUND_17
         -   CHR_JUL_SUR
         -   The airborne PWC drops out from under Julian, and both Julian and the PWC hit the water with a large splash. Falling face first, Julian barely misses smashing his jaw against his PWC. 
         
@@ -222,6 +228,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
             
         = is_jul_ok
         // SOUND PWC idle
+        -   SYS_SOUND_18
         -   CHR_IAN_REL
         -   CHR_JUL_REL
         -  "Are you alright?" Ian asks bringing his PWC to a stop near Julian. 
@@ -234,6 +241,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
             
         = wake_jump_danger
         // SOUND PWC idel
+        // still idleing here
         -   CHR_IAN_REL
         -   CHR_JUL_SAD
         -   "Wake jumping is dangerous," says Ian. "When you are airborne, you lose all control of the PWC. You came really close to busting your jaw when you landed."
@@ -263,6 +271,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
 
 == jul_sorry_pwc
     // SOUND pwc idle
+    //still in idle
     *   ["And sorry about your PWC, Ian," says Julian.]
          -> capsize_pwc ("Julian") ->
         
@@ -272,13 +281,15 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
 
 == jul_remounts ==
      // SOUND pwc idle
-        *   Julian rolls the PWC upright[.] and remounts. 
+         //still in idle
+    *   Julian rolls the PWC upright[.] and remounts. 
             -> pwc_return_houseboat
 
 
 === capsize_pwc (who_capsize_pwc) ==
  // capsize tunnel.
   // SOUND pwc idle
+    //still in idle
  -  CHR_IAN_REL
     "Don't worry about it," says Ian. "They are designed to turn over. That's part of what makes them fun."
     //don't have people laughing too often, it makes them a little Santa Clausy. Also didn't make sense after he was pissed off with Julian, if you made it Julian capsizing.

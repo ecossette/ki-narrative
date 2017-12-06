@@ -5,10 +5,7 @@ SCENE 01
 
 */
 
--> day_two_begins
-
 === day_two_begins ===
--   SYS_QUIZ_6
     -   CHR_TRO_REL
 
     {
@@ -31,7 +28,7 @@ SCENE 01
     Troy looks and sees that a small fire has broken out on next to one of the storage sheds on the marina. Since he is closest to the fire, he grabs one of the fire extinguishers from the boat and rushes to the shed.
 
         * [Put out the fire.]
-            FPO: The fire suppression minimage launches here.
+            - SYS_MINIGAME_30
                 **[OK.]
                     -> fire_contained
 
@@ -72,7 +69,7 @@ SCENE 01
                     *   {smaller} ["Are we ready to cast off?" asks Julian.]
 
                 }
-
+        
         -     -> opts
 
         = radio_fix_complete
@@ -103,20 +100,44 @@ SCENE 01
 
 
         = backfire_review
-        -   FPO: Link to study guide for backfire flame arrestor
-                    ** [OK.] -> check_conditions_day_2
+        - SYS_PDF_30
+        -> check_conditions_day_2
 
 
 == check_conditions_day_2 ==
-// equipment achievement addition 
--   SYS_ACHIEVE_2_4
+    -   SYS_ACHIEVE_2_4
     -   With the pre-departure checklist complete, the four friends don their life jackets and prepare to cast off.
 
      * [Check the conditions.]
+        -> co_wind_direction_3
+                        
+=== co_wind_direction_3 ===
+    -   The friends check the wind and current and find the following conditions.
+    
+        {co_wind_none} * There is <b>no</b> wind or current.
+            -> no_wind_co3
+        {co_wind_toward} * The wind and current direction is <b>toward</b> the dock.
+            -> wind_toward_dock_co3
+        {co_wind_away} * The wind and current direction is <b>away</b> from the dock. 
+            -> wind_away_dock_co3
+    
+== no_wind_co3 ==
+    ~ co_wind_none = false
+    -   SYS_MINIGAME_1_31
+        * [OK]
+            -> toward_fuel
+    
+== wind_toward_dock_co3 ==
+    ~ co_wind_toward = false
+    -   SYS_MINIGAME_2_31
+        * [OK]
+            -> toward_fuel
 
-                 -> co_wind_direction ->
-
-        -> toward_fuel
+== wind_away_dock_co3 == 
+    ~ co_wind_away = false
+    -   SYS_MINIGAME_3_31
+        * [OK]
+            -> toward_fuel
 
 == toward_fuel ==
     -   CHR_TRO_REL
@@ -138,12 +159,16 @@ SCENE 01
 
 == launch_retrieve_review ==
     *   [Review launching and retrieving a vessel.]
-        FPO: The study guide material launches here. Upon completion the activity launches.
-            ** [OK.] -> proceed_to_fueling
+        - SYS_PDF_31
+            ** [OK.] 
+                -> fueling_activity
 
     *   [Skip the review and go directly to the activity.]
-        FPO: The minigame for launch/retrieve inserts here.
-            ** [OK.] -> proceed_to_fueling
+        -> fueling_activity
+            
+== fueling_activity ==
+    - SYS_MINIGAME_32
+        -> proceed_to_fueling
 
 == proceed_to_fueling ==
     -   CHR_TRO_REL
@@ -151,46 +176,6 @@ SCENE 01
 
             * [The fuel depot.]
                 -> fueling_depot
-
-== fueling_depot ==
-    -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
-
-        * [ Dock to at the fuel station.]
-
-            -> docking_wind_direction ->
-
-            -> next_pump
-
-    = next_pump
-    -   The friends tie up and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat.
-
-     - (opts)
-                *    [ Cletus checks out the <i>Lakesong.</i>]
-                    -- CHR_CLT_REL
-                     Cletus gives their boat a long stare, from bow to stern and back again.  -> stare
-
-                *    (stare) [Cletus greets them.] {"Didn't get enough yesterday, eh?" he says.|"Those are some nice-looking kayaks you've got there," he says. "Going to do some exploring?"}
-
-                *    {stare} [Troy shrugs.] -> fueling
-
-        -     -> opts
-
-        = fueling
-        -   CHR_CLT_REL
-        -   CHR_TRO_REL
-
-        - "The only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good."
-
-            "That so?" says Cletus. "Must be nice to have all day to play." Cletus says nothing more, turning his back as he continues to fill the canisters.
-
-            * [Fuel the boat.]
-                FPO: The fueling activity inserts here.
-                ** [OK.]
-                -> after_fueling
-
-
-
-
 
 == after_fueling ==
     -   CHR_TRO_REL
@@ -219,13 +204,69 @@ SCENE 01
     -   Troy slows down a bit as he passes the smaller boat, in order to create as little wake as possible. Flat-bottomed vessels are especially vulnerable to capsizing or swamping.
 
             * [Review the material on <i>Hunting and Fishing from a Boat</i>.]
-                FPO: the study guide material will load here.
+                - SYS_PDF_32
                     ** [OK.] -> arrive_ki
 
             * [Continue on without reviewing.] -> arrive_ki
 
 
+== fueling_depot ==
+    -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
+        
+        * Dock to at the fuel station.[] 
+            {do_wind_none} ** There is <b>no</b> wind or current.
+                -> no_wind_s3
+            {do_wind_toward} ** The wind and current direction is <b>toward</b> the dock.
+                -> wind_toward_dock_s3
+            {do_wind_away} ** The wind and current direction is <b>away</b> from the dock. 
+                -> wind_away_dock_s3
+    
+// launch the docking activity again Here
+// need build another tunnel similar to casting off?
+    = no_wind_s3
+    ~ do_wind_none = false
+    -   SYS_MINIGAME_4_33
+        * [OK]
+            -> next_pump
+    
+    = wind_toward_dock_s3
+    ~ do_wind_toward = false
+    -   SYS_MINIGAME_5_33
+        * [OK]
+            -> next_pump
 
+    = wind_away_dock_s3
+    ~ do_wind_away = false
+    -   SYS_MINIGAME_6_33
+        * [OK]
+            -> next_pump
+            
+            
+== next_pump ==
+    -   The friends tie up and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat. 
+
+     - (opts)
+                *    [ Cletus checks out the <i>Lakesong.</i>]
+                    -- CHR_CLT_REL
+                     Cletus gives their boat a long stare, from bow to stern and back again.  -> stare
+
+                *    (stare) [Cletus greets them.] {"Didn't get enough yesterday, eh?" he says.|"Those are some nice-looking kayaks you've got there," he says. "Going to do some exploring?"}
+
+                *    {stare} [Troy shrugs.] -> fueling
+
+        -     -> opts
+
+        = fueling
+        -   CHR_CLT_REL
+        -   CHR_TRO_REL
+        
+        - "The only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good."
+
+            "That so?," says Cletus. "Must be nice to have all day to play." Cletus says nothing more, turning his back as he continues to fill the canisters. 
+
+        * [Fuel the boat.]
+            - SYS_MINIGAME_34
+            -> after_fueling
 
 === arrive_ki ===
 // add to other water activities badge here
@@ -252,9 +293,10 @@ SCENE 01
     -   CHR_TRO_REL
     -   Troy gives the first prolonged blast from the horn, as the <i>Lakesong</i> continues straight ahead into the fog where Troy expects to find the cove. A couple of times, the boat shudders briefly as it meets some cross currents.
 
-            "I think that cross current is where the cold water is flowing in," says Troy.
+    -   "I think that cross current is where the cold water is flowing in," says Troy.
             
-                * ["How cold is it?" asks Mia.]
+        * ["How cold is it?" asks Mia.]
+            -> how_cold
                 
             = how_cold
             -   CHR_TRO_REL
@@ -263,7 +305,7 @@ SCENE 01
             
                 * [Review "Cold Water Immersion and Hypothermia."]
                 // launch the sg for cold water immersion and hypo
-                --   FPO: study guide material for cold water immersion inserts here.
+                    -- SYS_PDF_33
                     ** [OK]
                         -> another_prolonged
         

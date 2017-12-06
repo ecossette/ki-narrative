@@ -5,15 +5,6 @@ SCENE 05
 
 */
 
-
-
-//-> inspect_for_damage
-
-
-
-
-
-
 === inspect_for_damage
     -   CHR_TRO_SUR
     -    Troy finds no damage nor any sign that the boat has taken on water.
@@ -31,26 +22,25 @@ SCENE 05
         * The friends remain quiet.
             -> no_discuss_the_isle
 
-== discuss_the_isle ==
+    = discuss_the_isle
     -   CHR_MIA_REL
     -   "So how's everyone feeling after our first visit to Kalkomey Isle?" Mia asks her friends.
 
         -   (opts)
 
                 * ["Very happy," says Julian.]
-                --   CHR_MIA_SUR
-                --   CHR_JUL_SML
+                -   CHR_MIA_SUR
+                -   CHR_JUL_SML
                     "Happy?" asks a surprised Mia.
                     "Yes, I'm happy that my first visit to Kalkomey Isle is also my <i>last</i> visit to Kalkomey Isle."
 
                 * ["Intrigued," says Alexis.]
-                --   CHR_ALX_REL
+                -   CHR_ALX_REL
                     "A disappearing boat? Flying creatures? That's intriguing," says Alexis. {enter_the_path: "And from what we saw on the beach, Kalkomey Isle is not abandoned."}
 
                 * ["Frustrated," says Troy.]
-                --   CHR_TRO_REL
+                -   CHR_TRO_REL
                     "If we knew the engine was going to OK," says Troy, briefly looking back toward the island, "we might have gotten a better look at those creatures."
-                        -> done
 
                 *    {loop} [Enough talking.]
                             -> done
@@ -77,7 +67,7 @@ SCENE 05
                     -> mia_photos_look
 
 
-== no_discuss_the_isle ==
+    = no_discuss_the_isle
     -   Everyone is lost in their thoughts as the <i>Lakesong</i> cruises steadily along. Nobody says anything for several minutes—until Troy remembers the photos.
 
             *   ["Hey, what about those photos you took, Mia?"]
@@ -155,29 +145,54 @@ SCENE 05
 
 
                 *   [Review night navigation.]
+                    -- SYS_PDF_23
                     // launch study guide of night nav here, upon close send student to night nav activity
-
-                        ** [FPO: Night nav review will launch here.]
-                            -> return_marina_day_one
-
+                    ** [Onward]
+                        -> night_nav_mini
+                
                 *   [Go directly to the night navigation activity.]
                     // launch night nav activity here move to return_to_marina_day_one upon complete
-                        ** [FPO: Night nav activity will launch here.]
-                            -> return_marina_day_one
-
+                    -> night_nav_mini
+                            
+        = night_nav_mini
+        - SYS_MINIGAME_23
+            * [Onward]
+            -> return_marina_day_one
+                        
 === return_marina_day_one
-
 // SND bring in dock sounds
 // SND no bird sounds since it's after dark
     -   CHR_MPO_REL
-    -   Entering the marina at <i>slow, no wake speed,</i> the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock. The man keeps gesturing toward an empty slip, while the woman looks on with a sad expression. Captain Garcia nods and takes notes.
+    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The keeps gesturing toward an empty slip, while woman looks on with a sad expression. Captain Garcia nods and takes notes.
+                    
+        *   [Dock the Lakesong.] 
+            {do_wind_none} ** There is <b>no</b> wind or current.
+                -> no_wind_s3
+            {do_wind_toward} ** The wind and current direction is <b>toward</b> the dock.
+                -> wind_toward_dock_s3
+            {do_wind_away} ** The wind and current direction is <b>away</b> from the dock. 
+                -> wind_away_dock_s3
+    
+// launch the docking activity again Here
+// need build another tunnel similar to casting off?
+    = no_wind_s3
+    ~ do_wind_none = false
+    -   SYS_MINIGAME_4_24
+        * [OK]
+            -> after_docking_ahoy
+    
+    = wind_toward_dock_s3
+    ~ do_wind_toward = false
+    -   SYS_MINIGAME_5_24
+        * [OK]
+            -> after_docking_ahoy
 
-            *   [Dock the <i>Lakesong.</i>]
-                 -> docking_wind_direction ->
-                // launch the docking activity again Here
-
-                -> after_docking_ahoy
-
+    = wind_away_dock_s3
+    ~ do_wind_away = false
+    -   SYS_MINIGAME_6_24
+        * [OK]
+            -> after_docking_ahoy
+                
 == after_docking_ahoy
 // SND kill engine sound but keep regular dock sounds
     -   CHR_TRO_REL
@@ -448,18 +463,15 @@ SCENE 05
     -   "My plan requires all four of us."
     ->  jul_perk_up
 
-
- === meet_0900 ===
+=== meet_0900 ===
     -   CHR_JUL_SML
     -   CHR_TRO_SML
     -   "OK, I'm in!" says Julian.
     -   "Great! Let's meet here at oh-nine-hundred," says Troy. {is_radio_damaged: "I'll need to replace the VHF antennae and radio, but I should be able to do that by nine."}
 
-            *  [The friends finish securing the <i>Lakesong</i> and depart for the night.]
-                
-                    // launch quiz 3.2 here, continue to day_two_begins
-
-            
+        *  [The friends finish securing the <i>Lakesong</i> and depart for the night.]
+            // launch quiz 3.2 here, continue to day_two_begins
+            -- SYS_QUIZ_6
             -> day_two_begins
 
 

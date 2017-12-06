@@ -1,37 +1,24 @@
 // act 05 scene 02
 
-=== second_entry_cove (condition) ===
--   CHR_ALX_REL
--   CHR_MIA_REL
+=== second_entry_cove_fog ===
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
 
-   {
+    - In the foggy cove, Mia and Alexis repeat the signal again—but just as before, there is no response from Julian and Troy. 
 
-    - "fog":
-        In the foggy cove, Mia and Alexis repeat the signal again—but just as before, there is no response from Julian and Troy. 
+        * [They wait and repeat the signal several times.]
+            --  The cove remains frustratingly still.
+            -> no_response_hour_two
+    
+=== second_entry_cove_clear ===
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
 
-            * [They wait and repeat the signal several times.] 
-                -> fog
+    -   Mia and Alexis enter the cove, but there is no sign of the kayaks. Alexis wonders if there is a chance that Julian and Troy are hunkered down somewhere out of sight along the shoreline. 
 
-
-
-
-
-    - "clear":
-        Mia and Alexis enter the cove, but there is no sign of the kayaks. Alexis wonders if there is a chance that Julian and Troy are hunkered down somewhere out of sight along the shoreline. 
-
-            * [Alexis signals with the boat's horn.] 
-                -> clear
-
-      }
-
-    = fog
-    -  The cove remains frustratingly still.
-        -> no_response_hour_two
-
-
-    = clear 
-    - "Nothing and more nothing," says Mia, frustrated. 
-        -> no_response_hour_two
+        * [Alexis signals with the boat's horn.]
+            -- "Nothing and more nothing," says Mia, frustrated. 
+            -> no_response_hour_two
 
 == no_response_hour_two ==
     -   CHR_MIA_SAD
