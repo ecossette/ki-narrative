@@ -64,6 +64,8 @@
                 -> toot_toot
 
     = toot_toot
+// add to boat equip badge
+-   SYS_ACHIEVE_2_5
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     - They hear two short toots of a boat horn.
@@ -85,6 +87,7 @@
 
 
 === nearing_the_cove ===
+-   SYS_ACHIEVE_7_4
 // entering the cove in fog, sounding signal, getting no response
 // this is reusable multi paths
     -   CHR_ALX_REL
@@ -106,6 +109,7 @@
 
 
 == use_the_horn ==
+
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   "We'll need to give the coded signal, according to the plan," says Alexis. She eases back on the throttle as visibility once again decreases. "But Julian was right that the fog will help us stay hidden."
@@ -135,6 +139,8 @@
                         -> gives_signal
 
             = gives_signal
+            // add to boat equip badge
+            -   SYS_ACHIEVE_2_5
             -   Alexis gives three quick toots with the horn, waits three seconds and then gives a long one, the agreed upon signal.
 
                 {
@@ -191,6 +197,7 @@
                             -> leave_cove
 
             -   -> opts
+
 
 
 === join_mia_alx_second_attempt ===
@@ -295,7 +302,9 @@
                 *   [At least for now, they both think to themselves.]
                     -> make_way_cove
 
-=== make_way_cove ===
+=== make_way_cove
+// adding to safe boat operation
+- SYS_ACHIEVE_4_5
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   The object—drone or bird—is still visible, but has moved much further to the east. Mia, Alexis, and the <i>Lakesong</i> continue their west-northwesterly loop back to the cove with the hope of finding Julian and Alexis waiting in the kayaks.

@@ -64,6 +64,8 @@ SCENE 01
             -> well_done_helmsmen
 
         = well_done_helmsmen
+// add to boat achievement here
+-   SYS_ACHIEVE_1_3
         - CHR_TRO_SML
         - "You all have the makings of future boat captains."
 
@@ -149,7 +151,9 @@ SCENE 01
             * [Troy adjusts course.]
                 -> shore_safest
 
- == shore_safest
+ == shore_safest ==
+ // add to emergency prep here
+ -  SYS_ACHIEVE_5_2
     -- CHR_TRO_REL
     -- CHR_ALX_REL
 

@@ -219,6 +219,8 @@ SCENE 04
 
 
 === no_go_island ===
+// add to other water activities badge
+-   SYS_ACHIEVE_5_3
 // SND just light water bg sounds here
     -   Having decided not to explore the island, the friends pass the time waiting for the fog to clear by playing cards.
 
@@ -328,6 +330,8 @@ SCENE 04
                     // need to account for a path of getting chased after
 
     == anchor_free ==
+// add to safe operation achievement
+-   SYS_ACHIEVE_4_4
     -   CHR_JUL_SML
     -   Julian hauls in the anchor.
     -   The fog continues to gradually break up. Some areas are clear, but other areas in the vicinity of the island are still patchy with fog.

@@ -1,4 +1,4 @@
-
+d
 /*------------------------
 
 ACT 02 BEGINS
@@ -313,6 +313,8 @@ VAR knows_strangers_name = false
                         -> mia_notices_boxes
 
 == mia_notices_boxes == 
+// adding to the boat achievement
+-   SYS_ACHIEVE_1_3
     -   CHR_MIA_REL
     -   "That looks like a lot supplies for such a small boat," says Mia. "I hope he knows his capacity limits."
 
@@ -349,12 +351,12 @@ VAR knows_strangers_name = false
             = alx_creeps
             
     
-                *   "I'm just glad he's gone," adds Alexis.[] "He gave me the creeps."
+                *   "I'm just glad he's gone," adds Alexis.[] "Something about him seems phoney."
                     -- CHR_ALX_REL
                     ** [Mia disagrees with Alexis.]
                     --- CHR_ALX_REL
                     --- CHR_MIA_REL
-                    "He wasn't that bad," says Mia. "Maybe a little eccentric, I'll give you that."
+                    "Really? Phoney?," says Mia. "Maybe a little eccentric, I'll give you that."
                     //then make him actually old? Not false beard?
                         -> jul_impatient
                     

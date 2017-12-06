@@ -132,6 +132,8 @@ SCENE 05
                 -> when_home_photo
 
         = when_home_photo
+// add to mystery achievement 
+-   SYS_ACHIEVE_7_2
         -   CHR_MIA_REL
         -   "When I get home I may be able to clean up the photo a bit on my computer."
 
@@ -164,6 +166,7 @@ SCENE 05
                             -> return_marina_day_one
 
 === return_marina_day_one
+
 // SND bring in dock sounds
 // SND no bird sounds since it's after dark
     -   CHR_MPO_REL
@@ -172,7 +175,7 @@ SCENE 05
             *   [Dock the <i>Lakesong.</i>]
                  -> docking_wind_direction ->
                 // launch the docking activity again Here
-d
+
                 -> after_docking_ahoy
 
 == after_docking_ahoy

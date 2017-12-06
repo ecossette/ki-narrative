@@ -8,6 +8,7 @@ SCENE 01
 -> day_two_begins
 
 === day_two_begins ===
+-   SYS_QUIZ_6
     -   CHR_TRO_REL
 
     {
@@ -39,7 +40,7 @@ SCENE 01
     -   CHR_TRO_REL
     -   By the time the fire is extinguished, the fire department has arrived. They thank Troy for his quick action and begin investigating the cause of the fire. Troy returns to the <i>Lakesong.</i>
 
-       
+
 
       * ["Ahoy, Troy!"]
         -> ahoy_troy
@@ -71,7 +72,7 @@ SCENE 01
                     *   {smaller} ["Are we ready to cast off?" asks Julian.]
 
                 }
-        
+
         -     -> opts
 
         = radio_fix_complete
@@ -103,10 +104,12 @@ SCENE 01
 
         = backfire_review
         -   FPO: Link to study guide for backfire flame arrestor
-                    ** [OK.]
+                    ** [OK.] -> check_conditions_day_2
 
 
 == check_conditions_day_2 ==
+// equipment achievement addition 
+-   SYS_ACHIEVE_2_4
     -   With the pre-departure checklist complete, the four friends don their life jackets and prepare to cast off.
 
      * [Check the conditions.]
@@ -149,6 +152,46 @@ SCENE 01
             * [The fuel depot.]
                 -> fueling_depot
 
+== fueling_depot ==
+    -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
+
+        * [ Dock to at the fuel station.]
+
+            -> docking_wind_direction ->
+
+            -> next_pump
+
+    = next_pump
+    -   The friends tie up and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat.
+
+     - (opts)
+                *    [ Cletus checks out the <i>Lakesong.</i>]
+                    -- CHR_CLT_REL
+                     Cletus gives their boat a long stare, from bow to stern and back again.  -> stare
+
+                *    (stare) [Cletus greets them.] {"Didn't get enough yesterday, eh?" he says.|"Those are some nice-looking kayaks you've got there," he says. "Going to do some exploring?"}
+
+                *    {stare} [Troy shrugs.] -> fueling
+
+        -     -> opts
+
+        = fueling
+        -   CHR_CLT_REL
+        -   CHR_TRO_REL
+
+        - "The only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good."
+
+            "That so?" says Cletus. "Must be nice to have all day to play." Cletus says nothing more, turning his back as he continues to fill the canisters.
+
+            * [Fuel the boat.]
+                FPO: The fueling activity inserts here.
+                ** [OK.]
+                -> after_fueling
+
+
+
+
+
 == after_fueling ==
     -   CHR_TRO_REL
     -   After fueling, Troy steers the <i>Lakesong</i> into the channel and heads for open waters. Along the way, they encounter several other boats entering and leaving the channel—including Mac in his small boat and Maura and Ian in one of their speedboats. Everyone is wearing PFDs and practicing good seamanship.
@@ -183,46 +226,13 @@ SCENE 01
 
 
 
-== fueling_depot ==
-    -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
-        
-        * [ Dock to at teh fuel station.] 
-         
-            -> docking_wind_direction ->
-            
-            -> next_pump
-    
-    = next_pump
-    -   The friends tie up and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat. 
-
-     - (opts)
-                *    [ Cletus checks out the <i>Lakesong.</i>]
-                    -- CHR_CLT_REL
-                     Cletus gives their boat a long stare, from bow to stern and back again.  -> stare
-
-                *    (stare) [Cletus greets them.] {"Didn't get enough yesterday, eh?" he says.|"Those are some nice-looking kayaks you've got there," he says. "Going to do some exploring?"}
-
-                *    {stare} [Troy shrugs.] -> fueling
-
-        -     -> opts
-
-        = fueling
-        -   CHR_CLT_REL
-        -   CHR_TRO_REL
-        
-        - "The only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good."
-
-            "That so?," says Cletus. "Must be nice to have all day to play." Cletus says nothing more, turning his back as he continues to fill the canisters. 
-
-            * [Fuel the boat.]
-                FPO: The fueling activity inserts here.
-                ** [OK.]
-                -> after_fueling
 
 === arrive_ki ===
+// add to other water activities badge here
+-   SYS_ACHIEVE_6_4
     -   The journey north toward Kalkomey Isle is a long one, but all four agree that the time is passing quicker than expected. The warm and sunny weather helps, too, at least until...
 
-            * [They hit the fog.]
+            * [They hit the fog.] -> infamous_fog
 
 == infamous_fog ==
     -   Just as the four friends discovered the day before, the stories of thick fog in this part of the lake are true enough.
@@ -242,15 +252,37 @@ SCENE 01
     -   CHR_TRO_REL
     -   Troy gives the first prolonged blast from the horn, as the <i>Lakesong</i> continues straight ahead into the fog where Troy expects to find the cove. A couple of times, the boat shudders briefly as it meets some cross currents.
 
-        - (opts)
-                *    [ Four pairs of eyes scan the area ahead.]
-                    -- CHR_TRO_REL
-                     Troy has the throttle just a bit over idle, keeping their speed to a minimum in the reduced visibility. All the boat's navigation lights are on.  -> birds
-
-                *    (birds) ["The fog isn't as bad as yesterday," says Alexis.] {"Looks like we've got about 100 yards of visibility, give or take," says Troy. "Enough for us to launch without being seen."|"The fog should burn off later," he says, "making it easier to find each other."}
-
-                *    {birds} [The sound of birds...] -> bird_sounds
-        -     -> opts
+            "I think that cross current is where the cold water is flowing in," says Troy.
+            
+                * ["How cold is it?" asks Mia.]
+                
+            = how_cold
+            -   CHR_TRO_REL
+            -   CHR_MIA_REL
+            -   "I'm dunno," says Troy. "Maybe fifty degrees? I sure wouldn't want to find out first-hand."
+            
+                * [Review "Cold Water Immersion and Hypothermia."]
+                // launch the sg for cold water immersion and hypo
+                --   FPO: study guide material for cold water immersion inserts here.
+                    ** [OK]
+                        -> another_prolonged
+        
+        
+        
+            = another_prolonged
+            //  add to emergency prep badge
+            -   SYS_ACHIEVE_5_5
+            -   Troy gives another prolonged blast on the horn.
+    
+            - (opts)
+                    *    [ Four pairs of eyes scan the area ahead.]
+                        -- CHR_TRO_REL
+                         Troy has the throttle just a bit over idle, keeping their speed to a minimum in the reduced visibility. All the boat's navigation lights are on.  -> birds
+    
+                    *    (birds) ["The fog isn't as bad as yesterday," says Alexis.] {"Looks like we've got about 100 yards of visibility, give or take," says Troy. "Enough for us to launch without being seen."|"The fog should burn off later," he says, "making it easier to find each other."}
+    
+                    *    {birds} [The sound of birds...] -> bird_sounds
+            -     -> opts
 
 == bird_sounds ==
     -   CHR_TRO_SML
@@ -261,11 +293,12 @@ SCENE 01
                 -> review_plan
 
 == review_plan ==
+
     -   CHR_TRO_REL
     -   "Let's go over the plan one more time," says Troy.
 
         - (opts)
-            *    [The kayaks.] 
+            *    [The kayaks.]
                 -- CHR_TRO_REL
                 -- CHR_ALX_REL
                 "Troy and Julian will head out in the kayaks to investigate the shoreline of the cove. You'll spend up to two hours looking for clues about what happened to the boat we saw disappear yesterday," says Alexis.
@@ -320,6 +353,8 @@ SCENE 01
                 -> no_two_way
 
 == no_two_way ==
+// add to emergency prep
+-   SYS_ACHIEVE_4_1
     -   CHR_TRO_REL
     -   "Unfortunately, no," says Troy. "I couldn't get my old two-way radio set to work. I stopped by Willard's store this morning to get a new one, but he said they were sold out."
 
@@ -368,6 +403,8 @@ SCENE 01
     *    -> fog_or_no
 
 == fog_or_no ==
+// add trip planning badge
+-   SYS_ACHIEVE_3_4
     -   CHR_TRO_REL
     * "For or no fog, it's all good," says Troy.[] "The plan accounts for both possibilities..."
 
@@ -397,7 +434,7 @@ SCENE 01
             -- CHR_ALX_WRD
             "OK, OK, I've got it," says Alexis. "But I'm still going to be nervous driving the boat."
 
-                ["You got this, Alexis," says Troy.]
+                * ["You got this, Alexis," says Troy.]
                     -> got_this_alexis
 
         =   got_this_alexis

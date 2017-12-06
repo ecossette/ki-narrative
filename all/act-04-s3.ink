@@ -1,4 +1,5 @@
 === follow_boat ===
+    -   SYS_QUIZ_7
     -   CHR_MIA_REL
     -   CHR_ALX_REL
     - Mia and Alexis watch as Julian and Troy paddle off in the kayaks and disappear behind the fog. Alexis starts the <i>Lakesong's</i> engine and slowly takes the boat out of the cove while Mia provides a steady lookout to the waters ahead. 
@@ -26,6 +27,8 @@
 
 
 === beyond_cove ===
+// completing other water activities here for kayak path
+- SYS_ACHIEVE_6_5
 
     -   CHR_ALX_REL
     
@@ -130,8 +133,6 @@
 
             = alx_toots
             -   Alexis responds with a single prolonged blast from the <i>Lakesong's</i> horn indicating their position to the other vessel hidden in the fog.
-
-                A couple more advisory toots are exchanged until gradually they see another boat appear out of the fog.
 
                     * ["Ahoy there!" a voice calls out.]
                         -> fog_meet_randomizer

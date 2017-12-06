@@ -1,5 +1,3 @@
-VAR parts = 0
-
 
 /*--------------------------------------------------------------------------------
 
@@ -7,13 +5,13 @@ VAR parts = 0
 
 --------------------------------------------------------------------------------*/
 
-//-> intro
+-> intro
 
 //-> make_way_cove
 
 //-> temp_var_set_hypothermia_tree
 //->  set_kayak_conditions_for_no_follow
--> temp_debug_solve_matrix
+//-> temp_debug_solve_matrix
 //-> boat_in_distance
 //-> approach_discuss_suspicion
  //   -> met_by_police
@@ -107,6 +105,8 @@ VAR parts = 0
             
 
 == julian_reaction ==
+// unlocking achievement 1, the boat
+-   SYS_ACHIEVE_1_1
     -   CHR_JUL_SML 
     -   "Wow! She's a real beauty!" Julian exclaims, giving Troy a thumbs up. "And she's <i>yours</i>?"
     "I wish," responds Troy. "Na, she's my brother's. But mine for the day."
@@ -348,6 +348,8 @@ VAR parts = 0
 
 
 == speaking_of_safety ==
+// achievement 1 to 25%
+- SYS_ACHIEVE_1_2
     -   "Speaking of safety," Troy says, getting everyone's attention. -> get_started_pre
 
 == get_started_pre ==
@@ -370,6 +372,8 @@ VAR parts = 0
 
 === post_predep_check_sg ===
 // return here from study guide 
+// unlock achievement 3 here
+-   SYS_ACHIEVE_3_1
     -   Now that you're familiar with the pre-departure checklist, let's rejoin the four friends on the <i>Lakesong</i>, where...
     //deleted 'Great' as think the narrator should have as neutral a personality as possible
         * [Troy has an idea.]
@@ -677,6 +681,8 @@ VAR parts = 0
         -> jul_finishes
 
 == jul_finishes ==
+// add to boat equip achievement
+-   SYS_ACHIEVE_2_1
     -   CHR_JUL_GRN
     -   CHR_TRO_REL
     -   Julian finds each of the <i>Lakesong's</i> fire extinguishers in an accessible location and completes the inspection. He reports back to Troy.
@@ -706,7 +712,7 @@ VAR parts = 0
 == alx_vol_vds ==
     -   CHR_ALX_SML
     -   CHR_TRO_SML
-    -   "I'll take the VDSs, Troy," Alexis volunteers. "Mia can help."
+    -   "I'll take the signals, Troy," Alexis volunteers. "Mia can help."
     //had Troy say them out loud, so she can just talk naturally.
         "Great!" says Troy. "I'll check the engine cut-off switch and lanyard."
             * [Julian reclines on a cushioned seat.] -> jul_chills
@@ -741,7 +747,7 @@ VAR parts = 0
     -   CHR_MIA_CUR
     -   CHR_ALX_REL
 
-    -   "Yes, there are two types of VDSs," Alexis explains. "Day VDSs can be seen in bright sunlight, and night VDSs can be seen after dark."
+    -   "Yes, there are two types of VDS or visual display signals," Alexis explains. "Day VDSs can be seen in bright sunlight, and night VDSs can be seen after dark."
         * [Mia nods.] -> mia_nods_dn
             
 == mia_nods_dn ==
@@ -768,7 +774,10 @@ VAR parts = 0
         * ["OK. I'll add that to the list."]
             -> need_supplies
 
+
 === need_supplies ===
+// 25% achieve for trip planning
+-   SYS_ACHIEVE_3_2
     -   CHR_TRO_HLP
     -   Troy considers his list. "We are going to need to purchase a few things before we can safely take the boat out."
     // safely prepared to cast off --> safe to leave. / safe to depart  (more natural, maybe?)
@@ -925,6 +934,7 @@ VAR parts = 0
         ->target_lakesong
         
 == target_lakesong ==
+
    -    CHR_TRO_REL
    -    CHR_ALX_CUR
    -    "You don't think the thieves might target the <i>Lakesong</i>, do you?" asks Alexis. 
@@ -1028,6 +1038,8 @@ VAR parts = 0
         
         
 === range_of_prices ===
+// unlock equipment achievement
+-   SYS_ACHIEVE_2_2
 // question loop only need show willard
     - CHR_WLD_REL
     - "I'll show a range of PFD types at various prices and we can go from there," the shopkeeper says.
@@ -1500,6 +1512,8 @@ VAR pfd_tryer = "Mia"
             -> where_you_headed
 
 === where_you_headed ====
+// add to trip planning badge here
+-   SYS_ACHIEVE_3_3
     -   CHR_JUL_CUR
     -   CHR_WLD_REL
         "Is that a chart of the lake?" asks Julian, pointing to a large nautical map.
@@ -1513,7 +1527,7 @@ VAR pfd_tryer = "Mia"
 == lake_best_area ==
     -   CHR_WLD_REL
     -   CHR_TRO_REL
-    -   "Generally, your best recreational boating is found over this way, toward the east of Laketown." Mr. Willard indicates the area with his hand. 
+    -   "Of course, you'll want to avoid this area here where the commercial port is located," says Mr. Willard fingering the area on the chart. "Generally, your best recreational boating is found over this way, toward the east of Laketown." 
     - "My brother recommended the same thing," says Troy.  
         "Ah, a man who knows the lake well, your brother," offers Mr. Willard.
         
@@ -1734,7 +1748,9 @@ VAR pfd_tryer = "Mia"
     -   "Here's the deal," Mr. Willard says, crossing his arms. "The human body cools 25 times faster in cold water than it does in air."
         * [The four friends nod.] -> nobody_in_cold_water
     
-== nobody_in_cold_water ==  
+== nobody_in_cold_water == 
+// unlock emergency prep here
+-   SYS_ACHIEVE_5_1
     -   CHR_WLD_SKP
     -   CHR_ALX_REL
     -   "I think I speak for everyone," Alexis says, "when I say that none of us want to find that out firsthand."
@@ -1947,6 +1963,8 @@ VAR pfd_tryer = "Mia"
 
 
 === walking_back ===
+// unlock mystery achievement
+-   SYS_ACHIEVE_7_1
     -   Walking back to the <i>Lakesong</i> carrying their new supplies, the friends discuss what happened in the store.
     
     - (opts)

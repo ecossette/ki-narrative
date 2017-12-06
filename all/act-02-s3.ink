@@ -9,12 +9,18 @@
         = drills
         -   CHR_TRO_REL
         As they continue cruising, Troy conducts a couple of 'what if' emergency drills with the group. He also reminds his friends on the importance of keeping a proper lookout—looking <i>and</i> listening—at all times.
-    //otherwise it sounded like the number of eyes was relevant
+        
+            *   ["Situational awareness," says Troy.]
     
-           * ["Hey, what's that?" Mia asks suddenly.] 
-            -> mia_asks_pointing
+        = sit_aware
+        -   "Situation awareness," says Troy, "just knowing what's going on around you, is one of keys to safe boating."     
+    
+                * ["Hey, what's that?" Mia asks suddenly.] 
+                -> mia_asks_pointing
         
         = mia_asks_pointing
+        // add to safe boat op 
+        -   SYS_ACHIEVE_4_2
         -   CHR_MIA_SUR
         -   "Over there!" she says, pointing straight out from the <i>Lakesong's</i> port side.
             // SOUND boat circle of death in distance, lower volume, should be very much in distance

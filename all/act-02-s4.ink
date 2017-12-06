@@ -1,5 +1,7 @@
 
 === recover_victim_1 === 
+// bump up safe operation to 25%
+-   SYS_ACHIEVE_4_2
     -   CHR_ALX_REL
     -   CHR_JUL_REL
     // SOUND ambient no engine, continue circle of death
@@ -138,6 +140,8 @@
                 -> captain_continues
           
         = captain_continues
+// add to equipment here
+-   SYS_ACHIEVE_2_3
         -   CHR_MPO_REL
         -   CHR_IAN_REL
         -   "But if you had used your engine cut-off switch lanyard, luck wouldn't have a played a role: your engine would have stopped as soon as you were tossed." Maura glances at Alexis but doesn't meet her eye. 

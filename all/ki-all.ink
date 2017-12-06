@@ -4,7 +4,8 @@ INCLUDE act-03.ink
 INCLUDE act-04.ink
 INCLUDE act-05.ink
 
-
+    VAR parts = 0
+    
     VAR who_saw = NOBODY
     VAR where_saw = NOWHERE
     VAR what_saw = UNKNOWN

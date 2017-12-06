@@ -403,6 +403,8 @@ SCENE 02
             -> free_from_sandbar
 
 == free_from_sandbar ==
+// add to emergency prep badge
+-   SYS_ACHIEVE_5_3
     -   CHR_TRO_REL
     -   "Now that we're clear of the sandbar," Troy says, "I'm going to start the engine to make sure everything is OK after our mishap."
 
@@ -642,6 +644,8 @@ SCENE 02
                 -> if_were_symptoms
 
 == if_were_symptoms ==
+// add to safe operation achievement
+-   SYS_ACHIEVE_4_3
     -   CHR_TRO_SML
     -   CHR_MIA_REL
     -   "If any of us had symptoms, we'd need to seek medical attention ASAP," says Troy. "Instead, we can wait here until the fog lifts."
@@ -674,4 +678,4 @@ SCENE 02
 
                 -> after_dropping_anchor
 
-    // link up with === after_dropping_anchor s03 when stiching scenes together up with === after_dropping_anchor s03 when stiching scenes together
+   

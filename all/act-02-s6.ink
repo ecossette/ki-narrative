@@ -8,15 +8,27 @@ SCENE 06
 
 VAR houseboat_st = 0
 
-== pwc_return_houseboat
+== pwc_return_houseboat ==
     -   CHR_ALX_SML
      // SOUND pwc generic
     -   Ian, Mia, and Julian return to the houseboat on the PWCs. 
         
             * "Let the water skiing commence!"[] shouts an enthusiastic Alexis.
-                -> mia_pwc_choice
+                -> review_naslba_6_2
 
+        = review_naslba_6_2
+        -   Before we rejoin the friends, let's do a quick review of the safety issues related to <i>water skiing, towed devices, and wake sports</i>.
+        
+            * [Launch the review.]
+            //SG for 6.2 water skiing, towed devices, and wake sports
+                FPO: review of water skiing, towed devices, and wake sports inserts here.
+                    ** [OK]
+                    -> mia_pwc_choice
+        
+        
         = mia_pwc_choice
+        // bump up other activities badge here
+-   SYS_ACHIEVE_6_2
         // SOUND water generic continue until next sound
         -   CHR_IAN_REL
         -   But before they can get started, Ian has to make some adjustments.

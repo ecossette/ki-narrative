@@ -153,11 +153,17 @@ the story will flow in/out of this tunnel on several occasion during play
 // ****** end casting off tunnel ******
 
  === depart_dock_day_1 ===
-    -   SYS_SCENE_4
+-   SYS_SCENE_4
     -   CHR_TRO_REL
     -   Troy eases the <i>Lakesong</i> away from the Laketown docks and steers it toward the boat channel that leads to open water. 
     
-        Alexis, Mia, and Julian gather round Troy at the wheel.
+            * [Enter the channel.]
+                -> enter_channel
+            
+        = enter_channel
+        // unlock badge 4 
+        -  SYS_ACHIEVE_4_1
+        As the boat enters the channel, Alexis, Mia, and Julian gather round Troy at the wheel.
         // style on comma before and?
         
             * [They have questions.]
@@ -240,10 +246,23 @@ the story will flow in/out of this tunnel on several occasion during play
                 -- CHR_TRO_REL
                 -- "We're not producing any wake, so we should be fine to overtake him even though he's low and loaded."
                 
-                ** "We should toot the horn[."] to signal our intent, right?" checks Alexis.
-                //don't need to keep referring to each other's names. People don't do this unless they think someone isn't paying attention
-                    --- CHR_ALX_REL
+                ** ["We should toot the horn, right?" says Alexis?]
+                    
+                    *** [Review sound devices requirments.]
+                    // link to sound producing requirement SG 
+                        FPO: study guide material inserts here.
+                            **** [OK] -> sound_requirement
+                    
+                    *** [Continue without a review.]
+                        -> sound_requirement
                 
+                    
+            = sound_requirement
+            - CHR_ALX_REL
+            - CHR_TRO_REL
+            -   "We should toot the horn[."] to signal our intent, right?" checks Alexis.       
+                    
+                    
                     ***"That's right," answers Troy.[] "One toot if we intend to pass on his port side, two toots if we go to his starboard."
                         ---- CHR_TRO_REL
                         ---- CHR_JUL_SML

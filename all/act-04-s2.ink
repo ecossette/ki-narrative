@@ -1,7 +1,10 @@
 === follow_kayaks ===
+-   SYS_QUIZ_7
     -    The kayaks slide into the fog and quickly lose sight of the <i>Lakesong</i>. Julian is an experienced rower, and Troy has to work to keep pace. They reach the cove's shoreline and start to circumnavigate it, keeping an eye out for anything unusual.
 
         *  [The minutes pass... 15, 20, then 30 minutes...]
+        // completing other water activities here for kayak path
+        -- SYS_ACHIEVE_6_5
         After half an hour, they've managed to search roughly half of the cove, but haven't found anything at all, despite shore's lighter fog and good visibility.
 
             Julian stops paddling, then pivots his kayak about until he is facing back in the direction from which he came.
@@ -87,6 +90,7 @@
         -     -> opts
 
     = get_a_load
+    -   SYS_ACHIEVE_7_4
     -   CHR_TRO_SUR
     -   Troy emerges from beneath the vine curtain expecting to see the cove's shoreline and is surprised when he sees...
 
@@ -742,7 +746,7 @@
         = get_binocs
         -   CHR_JUL_REL
         -   CHR_TRO_REL
-        -   "I've got a pair in my dry bag..." he says, reaching for where he left it.
+        -   "I've got a pair in my dry bag..." he says, reaching for where he left it."
 
             - (opts)
 

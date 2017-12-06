@@ -7,6 +7,7 @@ SCENE 03
 
 
 === after_dropping_anchor ===
+-   SYS_QUIZ_5
     -   CHR_TRO_REL
     -   After successfully anchoring the <i>Lakesong</i>, Troy does another quick check for leaks.
 
@@ -175,6 +176,8 @@ VAR explore_island = true
 
 
 == on_paddeboards ==
+// add to other water activities badge
+-   SYS_ACHIEVE_5_3
 // SND paddling
     -   Troy and Mia navigate one board, while Alexis and Julian take the other. Behind them, the Lakesong's masthead and stern lights shine brightly, acting as the all-around white light required when a boat is anchored in fog or darkness. 
 

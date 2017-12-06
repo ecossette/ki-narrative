@@ -41,7 +41,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
     = drive_first
     -   CHR_MIA_REL
     -   CHR_IAN_REL
-    -   Mia suprises everyone when she volunteers. 
+    -   Mia surprises everyone when she volunteers. 
             
         "Great!" says Ian. "Have you been jet skiing with a PWC before?"
 
@@ -51,6 +51,8 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
                 -> ian_explains_safe
     
     = ian_explains_safe
+// unlock other activities
+-   SYS_ACHIEVE_6_1
     - "I'll give a quick PWC overview," says Ian before noticing that Alexis is looking at him suspiciously. "Don't worry," he says, "Despite what you saw this morning , I really do know what I'm doing, especially when it comes to jet skiing."
     
         "He races watercross," says Maura. 
