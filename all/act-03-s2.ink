@@ -140,7 +140,7 @@ SCENE 02
 
 
 
-            *   {loop} [Onwards!]
+            *   {loop} [Onward!]
                 ->done
 
         - (loop)
@@ -173,6 +173,7 @@ SCENE 02
                 -     -> opts
 
 == enter_the_fog ==
+-   SYS_CHAP_10
 // SND boat motor sound should be low RPM here, storms distant but there
     -   CHR_TRO_REL
     -   Troy slows the <i>Lakesong</i> to a crawl, and the fog envelopes the boat. The three friends continue acting as lookouts—Alexis on the bow, Mia on port, and Julian on starboard.
@@ -285,7 +286,7 @@ SCENE 02
 
     = check_leaks
     - CHR_TRO_REL
-    - Troy gives the <i>Lakesong</i> a careful but quick check for leaks, and also gives the sound signal for a boat restricted in her ability to manuever—two prolonged blasts in succession with an interval of about 2 seconds between them.
+    - Troy gives the <i>Lakesong</i> a careful but quick check for leaks, and also gives the sound signal for a boat restricted in her ability to maneuver—two prolonged blasts in succession with an interval of about 2 seconds between them.
 
         * [Troy wipes his brow.]
             -> no_leaks_so_far
@@ -408,7 +409,7 @@ SCENE 02
     -   CHR_TRO_REL
     -   "Now that we're clear of the sandbar," Troy says, "I'm going to start the engine to make sure everything is OK after our mishap."
 
-            * Troy starts the engine[.] and lets it idle, listening for anything that sounds out of the ordinary. He also gives two prolonged blasts in succession, the signal for a power-driven vessel underay but stopped and making no way through the water.
+            * Troy starts the engine[.] and lets it idle, listening for anything that sounds out of the ordinary. He also gives two prolonged blasts in succession, the signal for a power-driven vessel underway but stopped and making no way through the water.
 // SND engine idle/low
 
                 ** [The fog remains very thick.]
@@ -650,7 +651,7 @@ SCENE 02
     -   CHR_MIA_REL
     -   "If any of us had symptoms, we'd need to seek medical attention ASAP," says Troy. "Instead, we can wait here until the fog lifts."
 
-        * [Onwards!]
+        * [Onward!]
         // SYS launch quiz 3.1 here
             -- SYS_QUIZ_05
             ** [OK.]
@@ -673,7 +674,7 @@ SCENE 02
 
 == anchoring_mini ==
 -   SYS_MINIGAME_22
-*   [Onward]
+*   [Continue]
     -> after_dropping_anchor
     
     // link up with === after_dropping_anchor s03 when stiching scenes togethernk up with === after_dropping_anchor s03 when stiching scenes together

@@ -89,7 +89,7 @@
                 * [The pursuers bank.]
                     The pursuers bank in response to the boat's change in course. -> boat
 
-                * (boat) [The boat cruises steady.] {The boat cruises steady, and the pursuing swarm tries to close the gap.|The <i>Lakesong's</i> speed makes it difficult for the pursuers to gain on the boat, as they keep needing to bank and cover more distance.}
+                * (boat) [The boat cruises steady.] {The boat cruises steady, and the pursuing swarm tries to close the gap.|The <i>Lakesong's</i> speed makes it difficult for the pursuers to gain on the boat, as they continue to bank and cover more distance.}
 
 
                 * {boat} ["Like a triangle," says Mia.]
@@ -397,7 +397,7 @@
         {
 
             - cletus_on_beach:
-            "Kind of strange to find {who_saw} our here after all his stories saying how spooky Kalkomey Isle is," says Alexis.
+            "Kind of strange to find {who_saw} out here after all his stories saying how spooky Kalkomey Isle is," says Alexis.
                 ** ["He's the last person I want to run into out here," says Mia.]
                     "{who_saw} seems a bit odd."
                     "That's an understatement," says Alexis..

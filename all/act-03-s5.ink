@@ -29,17 +29,17 @@ SCENE 05
         -   (opts)
 
                 * ["Very happy," says Julian.]
-                -   CHR_MIA_SUR
-                -   CHR_JUL_SML
+                --   CHR_MIA_SUR
+                --   CHR_JUL_SML
                     "Happy?" asks a surprised Mia.
                     "Yes, I'm happy that my first visit to Kalkomey Isle is also my <i>last</i> visit to Kalkomey Isle."
 
                 * ["Intrigued," says Alexis.]
-                -   CHR_ALX_REL
+                --   CHR_ALX_REL
                     "A disappearing boat? Flying creatures? That's intriguing," says Alexis. {enter_the_path: "And from what we saw on the beach, Kalkomey Isle is not abandoned."}
 
                 * ["Frustrated," says Troy.]
-                -   CHR_TRO_REL
+                --   CHR_TRO_REL
                     "If we knew the engine was going to OK," says Troy, briefly looking back toward the island, "we might have gotten a better look at those creatures."
 
                 *    {loop} [Enough talking.]
@@ -193,7 +193,9 @@ SCENE 05
         * [OK]
             -> after_docking_ahoy
                 
-== after_docking_ahoy
+
+== after_docking_ahoy ==
+-   SYS_CHAP_13
 // SND kill engine sound but keep regular dock sounds
     -   CHR_TRO_REL
     -   With the <i>Lakesong</i> successfully docked, Troy instructs his three friends on the tasks needed to secure the boat for the night.

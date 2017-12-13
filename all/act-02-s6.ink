@@ -195,7 +195,7 @@ VAR houseboat_st = 0
         // SYS_SOUND_21
         -   After casting off, the <i>Lakesong</i> heads out towards open water.
 
-        * [Onwards!]
+        * [Onward!]
             // launch quiz 2.2 here
             -- SYS_QUIZ_04                        
             -> discussion_after_houseboat

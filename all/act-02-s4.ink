@@ -274,7 +274,7 @@
                 //why? Why can't she just say thanks?
                 // swapped to smiles
                
-            *     "Well, it's already late-morning," says Alexis.[] "We'd planed to be skiing by now."
+            *     "Well, it's already late-morning," says Alexis.[] "We'd planned to be skiing by now."
                 -- CHR_ALX_ANG
                 -- CHR_IAN_SML
             

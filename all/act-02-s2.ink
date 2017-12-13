@@ -16,6 +16,7 @@
 
 
 === prepare_to_castoff ===
+-   SYS_CHAP_06
             
         - The first thing they do to prepare to cast off is...
 // need shuffle these choices            
@@ -147,7 +148,7 @@ the story will flow in/out of this tunnel on several occasion during play
 == completed_casting_off ==
     -   Everyone smiles as the boat slips away from the dock with a successful cast off!
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
-        + [Onwards!]
+        + [Onward!]
     -    ->->
 
 // ****** end casting off tunnel ******
@@ -189,7 +190,7 @@ the story will flow in/out of this tunnel on several occasion during play
                      //Shouldn't this be Mia, and below? Alexis knows a lot about boating. 
                         -- CHR_TRO_REL
                         -- CHR_MIA_REL
-                            "That's a visual cue to help us work out whether we are headed out to or returning from open waters," says Alexis be. "Just remember <b>'red right returning'</b>."
+                            "That's a visual cue to help us work out whether we are headed out to or returning from open waters," says Alexis. "Just remember <b>'red right returning'</b>."
                             "Well, that's easy enough to remember," says Mia. 
                             //this doesn't make any sense to *me*. 
                             // OH! After rereading, she's talking about markers outside the boat. I was thinking it was something near the wheel/engine switch, and wondering whether it automatically knew what direction they were in. Make clearer; maybe also have her say 'well that's easy enought to remember.'
@@ -200,7 +201,7 @@ the story will flow in/out of this tunnel on several occasion during play
                         "Right now we're following the channel markers. We'll turn east soon, after we've cleared the channel," says Troy. 
                         //it's not possible to ask all the questions even if you want to?
             // We require the player to ask at least one question
-                     *    {loop} [Onwards!]
+                     *    {loop} [Onward!]
                         -> done
                     - (loop)
             // loop a few times
@@ -246,7 +247,7 @@ the story will flow in/out of this tunnel on several occasion during play
                 -- CHR_TRO_REL
                 -- "We're not producing any wake, so we should be fine to overtake him even though he's low and loaded."
                 
-                ** [a]
+                ** ["We should toot the horn, right?" asks Alexis]
                     
                     *** [Review sound devices requirements.]
                     // link to sound producing requirement SG 

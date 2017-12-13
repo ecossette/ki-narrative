@@ -9,7 +9,10 @@ VAR parts = 0
 
 -> intro
 
+
+
 === intro ===
+-   SYS_CHAP_00
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.
     *   [- next -]
     
@@ -75,9 +78,9 @@ VAR parts = 0
 
 === intro_study_guide ===  
     -   CHR_MIA_DEF 
-    *   [Onwards!]<i>The Boat Ed Course Study Guide</i> is available for you to help Troy, Alexis, Julian, and Mia at any point during the adventure.
+    *   [Onward!]<i>The Boat Ed Course Study Guide</i> is available for you to help Troy, Alexis, Julian, and Mia at any point during the adventure.
        
-        **   [Tell me more.] To access the Study Guide, just touch the icon labeled "GUIDE" at the top right of your screen. 
+        **   [Tell me more.] To access the Study Guide, just touch the gear icon in the top right corner and then choose "Study Guide." 
             *** [OK, got it.] 
                     -> intro_the_lakesong
         **   [OK, got it.] 
@@ -85,6 +88,7 @@ VAR parts = 0
 
 === intro_the_lakesong ===
     - SYS_SCENE_1
+    -   SYS_CHAP_01
     -   Troy leads the way down the dock and stops in front of an impressive boat.
         *   ["Here she is!"]
             -> lakesong_look
@@ -376,6 +380,7 @@ VAR parts = 0
 
 --------------------------------------------------------------------------------*/
 === pre_depart_help ===
+    -   SYS_CHAP_02
     -   CHR_TRO_REL
         "Working through the pre-departure checklist will go faster if the three of you help," says Troy. "I'll check the engine compartment, bilge, and fuel. I'll give each of you something to check." 
         -> pre_departure_tasks
@@ -950,6 +955,7 @@ VAR parts = 0
 --------------------------------------------------------------------------------*/
 
 === meet_willard ===
+    -   SYS_CHAP_03
 //  after walking along dock with robbery discussion "They arrive in front of the store."
 
     -   The friends arrive at the entrance of the dockside supply store.
@@ -1099,7 +1105,7 @@ VAR parts = 0
         - "It appears you've all found something you like that matches the activities you have planned." he declares.
         -   CHR_WLD_SML
         
-            *   [Onwards!] -> pfd_learning_activity
+            *   [Onward!] -> pfd_learning_activity
 
 === pfd_learning_activity ===
 //  launch the PFD learning activity (minigame) here
@@ -1414,6 +1420,7 @@ VAR pfd_tryer = "Mia"
 
 
 === float_plan ===
+    -   SYS_CHAP_04
     - CHR_WLD_REL
     - CHR_TRO_REL
     - "I can imagine," says Troy. "These robberies are hurting everyone who has an interest in boating."
@@ -1518,7 +1525,7 @@ VAR pfd_tryer = "Mia"
 == lake_best_area ==
     -   CHR_WLD_REL
     -   CHR_TRO_REL
-    -   "Of course, you'll want to avoid this area here where the commercial port is located," says Mr. Willard fingering the area on the chart. "Generally, your best recreational boating is found over this way, toward the east of Laketown." 
+    -   "Of course, you'll want to avoid this area here where the commercial port is located," says Mr. Willard pointing to an area on the chart. "Generally, your best recreational boating is found over this way, toward the east of Laketown." 
     - "My brother recommended the same thing," says Troy.  
         "Ah, a man who knows the lake well, your brother," offers Mr. Willard.
         
@@ -1658,7 +1665,7 @@ VAR pfd_tryer = "Mia"
     
         *    (dreary) ["Fog is creepy but cool," says Alexis.] 
             -- CHR_WLD_GPY
-        {"It's a dreary, cold frog," counters Mr. Willard. | "Thick as pea soup."}
+        {"It's a dreary, cold fog," counters Mr. Willard. | "Thick as pea soup."}
     
         *    {dreary} [Mia shivers.] -> fog_north
     

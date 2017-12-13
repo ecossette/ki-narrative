@@ -19,7 +19,7 @@
 -   Following the plan, after leaving Julian and Troy to investigate the cove on the kayaks, Alexis had taken the <i>Lakesong</i> away from the cove to put some distance between the boat and the island. Alexis intends to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. Alexis gives the horn a prolonged blast every two minutes.
 
     After some time passes...
-            * DEBUG[] -> recovery_fine_aboard_boat
+            //* DEBUG[] -> recovery_fine_aboard_boat
 
             * [The fog begins to clear.]
                 -> the_fog_clears
@@ -101,7 +101,7 @@
     -   CHR_ALX_REL        
         -   (opts)
         
-            *   [Alexis hesistates.]
+            *   [Alexis hesitates.]
                 Alexis hesitates for a moment, a part of her not wanting to give away their location, but her responsibility in this situation is clear.-> rule
         
             *   (rule) [Alexis recalls the rule.] {She remembers the Coast Guard regs—<i>A power-driven vessel making way through the water shall sound at intervals of not more than 2 minutes one prolonged blast.</i>| The 2 minute mark approaches...}
@@ -270,8 +270,8 @@
         -   CHR_ALX_SAD
         -   Alexis feels her stomach clench and...
 
-        **  [... and stands frozen in place.]
-        **  [... pauses for a moment, then deflects.] -> deflects
+            *  [... and stands frozen in place.] -> frozen
+            *  [... pauses for a moment, then deflects.] -> deflects
 
 
 

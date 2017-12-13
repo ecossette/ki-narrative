@@ -12,7 +12,7 @@
 
             Julian stops paddling, then pivots his kayak about until he is facing back in the direction from which he came.
 
-                * ["You see something?" asks Troy.]
+                ** ["You see something?" asks Troy.]
                     -> jul_stops_paddling
 
 == jul_stops_paddling ==
@@ -257,12 +257,12 @@
                 * [Wait for Mia and Alexis]
                     -> wait_for_mia_alexis
 
-// need to join the above to Mia and Alexis in <i>Lakesong</i> as they begin their return to the cove. will have the girls hear a boat just as they are about to toot the horn signal.
+                // need to join the above to Mia and Alexis in <i>Lakesong</i> as they begin their return to the cove. will have the girls hear a boat just as they are about to toot the horn signal.
 
             - else:
 
                 * [Follow Mia and Alexis in the boat.]
-                -> follow_boat
+                -> leave_kayak_path_early
 
         }
 
@@ -327,6 +327,8 @@
             {
                 - monkey_eyes_him:
                 "Those monkeys are especially loud," says Troy. "And it feels like they're following us."
+                    * ["How far do you think it goes?"]
+                        -> how_far_stream_goes
 
                 - else:
                     * ["I swear I keep hearing monkeys," says Troy.]
@@ -380,7 +382,7 @@
 
                 * They steer around the bend and find[...] more stream leading to yet another bend 50 yards or so further along.
 
-                    "Well, I guess that's it, then," says Troy, dropping his paddle to being his pivot turn to reverse direction.
+                    "Well, I guess that's it, then," says Troy, dropping his paddle to begin his pivot turn to reverse direction.
 
                         ** [CLANG!]
                             -> clang_heard
@@ -428,7 +430,8 @@
 
         "Since I'm so slow, I better get a head-start," says Troy grinning.
 
-        Julian pulls in behind Troy and they paddle forward down the middle of the stream and around the next bend. And then around yet another. And then they hear...
+        Julian pulls in behind Troy. They paddle forward down the middle of the stream and around the next bend, then around yet another. And then they hear…"
+
 
                 * [The sound of an engine.]
                     -> jul_bolts
@@ -477,7 +480,7 @@
 
             * Troy fastens both kayaks[.] together with the rope, then secures the rope to a tree with a sturdy knot.
 
-                "There, that should do it!" he says satisfied.
+                "There, that should do it!" he says, satisfied.
 
                     ** ["The monkeys?" asks Julian.]
                         -> think_monkey_trouble
@@ -589,7 +592,7 @@
         = return_to_kayaks
         -   CHR_JUL_REL
         -   CHR_TRO_REL
-        -   Julian and Troy inch backward, quietly and carefully vacating their hiding place overlooking the caves and the thieves' chop shop operation, and trek back to where they left the kayaks.
+        -   Julian and Troy inch backward, quietly and carefully vacating their hiding place, and trek back to where they left the kayaks.
 
                 * ["What the...?" gasps Julian.]
                     -> kayaks_strewn
@@ -597,7 +600,7 @@
 == kayaks_strewn ==
         -   CHR_JUL_SUR
         -   CHR_TRO_SUR
-        -   The kayaks are not as they left them! No longer hidden side by side behind the tree, both are lay flipped over and cast about haphazardly
+        -   The kayaks are not as they left them! No longer hidden side by side behind the tree, both are flipped over and cast about haphazardly
 
             - (opts)
                 * [Julian steps on a dry bag.]
@@ -915,7 +918,7 @@
             *   ["Hope s-soon... 'cause..."]
             "Hope s-soon... 'cause..." says Julian breathlessly.-> clings
             
-            *   (clings) [Julian clings to his oar.] {Julian clings to the oar attached by lanyard to his kayak. "... it's getting... difficult... to hang on," he says.|"... I...I c-c-can't... hold..."}
+            *   (clings) [Julian clings to his oar.] {Julian clings to the oar attached by lanyard to his kayak. "...it's getting... difficult... to hang on," he says.|"... I...I c-c-can't... hold..."}
             
             *   {clings} [Julian loses his grip.]
                 -> loses_kayak
@@ -947,7 +950,7 @@
             *   [Troy considers letting go of Julian.]
             Troy considers letting go of Julian—just for a second—so that he can try two hands with the lanyard, but he can't risk losing Julian whose condition is even worse. -> struggle 
             
-            *   (struggle) [Troy struggles with the landyard.] {Troy struggles to attach the lanyard with one hand. He's lost up to 80% of his dexterity and strenth since hitting the water.| He'll just need to find a way to do it Troy tells himself.}
+            *   (struggle) [Troy struggles with the lanyard.] {Troy struggles to attach the lanyard with one hand. He's lost up to 80% of his dexterity and strength since hitting the water.| He'll just need to find a way to do it Troy tells himself.}
             
             
             *   {struggle} [Troy's chances are modest.]

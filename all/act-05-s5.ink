@@ -38,7 +38,8 @@ what_remember is {what_remember}
     
     
 === on_dock_day_03_2 ===
-    - Several days later, we join the friends on the Lakesong preparing for another day on the lake by running through their pre-departure safety checklist.
+-   SYS_CHAP_16
+    - Several days later, we join the friends on the <i>Lakesong</i> preparing for another day on the lake by running through their pre-departure safety checklist.
     
         * [Complete pre-departure checklist.]
         -   SYS_ACHIEVE_2_5
@@ -366,7 +367,7 @@ what_remember is {what_remember}
 === willard_and_accomplice ===
 // this is a full solve condition
 
-    -   Several days later, we join the four friends preparing the Lakesong for departure and discussing the breaking news that the boat robbery case was solved. Mr. Willard and {accomplice} were both arrested.
+    -   Several days later, we join the four friends preparing the <i>Lakesong</i> for departure and discussing the breaking news that the boat robbery case was solved. Mr. Willard and {accomplice} were both arrested.
 
         {
             - on_kayaks_saw == WILLARD:
@@ -658,7 +659,7 @@ what_remember is {what_remember}
 
                         The friends are overjoyed with the news and celebrate with a series of hoots, high fives and a couple of horn toots courtesy of Julian.
 
-                        ** [Onwards!]
+                        ** [Onward!]
                         -> the_end_partial_solved
 
 
@@ -711,7 +712,7 @@ what_remember is {what_remember}
 
                 The friends are overjoyed with the news and celebrate with a series of hoots, high fives and a couple of horn toots courtesy of Julian.
 
-                    ** [Onwards!]
+                    ** [Onward!]
                     -> the_end_solved
 
 
@@ -855,13 +856,13 @@ what_remember is {what_remember}
         -   CHR_MPO_REL
         "I'll leave you to get on with your day," says Captain Garcia. "Looks like it's going to be a real beauty, too."
 
-            ** [Troy starts the Lakesong.]
+            ** [Troy starts the <i>Lakesong<i>.]
                 -> start_boat
 
     = start_boat
     -   CHR_MPO_REL 
     -   CHR_MPO_REL
-    -   Troy starts the Lakesong. The Captain stops along the dock and hollers back, "No plans to head north, right?"
+    -   Troy starts the <i>Lakesong</i>. The Captain stops along the dock and hollers back, "No plans to head north, right?"
 
             *   "Not a chance, Captain![] says Troy. "Not a chance."
 
@@ -880,7 +881,7 @@ what_remember is {what_remember}
             ** Congratulations![]
                 You'll be given the opportunity to take a Practice Exam or proceed directly the final. Good luck!
 
-                *** [Onwards!]
+                *** [Onward!]
                     FPO: Hand off to final exam course LMS occurs here.
 
                 -> END
@@ -897,7 +898,7 @@ what_remember is {what_remember}
             ** Congratulations![]
                 You'll be given the opportunity to take a Practice Exam or proceed directly the final. Good luck!
 
-                *** [Onwards!]
+                *** [Onward!]
                     FPO: Hand off to final exam course LMS occurs here.
 
                 -> END
@@ -915,7 +916,7 @@ what_remember is {what_remember}
             ** Congratulations![]
         You'll be given the opportunity to take a Practice Exam or proceed directly the final. Good luck!
 
-                *** [Onwards!]
+                *** [Onward!]
                     FPO: Hand off to final exam course LMS occurs here.
 
                 -> END

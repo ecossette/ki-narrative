@@ -5,10 +5,23 @@
 // Troy and Julian returned to the cove after turning back from following the stream far enough to encounter thieves. We'll join the girls on the <i>Lakesong</i>.
     -   CHR_JUL_REL
     -   CHR_TRO_REL
-    -   Troy and Julian wait for Mia and Alexis, staying close to the shoreline to avoid a collision. With the cove still shrouded in fog, the visibility is limited. They won't be able to see the <i>Lakesong</i> enter, nor will Mia and Alexis be able to spot the kayaks.
-
-        * [They'll rely on sound signals.]
-            -> sound_rely
+    
+    {
+    
+        - no_go_stream:
+        While waiting for Mia and Alexis, Troy and Julian had stayed close to the shoreline to avoid a collision. With the cove still shrouded in fog, their visibility was limited. The minutes dragged as they waited in the fog until, finally...
+        
+            * [ They hear something.]
+                -> sound_rely
+        
+        - else:
+        Troy and Julian wait for Mia and Alexis, staying  close to the shoreline to avoid a collision. With the cove still shrouded in fog, the visibility is limited. They won't be able to see the <i>Lakesong</i> enter, nor will Mia and Alexis be able to spot the kayaks.
+        
+             * [They'll rely on sound signals.]
+                -> sound_rely
+    
+    }
+    
 
     = sound_rely
     -   In the distance, they hear the sound of a boat engine.
@@ -66,7 +79,7 @@
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     - They hear two short toots of a boat horn.
-    "One thousand one, one thousand two,..." Julian counts aloud, "one thousand three—"
+    "One thousand one, one thousand two..." Julian counts aloud, "one thousand three—"
 
             * [Tooooot.]
                 -> long_toot
@@ -111,7 +124,23 @@
     -   "We'll need to give the coded signal, according to the plan," says Alexis. She eases back on the throttle as visibility once again decreases. "But Julian was right that the fog will help us stay hidden."
 
             *  The <i>Lakesong</i> slips into the foggy cove.[]
-
+    // let's rejoin the guys here if they didn't follow stream.
+    
+        {
+    
+            - no_go_stream:
+                -> wait_for_mia_alexis
+                
+            - else:
+                -> keep_lookout_cove
+        
+         
+        }  
+        
+    ->  DONE
+                
+        =   keep_lookout_cove
+        
                 -   (opts)
 
                     **  [Keep a sharp lookout.]
@@ -154,7 +183,7 @@
                 
 
             = hear_whistle
-            -   Shortly after hearing the whistle, Mia and Alexis see Julian and Troy appear out of the fog and preperations are made to recover the two guys and the kayaks.
+            -   Shortly after hearing the whistle, Mia and Alexis see Julian and Troy appear out of the fog and preparations are made to recover the two guys and the kayaks.
             
                 * [Back on board.]
                      -> recovery_fine_aboard_boat

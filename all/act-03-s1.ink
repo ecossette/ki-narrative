@@ -7,7 +7,8 @@ SCENE 01
 
 
 
-=== discussion_after_houseboat
+=== discussion_after_houseboat ===
+-   SYS_CHAP_09
 // SND mix of low engine, water, birds...
     - As the <i>Lakesong</i> planes the surface of the lake, the friends talk among themselves.
 
@@ -86,7 +87,7 @@ SCENE 01
                     -- CHR_TRO_REL
                      "We don't have to go back right now," he says, "but we do need to monitor the situation." Troy scans the skies around the boat. -> clouds
 
-                *    (clouds) ["But those clouds are really far away," says Mia.] { Troy senses the dissapointment as his friends realize the weather could cut their afternoon on the lake short. "The clouds are far away, but things can change quickly out here."|"Accumulating dark clouds, shifting winds, and the sound of distant thunder are some of the things we'll be watching for."}
+                *    (clouds) ["But those clouds are really far away," says Mia.] { Troy senses the disapointment as his friends realize the weather could cut their afternoon on the lake short. "The clouds are far away, but things can change quickly out here."|"Accumulating dark clouds, shifting winds, and the sound of distant thunder are some of the things we'll be watching for."}
 
                 *    {clouds} ["We may end up OK," says Alexis.]
                     ->  weather_maybe_ok
@@ -173,7 +174,7 @@ SCENE 01
 
 
     = horizon_clouds
-    -   The mood is sombre as the <i>Lakesong</i> makes steady progress back toward shore. Dark clouds begin to build over the horizon ahead of the boat, matching the mood. Everyone is dissapointed with the change in plans.
+    -   The mood is sombre as the <i>Lakesong</i> makes steady progress back toward shore. Dark clouds begin to build over the horizon ahead of the boat, matching the mood. Everyone is disapointed with the change in plans.
 
             * ["Did you feel that?" asks Alexis.]
                 -> wind_shift
@@ -250,7 +251,7 @@ SCENE 01
 
         "We're sure going to try," says Troy, increasing the <i>Lakesong's</i> speed. The engine whines in response, and the boat picks up additional speed—creating a large wake.
 
-                * [Onwards!]
+                * [Onward!]
                     -> choppy
 
         = choppy
@@ -358,7 +359,7 @@ SCENE 01
 
         "OK," says Alexis. She doesn't sound enthusiastic, but she trusts Troy. "You have more experience on the water than all of us combined."
 
-            * [Onwards!]
+            * [Onward!]
                 -> lightning_choices
 
 === lightning_choices ===
@@ -431,7 +432,7 @@ SCENE 01
         - CHR_TRO_ANG
         "Still no sign of the channel markers," Troy says, frustrated. "We should be seeing 'Red Right Returning' anytime now."
 
-            * [Troy continues to seach for the channal markers.]
+            * [Troy continues to search for the channel markers.]
                 -> lightning_strike_occurs
 
 
@@ -521,6 +522,7 @@ VAR is_radio_damaged = true
         "That's good news!" says Troy. "No damage to the engine's electronic controls."
 
             * ["No hull damage," reports Alexis.]
+                -> no_lights_damage
 
         = no_lights_damage
         -   CHR_ALX_SML

@@ -5,7 +5,7 @@
     
 === return_post_rescue_2 ===
     -   CHR_ALX_REL
-    -   Alexis adjusts the throttle, giving the boat a little more speed for the return to Laketown. The afternoon sky is bright blue, and the Lakesong casts a long shadow across the rippling waters of the lake. Under different circumstances, it would be the ideal conditions for boating.
+    -   Alexis adjusts the throttle, giving the boat a little more speed for the return to Laketown. The afternoon sky is bright blue, and the <i>Lakesong</i> casts a long shadow across the rippling waters of the lake. Under different circumstances, it would be the ideal conditions for boating.
 
         In the distance...
 
@@ -34,9 +34,10 @@
             *   (anxious) [Alexis decides to distract Mia.] {She decides to distract Mia by giving her something to focus on other than worrying about Julian and Troy.| She is every bit as anxious and worried as Mia, but she knows that there is nothing they can do now but get back to Laketown safely.}
 
             *   {anxious} ["Do you want to drive?" Alexis asks.]
+                -> mia_drive
 
 
-        -   -> opts
+        -   -> opts2
 
     = mia_drive
 
@@ -47,7 +48,8 @@
 
                 * (nods) Alexis nods. {Alexis nods and offers the wheel to Mia.| "But I don't... yesterday was my only time."}
 
-                * {nods} ["You passed your boat education course, right?" asks Alexis.]
+                * {nods} ["You passed your boat education course, right?" asks Alexis.] 
+                    -> yes_passed
 
         -   -> opts3
 
@@ -64,12 +66,37 @@
     - SYS_ACHIEVE_1_5
     -   "Really?" she says, stepping forward with a tentative smile on her face.
 
-            *"Absolutely," says Alexis[.], as Mia takes the wheel. "On a beautiful day like this, we'll encounter plenty of traffic starting with crossing traffic ahead now at two o'clock."
+            *"Absolutely," says Alexis[.], as Mia takes the wheel. "On a beautiful day like this, we'll encounter plenty of traffic, starting with crossing traffic ahead now at two o'clock."
 
                 ** ["Bring it!" says Mia.]
-                -> encounter_activity
+                    -> bring_it
+            
+        = bring_it
+                -   CHR_MIA_REL
+                -   CHR_ALX_REL
+                "Bring it!" says Mia.
+                "And remember the encounter toots," says Alexis.
+                
+                    -   (opts2) 
+                    
+                        *   ["One toot for port," says Mia.]
+                            "One toot for a turn to port," says Mia.-> two
+                    
+                    
+                        *   (two)["Starboard has two syllables."]{"Starboard has two syllables, so it gets one toot."|"Since port only has one syllable—one toot."}
+                    
+                        *   {two}[With Mia at the helm...]
+                            -> encounter_activity
+                    
+                    -   -> opts2
             
             
+
+
+
+
+
+
 === encounter_activity ===
 // put encounter mini here
     -   CHR_MIA_SML
@@ -80,7 +107,7 @@
                 ** [OK]
                     -> encounter_mini
     
-        * [Go directly to the encountering activity.]
+        * [Go directly to the <i>Encountering Other Vessels</i> activity.]
                     -> encounter_mini
 
                      
@@ -227,7 +254,7 @@
 //        DEBUG suspect is {suspect_whom}
 
     -   CHR_MIA_REL
-    -   After successfully bringing the Lakesong back home, Mia continues between the green and red channel markers on each side at 'slow, no wake' speed as she approaches the dock.
+    -   After successfully bringing the <i>Lakesong</i> back home, Mia continues between the green and red channel markers on each side at 'slow, no wake' speed as she approaches the dock.
 
             * [Dock the boat.]
             -> docking_wind_direction ->
@@ -287,7 +314,7 @@ the story will flow in/out of this tunnel on several occasion during play
 == docking_completed==
     -   Smiles and high fives are exchanged as the boat is successfully docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
-    * [Onwards!]
+    * [Onward!]
         -> report_to_police
     
     

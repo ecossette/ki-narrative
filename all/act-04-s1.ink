@@ -6,6 +6,7 @@ SCENE 01
 */
 
 === day_two_begins ===
+-   SYS_CHAP_14
     -   CHR_TRO_REL
 
     {
@@ -152,14 +153,14 @@ SCENE 01
 
                 *    (bfa) ["Is it easier launching or retrieving?" asks Mia. ] { "Like anything, the more you do it, the easier it gets."|"It takes a little practice to get the hang of it."}
 
-                *    {bfa} [Review launching and retrieving.] -> launch_retrieve_review
+                *    {bfa} [Mia watches as a trailer backs into the water.] -> launch_retrieve_review
 
         -     -> opts
 
 
 == launch_retrieve_review ==
     *   [Review launching and retrieving a vessel.]
-        - SYS_PDF_31
+        -- SYS_PDF_31
             ** [OK.] 
                 -> fueling_activity
 
@@ -301,7 +302,7 @@ SCENE 01
             = how_cold
             -   CHR_TRO_REL
             -   CHR_MIA_REL
-            -   "I'm dunno," says Troy. "Maybe fifty degrees? I sure wouldn't want to find out first-hand."
+            -   "I dunno," says Troy. "Maybe fifty degrees? I sure wouldn't want to find out first-hand."
             
                 * [Review "Cold Water Immersion and Hypothermia."]
                 // launch the sg for cold water immersion and hypo
@@ -335,6 +336,7 @@ SCENE 01
                 -> review_plan
 
 == review_plan ==
+-   SYS_CHAP_15
 
     -   CHR_TRO_REL
     -   "Let's go over the plan one more time," says Troy.
@@ -448,7 +450,7 @@ SCENE 01
 // add trip planning badge
 -   SYS_ACHIEVE_3_4
     -   CHR_TRO_REL
-    * "For or no fog, it's all good," says Troy.[] "The plan accounts for both possibilities..."
+    * "For or no fog, we'll be good," says Troy.[] "The plan accounts for both possibilities..."
 
         - (opts)
             *    "If the fog sticks around[..."], we'll stay in the cove and wait." says Troy. "When you enter the cove in the boat, use the horn to give the signal. Remember the signal?"

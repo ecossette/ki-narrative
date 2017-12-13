@@ -1,5 +1,7 @@
 
+
 === houseboat_in_view ===
+-   SYS_CHAP_08
 //- SYS_SCENE_4_1
 The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another power boat, larger than the one in tow, and several personal water craft (PWCs).
 
@@ -41,7 +43,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
     = drive_first
     -   CHR_MIA_REL
     -   CHR_IAN_REL
-    -   Mia suprises everyone when she volunteers. 
+    -   Mia surprises everyone when she volunteers. 
             
         "Great!" says Ian. "Have you been jet skiing with a PWC before?"
 

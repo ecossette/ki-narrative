@@ -15,8 +15,8 @@
 
                 ** [Mia and Alexis tell their story.]
 
-                    {leave_kayak_path_early:
-                    DEBUG: this should be the leave kayak path early 'IF'
+                    {leave_kayak_path_early && no_go_stream:
+                    /* DEBUG: this should be the leave kayak path early 'IF'
 
                         *** [DEBUG: Fog clears]
                         ~fog_condition = CLEAR
@@ -25,13 +25,13 @@
                         ~ where_saw = BEACH
                         ~ investigate_distraction = 0
                         ~ what_distract = SMOKE
-                        VAR saw_creatures = 0
+                        VAR saw_creatures = 0 */
                         -> mia_alexis_recap
 
-                        *** [DEBUG: fog persists]
+                        /* *** [DEBUG: fog persists]
                         ~fog_condition = FOG
                         ~who_saw = CLETUS
-                        -> mia_alexis_recap
+                        -> mia_alexis_recap */
 
                     - else:
                         -> mia_alx_tell_story
@@ -73,7 +73,7 @@
 
                     * ["For quite a while we saw nothing at all," says Mia.]
 
-                    {sees_creatures || saw_creatures ==1:
+                    {sees_creatures:
                         -> quick_recovery_clear_exp
 
                      - else:
@@ -188,11 +188,11 @@
     -   CHR_ALX_REL
     -   CHR_MIA_REL
 //    -   DEBUG: {who_saw}
-    -   The girls begin by explaining how the fog {fog_condition} <>
+    -   The girls begin by explaining how the fog <>
 
             {
                 - quick_recovery_fog_persists && quick_recovery_saw_0:
-                and they didn't see anything of interest while waiting to rendezvous with the kayaks. They also mention how on two separate occasions they heard a single, prolonged blast indicative of a powered vessel underway in fog.
+                persisted and they didn't see anything of interest while waiting to rendezvous with the kayaks. They also mention how on two separate occasions they heard a single, prolonged blast indicative of a powered vessel underway in fog.
 
                     *   ["Hmmm..." says Troy.]
                         -> quick_recovery_fog_exp
@@ -200,7 +200,7 @@
 
 
                 - quick_recovery_fog_clears && quick_recovery_saw_0:
-                quickly—quicker than expected. Despite having good visibility, they saw nothing out of the ordinary. They took turns at the helm and cruised in large circles, killing time until the rendezvous hour with the kayaks.
+                cleraed quickly—quicker than expected. Despite having good visibility, they saw nothing out of the ordinary. They took turns at the helm and cruised in large circles, killing time until the rendezvous hour with the kayaks.
 
                         *   ["Somebody else was out here, though," says Troy.]
                             -> somebody_else
@@ -301,6 +301,10 @@
                     "Well, it was just {who_saw} on the boat," says Mia. "No sign of Maura."
                     -> that_not_all
 
+            - else:
+            DEBUG: This state should not be possible in gameplay. If you are REVIEWING or TESTING the game, you'll need to rewind.
+            
+        
         }
 
     -> DONE
@@ -533,7 +537,7 @@
 == think_we_have_enough ==
     -   CHR_ALX_REL
     -   CHR_TRO_REL
-    -   Alexis turns slightly to starboard to avoid a lateral marker ahead marking a rock. "Do you think we have enough info to give to the police?" she says, watching the marker slip past.
+    -   Alexis turns slightly to starboard to avoid a lateral rock marker ahead. "Do you think we have enough info to give to the police?" she says, watching the marker slip past.
 
         -   (opts)
 
@@ -611,10 +615,36 @@
     = mia_beams
     -   CHR_MIA_SML
     -   CHR_TRO_SML
-    -   "Really?" she says, a big smile on her face. "I can drive for awhile?"
+    -   "Really?" she says, a big smile on her face. "I can drive for a while?"
 
             *"Absolutely," says Troy[.], as Mia takes the wheel. "On a beautiful day like this, we'll probably encounter plenty of traffic as we get closer to the marina. It'll be a good chance for you to put your knowledge to the test."
 
                 ** ["Bring it!" says Mia.]
-                -> encounter_activity
+                    -> bring_it
+                
+                = bring_it
+                -   CHR_MIA_REL
+                -   CHR_TRO_REL
+                "Bring it!" says Mia.
+                "And remember the encounter toots," says Troy.
+                
+                    -   (opts) 
+                    
+                        *   ["One toot for port," says Mia.]
+                            "One toot for a turn to port," says Mia. -> two
+                    
+                    
+                        *   (two)["Starboard has two syllables."]{"Starboard has two syllables, so it gets one toot."|"Since port only has one syllable—one toot."}
+                    
+                        *   {two}[With Mia at the helm...]
+                            -> encounter_activity
+                    
+                    -   -> opts
+                
+                
+                
+                
+                
+                
+                
 

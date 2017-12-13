@@ -51,7 +51,7 @@ wait to call for help = hypo extreme / full memory loss
 === report_to_police ===
 // complete boat achievment 
 -   SYS_ACHIEVE_1_5
-    -   After securing the Lakesong for the day, the four friends go directly to the marine police station located at the marina.
+    -   After securing the <i>Lakesong</i> for the day, the four friends go directly to the marine police station located at the marina.
 
             * [Captain Garcia welcomes them.]
                 -> police_welcome
@@ -59,7 +59,7 @@ wait to call for help = hypo extreme / full memory loss
 
     = police_welcome
     - CHR_MPO_REL
-    -   After brief reintroductions and an exchange of pleasantries, they tell the captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering a "hmmm" or an "interesting" while taking notes on a small notepad.
+    -   After brief reintroductions and an exchange of pleasantries, they tell the captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering "hmmm" or "interesting" and taking notes on a small notepad." 
 
         *   "And that's everything," says Troy[.], concluding the recap of events.
 
@@ -82,9 +82,9 @@ wait to call for help = hypo extreme / full memory loss
     = private_property
     -   CHR_TRO_SUR
     -   CHR_MPO_REL
-    - "Private property?" says a surprised Troy speaking for the group. "We didn't know!"
+    - "Private property?" exclaims Troy. "We didn't know!"
 
-        "I can understand that, as it's not marked as such on the charts," says the Captain. {no_go_island: "And from what you say, you never did set foot on the island itself.} "Though private property it is."
+        "I can understand that, as it's not marked as such on the charts," says the Captain.{no_go_island: "And from what you say, you never did set foot on the island itself.} "Though private property it is."
 
         -   (opts2)
 
@@ -511,7 +511,7 @@ wait to call for help = hypo extreme / full memory loss
 === girls_recap_to_captain ===
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   Mia and Alexis tell the Captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering a "hmmm" or an "interesting" while taking notes on a small notepad.
+    -   Mia and Alexis tell the Captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering "hmmm" or "interesting" and taking notes on a small notepad.
 
             *   ["And that's everything," says Alexis.]
                 -> end_story
@@ -539,7 +539,7 @@ wait to call for help = hypo extreme / full memory loss
         = private_property
         -    CHR_AXL_SUR
         -    CHR_MPO_REL
-        - "Private property?" says Alexis surprised. "We didn't know!"
+        - "Private property?" says Alexis, surprised. "We didn't know!"
 
         "I can understand that, as it's not marked on the charts," says the Captain. {no_go_island: "And from what you say, the two of you never did set foot on the island itself.} "Though private property it is. And that means I need to get a warrant to follow up what you {hypo_severity < 3: and the two young men} have told me."
 

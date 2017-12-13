@@ -203,7 +203,7 @@ SCENE 04
         -   "We can look at the photos later," he says. "Right now we need to get back to the boat."
             "You don't have to tell me twice," says Julian. "The last place I want to be is Kalkomey Isle after dark!"
 
-                * [Onwards!]
+                * [Onward!]
                     -> find_paddleboards_return
 
         = find_paddleboards_return
@@ -448,6 +448,7 @@ SCENE 04
         -     -> opts
 
 == eye_creatures ==
+-   SYS_CHAP_12
 // this is where you can rejoin from explore island track
 // SND drone sounds getting closer
     -   CHR_JUL_SUR
@@ -632,7 +633,7 @@ SCENE 04
 
                         We'll rewind and pick up the action where Julian first spots the creatures pursuing the boat.
 
-                            ** [Onwards!] -> eye_creatures
+                            ** [Onward!] -> eye_creatures
 
 
 === chased_keep_current ===

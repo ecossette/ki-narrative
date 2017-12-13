@@ -12,6 +12,7 @@ VAR knows_strangers_name = false
 //-> approaching_lakesong
 
 === approaching_lakesong ===
+    -   SYS_CHAP_05
 // SOUND general dock sounds as used in Act 1
     -   As the four friends approach the <i>Lakesong</i>, they see a bearded man standing in front of the boat. He seems to be giving the <i>Lakesong</i> a careful look over.
     
@@ -35,13 +36,25 @@ VAR knows_strangers_name = false
         
                     Julian looks up at the cloudless blue sky and makes a face. 
         
-                        ** The man sees Julian's skeptical expression[.]  and chuckles. "I know what you're thinking. But I'm never wrong about the weather."
+                        ** ["I know what you're thinking," he says.]
+                            -> thinking_weather
+                        
+                
+                = thinking_weather
+                "But I'm never wrong about the weather," the man says with a chuckle. "The name's MacKensie, by the way, though everyone just calls me Mac."        
+                        
+                        **  [Mac touches the brim of his hat.]
                             -> man_weather
         
+                            
+                            
+                            
+                            
+                
                 = man_weather
                 -    CHR_DID_REL
             
-                    * "I know this lake and her whims[."]," the man says. "I've lived on one of its islands for years."
+                -   "I know this lake and her whims," says Mac. "I've lived on one of its islands for years."
                     // "and my bones haven't been wrong in all the years I've lived on the island." <-- bit forced, went for something less stilted.
                         -- CHR_DID_REL
                 
@@ -51,13 +64,13 @@ VAR knows_strangers_name = false
                             --- CHR_DID_REL
                             "You live on an island?" asks Julian.  "How cool!"
                         
-                            The man laughs. 
+                           Mac laughs. 
                             
                                 *** ["It is rather."] 
                                 //how old is he supposed to be? Changed to avoid repetition/give him a different vocal style
                                     ---- CHR_DID_SML
                                     ---- CHR_JUL_REL
-                                    "Though I get a little stir crazy. I'm all by myself out there," the man says. "That's why I like to meet people when I boat in for supplies."
+                                    "Though I get a little stir crazy. I'm all by myself out there," he says. "That's why I like to meet people when I boat in for supplies."
                                     ~ knowledge_man_alone = true
                                 
                                     **** [Try to get more info about the lake's islands.]
@@ -70,7 +83,7 @@ VAR knows_strangers_name = false
                             --    The friends are in a hurry to cast off, so ask nothing more. 
                                 -> supply_delivery
                     
-                    * "Don't worry, it'll be a fast mover[."]," the man says. "Be lots of fish biting after the storm, too. Especially up to the north."
+                    * "Don't worry, it'll be a fast mover[."]," says Mac. "Be lots of fish biting after the storm, too. Especially up to the north."
                         -- CHR_DID_REL
                        
                        ** [The friends exchange glances.]
@@ -143,21 +156,21 @@ VAR knows_strangers_name = false
 
 === robbery_questions_loop ===
     - CHR_DID_REL
-    -   The man tells the group what he knows of the robberies.
+    -   Mac tells the group what he knows of the robberies.
     
      - (opts)
     *    ["The thefts used to occur after dark."]
         -- CHR_DID_REL
-        "Until recently," says the man, "the robberies always occurred at night. But a boat recently went in the day. It seems that the thieves are willing to risk it, now that fewer people are around the docks."
+        "Until recently," he says, "the robberies always occurred at night. But a boat recently went in the day. It seems that the thieves are willing to risk it, now that fewer people are around the docks."
         //this means at least one boat has been stolen in the day. Is this true?
         
     *    ["The boats disappear quickly."] 
         -- CHR_DID_REL
-        "You couldn't cruise a stolen boat all the way to Oceanside without being seen," says the man. "And none of the boats have turned up abandoned, or for sale anywhere. They just vanish."   
+        "You couldn't cruise a stolen boat all the way to Oceanside without being seen," says Mac. "And none of the boats have turned up abandoned, or for sale anywhere. They just vanish."   
         //do you need this: or even just over to Midfall ? it's a bit too much exposition. Unless you need the information later, I'd cut this: "You couldn't cruise a stolen boat all the way to Oceanside without being seen," says the man. "And 
     *     ["They only take power boats."] 
         -- CHR_DID_REL
-            "The thieves only take powered boats," he says. "Which is surprising, considering the high value of many of the sailboats here."
+            "The thieves only take powered boats," says Mac. "Which is surprising, considering the high value of many of the sailboats here."
     // We require the player to ask at least one question
     *    {loop} [Enough talking.]
     // check 'enough talking.' is done consistently with a full stop. I've changed it in this chapter, but for future ones and chapter 1.
@@ -228,7 +241,7 @@ VAR knows_strangers_name = false
                 //wasn't a statement
                 -- CHR_ALX_REL
                 -- CHR_DID_REL
-                "Foggy as all get out and cold, too," he says. "But it's great fishing. You wouldn't want to take a big boat like this up that away, though."
+                "Foggy as all get out and cold, too," says Mac. "But it's great fishing. You wouldn't want to take a big boat like this up that away, though."
                 //Foggy as all get out <-- is this a Canadian phrase?
                     -> north_q_loop
             
@@ -262,7 +275,7 @@ VAR knows_strangers_name = false
                     - (loop)
             // loop a few times
                      { -> opts | -> opts | }
-                    ** The man nods toward another section of the dock.[] 
+                    ** Mac nods toward another section of the dock.[] 
                        -- CHR_DID_REL
                        
                      
@@ -278,9 +291,9 @@ VAR knows_strangers_name = false
 == look_mister ==
     -   CHR_TRO_REL
     -   CHR_DID_REL
-    -   "Look, mister, we've got a big day ahead of us—"
+    -   "Look, Mr. MacKensie, we've got a big day ahead of us—"
                     
-        "I hear ya," the man says, cutting Troy off. "Got a big day myself. Lots of fish biting. Just grabbing supplies before I head north to catch some."
+        "I hear ya," says Mac, cutting Troy off. "Got a big day myself. Lots of fish biting. Just grabbing supplies before I head north to catch some."
                     
                 * [The friends exchange glances.]
                     -> exchange_glances
@@ -288,17 +301,7 @@ VAR knows_strangers_name = false
 
 == supply_delivery ==
     -   CHR_DID_REL
-    -   { 
-            - knows_strangers_name:
-                
-            "I need to get a move on before the storm rolls in," he says.
-            
-            
-            - else:
-            "I need to get a move on before the storm rolls in," he says. "It was a pleasure talking to you. My name's MacKensie, by the way, but everyone calls me Mac."
-            
-        }  
-    
+    -   "I need to get a move on before the storm rolls in," says Mac..
     
             * Mac departs[.] and heads to where Cletus is waiting with a dolly of supplies.
     
@@ -322,7 +325,7 @@ VAR knows_strangers_name = false
             = jul_responds
             - CHR_JUL_SML
                 { knowledge_man_alone:
-                    "He's been living alone on a island for years. He probably has things figured out, don't you think?" says Julian, barely glancing at the other boat. 
+                    "He's been living alone on an island for years. He probably has things figured out, don't you think?" says Julian, barely glancing at the other boat. 
                  - else:   
                     "Definitely looks like he's trying to max out his load," says Julian, watching as the man carefully distributes the boxes along the bow of his boat.
                     //max it [what?] out, or reach the limit?
@@ -352,7 +355,7 @@ VAR knows_strangers_name = false
                     ** [Mia disagrees with Alexis.]
                     --- CHR_ALX_REL
                     --- CHR_MIA_REL
-                    "Really? Phoney?," says Mia. "Maybe a little eccentric, I'll give you that."
+                    "Really? Phoney?" says Mia. "Maybe a little eccentric, I'll give you that."
                     //then make him actually old? Not false beard?
                         -> jul_impatient
                     

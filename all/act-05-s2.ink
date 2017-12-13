@@ -107,7 +107,7 @@
     -   "You're right, says Alexis{follow_kayaks:, her face reflecting the calmness that comes with having made a decision}. "And we can keep searching for Julian and Troy after we alert the marine police."
 
         * [Alexis reaches for the radio.]
-        -- Alexis reaches for the radion and checks that it's tuned to the emergency channel—number 16.
+        -- Alexis reaches for the radio and checks that it's tuned to the emergency channel—number 16.
 
             ** ["Pan, Pan, Pan," she says.]
                 -> pan_pan_call_01 ->
@@ -121,8 +121,8 @@
 
         -   "Pan, Pan, Pan," Alexis says into the transmitter, using the signal (pronounced 'Pahn') for an incident of less gravity than a Mayday signal. (Mayday is reserved for situations where the loss of a vessel or persons is imminent.)
 
-                * ["This is Lakesong, Lakesong, Lakesong."]
-                -- Alexis continues the pan-pan distress call. "Whiskey Sierra 2-3-2-3. Midway, south side of Kalkomey Isle bearing north 500 meters.  We have 2 persons in kayaks who are well overdue. Lakesong is a 32-foot cabin cruiser—white hull with a green stripe. Over."
+                * ["This is <i>Lakesong, Lakesong, Lakesong</i>."]
+                -- Alexis continues the pan-pan distress call. "Whiskey Sierra 2-3-2-3. Midway, south side of Kalkomey Isle bearing north 500 meters.  We have 2 persons in kayaks who are well overdue. <i>Lakesong</i> is a 32-foot cabin cruiser—white hull with a green stripe. Over."
 
                     ** [They wait for a response.]
                     -> no_response_pan
@@ -147,7 +147,7 @@
             }
 
 
-                ** [Alexis pushes the trottle forward.]
+                ** [Alexis pushes the throttle forward.]
                 - ->->
 
 
@@ -292,7 +292,7 @@
             - (opts2)
 
             * ["Maybe it's not them?" wonders Mia.]
-                "What if it isn't Julain and Troy?" asks Mia, her face brightening with the possibility. "I mean, what about the kayaks?"
+                "What if it isn't Julian and Troy?" asks Mia, her face brightening with the possibility. "I mean, what about the kayaks?"
 
             *   (turns) [Alexis turns to Mia.] {Alexis turns to Mia, her own eyes filling with tears.|"They were in kayaks... they didn't mention kayaks..." Mia tries to convince herself.}
 
@@ -312,9 +312,10 @@
     -   CHR_ALX_REL
     -   Alexis grabs the transmitter, and Mia droops.
 
-        "Pan, Pan Pan. This is Lakesong, Lakesong, Lakesong."
+        "Pan, Pan, Pan. This is <i>Lakesong, Lakesong, Lakesong</i>."
 
             * [The marine police respond.]
+                -> mp_response
 
 
     = mp_response
@@ -324,7 +325,7 @@
             * ["Copy that Laksong."]
             -   "The medevac chopper is on the way. Advise that you return to Laketown immediately and directly. Over."
 
-                "Copy that," says Alexis. "Lakesong returning to Laketown. Lakesong out."
+                "Copy that," says Alexis. "<i>Lakesong</i> returning to Laketown. Lakesong out."
 
                     ** [Alexis nudges the throttle forward.]
                         -> return_post_rescue
