@@ -6,7 +6,7 @@ SCENE 01
 */
 
 === day_two_begins ===
--   SYS_CHAP_14
+-   SYS_CHAP_15
     -   CHR_TRO_REL
 
     {
@@ -337,7 +337,7 @@ SCENE 01
                 -> review_plan
 
 == review_plan ==
--   SYS_CHAP_15
+-   SYS_CHAP_16
 
     -   CHR_TRO_REL
     -   "Let's go over the plan one more time," says Troy.

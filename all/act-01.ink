@@ -12,7 +12,7 @@ VAR parts = 0
 
 
 === intro ===
--   SYS_CHAP_00
+-   SYS_CHAP_01
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.
     *   [- next -]
     
@@ -88,7 +88,7 @@ VAR parts = 0
 
 === intro_the_lakesong ===
     - SYS_SCENE_1
-    -   SYS_CHAP_01
+    -   SYS_CHAP_02
     -   Troy leads the way down the dock and stops in front of an impressive boat.
         *   ["Here she is!"]
             -> lakesong_look
@@ -380,7 +380,7 @@ VAR parts = 0
 
 --------------------------------------------------------------------------------*/
 === pre_depart_help ===
-    -   SYS_CHAP_02
+    -   SYS_CHAP_03
     -   CHR_TRO_REL
         "Working through the pre-departure checklist will go faster if the three of you help," says Troy. "I'll check the engine compartment, bilge, and fuel. I'll give each of you something to check." 
         -> pre_departure_tasks
@@ -955,7 +955,7 @@ VAR parts = 0
 --------------------------------------------------------------------------------*/
 
 === meet_willard ===
-    -   SYS_CHAP_03
+    -   SYS_CHAP_04
 //  after walking along dock with robbery discussion "They arrive in front of the store."
 
     -   The friends arrive at the entrance of the dockside supply store.
@@ -1420,7 +1420,7 @@ VAR pfd_tryer = "Mia"
 
 
 === float_plan ===
-    -   SYS_CHAP_04
+    -   SYS_CHAP_05
     - CHR_WLD_REL
     - CHR_TRO_REL
     - "I can imagine," says Troy. "These robberies are hurting everyone who has an interest in boating."

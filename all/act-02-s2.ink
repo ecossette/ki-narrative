@@ -16,7 +16,7 @@
 
 
 === prepare_to_castoff ===
--   SYS_CHAP_06
+-   SYS_CHAP_07
             
         - The first thing they do to prepare to cast off is...
 // need shuffle these choices            

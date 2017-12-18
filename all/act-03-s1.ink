@@ -8,7 +8,7 @@ SCENE 01
 
 
 === discussion_after_houseboat ===
--   SYS_CHAP_09
+-   SYS_CHAP_10
 // SND mix of low engine, water, birds...
     - As the <i>Lakesong</i> planes the surface of the lake, the friends talk among themselves.
 

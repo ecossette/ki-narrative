@@ -1,7 +1,7 @@
 
 
 === houseboat_in_view ===
--   SYS_CHAP_08
+-   SYS_CHAP_09
 //- SYS_SCENE_4_1
 The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another power boat, larger than the one in tow, and several personal water craft (PWCs).
 

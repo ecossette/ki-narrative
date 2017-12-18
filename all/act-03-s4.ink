@@ -448,7 +448,7 @@ SCENE 04
         -     -> opts
 
 == eye_creatures ==
--   SYS_CHAP_12
+-   SYS_CHAP_13
 // this is where you can rejoin from explore island track
 // SND drone sounds getting closer
     -   CHR_JUL_SUR

@@ -173,7 +173,7 @@ SCENE 02
                 -     -> opts
 
 == enter_the_fog ==
--   SYS_CHAP_10
+-   SYS_CHAP_11
 // SND boat motor sound should be low RPM here, storms distant but there
     -   CHR_TRO_REL
     -   Troy slows the <i>Lakesong</i> to a crawl, and the fog envelopes the boat. The three friends continue acting as lookouts—Alexis on the bow, Mia on port, and Julian on starboard.

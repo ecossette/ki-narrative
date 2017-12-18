@@ -1,6 +1,6 @@
 
 === proper_lookout ===
--   SYS_CHAP_07
+-   SYS_CHAP_08
     -   CHR_TRO_REL
     -   After reviewing navigation aids with his three passengers, Troy takes the Lakesong into open water on an easterly course away from Laketown. 
     

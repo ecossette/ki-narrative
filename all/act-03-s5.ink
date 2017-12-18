@@ -195,7 +195,7 @@ SCENE 05
                 
 
 == after_docking_ahoy ==
--   SYS_CHAP_13
+-   SYS_CHAP_14
 // SND kill engine sound but keep regular dock sounds
     -   CHR_TRO_REL
     -   With the <i>Lakesong</i> successfully docked, Troy instructs his three friends on the tasks needed to secure the boat for the night.
