@@ -100,7 +100,7 @@
 === encounter_activity ===
 // put encounter mini here
     -   CHR_MIA_SML
-    -   With Mia at the helm, the Lakesong faces many encounters on the return home.
+    -   With Mia at the helm, the <i>Lakesong</i> faces many encounters on the return home.
 
         * [Review boating encounters.]
             - SYS_PDF_41
@@ -291,7 +291,7 @@ the story will flow in/out of this tunnel on several occasion during play
             -> wind_away_dock_s5
     
 // launch the docking activity again Here
-// need build another tunnel similar to casting off?
+
     = no_wind_s5
     ~ do_wind_none = false
     -   SYS_MINIGAME_4_41
@@ -312,9 +312,18 @@ the story will flow in/out of this tunnel on several occasion during play
 
 
 == docking_completed==
-    -   Smiles and high fives are exchanged as the boat is successfully docked.
+    -   The boat is successfully docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
-    * [Onward!]
-        -> report_to_police
+    -   The group begins a final cross-check that the boat is secure including checking the lines.
+        -> line_handling_review_2
+    
+        = line_handling_review_2
+    
+          * [Review the <i>Line Handling</i> material.]
+             // study guide inserts
+                FPO: Line Handling study guide inserts here.
+                    ** [OK]
+
+                     -> report_to_police
     
     

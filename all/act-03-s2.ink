@@ -658,7 +658,7 @@ SCENE 02
             -> anchoring_review
 
 == anchoring_review ==
-    Having decided to sit tight and wait for the fog to clear, the friends make preparations to drop anchor.
+    -   Having decided to sit tight and wait for the fog to clear, the friends make preparations to drop anchor.
 
     -   Before continuing you have two choices:
 

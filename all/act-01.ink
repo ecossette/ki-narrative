@@ -693,7 +693,7 @@ VAR parts = 0
 === troy_thanks_review ===
     -   CHR_TRO_SML
     -   "That sure did speed things up! Thanks for your help," Troy says as he looks at the checklist.
-            * [Review the list] -> review_checklist_minigame
+            * [Review the list.] -> review_checklist_minigame
 
 === review_checklist_minigame
 // Launch the checklist minigame here. Upon successful completion of the minigame send student forward to === review_forgot ===

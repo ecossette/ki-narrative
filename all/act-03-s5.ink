@@ -159,7 +159,7 @@ SCENE 05
             * [Onward]
             -> return_marina_day_one
                         
-=== return_marina_day_one
+=== return_marina_day_one ===
 // SND bring in dock sounds
 // SND no bird sounds since it's after dark
     -   CHR_MPO_REL

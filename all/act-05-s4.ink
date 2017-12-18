@@ -702,19 +702,29 @@ wait to call for help = hypo extreme / full memory loss
     
     
     = cross_check   
-    After completing the maintenance tasks, Mia and Alexis begin a final cross-check that the boat is secure for the night. 
+    After completing the maintenance tasks, Mia and Alexis begin a final cross-check that the boat is secure for the night including checking the lines.
+    
+        * [Review the <i>Line Handling</i> material.]
+             // study guide inserts
+                FPO: Line Handling study guide inserts here.
+                    ** [OK]
 
+                        -> line_handling
+    
+    
+    = line_handling
+    -   "The lines look good," says Alexis. "So we're done."
 
 
         -   (opts)
 
-            *   ["Now all we can do is wait," says Alexis.]
+            *   ["Now all we can do is wait," says Mia.]
                 {
                     - hypo_severity == 3:
-                    "So true," says Mia. "I still can't believe that neither Julian nor Troy can remember anything." -> ugh
+                    "So true," says Alexis. "I still can't believe that neither Julian nor Troy can remember anything." -> ugh
 
                     - else:
-                   "So true," says Mia. "We still don't know what Julian and Troy told Captain Garcia." -> ugh
+                   "So true," says Alexis. "We still don't know what Julian and Troy told Captain Garcia." -> ugh
                 }
 
             *   (ugh) ["Ugh," says Mia.] {Mia groans. "Ugh, I completely forgot to show Captain Garcia the photos... but I can email them."| "Like you said, all we can do now is wait and see."}

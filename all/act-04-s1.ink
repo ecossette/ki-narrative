@@ -168,6 +168,7 @@ SCENE 01
         -> fueling_activity
             
 == fueling_activity ==
+// this knot is incorrectly named; this really launches trailering
     - SYS_MINIGAME_32
         -> proceed_to_fueling
 
