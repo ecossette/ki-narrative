@@ -945,7 +945,6 @@ VAR parts = 0
     -    CHR_TRO_REL
     -    CHR_ALX_CUR
     * ["Let's hope not," says Alexis.] 
-        -- SYS_QUIZ_01
         -> meet_willard
 
 /*--------------------------------------------------------------------------------
@@ -1102,7 +1101,7 @@ VAR parts = 0
             ** Mr. Willard nods his head[.] and smiles.
             -> done
     - (done)
-        - "It appears you've all found something you like that matches the activities you have planned." he declares.
+        - "It appears you've all found something you like that matches the activities you have planned," he declares.
         -   CHR_WLD_SML
         
             *   [Onward!] -> pfd_learning_activity
@@ -1309,7 +1308,13 @@ VAR pfd_tryer = "Mia"
     -   CHR_WLD_REL
     -   "Now let's get the rest of you fitted," Mr. Willard says, and the three yet to be fitted nod in agreement.
     
-        * [After everyone is fitted...] -> all_fitted
+        * [After everyone is fitted...] -> quiz_01
+        
+
+
+    = quiz_01
+    - SYS_QUIZ_01
+    -> all_fitted
         
     = all_fitted
         - CHR_WLD_REL
