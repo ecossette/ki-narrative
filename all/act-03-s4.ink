@@ -452,7 +452,7 @@ SCENE 04
 // this is where you can rejoin from explore island track
 // SND drone sounds getting closer
     -   CHR_JUL_SUR
-    -   Julian keeps his eyes aft of the boat, tracking the rapidly-approaching swarm. It has cleared the island and now flies over open water in pursuit of the boat.
+    -   Julian keeps his eyes aft of the boat, tracking the rapidly approaching swarm. It has cleared the island and now flies over open water in pursuit of the boat.
 
         "They're gaining on us!" yells Julian. "Can't we go any faster?"
 
@@ -567,7 +567,7 @@ SCENE 04
 
 == yes_engine_problem ==
 
-        *    Suddenly, an alarm sounds[.], and the engine cuts out, leaving only the buzzing of the rapidly-approaching creatures.
+        *    Suddenly, an alarm sounds[.], and the engine cuts out, leaving only the buzzing of the rapidly approaching creatures.
             -> what_happened_engine
 // SND kill engine sound
 
@@ -623,7 +623,7 @@ SCENE 04
                     -> boarded_fate
 
         = boarded_fate
-        -   The fate of the four friends is unknown. Nor do we know what caused the <i>Lakesong's</i> engine to fail so suddenly and completely.
+        -   The fate of the four friends is unknown, nor do we know what caused the <i>Lakesong's</i> engine to fail so suddenly and completely.
 
             Did Troy push the engine too hard? Was the engine somehow damaged when it ran aground, or sometime during the storm? Was it just a case of bad luck?
 

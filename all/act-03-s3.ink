@@ -41,7 +41,7 @@ SCENE 03
 
         "Look! There it is again," says Julian, pointing.
 
-            * ["I see it, too," says Mia.]
+            * ["I see it too," says Mia.]
                 -> see_it_too
     = see_it_too
     -   CHR_MIA_REL
@@ -98,7 +98,7 @@ SCENE 03
             Alexis looks at her friends with a mischievous smile.
         - (done)
         -   CHR_ALX_SML
-           "So.... are we going to go explore that island or not?" she asks.
+           "So... are we going to go explore that island or not?" she asks.
            // -> make_explore_decision
 
    // == make_explore_decision ==
@@ -203,7 +203,7 @@ VAR explore_island = true
                     Mia sees a handle sticking out of the brush. She finds it's connected to a rake.
                     "Who would hide a rake out here?" asks Mia.
                     "Maybe to rake away footprints?" wonders Julian.
-                        ** ["Eww, that's creepy," says Mia.]
+                        ** ["Eww...that's creepy," says Mia.]
 
                 *   [Explore object 3: An old sign.]
                     -- CHR_TRO_REL

@@ -62,7 +62,7 @@ VAR knows_strangers_name = false
                         ** [Ask about the island.]
                             --- CHR_JUL_SML
                             --- CHR_DID_REL
-                            "You live on an island?" asks Julian.  "How cool!"
+                            "You live on an island?" asks Julian. "How cool!"
                         
                            Mac laughs. 
                             
@@ -368,7 +368,7 @@ VAR knows_strangers_name = false
             = jul_impatient
             - CHR_JUL_ANG
             - CHR_TRO_SML
-            - Julian is impatient. "If you're done psychoanalyzing, can we go ahead and, you know, go boating?"
+            - Julian is impatient. "If you're done the gossip fest, can we go ahead and, you know, go boating?"
             //didn't know what gesture holding out hands was
             //check castoff vs cast off
             

@@ -66,9 +66,9 @@
             
 == pfd_on_seated ==
         -   CHR_TRO_REL
-        -   Once Alexis, Mia and Julian are seated and wearing their life jackets, Troy continues.
+        -   Once Alexis, Mia, and Julian are seated and wearing their life jackets, Troy continues.
         
-            "We'll keep the boat tied to the dock, while I warm up the engine."
+            "We'll keep the boat tied to the dock while I warm up the engine."
             
             * [Troy starts the <i>Lakesong's</i> engine.]
                 -> engine_starts
@@ -282,7 +282,7 @@ the story will flow in/out of this tunnel on several occasion during play
         //actually, you want the sound straight away, as he's cut off in the previous page.
         -   The sound of a loud outboard motor cuts Troy off. A boat is rapidly overtaking the <i>Lakesong</i> on her starboard side. 
         
-            Neither the man driving the speeding boat or his passenger, a young woman, are wearing a PFD.
+            Neither the man driving the speeding boat nor his passenger, a young woman, is wearing a PFD.
             
                 * "That was rude!" exclaims Mia.[]
                     -- CHR_MIA_ANG
@@ -302,7 +302,7 @@ the story will flow in/out of this tunnel on several occasion during play
                     
                         -- CHR_MIA_SUR
             
-                        -- "Oh, no, Mac and his small boat!" says Mia, looking ahead.
+                        -- "Oh no, Mac and his small boat!" says Mia, looking ahead.
                         
                             ** The friends watch[.], as the departing speed boat's wake crashes into the smaller boat, rocking it violently.
                             //try to keep speech natural -even if it's slghtly less helpful for the player's viewpoint
@@ -310,7 +310,7 @@ the story will flow in/out of this tunnel on several occasion during play
                             -> man_holds_on
                         
         = man_holds_on                    
-            * Mac holds on[.], with both hands, keeping his body low and his feet spread. It comes close to capsizing but gradually settles. Fortunately, the cargo was low and evenly distributed. And by keeping at least three points of contact with his boat, the man minimized his risk of being thrown overboard.  
+            * Mac holds on[.], with both hands, keeping his body low and his feet spread. It comes close to capsizing but gradually settles. Fortunately, the cargo was low and evenly distributed. And by keeping at least three points of contact with his boat, he minimized his risk of being thrown overboard.  
             //don't you think he'd just keep both hands and feet planted? I know this is a teaching moment,but it's a bit unnatural. Maybe here have:
             // The man holds on[.] with both hands, keeping his body low and his feet spread.   Then, after 'distributed', some more meta text: 'Keeping at least three points of contact with a boat helps maximise its stability.' (if it does) 
                 ** Troy gives two quick horn toots[.] to signal his intent to overtake Mac on the starboard side. 
@@ -337,7 +337,7 @@ the story will flow in/out of this tunnel on several occasion during play
                 
                 
 
-            *    {angry} [The two boats continue slowly abreast.] 
+            *    {angry} [The two boats continue slowly side by side.] 
                     
                     
                     //    "Keeping three points of contact was key," says the man. <-- we've already had this mentioned, and here's it's doubly unnatural. No one would ever say this at this point. 
@@ -360,7 +360,7 @@ the story will flow in/out of this tunnel on several occasion during play
                     * [Ask Mac if he knows the pair in the speed boat.]
                         -- CHR_DID_REL
                     
-                        "{~I've been seeing them around the docks since the end of last season. They boat in for supplies|Not really. Seen them buying supplies. They're not real friendly|Don't know their names, but seen them a few times buying supplies.}," says Mac. "Willard, the shopkeep, told me they're from Oceanside." 
+                        "{~I've been seeing them around the docks since the end of last season. They boat in for supplies|Not really. Seen them buying supplies. They're not real friendly|Don't know their names, but seen them a few times buying supplies.}," says Mac. "Willard, the shopkeeper, told me they're from Oceanside." 
                         //trimmed - he's in a boat and they're going by. Don't need him to be too chatty all of a sudden. 
                         
                             -> supplies_oceanside
@@ -400,14 +400,14 @@ the story will flow in/out of this tunnel on several occasion during play
                               
                        
 == overtake_wave_goodbye ==
-    -   Troy and the others bid farewell to Mac, and the <i>Lakesong</i> heads on through the channel toward open water, passing various buoys and markers—the 'traffic signals' that guide vessel operators safely along the waterways. 
+    -   Troy and his friends bid farewell to Mac, and the <i>Lakesong</i> heads on through the channel toward open water, passing various buoys and markers—the "traffic signals" that guide vessel operators safely along the waterways. 
  
             Before continuing you have two choices:
             
                 ** [Review Navigation Aids.]
                     // launch review here. upon close, send student to encounter_mini
                     --- SYS_PDF_12
-                    *** [Continue]
+                    *** [Continue.]
                         -> aton_mini
                 ** [Skip the review and continue.]
                     -> aton_mini

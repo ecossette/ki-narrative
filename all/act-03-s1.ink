@@ -42,7 +42,7 @@ SCENE 01
             ** ["Thanks!" says Mia.]
             ---CHR_MIA_SML
             ---CHR_ALX_SML
-            "I didn't realize how much fun that would be," she says. "I could jet ski all day long."
+            "I didn't realize how much fun that would be," she says. "I could jet-ski all day long."
 
 
     *    {loop} [End the discussions.]
@@ -56,7 +56,7 @@ SCENE 01
 - (done)
     - CHR_TRO_SML
 
-    "Now that we've water skiied and jet skiied," says Troy, bringing the <i>Lakesong</i> to a stop. "Let's give each of you a chance to drive the boat. We'll go in alphabetical order... Alexis, come on over."
+    "Now that we've water-skiied and jet-skiied," says Troy, bringing the <i>Lakesong</i> to a stop. "Let's give each of you a chance to drive the boat. We'll go in alphabetical order... Alexis, come on over."
 
      * [Alexis takes the wheel wearing a big smile.] Alexis takes her turn. After her, Julian and Mia each spend time at the <i>Lakesong's</i> helm.
      //This seems like it would be a big emotional moment for Mia. I'm surprised you don't go into how she feels about this, or safety or control challenges she would experience in this moment. Or do you think that the player will have already had enough of that with the interaction minigames that will be in chapters 1 and 2?
@@ -109,7 +109,7 @@ SCENE 01
 
     = if_holds_fine
     -   CHR_TRO_REL
-        "As long as there are no storms between us and the shore," he says, "we'll be able to get back to to shore and not get stuck in storm while on the lake."
+        "As long as there are no storms between us and the shore," he says, "we'll be able to get back to the shore and not get stuck in storm while on the lake."
 
                 * [The radio alerts!]
                     -> radio_alerts
@@ -174,7 +174,7 @@ SCENE 01
 
 
     = horizon_clouds
-    -   The mood is sombre as the <i>Lakesong</i> makes steady progress back toward shore. Dark clouds begin to build over the horizon ahead of the boat, matching the mood. Everyone is disapointed with the change in plans.
+    -   The mood is gloomy as the <i>Lakesong</i> makes steady progress back toward shore. Dark clouds begin to build over the horizon ahead of the boat, matching the mood. Everyone is disapointed with the change in plans.
 
             * ["Did you feel that?" asks Alexis.]
                 -> wind_shift
@@ -264,7 +264,7 @@ SCENE 01
 
         = sit_centerline
         - CHR_TRO_REL
-        -   "Double check that everything is stowed and and secured," he says. "Then the three need to sit on the floor of the boat along a centerline. This will make the boat more stable and keep you safer."
+        -   "Double check that everything is stowed and and secured," he says. "Then the three of you need to sit on the floor of the boat along a centerline. This will make the boat more stable and keep you safer."
 
                 * [It's growing darker.]
                     -> grows_darker
@@ -288,9 +288,9 @@ SCENE 01
         = normally_yes
         -   CHR_ALX_SAD
         -   CHR_TRO_REL
-        -   "But I think Laketown and the entire shore is wrapped in rain," he says.
+        -   "But I think Laketown and the entire shore are wrapped in rain," he says.
 
-        -   "You're still feeling good about beating the storm?" asks Alexis. "If the shore is getting rain, seems like that stationary storm isn't stationary any more." Mia and Julian look on, wide-eyed.
+        -   "You're still feeling good about beating the storm?" asks Alexis. "If the shore is getting rain, seems like that stationary storm isn't stationary anymore." Mia and Julian look on, wide-eyed.
 
                 * [Troy considers the situation.]
                     -> tro_considers_choices
@@ -338,7 +338,7 @@ SCENE 01
 
 == tro_worried_lightning ==
     -   CHR_TRO_REL
-    -   "I'm worried about the possibility of lightning strikes if we continue on towards Laketown," says Troy.<> -> lightning_strike
+    -   "I'm worried about the possibility of lightning strikes if we continue on toward Laketown," says Troy.<> -> lightning_strike
 
 
 == lightning_strike ==
@@ -366,7 +366,7 @@ SCENE 01
 // SND storm much louder and closer here
         -   CHR_TRO_REL
         -   CHR_ALX_REL
-        - {The minutes pass as the <i>Lakesong</i> continues toward Laketown and the growing storm. | The sky ahead is ominously dark, but so far the rain has held off.| The sound of thunder grows louder.}
+        - {The minutes pass as the <i>Lakesong</i> continues toward Laketown and the growing storm. | The sky ahead is fearfully dark, but so far the rain has held off.| The sound of thunder grows louder.}
 
                 * Alexis checks her phone again.[] "There's a tremendous amount of lightning in the severe area of the storm."
                     -> lightning_choices
@@ -502,7 +502,7 @@ VAR is_radio_damaged = true
 
         = radio_is_toast
         -   CHR_TRO_REL
-        -   "Well, gang, as I expected—the radio is toast," declares Troy. "Let's do a quick check of the rest of the boat. And I mean quick, because it seems that storm is moving towards us now!"
+        -   "Well, gang, as I expected—the radio is toast," declares Troy. "Let's do a quick check of the rest of the boat. And I mean quick, because it seems that storm is moving toward us now!"
 
             * [They quickly inspect the boat.]
 
@@ -547,7 +547,7 @@ VAR is_radio_damaged = true
 
         = bad_decision
         -   CHR_TRO_SUR
-        -   "I made a bad decision," say Troys. "I thought the storm was stationary, so I figured we could outrace it and get back to shore ahead of it."
+        -   "I made a bad decision," say Troy. "I thought the storm was stationary, so I figured we could outrace it and get back to shore ahead of it."
 
             * [Troy puts the boat into forward gear.]
                     -> why_bad_decision
@@ -568,7 +568,7 @@ VAR is_radio_damaged = true
         = engine_fried
         - CHR_TRO_ANG
         - CHR_ALX_SAD
-        -   "No. it's not," says Troy. "It looks like the lightning fried the engine's electronics. I can't get it started!"
+        -   "No, it's not," says Troy. "It looks like the lightning fried the engine's electronics. I can't get it started!"
 
                 *   "So we are sitting ducks?"[] asks Julian, as the storm closes in on the crippled boat.
                     -> bad_decision

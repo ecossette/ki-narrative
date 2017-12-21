@@ -129,7 +129,7 @@ SCENE 05
 
              * [Darkness sets in.]
                 -- CHR_TRO_REL
-                Troy texts his brother Vincent. He needs to update him on the change in their float plan, to account for the later return to shore.
+                Troy texts his brother Vincent. He needs to update him on the change in their float plan to account for the later return to shore.
 
                 As they approach Laketown, the vessel traffic begins to increase.
 
@@ -208,7 +208,7 @@ SCENE 05
 
         = mac_approach
         -   CHR_DID_REL
-        -   Mac approaches the <i>Lakesong.</i> "I haven't seen weather like that in years."
+        -   Mac approaches the <i>Lakesong</i>. "I haven't seen weather like that in years."
 
                 *"What's going on over there?" asks Mia[.], pointing toward the marine patrol officers and the couple.
                     -> mia_ask_police_couple
@@ -232,7 +232,7 @@ SCENE 05
         -   CHR_TRO_REL
             "Yep, those are the owners. The Crowleys. They owned the <em>Dee Stress</em> an—"
 
-            "An outboard cabin cruiser in the same length class as the <i>Lakesong,"</i> says Troy. Mac nods.
+            "An outboard cabin cruiser in the same length class as the <i>Lakesong</i>," says Troy. Mac nods.
 
                 * ["But that's not all," Mac says. He makes a dramatic pause.] -> reward_announce
 
@@ -417,7 +417,7 @@ SCENE 05
 
     = curious_cat
     -   CHR_JUL_SAD
-    -   "And curiosity killed the cat, is how I heard it."
+    -   "And curiosity killed the cat is how I heard it."
 
         It's clear that Julian is reluctant to return to the island, so his three friends decide to:
 
@@ -453,7 +453,7 @@ SCENE 05
     = try_convince_jul
     -   CHR_MIA_REL
     -   CHR_JUL_REL
-    -   "Don't forget we were able to outrun the creatures, or drones, with the <i>Lakesong,"</i> says Mia. "And the fog will conceal us as well."
+    -   "Don't forget we were able to outrun the creatures, or drones, with the <i>Lakesong</i>," says Mia. "And the fog will conceal us as well."
 
         "That's true," says Julian, slowly warming to the idea. "And winning the reward would be pretty cool."
 

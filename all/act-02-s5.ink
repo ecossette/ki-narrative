@@ -3,7 +3,7 @@
 === houseboat_in_view ===
 -   SYS_CHAP_09
 //- SYS_SCENE_4_1
-The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another power boat, larger than the one in tow, and several personal water craft (PWCs).
+The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another power boat, larger than the one in tow, and several personal water craft (PWC).
 
     * "Are those solar panels?" asks Mia[.], pointing to the roof of the houseboat.
         -- CHR_JUL_MIA
@@ -17,21 +17,21 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
     = jet_skiing
     - CHR_IAN_SML
     - CHR_JUL_REL
-    - "And looks at those PWCs!" says Julian. "I love jet skiing."  
+    - "And look at those PWCs!" says Julian. "I love jet-skiing."  
     - "They're rated for towing, too, so we use them for water skiing." says Ian. "After we tie up, how about we do a little of each?"
     
         * ["That'd be awesome!"] 
             -> secure_damaged_boat
         
     = secure_damaged_boat    
-    -   Julian smiles ear to ear. 
+    -   Julian smiles ear-to-ear. 
     -   "It's the least we can do to say thanks for the tow," says Ian. 
             
-        * [Troy docks the Lakesong.]
+        * [Troy docks the <i>Lakesong</i>.]
             -> board_houseboat
         
     = board_houseboat 
-    -   They all step aboard the houseboat to help Ian to secure his damaged speedboat.  
+    -   They all step aboard the houseboat to help Ian secure his damaged speedboat.  
         
         Done, they gather in front of the PWCs.
         //How does Ian secure the boat if he's on the Lakesong? Probably doesn't matter?
@@ -45,7 +45,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
     -   CHR_IAN_REL
     -   Mia surprises everyone when she volunteers. 
             
-        "Great!" says Ian. "Have you been jet skiing with a PWC before?"
+        "Great!" says Ian. "Have you been jet-skiing with a PWC before?"
 
         "Nope," says Mia.  
         
@@ -55,7 +55,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
     = ian_explains_safe
 // unlock other activities
 -   SYS_ACHIEVE_6_1
-    - "I'll give a quick PWC overview," says Ian before noticing that Alexis is looking at him suspiciously. "Don't worry," he says, "Despite what you saw this morning , I really do know what I'm doing, especially when it comes to jet skiing."
+    - "I'll give a quick PWC overview," says Ian before noticing that Alexis is looking at him suspiciously. "Don't worry," he says, "Despite what you saw this morning , I really do know what I'm doing, especially when it comes to jet-skiing."
     
         "He races watercross," says Maura. 
         
@@ -67,10 +67,10 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
     -   CHR_IAN_REL
     -   "Let's start by looking at the parts of a PWC," says Ian.
             
-                * [Go to the Parts of a PWC review.]
+                * [Review the Parts of a PWC review.]
                 // launch parts of pwc study guide here, sent to activity upon complete.
                     -- SYS_PDF_15
-                    ** [Onward]
+                    ** [Onward.]
                         -> parts_mini
                 * [Go directly to the activity.] 
                 // launch parts of pwc mini here
@@ -125,7 +125,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         -   CHR_IAN_REL
         -   Mia is about to get on her PWC, when Alexis says, "Don't forget you're in an inflatable life vest, Mia."
         
-            "Good point," says Ian handing Mia a Type III foam vest. "Here take this one."
+            "Good point," says Ian handing Mia a Type III foam vest. "Here, take this one."
             
                 * [Mia takes the PFD from Ian.]
                 -> pwc_pfd_mia
@@ -160,7 +160,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
                 -> take_spin
 
         = take_spin
-        -  While Alexis, Maura, and Troy make preparations to water ski, Mia, Julian, and Ian attach their engine cut-off switch lanyards and jet away from the houseboat.
+        -  While Alexis, Maura, and Troy make preparations to water-ski, Mia, Julian, and Ian attach their engine cut-off switch lanyards and jet away from the houseboat.
         //maybe don't use 'spin' here when you had the death spin earlier
         // SOUND pwc generic
         - SYS_SOUND_14
