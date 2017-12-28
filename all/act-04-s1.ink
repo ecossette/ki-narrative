@@ -36,7 +36,7 @@ SCENE 01
 == fire_contained ==
 // need add to emergency procedures achievement here
     -   CHR_TRO_REL
-    -   By the time the fire is extinguished, the fire department has arrived. They thank Troy for his quick action and begin investigating the cause of the fire. Troy returns to the <i>Lakesong.</i>
+    -   By the time the fire is extinguished, the fire department has arrived. They thank Troy for his quick action and begin investigating the cause of the fire. Troy returns to the <i>Lakesong</i>.
 
 
 
@@ -45,7 +45,7 @@ SCENE 01
 
     = ahoy_troy
     -   CHR_TRO_SML
-    -   Troy sees Mia, Alexis, and Julian approaching the <i>Lakesong.</i>
+    -   Troy sees Mia, Alexis, and Julian approaching the <i>Lakesong</i>.
 
         * ["Good morning!" says Troy. "Ready and rested?"]
             -> kayaks_racked
@@ -107,7 +107,7 @@ SCENE 01
 
 == check_conditions_day_2 ==
     -   SYS_ACHIEVE_2_4
-    -   With the pre-departure checklist complete, the four friends don their life jackets and prepare to cast off.
+    -   With the pre-departure checklist complete, the four friends don their life vests and prepare to cast off.
 
      * [Check the conditions.]
         -> co_wind_direction_3
@@ -149,7 +149,7 @@ SCENE 01
      - (opts)
                 *    ["Have you ever launched a boat from a trailer?" asks Julian.]
                     -- CHR_TRO_REL
-                     "Oh, yeah, lots of times," says Troy. -> bfa
+                     "Oh yeah, lots of times," says Troy. -> bfa
 
                 *    (bfa) ["Is it easier launching or retrieving?" asks Mia. ] { "Like anything, the more you do it, the easier it gets."|"It takes a little practice to get the hang of it."}
 
@@ -193,11 +193,11 @@ SCENE 01
      - (opts)
                 *    [ "Those are retrievers," says Troy. ]
                     -- CHR_TRO_REL
-                     "That's a duck hunting boat, and the puppy is learning how to behave on the water," he says.  -> dog
+                     "That's a duck-hunting boat, and the puppy is learning how to behave on the water," he says.  -> dog
 
-                *    (dog) [Troy gives the horn two quick toots.] {Troy's passing signal startles the puppy. "The dogs need to get accustomed to being in a boat, the same as you or me."|"Anglers and hunters are boaters, too, as are their four-legged passengers."}
+                *    (dog) [Troy gives the horn two quick toots.] {Troy's passing signal startles the puppy. "The dogs need to get accustomed to being in a boat the same as you or me."|"Anglers and hunters are boaters, too, as are their four-legged passengers."}
 
-                *    {dog} [They exchange 'Ahoys' and waves.] -> pass_duck_boat
+                *    {dog} [They exchange "Ahoys" and waves.] -> pass_duck_boat
 
         -     -> opts
 
@@ -205,7 +205,7 @@ SCENE 01
     -   CHR_TRO_REL
     -   Troy slows down a bit as he passes the smaller boat, in order to create as little wake as possible. Flat-bottomed vessels are especially vulnerable to capsizing or swamping.
 
-            * [Review the material on <i>Hunting and Fishing from a Boat</i>.]
+            * [Review the material on <i>Hunting and Fishing From a Boat</i>.]
                 - SYS_PDF_32
                     ** [OK.] -> arrive_ki
 
@@ -215,7 +215,7 @@ SCENE 01
 == fueling_depot ==
     -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
         
-        * Dock to at the fuel station.[] 
+        * Dock at the fuel station.[] 
             {do_wind_none} ** There is <b>no</b> wind or current.
                 -> no_wind_s3
             {do_wind_toward} ** The wind and current direction is <b>toward</b> the dock.
@@ -245,10 +245,10 @@ SCENE 01
             
             
 == next_pump ==
-    -   The friends tie up and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat. 
+    -   The friends tie up the boat and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat. 
 
      - (opts)
-                *    [ Cletus checks out the <i>Lakesong.</i>]
+                *    [ Cletus checks out the <i>Lakesong</i>.]
                     -- CHR_CLT_REL
                      Cletus gives their boat a long stare, from bow to stern and back again.  -> stare
 
@@ -273,8 +273,8 @@ SCENE 01
 === arrive_ki ===
 // add to other water activities badge here
 -   SYS_ACHIEVE_6_4
-    -   The journey north toward Kalkomey Isle is a long one, but all four agree that the time is passing quicker than expected. The warm and sunny weather helps, too, at least until...
-
+    -   The journey north toward Kalkomey Isle is a long one, but all four agree that the time is passing more quickly than expected. The warm and sunny weather helps too at least until...
+           
             * [They hit the fog.] -> infamous_fog
 
 == infamous_fog ==
@@ -283,7 +283,7 @@ SCENE 01
         - (opts)
                 *    [ Troy turns on the lights and slows the boat.]
                     -- CHR_TRO_REL
-                     As the fully-illuminated <i>Lakesong</i> slows, the sound of the engine decreases, allowing Troy to speak in a quiet voice. "Let's keep a sharp lookout in this fog," he says.  -> lookout
+                     As the fully illuminated <i>Lakesong</i> slows, the sound of the engine decreases, allowing Troy to speak in a quiet voice. "Let's keep a sharp lookout in this fog," he says.  -> lookout
 
                 *    (lookout) ["The cove should be straight ahead," says Troy.] {"I spent some time studying the charts last night, and the sandbars are all to the west, near the beach, but still..."|"We know there's more than sandbars out here."}
 
@@ -305,7 +305,7 @@ SCENE 01
             -   CHR_MIA_REL
             -   "I dunno," says Troy. "Maybe fifty degrees? I sure wouldn't want to find out first-hand."
             
-                * [Review "Cold Water Immersion and Hypothermia."]
+                * [Review <i>Cold Water Immersion and Hypothermia</i>.]
                 // launch the sg for cold water immersion and hypo
                     -- SYS_PDF_33
                     ** [OK]
@@ -330,8 +330,8 @@ SCENE 01
 
 == bird_sounds ==
     -   CHR_TRO_SML
-    -   The sound of birds signals their arrival at the island.
-        "There's the cove!" says Troy. "As we planned, we'll launch the kayaks from there." Troy gives another prolonged blast from the horn, keeping to the once every two-minute standard during reduced visibility.
+    -   The sound of birds signal their arrival at the island.
+        "There's the cove!" says Troy. "As we planned, we'll launch the kayaks from there." Troy gives another prolonged blast from the horn, keeping to the rule of signaling once every two minutes during reduced visibility.
 
             * [ Review the plan.]
                 -> review_plan
@@ -347,10 +347,10 @@ SCENE 01
                 -- CHR_TRO_REL
                 -- CHR_ALX_REL
                 "Troy and Julian will head out in the kayaks to investigate the shoreline of the cove. You'll spend up to two hours looking for clues about what happened to the boat we saw disappear yesterday," says Alexis.
-            *    [The <i>Lakesong.</i>]
+            *    [The <i>Lakesong</i>.]
                 --  CHR_TRO_REL
                 --  CHR_JUL_REL
-                "Mia and Alexis will stay with the <i>Lakesong,"</i> says Julian. "They'll wait away from the island for the fog to clear—if it clears—and return for us in two hours, unless we signal for pickup sooner."
+                "Mia and Alexis will stay with the <i>Lakesong</i>," says Julian. "They'll wait away from the island for the fog to clear—if it clears—and return for us in two hours, unless we signal for pickup sooner."
             *    [The rendezvous.]
                 --  CHR_TRO_REL
                 --  CHR_MIA_REL
@@ -392,7 +392,7 @@ SCENE 01
         = before_set_off
         -   CHR_TRO_REL
         -   CHR_JUL_REL
-        "Before we set off, take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PDF pockets, says Troy. "Grab the kayak leash as well."
+        "Before we set off, take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PFD pockets, says Troy. "Grab the kayak leash as well."
 
             * ["And you've got the walkie-talkie?" asks Julian.]
                 -> no_two_way
@@ -413,7 +413,7 @@ SCENE 01
                     --  CHR_ALX_SAD
                      Troy anticipated their concerns—a two-way radio was part of the original plan. But he is prepared to smooth the situation over. -> signals
 
-                *    (signals) [Julian begins stashing signals into his life jacket pockets.] {"Don't worry. We have the other signals," says Troy, nodding toward Julian, who is looking for a good spot to clip the safety whistle. "Even if we can't find each other right away, locating us—even in fog—shouldn't be a problem."| "Plus the fog is going to clear," he says. "I'm sure of it." }
+                *    (signals) [Julian begins stashing signals into his life vest's pockets.] {"Don't worry. We have the other signals," says Troy, nodding toward Julian, who is looking for a good spot to clip the safety whistle. "Even if we can't find each other right away, locating us—even in fog—shouldn't be a problem."| "Plus the fog is going to clear," he says. "I'm sure of it." }
 
                 *    {signals} ["I hope the fog doesn't clear," says Julian.] -> hope_for_fog
         -     -> opts
@@ -442,7 +442,7 @@ SCENE 01
     *    [Alexis disagrees.]
         --  CHR_JUL_REL
         --  CHR_ALX_REL
-        "But fog will make it much harder to find and recover you and the kayaks," says Alexis. "And after we hit the sandbar yesterday with <i>Troy</i> at the helm, the idea of me piloting the boat in the fog while looking for the kayaks makes make me nervous."
+        "But fog will make it much harder to find and recover you and the kayaks," says Alexis. "And after we hit the sandbar yesterday with <i>Troy</i> at the helm, the idea of me piloting the boat in the fog while looking for the kayaks makes me nervous."
         -> all_reason_for_cover
 
     *    -> fog_or_no

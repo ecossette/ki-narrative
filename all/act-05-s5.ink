@@ -127,7 +127,7 @@ what_remember is {what_remember}
         -   CHR_MIA_REL
         -   "It's oddly quiet around here this morning," says Mia. "No sign of Mac, Ian and Maura... not even creepy Cletus."
 
-                * ["Yeah, says Troy."]
+                * ["Yeah," says Troy."]
                     -> hypo_neg01_memory
 
 
@@ -370,7 +370,7 @@ what_remember is {what_remember}
 === willard_and_accomplice ===
 // this is a full solve condition
 
-    -   Several days later, we join the four friends preparing the <i>Lakesong</i> for departure and discussing the breaking news that the boat robbery case was solved. Mr. Willard and {accomplice} were both arrested.
+    -   Several days later, we join the four friends preparing the <i>Lakesong</i> for departure and discussing the breaking news that the boat robbery case was solved. Both Mr. Willard and {accomplice} were both arrested.
 
         {
             - on_kayaks_saw == WILLARD:
@@ -882,7 +882,7 @@ what_remember is {what_remember}
         * You were successful in solving the mystery[!], and you have successfully completed all of your boat education achievements, which qualifies you to take the final exam.
 
             ** Congratulations![]
-                You'll be given the opportunity to take a Practice Exam or proceed directly the final. Good luck!
+                You'll be given the opportunity to take a practice exam or proceed directly to the final exam. Good luck!
 
                 *** [Onward!]
                     FPO: Hand off to final exam course LMS occurs here.
@@ -899,7 +899,7 @@ what_remember is {what_remember}
         * You were successful in partially solving the mystery[...], and you have successfully completed all of your boat education achievements, which qualifies you to take the final exam.
 
             ** Congratulations![]
-                You'll be given the opportunity to take a Practice Exam or proceed directly the final. Good luck!
+                You'll be given the opportunity to take a practice exam or proceed directly the final exam. Good luck!
 
                 *** [Onward!]
                     FPO: Hand off to final exam course LMS occurs here.

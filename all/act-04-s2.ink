@@ -8,7 +8,7 @@
         *  [The minutes pass... 15, 20, then 30 minutes...]
         // completing other water activities here for kayak path
         -- SYS_ACHIEVE_6_5
-        After half an hour, they've managed to search roughly half of the cove, but haven't found anything at all, despite shore's lighter fog and good visibility.
+        After half an hour, they've managed to search roughly half of the cove, but haven't found anything at all, despite the shore's lighter fog and better visibility.
 
             Julian stops paddling, then pivots his kayak about until he is facing back in the direction from which he came.
 
@@ -39,7 +39,7 @@
     = vines_section
     -   CHR_JUL_REL
     -   CHR_TRO_REL
-    -   "I didn't realize it until we passed this section," Julian says, "but this is the only part of the cove we've seen that has these vines."
+    -   "I didn't realize it until we passed this section," Julian says, "But this is the only part of the cove we've seen that has these vines."
 
             * ["Hmmm, you're right," says Troy.]
                 -> tro_impressed
@@ -102,7 +102,7 @@
                 ~ saw_monkey = 1
                 -> monkey_watching ->
 
-                    **  [Troy and Julian look at stream ahead of them.]
+                    **  [Troy and Julian look at the stream ahead of them.]
 
             * [ Julian looking up into a tree.]
                 // julian says a 'creature' crashed drone, comment on how live creature wouldn't be intact
@@ -142,7 +142,7 @@
     -   CHR_TRO_SUR
     -   CHR_JUL_SML
     -   "That's a monkey!" says Troy astonished to find a monkey sitting on a fallen log looking at him.
-        "Correction. <i>Monkeys,"</i> says Julian pointing, up into the trees. Several small, hairy bodies skitter through the high branches.
+        "Correction. <i>Monkeys</i>," says Julian pointing, up into the trees. Several small, hairy bodies skitter through the high branches.
 
             * The monkey watches Troy[.], and Troy watches the monkey.
                 -> monkey_watching
@@ -164,7 +164,7 @@
     = monkey_arm
     -   CHR_TRO_SUR
     -   CHR_JUL_SML
-    -   "That monkey has a pretty good arm," he says, watching the monkey take off along the treetops.
+    -   "That monkey has a pretty good arm," he says watching the monkey take off along the treetops.
 
     -   "Surprisingly accurate, too," says Troy shaking his head. "Can this thing get any weirder? What are monkeys even doing on this island? We're south of Atlas range, well out of their natural habitat."
 
@@ -189,7 +189,7 @@
 ~ on_kayaks_saw = STREAM
     -   CHR_JUL_REL
     -   CHR_TRO_REL
-    -   { "That's the question, isn't it?" says Troy, thinking out loud.| Troy then considers the alternative.|}
+    -   { "That's the question, isn't it?" says Troy thinking out loud.| Troy then considers the alternative.|}
 
     *    "If we follow the stream[..."], we could find the thieves' hideout, but we also run the risk of being seen—or worse—getting caught," says Troy. "On the other hand, the more we learn, the better chance we have of getting the reward." -> follow_or_no
 
@@ -248,7 +248,7 @@
 
         }
 
-    -   and take the kayaks to the other side of the cove, putting distance between themselves and the vine curtain in case the thieves enter or exit through it. The fog persists {turn_back_before_cave:, though it's more patchy than before,} and they both hope Mia and Alexis will be on time.
+    -   and take the kayaks to the other side of the cove, putting distance between themselves and the vine curtain in case the thieves enter or exit through it. The fog persists{turn_back_before_cave:, though it's more patchy than before} and they both hope Mia and Alexis will be on time.
 
         {
 
@@ -294,7 +294,7 @@
 
         =   stream_continues
         -   CHR_JUL_REL
-        -   "That would explain why no sailboats have been stolen,"  says Julian, catching Troy's point on the depth. The stream is certainly wide enough to carry any of the stolen power boats.
+        -   "That would explain why no sailboats have been stolen," says Julian, catching Troy's point on the depth. The stream is certainly wide enough to carry any of the stolen power boats.
 
                 * [Julian dips his hand into the stream.]
                     -> hand_dip_stream
@@ -402,7 +402,7 @@
         *    [Julian looks at Troy wide-eyed.]
             Troy puts his finger to his lips.  -> silent
 
-        *    (silent) [Troy is statue still.] {They both know the sound they heard wasn't from monkeys or birds.  While distant, the clang was unmistakably a clang of metal on metal, the sound of human activity.| Listening...}
+        *    (silent) [Troy is statue-still.] {They both know the sound they heard wasn't from monkeys or birds.  While distant, the clang was unmistakably a clang of metal on metal, the sound of human activity.| Listening...}
 
         *    {silent} [Overhead, a buzzing...] -> overhead_buzzing
 
@@ -606,7 +606,7 @@
 
             - (opts)
                 * [Julian steps on a dry bag.]
-                Julian picks up the dry bag, and sees it was emptied. He scans the forest floor, hoping to salvage something. -> rope
+                Julian picks up the dry bag and sees it was emptied. He scans the forest floor, hoping to salvage something. -> rope
 
                 * (rope) [Troy reaches for the rope.] {After reaching for the rope, Troy quickly unties the kayaks.| Julian finds a small piece of discarded wrapper from the granola bar.}
 
@@ -945,7 +945,7 @@
 
             
 == lanyard_attach ==
-    -   Troy knows he should attach the kayak lanyard to his life-jacket. Staying with the remaining kayak helps their chances of being seen and will help them get more of their bodies out of the water—if they can somehow gather the strength to lift themselves on top of the remaining overturned kayak. 
+    -   Troy knows he should attach the kayak lanyard to his PFD. Staying with the remaining kayak helps their chances of being seen and will help them get more of their bodies out of the water—if they can somehow gather the strength to lift themselves on top of the remaining overturned kayak. 
     
         -   (opts)
         
@@ -981,7 +981,7 @@
        
 === lose_remaining_kayak ===
 ~  kayak_status = 0
-    -   Troy is unable to attach the landyard to his PFD and in his final effort he loses hold of the landyard and the kayak is lost. 
+    -   Troy is unable to attach the lanyard to his PFD and in his final effort he loses hold of the lanyard and the kayak is lost. 
      
             * [Focus on survival.]
             -> focus_survival

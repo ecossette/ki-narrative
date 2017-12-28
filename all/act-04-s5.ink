@@ -46,7 +46,7 @@
             * ["They must have gone up the stream!" says Julian.]
             --   CHR_JUL_REL
             --   CHR_TRO_REL
-            "That change in engine pitch was them slowing to go through the vine curtain," says Troy, agreeing with Julian.
+            "That change in engine pitch was the boat slowing to go through the vine curtain," says Troy, agreeing with Julian.
 
             "The thieves must have a hideout in there," says Julian. "We just didn't go far enough."
 
@@ -68,7 +68,7 @@
     -   CHR_JUL_REL
     -   CHR_TRO_REL
 
-        "Now that sounds more like the <i>Lakesong,"</i> says Troy. "But let's wait for the signal."
+        "Now that sounds more like the <i>Lakesong</i>," says Troy. "But let's wait for the signal."
 
             * [Toot. Toot.]
                 -> toot_toot
@@ -91,7 +91,7 @@
     "That's them!" says Julian.
     Troy smiles. "OK. Blow the whistle!"
 
-            * [Aboard the <i>Lakesong.</i>]
+            * [Aboard the <i>Lakesong</i>.]
                     -> recovery_fine_aboard_boat
 
 
@@ -121,7 +121,7 @@
 == use_the_horn ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   "We'll need to give the coded signal, according to the plan," says Alexis. She eases back on the throttle as visibility once again decreases. "But Julian was right that the fog will help us stay hidden."
+    -   "We'll need to give the coded signal, according to the plan," says Alexis. She eases back on the throttle as the visibility decreases once again. "But Julian was right that the fog will help us stay hidden."
 
             *  The <i>Lakesong</i> slips into the foggy cove.[]
     // let's rejoin the guys here if they didn't follow stream.
@@ -166,7 +166,7 @@
             = gives_signal
             // add to boat equip badge
             -   SYS_ACHIEVE_2_5
-            -   Alexis gives three quick toots with the horn, waits three seconds and then gives a long one, the agreed upon signal.
+            -   Alexis gives three quick toots with the horn, waits three seconds and then gives a long one, the agreed-upon signal.
 
                 {
                 
@@ -198,7 +198,7 @@
                     * [Wait.]
                     Alexis counts off to fifteen in her head, just to make sure she's giving the guys enough time to respond.->cut
 
-                    * (cut) [Cutoff the engine.] {"Let's try cutting the engine," says Alexis."We should be able to hear a whistle with the engine idling, but you never know." Alexis cuts the engine.|"C'mon, guys, signal already!"}
+                    * (cut) [Cutoff the engine.] {"Let's try cutting the engine," says Alexis. "We should be able to hear a whistle with the engine idling but you never know." Alexis cuts the engine.|"C'mon, guys, signal already!"}
 
 
                     * {cut} [Signal again.]
@@ -287,7 +287,7 @@
                     *   [A black speck appears.]
                         High overhead, a black speck appears.-> fog
 
-                    *    (fog) [The cove remains in fog.] {While the fog lingers over the not too distant cove, in the open waters the visibility is good in every direction, including straight up.| The speck is directly above the boat, matching their speed and course.}
+                    *    (fog) [The cove remains in fog.] {While the fog lingers over the not-too-distant cove, in the open waters, the visibility is good in every direction, including straight up.| The speck is directly above the boat, matching their speed and course.}
 
                     * {fog} ["Look, we have company," say Mia.]-> drone
 
@@ -297,7 +297,7 @@
     -   CHR_ALX_REL
     -   CHR_MIA_REL
             Mia points skyward. "At the risk of sounding paranoid," says Mia, "you think that could be a drone? Something about it seems weird."
-            "Hard to tell, it's so high," says Alexis. "Could just be a bird, but I get a funny feeling, too."
+            "Hard to tell, it's so high," says Alexis. "Could just be a bird, but I get a funny feeling too."
 
             -   (opts)
                 * [Try the binoculars.]
@@ -331,7 +331,7 @@
 - SYS_ACHIEVE_4_5
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   The object—drone or bird—is still visible, but has moved much further to the east. Mia, Alexis, and the <i>Lakesong</i> continue their west-northwesterly loop back to the cove with the hope of finding Julian and Alexis waiting in the kayaks.
+    -   The object—drone or bird—is still visible but has moved much further to the east. Mia, Alexis, and the <i>Lakesong</i> continue their west-northwesterly loop back to the cove with the hope of finding Julian and Alexis waiting in the kayaks.
 
             The fog in the cove has...
 
@@ -374,7 +374,7 @@
              -   (opts)
 
                 *   [Mia shivers.]
-                "It's always colder in this part," says Mia, shivering. The boat shudders in the cross-current. -> skyward
+                "It's always colder in this part," says Mia shivering. The boat shudders in the cross-current. -> skyward
 
                 *   (skyward) [Mia looks skyward.] {Mia looks skyward. "If that's a drone, though, it'll have a clear view of the cove, too." | "When we see the kayaks, we'll need to get them on board and get moving, assuming that's a drone."}
 

@@ -100,7 +100,7 @@ wait to call for help = hypo extreme / full memory loss
 
     = yes_sir
     -   CHR_ALX_REL
-    -   "Yes, sir," they all say. Alexis adds, "Not a problem, Captain. I'll stick to water skiing." Captain Garcia smiles and stands, giving the signal that it's time for the friends to go.
+    -   "Yes, sir," they all say. Alexis adds, "Not a problem, Captain. I'll stick to water-skiing." Captain Garcia smiles and stands, giving the signal that it's time for the friends to go.
 
                 * ["Just one more thing," he says.]
                     -> suspect_anyone_office
@@ -156,7 +156,7 @@ wait to call for help = hypo extreme / full memory loss
             *   [Alexis hesitates.]
              Alexis hesitates. "OK, 'suspicion' is probably a bit much," she says.  -> hesitates
 
-            *   (hesitates) [Alexis looks to her friends for support.] {Alexis looks to her friends for support.  "We discussed this on the way in, and, well... it's more like, just, I dunno, a feeling or something."|"I can't really explain it... we don't have anything concrete."}
+            *   (hesitates) [Alexis looks to her friends for support.] {Alexis looks to her friends for support. "We discussed this on the way in, and, well... it's more like, just, I dunno, a feeling or something."|"I can't really explain it... we don't have anything concrete."}
 
             *   {hesitates} ["A hunch," says the Captain.]
                     -> hunch
@@ -273,7 +273,7 @@ wait to call for help = hypo extreme / full memory loss
     -   CHR_ALX_SAD
     -   "How are they?!" Alexis and Mia ask.
 
-        "Both Mr. Del Castillo and Mr. Kelton are are going to be fine," says the Captain.
+        "Both Mr. Del Castillo and Mr. Kelton are going to be fine," says the Captain.
 
             * [The news is comforting.]
                 -> relieved
@@ -433,10 +433,10 @@ wait to call for help = hypo extreme / full memory loss
                 - else:
                  {
                     - who_lost_memory == TROY:
-                    "Mr. Kelton, Troy, has no memory of anything at all, and Julian—Mr. Del Castillo—has some memory, but not of capsizing.""
+                    "Mr. Kelton—Troy—has no memory of anything at all, and Julian—Mr. Del Castillo—has some memory, but not of capsizing.""
 
                     -   who_lost_memory == JULIAN:
-                    "Mr. Del Castillo, Julian, has no memory of anything at all, and Troy—Mr. Kelton—has some memory, but not of capsizing.""
+                    "Mr. Del Castillo—Julian—has no memory of anything at all, and Troy—Mr. Kelton—has some memory, but not of capsizing.""
 
                 }
 
@@ -493,7 +493,7 @@ wait to call for help = hypo extreme / full memory loss
 
         = post_trauma
         -   CHR_MPO_REL
-        -   "Look, I'm not ruling out the possibility of monkeys on Kalkomey Isle," he says,  "but you should also know that after a traumatic event it's quite normal for people to, er... become confused."
+        -   "Look, I'm not ruling out the possibility of monkeys on Kalkomey Isle," he says, "but you should also know that after a traumatic event, it's quite normal for people to, er... become confused."
 
             "What else did Julian and Troy say?" asks Mia. "Did—"
 
@@ -502,7 +502,7 @@ wait to call for help = hypo extreme / full memory loss
 
 == my_turn_questions ==
     -   CHR_MPO_REL
-    -   "How about I get to take a turn at asking the questions?" asks Captain Garcia—in his 'police voice'. Both girls nod. "Let's start by you telling me what you were doing out there at Kalkomey Isle."
+    -   "How about I get to take a turn at asking the questions?" asks Captain Garcia—in his police voice. Both girls nod. "Let's start by you telling me what you were doing out there at Kalkomey Isle."
 
             *   [The girls tell their story.]
                 -> girls_recap_to_captain
@@ -559,7 +559,7 @@ wait to call for help = hypo extreme / full memory loss
     = yes_sir
     -   CHR_MIA_REL
     -   CHR_ALX_REL
-    -   "Yes, sir," they both say. Alexis adds, "Not a problem, Captain. I'll stick to water skiing... in <i>warm</i> water." Captain Garcia smiles.
+    -   "Yes, sir," they both say. Alexis adds, "Not a problem, Captain. I'll stick to water-skiing... in <i>warm</i> water." Captain Garcia smiles.
 
                 * ["I have one more question," he says.]
                     -> suspect_anyone_dock

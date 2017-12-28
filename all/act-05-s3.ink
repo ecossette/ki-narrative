@@ -254,7 +254,7 @@
 //        DEBUG suspect is {suspect_whom}
 
     -   CHR_MIA_REL
-    -   After successfully bringing the <i>Lakesong</i> back home, Mia continues between the green and red channel markers on each side at 'slow, no wake' speed as she approaches the dock.
+    -   After successfully bringing the <i>Lakesong</i> back home, Mia continues between the green and red channel markers on each side at "slow, no wake" speed as she approaches the dock.
 
             * [Dock the boat.]
             -> docking_wind_direction ->

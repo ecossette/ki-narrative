@@ -4,7 +4,7 @@
 ~ fog_condition = CLEAR
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   In the open waters away from the island, the fog clears, giving Mia and Alexis good visibility from the deck of the <i>Lakesong.</i>
+    -   In the open waters away from the island, the fog clears, giving Mia and Alexis good visibility from the deck of the <i>Lakesong</i>.
 
     To kill time until their planned rendezvous with the kayaks...
 
@@ -14,7 +14,7 @@
             -- CHR_MIA_SML
             "I still think I like jet-skiing the most," she says. "But I've got to admit this is pretty awesome!" -> loops
 
-        * (loops) [Alexis loops in wide circles.] {The boat cruises nicely, making wide, crisscrossing loops, and the time passes quickly as the girls enjoy taking turns at the wheel.| Just as Alexis did, Mia cruises in lazy circles. "I couldn't fall asleep last night, so I finished the boat education course and got my certificate." Alexis smiles at the excitement in Mia's voice, but then...}
+        * (loops) [Alexis loops in wide circles.] {The boat cruises nicely, making wide, crisscrossed loops, and the time passes quickly as the girls enjoy taking turns at the wheel.| Just as Alexis did, Mia cruises in lazy circles. "I couldn't fall asleep last night, so I finished the boat education course and got my certificate." Alexis smiles at the excitement in Mia's voice, but then...}
 
         * {loops} [Something catches Alexis' attention.]
                     -> attention
@@ -41,7 +41,7 @@
 === sees_creatures ===
     -   CHR_ALX_REL
     -   CHR_MIA_SUR
-    -   "It's the creatures!" Mia exclaims. "I mean the drones," she adds, correcting herself.
+    -   "It's the creatures!" Mia exclaims. "I mean the drones," she adds correcting herself.
 
         "Six of one... half a dozen of the other," says Alexis taking the wheel and hitting the throttle. "Either way, we're outta here."
 
@@ -74,7 +74,7 @@
                 --  CHR_ALX_SML
                 "I want them to chase us, not catch us," she says. -> what
 
-                * (what) [Mia's face if full of doubt.] {"Trust me. I have a plan." Alexis makes a small adjustment to the throttle while keeping an eye on the pursuers.| "You know... a little cat and mouse action." }
+                * (what) [Mia's face is full of doubt.] {"Trust me. I have a plan." Alexis makes a small adjustment to the throttle while keeping an eye on the pursuers.| "You know... a little cat and mouse action." }
 
                  * {what} ["Are you serious?" says Mia.] -> alexis_plan
 
@@ -133,7 +133,7 @@
         -   (opts)
 
             * [Mia grabs the binoculars.]
-                "You see something?" asks Alexis, as Mia brings the binoculars up. -> horizon
+                "You see something?" asks Alexis as Mia brings the binoculars up. -> horizon
 
             * (horizon) [Mia shields her eyes with her hand.]
                     {Mia scans the horizon, then focuses on a spot in the distance.|"It's another boat in the distance." says Mia. }

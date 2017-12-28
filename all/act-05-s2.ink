@@ -17,7 +17,7 @@
     -   Mia and Alexis enter the cove, but there is no sign of the kayaks. Alexis wonders if there is a chance that Julian and Troy are hunkered down somewhere out of sight along the shoreline. 
 
         * [Alexis signals with the boat's horn.]
-            -- "Nothing and more nothing," says Mia, frustrated. 
+            -- "Nothing and more nothing," says Mia frustrated. 
             -> no_response_hour_two
 
 == no_response_hour_two ==
@@ -238,7 +238,7 @@
             ** ["Oh my God!" says Mia.]
             --  CHR_ALX_REL
             --  CHR_MIA_SUR
-            -- "Oh, my God!" says Mia. "That's Julian and Troy." Alexis nods, her mouth open, shocked by the news.
+            -- "Oh my God!" says Mia. "That's Julian and Troy." Alexis nods, her mouth open, shocked by the news.
 
                 *** [The radio squawks a reply.]
                     -> mp_reply
@@ -312,7 +312,7 @@
     -   CHR_ALX_REL
     -   Alexis grabs the transmitter, and Mia droops.
 
-        "Pan, Pan, Pan. This is <i>Lakesong, Lakesong, Lakesong</i>."
+        "Pan, Pan, Pan. This is <i>Lakesong</i>, <i>Lakesong</i>, <i>Lakesong</i>."
 
             * [The marine police respond.]
                 -> mp_response
@@ -322,10 +322,10 @@
     -   CHR_ALX_REL
     -   The marine police ask Alexis to switch to Channel 70, where she updates them on the likelihood that Julian and Troy are the rescued victims of the cold water immersion.
 
-            * ["Copy that Laksong."]
+            * ["Copy that <i>Lakesong</i>."]
             -   "The medevac chopper is on the way. Advise that you return to Laketown immediately and directly. Over."
 
-                "Copy that," says Alexis. "<i>Lakesong</i> returning to Laketown. Lakesong out."
+                "Copy that," says Alexis. "<i>Lakesong</i> returning to Laketown. <i>Lakesong</i> out."
 
                     ** [Alexis nudges the throttle forward.]
                         -> return_post_rescue

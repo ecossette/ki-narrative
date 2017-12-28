@@ -59,7 +59,7 @@
         - (opts)
 
             *   [Mia checks the time.]
-            "Yesterday the fog hadn't cleared this soon, either," says Mia. -> fuel
+            "Yesterday the fog hadn't cleared this soon either," says Mia. -> fuel
 
             *   (fuel) [Mia asks about the fuel.] {"How's the fuel situation?" she asks.| "We've got a while to go still."}
 
@@ -104,7 +104,7 @@
             *   [Alexis hesitates.]
                 Alexis hesitates for a moment, a part of her not wanting to give away their location, but her responsibility in this situation is clear.-> rule
         
-            *   (rule) [Alexis recalls the rule.] {She remembers the Coast Guard regs—<i>A power-driven vessel making way through the water shall sound at intervals of not more than 2 minutes one prolonged blast.</i>| The 2 minute mark approaches...}
+            *   (rule) [Alexis recalls the rule.] {She remembers the Coast Guard regs—<i>A power-driven vessel making way through the water shall sound at intervals of not more than 2 minutes one prolonged blast.</i>| The 2-minute mark approaches...}
             
             *   {rule} [Alexis gives the prolonged blast.]
                 -> prolonged_blast
@@ -115,7 +115,7 @@
                     
             = prolonged_blast
             -   CHR_ALX_REL
-            -   Alexis sounds the Lakesong's then waits and hopes. There's a chance they are not on an intersecting path with the other vessel. The second horn signal will either be closer or farther away.
+            -   Alexis sounds the <i>Lakesong's</i> horn then waits and hopes. There's a chance they are not on an intersecting path with the other vessel. The second horn signal will either be closer or farther away.
 
                     * [The only sound is their own engine.]
                         -> sound_own_engine
@@ -162,7 +162,7 @@
     VAR chr = "CLT"
     ~ who_saw = CLETUS
     -   CHR_CLT_REL
-    -   It's Cletus, in the boat they saw him fueling earlier.
+    -   It's Cletus in the boat they saw him fueling earlier.
 
     -   -> fog_discussion ("Cletus")
 

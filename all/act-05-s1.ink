@@ -11,7 +11,7 @@
             * [Julian and Troy tell their story.]
             -- CHR_TRO_REL
             -- CHR_JUL_REL
-            -- As they begin the journey back to Laketown, Julian and Troy tell the two girls about finding the vine curtain{monkey_eyes_him:, the monkeys, } {julian_tree_looking:, the crashed drone,} and the hidden stream beyond. They also mention hearing—but not seeing—a boat enter the cove shortly before Mia and Alexis arrived.
+            -- As they begin the journey back to Laketown, Julian and Troy tell the two girls about finding the vine curtain{monkey_eyes_him:, the monkeys, }{julian_tree_looking:, the crashed drone,} and the hidden stream beyond. They also mention hearing—but not seeing—a boat enter the cove shortly before Mia and Alexis arrived.
 
                 ** [Mia and Alexis tell their story.]
 
@@ -617,7 +617,13 @@
     -   CHR_TRO_SML
     -   "Really?" she says, a big smile on her face. "I can drive for a while?"
 
-            *"Absolutely," says Troy[.], as Mia takes the wheel. "On a beautiful day like this, we'll probably encounter plenty of traffic as we get closer to the marina. It'll be a good chance for you to put your knowledge to the test."
+            *["Absolutely," says Troy.] 
+                -> plenty_traffic
+    
+    = plenty_traffic    
+    -   CHR_TRO_REL
+    -   CHR_MIA_SML
+        "On a beautiful day like this, we'll probably encounter plenty of traffic as we get closer to the marina. It'll be a good chance for you to put your knowledge to the test."
 
                 ** ["Bring it!" says Mia.]
                     -> bring_it
@@ -631,7 +637,7 @@
                     -   (opts) 
                     
                         *   ["One toot for port," says Mia.]
-                            "One toot for a turn to port," says Mia. -> two
+                            "One toot passing on the give-way vessel's port side," says Mia. -> two
                     
                     
                         *   (two)["Starboard has two syllables."]{"Starboard has two syllables, so it gets one toot."|"Since port only has one syllable—one toot."}
