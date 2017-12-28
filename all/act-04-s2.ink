@@ -297,12 +297,14 @@
         -   "That would explain why no sailboats have been stolen,"  says Julian, catching Troy's point on the depth. The stream is certainly wide enough to carry any of the stolen power boats.
 
                 * [Julian dips his hand into the stream.]
+                    -> hand_dip_stream
 
         = hand_dip_stream
         -   CHR_JUL_REL
         -   "The stream is warmer than I expected," says Julian hanging his arm over the side of his kayak. "I thought the water around here was supposed to be cold?"
 
                 * [Troy explains.]
+                    -> explain_warm_stream
 
 
         = explain_warm_stream

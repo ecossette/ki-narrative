@@ -69,7 +69,7 @@
                             
                     "Are there any others?" asks Troy.
                             
-                    "No. It was just the two of us—me and Maura."
+                    "No. It was just the two of us–me and Maura."
                     
                         * ["OK," says Troy.]
                             -> advise_mp
@@ -128,7 +128,7 @@
     -   CHR_CLR
     -   Three boats come into view and quickly close the distance to the <i>Lakesong</i>. 
         
-        Two of the boats swerve off and head toward the unmanned boat, while a third pulls up alongside the <i>Lakesong</i>. 
+        Two of the boats veer off and head toward the unmanned boat, while a third pulls up alongside the <i>Lakesong</i>. 
             
             * ["Good morning, I'm Captain Garcia."]
                 -> captain_boards
@@ -150,7 +150,7 @@
         -   CHR_IAN_REL
         -   "But if you had used your engine cut-off switch lanyard, luck wouldn't have a played a role: your engine would have stopped as soon as you were tossed." Maura glances at Alexis but doesn't meet her eye. 
 
-                *   "I realize that now, sir[."]," says Ian politely. "I won't make that mistake again." 
+                *   "I realize that now, sir[."], says Ian politely. "I won't make that mistake again." 
                     --   CHR_MPO_REL
                     --   CHR_IAN_REL
 
@@ -278,7 +278,7 @@
                 -- CHR_ALX_ANG
                 -- CHR_IAN_SML
             
-                -- "I think we could help out with that," say Ian, smiling. "We've got a couple of  tow-rated PWCs. We can jet-ski and tow two water skiers at the same time!
+                -- "I think we could help out with that," say Ian, smiling. "We've got a couple of  tow-rated PWCs. We can jetski and tow two water skiers at the same time!
            //maybe even cut down to here. You don't need choices for choices sake 
             *    "I've never seen a houseboat before," says Mia.
                 -- CHR_MIA_REL

@@ -9,7 +9,7 @@
         
         = drills
         -   CHR_TRO_REL
-        As they continue cruising, Troy conducts a couple of "what if" emergency drills with the group. He also reminds his friends on the importance of keeping a proper lookout—looking <i>and</i> listening—at all times.
+        As they continue cruising, Troy conducts a couple of 'what if' emergency drills with the group. He also reminds his friends on the importance of keeping a proper lookout—looking <i>and</i> listening—at all times.
     //otherwise it sounded like the number of eyes was relevant
     
            * ["Hey, what's that?" Mia asks suddenly.] 
@@ -23,7 +23,7 @@
             // SOUND boat circle of death in distance, lower volume, should be very much in distance
             -- SYS_SOUND_02
             
-            * [Troy throttles back.]
+            * Troy throttles back[.]
             -> throttle_back_slow
             
         = throttle_back_slow
@@ -100,7 +100,7 @@
         
         - (opts)
             *    "We won't be in danger[...?"], right, Troy?" asks Mia.
-                    "Not a chance." Troy reassures her. "We'll approach at a safe speed. But we all need to be extra alert at keeping a lookout.
+                    "Not a chance." Troy reassures her. "We'll approach at at a safe speed. But we all need to be extra alert at keeping a lookout.
             
             *    (distress) "We don't even know if it's a boat in distress[."]," says Julian. 
                             "Which is why we are taking a closer look," replies Troy.
@@ -149,7 +149,7 @@
                 // says, clearly, into the...
                     -- CHR_TRO_REL
                         
-                    "This is the <i>Lakesong</i>, <i>Lakesong<i>, <i>Lakesong</i>, Whiskey Sierra 2-3-2-3 Romeo Bravo. MAYDAY <i>Lakesong</i>. Little Kelton Island bears 90 degrees magnetic-distance 2 miles.  We've encountered an unmanned boat in a death circle. Repeat we have encountered unmanned boat in death circle. No sign of victims. <i>Lakesong</i> is a 32 foot cabin cruiser with a white hull and a green stripe."
+                    "This is the <i>Lakesong</i>, <i>Lakesong<i>, <i>Lakesong</i>, Whiskey Sierra 2-3-2-3 Romeo Bravo. MAYDAY <i>Lakesong</i>. Little Kelton Island bears 90 degrees magnetic-distance 2 miles.  We've encountered an unmanned boat in a death circle. Repeat we have encountered unmanned boat in death circle. No sign of victims. Lakesong is a 32 foot cabin cruiser with a white hull with a green stripe."
                         
                             ** [Troy releases the transmit button and waits.]
                                 -> police_response
@@ -178,7 +178,7 @@
                         "Nothing so far. But no..." Alexis pauses, as she considers how best to say it. "No sign of casualties either." 
                         //bit dramatic.
                                 
-                            *** ["We're looking for the person who was in that boat?"] Julian has recognized the seriousness of the situation.
+                            *** ["We're looking for the person who was in that boat?"] Julian has recognised the seriousness of the situation.
                             // What does Julian think it mean? Just have him clock on as from our viewpoint he could mean everyone's drowned or everyone's swam away. Changed as it was unclear. 
                             //People should still be looking out. Don't make Mia too wimpy.
                             -> casualties_explained
@@ -218,7 +218,7 @@
                         -- CHR_TRO_SAD
                         -- CHR_MIA_SAD
                                             
-                        "Yes... or worse." Troy frowns. "That's why it's called <i>the Circle of Death</i>." 
+                        "Yes... or worse." Troy frowns. "That's why it's called the 'Circle of Death.' 
                         //wincing is a fast reaction. Frowns, maybe? Don't need the 'as he says it'. Maybe here he should explain that's why it's called 'of death' - because he says that he'll explain later and doesn't actually spell it out. 
                     
                         ** Troy notices Mia go pale.[] 
@@ -231,7 +231,7 @@
             -   CHR_TRO_REL
             -   SYS_SOUND_05
             -   CHR_JUL_SAD
-            -   Meanwhile the unmanned boat continues its dizzying loop. The sound frays everyone's nerves, especially Julian's.
+            -   Meanwhile the unmanned boat continues its dizzying loop. The sound grates on everyone's nerves, especially Julian's.
                 // SOUND can increase circle of death volume here then bring it back down a bit after next choices
                                             
                 - (opts)
@@ -448,7 +448,7 @@
         = move_bow
         - CHR_ALX_REL
         - CHR_JUL_REL
-        - "Not the bow," says Troy. "It'll be easier and safer to recover from the stern."
+        - "Not the bow," says Troy. "It'll be easier and safer, to recover from the stern."
         
             + "Got it!"[] say Alexis and Julian in accidental unison. 
                 -> move_stern
@@ -456,7 +456,7 @@
         = move_gunwhale
         - CHR_ALX_REL
         - CHR_JUL_REL
-        - "Not the side," says Troy. "It'll be easier and safer to recover from the stern."
+        - "Not the side," says Troy. "It'll be easier and safer, to recover from the stern."
             "Oh, right," says Alexis, motioning Julian toward the stern.  
                 -> move_stern
         

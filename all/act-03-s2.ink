@@ -53,7 +53,7 @@ SCENE 02
             ** ["The signal is very weak," says Alexis.]
                 CHR_ALX_REL
                 CHR_TRO_REL
-                "Too weak to download the radar image," she says. "But there's a new severe thunderstorm alert that includes the Brodaht Island to the east."
+                "Too weak to download the radar image," she says.  "But there's a new severe thunderstorm alert that includes the Brodaht Island to the east."
                 - CHR_ALX_REL
 
                  ** [Mia, Julian, and Alexis are worried.] -> no_worries_not_so_bad
@@ -158,7 +158,7 @@ SCENE 02
 ==  fog_appears ==
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
-    -   "I see it too," Troy says. He eases back on the throttle, slowing their approach to the looming fog bank ahead.
+    -   "I see it, too," Troy says. He eases back on the throttle, slowing their approach to the looming fog bank ahead.
         "Fog shouldn't be a surprise," says Alexis. "Everyone's been telling us about 'fog in the north' all day."
 
 
@@ -183,7 +183,7 @@ SCENE 02
     
         
         = fog_horn
-        - Troy gives one prolonged blast with the boat's horn—the signal used by powered boats when underway in reduced visibility. He'll continue signaling at two-minute intervals while the foggy conditions prevail.
+        - Troy gives one prolonged blast with the boat's horn—the signal used by powered boats when underway in reduced visibility. He'll continue signaling at two minute intervals while the foggy conditions prevail.
         
         
         
@@ -263,7 +263,7 @@ SCENE 02
                     The <i>Lakesong</i> may have sustained damage from running aground, including leaks, but Troy first checks to see if anyone was injured.
                         -> aground_all_ok
 
-                + [Put the boat in reverse ASAP.]
+                + [Put the boat in reverse ASAP]
                     Besides the fact that putting the boat in reverse could actually worsen the situation, the first priority after grounding is to make sure no one is injured.
                         -> aground_all_ok
 

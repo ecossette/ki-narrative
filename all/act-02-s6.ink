@@ -14,11 +14,11 @@ VAR houseboat_st = 0
     - SYS_SOUND_19
     -   Ian, Mia, and Julian return to the houseboat on the PWCs. 
         
-            * "Let the skiing commence!"[] shouts an enthusiastic Alexis.
+            * "Let the water skiing commence!"[] shouts an enthusiastic Alexis.
                 -> review_naslba_6_2
 
         = review_naslba_6_2
-        -   Before we rejoin the friends, let's do a quick review of the safety issues related to <i>water-skiing, towed devices, and wake sports</i>.
+        -   Before we rejoin the friends, let's do a quick review of the safety issues related to <i>water skiing, towed devices, and wake sports</i>.
         
             * [Launch the review.]
                 - SYS_PDF_16
@@ -93,7 +93,7 @@ VAR houseboat_st = 0
     - CHR_ALX_REL
     - CHR_JUL_REL
     - "OK Julian, you can tow me if you like," says Alexis. "But if you try anything crazy..."
-            * "Seriously, Julian," adds Troy.[] "You <i>have</i> to be careful when towing a skier, no joking around."
+            * "Seriously, Julian," adds Troy.[] "You <i>have</i> to be prudent and careful when towing a skier."
             //Changed as no one talks like this
             //If it's a legal requirement, say so after. 'It's even a legal requirement to be allowed on the water.' If it's not, leave off. (You could even make it meta text, but that's preferable to forced speech.)
             -> seriously_jul
@@ -141,10 +141,10 @@ VAR houseboat_st = 0
 == skiing_time ==
     // SOUND pwc generic mixed with PWC passby and acceleration
     //- SYS_SOUND_20
-    - After a successful review of skier hand signals, the water-skiing begins. Everyone takes a turn.
+    - After a successful review of skier hand signals, the water skiing begins. Everyone takes a turn.
     //trim where you can
 
-            * As the day winds into early afternoon[...], they are all hungry and stop to enjoy lunch on the houseboat with Maura and Ian.
+            * As the day turns from morning to early afternoon[...], they are all famished and stop to enjoy lunch on the houseboat with Maura and Ian.
                 -> thanks_again_lunch
             
         = thanks_again_lunch

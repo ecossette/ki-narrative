@@ -64,6 +64,9 @@ what_remember is {what_remember}
 
             - hypo_severity == -1:
                 -> hypo_neg01_chat
+                
+            - else:
+                DEBUG: This condition should not be possible. 
 
 
         }

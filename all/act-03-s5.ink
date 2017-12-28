@@ -129,7 +129,7 @@ SCENE 05
 
              * [Darkness sets in.]
                 -- CHR_TRO_REL
-                Troy texts his brother Vincent. He needs to update him on the change in their float plan to account for the later return to shore.
+                Troy texts his brother Vincent. He needs to update him on the change in their float plan, to account for the later return to shore.
 
                 As they approach Laketown, the vessel traffic begins to increase.
 
@@ -208,7 +208,7 @@ SCENE 05
 
         = mac_approach
         -   CHR_DID_REL
-        -   Mac approaches the <i>Lakesong</i>. "I haven't seen weather like that in years."
+        -   Mac approaches the <i>Lakesong.</i> "I haven't seen weather like that in years."
 
                 *"What's going on over there?" asks Mia[.], pointing toward the marine patrol officers and the couple.
                     -> mia_ask_police_couple
@@ -373,7 +373,7 @@ SCENE 05
 
     = is_creatures
     -   CHR_MIA_REL
-    -   "I get it," says Mia. "Julian had the best and longest look at the creatures from his stern position. They were scary."
+    -   "I get it," says Mia. "Julian had the best and longest look at the creatures from his position at the stern. They were scary."
 
             *   ["Scary?" says Julian.]
                 -> scary_says_jul
