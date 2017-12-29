@@ -1734,7 +1734,7 @@ VAR pfd_tryer = "Mia"
             -- "I wish it were," the shopkeeper answers. "One of the biggest dangers in outdoor survival situations is hypothermia."
             -- Alexis frowns. 
         // We require the player to ask at least one question
-        *    {loop >1} [Onwards.]
+        *    {loop >1} [Onward.]
             -> done
     - (loop)
         // loop a few times 
