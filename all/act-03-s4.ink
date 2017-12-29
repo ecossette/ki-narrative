@@ -220,7 +220,7 @@ SCENE 04
 
 === no_go_island ===
 // add to other water activities badge
--   SYS_ACHIEVE_5_3
+-   SYS_ACHIEVE_6_3
 // SND just light water bg sounds here
     -   Having decided not to explore the island, the friends pass the time waiting for the fog to clear by playing cards.
 

@@ -284,6 +284,7 @@
                             -> cob_recovery
                     
 == cob_recovery ==
+    -   SYS_ACHIEVE_5_2
     -   To safely and successfully recover a person who has fallen overboard, there are several precautions to take.
     //do you consider or take precautions? I take precautions, so changed. 
     

@@ -1952,7 +1952,7 @@ VAR pfd_tryer = "Mia"
     -   CHR_CLT_ANG
     -   "If you're smart, you'll stay clear of Kalkomey Isle," says Cletus, having the last word.
     -   Troy nods politely while Mia, Alexis, and Julian avoid eye contact with each other so as not to laugh. 
-    - SYS_ACHIEVE_7_1
+
             * [Mr. Willard shrugs.]
                 -> have_been_stories
 

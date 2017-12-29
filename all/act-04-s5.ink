@@ -97,7 +97,7 @@
 
 
 === nearing_the_cove ===
--   SYS_ACHIEVE_7_4
+-   SYS_ACHIEVE_7_3
 // entering the cove in fog, sounding signal, getting no response
 // this is reusable multi paths
     -   CHR_ALX_REL

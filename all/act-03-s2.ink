@@ -405,7 +405,7 @@ SCENE 02
 
 == free_from_sandbar ==
 // add to emergency prep badge
--   SYS_ACHIEVE_5_3
+-   SYS_ACHIEVE_5_4
     -   CHR_TRO_REL
     -   "Now that we're clear of the sandbar," Troy says, "I'm going to start the engine to make sure everything is OK after our mishap."
 

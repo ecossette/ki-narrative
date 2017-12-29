@@ -93,7 +93,7 @@
         -     -> opts
 
     = get_a_load
-    -   SYS_ACHIEVE_7_4
+    -   SYS_ACHIEVE_7_3
     -   CHR_TRO_SUR
     -   Troy emerges from beneath the vine curtain expecting to see the cove's shoreline and is surprised when he sees...
 

@@ -315,7 +315,7 @@ SCENE 01
         
             = another_prolonged
             //  add to emergency prep badge
-            -   SYS_ACHIEVE_5_5
+ 
             -   Troy gives another prolonged blast on the horn.
     
             - (opts)
@@ -399,7 +399,7 @@ SCENE 01
 
 == no_two_way ==
 // add to emergency prep
--   SYS_ACHIEVE_4_1
+    -   SYS_ACHIEVE_5_5
     -   CHR_TRO_REL
     -   "Unfortunately, no," says Troy. "I couldn't get my old two-way radio set to work. I stopped by Willard's store this morning to get a new one, but he said they were sold out."
 

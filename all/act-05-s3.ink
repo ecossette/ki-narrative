@@ -63,7 +63,7 @@
 
     = mia_beams
     -   CHR_MIA_SML
-    - SYS_ACHIEVE_1_5
+    -   SYS_ACHIEVE_1_5
     -   "Really?" she says, stepping forward with a tentative smile on her face.
 
             *"Absolutely," says Alexis[.], as Mia takes the wheel. "On a beautiful day like this, we'll encounter plenty of traffic, starting with crossing traffic ahead now at two o'clock."

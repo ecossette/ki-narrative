@@ -42,7 +42,7 @@ what_remember is {what_remember}
     - Several days later, we join the friends on the <i>Lakesong</i> preparing for another day on the lake by running through their pre-departure safety checklist.
     
         * [Complete pre-departure checklist.]
-        -   SYS_ACHIEVE_2_5
+        -   SYS_ACHIEVE_3_5
             -> hypo_severity_sorter
         // upon taking choice above we'll complete their trip planning achievment then pass along to sorter
         
