@@ -7,6 +7,8 @@ SCENE 04
 
 === enter_the_path ===
 // SND bring in buzzing sound very low
+// island path
+    -   SYS_SCENE_5
     -   CHR_ALX_SUR
     -   The path winds deeper into the island.
         "Look at the size of those trees!" says Alexis.
@@ -54,6 +56,8 @@ SCENE 04
                     -> clearing_ahead
 
         = clearing_ahead
+// remove the opening
+        -   SYS_SCENE_5_01
         -   CHR_ALX_SML
         -   CHR_TRO_REL
         -   The path leads out of the forest and into a small clearing that looks down upon a large cove.
@@ -92,6 +96,8 @@ SCENE 04
             *   Suddenly the last of fog clears away[.], revealing a bright blue afternoon sky and the lush beauty of the island. The boat is nowhere to be found.
 // SND can bring back in some bird sounds, not too loud
 // SND also bring in buzzing sound, distant
+// clear the fog
+                --   SYS_SCENE_5_02
 
                 **  "How strange," says Troy[.], looking out over the empty cove.
 
@@ -141,6 +147,7 @@ SCENE 04
 
 === run_away ===
 // SND drones/buzzing closing in
+    -   SYS_SCENE_5_03
     -   Mia, Alexis, Julian, and Troy begin running back to the forest opening. The pursuing flying creatures close in with their terrible buzzing sound.
 
             * The creatures dive[.] and swoop low overhead. The friends run stooped-over to avoid the creatures' sharp, falcon-like talons!
@@ -175,9 +182,8 @@ SCENE 04
 
         = creatures_turn_back
         -   Soon the forest undergrowth becomes too thick for even for the most persistent of the creatures.
-
             * "They are turning back!" says Alexis.[] "We made it."
-
+                --   SYS_SCENE_5_04
 
                     ** [Mia takes a photo burst.]
                         -> mia_photo_burst
@@ -207,6 +213,7 @@ SCENE 04
                     -> find_paddleboards_return
 
         = find_paddleboards_return
+        -   SYS_SCENE_4_12
         - Luckily, there is no sign of the flying creatures at the beach.
 
          They find the paddleboards just as they left them, and quickly paddle back to the <i>Lakesong</i>.
@@ -431,6 +438,7 @@ SCENE 04
 
 === tro_on_it_turns ===
 // SND intro buzzing sound in distance
+    -   SYS_SCENE_4_13
     -   CHR_TRO_REL
     -   "Those creatures are coming this way!" Julian points over the island. {run_away:"Here we go again!"}
 
@@ -732,6 +740,7 @@ SCENE 04
         }
 
             * [The distance from the creatures gradually increases.] Julian watches as the swarm recedes. Then, one by one, the creatures begin peeling off and returning north.
+                -- SYS_SCENE_4_14
 
                 {
                     - enter_the_path:

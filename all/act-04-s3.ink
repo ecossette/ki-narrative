@@ -447,6 +447,7 @@
                         -> return_to_cove
 
             = return_to_cove
+            -   SYS_SCENE_4_19
             -   The remaining fogs burns off during their cruise back to the island, giving them plenty of visibility. They encounter no other boats.
 
                     *   [As they near the cove...]

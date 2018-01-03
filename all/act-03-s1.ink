@@ -66,6 +66,8 @@ SCENE 01
 
         = well_done_helmsmen
 // add to boat achievement here
+// add in small clouds in distance
+    -   SYS_SCENE_4_04
 -   SYS_ACHIEVE_1_4
         - CHR_TRO_SML
         - "You all have the makings of future boat captains."
@@ -174,6 +176,8 @@ SCENE 01
 
 
     = horizon_clouds
+    //add other clouds and see storm, then fade rain
+    -   SYS_SCENE_4_05
     -   The mood is sombre as the <i>Lakesong</i> makes steady progress back toward shore. Dark clouds begin to build over the horizon ahead of the boat, matching the mood. Everyone is disapointed with the change in plans.
 
             * ["Did you feel that?" asks Alexis.]
@@ -231,12 +235,15 @@ SCENE 01
     -   It's not an easy decision, but Troy decides to...
 
                 * [Continue on the same course toward Laketown.]
+                    //add in rain
+                    -- SYS_SCENE_4_06
                     -> continue_to_laketown
 
                 * [Avoid the storm by turning away from Laketown.]
                     -- CHR_TRO_REL
                     -- CHR_ALX_REL
-
+                    // add in rain
+                    -- SYS_SCENE_4_06
                     "That storm is sure to move," says Troy. "And until we know what direction it takes, I think our safest course is to avoid it—and Laketown—for now."
 
                         ** ["I agree," says Alexis.]
@@ -443,6 +450,8 @@ VAR is_radio_damaged = true
 // SND kill engine sound, keep storm going
     -   CHR_MIA_SUR
     -   CHR_JUL_SUR
+// lightning flash
+    -   SYS_SCENE_4_07
     - Suddenly, there is an enormous crack of lightning!
 
 
@@ -462,6 +471,8 @@ VAR is_radio_damaged = true
                 -> check_passenger_health
 
             *   Julian responds[.], as lightning flashes and cracks nearby.
+                //lightning flash
+                --   SYS_SCENE_4_07
 
                     ** "F-fine now[."], but that scared the crap out of me." Julian shakes his head. "I felt every hair on my body stand on end. But it looks like the boat took the brunt of it."
                     -> check_passenger_health

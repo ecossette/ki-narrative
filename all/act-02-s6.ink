@@ -164,11 +164,11 @@ VAR houseboat_st = 0
 === co_wind_direction_2 ===
     -   The friends check the wind and current and find the following conditions.
     
-        {co_wind_none} * There is <b>no</b> wind or current.
+        * {co_wind_none} [There is <b>no</b> wind or current.]
             -> no_wind_2
-        {co_wind_toward} * The wind and current direction is <b>toward</b> the dock.
+        * {co_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
             -> wind_toward_dock_2
-        {co_wind_away} * The wind and current direction is <b>away</b> from the dock. 
+        * {co_wind_away} [The wind and current direction is <b>away</b> from the dock.]
             -> wind_away_dock_2
     
 == no_wind_2 ==

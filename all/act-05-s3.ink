@@ -89,12 +89,6 @@
                             -> encounter_activity
                     
                     -   -> opts2
-            
-            
-
-
-
-
 
 
 === encounter_activity ===
@@ -283,35 +277,35 @@ the story will flow in/out of this tunnel on several occasion during play
 
 === docking_wind_direction ===
     -   A quick check of the wind and current reveals the following conditions.
-        {do_wind_none} * There is <b>no</b> wind or current.
+        * {do_wind_none} [There is <b>no</b> wind or current.]
             -> no_wind_s5
-        {do_wind_toward} * The wind and current direction is <b>toward</b> the dock.
+        * {do_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
             -> wind_toward_dock_s5
-        {do_wind_away} * The wind and current direction is <b>away</b> from the dock. 
+        * {do_wind_away} [The wind and current direction is <b>away</b> from the dock.]
             -> wind_away_dock_s5
     
 // launch the docking activity again Here
-
+// need build another tunnel similar to casting off?
     = no_wind_s5
     ~ do_wind_none = false
     -   SYS_MINIGAME_4_41
         * [OK]
-            -> docking_completed
+            -> docking_completed_s5
     
     = wind_toward_dock_s5
     ~ do_wind_toward = false
     -   SYS_MINIGAME_5_41
         * [OK]
-            -> docking_completed
+            -> docking_completed_s5
 
     = wind_away_dock_s5
     ~ do_wind_away = false
     -   SYS_MINIGAME_6_41
         * [OK]
-            -> docking_completed
+            -> docking_completed_s5
 
 
-== docking_completed==
+== docking_completed_s5==
     -   The boat is successfully docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
     -   The group begins a final cross-check that the boat is secure including checking the lines.
@@ -321,7 +315,7 @@ the story will flow in/out of this tunnel on several occasion during play
     
           * [Review the <i>Line Handling</i> material.]
              // study guide inserts
-                FPO: Line Handling study guide inserts here.
+                -- SYS_PDF_43
                     ** [OK]
 
                      -> report_to_police

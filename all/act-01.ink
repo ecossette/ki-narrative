@@ -1314,9 +1314,9 @@ VAR pfd_tryer = "Mia"
 
     = quiz_01
     - SYS_QUIZ_01
-    -> all_fitted
+        -> all_fitted
         
-    = all_fitted
+== all_fitted ==
         - CHR_WLD_REL
         - CHR_TRO_SML
         - After everyone is fitted, Mr. Willard remembers something. He turns to Troy and asks, "Your boat is longer than 16 feet, right?"
@@ -1392,8 +1392,8 @@ VAR pfd_tryer = "Mia"
 == VDS_minigame ==
 //  launch VDS minigame here
 //  upon successful completion of game, return student to === meet_at_front ===
-    - SYS_MINIGAME_4
-    -> meet_at_front
+    - SYS_MINIGAME_04
+        -> meet_at_front
 
  
 
@@ -1968,7 +1968,8 @@ VAR pfd_tryer = "Mia"
 
 === walking_back ===
 // unlock mystery achievement
--   SYS_ACHIEVE_7_1
+    -   SYS_SCENE_2_02
+    -   SYS_ACHIEVE_7_1
     -   Walking back to the <i>Lakesong</i> carrying their new supplies, the friends discuss what happened in the store.
     
     - (opts)

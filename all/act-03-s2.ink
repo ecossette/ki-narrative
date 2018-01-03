@@ -148,14 +148,16 @@ SCENE 02
             - CHR_TRO_REL
             "I think we'll be able to stay just out of reach of the storms," says Troy.
         - (done)
-
-            Lightning suddenly streaks down nearby—followed immediately by a crash of thunder so loud that it shakes the boat.
-
+            // lightning flash
+            -   SYS_SCENE_4_07
+            -   Lightning suddenly streaks down nearby—followed immediately by a crash of thunder so loud that it shakes the boat.
 
             * ["Fog dead ahead!" shouts Julian.]
                 -> fog_appears
 
 ==  fog_appears ==
+    //fog appears, remove storm from behind
+    -   SYS_SCENE_4_08
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
     -   "I see it, too," Troy says. He eases back on the throttle, slowing their approach to the looming fog bank ahead.
@@ -560,7 +562,7 @@ SCENE 02
 
                 ** [Review all the "CO Poisoning Situations."]
                 //launch review here.
-                    FPO: Review will insert here.
+                    --- SYS_PDF_20
                     *** [OK]
                     -> put_all_danger
 

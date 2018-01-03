@@ -1,8 +1,8 @@
 
 
 === houseboat_in_view ===
+//- SYS_SCENE_4_01
 -   SYS_CHAP_09
-//- SYS_SCENE_4_1
 The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another power boat, larger than the one in tow, and several personal water craft (PWCs).
 
     * "Are those solar panels?" asks Mia[.], pointing to the roof of the houseboat.
@@ -112,7 +112,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
             * "Well..." replies Maura[.], a smile flickering at the corner of her mouth. "Some things you just have to learn the hard way."
             //what happens in Vegas etc - I always associate this phrase with something dodgy, rather than a mistake.
             //I like it better in the website than playing in Ink, maybe I'm being over picky? :)
-            --  SYS_SCENE_4_3
+            --  SYS_SCENE_4_03
             --   CHR_IAN_SML
             --   CHR_MAU_REL
         

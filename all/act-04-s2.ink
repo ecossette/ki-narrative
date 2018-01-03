@@ -3,6 +3,7 @@
     -> follow_kayaks_2
 
 === follow_kayaks_2 ===
+//    -   SYS_SCENE_4_11
     -    The kayaks slide into the fog and quickly lose sight of the <i>Lakesong</i>. Julian is an experienced rower, and Troy has to work to keep pace. They reach the cove's shoreline and start to circumnavigate it, keeping an eye out for anything unusual.
 
         *  [The minutes pass... 15, 20, then 30 minutes...]
@@ -93,6 +94,7 @@
         -     -> opts
 
     = get_a_load
+    -   SYS_SCENE_7
     -   SYS_ACHIEVE_7_3
     -   CHR_TRO_SUR
     -   Troy emerges from beneath the vine curtain expecting to see the cove's shoreline and is surprised when he sees...
@@ -353,6 +355,7 @@
 
 
 == how_far_stream_goes ==
+    -   SYS_SCENE_7_01
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   "How far do you think it goes?" wonders Julian.
@@ -409,6 +412,7 @@
         -     -> opts
 
 == overhead_buzzing ==
+    -   SYS_SCENE_7_02
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     - Overhead they hear a buzzing eerily similar to what they heard yesterday, but the tree canopy is too thick for them to see if it's the disguised drones. They do not hear another clang.
@@ -464,9 +468,11 @@
                 *   "The forest gives us cover," says Troy.[] "We can shortcut through on foot, take a quick peek, and then paddle straight back to the cove."
                     -> jul_disbelief
 
-                *   -> jul_accepts
+                *   [Julian accepts Troy's reasoning.]
+                    -> jul_accepts
 
     = jul_accepts
+    -   SYS_SCENE_7_03
     -   CHR_JUL_REL
         *   Julian accepts Troy's reasoning[.], and they both paddle to the sandy area and climb out of their kayaks. This causes quite a stir among the monkeys, who begin vocalizing and stirring around noisily in the treetops.
 
@@ -496,6 +502,7 @@
             * [Into the woods...] -> toward_sound
 
     =   toward_sound
+    -   SYS_SCENE_5_05
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Troy and Julian quickly set off into the woods in the direction of the persistent engine sound Troy thinks is a generator.
@@ -506,6 +513,7 @@
                     -> thieves_hideaway
 
 == thieves_hideaway ==
+    -   SYS_SCENE_7_04
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   {They reach the stream bank and peer out from underbrush, being careful to remain well-hidden. There is much to see.| Without a doubt, this is the hideaway, some 50 yards ahead of their hidden position.|}
@@ -661,7 +669,8 @@
 
 
     
-== doubtful_in_cove ==            
+== doubtful_in_cove ==     
+    -   SYS_SCENE_4_17
     -   CHR_TRO_REL
     -   "Doubtful," says Troy. "The plan was for Mia and Alexis to leave the cove if we missed the rendezvous time and return again later. If I know Alexis, she's sticking 100% to the plan."
 
@@ -735,6 +744,7 @@
                     -> out_of_cove
 
 == out_of_cove ==
+    -   SYS_SCENE_4_18
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Troy was right about the fog. Shortly after leaving the cove, they break into clearer conditions. There is still patchy fog in spots, but visibility is much improved.

@@ -119,11 +119,11 @@ the story will flow in/out of this tunnel on several occasion during play
 === co_wind_direction ===
     -   The friends check the wind and current and find the following conditions.
     
-        {co_wind_none} * There is <b>no</b> wind or current.
+        * {co_wind_none} [There is <b>no</b> wind or current.]
             -> no_wind_s2
-        {co_wind_toward} * The wind and current direction is <b>toward</b> the dock.
+        * {co_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
             -> wind_toward_dock_s2
-        {co_wind_away} * The wind and current direction is <b>away</b> from the dock. 
+        * {co_wind_away} [The wind and current direction is <b>away</b> from the dock.]
             -> wind_away_dock_s2
     
 
@@ -148,8 +148,8 @@ the story will flow in/out of this tunnel on several occasion during play
 == completed_casting_off ==
     -   Everyone smiles as the boat slips away from the dock with a successful cast off!
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
-        + [Onward!]
-    -    ->->
+    * [Onwards!]
+        -> depart_dock_day_1
 
 // ****** end casting off tunnel ******
 
@@ -251,7 +251,7 @@ the story will flow in/out of this tunnel on several occasion during play
                     
                     *** [Review sound devices requirements.]
                     // link to sound producing requirement SG 
-                        FPO: study guide material inserts here.
+                        ---- SYS_PDF_17
                             **** [OK] -> sound_requirement
                     
                     *** [Continue without a review.]

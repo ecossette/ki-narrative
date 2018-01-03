@@ -6,7 +6,8 @@ SCENE 01
 */
 
 === day_two_begins ===
--   SYS_CHAP_15
+    -   SYS_SCENE_1
+    -   SYS_CHAP_15
     -   CHR_TRO_REL
 
     {
@@ -115,11 +116,11 @@ SCENE 01
 === co_wind_direction_3 ===
     -   The friends check the wind and current and find the following conditions.
     
-        {co_wind_none} * There is <b>no</b> wind or current.
+        * {co_wind_none} [There is <b>no</b> wind or current.]
             -> no_wind_co3
-        {co_wind_toward} * The wind and current direction is <b>toward</b> the dock.
+        * {co_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
             -> wind_toward_dock_co3
-        {co_wind_away} * The wind and current direction is <b>away</b> from the dock. 
+        * {co_wind_away} [The wind and current direction is <b>away</b> from the dock.]
             -> wind_away_dock_co3
     
 == no_wind_co3 ==
@@ -141,6 +142,7 @@ SCENE 01
             -> toward_fuel
 
 == toward_fuel ==
+    -   SYS_SCENE_4
     -   CHR_TRO_REL
     -   Troy eases the <i>Lakesong</i> clear of the dock and makes way at <i>slow, no wake speed.</i>
 
@@ -162,13 +164,12 @@ SCENE 01
     *   [Review launching and retrieving a vessel.]
         -- SYS_PDF_31
             ** [OK.] 
-                -> fueling_activity
+                -> trailer_activity
 
     *   [Skip the review and go directly to the activity.]
-        -> fueling_activity
+        -> trailer_activity
             
-== fueling_activity ==
-// this knot is incorrectly named; this really launches trailering
+== trailer_activity ==
     - SYS_MINIGAME_32
         -> proceed_to_fueling
 
@@ -178,49 +179,16 @@ SCENE 01
 
             * [The fuel depot.]
                 -> fueling_depot
-
-== after_fueling ==
-    -   CHR_TRO_REL
-    -   After fueling, Troy steers the <i>Lakesong</i> into the channel and heads for open waters. Along the way, they encounter several other boats entering and leaving the channel—including Mac in his small boat and Maura and Ian in one of their speedboats. Everyone is wearing PFDs and practicing good seamanship.
-
-        * [They wave as they pass.]
-            -> dog_in_boat
-
-== dog_in_boat ==
-    -   CHR_MIA_SML
-    -   They pass a small, flat-bottomed boat off their starboard side. "Look, there are two dogs in that boat," says Mia. "And one's a puppy!'
-
-     - (opts)
-                *    [ "Those are retrievers," says Troy. ]
-                    -- CHR_TRO_REL
-                     "That's a duck-hunting boat, and the puppy is learning how to behave on the water," he says.  -> dog
-
-                *    (dog) [Troy gives the horn two quick toots.] {Troy's passing signal startles the puppy. "The dogs need to get accustomed to being in a boat the same as you or me."|"Anglers and hunters are boaters, too, as are their four-legged passengers."}
-
-                *    {dog} [They exchange "Ahoys" and waves.] -> pass_duck_boat
-
-        -     -> opts
-
-== pass_duck_boat ==
-    -   CHR_TRO_REL
-    -   Troy slows down a bit as he passes the smaller boat, in order to create as little wake as possible. Flat-bottomed vessels are especially vulnerable to capsizing or swamping.
-
-            * [Review the material on <i>Hunting and Fishing From a Boat</i>.]
-                - SYS_PDF_32
-                    ** [OK.] -> arrive_ki
-
-            * [Continue on without reviewing.] -> arrive_ki
-
-
+                
 == fueling_depot ==
     -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
         
-        * Dock at the fuel station.[] 
-            {do_wind_none} ** There is <b>no</b> wind or current.
+        * Dock to at the fuel station.[] 
+            ** {do_wind_none} [There is <b>no</b> wind or current.]
                 -> no_wind_s3
-            {do_wind_toward} ** The wind and current direction is <b>toward</b> the dock.
+            ** {do_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
                 -> wind_toward_dock_s3
-            {do_wind_away} ** The wind and current direction is <b>away</b> from the dock. 
+            ** {do_wind_away} [The wind and current direction is <b>away</b> from the dock.]
                 -> wind_away_dock_s3
     
 // launch the docking activity again Here
@@ -268,7 +236,39 @@ SCENE 01
 
         * [Fuel the boat.]
             - SYS_MINIGAME_34
-            -> after_fueling
+                -> after_fueling
+
+== after_fueling ==
+    -   CHR_TRO_REL
+    -   After fueling, Troy steers the <i>Lakesong</i> into the channel and heads for open waters. Along the way, they encounter several other boats entering and leaving the channel—including Mac in his small boat and Maura and Ian in one of their speedboats. Everyone is wearing PFDs and practicing good seamanship.
+
+        * [They wave as they pass.]
+            -> dog_in_boat
+
+== dog_in_boat ==
+    -   CHR_MIA_SML
+    -   They pass a small, flat-bottomed boat off their starboard side. "Look, there are two dogs in that boat," says Mia. "And one's a puppy!'
+
+     - (opts)
+                *    [ "Those are retrievers," says Troy. ]
+                    -- CHR_TRO_REL
+                     "That's a duck-hunting boat, and the puppy is learning how to behave on the water," he says.  -> dog
+
+                *    (dog) [Troy gives the horn two quick toots.] {Troy's passing signal startles the puppy. "The dogs need to get accustomed to being in a boat the same as you or me."|"Anglers and hunters are boaters, too, as are their four-legged passengers."}
+
+                *    {dog} [They exchange "Ahoys" and waves.] -> pass_duck_boat
+
+        -     -> opts
+
+== pass_duck_boat ==
+    -   CHR_TRO_REL
+    -   Troy slows down a bit as he passes the smaller boat, in order to create as little wake as possible. Flat-bottomed vessels are especially vulnerable to capsizing or swamping.
+
+            * [Review the material on <i>Hunting and Fishing from a Boat</i>.]
+                -- SYS_PDF_32
+                    ** [OK.] -> arrive_ki
+
+            * [Continue on without reviewing.] -> arrive_ki
 
 === arrive_ki ===
 // add to other water activities badge here
@@ -278,6 +278,7 @@ SCENE 01
             * [They hit the fog.] -> infamous_fog
 
 == infamous_fog ==
+    -   SYS_SCENE_4_16
     -   Just as the four friends discovered the day before, the stories of thick fog in this part of the lake are true enough.
 
         - (opts)
@@ -329,6 +330,7 @@ SCENE 01
             -     -> opts
 
 == bird_sounds ==
+    -   SYS_SCENE_4_10
     -   CHR_TRO_SML
     -   The sound of birds signal their arrival at the island.
         "There's the cove!" says Troy. "As we planned, we'll launch the kayaks from there." Troy gives another prolonged blast from the horn, keeping to the rule of signaling once every two minutes during reduced visibility.

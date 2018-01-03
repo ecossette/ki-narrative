@@ -15,6 +15,7 @@ SCENE 05
 
     = make_way_laketown
 // general open water sounds
+    -   SYS_SCENE_4_15
     -   The <i>Lakesong</i> cruises south toward Laketown as a beautiful sunset fills the western sky.
 
         * [The friends discuss what happened.]
@@ -128,6 +129,7 @@ SCENE 05
         -   "When I get home I may be able to clean up the photo a bit on my computer."
 
              * [Darkness sets in.]
+                -- SYS_SCENE_6_01
                 -- CHR_TRO_REL
                 Troy texts his brother Vincent. He needs to update him on the change in their float plan to account for the later return to shore.
 
@@ -159,18 +161,18 @@ SCENE 05
             * [Onward]
             -> return_marina_day_one
                         
-=== return_marina_day_one ===
+=== return_marina_day_one
 // SND bring in dock sounds
 // SND no bird sounds since it's after dark
     -   CHR_MPO_REL
     -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The keeps gesturing toward an empty slip, while woman looks on with a sad expression. Captain Garcia nods and takes notes.
                     
         *   [Dock the Lakesong.] 
-            {do_wind_none} ** There is <b>no</b> wind or current.
+            ** {do_wind_none} [There is <b>no</b> wind or current.]
                 -> no_wind_s3
-            {do_wind_toward} ** The wind and current direction is <b>toward</b> the dock.
+            ** {do_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
                 -> wind_toward_dock_s3
-            {do_wind_away} ** The wind and current direction is <b>away</b> from the dock. 
+            ** {do_wind_away} [The wind and current direction is <b>away</b> from the dock.]
                 -> wind_away_dock_s3
     
 // launch the docking activity again Here
@@ -193,8 +195,7 @@ SCENE 05
         * [OK]
             -> after_docking_ahoy
                 
-
-== after_docking_ahoy ==
+== after_docking_ahoy
 -   SYS_CHAP_14
 // SND kill engine sound but keep regular dock sounds
     -   CHR_TRO_REL
@@ -473,7 +474,7 @@ SCENE 05
 
         *  [The friends finish securing the <i>Lakesong</i> and depart for the night.]
             // launch quiz 3.2 here, continue to day_two_begins
-            -- SYS_QUIZ_6
+            -- SYS_QUIZ_06
             -> day_two_begins
 
 

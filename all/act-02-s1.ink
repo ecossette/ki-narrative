@@ -14,6 +14,7 @@ VAR knows_strangers_name = false
 === approaching_lakesong ===
     -   SYS_CHAP_06
 // SOUND general dock sounds as used in Act 1
+    - SYS_SCENE_1
     -   As the four friends approach the <i>Lakesong</i>, they see a bearded man standing in front of the boat. He seems to be giving the <i>Lakesong</i> a careful look over.
     
             * [Call out to the stranger.]

@@ -2,6 +2,7 @@
 
 === the_fog_clears ===
 ~ fog_condition = CLEAR
+    -   SYS_SCENE_4_19
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   In the open waters away from the island, the fog clears, giving Mia and Alexis good visibility from the deck of the <i>Lakesong</i>.
@@ -39,6 +40,7 @@
 
 
 === sees_creatures ===
+    -   SYS_SCENE_4_13
     -   CHR_ALX_REL
     -   CHR_MIA_SUR
     -   "It's the creatures!" Mia exclaims. "I mean the drones," she adds correcting herself.
@@ -111,6 +113,7 @@
                     -> plan_works
 
         = plan_works
+        -   SYS_SCENE_4_14
         -   CHR_ALX_REL
         -   Eventually, the creature-drones abandon their pursuit and peel off on a course straight back to the island.
 
