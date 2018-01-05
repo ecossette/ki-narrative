@@ -102,6 +102,7 @@
         -   (opts)
         
             *   [Alexis hesitates.]
+                --  CHR_ALX_REL
                 Alexis hesitates for a moment, a part of her not wanting to give away their location, but her responsibility in this situation is clear.-> rule
         
             *   (rule) [Alexis recalls the rule.] {She remembers the Coast Guard regs—<i>A power-driven vessel making way through the water shall sound at intervals of not more than 2 minutes one prolonged blast.</i>| The 2-minute mark approaches...}

@@ -563,7 +563,7 @@ SCENE 02
                 ** [Review all the "CO Poisoning Situations."]
                 //launch review here.
                     --- SYS_PDF_20
-                    *** [OK]
+                    //*** [OK]
                     -> put_all_danger
 
                 ** [Continue onward without reviewing.]
@@ -656,7 +656,7 @@ SCENE 02
         * [Onward!]
         // SYS launch quiz 3.1 here
             -- SYS_QUIZ_05
-            ** [OK.]
+            // ** [OK.]
             -> anchoring_review
 
 == anchoring_review ==
@@ -667,7 +667,7 @@ SCENE 02
         * [Review the material on anchoring.]
             // insert study guide here, upon student close, launch minigame
             -- SYS_PDF_21
-            ** [OK]
+            // ** [OK]
                 -> anchoring_mini
                 
         * [Go directly to the anchoring activity.] 

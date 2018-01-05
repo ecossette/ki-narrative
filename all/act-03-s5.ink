@@ -180,19 +180,19 @@ SCENE 05
     = no_wind_s3
     ~ do_wind_none = false
     -   SYS_MINIGAME_4_24
-        * [OK]
+        // * [OK]
             -> after_docking_ahoy
     
     = wind_toward_dock_s3
     ~ do_wind_toward = false
     -   SYS_MINIGAME_5_24
-        * [OK]
+        // * [OK]
             -> after_docking_ahoy
 
     = wind_away_dock_s3
     ~ do_wind_away = false
     -   SYS_MINIGAME_6_24
-        * [OK]
+        // * [OK]
             -> after_docking_ahoy
                 
 == after_docking_ahoy

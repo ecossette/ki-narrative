@@ -98,7 +98,7 @@
 
         * [Review boating encounters.]
             - SYS_PDF_41
-                ** [OK]
+               // ** [OK]
                     -> encounter_mini
     
         * [Go directly to the <i>Encountering Other Vessels</i> activity.]
@@ -107,7 +107,15 @@
                      
 === encounter_mini ===
     - SYS_MINIGAME_40
-    -> return_marina_day_two
+    
+    // need to add if/then here for two possible paths 
+    
+    -> approach_discuss_suspicion
+            
+    
+ 
+    
+    
 
 === approach_discuss_suspicion ===
     -   CHR_MIA_REL
@@ -289,26 +297,41 @@ the story will flow in/out of this tunnel on several occasion during play
     = no_wind_s5
     ~ do_wind_none = false
     -   SYS_MINIGAME_4_41
-        * [OK]
+        // * [OK]
             -> docking_completed_s5
     
     = wind_toward_dock_s5
     ~ do_wind_toward = false
     -   SYS_MINIGAME_5_41
-        * [OK]
+        // * [OK]
             -> docking_completed_s5
 
     = wind_away_dock_s5
     ~ do_wind_away = false
     -   SYS_MINIGAME_6_41
-        * [OK]
+        // * [OK]
             -> docking_completed_s5
 
 
 == docking_completed_s5==
     -   The boat is successfully docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
-    -   The group begins a final cross-check that the boat is secure including checking the lines.
+    -   With the boat docked, 
+        
+        {
+            
+            - recovery_fine_aboard_boat: Mia and Alexis begin <>
+        
+            - return_post_rescue: the group begins <>
+            
+            - else: DEBUG: Condition should not be possible <>
+        
+        }
+    
+    
+        a final cross-check that the boat is secure including checking the lines.
+        
+        
         -> line_handling_review_2
     
         = line_handling_review_2
@@ -316,8 +339,19 @@ the story will flow in/out of this tunnel on several occasion during play
           * [Review the <i>Line Handling</i> material.]
              // study guide inserts
                 -- SYS_PDF_43
-                    ** [OK]
+                   // ** [OK]
 
-                     -> report_to_police
+                {
+                    - return_post_rescue:
+                        -> met_by_police
+
+                    - recovery_fine_aboard_boat:
+                        -> report_to_police
+
+                    - else:
+                    DEBUG: this else condition should not be possible.
+                    * [DEBUG: GO TO 'REPORT TO POLICE"] -> report_to_police
+                    * [DEBUG: GO TO 'MET BY POLICE"] -> met_by_police
+                }
     
     

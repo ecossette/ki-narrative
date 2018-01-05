@@ -105,6 +105,7 @@
                 -> monkey_watching ->
 
                     **  [Troy and Julian look at the stream ahead of them.]
+                        -> dark_stream
 
             * [ Julian looking up into a tree.]
                 // julian says a 'creature' crashed drone, comment on how live creature wouldn't be intact

@@ -281,7 +281,7 @@
         // launch the cold water immersion review here. this is a mandatory review for the player on this path. when finished send student to =need_report
 
             -- SYS_PDF_40
-            ** [OK]
+            // ** [OK]
                 -> need_report
 
         = need_report

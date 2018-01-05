@@ -697,7 +697,7 @@ wait to call for help = hypo extreme / full memory loss
             * [Review the <i>Vessel Maintenance</i> material.]
              // study guide inserts
              -- SYS_PDF_42
-                ** [OK]
+               // ** [OK]
                     -> cross_check
     
     
@@ -707,7 +707,7 @@ wait to call for help = hypo extreme / full memory loss
         * [Review the <i>Line Handling</i> material.]
              // study guide inserts
              -- SYS_PDF_43
-                    ** [OK]
+                   // ** [OK]
 
                         -> line_handling
     

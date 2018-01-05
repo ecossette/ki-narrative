@@ -68,7 +68,7 @@ SCENE 01
 // add to boat achievement here
 // add in small clouds in distance
     -   SYS_SCENE_4_04
--   SYS_ACHIEVE_1_4
+    -   SYS_ACHIEVE_1_4
         - CHR_TRO_SML
         - "You all have the makings of future boat captains."
 
@@ -232,6 +232,7 @@ SCENE 01
 
 
     = tro_makes_his_choice
+    -   CHR_TRO_REL
     -   It's not an easy decision, but Troy decides to...
 
                 * [Continue on the same course toward Laketown.]
@@ -303,7 +304,8 @@ SCENE 01
                     -> tro_considers_choices
 
         = tro_considers_choices
-        - They should be getting close to Laketown, but the shoreline is still not visible in the current conditions. Alexis is right that the storm may no longer be stationary, but there have been no additional radio weather alerts. Troy again has to make a difficult decision.
+        -   CHR_TRO_REL
+        -   They should be getting close to Laketown, but the shoreline is still not visible in the current conditions. Alexis is right that the storm may no longer be stationary, but there have been no additional radio weather alerts. Troy again has to make a difficult decision.
 
         // need to randomize these choices
 

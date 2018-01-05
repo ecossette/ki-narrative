@@ -130,25 +130,26 @@ the story will flow in/out of this tunnel on several occasion during play
 == no_wind_s2 ==
     ~ co_wind_none = false
     -   SYS_MINIGAME_1_10
-        * [OK]
+        // * [OK]
+        
             -> completed_casting_off
     
 == wind_toward_dock_s2 ==
     ~ co_wind_toward = false
     -   SYS_MINIGAME_2_10
-        * [OK]
+       // * [OK]
             -> completed_casting_off
 
 == wind_away_dock_s2 == 
     ~ co_wind_away = false
     -   SYS_MINIGAME_3_10
-        * [OK]
+       // * [OK]
         -> completed_casting_off
 
 == completed_casting_off ==
     -   Everyone smiles as the boat slips away from the dock with a successful cast off!
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
-    * [Onwards!]
+    * [Onward!]
         -> depart_dock_day_1
 
 // ****** end casting off tunnel ******
@@ -252,7 +253,8 @@ the story will flow in/out of this tunnel on several occasion during play
                     *** [Review sound devices requirements.]
                     // link to sound producing requirement SG 
                         ---- SYS_PDF_17
-                            **** [OK] -> sound_requirement
+                            // **** [OK] 
+                            -> sound_requirement
                     
                     *** [Continue without a review.]
                         -> sound_requirement

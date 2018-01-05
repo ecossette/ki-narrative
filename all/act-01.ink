@@ -1078,7 +1078,7 @@ VAR parts = 0
     -   CHR_WLD_REL
     - Mia, Alexis, Julian, and Troy each reach for a PFD.
     - (opts)
-        { | The remaining friends continue to comment. | They all like what they've tried on.}
+//        { | The remaining friends continue to comment. | They all like what they've tried on.}
         *    "This isn't bulky at all!" says Mia[.], spinning around in the jacket she selected.
             --  CHR_WLD_REL
             --  CHR_MIA_SML
@@ -1973,7 +1973,7 @@ VAR pfd_tryer = "Mia"
     -   Walking back to the <i>Lakesong</i> carrying their new supplies, the friends discuss what happened in the store.
     
     - (opts)
-        *    "Well, that was certainly weird," says Mia.[] 
+        *    "All that Kalkomey Isle talk sure was weird," says Mia.[] 
             --   CHR_ALX_REL
             --   CHR_MIA_REL
             -- "In so many ways," agrees Alexis."Government experiments, mutant creatures... really?"

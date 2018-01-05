@@ -126,19 +126,19 @@ SCENE 01
 == no_wind_co3 ==
     ~ co_wind_none = false
     -   SYS_MINIGAME_1_31
-        * [OK]
+       // * [OK]
             -> toward_fuel
     
 == wind_toward_dock_co3 ==
     ~ co_wind_toward = false
     -   SYS_MINIGAME_2_31
-        * [OK]
+       // * [OK]
             -> toward_fuel
 
 == wind_away_dock_co3 == 
     ~ co_wind_away = false
     -   SYS_MINIGAME_3_31
-        * [OK]
+       // * [OK]
             -> toward_fuel
 
 == toward_fuel ==
@@ -309,7 +309,9 @@ SCENE 01
                 * [Review <i>Cold Water Immersion and Hypothermia</i>.]
                 // launch the sg for cold water immersion and hypo
                     -- SYS_PDF_33
-                    ** [OK]
+                // this OK below is for FPO only, after review go directly to another_prolonged
+                    
+                   // ** [OK]
                         -> another_prolonged
         
         

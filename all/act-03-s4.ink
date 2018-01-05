@@ -525,7 +525,7 @@ SCENE 04
 
         * [ Read more about how hulls operate.]
             - SYS_PDF_22
-            ** [OK]
+            // ** [OK]
                 -> hull_activity
         
         * [ Continue without reviewing hull modes.]
