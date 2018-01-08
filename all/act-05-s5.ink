@@ -867,7 +867,9 @@ what_remember is {what_remember}
     -   CHR_MPO_REL
     -   Troy starts the <i>Lakesong</i>. The Captain stops along the dock and hollers back, "No plans to head north, right?"
 
-            *   "Not a chance, Captain![] says Troy. "Not a chance."
+            *   ["Not a chance, Captain!"] 
+                --  CHR_TRO_SML
+                "Not a chance, Captain!" says Troy. "Not a chance."
 
                 ** The boat slips away from the dock[.] and heads into the channel for open waters.
                 -> the_end_unsolved

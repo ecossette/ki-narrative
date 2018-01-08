@@ -213,6 +213,7 @@
         }
 
         = spotted_us
+        -   CHR_MIA_REL
         * ["You think he spotted us?" asks Mia.]
             --   "I don't think he saw us," says Alexis. "{who_saw} is going the other way, and judging by the wake, he's in a real hurry."
 
@@ -422,6 +423,7 @@
         }
 
         = spotted_us
+        -   CHR_MIA_REL
         * ["You think we've been spotted?" asks Mia.]
             --   "Maybe," says Alexis. "Although {who_saw} looks to be focused on something... but I can't get a clear view of what."
 

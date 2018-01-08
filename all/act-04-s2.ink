@@ -102,7 +102,7 @@
             * [A pair of eyes staring back at him.]
                 // go to monkey tunnel
                 ~ saw_monkey = 1
-                -> monkey_watching ->
+                -> monkey_eyes_him ->
 
                     **  [Troy and Julian look at the stream ahead of them.]
                         -> dark_stream
@@ -168,8 +168,14 @@
     -   CHR_TRO_SUR
     -   CHR_JUL_SML
     -   "That monkey has a pretty good arm," he says watching the monkey take off along the treetops.
-
-    -   "Surprisingly accurate, too," says Troy shaking his head. "Can this thing get any weirder? What are monkeys even doing on this island? We're south of Atlas range, well out of their natural habitat."
+    
+        * ["Surprisingly accurate, too," says Troy.]
+            -> any_weirder
+        
+    = any_weirder
+    -   CHR_TRO_SUR
+    -   CHR_JUL_REL
+    -   "Can this thing get any weirder?"  says Troy shaking his head. "What are monkeys even doing on this island? We're south of the Atlas range, well out of their natural habitat."
 
         "Left over from the research, maybe?" says Julian.
 
@@ -223,12 +229,14 @@
     }
 
         * [ Turn back to the cove without following the stream.]
+            --  CHR_TRO_REL
             "Considering what we already know, we now have enough to take to the police," says Troy. "There is no point in taking the risk of paddling down the stream."
 
                 ** ["That works for me," says Julian.]
                     -> no_go_stream
 
         * [ Follow the stream and try to learn more.]
+        --  CHR_TRO_REL
             "I think the reward outweighs the risk," says Troy. "Let's at least paddle up to kill some time until we can rendezvous with the girls."
 
 
@@ -332,7 +340,7 @@
             {
                 - monkey_eyes_him:
                 "Those monkeys are especially loud," says Troy. "And it feels like they're following us."
-                    * ["How far do you think it goes?"]
+                    * ["How far do you think this stream goes?"]
                         -> how_far_stream_goes
 
                 - else:
@@ -346,7 +354,7 @@
         -   CHR_TRO_SUR
         "But that's impossible," he says. "There are no wild monkeys south of the Atlas Mountains."
 
-            * "Really?" says Julian.[] "Then how do you explain that?" says Julian pointing to stream bank ahead.
+            * "Really?" says Julian.[] "Then how do you explain that?" says Julian pointing to the stream bank ahead.
 
                 ** [Troy looks.]
                 -> monkey_eyes_him ->
@@ -359,7 +367,7 @@
     -   SYS_SCENE_7_01
     -   CHR_JUL_REL
     -   CHR_TRO_REL
-    -   "How far do you think it goes?" wonders Julian.
+    -   "How far do you think this stream goes?" wonders Julian.
         "I don't know, but we've paddled a ways," says Troy. "We'll need to turn back soon. Mia and Alexis will be looking for us at the rendezvous time."
 
             * [Julian looks upstream.]
@@ -433,9 +441,7 @@
 
     = tro_so_slow
     -   CHR_TRO_SML
-    -   Troy makes the decision to continue.
-
-        "Since I'm so slow, I better get a head-start," says Troy grinning.
+    -   "Since I'm so slow, I better get a head-start," says Troy grinning and paddling ahead.
 
         Julian pulls in behind Troy. They paddle forward down the middle of the stream and around the next bend, then around yet another. And then they hear…"
 
@@ -461,21 +467,41 @@
 
     = jul_disbelief
     -   CHR_JUL_REL
-        {"Wait, you want to go on foot?" says Julian. "Why?"| "We're faster on the water," says Julian, still skeptical.|}
+     -   (opts2)
+        {"Wait, you want to go on foot?" says Julian. "Why?"| "But we're faster on the water," says Julian, still skeptical.| }
 
-                *   "The stream leads straight to the sound, says Troy.[] "So we can't take the kayaks any further safely. I'm afraid we'd be seen on the water."
-                    -> jul_disbelief
+           
+                
+                *   ["The stream is too risky," says Troy.] 
+                    -- CHR_TRO_REL
+                    "The stream leads straight to the sound," says Troy. "So we can't take the kayaks any further safely without being seen."
+                       
 
-                *   "The forest gives us cover," says Troy.[] "We can shortcut through on foot, take a quick peek, and then paddle straight back to the cove."
-                    -> jul_disbelief
-
-                *   [Julian accepts Troy's reasoning.]
+                *    ["The forest gives us cover," says Troy.]
+                    -- CHR_TRO_REL
+                    "We can shortcut through on foot, take a quick peek, and then paddle straight back to the cove."
+                        
+                 
+                *   {loop} [Julian's heard enough.]
+                    -> done
+                
+                -   (loop)
+                    { -> opts2 | }
+                    Julian looks upstream one more time then nods. 
+                
+                -   (done)  
+                -  CHR_JUL_REL
+                    "OK, you've got a point," he says. "Let's go on foot."
+                    
+                    * [Beach the kayaks.]
                     -> jul_accepts
+
 
     = jul_accepts
     -   SYS_SCENE_7_03
     -   CHR_JUL_REL
-        *   Julian accepts Troy's reasoning[.], and they both paddle to the sandy area and climb out of their kayaks. This causes quite a stir among the monkeys, who begin vocalizing and stirring around noisily in the treetops.
+    -   CHR_TRO_REL
+    -   With the decision made, they paddle ahead to the sandy area and climb out of their kayaks. This causes quite a stir among the monkeys, who begin vocalizing and stirring around noisily in the treetops.
 
             "I hope those monkeys don't give us away," says Julian.
 
@@ -534,7 +560,12 @@
             { -> opts | -> opts | }
             Julian gets Troy's attention, then taps at his wrist to indicate 'time.'
         - (done)
-            * "It's a boat chop shop!" whispers Troy.[]
+        -   CHR_TRO_SUR
+        -   CHR_JUL_REL
+            
+            "It's a boat chop shop!" whispers Troy.
+            
+            * ["Mystery solved," says Julian.]
             -> jul_solved_go
 
 == jul_solved_go
@@ -615,6 +646,7 @@
 
             - (opts)
                 * [Julian steps on a dry bag.]
+                --  CHR_JUL_SAD
                 Julian picks up the dry bag and sees it was emptied. He scans the forest floor, hoping to salvage something. -> rope
 
                 * (rope) [Troy reaches for the rope.] {After reaching for the rope, Troy quickly unties the kayaks.| Julian finds a small piece of discarded wrapper from the granola bar.}
@@ -763,6 +795,7 @@
             - (opts)
 
                 * [Troy feels around.]
+                --  CHR_TRO_SUR
                     Troy feels around inside his kayak's hull and gets a surprise. -> water
 
                 * (water) [Troy looks troubled.] {"That's weird... " he says.| "The bag is soaked."}
@@ -859,13 +892,21 @@
         -   CHR_TRO_REL
         -   "Make sure your lanyard is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks if we dump."
 
-            Julian double-checks his lanyard just before...
-
-            * [Both kayaks capsize!]
+            * [Julian double-checks his lanyard just before...]
                 -> capsized
 
 === capsized ===
-    -   As their kayaks flip over, both Julian and Troy are plunged into the cold waters surrounding the island. Julian gasps from the shock of the cold and accidentally inhales water. Troy fights off his own panic by focusing on his breath and reaching for his kayak. Staying with the kayaks will make it easier for someone to find and rescue them.
+    -   CHR_JUL_SUR
+    -   CHR_TRO_SUR
+    -   Both kayaks capsize!
+        
+        *   [Julian and Troy are plunged into the cold waters surrounding the island.] 
+            -> gasps
+        
+        = gasps
+        -   CHR_JUL_SUR
+        -   CHR_TRO_SUR
+        Julian gasps from the shock of the cold and accidentally inhales water. Troy fights off his own panic by focusing on his breath and reaching for his kayak. Staying with the kayaks will make it easier for someone to find and rescue them.
 
             * [Julian gags and coughs.]
                 -> jul_gags
@@ -901,6 +942,7 @@
 
 
     = second_flare
+    -   CHR_TRO_SAD
     Troy is disappointed that the flare didn't go as high as he wanted. His loss of manual dexterity affected his aim. He's not sure it went high enough for anyone to see. <>
     
         {
@@ -915,6 +957,8 @@
             -> tro_remains_hopeful
     
     = tro_remains_hopeful
+    -   CHR_TRO_REL
+    -   CHR_JUL_SAD
     -    Troy remains hopeful—but glancing at the shoreline, he is more and more alarmed at how far from the cove they continue to drift. Will Mia and Alexis find them this far away?
 
         "How long... do you... think until... we're... rescued?" asks Julian, having trouble catching his breath.
@@ -923,12 +967,14 @@
             -> not_long_until
 
     = not_long_until
+    -   CHR_TRO_REL
     -   "Not long," says Troy, trying to lift Julian's spirits. Troy knows Julian's difficulty speaking is due to fatigue and shock. 
 
 
         -   (opts)
                 
             *   ["Hope s-soon... 'cause..."]
+            --  CHR_JUL_SAD
             "Hope s-soon... 'cause..." says Julian breathlessly.-> clings
             
             *   (clings) [Julian clings to his oar.] {Julian clings to the oar attached by lanyard to his kayak. "...it's getting... difficult... to hang on," he says.|"... I...I c-c-can't... hold..."}
@@ -956,11 +1002,13 @@
 
             
 == lanyard_attach ==
+    -   CHR_TRO_SAD
     -   Troy knows he should attach the kayak lanyard to his PFD. Staying with the remaining kayak helps their chances of being seen and will help them get more of their bodies out of the water—if they can somehow gather the strength to lift themselves on top of the remaining overturned kayak. 
     
         -   (opts)
         
             *   [Troy considers letting go of Julian.]
+            --   CHR_TRO_SAD
             Troy considers letting go of Julian—just for a second—so that he can try two hands with the lanyard, but he can't risk losing Julian whose condition is even worse. -> struggle 
             
             *   (struggle) [Troy struggles with the lanyard.] {Troy struggles to attach the lanyard with one hand. He's lost up to 80% of his dexterity and strength since hitting the water.| He'll just need to find a way to do it Troy tells himself.}
@@ -973,6 +1021,7 @@
     
     
     = lanyard_struggle 
+    -   CHR_TRO_SAD
     -   Troy's chances to attach the lanyard to his PFD are modest at best. In his present condition—with his considerable loss of dexterity and strength—he only has a fifty-fifty chance of success—no different than the flip of a coin. 
     
             *   [Reveal Troy's fate.]
@@ -992,6 +1041,7 @@
        
 === lose_remaining_kayak ===
 ~  kayak_status = 0
+    -   CHR_TRO_SAD
     -   Troy is unable to attach the lanyard to his PFD and in his final effort he loses hold of the lanyard and the kayak is lost. 
      
             * [Focus on survival.]
@@ -1001,6 +1051,7 @@
 
 === keep_remaining_kayak ===
 ~ kayak_status = 1
+    -   CHR_TRO_SML
     -   Troy is able to attach the lanyard! 
     
         Now Troy can turn his attention to the most important thing:
@@ -1012,6 +1063,7 @@
                
 
 == focus_survival ==
+    -   CHR_TRO_REL
     -   Troy realizes their primary focus now is on survival and their survival hinges on slowing their heat loss. 
     
     
@@ -1025,6 +1077,7 @@
    
 
         = huddle_together
+        -   CHR_TRO_REL
         -   "Huddling... conserve... heat," says Troy, who is also finding it difficult to speak. Julian's eyes are open but he says nothing, his arms falling loosely like a doll's <>
         
             {
@@ -1035,6 +1088,7 @@
             }
 
                 * ["H-h-hang...in there... Jules."]
+                --  CHR_JUL_SAD
                 -- "H-h-hang...in there... Jules," Troys says, realizing that Julian could lose consciousness soon. <>
                 
             {

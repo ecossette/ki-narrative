@@ -144,6 +144,8 @@
                 -   (opts)
 
                     **  [Keep a sharp lookout.]
+                        --   CHR_ALX_REL
+                        --   CHR_MIA_REL                   
                         Mia helps Alexis keep a sharp lookout, while Alexis gives the standard prolonged blast signal upon entering the fog. -> slow
 
                     **  (slow) [Slow down even more.] {Alexis brings the throttle back almost to idle, giving the boat its slowest possible forward speed so as not to accidentally overrun the kayaks.| Alexis suspects Troy and Julian will be waiting closer to the shore, but the kayaks could be anywhere in the cove.}
@@ -155,9 +157,12 @@
 
 
             = listen
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
             -   They both listen intently for the possibility of another boat, or maybe a signal from the guys.
 
                 * [Alexis moves the throttle to idle.]
+                --  CHR_ALX_REL
                 "This is far enough, she says. "If they're in the cove, they'll have heard us and be waiting for our signal."
 
                     ** [Alexis gives the signal.]
@@ -166,6 +171,7 @@
             = gives_signal
             // add to boat equip badge
             -   SYS_ACHIEVE_2_5
+            -  CHR_ALX_REL
             -   Alexis gives three quick toots with the horn, waits three seconds and then gives a long one, the agreed-upon signal.
 
                 {
@@ -183,6 +189,8 @@
                 
 
             = hear_whistle
+            -   CHR_ALX_SML
+            -   CHR_MIA_SML
             -   Shortly after hearing the whistle, Mia and Alexis see Julian and Troy appear out of the fog and preparations are made to recover the two guys and the kayaks.
             
                 * [Back on board.]
@@ -226,7 +234,23 @@
 
 === join_mia_alx_second_attempt ===
 // this is where we'll join from capsized kayaks.
-    -   Earlier Mia and Alexis had entered the cove at the arranged meeting time. After not finding Julian and Troy in the cove after several signalling attempts, Mia and Alexis leave the cove.
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
+    -   Sometime earlier Mia and Alexis had entered the cove at the arranged meeting time but...
+    
+        -   (opts)
+    
+            * [They see nothing.]
+                There is no sign of the kayaks in the fog. -> unanswered
+            
+            *   (unanswered) [They hear nothing.] {They signal and wait and signal again but there is no response.| The girls are disappointed.}
+            
+            *   {unanswered} [They leave the cove.]
+                -> leave_cove
+    
+        -   -> opts
+    
+        After not finding Julian and Troy in the cove after several signalling attempts, Mia and Alexis leave the cove.
     
         * ["That was the plan," says Alexis.]
             -> leave_cove
@@ -240,6 +264,7 @@
             -   (opts)
 
                     * [Mia is troubled.]
+                    --  CHR_MIA_SAD
                     "That plan sounded good until now," says Mia.-> hour
 
                     * (hour) [Alexis steers for open water.] {The boat slips out of the cove and into the open water of the lake.|"An hour seems like a long time."}
@@ -257,6 +282,7 @@
         - (opts)
 
             *   ["It's not just the time," says Mia.]
+                --  CHR_MIA_SAD
                 "If they're not in the cove, then where are they?" says Mia.
                 -> fine
 
@@ -301,7 +327,8 @@
 
             -   (opts)
                 * [Try the binoculars.]
-                    "Even with the binocs, I'm not 100% sure," Alexis says after taking a look and handing the binoculars to Mia for a try. -> course
+                --   CHR_ALX_REL
+                "Even with the binocs, I'm not 100% sure," Alexis says after taking a look and handing the binoculars to Mia for a try. -> course
 
                 * (course) [Change course.] {Alexis changes course and speed to see if the object in the sky mirrors the changes.| It takes Mia a bit to get the focus right on account of her glasses.}
 
@@ -374,6 +401,7 @@
              -   (opts)
 
                 *   [Mia shivers.]
+                --  CHR_MIA_REL
                 "It's always colder in this part," says Mia shivering. The boat shudders in the cross-current. -> skyward
 
                 *   (skyward) [Mia looks skyward.] {Mia looks skyward. "If that's a drone, though, it'll have a clear view of the cove, too." | "When we see the kayaks, we'll need to get them on board and get moving, assuming that's a drone."}

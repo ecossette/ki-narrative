@@ -12,6 +12,7 @@
         -   (opts)
 
             * [The chop-chop sound of a helicopter...]
+            --  CHR_ALX_REL
             They hear the chop-chop of a helicopter. "That's the medevac chopper... right on time," says Alexis. ->marker
 
             * (marker) [A water hazard marker...] {They pass a water hazard marker to their port side that Alexis recognizes from before. "We're still quite a ways from home."|"They'll be in good hands with the paramedics."}
@@ -29,6 +30,7 @@
         -   (opts2)
 
             *   [Alexis sees another boat ahead.]
+                --  CHR_ALX_REL
                 Seeing another boat ahead, Alexis has an idea. -> anxious
 
             *   (anxious) [Alexis decides to distract Mia.] {She decides to distract Mia by giving her something to focus on other than worrying about Julian and Troy.| She is every bit as anxious and worried as Mia, but she knows that there is nothing they can do now but get back to Laketown safely.}
@@ -44,6 +46,7 @@
         -   (opts3)
 
                 * [Mia looks at Alexis in disbelief.]
+                --  CHR_MIA_SUR
                 Mia looks at Alexis in disbelief. "Me?"
 
                 * (nods) Alexis nods. {Alexis nods and offers the wheel to Mia.| "But I don't... yesterday was my only time."}
@@ -54,7 +57,7 @@
         -   -> opts3
 
     =   yes_passed
-    -   CHR_MIA_SAD
+    -   CHR_MIA_REL
     -   "Yes, last night," says Mia, "when I couldn't fall asleep."
     -   "Let's put your knowledge to work, then," says Alexis with a grin.  "Captain Chen, you have the con!"
 
@@ -66,7 +69,10 @@
     -   SYS_ACHIEVE_1_5
     -   "Really?" she says, stepping forward with a tentative smile on her face.
 
-            *"Absolutely," says Alexis[.], as Mia takes the wheel. "On a beautiful day like this, we'll encounter plenty of traffic, starting with crossing traffic ahead now at two o'clock."
+            * ["Absolutely," says Alexis.] 
+            --  CHR_ALX_REL
+            --  CHR_MIA_SML
+            "Absolutely," says Alexis, as Mia takes the wheel. "On a beautiful day like this, we'll encounter plenty of traffic, starting with crossing traffic ahead now at two o'clock."
 
                 ** ["Bring it!" says Mia.]
                     -> bring_it
@@ -80,6 +86,7 @@
                     -   (opts2) 
                     
                         *   ["One toot for port," says Mia.]
+                            -- CHR_MIA_REL
                             "One toot for a turn to port," says Mia.-> two
                     
                     
@@ -97,7 +104,7 @@
     -   With Mia at the helm, the <i>Lakesong</i> faces many encounters on the return home.
 
         * [Review boating encounters.]
-            - SYS_PDF_41
+            -- SYS_PDF_41
                // ** [OK]
                     -> encounter_mini
     

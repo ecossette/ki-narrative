@@ -526,14 +526,13 @@ SCENE 04
         * [ Read more about how hulls operate.]
             - SYS_PDF_22
             // ** [OK]
-                -> hull_activity
+                -> losing_them
         
         * [ Continue without reviewing hull modes.]
-            -> hull_activity
-                
-    = hull_activity
-        * [HULL minigame should go here]
             -> losing_them
+                
+  
+        
 
     = losing_them
     -   CHR_JUL_SML

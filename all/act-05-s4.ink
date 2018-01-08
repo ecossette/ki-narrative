@@ -69,6 +69,7 @@ wait to call for help = hypo extreme / full memory loss
         -   (opts)
 
             *   [He leans back in his chair.]
+                --  CHR_MPO_REL
                 He leans back in his chair. "Flying drones disguised as mutant creatures, disappearing boats...?" The friends exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you, it's just that..." he trails off. -> dark
 
             *   (dark) [His face grows dark.] {Captain Garcia's face grows dark. "You know Kalkomey Isle is private property?" he says. "You could be fined—or worse—for trespassing."| Captain Garcia is about to say more, but he changes his mind.}
@@ -466,6 +467,7 @@ wait to call for help = hypo extreme / full memory loss
             -   (opts)
 
                 *   [Captain Garcia cocks his head sideways.]
+                -- CHR_MPO_REL
                 Captain Garcia cocks his head sideways. "Your two friends had quite a story to tell..." -> looks
 
                 *   (looks) [Captain Garcia looks a bit embarrassed.] {Captain Garcia looks a bit embarrassed. "They claim the drain plugs on their kayaks were pulled by, um... by monkeys," he says.|Clearly Captain Garcia is skeptical.}
@@ -482,6 +484,8 @@ wait to call for help = hypo extreme / full memory loss
             -   (opts)
 
                 *   [Alexis shoots Mia a look.]
+                    --  CHR_ALX_REL
+                    --  CHR_MIA_REL
                     Alexis shoots Mia a look. "I assume you're just trying to show your knowledge but, c'mon, you know Troy." Mia opens her mouth to explain but decides to let it go. -> turns
 
                 *   (turns) [Alexis turns to Captain Garcia.] {Alexis turns to Captain Garcia. "Troy isn't one to make things up," she says.|"And as for monkeys, hasn't anyone ever heard of 'adaptation'?"}
@@ -493,6 +497,7 @@ wait to call for help = hypo extreme / full memory loss
 
         = post_trauma
         -   CHR_MPO_REL
+        -   CHR_MIA_REL
         -   "Look, I'm not ruling out the possibility of monkeys on Kalkomey Isle," he says, "but you should also know that after a traumatic event, it's quite normal for people to, er... become confused."
 
             "What else did Julian and Troy say?" asks Mia. "Did—"
@@ -527,7 +532,8 @@ wait to call for help = hypo extreme / full memory loss
         -   (opts)
 
             *   [He flips through his notes.]
-                He flips though his notes. "Flying drones disguised as mutant creatures, disappearing boats...?" The friends exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you, it's just that..." he trails off. -> dark
+                --  CHR_MPO_REL
+                He flips though his notes. "Flying drones disguised as mutant creatures, disappearing boats...?" The girls exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you, it's just that..." he trails off. -> dark
 
             *   (dark) [His face grows dark.] {Captain Garcia's face grows dark. "You know Kalkomey Isle is private property?" he says. "You could be fined—or worse—for trespassing."| Captain Garcia is about to say more, but he changes his mind.}
 
@@ -547,6 +553,7 @@ wait to call for help = hypo extreme / full memory loss
         -   (opts2)
 
             *   [Captain Garcia looks at his notes.]
+                --  CHR_MPO_REL
                 Captain Garcia looks at his notes. "Realistically, you've given us the best leads we've had so far, and for that I thank you, but..." he says then pauses. -> looks
 
             *   (looks) [Captain Garcia's goes serious.] {Captain Garcia makes a serious expression and looks at each girl in turn. "I need you both to promise me you won't go out to Kalkomey Isle—neither on it nor around it—again," he says, his eyes heavy and serious.|"It's just too dangerous out there with or without thieves. Let the police take it from here."}
@@ -672,6 +679,7 @@ wait to call for help = hypo extreme / full memory loss
             -   (opts)
 
                 *   [The Captain nods.]
+                --    CHR_MPO_REL
                 The Captain nods and says, "I understand, completely, it's just a hunch, but I'll be sure to pay a visit to {suspect_whom}." -> arms
 
                 *   (arms) [The Captain pockets his notebook.] {The Captain pockets his notebook. "You all have been very helpful, but we'll take it from here."|"When you've eliminated the impossible, whatever remains, however improbable, must be the truth."}

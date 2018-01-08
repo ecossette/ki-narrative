@@ -107,7 +107,7 @@ SCENE 01
 
 
 == check_conditions_day_2 ==
-    -   SYS_ACHIEVE_2_4
+    
     -   With the pre-departure checklist complete, the four friends don their life vests and prepare to cast off.
 
      * [Check the conditions.]
@@ -181,6 +181,7 @@ SCENE 01
                 -> fueling_depot
                 
 == fueling_depot ==
+    -  SYS_ACHIEVE_2_4
     -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
         
         * Dock to at the fuel station.[] 
@@ -266,18 +267,20 @@ SCENE 01
 
             * [Review the material on <i>Hunting and Fishing from a Boat</i>.]
                 -- SYS_PDF_32
-                    ** [OK.] -> arrive_ki
+                   // ** [OK.] 
+                   -> arrive_ki
 
             * [Continue on without reviewing.] -> arrive_ki
 
 === arrive_ki ===
 // add to other water activities badge here
--   SYS_ACHIEVE_6_4
+
     -   The journey north toward Kalkomey Isle is a long one, but all four agree that the time is passing more quickly than expected. The warm and sunny weather helps too at least until...
            
             * [They hit the fog.] -> infamous_fog
 
 == infamous_fog ==
+    -   SYS_ACHIEVE_6_4
     -   SYS_SCENE_4_16
     -   Just as the four friends discovered the day before, the stories of thick fog in this part of the lake are true enough.
 
