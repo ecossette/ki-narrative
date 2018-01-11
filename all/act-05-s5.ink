@@ -352,7 +352,7 @@ what_remember is {what_remember}
 
 
 
-        = react_announce_capture_willard_only
+    = react_announce_capture_willard_only
 
             {
                 - on_kayaks_saw == WILLARD:
@@ -366,6 +366,7 @@ what_remember is {what_remember}
 
 
 
+/* I believe this next bit is deprecated 
 
 === willard_and_accomplice ===
 // this is a full solve condition
@@ -382,6 +383,8 @@ what_remember is {what_remember}
                     -> accomplice_suprise_sort
         }
 
+
+*/
 
 == accomplice_suprise_sort ==
 

@@ -505,7 +505,7 @@ SCENE 04
                 -> chased_keep_current
 
             * [Go to full speed.]
-                {   is_radio_damaged:
+                {   lightning_strike_occurs:
                     Just as Troy is about to put the throttle to full power, he remembers the radio is broken. If they break down in this part of the lake—where there is no cell phone coverage—they'll be unable to contact anyone for rescue!
 
                             ** [Go to full speed anyway.]

@@ -184,7 +184,7 @@
 ~ who_saw = NOBODY
     -> mia_alx_tell_story_2
 
-== mia_alx_tell_story_2
+== mia_alx_tell_story_2 ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
 //    -   DEBUG: {who_saw}
@@ -229,13 +229,18 @@
 
 === quick_recovery_clear_exp ===
         *   ["Uh-oh, sounds like there's more," says Troy.]
-
+            -> little_bit
+           
+           
+        = little_bit
+        -   CHR_MIA_REL
             "A little bit," says Mia. "We saw the creatures again."
 
         -   (opts)
 
 
             *   [Julian looks skyward.]
+                --   CHR_JUL_SAD
                 Julian can't help but look up to make sure there are no creatures lurking above. -> grins
 
             *   (grins) [Alexis grins.] {Alexis grins. "Don't worry, we had no trouble outrunning them."| "And, as we suspected, the creature-drones have a limited range and flying time," says Alexis.}
@@ -400,6 +405,7 @@
 
 
         * ["Yes."]
+        --  CHR_TRO_REL
             "Yes, but only in the sense that really everyone is a possible suspect other than the four of us," says Troy. "Besides, we don't even know if that was {who_saw}'s boat in the cove."
 
             {
@@ -420,6 +426,7 @@
 
 
         * ["No."]
+         --  CHR_TRO_REL
             "No, because we don't know if it was {who_saw} driving the boat we heard in the cove," says Troy. <>
 
 
@@ -446,6 +453,7 @@
 
 
         * ["Maybe."]
+         --  CHR_TRO_REL
         "Maybe," says Troy. "Realistically we have nothing to suggest {who_saw} is involved, but you can't rule anyone out." Troy smiles. "Other than the four of us, of course."
 
             ** [Alexis nods.]
@@ -602,9 +610,13 @@
     -   "Did I already mention that I got my boating education certificate last night when I completed the course?" asks Mia with a coy grin.
 
             * [Julian snorts.]
+            --  CHR_MIA_REL
+            --  CHR_JUL_SML
             Julian snorts. "Only about 10 times now," he says—but in a well-meaning way. He can't help but share in Mia's enthusiasm.
 
             ** [Alexis smiles.]
+            --- CHR_ALX_SML
+            --- CHR_MIA_REL
             ---  "We get the hint, Mia," Alexis says with a smile looking at Troy and nodding her head toward the wheel. Troy smiles and winks in answer to the unasked question.
 
                 "Captain Chen, you have the con," says Alexis, stepping aside.
@@ -637,6 +649,7 @@
                     -   (opts) 
                     
                         *   ["One toot for port," says Mia.]
+                            -- CHR_MIA_REL
                             "One toot passing on the give-way vessel's port side," says Mia. -> two
                     
                     

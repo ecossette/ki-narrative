@@ -470,7 +470,7 @@ SCENE 05
     -   CHR_JUL_SML
     -   CHR_TRO_SML
     -   "OK, I'm in!" says Julian.
-    -   "Great! Let's meet here at oh-nine-hundred," says Troy. {is_radio_damaged: "I'll need to replace the VHF antennae and radio, but I should be able to do that by nine."}
+    -   "Great! Let's meet here at oh-nine-hundred," says Troy. {lightning_strike_occurs: "I'll need to replace the VHF antennae and radio, but I should be able to do that by nine."}
 
         *  [The friends finish securing the <i>Lakesong</i> and depart for the night.]
             // launch quiz 3.2 here, continue to day_two_begins

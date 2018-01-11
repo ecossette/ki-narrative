@@ -250,7 +250,7 @@
     -   Julian is relieved, but also a little disappointed. <>
 
         {
-            - no_go_stream: He assumed Troy would want to go a little further upstream, for sure!
+            - turn_back_before_cave: He assumed Troy would want to go a little further upstream, for sure!
 
              * They paddle all the way back[.] to the camouflaged entry point to the stream <>
 

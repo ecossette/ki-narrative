@@ -12,7 +12,7 @@ SCENE 01
 
     {
 
-        - is_radio_damaged:
+        - lightning_strike_occurs:
         Troy arrives at the dock the early the following morning and begins work on swapping the damaged radio with a new one. The time passes quickly for Troy as he focuses on his task.
         - else:
         Troy arrives at the dock early the following morning and begins preparing the boat for another day on the lake—a day that will include a return to Kalkomey Isle.

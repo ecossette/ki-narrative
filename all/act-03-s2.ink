@@ -25,7 +25,7 @@ SCENE 02
     -   Alexis points toward dark clouds gathering to the east. "Looks like another storm is building to the east now."
     -   "You're right," says Troy. "That doesn't look promising."
 
-        { is_radio_damaged:
+        { lightning_strike_occurs:
            -> radio_bust_try_cell
          - else:
             -> radio_crackles

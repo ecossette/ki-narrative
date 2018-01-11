@@ -321,15 +321,14 @@ the story will flow in/out of this tunnel on several occasion during play
 
 
 == docking_completed_s5==
-    -   The boat is successfully docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
     -   With the boat docked, 
         
         {
             
-            - recovery_fine_aboard_boat: Mia and Alexis begin <>
+            - recovery_fine_aboard_boat: the group begins <>
         
-            - return_post_rescue: the group begins <>
+            - return_post_rescue_2: Mia and Alexis begin <>
             
             - else: DEBUG: Condition should not be possible <>
         
@@ -349,7 +348,7 @@ the story will flow in/out of this tunnel on several occasion during play
                    // ** [OK]
 
                 {
-                    - return_post_rescue:
+                    - return_post_rescue_2:
                         -> met_by_police
 
                     - recovery_fine_aboard_boat:

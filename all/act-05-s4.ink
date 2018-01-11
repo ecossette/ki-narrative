@@ -50,7 +50,7 @@ wait to call for help = hypo extreme / full memory loss
 
 === report_to_police ===
 // complete boat achievment 
--   SYS_ACHIEVE_1_5
+
     -   After securing the <i>Lakesong</i> for the day, the four friends go directly to the marine police station located at the marina.
 
             * [Captain Garcia welcomes them.]
@@ -58,6 +58,7 @@ wait to call for help = hypo extreme / full memory loss
 
 
     = police_welcome
+    -   SYS_ACHIEVE_1_5
     - CHR_MPO_REL
     -   After brief reintroductions and an exchange of pleasantries, they tell the captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering "hmmm" or "interesting" and taking notes on a small notepad." 
 
