@@ -15,7 +15,7 @@ SCENE 05
 
     = make_way_laketown
 // general open water sounds
-    -   SYS_SCENE_4_15
+    //-   SYS_SCENE_4_15
     -   The <i>Lakesong</i> cruises south toward Laketown as a beautiful sunset fills the western sky.
 
         * [The friends discuss what happened.]
@@ -129,7 +129,7 @@ SCENE 05
         -   "When I get home I may be able to clean up the photo a bit on my computer."
 
              * [Darkness sets in.]
-                -- SYS_SCENE_6_01
+                //-- SYS_SCENE_6_01
                 -- CHR_TRO_REL
                 Troy texts his brother Vincent. He needs to update him on the change in their float plan to account for the later return to shore.
 
@@ -180,19 +180,19 @@ SCENE 05
     = no_wind_s3
     ~ do_wind_none = false
     -   SYS_MINIGAME_4_24
-        // * [OK]
+        * [OK]
             -> after_docking_ahoy
     
     = wind_toward_dock_s3
     ~ do_wind_toward = false
     -   SYS_MINIGAME_5_24
-        // * [OK]
+        * [OK]
             -> after_docking_ahoy
 
     = wind_away_dock_s3
     ~ do_wind_away = false
     -   SYS_MINIGAME_6_24
-        // * [OK]
+        * [OK]
             -> after_docking_ahoy
                 
 == after_docking_ahoy
@@ -470,7 +470,7 @@ SCENE 05
     -   CHR_JUL_SML
     -   CHR_TRO_SML
     -   "OK, I'm in!" says Julian.
-    -   "Great! Let's meet here at oh-nine-hundred," says Troy. {lightning_strike_occurs: "I'll need to replace the VHF antennae and radio, but I should be able to do that by nine."}
+    -   "Great! Let's meet here at oh-nine-hundred," says Troy. {is_radio_damaged: "I'll need to replace the VHF antennae and radio, but I should be able to do that by nine."}
 
         *  [The friends finish securing the <i>Lakesong</i> and depart for the night.]
             // launch quiz 3.2 here, continue to day_two_begins

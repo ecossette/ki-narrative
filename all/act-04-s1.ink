@@ -6,13 +6,13 @@ SCENE 01
 */
 
 === day_two_begins ===
-    -   SYS_SCENE_1
+    //-   SYS_SCENE_1
     -   SYS_CHAP_15
     -   CHR_TRO_REL
 
     {
 
-        - lightning_strike_occurs:
+        - is_radio_damaged:
         Troy arrives at the dock the early the following morning and begins work on swapping the damaged radio with a new one. The time passes quickly for Troy as he focuses on his task.
         - else:
         Troy arrives at the dock early the following morning and begins preparing the boat for another day on the lake—a day that will include a return to Kalkomey Isle.
@@ -69,6 +69,7 @@ SCENE 01
                 - else:
 
                     *   {smaller} ["Are we ready to cast off?" asks Julian.]
+                            -> ready_cast_off
 
                 }
         
@@ -126,23 +127,25 @@ SCENE 01
 == no_wind_co3 ==
     ~ co_wind_none = false
     -   SYS_MINIGAME_1_31
-       // * [OK]
+        * [OK]
             -> toward_fuel
     
 == wind_toward_dock_co3 ==
     ~ co_wind_toward = false
     -   SYS_MINIGAME_2_31
-       // * [OK]
+        * [OK]
             -> toward_fuel
 
 == wind_away_dock_co3 == 
     ~ co_wind_away = false
     -   SYS_MINIGAME_3_31
-       // * [OK]
+        * [OK]
             -> toward_fuel
 
 == toward_fuel ==
-    -   SYS_SCENE_4
+    //-   SYS_SCENE_4
+    -   SYS_SCENE_8_12
+    //-   SYS_SCENE_8_13
     -   CHR_TRO_REL
     -   Troy eases the <i>Lakesong</i> clear of the dock and makes way at <i>slow, no wake speed.</i>
 
@@ -267,7 +270,6 @@ SCENE 01
 
             * [Review the material on <i>Hunting and Fishing from a Boat</i>.]
                 -- SYS_PDF_32
-                   // ** [OK.] 
                    -> arrive_ki
 
             * [Continue on without reviewing.] -> arrive_ki
@@ -281,7 +283,7 @@ SCENE 01
 
 == infamous_fog ==
     -   SYS_ACHIEVE_6_4
-    -   SYS_SCENE_4_16
+    //-   SYS_SCENE_4_16
     -   Just as the four friends discovered the day before, the stories of thick fog in this part of the lake are true enough.
 
         - (opts)
@@ -312,10 +314,7 @@ SCENE 01
                 * [Review <i>Cold Water Immersion and Hypothermia</i>.]
                 // launch the sg for cold water immersion and hypo
                     -- SYS_PDF_33
-                // this OK below is for FPO only, after review go directly to another_prolonged
-                    
-                   // ** [OK]
-                        -> another_prolonged
+                    -> another_prolonged
         
         
         
@@ -323,6 +322,7 @@ SCENE 01
             //  add to emergency prep badge
  
             -   Troy gives another prolonged blast on the horn.
+            -   SYS_SCENE_8_14
     
             - (opts)
                     *    [ Four pairs of eyes scan the area ahead.]
@@ -335,7 +335,7 @@ SCENE 01
             -     -> opts
 
 == bird_sounds ==
-    -   SYS_SCENE_4_10
+    //-   SYS_SCENE_4_10
     -   CHR_TRO_SML
     -   The sound of birds signal their arrival at the island.
         "There's the cove!" says Troy. "As we planned, we'll launch the kayaks from there." Troy gives another prolonged blast from the horn, keeping to the rule of signaling once every two minutes during reduced visibility.
@@ -344,8 +344,8 @@ SCENE 01
                 -> review_plan
 
 == review_plan ==
--   SYS_CHAP_16
-
+    -   SYS_CHAP_16
+    -   SYS_SCENE_8_15
     -   CHR_TRO_REL
     -   "Let's go over the plan one more time," says Troy.
 

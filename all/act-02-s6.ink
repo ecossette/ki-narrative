@@ -21,14 +21,12 @@ VAR houseboat_st = 0
         -   Before we rejoin the friends, let's do a quick review of the safety issues related to <i>water skiing, towed devices, and wake sports</i>.
         
             * [Launch the review.]
-                - SYS_PDF_16
-            // this OK is FPO only and should NOT appear in game. After launching review, the game should proceed immediately to mia_pwc choice.  
-                    ** [OK]
-                    -> mia_pwc_choice
+                -> mia_pwc_choice
         
         
         = mia_pwc_choice
         // bump up other activities badge here
+        -   SYS_PDF_16
         -   SYS_ACHIEVE_6_2
         // SOUND water generic continue until next sound
         -   CHR_IAN_REL
@@ -175,19 +173,19 @@ VAR houseboat_st = 0
 == no_wind_2 ==
     ~ co_wind_none = false
     -   SYS_MINIGAME_1_16
-       // * [OK]
+        * [OK]
             -> after_co_houseboat
     
 == wind_toward_dock_2 ==
     ~ co_wind_toward = false
     -   SYS_MINIGAME_2_16
-      //  * [OK]
+        * [OK]
             -> after_co_houseboat
 
 == wind_away_dock_2 == 
     ~ co_wind_away = false
     -   SYS_MINIGAME_3_16
-      //  * [OK]
+        * [OK]
             -> after_co_houseboat
 
 

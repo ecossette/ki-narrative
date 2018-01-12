@@ -265,6 +265,7 @@ SCENE 01
         = choppy
 // SND bring storms sounds closer but still distant, still infrequent rumbles
 // SND fade out the bird sounds if not already out
+        - SYS_SCENE_8_00
         - As the boat continues straight on to Laketown, the water becomes very choppy. Troy has no choice but to back off the throttle and slow down to keep his passengers from being bounced around too severely.
 
                 * [Troy issues a command.]
@@ -453,7 +454,8 @@ VAR is_radio_damaged = true
     -   CHR_MIA_SUR
     -   CHR_JUL_SUR
 // lightning flash
-    -   SYS_SCENE_4_07
+    //-   SYS_SCENE_4_07
+    - SYS_SCENE_8_01
     - Suddenly, there is an enormous crack of lightning!
 
 
@@ -474,7 +476,7 @@ VAR is_radio_damaged = true
 
             *   Julian responds[.], as lightning flashes and cracks nearby.
                 //lightning flash
-                --   SYS_SCENE_4_07
+                //--   SYS_SCENE_4_07
 
                     ** "F-fine now[."], but that scared the crap out of me." Julian shakes his head. "I felt every hair on my body stand on end. But it looks like the boat took the brunt of it."
                     -> check_passenger_health

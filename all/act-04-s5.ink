@@ -3,6 +3,7 @@
 
 === wait_for_mia_alexis ===
 // Troy and Julian returned to the cove after turning back from following the stream far enough to encounter thieves. We'll join the girls on the <i>Lakesong</i>.
+    -   SYS_SCENE_8_31
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     
@@ -119,6 +120,7 @@
 
 
 == use_the_horn ==
+    -   SYS_SCENE_8_19
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   "We'll need to give the coded signal, according to the plan," says Alexis. She eases back on the throttle as the visibility decreases once again. "But Julian was right that the fog will help us stay hidden."
@@ -144,6 +146,7 @@
                 -   (opts)
 
                     **  [Keep a sharp lookout.]
+                        --   SYS_SCENE_8_22
                         --   CHR_ALX_REL
                         --   CHR_MIA_REL                   
                         Mia helps Alexis keep a sharp lookout, while Alexis gives the standard prolonged blast signal upon entering the fog. -> slow
@@ -235,22 +238,7 @@
 === join_mia_alx_second_attempt ===
 // this is where we'll join from capsized kayaks.
     -   CHR_ALX_REL
-    -   CHR_MIA_REL
-    -   Sometime earlier Mia and Alexis had entered the cove at the arranged meeting time but...
-    
-        -   (opts)
-    
-            * [They see nothing.]
-                There is no sign of the kayaks in the fog. -> unanswered
-            
-            *   (unanswered) [They hear nothing.] {They signal and wait and signal again but there is no response.| The girls are disappointed.}
-            
-            *   {unanswered} [They leave the cove.]
-                -> leave_cove
-    
-        -   -> opts
-    
-        After not finding Julian and Troy in the cove after several signalling attempts, Mia and Alexis leave the cove.
+    -   Earlier Mia and Alexis had entered the cove at the arranged meeting time. After not finding Julian and Troy in the cove after several signalling attempts, Mia and Alexis leave the cove.
     
         * ["That was the plan," says Alexis.]
             -> leave_cove
@@ -328,7 +316,7 @@
             -   (opts)
                 * [Try the binoculars.]
                 --   CHR_ALX_REL
-                "Even with the binocs, I'm not 100% sure," Alexis says after taking a look and handing the binoculars to Mia for a try. -> course
+                    "Even with the binocs, I'm not 100% sure," Alexis says after taking a look and handing the binoculars to Mia for a try. -> course
 
                 * (course) [Change course.] {Alexis changes course and speed to see if the object in the sky mirrors the changes.| It takes Mia a bit to get the focus right on account of her glasses.}
 

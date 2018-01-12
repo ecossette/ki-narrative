@@ -105,7 +105,7 @@
 
         * [Review boating encounters.]
             -- SYS_PDF_41
-               // ** [OK]
+                ** [Go to the <i>Encountering Other Vessels</i> activity.]
                     -> encounter_mini
     
         * [Go directly to the <i>Encountering Other Vessels</i> activity.]
@@ -114,17 +114,15 @@
                      
 === encounter_mini ===
     - SYS_MINIGAME_40
+        -> post_encounter_logic
     
+=== post_encounter_logic === 
     // need to add if/then here for two possible paths 
-    
     -> approach_discuss_suspicion
-            
-    
- 
-    
     
 
 === approach_discuss_suspicion ===
+    -   SYS_SCENE_8_33
     -   CHR_MIA_REL
     -   CHR_ALX_REL
     -   As the Laketown marina comes into view on the shoreline, <>
@@ -206,6 +204,7 @@
 
 
 === tell_police_unsure ===
+    -   SYS_SCENE_8_23
     -   Although in agreement on their suspicion of {suspect_whom}, they are still unsure if they should share that suspicion with the police. They have no proof—only a hunch.
 
 
@@ -266,21 +265,8 @@
     -   After successfully bringing the <i>Lakesong</i> back home, Mia continues between the green and red channel markers on each side at "slow, no wake" speed as she approaches the dock.
 
             * [Dock the boat.]
-            -> docking_wind_direction ->
+                -> docking_wind_direction
 
-                {
-                    - return_post_rescue:
-                        -> met_by_police
-
-                    - recovery_fine_aboard_boat:
-                        -> report_to_police
-
-                    - else:
-                    DEBUG: this else condition should not be possible.
-                    * [DEBUG: GO TO 'REPORT TO POLICE"] -> report_to_police
-                    * [DEBUG: GO TO 'MET BY POLICE"] -> met_by_police
-                }
-            
  
 /****** 
 
@@ -304,31 +290,32 @@ the story will flow in/out of this tunnel on several occasion during play
     = no_wind_s5
     ~ do_wind_none = false
     -   SYS_MINIGAME_4_41
-        // * [OK]
+        * [OK]
             -> docking_completed_s5
     
     = wind_toward_dock_s5
     ~ do_wind_toward = false
     -   SYS_MINIGAME_5_41
-        // * [OK]
+        * [OK]
             -> docking_completed_s5
 
     = wind_away_dock_s5
     ~ do_wind_away = false
     -   SYS_MINIGAME_6_41
-        // * [OK]
+        * [OK]
             -> docking_completed_s5
 
 
 == docking_completed_s5==
+    -   The boat is successfully docked.
     // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
     -   With the boat docked, 
         
         {
             
-            - recovery_fine_aboard_boat: the group begins <>
+            - recovery_fine_aboard_boat: Mia and Alexis begin <>
         
-            - return_post_rescue_2: Mia and Alexis begin <>
+            - return_post_rescue: the group begins <>
             
             - else: DEBUG: Condition should not be possible <>
         
@@ -345,19 +332,20 @@ the story will flow in/out of this tunnel on several occasion during play
           * [Review the <i>Line Handling</i> material.]
              // study guide inserts
                 -- SYS_PDF_43
-                   // ** [OK]
+                    -> post_docking_logic
+                     
+== post_docking_logic ==
+{
+    - return_post_rescue_2:
+        -> met_by_police
 
-                {
-                    - return_post_rescue_2:
-                        -> met_by_police
+    - recovery_fine_aboard_boat:
+        -> report_to_police
 
-                    - recovery_fine_aboard_boat:
-                        -> report_to_police
-
-                    - else:
-                    DEBUG: this else condition should not be possible.
-                    * [DEBUG: GO TO 'REPORT TO POLICE"] -> report_to_police
-                    * [DEBUG: GO TO 'MET BY POLICE"] -> met_by_police
-                }
+    - else:
+    DEBUG: this else condition should not be possible.
+    * [DEBUG: GO TO 'REPORT TO POLICE"] -> report_to_police
+    * [DEBUG: GO TO 'MET BY POLICE"] -> met_by_police
+}
     
     

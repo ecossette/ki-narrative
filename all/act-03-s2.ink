@@ -25,7 +25,7 @@ SCENE 02
     -   Alexis points toward dark clouds gathering to the east. "Looks like another storm is building to the east now."
     -   "You're right," says Troy. "That doesn't look promising."
 
-        { lightning_strike_occurs:
+        { is_radio_damaged:
            -> radio_bust_try_cell
          - else:
             -> radio_crackles
@@ -149,7 +149,7 @@ SCENE 02
             "I think we'll be able to stay just out of reach of the storms," says Troy.
         - (done)
             // lightning flash
-            -   SYS_SCENE_4_07
+            //-   SYS_SCENE_4_07
             -   Lightning suddenly streaks down nearby—followed immediately by a crash of thunder so loud that it shakes the boat.
 
             * ["Fog dead ahead!" shouts Julian.]
@@ -157,7 +157,7 @@ SCENE 02
 
 ==  fog_appears ==
     //fog appears, remove storm from behind
-    -   SYS_SCENE_4_08
+    //-   SYS_SCENE_4_08
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
     -   "I see it, too," Troy says. He eases back on the throttle, slowing their approach to the looming fog bank ahead.
@@ -563,8 +563,7 @@ SCENE 02
                 ** [Review all the "CO Poisoning Situations."]
                 //launch review here.
                     --- SYS_PDF_20
-                    //*** [OK]
-                    -> put_all_danger
+                        -> put_all_danger
 
                 ** [Continue onward without reviewing.]
                 -> put_all_danger
@@ -656,10 +655,11 @@ SCENE 02
         * [Onward!]
         // SYS launch quiz 3.1 here
             -- SYS_QUIZ_05
-            // ** [OK.]
+            ** [OK.]
             -> anchoring_review
 
 == anchoring_review ==
+    -   SYS_SCENE_8_02
     -   Having decided to sit tight and wait for the fog to clear, the friends make preparations to drop anchor.
 
     -   Before continuing you have two choices:
@@ -667,7 +667,7 @@ SCENE 02
         * [Review the material on anchoring.]
             // insert study guide here, upon student close, launch minigame
             -- SYS_PDF_21
-            // ** [OK]
+            ** [Go to the anchoring activity.]
                 -> anchoring_mini
                 
         * [Go directly to the anchoring activity.] 

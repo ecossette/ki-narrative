@@ -50,7 +50,8 @@ wait to call for help = hypo extreme / full memory loss
 
 === report_to_police ===
 // complete boat achievment 
-
+-   SYS_SCENE_8_20
+-   SYS_ACHIEVE_1_5
     -   After securing the <i>Lakesong</i> for the day, the four friends go directly to the marine police station located at the marina.
 
             * [Captain Garcia welcomes them.]
@@ -58,7 +59,7 @@ wait to call for help = hypo extreme / full memory loss
 
 
     = police_welcome
-    -   SYS_ACHIEVE_1_5
+    -   SYS_SCENE_8_21
     - CHR_MPO_REL
     -   After brief reintroductions and an exchange of pleasantries, they tell the captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering "hmmm" or "interesting" and taking notes on a small notepad." 
 
@@ -628,6 +629,7 @@ wait to call for help = hypo extreme / full memory loss
             {
                 - suspect_whom == rescuer:
                     * [Captain Garcia is taken aback.]
+                        -> suspect_rescuer_match
 
                 - else:
                     -> no_suspect_rescuer_match
@@ -648,6 +650,7 @@ wait to call for help = hypo extreme / full memory loss
             *    (blush) [Alexis blushes at the Captain's push-back.] {Alexis blushes as the Captain's push back and doesn't say anything.| "I'll admit the rescue does complicate things."}
 
             *   {blush} ["Got it," says the Captain.]
+                -> captain_departs
 
         -   -> opts2
 
@@ -706,8 +709,7 @@ wait to call for help = hypo extreme / full memory loss
             * [Review the <i>Vessel Maintenance</i> material.]
              // study guide inserts
              -- SYS_PDF_42
-               // ** [OK]
-                    -> cross_check
+                -> cross_check
     
     
     = cross_check   
@@ -716,9 +718,7 @@ wait to call for help = hypo extreme / full memory loss
         * [Review the <i>Line Handling</i> material.]
              // study guide inserts
              -- SYS_PDF_43
-                   // ** [OK]
-
-                        -> line_handling
+                -> line_handling
     
     
     = line_handling

@@ -11,8 +11,6 @@ VAR parts = 0
 
 
 
-
-
 === intro ===
 -   SYS_CHAP_01
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.
@@ -31,7 +29,8 @@ VAR parts = 0
     *   [Troy] -> intro_troy
     *   [Alexis] -> intro_alexis
     *   [Julian] -> intro_julian
-    *   [] -> intro_mia
+    *   [Mia] -> intro_mia
+    
 === intro_troy ===
     -   CHR_TRO_DEF 
     -   Troy is the most experienced.

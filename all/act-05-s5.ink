@@ -172,6 +172,7 @@ what_remember is {what_remember}
                     seeing a crashed drone stuck high in a tree." {who_has_memory} checks the lights.
 
                         * ["Now that you mention it..."]
+                            -> now_mention_it
 
                     - julian_tree_looking && monkey_watching:
                     seeing a crashed drone in a tree and—I know this is going to sound crazy—seeing monkeys." {who_has_memory} checks the bilge.
@@ -352,7 +353,7 @@ what_remember is {what_remember}
 
 
 
-    = react_announce_capture_willard_only
+        = react_announce_capture_willard_only
 
             {
                 - on_kayaks_saw == WILLARD:
@@ -366,7 +367,6 @@ what_remember is {what_remember}
 
 
 
-/* I believe this next bit is deprecated 
 
 === willard_and_accomplice ===
 // this is a full solve condition
@@ -383,8 +383,6 @@ what_remember is {what_remember}
                     -> accomplice_suprise_sort
         }
 
-
-*/
 
 == accomplice_suprise_sort ==
 
@@ -463,8 +461,7 @@ what_remember is {what_remember}
                 {
                     - suspect_whom == MAC:
 
-                        -> thought_detective_suspicious ->
-                        -> mac_on_case
+                        -> thought_detective_suspicious
 
                     - else:
 
@@ -476,6 +473,29 @@ what_remember is {what_remember}
 
 
                 }
+        
+        = thought_detective_suspicious
+        -   CHR_DTM_SAD
+        -   CHR_ALX_SAD
+            "Detective?" says Alexis, her face flushing with embarrassment.
+    
+            * ["That's right," he says.]
+                -> detective_business
+    
+        = detective_business
+        -   CHR_DTM_SML
+        -   "I heard y'all thought I was suspicious," he says with a good-natured laugh. "No hard feelings. Working undercover, it's my job to get into everyone's business."
+    
+            *   [Alexis is relieved.]
+                -> alx_relieved
+    
+        = alx_relieved
+        -   CHR_DTM_SML
+        -   CHR_ALX_SML
+        -   Alexis is relieved to hear that Mac didn't take their suspicion personally, and in hindsight wonders why they didn't figure it was {accomplice} involved with Willard.
+    
+            * [Mac resumes his recap...]
+                -> mac_on_case
 
         = mac_on_case
         -   CHR_DTM_REL
@@ -721,36 +741,6 @@ what_remember is {what_remember}
                     ** [Onward!]
                     -> the_end_solved
 
-
-
-=== thought_detective_suspicious ===
-    -   CHR_DTM_SAD
-    -   CHR_ALX_SAD
-        "Detective?" says Alexis, her face flushing with embarrassment.
-
-        * ["That's right," he says.]
-            -> detective_business
-
-    = detective_business
-    -   CHR_DTM_SML
-    -   "I heard y'all thought I was suspicious," he says with a good-natured laugh. "No hard feelings. Working undercover, it's my job to get into everyone's business."
-
-        *   [Alexis is relieved.]
-            -> alx_relieved
-
-    = alx_relieved
-    -   CHR_DTM_SML
-    -   CHR_ALX_SML
-    -   Alexis is relieved to hear that Mac didn't take their suspicion personally, and in hindsight wonders why they didn't figure it was {accomplice} involved with Willard.
-
-            * [Mac resumes his recap...]
-
-        ->->
-
-    -> DONE
-
-
-
 === no_leads ===
 // this is a no solve situation
     -   CHR_TRO_SAD
@@ -879,7 +869,6 @@ what_remember is {what_remember}
 
 
 
-
 === the_end_solved ===
 -   SYS_ACHIEVE_7_5
     -  This concludes The Mystery of Kalkomey Isle interactive boating education course.
@@ -896,7 +885,6 @@ what_remember is {what_remember}
 
 
 
-
 === the_end_partial_solved ===
 -   SYS_ACHIEVE_7_5
     -  This concludes The Mystery of Kalkomey Isle interactive boating education course.
@@ -910,9 +898,6 @@ what_remember is {what_remember}
                     FPO: Hand off to final exam course LMS occurs here.
 
                 -> END
-
-
-
 
 
 

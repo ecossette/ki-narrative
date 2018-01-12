@@ -3,6 +3,7 @@
     -> follow_boat_2
 
 === follow_boat_2 ===
+    -   SYS_SCENE_8_16
     -   CHR_MIA_REL
     -   CHR_ALX_REL
     - Mia and Alexis watch as Julian and Troy paddle off in the kayaks and disappear behind the fog. Alexis starts the <i>Lakesong's</i> engine and slowly takes the boat out of the cove while Mia provides a steady lookout to the waters ahead. 
@@ -15,7 +16,7 @@
 // this thread account for the player choice NOT to explore the stream at all.
 // will need to account for having seen stream for the solve matrix later
 // will need to account for this case and branch off to a path where the girls find them in the cove.
-
+-  SYS_SCENE_8_29
 -   Following the plan, after leaving Julian and Troy to investigate the cove on the kayaks, Alexis had taken the <i>Lakesong</i> away from the cove to put some distance between the boat and the island. Alexis intends to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. Alexis gives the horn a prolonged blast every two minutes.
 
     After some time passes...
@@ -52,6 +53,7 @@
 == fog_persists ==
 // the fog persists user path that leads to meeting someone in the fog.
 ~ fog_condition = FOG
+    -   SYS_SCENE_8_17
     -   CHR_MIA_REL
     -   CHR_ALX_REL
     -   "I was hoping the fog would clear up by now," says Alexis. "But no luck."
@@ -436,6 +438,7 @@
 
                 * [Speaking of the guys," says Alexis.]
                 --   CHR_ALX_SML
+                --   SYS_SCENE_8_18
                 "It's time to head back to the cove," says Alexis. "And look! The fog is finally breaking up!"
 
                     ** [Reverse direction.]
@@ -448,7 +451,7 @@
                         -> return_to_cove
 
             = return_to_cove
-            -   SYS_SCENE_4_19
+            //-   SYS_SCENE_4_19
             -   The remaining fogs burns off during their cruise back to the island, giving them plenty of visibility. They encounter no other boats.
 
                     *   [As they near the cove...]

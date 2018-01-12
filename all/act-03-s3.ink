@@ -26,7 +26,7 @@ SCENE 03
                 -> what_see_nothing
 
     = what_see_nothing
-    -   SYS_SCENE_4_10
+    //-   SYS_SCENE_4_10
     -   CHR_JUL_SUR
     -   CHR_MIA_REL
     -   "What? I don't see anything," says Mia.
@@ -126,6 +126,7 @@ VAR explore_island = true
 
 
 == paddleboard_safety ==
+    -   SYS_SCENE_8_03
     -   CHR_TRO_REL
     -   Before setting off, Troy reminds his friends about basic paddleboard safety.
 
@@ -180,7 +181,7 @@ VAR explore_island = true
 == on_paddeboards ==
 // add to other water activities badge
 // close in on the island
--   SYS_SCENE_4_11
+//-   SYS_SCENE_4_11
 -   SYS_ACHIEVE_6_3
 // SND paddling
     -   Troy and Mia navigate one board, while Alexis and Julian take the other. Behind them, the Lakesong's masthead and stern lights shine brightly, acting as the all-around white light required when a boat is anchored in fog or darkness. 
