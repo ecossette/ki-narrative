@@ -237,6 +237,7 @@
 
 
             *   [Julian looks skyward.]
+                -- CHR_JUL_REL
                 Julian can't help but look up to make sure there are no creatures lurking above. -> grins
 
             *   (grins) [Alexis grins.] {Alexis grins. "Don't worry, we had no trouble outrunning them."| "And, as we suspected, the creature-drones have a limited range and flying time," says Alexis.}
@@ -331,6 +332,7 @@
     -   (opts)
 
             *   [Julian scans the horizon.]
+                -- CHR_JUL_REL
                 Julian reaches for the binoculars and does a 360-degree scan. -> cove
 
             *   (cove) [Julian thinks about the cove.] {"Do you think the boat we heard in the cove was the same one you saw?" says Julian.|"Doesn't seem to be anyone else out here, but the cove is still foggy."}
@@ -543,23 +545,25 @@
         -   (opts)
 
             *   [Troy nods.]
+                -- CHR_TRO_REL
                 "We have to tell the police what we've found for sure," says Troy. -> steps
 
             *   (steps) [Troy checks off what they know.] {Troy checks off what they know. "One, we know about the hidden stream. Two, we know about the drones disguised as creatures."|"There's definitely something fishy going on."}
 
-            *   {steps} ["But enough for the reward?" he says.]
+            *   {steps} ["But enough for the reward?" asks Julian.]
                 -> tro_checks_off
 
         -   -> opts
 
 == tro_checks_off ==
     -   CHR_TRO_REL
-    -   CHR_MIA_REL
-    -   "But do we have enough to lead directly to the police catching the thieves and we get the reward?" asks Troy. "Well, that I don't know."
+    -   CHR_JUL_REL
+    -   "But do we have enough to lead directly to the police catching the thieves and we get the reward?" says Troy repeating Julian's question. "Well, that I don't know."
 
         -   (opts)
 
             *  [Mia considers the stream.]
+            --  CHR_MIA_REL
 
                 {
                     - no_go_island:
@@ -603,9 +607,11 @@
     -   "Did I already mention that I got my boating education certificate last night when I completed the course?" asks Mia with a coy grin.
 
             * [Julian snorts.]
+            -- CHR_JUL_SML
             Julian snorts. "Only about 10 times now," he says—but in a well-meaning way. He can't help but share in Mia's enthusiasm.
 
             ** [Alexis smiles.]
+            --- CHR_ALX_SML
             ---  "We get the hint, Mia," Alexis says with a smile looking at Troy and nodding her head toward the wheel. Troy smiles and winks in answer to the unasked question.
 
                 "Captain Chen, you have the con," says Alexis, stepping aside.

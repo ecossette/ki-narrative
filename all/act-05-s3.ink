@@ -42,14 +42,17 @@
         -   -> opts2
 
     = mia_drive
-
+    -   CHR_MIA_SUR
+    
+        
         -   (opts3)
-
-                * [Mia looks at Alexis in disbelief.]
+                
+                *  [Mia looks at Alexis in disbelief.]
                 --  CHR_MIA_SUR
-                Mia looks at Alexis in disbelief. "Me?"
+                    "Me? Drive the boat?" she says. -> nods
 
-                * (nods) Alexis nods. {Alexis nods and offers the wheel to Mia.| "But I don't... yesterday was my only time."}
+
+                * (nods) [Mia shakes her head.] {Alexis nods and offers the wheel to Mia. "Really, are you sure?" asks Mia.| "But I don't... yesterday was my only time."}
 
                 * {nods} ["You passed your boat education course, right?" asks Alexis.] 
                     -> yes_passed
@@ -132,7 +135,7 @@
             - recovery_fine_aboard_boat:
             the subject turns to their suspicions. Do they suspect someone they know of being involved based on what they've discovered?
 
-            - return_post_rescue:
+            - return_post_rescue_2:
             Mia and Alexis discuss the robberies and what they know so far.
 
             - else:
@@ -307,15 +310,13 @@ the story will flow in/out of this tunnel on several occasion during play
 
 
 == docking_completed_s5==
-    -   The boat is successfully docked.
-    // Or: The group successfully casts off. (I see why you would have this here, as it's positive feedback for the player, but it does break 4th wall.)
-    -   With the boat docked, 
+    -   With the boat docked, <> 
         
         {
             
-            - recovery_fine_aboard_boat: Mia and Alexis begin <>
+            - return_post_rescue_2: Mia and Alexis begin <>
         
-            - return_post_rescue: the group begins <>
+            - recovery_fine_aboard_boat: the group begins <>
             
             - else: DEBUG: Condition should not be possible <>
         

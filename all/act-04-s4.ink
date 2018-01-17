@@ -118,10 +118,13 @@
         -   Eventually, the creature-drones abandon their pursuit and peel off on a course straight back to the island.
 
                 * ["Running low on power I suspect," Alexis says.]
+                --  CHR_ALX_SML
+                --  CHR_MIA_REL
                 "Carrying that extra weight of the disguise has to degrade their flight time and speed," says Alexis.
 
                     ** ["Speaking of time...?" says Mia.]
-                    --  CHR_ALX_REL
+                    ---  CHR_ALX_REL
+                    ---  CHR_MIA_REL
 
                     Alexis checks her watch.
 
@@ -131,14 +134,20 @@
                             -> see_something
 
 == see_something ==
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   Alexis steers the boat back toward the cove.
 
         -   (opts)
 
             * [Mia grabs the binoculars.]
+                --  CHR_ALX_REL
+                --  CHR_MIA_REL
                 "You see something?" asks Alexis as Mia brings the binoculars up. -> horizon
 
             * (horizon) [Mia shields her eyes with her hand.]
+                --  CHR_ALX_REL
+                --  CHR_MIA_SUR
                     {Mia scans the horizon, then focuses on a spot in the distance.|"It's another boat in the distance." says Mia. }
 
             * {horizon} [Alexis squints.]
@@ -149,7 +158,7 @@
 == boat_in_distance ==
 ~ what_saw = BOAT
 ~ where_saw = DISTANCE
-    -   CHR_ALX_REL
+    -   CHR_ALX_SUR
     -   CHR_MIA_REL
     -   "That's a boat for sure," says Alexis. Mia hands her the binoculars.
 
@@ -190,31 +199,63 @@
         {
 
             - cletus_in_distance:
-            "Kind of strange to find {who_saw} out here after all his stories about how spooky Kalkomey Isle is," says Alexis.
+                -> cletus_dist_discuss
+            
+
+            - mac_in_distance:
+                -> mac_in_distance
+            
+
+            - ian_in_distance:
+                -> ian_in_distance
+            
+        }
+
+        
+        = cletus_dist_discuss
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
+        "Kind of strange to find {who_saw} out here after all his stories about how spooky Kalkomey Isle is," says Alexis.
                 ** ["He's the last person I want to run into out here," says Mia.]
+                    --   CHR_ALX_REL
+                    --   CHR_MIA_REL
                     "{who_saw} seems a bit odd."
                     "That's an understatement," says Alexis with a laugh.
                     -> spotted_us
-
-            - mac_in_distance:
-            "I wonder what {who_saw} is doing out here," says Alexis.
+        
+        
+        = mac_dist_discuss
+       
+        "I wonder what {who_saw} is doing out here," says Alexis.
             "Well, he did say he comes out this way to fish," says Mia.
                 ** ["Yeah, but he's not fishing now," says Alexis]
 
                     -> spotted_us
-
-            - ian_in_distance:
-            "That's a coincidence," says Alexis. "I mean, just yesterday {who_saw} said he'd never been to Kalkomey Isle."
+        
+        
+        = ian_dist_discuss
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
+        "That's a coincidence," says Alexis. "I mean, just yesterday {who_saw} said he'd never been to Kalkomey Isle."
                 ** ["Technically, it was Maura who said that," says Mia.]
+                    --   CHR_ALX_REL
+                    --   CHR_MIA_REL
                     "Well, it's just {who_saw} on that boat," Alexis says. "I wonder where Maura is?"
 
                     -> spotted_us
 
-        }
-
+        
+        
+        
+        
+        
+        
+        
         = spotted_us
         -   CHR_MIA_REL
         * ["You think he spotted us?" asks Mia.]
+            --   CHR_ALX_REL
+            --   CHR_MIA_REL
             --   "I don't think he saw us," says Alexis. "{who_saw} is going the other way, and judging by the wake, he's in a real hurry."
 
                 ** [They turn their attention to the cove ahead.]
@@ -229,11 +270,13 @@
     -   "Something's flashing," says Mia. "Do you think it's someone signaling with a mirror?
 
             * ["Could be," says Alexis.]
+            --  CHR_ALX_REL
             "Though the flashes seem too sporadic to be a signal," she says.
 
         -   (opts)
 
             *   [Mia tries the binoculars.]
+                --  CHR_MIA_REL
                 Mia takes a look through the binoculars and sees another flash. -> flash
 
             *   (flash) [There's another flash.] {"There it goes again... it does seem random," Mia says.|"Whatever it is, it's pretty far away."}
@@ -251,11 +294,14 @@
 
         - (opts)
                 *  [What if it is a signal?]
+                    -- CHR_ALX_MIA
                    "The lack of a pattern could be because the person signaling is hurt," says Mia, "or in some other trouble preventing a routine signal."
                 *    [What if it's the boat thieves?]
+                    --  CHR_ALX_REL
                     "It could have something to do with the thieves," says Alexis, "which could help us."
                     "Or not," says Mia, "if we got caught."
                 *    [What if it's nothing?]
+                    --  CHR_MIA_REL
                     "If it turns out to be nothing, then we'll have wasted time," says Mia. "And that signal looks far away, which could mess up the plan to meet Julian and Troy on time."
                 // We require the player to ask at least one question
                 *    {loop} [Enough considering.]
@@ -263,9 +309,12 @@
             - (loop)
                 // loop
                 { -> opts | -> opts | }
+               
                 They see another flash, which doesn't make the decision any easier.
 
             - (done)
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
                 They decide to...
 
                 * [Pass.]
@@ -285,6 +334,7 @@
         -   (opts)
 
             * [Mia reaches for the binoculars.]
+            --  CHR_MIA_REL
             Mia watches through the binoculars as the last of the smoke fades out. -> smoke
 
             * (smoke) [The smoke quickly dissipates.] {"I think you're right that it's red smoke—or was," says Mia.|"It's really far away, though, and now it's gone, so can't say for sure."}
@@ -300,12 +350,18 @@
     -   "If we think that's from someone in distress," says Alexis, "we're going to have to go that way and check it out."
 
             * ["But we're not sure," says Mia.]
+                --   CHR_ALX_REL
+                --   CHR_MIA_REL
                 "Wouldn't a VDS be more obvious and last longer?" asks Mia. "Also we have to consider the safety of Julian and Troy. We can't put their recovering at risk."
 
                 ** ["Good point," says Alexis.]
+                    ---   CHR_ALX_REL
+                    ---   CHR_MIA_REL
                 "Maybe we just caught the tail end of the VDS, or it was a dud," she says. "We should have enough time, though, to get there and back."
 
                     *** [Mia nods.]
+                        ----   CHR_ALX_REL
+                        ----   CHR_MIA_REL
                     "If you're sure..." says Mia.
                     "Well, I'm not sure-sure," Alexis says, suddenly feeling less confident.
                     They decide to...
@@ -349,6 +405,7 @@
              -   (opts)
 
                 * [Mia grabs the binoculars.]
+                -- CHR_MIA_REL
                 "You see something?" asks Alexis, as Mia brings the binoculars up. -> horizon
 
                 * (horizon) [Mia shields her eyes with her hand.]
@@ -362,7 +419,9 @@
 
 == someone_on_beach ==
 ~ where_saw = BEACH
-   -    "There's somebody there alright," says Alexis. Mia hands her the binoculars.
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
+    -    "There's somebody there alright," says Alexis. Mia hands her the binoculars.
 
             * ["Do you recognize who it is?" Mia asks.]
 
@@ -401,34 +460,64 @@
         {
 
             - cletus_on_beach:
-            "Kind of strange to find {who_saw} out here after all his stories saying how spooky Kalkomey Isle is," says Alexis.
+                -> cletus_beach_discuss
+
+            - mac_on_beach:
+                -> mac_beach_discuss
+            
+
+            - maura_on_beach:
+                -> maura_beach_discuss
+            
+
+        }
+
+        
+        = cletus_beach_discuss
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
+        "Kind of strange to find {who_saw} out here after all his stories saying how spooky Kalkomey Isle is," says Alexis.
                 ** ["He's the last person I want to run into out here," says Mia.]
+                    --   CHR_ALX_REL
+                    --   CHR_MIA_REL
                     "{who_saw} seems a bit odd."
                     "That's an understatement," says Alexis..
                     -> spotted_us
-
-            - mac_on_beach:
-            "I wonder what {who_saw} is doing out here," says Alexis.
+        
+        
+        = mac_beach_discuss
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
+        "I wonder what {who_saw} is doing out here," says Alexis.
             "Well, {who_saw} did say he comes out this way to fish regularly," says Mia.
                 ** ["Yeah, but he's not fishing now," says Alexis]
 
                     -> spotted_us
-
-            - maura_on_beach:
-            "How ironic," says Alexis. "I mean just yesterday {who_saw} said she'd never been to Kalkomey Isle."
+        
+        = maura_beach_discuss
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
+        "How ironic," says Alexis. "I mean just yesterday {who_saw} said she'd never been to Kalkomey Isle."
                 ** ["And by herself?" says Mia.]
+                    --   CHR_ALX_REL
+                    --   CHR_MIA_REL
                     "Seriously, {who_saw} didn't strike me as the strong, independent type," Alexis says.
                     -> spotted_us
-
-        }
-
+        
+        
+        
+        
         = spotted_us
         -   CHR_MIA_REL
         * ["You think we've been spotted?" asks Mia.]
+            --   CHR_ALX_REL
+            --   CHR_MIA_REL
             --   "Maybe," says Alexis. "Although {who_saw} looks to be focused on something... but I can't get a clear view of what."
 
                 ** ["We should head back," says Mia.]
-                -- "We want to make sure we get back to the cove in time," Mia says.
+                ---   CHR_ALX_REL
+                ---   CHR_MIA_REL
+                --- "We want to make sure we get back to the cove in time," Mia says.
                     "Agreed," says Alexis.
 
 

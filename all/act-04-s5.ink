@@ -25,6 +25,8 @@
     
 
     = sound_rely
+    -   CHR_JUL_REL
+    -   CHR_TRO_REL
     -   In the distance, they hear the sound of a boat engine.
         The sound becomes louder as it approaches.
 
@@ -32,9 +34,13 @@
                 -> reaches_for_whistle
 
     = reaches_for_whistle
+    -   CHR_JUL_SUR
+    -   CHR_TRO_SUR
     Excited by the sound of the approaching boat, Julian reaches for the whistle.
 
             * ["Hold up! says Troy.]
+            --  CHR_JUL_REL
+            --  CHR_TRO_SUR
             Julian stops.
             "That doesn't sound like the <i>Lakesong,"</i> says Troy.
 
@@ -42,6 +48,8 @@
                     -> hidden_fog
 
     = hidden_fog
+    -   CHR_JUL_REL
+    -   CHR_TRO_REL
     -   Hidden in the fog, they can't see the boat, but they can hear it as it approaches, then moves deeper into the cove away from them. They hear the engine slow for a moment, then pick up again before gradually fading out.
 
             * ["They must have gone up the stream!" says Julian.]
@@ -108,6 +116,7 @@
             -   (opts)
 
                 *  [Mia takes a couple photos.]
+                    -- CHR_MIA_REL
                     Mia takes a couple photos of the last of fog shimmering in the cove against the bright green of the island. -> shudders
 
                 *   (shudders) [The boat shudders.] {The boat shudders and Mia grabs for a rail to steady herself, as they quickly pass through the same cross current they've felt before.| "It's really pretty," she says.}
@@ -142,18 +151,20 @@
     ->  DONE
                 
         =   keep_lookout_cove
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
         
                 -   (opts)
 
-                    **  [Keep a sharp lookout.]
+                    *  [Keep a sharp lookout.]
                         --   SYS_SCENE_8_22
                         --   CHR_ALX_REL
                         --   CHR_MIA_REL                   
                         Mia helps Alexis keep a sharp lookout, while Alexis gives the standard prolonged blast signal upon entering the fog. -> slow
 
-                    **  (slow) [Slow down even more.] {Alexis brings the throttle back almost to idle, giving the boat its slowest possible forward speed so as not to accidentally overrun the kayaks.| Alexis suspects Troy and Julian will be waiting closer to the shore, but the kayaks could be anywhere in the cove.}
+                    *  (slow) [Slow down even more.] {Alexis brings the throttle back almost to idle, giving the boat its slowest possible forward speed so as not to accidentally overrun the kayaks.| Alexis suspects Troy and Julian will be waiting closer to the shore, but the kayaks could be anywhere in the cove.}
 
-                    **  {slow} [Listen.]
+                    *  {slow} [Listen.]
                                 -> listen
 
                -    -> opts
@@ -207,6 +218,7 @@
 
                 - (opts)
                     * [Wait.]
+                    -- CHR_ALX_REL
                     Alexis counts off to fifteen in her head, just to make sure she's giving the guys enough time to respond.->cut
 
                     * (cut) [Cutoff the engine.] {"Let's try cutting the engine," says Alexis. "We should be able to hear a whistle with the engine idling but you never know." Alexis cuts the engine.|"C'mon, guys, signal already!"}
@@ -225,6 +237,7 @@
             - (opts)
 
                     * [Try again.]
+                    -- CHR_ALX_SAD
                     Alexis gives it one final shot. The horn blares as the <i>Lakesong</i> floats in silence, barely moving in the still cove. -> give_up
 
                     * (give_up) [Give up.] {"We have to face the facts," says Alexis. "They aren't in the cove." Mia lets out a frustrated sigh.|"Again, nothing," says Alexis with an edge of anxiety in her voice.}
@@ -238,6 +251,7 @@
 === join_mia_alx_second_attempt ===
 // this is where we'll join from capsized kayaks.
     -   CHR_ALX_REL
+    -   CHR_MIA_REL
     -   Earlier Mia and Alexis had entered the cove at the arranged meeting time. After not finding Julian and Troy in the cove after several signalling attempts, Mia and Alexis leave the cove.
     
         * ["That was the plan," says Alexis.]
@@ -299,6 +313,7 @@
             -   (opts)
 
                     *   [A black speck appears.]
+                        --CHR_MIA_REL
                         High overhead, a black speck appears.-> fog
 
                     *    (fog) [The cove remains in fog.] {While the fog lingers over the not-too-distant cove, in the open waters, the visibility is good in every direction, including straight up.| The speck is directly above the boat, matching their speed and course.}
@@ -368,6 +383,7 @@
         -   (opts)
 
                 *   [Mia shivers.]
+                -- CHR_MIA_REL
                 "It's always colder in this part," says Mia, shivering. The boat shudders in the cross-current. -> skyward
 
                 *   (skyward) [Mia looks skyward.] {"At least the fog will be good cover again." | "If that is a drone, it would have an excellent view of a clear cove."}

@@ -504,6 +504,7 @@ what_remember is {what_remember}
             -   (opts)
 
                 *   [Julian does a fist pump.]
+                    -- CHR_JUL_SML
                     Julian does a fist pump. "Solving the mystery, now that's what I'm talking about!" he says, imagining the boat reward. -> surprised
 
                 *   (surprised) [Mac grins.] {Mac breaks into a grin watching each of the four process the news. | "Captain Del Castillo... yeah, I like it."}
@@ -626,6 +627,7 @@ what_remember is {what_remember}
             -   (opts)
 
                 *   [Julian wonders.]
+                    -- CHR_JUL_SAD
                     Julian wonders if not finding all the thieves will affect the reward. -> looks
 
 
@@ -646,6 +648,7 @@ what_remember is {what_remember}
                 -   (opts2)
 
                     *   ["Of course, there is a reward," he says.]
+                    --   CHR_{chr}_REL
                     "Of course, there is a reward in knowing boaters can once again enjoy the water without worrying about their boats being stolen," {police_finale} says. -> water
 
                     *   (water) [He looks northward out over the water.] {He looks northward out over the water and pauses before saying, "The four of you have no doubt played a role in helping us to bring Willard in," he begins... but trails off.| "Not to mention the reward in seeing justice served..." His words hang in the air.}
@@ -696,14 +699,18 @@ what_remember is {what_remember}
     "Great news, indeed," says {police_finale}. "Now it's up to the district attorney to make the case in court to a jury."
 
                 * [Julian grins.]
-
-
-    -   "Does this mean what I think it means?" asks Julian.
+                    -> jul_grins_reward
+                
+        
+        = jul_grins_reward
+        - CHR_JUL_SML
+        -   "Does this mean what I think it means?" asks Julian.
 
         {police_finale} nods in agreement, and speaks of...
 
         -   (opts)
             *   [Justice served.]
+                -- CHR_{chr}_CHR
                 "This means Willard and {accomplice} will face justice for their crimes," says {police_finale}, smiling.-> boaters
 
             *   (boaters) [Laketown boaters.] {"This means boaters can once again enjoy the water without worrying about their boats being stolen."| "And all because of your help."}

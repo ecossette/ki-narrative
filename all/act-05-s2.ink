@@ -27,6 +27,7 @@
     -   (opts)
 
         *   [Alexis fidgets and checks her watch.]
+        --  CHR_ALX_SAD
         "We're now past the second meeting hour," she says.-> glances
 
         *   (glances) [Mia and Alexis exchange nervous glances.] {Mia looks at Alexis, her face creased with worry. Alexis feels the same. "We're going to need to make a decision," says Alexis.| "Way late for the first hour and late for the second," Alexis sighs.}
@@ -62,6 +63,7 @@
         -   (opts)
 
             *   [Mia checks her own watch.]
+            --  CHR_MIA_SAD
             "They're more than a 'few' minutes overdue," says Mia.
 
             *   (arms) [Mia crosses her arms in frustration.] {She crosses her arms in frustration with Alexis—but then has a realization. "You're worried that if you call now and we find them a few minutes later that everyone will think you overreacted?" says Mia.|"I get it—you don't want to be called 'hysterical.'"}
@@ -108,6 +110,7 @@
     -   "You're right, says Alexis{follow_kayaks:, her face reflecting the calmness that comes with having made a decision}. "And we can keep searching for Julian and Troy after we alert the marine police."
 
         * [Alexis reaches for the radio.]
+        --  CHR_ALX_REL
         -- Alexis reaches for the radio and checks that it's tuned to the emergency channel—number 16.
 
             ** ["Pan, Pan, Pan," she says.]
@@ -123,6 +126,7 @@
         -   "Pan, Pan, Pan," Alexis says into the transmitter, using the signal (pronounced 'Pahn') for an incident of less gravity than a Mayday signal. (Mayday is reserved for situations where the loss of a vessel or persons is imminent.)
 
                 * ["This is <i>Lakesong, Lakesong, Lakesong</i>."]
+                --  CHR_ALX_REL
                 -- Alexis continues the pan-pan distress call. "Whiskey Sierra 2-3-2-3. Midway, south side of Kalkomey Isle bearing north 500 meters.  We have 2 persons in kayaks who are well overdue. <i>Lakesong</i> is a 32-foot cabin cruiser—white hull with a green stripe. Over."
 
                     ** [They wait for a response.]
@@ -164,6 +168,7 @@
             "Per the regs, we need to wait two minutes after our first two calls before trying again," says Alexis. "in the meantime, I want to get us out into open water. The island may be interfering with our radio signal."
 
                 ** [Leave the cove.]
+                --- CHR_ALX_REL
                 Once in open water, Alexis repeats the pan-pan distress call at the proper two-minute mark.
 
                     *** [The radio squawks to life.]
@@ -199,7 +204,7 @@
         }
 
 === cletus_rescues ===
-    - DEBUG: cletus is the rescuer
+    //- DEBUG: cletus is the rescuer
     ~ rescuer = CLETUS
     ~ rescue_boat = "Munlock"
     ~ rescue_call_sign = "Romeo Foxtrot 57-80"
@@ -211,7 +216,7 @@
 
 
 === mac_rescues ===
-    - DEBUG: mac is the rescuer
+    //- DEBUG: mac is the rescuer
     ~ rescuer = MAC
     ~ rescue_boat = "Beachleaf"
     ~ rescue_call_sign = "Delta India 31-40"
@@ -220,7 +225,7 @@
     -> rescuer_mayday_call
 
 === ian_rescues ===
-    - DEBUG: ian is the rescuer
+    //- DEBUG: ian is the rescuer
     ~ rescuer = IAN
     ~ rescue_boat = "Shamrockit"
     ~ rescue_call_sign = "AM 22-08"
@@ -267,6 +272,7 @@
             -   (opts)
 
                 * [Mia begins to sob.]
+                    -- CHR_MIA_SAD
                     Mia begins to sob while Alexis—jaw clenched—instinctively sets a course toward Laketown. -> ok
 
                 * (ok) ["They're g-g-gonna be OK, right?"] {"Right? They're gonna be OK?" asks Mia, but she knows it's a rhetorical question. They have no way of knowing.| Alexis shivers, thinking how cold the water must have been as Julian and Troy waited for rescue.}
@@ -292,6 +298,7 @@
             - (opts2)
 
             * ["Maybe it's not them?" wonders Mia.]
+                -- CHR_MIA_SAD
                 "What if it isn't Julian and Troy?" asks Mia, her face brightening with the possibility. "I mean, what about the kayaks?"
 
             *   (turns) [Alexis turns to Mia.] {Alexis turns to Mia, her own eyes filling with tears.|"They were in kayaks... they didn't mention kayaks..." Mia tries to convince herself.}
@@ -323,7 +330,8 @@
     -   The marine police ask Alexis to switch to Channel 70, where she updates them on the likelihood that Julian and Troy are the rescued victims of the cold water immersion.
 
             * ["Copy that <i>Lakesong</i>."]
-            -   "The medevac chopper is on the way. Advise that you return to Laketown immediately and directly. Over."
+            --  CHR_ALX_REL
+            --   "The medevac chopper is on the way. Advise that you return to Laketown immediately and directly. Over."
 
                 "Copy that," says Alexis. "<i>Lakesong</i> returning to Laketown. <i>Lakesong</i> out."
 

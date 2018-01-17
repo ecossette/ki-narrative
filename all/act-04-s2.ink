@@ -394,14 +394,36 @@
 
 
         = around_next_bend
-        -   Julian leads the way with Troy close behind. The bend looks similar to the others they've paddled through, and they approach it as they have others—with the hope of finding something interesting on the other side. When they began this trip up the stream, they were nervous, wondering if the thieves would be just around the corner. So far each bend has only revealed the same thing—more stream going on and on to the next turn.
+        -   CHR_JUL_REL
+        -   CHR_TRO_REL
+        -   Julian leads the way with Troy close behind. The bend looks similar to the others they've paddled through, but they remain alert. /*and they approach it as they have others—hopeful and alert. When they began this trip up the stream, they were nervous, wondering if the thieves would be just around the corner. So far each bend has only revealed the same thing—more stream going on and on to the next turn.*/
+        
+      
+            -   (opts)
+            
+                * [Julian keeps an eye on the stream ahead.]
+                --   CHR_JUL_REL
+                --   CHR_TRO_REL
+                So far each successive bend in the stream had led to nothing of interest, just more and more stream. -> scans
+                
+                
+                * (scans) [Troy scans the the banks on each side.] {Although they'd seen no sign of the thieves, they are both still on edge.| Still both Julian and Troy believed that the theives had to somewhere out here.}
+                
+                * {scans} [They steer around the bend...]
+                    -> steer_bend
+            
+            
+            -   -> opts
+        
+        = steer_bend
+        -   CHR_JUL_REL
+        -   CHR_TRO_REL
+        -   They steer around the bend and both are dissapointed. They only see more stream leading to yet another bend 50 yards or so further along.
 
-                * They steer around the bend and find[...] more stream leading to yet another bend 50 yards or so further along.
+            "Well, I guess that's it, then," says Troy, dropping his paddle to begin his pivot turn to reverse direction. Julian does the same when suddenly—
 
-                    "Well, I guess that's it, then," says Troy, dropping his paddle to begin his pivot turn to reverse direction.
-
-                        ** [CLANG!]
-                            -> clang_heard
+                * [CLANG!]
+                    -> clang_heard
 
 
   === turn_back_before_cave ===
@@ -410,10 +432,12 @@
  == clang_heard ==
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
-    -   A CLANG ripples through the forest—and everything goes still.
+    -   A loud CLANG ripples through the forest—and everything goes still.
 
         - (opts)
         *    [Julian looks at Troy wide-eyed.]
+        --  CHR_JUL_SUR
+        --  CHR_TRO_REL
             Troy puts his finger to his lips.  -> silent
 
         *    (silent) [Troy is statue-still.] {They both know the sound they heard wasn't from monkeys or birds.  While distant, the clang was unmistakably a clang of metal on metal, the sound of human activity.| Listening...}
@@ -443,9 +467,7 @@
 
     = tro_so_slow
     -   CHR_TRO_SML
-    -   Troy makes the decision to continue.
-
-        "Since I'm so slow, I better get a head-start," says Troy grinning.
+    -   "Since I'm so slow, I better get a head-start," says Troy grinning.
 
         Julian pulls in behind Troy. They paddle forward down the middle of the stream and around the next bend, then around yet another. And then they hear…"
 
@@ -471,15 +493,33 @@
 
     = jul_disbelief
     -   CHR_JUL_REL
-        {"Wait, you want to go on foot?" says Julian. "Why?"| "We're faster on the water," says Julian, still skeptical.|}
+     -   (opts2)
+        {"Wait, you want to go on foot?" says Julian. "Why?"| "But we're faster on the water," says Julian, still skeptical.| }
 
-                *   "The stream leads straight to the sound, says Troy.[] "So we can't take the kayaks any further safely. I'm afraid we'd be seen on the water."
-                    -> jul_disbelief
+           
+                
+                *   ["The stream is too risky," says Troy.] 
+                    -- CHR_TRO_REL
+                    "The stream leads straight to the sound," says Troy. "So we can't take the kayaks any further safely without being seen."
+                       
 
-                *   "The forest gives us cover," says Troy.[] "We can shortcut through on foot, take a quick peek, and then paddle straight back to the cove."
-                    -> jul_disbelief
-
-                *   [Julian accepts Troy's reasoning.]
+                *    ["The forest gives us cover," says Troy.]
+                    -- CHR_TRO_REL
+                    "We can shortcut through on foot, take a quick peek, and then paddle straight back to the cove."
+                        
+                 
+                *   {loop} [Julian's heard enough.]
+                    -> done
+                
+                -   (loop)
+                    { -> opts2 | }
+                    Julian looks upstream one more time then nods. 
+                
+                -   (done)  
+                -  CHR_JUL_REL
+                    "OK, you've got a point," he says. "Let's go on foot."
+                    
+                    * [Beach the kayaks.]
                     -> jul_accepts
 
     = jul_accepts
@@ -518,9 +558,13 @@
     -   CHR_TRO_REL
     -   Troy and Julian quickly set off into the woods in the direction of the persistent engine sound Troy thinks is a generator.
 
-        After several minutes of picking their way carefully through the thick underbrush, ahead they see the stream again, doubling back as Troy expected. In addition to the engine sound, they can now hear the sound of power tools... and the occasional muffled voice.
+        * [They pick their way carefully through the thick underbrush.]
+        --   CHR_JUL_REL
+        --   CHR_TRO_REL
+        
+        After several minutes, ahead they see the stream again, doubling back as Troy expected. In addition to the engine sound, they can now hear the sound of power tools... and the occasional muffled voice.
 
-                * [The thieves' hideaway.]
+                ** [Peer through the underbrush.]
                     -> thieves_hideaway
 
 == thieves_hideaway ==
@@ -544,7 +588,11 @@
             { -> opts | -> opts | }
             Julian gets Troy's attention, then taps at his wrist to indicate 'time.'
         - (done)
-            * "It's a boat chop shop!" whispers Troy.[]
+        -   CHR_JUL_REL
+        -   CHR_TRO_SUR
+            
+            "It's a boat chop shop!" whispers Troy.
+            * [Mystery solved," says Julian.]
             -> jul_solved_go
 
 == jul_solved_go
@@ -553,6 +601,7 @@
 
          - (opts)
         *    [Julian begins inching back.]
+            -- CHR_JUL_REL
             Julian begins inching away from the hideaway along the bank, but Troy stops him.  -> stay
 
         *    (stay) [Troy shakes his head.] {"I want to wait and try to see a face," says Troy. |"Just a few seconds more." }
@@ -776,6 +825,7 @@
             - (opts)
 
                 * [Troy feels around.]
+                --  CHR_TRO_SUR
                     Troy feels around inside his kayak's hull and gets a surprise. -> water
 
                 * (water) [Troy looks troubled.] {"That's weird... " he says.| "The bag is soaked."}
@@ -914,6 +964,7 @@
 
 
     = second_flare
+    -   CHR_TRO_SAD
     Troy is disappointed that the flare didn't go as high as he wanted. His loss of manual dexterity affected his aim. He's not sure it went high enough for anyone to see. <>
     
         {
@@ -928,6 +979,8 @@
             -> tro_remains_hopeful
     
     = tro_remains_hopeful
+    -   CHR_TRO_SAD
+    -   CHR_JUL_SAD
     -    Troy remains hopeful—but glancing at the shoreline, he is more and more alarmed at how far from the cove they continue to drift. Will Mia and Alexis find them this far away?
 
         "How long... do you... think until... we're... rescued?" asks Julian, having trouble catching his breath.
@@ -936,12 +989,15 @@
             -> not_long_until
 
     = not_long_until
+    -   CHR_TOR_REL
+    -   CHR_JUL_SAD
     -   "Not long," says Troy, trying to lift Julian's spirits. Troy knows Julian's difficulty speaking is due to fatigue and shock. 
 
 
         -   (opts)
                 
             *   ["Hope s-soon... 'cause..."]
+            -- CHR_JUL_SAD
             "Hope s-soon... 'cause..." says Julian breathlessly.-> clings
             
             *   (clings) [Julian clings to his oar.] {Julian clings to the oar attached by lanyard to his kayak. "...it's getting... difficult... to hang on," he says.|"... I...I c-c-can't... hold..."}
@@ -952,11 +1008,13 @@
         -   -> opts  
             
 == loses_kayak == 
+    -   CHR_TRO_ANG
     -   Julian loses his grip, and his oar and kayak begin drifting away. 
                 
         -   (opts)        
                 
             *   [Troy's right hand grips his own lanyard.] 
+                -- CHR_TRO_SAD
                 Troy keeps a tight grip on his own lanyard with his right hand. -> reaches
             
             *   (reaches) [Troy reaches out.] {With his left hand, Troy reaches and grabs Julian by his PFD, pulling him close.| He didn't attach it to his oar because he planned to attach it to his PFD.} 
@@ -974,6 +1032,7 @@
         -   (opts)
         
             *   [Troy considers letting go of Julian.]
+            --  CHR_TRO_SAD
             Troy considers letting go of Julian—just for a second—so that he can try two hands with the lanyard, but he can't risk losing Julian whose condition is even worse. -> struggle 
             
             *   (struggle) [Troy struggles with the lanyard.] {Troy struggles to attach the lanyard with one hand. He's lost up to 80% of his dexterity and strength since hitting the water.| He'll just need to find a way to do it Troy tells himself.}
@@ -986,6 +1045,7 @@
     
     
     = lanyard_struggle 
+    -   CHR_TRO_SAD
     -   Troy's chances to attach the lanyard to his PFD are modest at best. In his present condition—with his considerable loss of dexterity and strength—he only has a fifty-fifty chance of success—no different than the flip of a coin. 
     
             *   [Reveal Troy's fate.]
@@ -1005,6 +1065,7 @@
        
 === lose_remaining_kayak ===
 ~  kayak_status = 0
+    -   CHR_TRO_SAD
     -   Troy is unable to attach the lanyard to his PFD and in his final effort he loses hold of the lanyard and the kayak is lost. 
      
             * [Focus on survival.]
@@ -1014,6 +1075,7 @@
 
 === keep_remaining_kayak ===
 ~ kayak_status = 1
+    -   CHR_TRO_SML
     -   Troy is able to attach the lanyard! 
     
         Now Troy can turn his attention to the most important thing:
@@ -1038,6 +1100,8 @@
    
 
         = huddle_together
+        -   CHR_TRO_SAD
+        -   CHR_JUL_SAD
         -   "Huddling... conserve... heat," says Troy, who is also finding it difficult to speak. Julian's eyes are open but he says nothing, his arms falling loosely like a doll's <>
         
             {

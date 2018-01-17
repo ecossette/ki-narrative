@@ -17,9 +17,26 @@
 // will need to account for having seen stream for the solve matrix later
 // will need to account for this case and branch off to a path where the girls find them in the cove.
 -  SYS_SCENE_8_29
--   Following the plan, after leaving Julian and Troy to investigate the cove on the kayaks, Alexis had taken the <i>Lakesong</i> away from the cove to put some distance between the boat and the island. Alexis intends to make slow circles as they wait for the appointed rendezvous time with Julian and Troy. Alexis gives the horn a prolonged blast every two minutes.
+-   Following the plan, after leaving Julian and Troy to investigate the cove on the kayaks, Alexis took the <i>Lakesong</i> away from the cove to put some distance between the boat and the island. 
 
-    After some time passes...
+    -   (opts)
+
+
+        * [Alexis makes slow circles.]
+            -- CHR_ALX_REL
+            Alexis takes the boat in slow circles as they wait for the appointed rendezvous time. -> blast
+        
+        * (blast) [Alexis gives the horn a prolonged blast.] {Per the rules for operating in fog, Alexis gives the horn a prolonged blast every two minutes.| Mia keeps a sharp lookout as they slowly circle with the island in the distance.}
+        
+        * {blast} [After some time passes...]
+            -> after_some_time
+
+    -   -> opts
+    
+    = after_some_time
+    -   CHR_ALX_REL
+    -   CHR_MIA_REL
+    -   After some time passes...
             //* DEBUG[] -> recovery_fine_aboard_boat
 
             * [The fog begins to clear.]
@@ -92,7 +109,7 @@
 
                 * (throttle)  [Alexis reaches for the throttle.] {Alexis reaches for the throttle and brings the boat to idle.| Neither wants to risk a collision with the other boat, but both would prefer to keep their own presence hidden, under the circumstances.}
 
-                *   {throttle} [Alexis eyes the horn.]
+                *   {throttle} [They see nothing through the fog.]
                         -> wait_horn
 
            -    -> opts
@@ -101,6 +118,7 @@
 
 ==  wait_horn ==
     -   CHR_ALX_REL        
+    -   Alexis eyes the horn.    
         -   (opts)
         
             *   [Alexis hesitates.]
@@ -124,6 +142,8 @@
                         -> sound_own_engine
 
             = sound_own_engine
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
             -   With their own engine running, they can't hear another boat, but they need to keep it running to be prepared to maneuver immediately if a collision were imminent.
 
                 Then they hear it.
@@ -132,12 +152,16 @@
                         -> hear_toot
 
             = hear_toot
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
                 They hear a long, drawn-out toot through the fog and realize the sound is closer, much closer.
 
                     *  [Alexis toots.]
                         -> alx_toots
 
             = alx_toots
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
             -   Alexis responds with a single prolonged blast from the <i>Lakesong's</i> horn indicating their position to the other vessel hidden in the fog.
 
                 A couple more advisory toots are exchanged until gradually they see another boat appear out of the fog.
@@ -190,6 +214,7 @@
     - CHR_ALX_REL
 
         * ["Ahoy," says Alexis in reply.]
+        -- CHR_ALX_SAD
         "Sure is foggy, isn't it?" she adds but immediately regrets it. Don't act nervous, she thinks to herself.
 
     {
@@ -390,46 +415,82 @@
 
             {
                 - who_fog_is_cletus:
-                *    ["Cletus? Um, yeah, I mean look..."]
+                    -> cletus_fog_discuss
+                
+
+
+                - who_fog_is_mac:
+                    -> mac_fog_discuss
+                
+
+
+                - who_fog_is_ian:
+                    -> ian_fog_dicuss
+                
+
+            }
+
+            
+            
+            = cletus_fog_discuss
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
+            *    ["Cletus? Um, yeah, I mean look..."]
+                --   CHR_ALX_ANG
+                --   CHR_MIA_REL
+            
+            
                     "One: he's like straight up creepy, right?" says Alexis. "Two: what's he doing out here creeping around in the fog?"
 
                        "You mean creeping around out here, same as we are?" says Mia.
 
                             ** ["True... but..." Alexis smirks.]
+                            --- CHR_ALX_SML
+                            --- CHR_MIA_SML
                             "There's a difference between us and Cletus," says Alexis. "We're not creepy."
 
                                  ***  [Mia laughs.]
                                     -> hope_know_more
-
-
-                - who_fog_is_mac:
-                *   ["Mac? Maybe..."]
+            
+            
+            = mac_fog_discuss
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
+            *   ["Mac? Maybe..."]
+            
+                --   CHR_ALX_REL
+                --   CHR_MIA_REL
                     "I mean {who_saw} sure seems to be up in everyone's business... always asking questions."
 
-                        ** ["But he told us he comes out this way fishing," says Mia.]
+                        "But he told us he comes out this way fishing," says Mia.
 
-                            *** ["True... but..." says Alexis.]
+                            ** ["True... but..." says Alexis.]
+                            --- CHR_MIA_ANG
                                 "I didn't notice any fishing rods in {who_saw}'s boat, did you?" asks Alexis.
 
-                                **** ["No, but I wasn't really paying attention."]
+                                *** ["No, but I wasn't really paying attention."]
+                                    ---- CHR_MIA_REL
                                      "There certainly could have been fishing poles in his boat," says Mia.
 
-                                        ***** [Alexis nods and checks the time.]
+                                        **** [Alexis nods and checks the time.]
                                                 -> hope_know_more
-
-
-                - who_fog_is_ian:
-                *   ["Ian, well... I don't know..."]
+            
+            
+            = ian_fog_dicuss
+            -   CHR_ALX_REL
+            -   CHR_MIA_REL
+            *   ["Ian, well... I don't know..."]
+                -- CHR_ALX_REL
+                -- CHR_MIA_REL
                     "It seemed strange that Maura wasn't with him. What's he doing out here alone in the fog?"
 
                         ** ["You mean like us?" asks Mia.]
+                        --- CHR_ALX_SML
+                        --- CHR_MIA_REL
                             "You mean like us, out here alone in the fog?" asks Mia.
 
                                 *** [Alexis snorts. "Ok, you've got me there."]
                                     -> hope_know_more
-
-
-            }
 
             = hope_know_more
             -   CHR_ALX_REL

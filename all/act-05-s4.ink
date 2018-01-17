@@ -63,8 +63,15 @@ wait to call for help = hypo extreme / full memory loss
     - CHR_MPO_REL
     -   After brief reintroductions and an exchange of pleasantries, they tell the captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering "hmmm" or "interesting" and taking notes on a small notepad." 
 
-        *   "And that's everything," says Troy[.], concluding the recap of events.
-
+        *   ["And that's everything," says Troy.]
+            -> that_everything
+    
+    
+    = that_everything
+    - CHR_TRO_REL
+    - CHR_MPO_REL
+    "And that's everything," says Troy, concluding the recap of events. "What do you think, Captain"    
+        
         Captain Garcia stops writing and puts down his pen.
 
 
@@ -92,6 +99,7 @@ wait to call for help = hypo extreme / full memory loss
         -   (opts2)
 
             *   [Captain Garcia looks at his notes.]
+                -- CHR_MPO_REL
                 Captain Garcia looks at his notes. "Realistically, you've given us the best leads we've had so far, and for that I thank you, but..." -> looks
 
             *   (looks) [Captain Garcia looks at each friend in turn.] {Captain Garcia looks at each friend in turn. "I need you all to promise me you won't go out to Kalkomey Isle—neither on it nor around it—again," he says, his eyes heavy and serious.|"It's just too dangerous out there with or without thieves. Let the police take it from here."}
@@ -126,6 +134,7 @@ wait to call for help = hypo extreme / full memory loss
 
     = no_suspicion
     -   CHR_TRO_REL
+    -   CHR_MPO_REL
     -   "No, sir, we sure don't," says Troy, shaking his head.
         "Understood," says Captain Garcia, "it's in our hands now. You did the right thing by coming in, but remember what I said: no more visits to Kalkomey Isle."
 
@@ -140,6 +149,7 @@ wait to call for help = hypo extreme / full memory loss
         -   (opts)
 
             *   [Troy raises his eyebrows while Julian shrugs.]
+                -- CHR_TRO_SUR
                 Captain Garcia watches as Troy's faces show indecision and Julian gives an ambivalent shrug. -> away
 
             *   (away) [Alexis glances at Mia, who nods.] {Alexis glances at Mia, who returns a quick nod.| Captain Garcia's eyes narrow on Alexis.}
@@ -157,7 +167,8 @@ wait to call for help = hypo extreme / full memory loss
         -   (opts2)
 
             *   [Alexis hesitates.]
-             Alexis hesitates. "OK, 'suspicion' is probably a bit much," she says.  -> hesitates
+                -- CHR_ALX_REL
+                Alexis hesitates. "OK, 'suspicion' is probably a bit much," she says.  -> hesitates
 
             *   (hesitates) [Alexis looks to her friends for support.] {Alexis looks to her friends for support. "We discussed this on the way in, and, well... it's more like, just, I dunno, a feeling or something."|"I can't really explain it... we don't have anything concrete."}
 
@@ -174,6 +185,7 @@ wait to call for help = hypo extreme / full memory loss
         -   (opts3)
 
             *    [Captain Garcia looks at the others.]
+                -- CHR_MPO_REL
                 Captain Garcia looks at Troy, Julian, and Mia in turn. "But I can understand your reluctance to get involved any more than you already are." -> notebook
 
             *    (notebook) [Captain Garcia glances at his notebook.] {Captain Garcia glances at the notebook on his desk. "You've already involved yourselves plenty... more than most."|"Of course, since you're already involved..." The Captain smiles reassuringly.}
@@ -213,6 +225,7 @@ wait to call for help = hypo extreme / full memory loss
             -   (opts)
 
                 *   [The Captain nods.]
+                --  CHR_MPO_REL
                 The Captain nods and says, "I understand it's just a hunch, but I'll be sure to pay a visit to {suspect_whom}." -> arms
 
                 *   (arms) [The Captain crosses his arms.] {The Captain crosses his arms, "You all have been very helpful, but we'll take it from here."|"When you've eliminated the impossible, whatever remains, however improbable, must be the truth."}
@@ -251,8 +264,29 @@ wait to call for help = hypo extreme / full memory loss
 
 === met_by_police ==
  // set the hypothermia severity conditions and return
+ // tunnel sent to depends on if we followed kayaks or followed boat
+ // if we followed kayaks we participated in what happened.
+ // we need SHUFFLE condition if followed boat.
+ // in BOTH cases we need to shuffle memory loss conditions. 
+ 
+    {
+    
+        - join_mia_alx_second_attempt:
+            -> hypothermia_condition_decision_tree ->
+    
+        - follow_boat_2:
+            -> set_kayak_conditions_for_no_follow ->
+            
+        - else:
+            DEBUG: This condition should not be possible.
+    }
+ 
+ 
+ 
+
+ 
 /*- DEBUG met by police
-    -> set_kayak_conditions_for_no_follow ->
+    
 
     - DEBUG: hypothermia severity is {hypo_severity}
 
@@ -264,6 +298,20 @@ wait to call for help = hypo extreme / full memory loss
             ~ rescuer = IAN
 */
     -   CHR_MPO_REL
+   /* DEBUG: hypo severity is {hypo_severity}
+    DEBUG: kayak status is {kayak_status}
+    DEBUG: flare status is {flare_early}
+    DEBUG: 
+        { 
+            - follow_boat_2:
+            follow boat 2 turn is flagged.
+            - join_mia_alx_second_attempt:
+            join mia alx second attempt is flagged.
+            - else:
+            neither is flagged
+        }
+    */
+    
     -   Shortly after securing the boat, they see Captain Garcia of the Marine Patrol walking purposefully toward them.
 
         "Ms. Chen, Ms. Baker," Captain Garcia greets them.
@@ -430,7 +478,7 @@ wait to call for help = hypo extreme / full memory loss
 
             {
 
-                - hypo_severity ==3:
+                - hypo_severity == 3:
                 "Neither Mr. Del Castillo nor Mr. Kelton have any memory of what happened after setting off in the kayaks and waking up in the hospital.""
 
                 - else:
@@ -871,6 +919,7 @@ wait to call for help = hypo extreme / full memory loss
 
 
 === set_kayak_conditions_for_no_follow ===
+// tunnel
     /*  setting the conditions for degree of hypothermia Julian and Troy experience if the player followed Mia and Alexis on the boat, as they won't know what happened and we need to know hypothermia severity to resolve the mystery.
 
         will need to advise Mia and Alexis of the severity. the police can do this at the dock along with a guess of what happened in the case where the boys' memory has been effected. can also have boys tell in the case where there is memory.
@@ -881,76 +930,150 @@ wait to call for help = hypo extreme / full memory loss
     {
         - search_more_wait_call:
         ~ hypo_severity = 3
-            ->->
+       
 
         - else:
 
         {shuffle:
 
         -   ~ hypo_severity = 0
-            ->->
+            
+            
+            
+        
         -   ~ hypo_severity = 1
-            ->->
+            
+            
+            {shuffle:
+            
+                -
+                ~ who_lost_memory = TROY
+                ~ what_remember = STREAM 
+                
+                -
+                ~ who_lost_memory = JULIAN
+                ~ what_remember = CAVE
+
+            
+            }
+            
+           
+            
         -   ~ hypo_severity = 2
-        -   ->->
+           
+           {shuffle:
+            
+                -
+                ~ who_lost_memory = TROY
+                ~ what_remember = STREAM 
+                
+                -
+                ~ who_lost_memory = JULIAN
+                ~ what_remember = CAVE
+
+            
+            }
+            
+            
+        
         -   ~ hypo_severity = 3
-        -   ->->
+            
 
         }
     }
 
 
--> DONE
+    ->->
 
-/* this was for debug only
+
+
 === hypothermia_condition_decision_tree ===
+// tunnel
 // this knot is for the condition where the player followed the kayaks
-    -   hypothermia decision tree
 
     // NOTE: if we traveled with the girls, the game will not have set any kayak or flare conditions for the guys. do we need random? maybe we set the conditions with random and the hold them for a report from the police.
 
     {
         - kayak_status > 0 && flare_early > 0:
-            -> hypo_00
+            ~ hypo_severity = 0
+            
 
         - kayak_status > 0 && flare_early < 1:
-            -> hypo_01
+            ~ hypo_severity = 1
+            
+            {shuffle:
+            
+                -
+                ~ who_lost_memory = TROY
+                ~ what_remember = STREAM 
+                
+                -
+                ~ who_lost_memory = JULIAN
+                ~ what_remember = CAVE
+
+            
+            }
+            
 
         - kayak_status < 1 && flare_early > 0:
-            -> hypo_02
+            ~ hypo_severity = 2
+            
+            {shuffle:
+            
+                -
+                ~ who_lost_memory = TROY
+                ~ what_remember = STREAM 
+                
+                -
+                ~ who_lost_memory = JULIAN
+                ~ what_remember = CAVE
+
+            
+            }
+           
 
         - kayak_status < 1 && flare_early < 1:
-            -> hypo_03
+            ~ hypo_severity = 3
+            
 
         - else:
         DEBUG: This else condition should never occur.
 
     }
 
-   -> DONE
+   ->->
 
-*/
 
+
+
+// this below is no longer used? 1/14/2017
 
 == hypo_00 ==
-    -    temp
+ 
     ~ hypo_severity = 0
-        DEBUG:
+        
+        /* DEBUG:
             kept a kayak
             got flare off early
             hypo condition is {hypo_severity}
+        */
+        
 
-        -> DONE
+        ->->
 
 == hypo_01 ==
-    -    temp
+
     ~ hypo_severity = 1
-        DEBUG:
+        
+        /* DEBUG:
             kept a kayak
             did not flare early
             hypo condition is {hypo_severity}
+        */
+        
 
         // we need to randomize for who remembered what
+        
         {shuffle:
 
             -
@@ -963,22 +1086,24 @@ wait to call for help = hypo extreme / full memory loss
 
         }
 
-        Who lost memory is {who_lost_memory}
+        //Who lost memory is {who_lost_memory}
 
 
 
 
-        -> DONE
+        ->->
 
 == hypo_02 ==
-    -    temp
     ~ hypo_severity = 2
-        DEBUG:
+        
+        /*DEBUG:
             lost kayaks
             got flare off early
             hypo condition is {hypo_severity}
+        */
 
          // we need to randomize for who remembered what
+        
         {shuffle:
 
             -
@@ -993,9 +1118,9 @@ wait to call for help = hypo extreme / full memory loss
 
         }
 
-        Who lost memory is {who_lost_memory}
+        //Who lost memory is {who_lost_memory}
 
-        -> DONE
+        ->->
 
 == hypo_03 ==
     -    temp
