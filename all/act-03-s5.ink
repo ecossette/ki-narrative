@@ -8,7 +8,7 @@ SCENE 05
 === inspect_for_damage
     -   CHR_TRO_SUR
     -    Troy finds no damage nor any sign that the boat has taken on water.
-        "We're looking good," says Troy. "We got lucky. No damage from running aground{is_radio_damaged: and only the busted radio from getting too close to the storm}."
+        "We're looking good," says Troy. "We got lucky. No damage from running aground{lightning_strike_occurs: and only the busted radio from getting too close to the storm}."
 
             * [Depart for Laketown.]
                 -> make_way_laketown
@@ -98,9 +98,15 @@ SCENE 05
         -   CHR_JUL_REL
         -   "Even pixelated, I'm pretty sure there is something inorganic at work here," says Troy.
 
-            "Inorganic?" asks Julian.
-
-            "Yeah, as in not natural."
+                * ["Inorganic?" asks Julian.]
+                    -> inorganic
+            
+        = inorganic
+        -   CHR_TRO_REL
+        -   CHR_JUL_REL
+        "What do you mean by <i>inorganic</i>?" says Julian.
+            
+            "As in not natural," says Troy. 
 
                 * [Julian smirks.]
                 ->what_natural_mutant
@@ -108,7 +114,7 @@ SCENE 05
         = what_natural_mutant
         -   CHR_JUL_SML
         -   CHR_ALX_REL
-        -   "Well, what is natural about a genetic mutation?" asks Julian.
+        -   "Well, yeah, what is natural about a genetic mutation?" asks Julian.
 
         -   "No, Julian," says Alexis. "Troy means that he doesn't think these are living organisms!"
 
@@ -165,7 +171,7 @@ SCENE 05
 // SND bring in dock sounds
 // SND no bird sounds since it's after dark
     -   CHR_MPO_REL
-    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The keeps gesturing toward an empty slip, while woman looks on with a sad expression. Captain Garcia nods and takes notes.
+    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The man keeps gesturing toward an empty slip, while the woman looks on with a sad expression. Captain Garcia nods and takes notes.
                     
         *   [Dock the Lakesong.] 
             ** {do_wind_none} [There is <b>no</b> wind or current.]
@@ -220,6 +226,7 @@ SCENE 05
             - (opts)
 
                 *   ["Sad news..."]
+                    -- CHR_DID_SAD
                     "Well, that's some sad news, you see, as we've had another boat robbery," he says bitterly.-> storm
 
                 *   (storm) ["The storm hit hard..."] "{As bad as the storm was, it wasn't enough to deter the thieves|They used the storm as cover to strike again}."
@@ -231,15 +238,15 @@ SCENE 05
         = another_robbery
         -   CHR_DID_REL
         -   CHR_TRO_REL
-            "Yep, those are the owners. The Crowleys. They owned the <em>Dee Stress</em> an—"
+            "Yep, those are the owners. The Crowleys. They owned the <i>Dee Stress</i> an—"
 
             "An outboard cabin cruiser in the same length class as the <i>Lakesong</i>," says Troy. Mac nods.
 
-                * ["But that's not all," Mac says. He makes a dramatic pause.] -> reward_announce
+                * ["But that's not all..."] -> reward_announce
 
         = reward_announce
         -   CHR_DID_SML
-        -   "There's now a reward for anyone who offers information that leads to an arrest!" Mac looks at each of the friends in turn. "The reward is a boat... a big one, too."
+        -   Mac pauses before continuing. "There's now a reward for anyone who offers information that leads to an arrest!" Mac looks at each of the friends in turn. "The reward is a boat... a big one, too."
 
                 * [Ask Mac if he knows anything.]
                     -> ask_robbery_questions
@@ -272,6 +279,7 @@ SCENE 05
         -   "I already told you everything I know this morning," he says. -> allow_man_leave
 
         = ask_mac_clues
+        -   CHR_DID_ANG
 
            - (opts)
 
@@ -348,9 +356,14 @@ SCENE 05
 
         - (opts)
             *    ["I'm in!" says Alexis.]
+                --  CHR_ALX_SML
+                --  CHR_TRO_SML
                 Alexis and Troy bump fists. -> why_not
 
-            *    (why_not) ["Why not?" says Mia.] {"Chance favors the bold," says Mia. "Let's do this."| "That's three," says Troy. "Jules?"}
+            *    (why_not) ["Why not?" says Mia.]
+                -- CHR_MIA_SML
+                -- CHR_TRO_SML
+                {"Chance favors the bold," says Mia. "Let's do this."|"That's three," says Troy. "Jules?"}
 
             *    {why_not} [Julian shakes his head.] -> jul_scratches_reluctant
 
@@ -391,6 +404,7 @@ SCENE 05
     -   "What if that <i>is</i> a propeller in the pixelated photo, and the creatures are man-made?"
             - (opts)
             *    [Troy explains his theory.]
+            --  CHR_TRO_SUR
                 Troy tells Julian he believes the creatures are really drones disguised to look like creatures. -> pauses
 
             *    (pauses) [Julian is skeptical.] {Although skeptical, Julian considers the possibility.|"Think about how they flew," Troy tells Julian. "Didn't it seem unnatural to you?"}
@@ -470,7 +484,7 @@ SCENE 05
     -   CHR_JUL_SML
     -   CHR_TRO_SML
     -   "OK, I'm in!" says Julian.
-    -   "Great! Let's meet here at oh-nine-hundred," says Troy. {is_radio_damaged: "I'll need to replace the VHF antennae and radio, but I should be able to do that by nine."}
+    -   "Great! Let's meet here at oh-nine-hundred," says Troy. {lightning_strike_occurs: "I'll need to replace the VHF antennae and radio, but I should be able to do that by nine."}
 
         *  [The friends finish securing the <i>Lakesong</i> and depart for the night.]
             // launch quiz 3.2 here, continue to day_two_begins

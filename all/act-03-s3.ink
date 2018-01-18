@@ -182,9 +182,16 @@ VAR explore_island = true
 // add to other water activities badge
 // close in on the island
 //-   SYS_SCENE_4_11
--   SYS_ACHIEVE_6_3
+
 // SND paddling
-    -   Troy and Mia navigate one board, while Alexis and Julian take the other. Behind them, the Lakesong's masthead and stern lights shine brightly, acting as the all-around white light required when a boat is anchored in fog or darkness. 
+    -   Troy and Mia navigate one board, while Alexis and Julian take the other. 
+    
+        * [Behind them...]
+            -> behind_them
+    
+    = behind_them
+    -   SYS_ACHIEVE_6_3
+    -   Behind them, the Lakesong's masthead and stern lights shine brightly, acting as the all-around white light required when a boat is anchored in fog or darkness. 
 
             * They arrive on the small beach[.], and as they look around, a few things immediately catch their attention.
 

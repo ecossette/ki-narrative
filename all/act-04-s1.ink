@@ -12,7 +12,7 @@ SCENE 01
 
     {
 
-        - is_radio_damaged:
+        - lightning_strike_occurs:
         Troy arrives at the dock the early the following morning and begins work on swapping the damaged radio with a new one. The time passes quickly for Troy as he focuses on his task.
         - else:
         Troy arrives at the dock early the following morning and begins preparing the boat for another day on the lake—a day that will include a return to Kalkomey Isle.
@@ -62,7 +62,7 @@ SCENE 01
 
                 *    (smaller) ["They're smaller than I'd expected," says Mia.] {Troy looks at the kayaks and a sly grin appears on his face. "The kayaks are small, maneuverable, and quiet. Exactly what we need."|"The kayaks are going to be perfect for investigating that cove."}
 
-                { - is_radio_damaged:
+                { - lightning_strike_occurs:
 
                     *    {smaller}  ["Any luck with the radio?" asks Julian.]
                             -> radio_fix_complete

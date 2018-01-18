@@ -102,8 +102,12 @@ SCENE 04
 // clear the fog
                 //--   SYS_SCENE_5_02
                 -   SYS_SCENE_8_07
-                **  "How strange," says Troy[.], looking out over the empty cove.
-
+                **  ["How strange," says Troy.]
+                    -> how_strange
+                
+        = how_strange
+        - CHR_TRO_SUR
+        - "How strange," says Troy, looking out over the empty cove.
                     *** ["Know what else is strange?"]
                     -> know_else_strange ->
                     -> everybody_looks_tro
@@ -143,8 +147,11 @@ SCENE 04
         = coming_this_way_fast
         -   CHR_JUL_SUR
         -   "Part falcon, part bat, and part hornet!" says Julian. "Just like Cletus described!"
-
-            *  "They're coming this way," says Mia.[] "And fast!"
+        
+        
+            * ["Oh, no!"]
+            -- CHR_MIA_SUR
+            "They're coming this way," says Mia. "And fast!"
 
         - ->->
 // end strange birds tunnel
@@ -186,6 +193,7 @@ SCENE 04
 
 
         = creatures_turn_back
+        -   CHR_ALX_SML
         -   Soon the forest undergrowth becomes too thick for even for the most persistent of the creatures.
             * "They are turning back!" says Alexis.[] "We made it."
                 //--   SYS_SCENE_5_04
@@ -194,6 +202,8 @@ SCENE 04
                         -> mia_photo_burst
 
         = mia_photo_burst
+        -   CHR_ALX_REL
+        -   CHR_MIA_REL
         -    Mia reaches for her phone and takes a quick photo burst of the departing creatures.
 // SND fade out the drones/buzz
             * ["Good thinking, Mia!" says Alexis.]
@@ -277,8 +287,13 @@ SCENE 04
     -   "And pull it straight up," he says. "That should break it free."
 
 
-            * Julian tugs on the line[.], but it doesn't budge.
-
+            * [Julian tugs on the line.]
+                -> jul_tugs
+    
+    = jul_tugs
+    -   CHR_JUL_SAD
+    -   Julian tugs on the line, but it doesn't budge.
+    
                     ** ["Let me help," says Alexis.]
 
                 -> alx_helps_pull
@@ -454,6 +469,7 @@ SCENE 04
 
         - (opts)
             *    ["I'll take port."]
+            --  CHR_MIA_REL
                 Mia volunteers to keep a lookout on the port side. -> starboard
 
             *    (starboard) ["I'll grab starboard."] {Alexis takes up watch on the starboard side.| Troy keeps his focus on the water in front of the boat.}
@@ -491,6 +507,7 @@ SCENE 04
 
             - (opts)
                     *    [Julian shakes his head.]
+                    --  CHR_JUL_ANG
                         Shaking his head, Julian watches the swarm closing the gap. -> persists
 
                     *    (persists) [Julian persists.] {"C'mon, Troy, not even a little bit faster?"| "That Cletus dude said the swarm chased him nearly as far as Laketown."}
@@ -512,7 +529,7 @@ SCENE 04
                 -> chased_keep_current
 
             * [Go to full speed.]
-                {   is_radio_damaged:
+                {   lightning_strike_occurs:
                     Just as Troy is about to put the throttle to full power, he remembers the radio is broken. If they break down in this part of the lake—where there is no cell phone coverage—they'll be unable to contact anyone for rescue!
 
                             ** [Go to full speed anyway.]
@@ -744,17 +761,19 @@ SCENE 04
 
         }
 
-            * [The distance from the creatures gradually increases.] Julian watches as the swarm recedes. Then, one by one, the creatures begin peeling off and returning north.
+            * [The distance from the creatures gradually increases.] 
+                --  CHR_JUL_REL
+                Julian watches as the swarm recedes. Then, one by one, the creatures begin peeling off and returning north.
                 //-- SYS_SCENE_4_14
 
                 {
                     - enter_the_path:
+                        ** [Julian raises his arms in triumph.]
+                            -> we_did_it
+                        
+                    - else:
                         ** [Mia reaches for her phone.]
                             -> mia_photo_burst
-
-                    - else:
-                        ** [Julian raises his arms in triumph.]
-                        -> we_did_it
 
                 }
 

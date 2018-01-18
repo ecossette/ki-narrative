@@ -25,7 +25,7 @@ SCENE 02
     -   Alexis points toward dark clouds gathering to the east. "Looks like another storm is building to the east now."
     -   "You're right," says Troy. "That doesn't look promising."
 
-        { is_radio_damaged:
+        { lightning_strike_occurs:
            -> radio_bust_try_cell
          - else:
             -> radio_crackles
@@ -185,6 +185,7 @@ SCENE 02
     
         
         = fog_horn
+        -   CHR_TRO_REL
         - Troy gives one prolonged blast with the boat's horn—the signal used by powered boats when underway in reduced visibility. He'll continue signaling at two minute intervals while the foggy conditions prevail.
         
         
@@ -258,14 +259,17 @@ SCENE 02
             // we need to randomize these choices
 
                 + [Make sure everyone is alright.]
+                --  CHR_TRO_REL
                     As much as Troy is worried about possible damage to the boat, his first concern is for his passengers.
                         -> aground_all_ok
 
                 + [Check for leaks.]
+                --  CHR_TRO_REL
                     The <i>Lakesong</i> may have sustained damage from running aground, including leaks, but Troy first checks to see if anyone was injured.
                         -> aground_all_ok
 
                 + [Put the boat in reverse ASAP]
+                --  CHR_TRO_REL
                     Besides the fact that putting the boat in reverse could actually worsen the situation, the first priority after grounding is to make sure no one is injured.
                         -> aground_all_ok
 
