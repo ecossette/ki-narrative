@@ -4,7 +4,7 @@
 -   SYS_ACHIEVE_4_2
     -   CHR_ALX_REL
     -   CHR_JUL_REL
-    -   SYS_SOUND_09
+    -   SYS_SOUND_409
     // SOUND ambient no engine, continue circle of death
     -   With the <i>Lakesong's</i> engine stopped, Alexis and Julian carefully pull the first victim, a young woman, over the stern and onto the <i>Lakesong's</i> deck. 
             * "Hi, I'm Maura[."]." the young woman says, flashing a tired smile. "Thanks for rescuing me."
@@ -26,7 +26,7 @@
             
             //wouldn't they ask if there was anyone else in the boat with them at this point? Or recognise them from earlier?
     
-            --  SYS_SOUND_10
+            --  SYS_SOUND_410
             *   Troy restarts the Lakesong[.] and maneuvers into position to recover Ian. 
             // SOUND kill no engine, replace with engine, maintain circle of death
                 -> how_long
@@ -59,7 +59,7 @@
                 
                 * Troy cuts the engine[.], and they pull Ian over the <i>Lakesong's</i> stern to safety. 
                 // SOUND ambient no engine, reduce vol a bit on circle
-                    -- SYS_SOUND_11
+                    -- SYS_SOUND_411
                     -> recover_victim_2
                     
             == recover_victim_2
@@ -78,7 +78,7 @@
         -   CHR_TRO_REL
         -   CHR_MAU_REL
         // SOUND let's bring circle of death vol way down as it could get distracting over the next long narrative part
-        -   SYS_SOUND_12
+        -   SYS_SOUND_412
         -   "I better advise the Marine Patrol that we've recovered two passengers safe and sound." 
                         
             "You called the police!" exclaims Maura.
@@ -236,7 +236,7 @@
   
         // SOUND Kill circle of death
             * The background noise of the runaway engine stops[.], and Captain Garcia's radio crackles to life: "Runaway boat secured, Captain. We roped it."
-                --   SYS_SOUND_13
+                --   SYS_SOUND_413
                 --   CHR_MPO_REL
                 --   CHR_IAN_SML
             

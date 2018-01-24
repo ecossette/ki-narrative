@@ -278,7 +278,8 @@ wait to call for help = hypo extreme / full memory loss
             -> set_kayak_conditions_for_no_follow ->
             
         - else:
-            DEBUG: This condition should not be possible.
+            -> set_kayak_conditions_for_no_follow ->
+            //DEBUG: This condition should not be possible.
     }
  
  
@@ -297,6 +298,7 @@ wait to call for help = hypo extreme / full memory loss
         * [ DEBUG: IAN IS RESCUE]
             ~ rescuer = IAN
 */
+    -   SYS_SCENE_1
     -   CHR_MPO_REL
    /* DEBUG: hypo severity is {hypo_severity}
     DEBUG: kayak status is {kayak_status}

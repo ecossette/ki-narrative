@@ -163,7 +163,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         -  While Alexis, Maura, and Troy make preparations to water ski, Mia, Julian, and Ian attach their engine cut-off switch lanyards and jet away from the houseboat.
         //maybe don't use 'spin' here when you had the death spin earlier
         // SOUND pwc generic
-        - SYS_SOUND_14
+        - SYS_SOUND_414
             * Mia is very cautious at first[...] but quickly gains confidence.
                 -> mia_confident
                 
@@ -202,13 +202,13 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
 
 == julian_revs_pwc ==
     // SOUND throw in pwc passby (loop it if it sounds ok)
-    - SYS_SOUND_15
+    - SYS_SOUND_415
     -   CHR_JUL_SML
     -   As they circle back to the houseboat to pick up the skiers, Julian starts showing off.
     
             * Julian revs his PWC[.], and speeds toward Mia's wake to jump it.
                 // SOUND pwc accleration
-                - SYS_SOUND_16
+                - SYS_SOUND_416
                 -- CHR_JUL_SML
 
                 ** This is a dangerous maneuver[.]. Ian waves and yells in an attempt to warn Julian off. Julian doesn't notice.
@@ -221,7 +221,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         = jul_airborne 
         //  SOUND PWC generic
         // Also fades out PWC acceleration
-        -   SYS_SOUND_17
+        -   SYS_SOUND_417
         -   CHR_JUL_SUR
         -   The airborne PWC drops out from under Julian, and both Julian and the PWC hit the water with a large splash. Falling face first, Julian barely misses smashing his jaw against his PWC. 
         
@@ -230,7 +230,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
             
         = is_jul_ok
         // SOUND PWC idle
-        -   SYS_SOUND_18
+        -   SYS_SOUND_418
         -   CHR_IAN_REL
         -   CHR_JUL_REL
         -  "Are you alright?" Ian asks bringing his PWC to a stop near Julian. 

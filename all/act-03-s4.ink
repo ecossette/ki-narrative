@@ -8,7 +8,7 @@ SCENE 04
 === enter_the_path ===
 // SND bring in buzzing sound very low
 // island path
-    //-   SYS_SCENE_5
+    -   SYS_SCENE_5
     -   CHR_ALX_SUR
     -   The path winds deeper into the island.
         "Look at the size of those trees!" says Alexis.
@@ -20,6 +20,7 @@ SCENE 04
 // SND buzzing sound a bit louder but still in distance
         -   CHR_ALX_REL
         -   CHR_MIA_REL
+        -   SYS_SOUND_501
         -   Mia stops and holds up her hand, cupping her ear, listening. She points up to the top of the hill the path is winding around. "It's a buzzing... from up there."
 
                 *   ["Probably just a bee hive. A <i>large</i> bee hive," says Troy.]
@@ -38,6 +39,7 @@ SCENE 04
         = jul_mumbles
 // SND buzzing sound go to slow fade out
         -   CHR_JUL_SAD
+        -   SYS_SOUND_502
         -   From the rear, Julian scans the trees above, his eyes darting side to side quickly. "Part falcon, part bat, part hornet..." he mumbles to himself.
 
             "What's that, Julian?" asks Troy.
@@ -196,12 +198,13 @@ SCENE 04
         -   CHR_ALX_SML
         -   Soon the forest undergrowth becomes too thick for even for the most persistent of the creatures.
             * "They are turning back!" says Alexis.[] "We made it."
-                //--   SYS_SCENE_5_04
+                --   SYS_SCENE_5_04
 
                     ** [Mia takes a photo burst.]
                         -> mia_photo_burst
 
         = mia_photo_burst
+        -   SYS_SOUND_503
         -   CHR_ALX_REL
         -   CHR_MIA_REL
         -    Mia reaches for her phone and takes a quick photo burst of the departing creatures.
@@ -268,6 +271,7 @@ SCENE 04
 === prepare_retrieve_anchor ===
 // this is dual use. used after isle exploration as well.
 // SND engine sound
+    - SYS_SCENE_4
     -   CHR_TRO_REL
     -   "I'll position the boat directly over the anchor, while Julian pulls in the line," says Troy.
 
@@ -762,9 +766,9 @@ SCENE 04
         }
 
             * [The distance from the creatures gradually increases.] 
+                -- SYS_SCENE_4_14
                 --  CHR_JUL_REL
                 Julian watches as the swarm recedes. Then, one by one, the creatures begin peeling off and returning north.
-                //-- SYS_SCENE_4_14
 
                 {
                     - enter_the_path:

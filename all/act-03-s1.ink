@@ -476,7 +476,7 @@ VAR is_radio_damaged = true
 
             *   Julian responds[.], as lightning flashes and cracks nearby.
                 //lightning flash
-                //--   SYS_SCENE_4_07
+                --   SYS_SCENE_4_07
 
                     ** "F-fine now[."], but that scared the crap out of me." Julian shakes his head. "I felt every hair on my body stand on end. But it looks like the boat took the brunt of it."
                     -> check_passenger_health

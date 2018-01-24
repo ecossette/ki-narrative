@@ -11,7 +11,7 @@ VAR houseboat_st = 0
 == pwc_return_houseboat ==
     -   CHR_ALX_SML
      // SOUND pwc generic
-    - SYS_SOUND_19
+    - SYS_SOUND_419
     -   Ian, Mia, and Julian return to the houseboat on the PWCs. 
         
             * "Let the water skiing commence!"[] shouts an enthusiastic Alexis.
@@ -139,7 +139,7 @@ VAR houseboat_st = 0
 
 == skiing_time ==
     // SOUND pwc generic mixed with PWC passby and acceleration
-    //- SYS_SOUND_20
+    //- SYS_SOUND_420
     - After a successful review of skier hand signals, the water skiing begins. Everyone takes a turn.
     //trim where you can
 
@@ -191,7 +191,7 @@ VAR houseboat_st = 0
 
 == after_co_houseboat ==
         // SOUND generic boat ending
-        // SYS_SOUND_21
+        // SYS_SOUND_421
         -   After casting off, the <i>Lakesong</i> heads out towards open water.
 
         * [Onward!]

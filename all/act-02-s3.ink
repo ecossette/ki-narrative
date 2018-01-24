@@ -21,7 +21,7 @@
         -   CHR_MIA_SUR
         -   "Over there!" she says, pointing straight out from the <i>Lakesong's</i> port side.
             // SOUND boat circle of death in distance, lower volume, should be very much in distance
-            -- SYS_SOUND_02
+            -- SYS_SOUND_402
             
             * Troy throttles back[.]
             -> throttle_back_slow
@@ -113,7 +113,7 @@
 == approach_cod ==           
     - CHR_JUL_SUR
     // SOUND bring up volume a bit on circle of death
-    - SYS_SOUND_03
+    - SYS_SOUND_403
     - They see a speedboat violently racing around in a tight circle.
     - "There's nobody in that boat!" yells Julian.
     //aboard doesn't sound natural in this emergency context
@@ -133,7 +133,7 @@
         
         = cod_explain_later
         - CHR_TRO_REL
-        - SYS_SOUND_04
+        - SYS_SOUND_404
         "I'll explain later. Mia, keep looking to see if you can spot anyone in the water," commands Troy. He brings the <i>Lakesong</i> to a full stop a safe distance from the dangerously circling, unmanned boat.
        
         
@@ -229,7 +229,7 @@
             
             == how_long_loop
             -   CHR_TRO_REL
-            -   SYS_SOUND_05
+            -   SYS_SOUND_405
             -   CHR_JUL_SAD
             -   Meanwhile the unmanned boat continues its dizzying loop. The sound grates on everyone's nerves, especially Julian's.
                 // SOUND can increase circle of death volume here then bring it back down a bit after next choices
@@ -246,7 +246,7 @@
                 -     -> opts
                 
            = idea_circle
-           -    SYS_SOUND_06
+           -    SYS_SOUND_406
            -    CHR_ALX_SML
            -    CHR_TRO_REL
            - "I have an idea," says Alexis. "Whoever was in the boat may have been thrown to the other side, where we can't see." 
@@ -263,7 +263,7 @@
                             -> see_head
             = see_head
             // SOUND add ambient engine to the mix again
-                - SYS_SOUND_07
+                - SYS_SOUND_407
                 - CHR_MIA_REL
                 - CHR_ALX_SML
                 - Mia points in the distance to where someone is bobbing in the water.
@@ -392,7 +392,7 @@
    
 == turn_the_boat ==
     // SOUND nudge up circle of death volume
-    -   SYS_SOUND_08
+    -   SYS_SOUND_408
     -   CHR_TRO_REL
     -   {Troy turns the boat and slowly approaches the woman in the water...|Troy comes around again, this time he approaches...|In his third attempt, Troy only has one approach direction he hasn't tried...}
              

@@ -39,6 +39,7 @@ what_remember is {what_remember}
     
 === on_dock_day_03_2 ===
 -   SYS_CHAP_17
+-   SYS_SCENE_1
     - Several days later, we join the friends on the <i>Lakesong</i> preparing for another day on the lake by running through their pre-departure safety checklist.
     
         * [Complete pre-departure checklist.]

@@ -278,7 +278,7 @@ the story will flow in/out of this tunnel on several occasion during play
 == before_tro_can_fin == 
         -   CHR_TRO_SUR
         // SOUND speed boat pass by. you may need to trigger this to occur some number of second after page load so that user can orient and begin reading before the sound cuts in. Play only once. After speed boat pass revert to ambient engine (or than can always be playing underneath speedboat pass)
-        -   SYS_SOUND_01
+        -   SYS_SOUND_401
         //actually, you want the sound straight away, as he's cut off in the previous page.
         -   The sound of a loud outboard motor cuts Troy off. A boat is rapidly overtaking the <i>Lakesong</i> on her starboard side. 
         

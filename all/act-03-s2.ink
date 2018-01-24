@@ -149,7 +149,7 @@ SCENE 02
             "I think we'll be able to stay just out of reach of the storms," says Troy.
         - (done)
             // lightning flash
-            //-   SYS_SCENE_4_07
+            -   SYS_SCENE_4_07
             -   Lightning suddenly streaks down nearby—followed immediately by a crash of thunder so loud that it shakes the boat.
 
             * ["Fog dead ahead!" shouts Julian.]
@@ -157,7 +157,7 @@ SCENE 02
 
 ==  fog_appears ==
     //fog appears, remove storm from behind
-    //-   SYS_SCENE_4_08
+    -   SYS_SCENE_4_08
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
     -   "I see it, too," Troy says. He eases back on the throttle, slowing their approach to the looming fog bank ahead.

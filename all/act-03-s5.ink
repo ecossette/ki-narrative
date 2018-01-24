@@ -15,7 +15,7 @@ SCENE 05
 
     = make_way_laketown
 // general open water sounds
-    //-   SYS_SCENE_4_15
+    -   SYS_SCENE_4_15
     -   The <i>Lakesong</i> cruises south toward Laketown as a beautiful sunset fills the western sky.
 
         * [The friends discuss what happened.]
@@ -135,7 +135,7 @@ SCENE 05
         -   "When I get home I may be able to clean up the photo a bit on my computer."
 
              * [Darkness sets in.]
-                //-- SYS_SCENE_6_01
+                -- SYS_SCENE_4_15
                 -- CHR_TRO_REL
                 Troy texts his brother Vincent. He needs to update him on the change in their float plan to account for the later return to shore.
 

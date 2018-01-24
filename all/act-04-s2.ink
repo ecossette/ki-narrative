@@ -96,7 +96,7 @@
         -     -> opts
 
     = get_a_load
-    //-   SYS_SCENE_7
+    -   SYS_SCENE_7
     -   SYS_ACHIEVE_7_3
     -   CHR_TRO_SUR
     -   Troy emerges from beneath the vine curtain expecting to see the cove's shoreline and is surprised when he sees...
@@ -366,7 +366,7 @@
 
 
 == how_far_stream_goes ==
-    //-   SYS_SCENE_7_01
+    -   SYS_SCENE_7_01
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   "How far do you think it goes?" wonders Julian.
@@ -447,7 +447,6 @@
         -     -> opts
 
 == overhead_buzzing ==
-    //-   SYS_SCENE_7_02
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     - Overhead they hear a buzzing eerily similar to what they heard yesterday, but the tree canopy is too thick for them to see if it's the disguised drones. They do not hear another clang.
@@ -523,7 +522,7 @@
                     -> jul_accepts
 
     = jul_accepts
-    //-   SYS_SCENE_7_03
+    -   SYS_SCENE_7_03
     -   CHR_JUL_REL
     -   Julian accepts Troy's reasoning, and they both paddle to the sandy area and climb out of their kayaks. This causes quite a stir among the monkeys, who begin vocalizing and stirring around noisily in the treetops.
 
@@ -553,7 +552,7 @@
             * [Into the woods...] -> toward_sound
 
     =   toward_sound
-    //-   SYS_SCENE_5_05
+    -   SYS_SCENE_5_05
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Troy and Julian quickly set off into the woods in the direction of the persistent engine sound Troy thinks is a generator.
@@ -568,7 +567,7 @@
                     -> thieves_hideaway
 
 == thieves_hideaway ==
-    //-   SYS_SCENE_7_04
+    -   SYS_SCENE_7
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   {They reach the stream bank and peer out from underbrush, being careful to remain well-hidden. There is much to see.| Without a doubt, this is the hideaway, some 50 yards ahead of their hidden position.|}
@@ -703,6 +702,7 @@
                         -> paddle_back_cove
 
 === paddle_back_cove ===
+    -   SYS_SCENE_7_04
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Julian and Troy paddle intensely and without pause back to the vine curtain hiding the stream. They quickly pass under it to find that there is still a lot of patchy fog in the cove, just like the day before.
@@ -807,7 +807,7 @@
                     -> out_of_cove
 
 == out_of_cove ==
-    //-   SYS_SCENE_4_18
+    -   SYS_SCENE_4_18
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Troy was right about the fog. Shortly after leaving the cove, they break into clearer conditions. There is still patchy fog in spots, but visibility is much improved.

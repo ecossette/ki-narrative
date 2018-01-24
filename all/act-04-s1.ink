@@ -6,7 +6,7 @@ SCENE 01
 */
 
 === day_two_begins ===
-    //-   SYS_SCENE_1
+    -   SYS_SCENE_1
     -   SYS_CHAP_15
     -   CHR_TRO_REL
 
@@ -276,14 +276,13 @@ SCENE 01
 
 === arrive_ki ===
 // add to other water activities badge here
-
+    -   SYS_SCENE_4_16
     -   The journey north toward Kalkomey Isle is a long one, but all four agree that the time is passing more quickly than expected. The warm and sunny weather helps too at least until...
            
             * [They hit the fog.] -> infamous_fog
 
 == infamous_fog ==
     -   SYS_ACHIEVE_6_4
-    //-   SYS_SCENE_4_16
     -   Just as the four friends discovered the day before, the stories of thick fog in this part of the lake are true enough.
 
         - (opts)
@@ -335,7 +334,7 @@ SCENE 01
             -     -> opts
 
 == bird_sounds ==
-    //-   SYS_SCENE_4_10
+    -   SYS_SCENE_4_10
     -   CHR_TRO_SML
     -   The sound of birds signal their arrival at the island.
         "There's the cove!" says Troy. "As we planned, we'll launch the kayaks from there." Troy gives another prolonged blast from the horn, keeping to the rule of signaling once every two minutes during reduced visibility.
