@@ -203,14 +203,15 @@
             
 
             - mac_in_distance:
-                -> mac_in_distance
+                -> mac_dist_discuss
             
 
             - ian_in_distance:
-                -> ian_in_distance
+                -> ian_dist_discuss
             
         }
 
+    -> DONE
         
         = cletus_dist_discuss
         -   CHR_ALX_REL

@@ -759,20 +759,14 @@ wait to call for help = hypo extreme / full memory loss
             * [Review the <i>Vessel Maintenance</i> material.]
              // study guide inserts
              -- SYS_PDF_42
-                -> cross_check
+                -> check_is_good
     
     
-    = cross_check   
-    After completing the maintenance tasks, Mia and Alexis begin a final cross-check that the boat is secure for the night including checking the lines.
-    
-        * [Review the <i>Line Handling</i> material.]
-             // study guide inserts
-             -- SYS_PDF_43
-                -> line_handling
+   
     
     
-    = line_handling
-    -   "The lines look good," says Alexis. "So we're done."
+    = check_is_good
+    -   "Everything looks good," says Alexis. "So we're done."
 
 
         -   (opts)

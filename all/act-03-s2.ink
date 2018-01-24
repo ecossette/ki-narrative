@@ -150,6 +150,7 @@ SCENE 02
         - (done)
             // lightning flash
             -   SYS_SCENE_4_07
+            -   SYS_SOUND_422
             -   Lightning suddenly streaks down nearby—followed immediately by a crash of thunder so loud that it shakes the boat.
 
             * ["Fog dead ahead!" shouts Julian.]
@@ -158,6 +159,7 @@ SCENE 02
 ==  fog_appears ==
     //fog appears, remove storm from behind
     -   SYS_SCENE_4_08
+    -   SYS_SOUND_423
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
     -   "I see it, too," Troy says. He eases back on the throttle, slowing their approach to the looming fog bank ahead.
@@ -186,6 +188,7 @@ SCENE 02
         
         = fog_horn
         -   CHR_TRO_REL
+        -   SYS_SOUND_424
         - Troy gives one prolonged blast with the boat's horn—the signal used by powered boats when underway in reduced visibility. He'll continue signaling at two minute intervals while the foggy conditions prevail.
         
         
@@ -203,6 +206,7 @@ SCENE 02
                 * ["All clear!" says Julian.]
                     -- CHR_JUL_REL
                     --  CHR_TRO_REL
+                    --  SYS_SOUND_425
                     "At least as near as I can see," says Julian, "which is only about 10 feet."
 
 
@@ -242,6 +246,7 @@ SCENE 02
 
         = nav_danger_sand
         -   CHR_JUL_SUR
+        -   SYS_SOUND_426
         -   "It says, 'Danger Sa—"
             Julian is interrupted by a loud scraping sound. The boat shudders to a stop, forcing them all to hang on.
 
@@ -253,6 +258,7 @@ SCENE 02
 == run_aground ==
 // SND cut engine sounds
         -   CHR_TRO_ANG
+        -   SYS_SOUND_427
         -   "We've run aground!" says Troy.
 
             Troy's first priority is:
@@ -417,6 +423,7 @@ SCENE 02
 
             * Troy starts the engine[.] and lets it idle, listening for anything that sounds out of the ordinary. He also gives two prolonged blasts in succession, the signal for a power-driven vessel underway but stopped and making no way through the water.
 // SND engine idle/low
+            -   SYS_SOUND_428
 
                 ** [The fog remains very thick.]
                 -> start_engine_and_fog
@@ -488,6 +495,7 @@ SCENE 02
 // SND storms more distant than before
     -   CHR_ALX_SML
     -   CHR_MIA_SML
+    -   SYS_SOUND_429
     -   "Just the same old thunder in the distance," says Mia.
     -   "Exactly," says Alexis. "The thunder is still there, in the distance, but it's not getting closer."
 
@@ -537,6 +545,7 @@ SCENE 02
     = holy_crap_co
     -   CHR_JUL_SAD
     -   CHR_TRO_ANG
+    -   SYS_SOUND_430
 // SND kill engine
     -   Troy immediately cuts off the engine.
         "Julian, move away from the stern right now!" he yells.

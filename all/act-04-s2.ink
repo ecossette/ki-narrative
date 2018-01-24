@@ -146,6 +146,7 @@
 // this probably need to treated as a tunnel
     -   CHR_TRO_SUR
     -   CHR_JUL_SML
+    -   SYS_SOUND_701
     -   "That's a monkey!" says Troy astonished to find a monkey sitting on a fallen log looking at him.
         "Correction. <i>Monkeys</i>," says Julian pointing, up into the trees. Several small, hairy bodies skitter through the high branches.
 
@@ -160,6 +161,7 @@
             The monkey shrieks and leaps to the next tree. -> ducks
 
         *    (ducks) [The monkey grabs something.]{Troy ducks and a large pinecone splashes into the water behind Troy after just missing his head.| Troy watches as the monkey scurries from one tree to the next along the bank.}
+        -    SYS_SOUND_702
 
         *    {ducks} [Julian laughs.] -> monkey_arm
 
@@ -290,6 +292,7 @@
         = enter_stream
         -   CHR_JUL_REL
         -   CHR_TRO_REL
+        -   SYS_SOUND_703
         The two kayaks move effortlessly along the stream. They pass through several bends as the waterway winds into the island.
 
         "How deep do you suppose this is?" asks Julian in a hushed voice. He looks down into the dark water stretching from bank to bank, about four or five kayak lengths in width.
@@ -433,6 +436,7 @@
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
     -   A loud CLANG ripples through the forest—and everything goes still.
+    -   SYS_SOUND_704
 
         - (opts)
         *    [Julian looks at Troy wide-eyed.]
@@ -450,6 +454,7 @@
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     - Overhead they hear a buzzing eerily similar to what they heard yesterday, but the tree canopy is too thick for them to see if it's the disguised drones. They do not hear another clang.
+    -   SYS_SOUND_705
 
      Troy pulls alongside Julian and says, "I think we should go a little further."
 
@@ -466,6 +471,7 @@
 
     = tro_so_slow
     -   CHR_TRO_SML
+    -   SYS_SOUND_706
     -   "Since I'm so slow, I better get a head-start," says Troy grinning.
 
         Julian pulls in behind Troy. They paddle forward down the middle of the stream and around the next bend, then around yet another. And then they hear…"
@@ -476,6 +482,7 @@
 
     =   jul_bolts
     -   CHR_JUL_SUR
+    -   SYS_SOUND_707
         Upon hearing the engine, Julian instinctively goes into fight or flight mode and rapidly pivots his kayak, the muscles on his neck tense.
 
             *   ["Wait!" says Troy in a whisper-yell.]
@@ -492,6 +499,7 @@
 
     = jul_disbelief
     -   CHR_JUL_REL
+    -   SYS_SOUND_708
      -   (opts2)
         {"Wait, you want to go on foot?" says Julian. "Why?"| "But we're faster on the water," says Julian, still skeptical.| }
 
@@ -523,6 +531,7 @@
 
     = jul_accepts
     -   SYS_SCENE_7_03
+    -   SYS_SOUND_709
     -   CHR_JUL_REL
     -   Julian accepts Troy's reasoning, and they both paddle to the sandy area and climb out of their kayaks. This causes quite a stir among the monkeys, who begin vocalizing and stirring around noisily in the treetops.
 
@@ -553,6 +562,7 @@
 
     =   toward_sound
     -   SYS_SCENE_5_05
+    -   SYS_SOUND_710
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Troy and Julian quickly set off into the woods in the direction of the persistent engine sound Troy thinks is a generator.
@@ -612,6 +622,7 @@
         = monkeys_shriek
         -   CHR_JUL_SUR
         -   CHR_TRO_SUR
+        -   SYS_SOUND_711
         -   Suddenly several monkeys begin shrieking somewhere behind Troy and Julian's hiding spot. The thief turns and looks their way.
 
                 * [They recognize the face immediately.]
@@ -703,6 +714,7 @@
 
 === paddle_back_cove ===
     -   SYS_SCENE_7_04
+    -   SYS_SOUND_712
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Julian and Troy paddle intensely and without pause back to the vine curtain hiding the stream. They quickly pass under it to find that there is still a lot of patchy fog in the cove, just like the day before.

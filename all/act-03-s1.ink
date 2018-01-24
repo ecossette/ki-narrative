@@ -178,6 +178,7 @@ SCENE 01
     = horizon_clouds
     //add other clouds and see storm, then fade rain
     -   SYS_SCENE_4_05
+    -   SYS_SOUND_301
     -   The mood is sombre as the <i>Lakesong</i> makes steady progress back toward shore. Dark clouds begin to build over the horizon ahead of the boat, matching the mood. Everyone is disapointed with the change in plans.
 
             * ["Did you feel that?" asks Alexis.]
@@ -200,6 +201,7 @@ SCENE 01
 
     = storm_over_laketown
     // SND sound of thunder in distance (far) there should be a rumble then nothing for at least 10-15 secs then another
+        -   SYS_SOUND_302
         -   <i>"A large and dangerous thunderstorm has formed to the south Laketown. This storm is currently stationary and is capable of producing golf-ball-sized hail, damaging winds, and frequent lightning."</i>
 
             *  [Troy faces a dilemma.]
@@ -238,6 +240,7 @@ SCENE 01
                 * [Continue on the same course toward Laketown.]
                     //add in rain
                     -- SYS_SCENE_4_06
+                    -- SYS_SOUND_303
                     -> continue_to_laketown
 
                 * [Avoid the storm by turning away from Laketown.]
@@ -245,6 +248,7 @@ SCENE 01
                     -- CHR_ALX_REL
                     // add in rain
                     -- SYS_SCENE_4_06
+                    -- SYS_SOUND_303
                     "That storm is sure to move," says Troy. "And until we know what direction it takes, I think our safest course is to avoid it—and Laketown—for now."
 
                         ** ["I agree," says Alexis.]

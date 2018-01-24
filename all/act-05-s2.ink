@@ -241,10 +241,10 @@
 
         * "This is {rescue_boat}, {rescue_boat}, {rescue_boat}, {rescue_call_sign}.["] Kalkomey Isle bears 270 degrees magnetic distance one-half mile. I've recovered two males from the water with symptoms of extreme hypothermia. Alive but unresponsive. Request immediate emergency medical assistance. {rescue_boat} is a {rescue_boat_type}, {rescue_boat_color} hull. Over."
 
-            ** ["Oh my God!" says Mia.]
+            ** ["Oh no!" says Mia.]
             --  CHR_ALX_REL
             --  CHR_MIA_SUR
-            -- "Oh my God!" says Mia. "That's Julian and Troy." Alexis nods, her mouth open, shocked by the news.
+            -- "Oh no!" says Mia. "That's Julian and Troy." Alexis nods, her mouth open, shocked by the news.
 
                 *** [The radio squawks a reply.]
                     -> mp_reply
