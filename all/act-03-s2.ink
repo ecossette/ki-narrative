@@ -61,19 +61,7 @@ SCENE 02
 
     = no_worries_not_so_bad
     -   CHR_TRO_REL
-    -   "Don't worry. Things are not as bad as they look," says Troy.
-
-         - (opts)
-            *    ["But we're surrounded!" says Julian.]
-                "We're not entirely surrounded. We can still go north," says Troy. -> multiplying
-                -- CHR_TRO_REL
-
-            *    (multiplying) ["But the storms are multiplying!" says Mia.] "{The storms are multiplying, but they are still relatively small in terms of total area|It's a big lake, so we should have plenty of room to maneuver}."
-                -- CHR_TRO_REL
-
-            *    {multiplying} [Steer to the north.] -> steer_to_north
-
-        -     -> opts
+    -   "Things are not as bad as they look!" says Troy. "We're not entirely surrounded. We can still go north." -> steer_to_north
 
     = steer_to_north
     -   CHR_TRO_REL
@@ -81,13 +69,11 @@ SCENE 02
 
             * As the storms close in, the skies continue to darken[.] to the south, west, and east. The thunder is louder and more frequent. A few raindrops begin to fall. ->
 
-
                 ** [Speed up to gain distance on the storms.]
                 ~ fuel_guage = fuel_guage - 5
                 -> speed_up
                 ** [Maintain current speed to save fuel.]
                 -> maintain_speed
-
 
 == speed_up ==
 // SND storms close and far, try to create sense that there are multiple storms at various distances
@@ -108,17 +94,9 @@ SCENE 02
 
 == tro_surveys ==
     -   CHR_TRO_REL
-    -   Troy surveys the water ahead of the boat, then asks his friends for help.
+    -   "I'm not familiar with this part of the lake," he says looking forward. "Help me keep a lookout for other vessels, debris, and other hazards!"
 
-        "I'm not familiar with this part of the lake, so I'd like all three of you to help me keep a sharp lookout for other vessels, debris, and other hazards."
-
-            * [Mia, Alexis, and Julian agree.]
-                -> keeping_lookout
-
-== keeping_lookout ==
-    -   CHR_TRO_REL
-
-        Following Troy's instruction to keep a sharp lookout, the friends make several observations.
+        As they peer into the choppy waters, the friends make several observations.
 
         - (opts)
             *   ["It feels colder," says Mia.]
@@ -126,19 +104,15 @@ SCENE 02
                 -- CHR_ALX_REL
                 "It does," says Alexis. "But at least we aren't wet... yet."
 
-
             *   ["I've lost cell phone signal," says Alexis.]
                 -- CHR_ALX_SUR
                 -- CHR_MIA_SUR
                 "Me too!" says Mia. Julian checks his phone as well—no signal at all.
 
-
             *   ["We're definitely boxed in!" says Julian.]
                 -- CHR_JUL_SUR
                 -- CHR_TRO_REL
                 "And none of the storms appear to be weakening," he says.
-
-
 
             *   {loop} [Onward!]
                 ->done
@@ -161,13 +135,13 @@ SCENE 02
     -   SYS_SOUND_423
     -   CHR_JUL_SUR
     -   CHR_TRO_SUR
-    -   "I see it, too," Troy says. He eases back on the throttle, slowing their approach to the looming fog bank ahead.
-        "Fog shouldn't be a surprise," says Alexis. "Everyone's been telling us about 'fog in the north' all day."
+    -   "I see it, too," Troy says. He eases back on the throttle, slowing their approach.
 
+        "Fog shouldn't be a surprise," says Alexis. "Everyone's been telling us about 'fog in the north' all day."
 
                 - (opts)
                     **    ["Can we avoid it?" asks Julian.]
-                        "As long as we have storms pursuing and blocking us on three sides, our only open water option remains northward and into the fog." Troy keeps one hand on the wheel on one on the throttle. -> safe_in_fog
+                        "As long as we have storms pursuing and blocking us on three sides, our only open water option remains northward and into the fog." Troy keeps one hand on the wheel and one on the throttle. -> safe_in_fog
 
                     **    (safe_in_fog) ["Is it safe to enter?" asks Mia.] "{We'll have reduced visibility, but we should be fine|We'll go very slowly and keep a careful lookout while our visibility is limited}," says Troy.
 
@@ -180,25 +154,22 @@ SCENE 02
 // SND boat motor sound should be low RPM here, storms distant but there
     -   CHR_TRO_REL
     -   Troy slows the <i>Lakesong</i> to a crawl, and the fog envelopes the boat. The three friends continue acting as lookouts—Alexis on the bow, Mia on port, and Julian on starboard.
-    
+
         * [Troy sounds the horn.]
             -> fog_horn
-    
-        
+
         = fog_horn
         -   CHR_TRO_REL
         -   SYS_SOUND_424
         - Troy gives one prolonged blast with the boat's horn—the signal used by powered boats when underway in reduced visibility. He'll continue signaling at two minute intervals while the foggy conditions prevail.
-        
-        
-        
+
         * ["Log!"]
             -> log_ahead
 
         = log_ahead
         -   CHR_ALX_REL
         -   CHR_TRO_REL
-        -   "There's a floating log straight ahead!," says Alexis.
+        -   "There's a floating log straight ahead," says Alexis.
 
             "Are we clear on starboard, Julian?" asks Troy.
 
@@ -208,10 +179,7 @@ SCENE 02
                     --  SYS_SOUND_425
                     "At least as near as I can see," says Julian, "which is only about 10 feet."
 
-
                      "Understood," says Troy. He avoids the floating log by easing the <i>Lakesong</i> to the right—the starboard side.
-
-                As they continue into the fog, thunder claps loudly behind, urging them onward.
 
                     ** ["Nav marker!"]
                     -> nav_marker
@@ -247,9 +215,9 @@ SCENE 02
         -   CHR_JUL_SUR
         -   SYS_SOUND_426
         -   "It says, 'Danger Sa—"
-            Julian is interrupted by a loud scraping sound. The boat shudders to a stop, forcing them all to hang on.
+            Julian is interrupted by a loud scraping sound. The boat shudders to a stop, forcing everyone to hang on.
 
-            "...Sandbar," says Julian finishing his warning a moment too late.
+            "...Sandbar," finishes Julian, a moment too late!
 
             * [Troy immediately cuts the engine.]
                 -> run_aground
@@ -275,7 +243,7 @@ SCENE 02
 
                 + [Put the boat in reverse ASAP]
                 --  CHR_TRO_REL
-                    Besides the fact that putting the boat in reverse could actually worsen the situation, the first priority after grounding is to make sure no one is injured.
+                    Putting the boat in reverse could actually worsen the situation. The first priority after grounding is to make sure no one is injured.
                         -> aground_all_ok
 
 
@@ -297,7 +265,7 @@ SCENE 02
 
     = check_leaks
     - CHR_TRO_REL
-    - Troy gives the <i>Lakesong</i> a careful but quick check for leaks, and also gives the sound signal for a boat restricted in her ability to maneuver—two prolonged blasts in succession with an interval of about 2 seconds between them.
+    - Troy gives the <i>Lakesong</i> a careful but quick check for leaks, and also gives the sound signal for a boat restricted in her ability to maneuver: two prolonged blasts in succession, with an interval of about 2 seconds between them.
 
         * [Troy wipes his brow.]
             -> no_leaks_so_far
@@ -311,7 +279,7 @@ SCENE 02
 
     = so_far_good_if
     -   CHR_TRO_REL
-    -   "So far, we're good," answers Troy. "But we need to get the boat free, and we have to hope that we didn't bend the prop or shaft running aground." Troy also knows that a leak could still develop later, after they free the boat, but he keeps this potentially bad news to himself.
+    -   "So far, we're good," answers Troy. "But we need to get the boat free. I hope that we didn't bend the prop or shaft!" Troy also knows that a leak could still develop <i>after</i> they free the boat, but he keeps this ominous news to himself.
 
             * [Both Mia and Julian wear worried expressions.]
                 -> mia_jul_worried
@@ -346,6 +314,8 @@ SCENE 02
 
          // Shuffle: we'll randomize Troy's push off success.
             { shuffle:
+	            - -> heaves_free
+	            
 	            - -> heaves_free
 
 	            - -> heaves_stuck
@@ -382,9 +352,9 @@ SCENE 02
    // will remove this after testing complete
    //DEBUG: Heave attempts = {heave_attempts}
    -    CHR_TRO_SUR
-   -    Finally, the <i>Lakesong</i> breaks free from the stubborn sandbar! Relieved, the three friends simultaneously shout, "Hooray!"
+   -    Finally, the <i>Lakesong</i> breaks free from the stubborn sandbar! The three friends cheer in relief.
 
-        "Whew, what a relief," says Troy, breathing heavily from the effort. "We were stuck way more firmly than I'd expected."
+        Troy is breathing heavily from the effort. "We were stuck way more firmly than I'd expected."
         -> free_prep_start_engine
 
    = heave_second_try
@@ -418,9 +388,7 @@ SCENE 02
 // add to emergency prep badge
 -   SYS_ACHIEVE_5_4
     -   CHR_TRO_REL
-    -   "Now that we're clear of the sandbar," Troy says, "I'm going to start the engine to make sure everything is OK after our mishap."
-
-            * Troy starts the engine[.] and lets it idle, listening for anything that sounds out of the ordinary. He also gives two prolonged blasts in succession, the signal for a power-driven vessel underway but stopped and making no way through the water.
+    -   Now that they're clear of the sandbar, Troy starts the engine and lets it idle, listening for anything that sounds out of the ordinary. He also gives two prolonged blasts in succession, the signal for a power-driven vessel underway but stopped and making no way through the water.
 // SND engine idle/low
             -   SYS_SOUND_428
 
@@ -506,7 +474,7 @@ SCENE 02
     = no_fog_chances
     -   CHR_TRO_REL
     -   CHR_MIA_REL
-    -   "If we aren't in any immediate danger from any of the storms, we'll just stay put until the fog lifts," says Troy. "After hitting that sandbar, I don't want to take any more chances in the fog unless it's our only option."
+    -   "If we aren't in any immediate danger from any of the storms, we'll just stay put until the fog lifts," says Troy. "I don't want to take any more chances."
 
         Mia notices Julian is unusually quiet, staring off into space at the stern of the boat. Mia decides to...
 
@@ -523,7 +491,7 @@ SCENE 02
 
         "What?" says Julian, cupping his ear.
 
-        "I said, you're awfully quiet."
+        "I said, you're <i>awfully quiet."</i>
 
             * "Yeah, just daydreaming, I guess," says Julian.[] "I can't hear much over the engine back here."
 
@@ -584,10 +552,7 @@ SCENE 02
     = put_all_danger
     -   CHR_TRO_ANG
     -   CHR_ALX_REL
-    -   "I put us all in danger of carbon monoxide by standing still and idling like that! Especially Julian, who was at the stern, closest to the exhaust."
-    -   "We all make mistakes," says Alexis, but Troy shakes his head.
-
-        "CO can make you sick in seconds," he says. "There's no mistaking that."
+    -   "I put us all in danger of carbon monoxide by standing still and idling like that!" says Troy. "Especially Julian, who was at the stern, closest to the exhaust. CO can make you sick in seconds!"
 
         * [Troy turns to Julian.]
             -> co_symptoms_present
@@ -674,15 +639,13 @@ SCENE 02
     -   SYS_SCENE_8_02
     -   Having decided to sit tight and wait for the fog to clear, the friends make preparations to drop anchor.
 
-    -   Before continuing you have two choices:
-
         * [Review the material on anchoring.]
             // insert study guide here, upon student close, launch minigame
             -- SYS_PDF_21
             ** [Go to the anchoring activity.]
                 -> anchoring_mini
-                
-        * [Go directly to the anchoring activity.] 
+
+        * [Go directly to the anchoring activity.]
             // insert anchor minigame here
             -> anchoring_mini
 
@@ -690,5 +653,5 @@ SCENE 02
 -   SYS_MINIGAME_22
 *   [Continue]
     -> after_dropping_anchor
-    
+
     // link up with === after_dropping_anchor s03 when stiching scenes togethernk up with === after_dropping_anchor s03 when stiching scenes together
