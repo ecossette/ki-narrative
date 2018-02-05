@@ -11,7 +11,6 @@ VAR parts = 0
 
 
 
-
 === intro ===
 -   SYS_CHAP_01
 -   Late spring. The Laketown Docks, SSW edge of the Evermore Ruent Basin.
@@ -523,7 +522,7 @@ VAR parts = 0
 == tro_reply_ok ==
     -   CHR_TRO_HLP
     -   CHR_MIA_REL
-    -   "We'll definitely need to replace that. Even a small rip can affect the buoyancy." 
+    -   "We'll definitely need to replace that. Even a small rip defines it as <i>unserviceable</i> per the Coast Guard." 
         Mia looks at the small tear, surprised it could have such an impact.
         
             * [Mia asks Troy a follow-up question on buoyancy.]
@@ -660,7 +659,7 @@ VAR parts = 0
 // begin fire extinguisher tunnel 
     -   CHR_JUL_GRN
     -   CHR_TRO_REL
-    -   "Will do, Troy!" Julian has been trying to act aloof, but he seems genuinely enthusiastic to begin his inspection. "I'm not sure if I've been a boat with fire extinguishers before."
+    -   "Will do, Troy!" Julian has been trying to act aloof, but he seems genuinely enthusiastic to begin his inspection. "I'm not sure if I've been on a boat with fire extinguishers before."
     //or something like that. To give him a bit more personality than suddenly eager beaver after being the joker. 
         * [Troy nods.]
             -> jul_fe_never
@@ -974,7 +973,7 @@ VAR parts = 0
 
 
 === PFDs_top_list ===
-    *   ["Glad to see you have PFDs at the top of your list."]  "90% of boaters who drown were not wearing a PFD," says Mr. Willard.
+    *   ["Glad to see you have PFDs at the top of your list."]  "90% of boaters who drown were not wearing a life jacket," says Mr. Willard.
 
     -   CHR_WLD_REL
         * "No way!" exclaims Mia.[]
@@ -1663,7 +1662,7 @@ VAR pfd_tryer = "Mia"
 === three_north_reasons ===        
     -   CHR_WLD_GPY
     -   Mr. Willard crosses his arms and makes a sour face. 
-    -   "Besides the fact that you'll lose your cell signal, it's just dank and dreary up there to the north."    
+    -   "Besides the fact that you'll lose your cell signal, it's just damp and dreary up there to the north."    
     
     - (opts)
         *    ["Seems unlikely," says Julian.]
@@ -1750,7 +1749,7 @@ VAR pfd_tryer = "Mia"
 
 == here_the_deal ==
     -   CHR_WLD_SKP
-    -   "Here's the deal," Mr. Willard says, crossing his arms. "The human body cools 25 times faster in cold water than it does in air."
+    -   "Here's the deal," Mr. Willard says, crossing his arms. "The human body cools considerably faster in cold water than it does in air."
         * [The four friends nod.] -> nobody_in_cold_water
     
 == nobody_in_cold_water == 

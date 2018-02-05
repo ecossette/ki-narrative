@@ -247,6 +247,7 @@ SCENE 04
 === no_go_island ===
 // add to other water activities badge
 -   SYS_ACHIEVE_6_3
+-   SYS_SOUND_434
 // SND just light water bg sounds here
     -   Having decided not to explore the island, the friends pass the time waiting for the fog to clear by playing cards.
 
@@ -255,12 +256,14 @@ SCENE 04
 
 
 === mount_paddle_return_early ===
+    -   SYS_SOUND_435
     - The friends re-board the <i>Lakesong</i> and stow the paddleboards. To pass the time until the fog clears, they begin to play cards.
 
          * [The fog clears.]
             -> fog_clears
 
 == fog_clears ==
+    -   SYS_SOUND_436
     -   While the island remains foggy, over the lake and around the <i>Lakesong</i> the fog finally begins to burn off.
 // SND can bring back bird sounds here
 
@@ -271,7 +274,7 @@ SCENE 04
 === prepare_retrieve_anchor ===
 // this is dual use. used after isle exploration as well.
 // SND engine sound
-    - SYS_SCENE_4
+    - SYS_SCENE_4_10
     -   CHR_TRO_REL
     -   "I'll position the boat directly over the anchor, while Julian pulls in the line," says Troy.
 
@@ -279,6 +282,7 @@ SCENE 04
             -> position_over_anchor
 
     = position_over_anchor
+    -   SYS_SOUND_437
     -   CHR_TRO_REL
     -   At a slow speed, Troy maneuvers the boat directly over the anchor, the first step to safely retrieve an anchor.
 
@@ -463,8 +467,7 @@ SCENE 04
 
 === tro_on_it_turns ===
 // SND intro buzzing sound in distance
-    //-   SYS_SCENE_4_13
-    -   SYS_SCENE_8_11
+    -   SYS_SCENE_4_13
     -   CHR_TRO_REL
     -   "Those creatures are coming this way!" Julian points over the island. {run_away:"Here we go again!"}
 
@@ -487,7 +490,7 @@ SCENE 04
 // this is where you can rejoin from explore island track
 // SND drone sounds getting closer
     -   CHR_JUL_SUR
-    -   Julian keeps his eyes aft of the boat, tracking the rapidly approaching swarm. It has cleared the island and now flies over open water in pursuit of the boat.
+    -   Julian keeps his eyes aft over the stern of the boat, tracking the rapidly approaching swarm. It has cleared the island and now flies over open water in pursuit of the boat.
 
         "They're gaining on us!" yells Julian. "Can't we go any faster?"
 

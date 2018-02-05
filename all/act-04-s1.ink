@@ -187,34 +187,8 @@ SCENE 01
     -  SYS_ACHIEVE_2_4
     -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
         
-        * Dock to at the fuel station.[] 
-            ** {do_wind_none} [There is <b>no</b> wind or current.]
-                -> no_wind_s3
-            ** {do_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
-                -> wind_toward_dock_s3
-            ** {do_wind_away} [The wind and current direction is <b>away</b> from the dock.]
-                -> wind_away_dock_s3
-    
-// launch the docking activity again Here
-// need build another tunnel similar to casting off?
-    = no_wind_s3
-    ~ do_wind_none = false
-    -   SYS_MINIGAME_4_33
-        * [OK]
+        * [Dock to at the fuel station.]
             -> next_pump
-    
-    = wind_toward_dock_s3
-    ~ do_wind_toward = false
-    -   SYS_MINIGAME_5_33
-        * [OK]
-            -> next_pump
-
-    = wind_away_dock_s3
-    ~ do_wind_away = false
-    -   SYS_MINIGAME_6_33
-        * [OK]
-            -> next_pump
-            
             
 == next_pump ==
     -   The friends tie up the boat and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat. 
@@ -258,7 +232,9 @@ SCENE 01
                     -- CHR_TRO_REL
                      "That's a duck-hunting boat, and the puppy is learning how to behave on the water," he says.  -> dog
 
-                *    (dog) [Troy gives the horn two quick toots.] {Troy's passing signal startles the puppy. "The dogs need to get accustomed to being in a boat the same as you or me."|"Anglers and hunters are boaters, too, as are their four-legged passengers."}
+                *    (dog) [Troy gives the horn two quick toots.] 
+                    -- SYS_SOUND_444
+                    {Troy's passing signal startles the puppy. "The dogs need to get accustomed to being in a boat the same as you or me."|"Anglers and hunters are boaters, too, as are their four-legged passengers."}
 
                 *    {dog} [They exchange "Ahoys" and waves.] -> pass_duck_boat
 
@@ -298,6 +274,7 @@ SCENE 01
 
  === fog_talk ===
     -   CHR_TRO_REL
+    -   SYS_SOUND_440
     -   Troy gives the first prolonged blast from the horn, as the <i>Lakesong</i> continues straight ahead into the fog where Troy expects to find the cove. A couple of times, the boat shudders briefly as it meets some cross currents.
 
     -   "I think that cross current is where the cold water is flowing in," says Troy.
@@ -382,7 +359,7 @@ SCENE 01
 
         = jul_opens
         -   CHR_JUL_REL
-        -   Inside the dry float bag Troy prepared, Julian finds the following items: a waterproof flashlight, waterproof red signal flares, a signal mirror, a whistle, a rope, a knife, a bottle of water, a granola bar, and a kayak tether.
+        -   Inside the dry float bag Troy prepared, Julian finds the following items: a waterproof flashlight, waterproof red signal flares, a signal mirror, a whistle, a rope, a knife, a bottle of water, a granola bar, and a two tether leashes, one short and one long.
 
                 * ["Before we set off..."]
                     -> before_set_off
@@ -398,7 +375,7 @@ SCENE 01
         = before_set_off
         -   CHR_TRO_REL
         -   CHR_JUL_REL
-        "Before we set off, take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PFD pockets, says Troy. "Grab the kayak leash as well."
+        "Before we set off, take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PFD pockets, says Troy. 
 
             * ["And you've got the walkie-talkie?" asks Julian.]
                 -> no_two_way
@@ -499,7 +476,7 @@ SCENE 01
 === continue_adventure ===
         -   CHR_TRO_REL
         -   CHR_JUL_REL
-        -   "See you in two hours, give-or-take," says Troy. He and Julian push off from the boat and begin paddling toward the shoreline.
+        -   "See you in two hours, give-or-take," says Troy, giving his flashlight a quick test. He and Julian push off from the boat and begin paddling toward the shoreline.
 
             "Good luck!" Mia and Alexis call in unison. Alexis starts the <i>Lakesong's</i> engine and prepares to depart the cove.
 

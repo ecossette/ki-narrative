@@ -171,7 +171,7 @@ SCENE 05
 // SND bring in dock sounds
 // SND no bird sounds since it's after dark
     -   CHR_MPO_REL
-    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The man keeps gesturing toward an empty slip, while the woman looks on with a sad expression. Captain Garcia nods and takes notes.
+    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The man repeatedly points toward an empty slip, while the woman looks on with a sad expression. Captain Garcia nods and takes notes.
                     
         *   [Dock the Lakesong.] 
             ** {do_wind_none} [There is <b>no</b> wind or current.]

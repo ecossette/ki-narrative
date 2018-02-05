@@ -264,7 +264,7 @@ the story will flow in/out of this tunnel on several occasion during play
             -   "We should toot the horn to signal our intent, right?" checks Alexis.       
                     
                     
-                    ***"That's right," answers Troy.[] "One toot if we intend to pass on his port side, two toots if we go to his starboard."
+                    ***"That's right," answers Troy.[] "He'll be on our starboard side, so that's two toots."
                         ---- CHR_TRO_REL
                         ---- CHR_JUL_SML
                 
@@ -316,6 +316,7 @@ the story will flow in/out of this tunnel on several occasion during play
                 ** Troy gives two quick horn toots[.] to signal his intent to overtake Mac on the starboard side. 
                 // the size of the smaller boat isn't really relevant, here; could be confusing (think only toot when overtaking smaller boats)
                     --- CHR_TRO_REL
+                    --- SYS_SOUND_438
             
                     As the <i>Lakesong</i> pulls alongside the smaller boat, Troy eases the throttle back and calls out.
             

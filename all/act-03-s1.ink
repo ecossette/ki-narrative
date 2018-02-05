@@ -104,7 +104,7 @@ SCENE 01
         - CHR_ALX_REL
         - CHR_TRO_REL
 
-         Alexis is looking at her smartphone. "The radar shows that storm is well to the west of Laketown and moving north."
+         Alexis is looking at her smartphone. "The radar shows that the storm is well to the west of Laketown and moving north."
 
             * ["If that holds, we'll be fine," says Troy.]
             -> if_holds_fine
@@ -460,6 +460,7 @@ VAR is_radio_damaged = true
 // lightning flash
     //-   SYS_SCENE_4_07
     - SYS_SCENE_8_01
+    - SYS_SOUND_801
     - Suddenly, there is an enormous crack of lightning!
 
 
@@ -470,6 +471,7 @@ VAR is_radio_damaged = true
         "What just happened?" Julian asks, his eyes wide with surprise.
 
             * "We were struck by lightning!"[] says Troy. "Is everyone all right?"
+                - SYS_SCENE_8_00
                 -> check_passenger_health
 
 == check_passenger_health ==
@@ -480,9 +482,11 @@ VAR is_radio_damaged = true
 
             *   Julian responds[.], as lightning flashes and cracks nearby.
                 //lightning flash
-                --   SYS_SCENE_4_07
+                -- SYS_SCENE_8_01
+                -- SYS_SOUND_801
 
                     ** "F-fine now[."], but that scared the crap out of me." Julian shakes his head. "I felt every hair on my body stand on end. But it looks like the boat took the brunt of it."
+                    -- SYS_SCENE_8_00
                     -> check_passenger_health
 
             * [] -> how_is_mia

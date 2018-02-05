@@ -27,6 +27,7 @@ SCENE 03
 
     = what_see_nothing
     -   SYS_SCENE_4_10
+    -   SYS_SOUND_431
     -   CHR_JUL_SUR
     -   CHR_MIA_REL
     -   "What? I don't see anything," says Mia.
@@ -182,6 +183,7 @@ VAR explore_island = true
 // add to other water activities badge
 // close in on the island
 -   SYS_SCENE_4_11
+-   SYS_SOUND_432
 // SND paddling
     -   Troy and Mia navigate one board, while Alexis and Julian take the other. 
     
@@ -195,6 +197,7 @@ VAR explore_island = true
             * They arrive on the small beach[.], and as they look around, a few things immediately catch their attention.
 
 // SND mysterious island
+            -   SYS_SOUND_433
 
 
             - (opts)

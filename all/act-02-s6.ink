@@ -81,7 +81,7 @@ VAR houseboat_st = 0
         = fitted_with_mirror
         -   CHR_ALX_REL
         -   CHR_IAN_REL
-        -   "Not in this case," he answers. "I had the PWCs outfitted with four-inch rear-view mirrors to meet the requirements for using a PWC to tow someone when there isn't a spotter.
+        -   "Not in this case," he answers. "The rules for PWCs vary from state to state. Here we are allowed to do without a spotter if we have four-inch rear-view mirrors and we do," says Ian pointing out the larger mirrors. "In Oceanside, though, you have to have a spotter regardless."
         //is it a legal requirement or a safety guideline? They aren't breaking the law if they don't have one, they're just being unsafe? Or is it a legal requirement? I feel 'meet the [something] requirements for using a PWC to tow someone when there isn't a spotter' is more natural speech. 
                 * [Alexis nods.] 
                 //more nodding. 
@@ -158,46 +158,11 @@ VAR houseboat_st = 0
                 * The friends say goodbye[.] to Maura and Ian then begin preparations for casting off from the houseboat. 
                 
                     ** [Cast off.]
-                        -> co_wind_direction_2
-                        
-=== co_wind_direction_2 ===
-    -   The friends check the wind and current and find the following conditions.
-    
-        * {co_wind_none} [There is <b>no</b> wind or current.]
-            -> no_wind_2
-        * {co_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
-            -> wind_toward_dock_2
-        * {co_wind_away} [The wind and current direction is <b>away</b> from the dock.]
-            -> wind_away_dock_2
-    
-== no_wind_2 ==
-    ~ co_wind_none = false
-    -   SYS_MINIGAME_1_16
-        * [OK]
-            -> after_co_houseboat
-    
-== wind_toward_dock_2 ==
-    ~ co_wind_toward = false
-    -   SYS_MINIGAME_2_16
-        * [OK]
-            -> after_co_houseboat
-
-== wind_away_dock_2 == 
-    ~ co_wind_away = false
-    -   SYS_MINIGAME_3_16
-        * [OK]
-            -> after_co_houseboat
-
+                        -> after_co_houseboat
 
 == after_co_houseboat ==
-        // SOUND generic boat ending
-        // SYS_SOUND_421
-        -   After casting off, the <i>Lakesong</i> heads out towards open water.
-
-        * [Onward!]
-            // launch quiz 2.2 here
-            -- SYS_QUIZ_04                        
-            -> discussion_after_houseboat
+    - SYS_QUIZ_04                        
+    -> discussion_after_houseboat
                     
 //        THIS ENDS ACT 2 
         

@@ -543,9 +543,9 @@
     = tro_drags_kayak
     -   CHR_JUL_REL
     -   CHR_TRO_REL
-    -   "That's not the thing they make me worried about," says Troy. "Quick, bring your kayak back here where they can't be seen from the water, and get that rope out of your dry bag."
+    -   "That's not the thing they make me worried about," says Troy. "Quick, bring your kayak back here where they can't be seen from the water, and get the long tether leash out of your dry bag."
 
-            * Troy fastens both kayaks[.] together with the rope, then secures the rope to a tree with a sturdy knot.
+            * Troy fastens both kayaks[.] together with one leash, and uses the second tether to loop around the tree. The carabiners on each end of the tethers make Troy's work quick and easy.
 
                 "There, that should do it!" he says, satisfied.
 
@@ -672,6 +672,7 @@
         = return_to_kayaks
         -   CHR_JUL_REL
         -   CHR_TRO_REL
+        -   SYS_SCENE_7_05
         -   Julian and Troy inch backward, quietly and carefully vacating their hiding place, and trek back to where they left the kayaks.
 
                 * ["What the...?" gasps Julian.]
@@ -680,7 +681,7 @@
 == kayaks_strewn ==
         -   CHR_JUL_SUR
         -   CHR_TRO_SUR
-        -   The kayaks are not as they left them! No longer hidden side by side behind the tree, both are flipped over and cast about haphazardly
+        -   The kayaks are not as they left them! No longer hidden side by side behind the tree, both are flipped over and cast about haphazardly.
 
             - (opts)
                 * [Julian steps on a dry bag.]
@@ -794,7 +795,7 @@
 
 == no_blow_whistle ==
     -   CHR_TRO_REL
-    -   "Let's wait on the whistle, for now," says Troy. "I don't want to risk the thieves hearing it. I think our best option is to get out of the cove."
+    -   "Let's wait on the whistle, for now," says Troy. "I don't want to risk the thieves hearing it. I think our best option is to get out of the cove." 
 
             * [Troy begins paddling.]
             -> best_option_leave_cove
@@ -932,7 +933,7 @@
 
         = check_lanyard
         -   CHR_TRO_REL
-        -   "Make sure your lanyard is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks if we dump."
+        -   "Make sure the tether is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks if we dump."
 
             Julian double-checks his lanyard just before...
 
@@ -1012,7 +1013,7 @@
             -- CHR_JUL_SAD
             "Hope s-soon... 'cause..." says Julian breathlessly.-> clings
             
-            *   (clings) [Julian clings to his oar.] {Julian clings to the oar attached by lanyard to his kayak. "...it's getting... difficult... to hang on," he says.|"... I...I c-c-can't... hold..."}
+            *   (clings) [Julian clings to his oar.] {Julian clings to the paddle attached by lanyard to his kayak. "...it's getting... difficult... to hang on," he says.|"... I...I c-c-can't... hold..."}
             
             *   {clings} [Julian loses his grip.]
                 -> loses_kayak
@@ -1021,15 +1022,15 @@
             
 == loses_kayak == 
     -   CHR_TRO_ANG
-    -   Julian loses his grip, and his oar and kayak begin drifting away. 
+    -   Julian loses his grip, and his paddle and kayak begin drifting away. 
                 
         -   (opts)        
                 
-            *   [Troy's right hand grips his own lanyard.] 
+            *   [Troy's right hand grips his own leash.] 
                 -- CHR_TRO_SAD
-                Troy keeps a tight grip on his own lanyard with his right hand. -> reaches
+                Troy keeps a tight grip on his own leash with his right hand. -> reaches
             
-            *   (reaches) [Troy reaches out.] {With his left hand, Troy reaches and grabs Julian by his PFD, pulling him close.| He didn't attach it to his oar because he planned to attach it to his PFD.} 
+            *   (reaches) [Troy reaches out.] {With his left hand, Troy reaches and grabs Julian by his PFD, pulling him close.| He didn't attach it to his paddle because he planned to attach it to his PFD.} 
             
             *   {reaches} [Troy wants to attach the lanyard.]
                 -> lanyard_attach
@@ -1039,15 +1040,15 @@
 
             
 == lanyard_attach ==
-    -   Troy knows he should attach the kayak lanyard to his PFD. Staying with the remaining kayak helps their chances of being seen and will help them get more of their bodies out of the water—if they can somehow gather the strength to lift themselves on top of the remaining overturned kayak. 
+    -   Troy knows he should attach the tether leash to his PFD. Staying with the remaining kayak helps their chances of being seen and will help them get more of their bodies out of the water—if they can somehow gather the strength to lift themselves on top of the remaining overturned kayak. 
     
         -   (opts)
         
             *   [Troy considers letting go of Julian.]
             --  CHR_TRO_SAD
-            Troy considers letting go of Julian—just for a second—so that he can try two hands with the lanyard, but he can't risk losing Julian whose condition is even worse. -> struggle 
+            Troy considers letting go of Julian—just for a second—so that he can try two hands with the leash, but he can't risk losing Julian whose condition is even worse. -> struggle 
             
-            *   (struggle) [Troy struggles with the lanyard.] {Troy struggles to attach the lanyard with one hand. He's lost up to 80% of his dexterity and strength since hitting the water.| He'll just need to find a way to do it Troy tells himself.}
+            *   (struggle) [Troy struggles with the leash.] {Troy struggles to attach the leash with one hand. He's lost up to 80% of his dexterity and strength since hitting the water.| He'll just need to find a way to do it Troy tells himself.}
             
             
             *   {struggle} [Troy's chances are modest.]
@@ -1058,7 +1059,7 @@
     
     = lanyard_struggle 
     -   CHR_TRO_SAD
-    -   Troy's chances to attach the lanyard to his PFD are modest at best. In his present condition—with his considerable loss of dexterity and strength—he only has a fifty-fifty chance of success—no different than the flip of a coin. 
+    -   Troy's chances to attach the tether leash to his PFD are modest at best. In his present condition—with his considerable loss of dexterity and strength—he only has a fifty-fifty chance of success—no different than the flip of a coin. 
     
             *   [Reveal Troy's fate.]
                 -> tro_fate
@@ -1078,7 +1079,7 @@
 === lose_remaining_kayak ===
 ~  kayak_status = 0
     -   CHR_TRO_SAD
-    -   Troy is unable to attach the lanyard to his PFD and in his final effort he loses hold of the lanyard and the kayak is lost. 
+    -   Troy is unable to attach the leash to his PFD and in his final effort he loses hold of the lanyard and the kayak is lost. 
      
             * [Focus on survival.]
             -> focus_survival
@@ -1088,7 +1089,7 @@
 === keep_remaining_kayak ===
 ~ kayak_status = 1
     -   CHR_TRO_SML
-    -   Troy is able to attach the lanyard! 
+    -   Troy is able to attach the leash! 
     
         Now Troy can turn his attention to the most important thing:
     

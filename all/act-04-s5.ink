@@ -10,13 +10,13 @@
     {
     
         - no_go_stream:
-        While waiting for Mia and Alexis, Troy and Julian had stayed close to the shoreline to avoid a collision. With the cove still shrouded in fog, their visibility was limited. The minutes dragged as they waited in the fog until, finally...
+        While waiting for Mia and Alexis, Troy and Julian had stayed close to the shoreline to avoid a collision ith any powered boats that might enter the cove. With the cove still shrouded in fog, their visibility was limited. The minutes dragged as they waited in the fog until, finally...
         
             * [ They hear something.]
                 -> sound_rely
         
         - else:
-        Troy and Julian wait for Mia and Alexis, staying  close to the shoreline to avoid a collision. With the cove still shrouded in fog, the visibility is limited. They won't be able to see the <i>Lakesong</i> enter, nor will Mia and Alexis be able to spot the kayaks.
+        Troy and Julian wait for Mia and Alexis, staying  close to the shoreline to avoid a collision with any powered boats that might enter the cove. With the cove still shrouded in fog, the visibility is limited. They won't be able to see the <i>Lakesong</i> enter, nor will Mia and Alexis be able to spot the kayaks.
         
              * [They'll rely on sound signals.]
                 -> sound_rely
@@ -28,7 +28,7 @@
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   In the distance, they hear the sound of a boat engine.
-        The sound becomes louder as it approaches.
+        The sound becomes louder as it approaches. Troy readies the flashlight in case the boat comes toward them.
 
             * ["That must be them now!" says Julian.]
                 -> reaches_for_whistle
@@ -50,7 +50,7 @@
     = hidden_fog
     -   CHR_JUL_REL
     -   CHR_TRO_REL
-    -   Hidden in the fog, they can't see the boat, but they can hear it as it approaches, then moves deeper into the cove away from them. They hear the engine slow for a moment, then pick up again before gradually fading out.
+    -   Hidden in the fog, they can't see the boat, but they can hear it. The boat moves deeper into the cove but away from them. They hear the engine slow for a moment, then pick up again before gradually fading out.
 
             * ["They must have gone up the stream!" says Julian.]
             --   CHR_JUL_REL
@@ -252,6 +252,7 @@
 // this is where we'll join from capsized kayaks.
     -   CHR_ALX_REL
     -   CHR_MIA_REL
+    -   SYS_SOUND_441
     -   Earlier Mia and Alexis had entered the cove at the arranged meeting time. After not finding Julian and Troy in the cove after several signalling attempts, Mia and Alexis leave the cove.
     
         * ["That was the plan," says Alexis.]

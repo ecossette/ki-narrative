@@ -31,6 +31,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
             -> board_houseboat
         
     = board_houseboat 
+    -   SYS_SOUND_439
     -   They all step aboard the houseboat to help Ian to secure his damaged speedboat.  
         
         Done, they gather in front of the PWCs.
@@ -162,8 +163,6 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         = take_spin
         -  While Alexis, Maura, and Troy make preparations to water ski, Mia, Julian, and Ian attach their engine cut-off switch lanyards and jet away from the houseboat.
         //maybe don't use 'spin' here when you had the death spin earlier
-        // SOUND pwc generic
-        - SYS_SOUND_414
             * Mia is very cautious at first[...] but quickly gains confidence.
                 -> mia_confident
                 
@@ -172,6 +171,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         = mia_confident
         VAR did_capsize_pwc = 0
         // SOUND pwc generic
+        - SYS_SOUND_414
         // already playing that sound
         - CHR_MIA_REL
         - She gradually increases her speed and maneuvering until...

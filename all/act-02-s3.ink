@@ -100,7 +100,7 @@
         
         - (opts)
             *    "We won't be in danger[...?"], right, Troy?" asks Mia.
-                    "Not a chance." Troy reassures her. "We'll approach at at a safe speed. But we all need to be extra alert at keeping a lookout.
+                    "Not a chance." Troy reassures her. "We'll approach at a safe speed. But we all need to be extra alert at keeping a lookout.
             
             *    (distress) "We don't even know if it's a boat in distress[."]," says Julian. 
                             "Which is why we are taking a closer look," replies Troy.
@@ -257,13 +257,13 @@
                 
                     ** Troy eases the throttle forward[.], and the <i>Lakesong</i> begins a slow, circular sweep of the area at a safe distance from the continuously spinning, unmanned boat.
                     //is the boat spinning or circling? Spinning is on the spot, circling is wider.
+                        // SOUND add ambient engine to the mix again
+                        --- SYS_SOUND_407
                     
                         *** ["I see someone in the water!"] 
                         // beheaded? Changed, as I think you'd assume person
                             -> see_head
             = see_head
-            // SOUND add ambient engine to the mix again
-                - SYS_SOUND_407
                 - CHR_MIA_REL
                 - CHR_ALX_SML
                 - Mia points in the distance to where someone is bobbing in the water.
@@ -350,7 +350,7 @@
  // need these choices to SHUFFLE game side
  
             + [Life ring (Type IV PFD)]
-                -> life_ring
+                -> throwable_pfd ("life ring")
             + [Type II PFD]
                 -> toss_type2
             + [A seat cushion.] 
@@ -362,31 +362,29 @@
         -   CHR_ALX_REL
         -   Julian reaches for a Type II PFD.
  
-            "Julian, it'll be easier to throw the life ring," says Alexis. "It's designed for this."
+            "Julian, it'll be easier to throw the life ring or a seat cushion," says Alexis. "Both are designed for this."
             
             "Oh, right," he says.
         
                 + [Julian grabs the life ring.]
-                    -> life_ring
+                    -> throwable_pfd ("life ring")
         
         = toss_cushion
         -   CHR_JUL_REL
         -   CHR_TRO_REL
-        -   Julian reaches for a seat cushion.
-            "Julian, the seat cushions are more of a last resort," says Troy. "You'll find the life ring easier to throw. It's designed for this kind of situation."
+        -   Julian can get to the seat cushion quicker than the life ring, so it's his first choice.
             
-            "That makes sense," says Julian. 
-            
-                + [Julian grabs the life ring.]
-                    -> life_ring
+                + [Julian grabs a seat cushion.]
+                    -> throwable_pfd ("seat cushion")
         
-        = life_ring
+== throwable_pfd (type) ==
         -   CHR_JUL_SML
-        -   "Life ring away!" yells Julian as he throws the life ring toward the woman in the water. 
-             It lands a few feet away from her.
+        -   "Get ready! Here it comes!" yells Julian as he throws the {type} toward the woman in the water. 
              
-             * [She swims to the floating ring and grabs on.]
-             //I find it weird that they can't tell at this point whether it's a man or a woman in the water; hence my change.
+            The {type} lands a few feet away from her.
+             
+             * [She swims to it and grabs on.]
+             
              -> turn_the_boat
              
    

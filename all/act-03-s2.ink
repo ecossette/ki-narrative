@@ -149,7 +149,6 @@ SCENE 02
             "I think we'll be able to stay just out of reach of the storms," says Troy.
         - (done)
             // lightning flash
-            -   SYS_SCENE_4_07
             -   SYS_SOUND_422
             -   Lightning suddenly streaks down nearby—followed immediately by a crash of thunder so loud that it shakes the boat.
 

@@ -13,11 +13,13 @@
 
             * [The chop-chop sound of a helicopter...]
             --  CHR_ALX_REL
+            --  SYS_SOUND_443
             They hear the chop-chop of a helicopter. "That's the medevac chopper... right on time," says Alexis. ->marker
 
             * (marker) [A water hazard marker...] {They pass a water hazard marker to their port side that Alexis recognizes from before. "We're still quite a ways from home."|"They'll be in good hands with the paramedics."}
 
             *   {marker} [Mia scans the horizon.]
+            --  SYS_SOUND_443
                 -> mia_helo
 
         -   -> opts

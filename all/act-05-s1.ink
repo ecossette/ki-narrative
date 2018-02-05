@@ -43,6 +43,7 @@
 == mia_alx_tell_story
     -   CHR_ALX_REL
     -   CHR_MIA_REL
+    -   SYS_SCENE_4
     -   As the boat cruises south into a warm, late-afternoon breeze, Mia and Alexis describe their two hours waiting for the rendezvous with the kayaks. They begin by saying...
 
 
