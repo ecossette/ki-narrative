@@ -3,7 +3,7 @@
 === second_entry_cove_fog ===
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   SYS_SOUND_442
+    -   SYS_SOUND_813
 
     - In the foggy cove, Mia and Alexis repeat the signal again—but just as before, there is no response from Julian and Troy. 
 
@@ -18,7 +18,7 @@
     -   Mia and Alexis enter the cove, but there is no sign of the kayaks. Alexis wonders if there is a chance that Julian and Troy are hunkered down somewhere out of sight along the shoreline. 
 
         * [Alexis signals with the boat's horn.]
-            --   SYS_SOUND_442
+            --   SYS_SOUND_813
             -- "Nothing and more nothing," says Mia frustrated. 
             -> no_response_hour_two
 

@@ -312,6 +312,7 @@ SCENE 01
 
 == bird_sounds ==
     -   SYS_SCENE_4_10
+    -   SYS_SOUND_445
     -   CHR_TRO_SML
     -   The sound of birds signal their arrival at the island.
         "There's the cove!" says Troy. "As we planned, we'll launch the kayaks from there." Troy gives another prolonged blast from the horn, keeping to the rule of signaling once every two minutes during reduced visibility.
@@ -441,6 +442,7 @@ SCENE 01
                 --    CHR_TRO_REL
                     ** [Alexis mimics the signal.]
                     --- CHR_TRO_REL
+                    --- SYS_SOUND_807
                         "Right, good, give two short toots of the horn, count to 3 and give one long toot," says Troy.  "When we hear your signal, we'll blow the whistle. Give two quick toots to acknowledge it. If you don't hear us, repeat your signal and we'll send a flare."
 
             *    ["If the fog clears..."]

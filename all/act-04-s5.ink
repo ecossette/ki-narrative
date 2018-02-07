@@ -27,6 +27,7 @@
     = sound_rely
     -   CHR_JUL_REL
     -   CHR_TRO_REL
+    -   SYS_SOUND_822
     -   In the distance, they hear the sound of a boat engine.
         The sound becomes louder as it approaches. Troy readies the flashlight in case the boat comes toward them.
 
@@ -50,6 +51,7 @@
     = hidden_fog
     -   CHR_JUL_REL
     -   CHR_TRO_REL
+    -   SYS_SOUND_823
     -   Hidden in the fog, they can't see the boat, but they can hear it. The boat moves deeper into the cove but away from them. They hear the engine slow for a moment, then pick up again before gradually fading out.
 
             * ["They must have gone up the stream!" says Julian.]
@@ -76,6 +78,7 @@
     -   After a few minutes, they hear another boat approaching.
     -   CHR_JUL_REL
     -   CHR_TRO_REL
+    -   SYS_SOUND_824
 
         "Now that sounds more like the <i>Lakesong</i>," says Troy. "But let's wait for the signal."
 
@@ -87,6 +90,7 @@
 -   SYS_ACHIEVE_2_5
     -   CHR_JUL_REL
     -   CHR_TRO_REL
+    -   SYS_SOUND_825
     - They hear two short toots of a boat horn.
     "One thousand one, one thousand two..." Julian counts aloud, "one thousand three—"
 
@@ -96,6 +100,7 @@
     = long_toot
     -   CHR_JUL_SML
     -   CHR_TRO_SML
+    -   SYS_SOUND_826
     - They hear one long toot at the three-second mark.
     "That's them!" says Julian.
     Troy smiles. "OK. Blow the whistle!"
@@ -159,7 +164,8 @@
                     *  [Keep a sharp lookout.]
                         --   SYS_SCENE_8_22
                         --   CHR_ALX_REL
-                        --   CHR_MIA_REL                   
+                        --   CHR_MIA_REL     
+                        --   SYS_SOUND_808              
                         Mia helps Alexis keep a sharp lookout, while Alexis gives the standard prolonged blast signal upon entering the fog. -> slow
 
                     *  (slow) [Slow down even more.] {Alexis brings the throttle back almost to idle, giving the boat its slowest possible forward speed so as not to accidentally overrun the kayaks.| Alexis suspects Troy and Julian will be waiting closer to the shore, but the kayaks could be anywhere in the cove.}
@@ -186,6 +192,7 @@
             // add to boat equip badge
             -   SYS_ACHIEVE_2_5
             -  CHR_ALX_REL
+            -   SYS_SOUND_809  
             -   Alexis gives three quick toots with the horn, waits three seconds and then gives a long one, the agreed-upon signal.
 
                 {
@@ -221,7 +228,9 @@
                     -- CHR_ALX_REL
                     Alexis counts off to fifteen in her head, just to make sure she's giving the guys enough time to respond.->cut
 
-                    * (cut) [Cutoff the engine.] {"Let's try cutting the engine," says Alexis. "We should be able to hear a whistle with the engine idling but you never know." Alexis cuts the engine.|"C'mon, guys, signal already!"}
+                    * (cut) [Cutoff the engine.] 
+                    -- SYS_SOUND_810
+                    {"Let's try cutting the engine," says Alexis. "We should be able to hear a whistle with the engine idling but you never know." Alexis cuts the engine.|"C'mon, guys, signal already!"}
 
 
                     * {cut} [Signal again.]
@@ -232,12 +241,14 @@
 == signal_again ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
+    -   SYS_SOUND_811
     -   Alexis signals again, but even with the engine silenced, they are unable to hear any response from Julian and Troy. She waits a few minutes and tries again, but still there is no answer.
 
             - (opts)
 
                     * [Try again.]
                     -- CHR_ALX_SAD
+                    -- SYS_SOUND_812
                     Alexis gives it one final shot. The horn blares as the <i>Lakesong</i> floats in silence, barely moving in the still cove. -> give_up
 
                     * (give_up) [Give up.] {"We have to face the facts," says Alexis. "They aren't in the cove." Mia lets out a frustrated sigh.|"Again, nothing," says Alexis with an edge of anxiety in her voice.}
@@ -252,7 +263,7 @@
 // this is where we'll join from capsized kayaks.
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   SYS_SOUND_441
+    -   SYS_SCENE_8_19
     -   Earlier Mia and Alexis had entered the cove at the arranged meeting time. After not finding Julian and Troy in the cove after several signalling attempts, Mia and Alexis leave the cove.
     
         * ["That was the plan," says Alexis.]
@@ -262,6 +273,7 @@
 == leave_cove ==
     -   CHR_ALX_REL
     -   CHR_MIA_SAD
+    -   SYS_SOUND_814
     -   "That was the plan," says Alexis as the <i>Lakesong</i> slips out of the cove. "If we don't find them at the appointed time, we leave the cove and return in an hour."
 
             -   (opts)

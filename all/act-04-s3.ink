@@ -17,6 +17,7 @@
 // will need to account for having seen stream for the solve matrix later
 // will need to account for this case and branch off to a path where the girls find them in the cove.
 -  SYS_SCENE_8_29
+-  SYS_SOUND_820
 -   Following the plan, after leaving Julian and Troy to investigate the cove on the kayaks, Alexis took the <i>Lakesong</i> away from the cove to put some distance between the boat and the island. 
 
     -   (opts)
@@ -26,7 +27,9 @@
             -- CHR_ALX_REL
             Alexis takes the boat in slow circles as they wait for the appointed rendezvous time. -> blast
         
-        * (blast) [Alexis gives the horn a prolonged blast.] {Per the rules for operating in fog, Alexis gives the horn a prolonged blast every two minutes.| Mia keeps a sharp lookout as they slowly circle with the island in the distance.}
+        * (blast) [Alexis gives the horn a prolonged blast.] 
+        - SYS_SOUND_821
+        {Per the rules for operating in fog, Alexis gives the horn a prolonged blast every two minutes.| Mia keeps a sharp lookout as they slowly circle with the island in the distance.}
         
         * {blast} [After some time passes...]
             -> after_some_time
@@ -99,6 +102,7 @@
 == boat_horn ==
     -   CHR_MIA_SUR
     -   CHR_ALX_SUR
+    -   SYS_SOUND_815
     -   Alexis is interrupted by the sound of a prolonged blast from a boat horn in the near distance, somewhere in the fog. They are both startled.
 
             - (opts)
@@ -136,6 +140,7 @@
                     
             = prolonged_blast
             -   CHR_ALX_REL
+            -   SYS_SOUND_816
             -   Alexis sounds the <i>Lakesong's</i> horn then waits and hopes. There's a chance they are not on an intersecting path with the other vessel. The second horn signal will either be closer or farther away.
 
                     * [The only sound is their own engine.]
@@ -154,6 +159,7 @@
             = hear_toot
             -   CHR_ALX_REL
             -   CHR_MIA_REL
+            -   SYS_SOUND_817
                 They hear a long, drawn-out toot through the fog and realize the sound is closer, much closer.
 
                     *  [Alexis toots.]
@@ -162,6 +168,7 @@
             = alx_toots
             -   CHR_ALX_REL
             -   CHR_MIA_REL
+            -   SYS_SOUND_818
             -   Alexis responds with a single prolonged blast from the <i>Lakesong's</i> horn indicating their position to the other vessel hidden in the fog.
 
                 A couple more advisory toots are exchanged until gradually they see another boat appear out of the fog.
@@ -507,7 +514,7 @@
 
             = reverse_direction
             -   Although the fog is breaking up, it's still patchy, so Alexis gives a prolonged toot with the <i>Lakesong's</i> horn before beginning her slow turn back towards the island.
-
+            -   SYS_SOUND_819
                     * [Return to the cove.]
                         -> return_to_cove
 

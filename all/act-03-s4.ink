@@ -104,6 +104,7 @@ SCENE 04
 // clear the fog
                 //--   SYS_SCENE_5_02
                 -   SYS_SCENE_8_07
+                -   SYS_SOUND_802
                 **  ["How strange," says Troy.]
                     -> how_strange
                 
@@ -118,6 +119,7 @@ SCENE 04
 // SND increasing buzzing
             *   [Everyone turns to Troy.]
                 -- CHR_TRO_REL
+                -- SYS_SOUND_803
 
                 "OK," says Troy. "When I say run, run."
 
@@ -130,6 +132,7 @@ SCENE 04
 
   === know_else_strange ===
     -   SYS_SCENE_8_08
+    -   SYS_SOUND_802
         - CHR_MIA_REL
         - CHR_ALX_REL
         - Mia points high over the island. "Look at those strange birds over there in the distance."
@@ -162,6 +165,7 @@ SCENE 04
 // SND drones/buzzing closing in
     //-   SYS_SCENE_5_03
     -   SYS_SCENE_8_09
+    -   SYS_SOUND_804
     -   Mia, Alexis, Julian, and Troy begin running back to the forest opening. The pursuing flying creatures close in with their terrible buzzing sound.
 
             * The creatures dive[.] and swoop low overhead. The friends run stooped-over to avoid the creatures' sharp, falcon-like talons!
@@ -180,12 +184,14 @@ SCENE 04
                 -> reenter_forest_path
 
         = reenter_forest_path
+        -   SYS_SOUND_805
         -   Although the flying creatures chase them the entire way, the friends make it to the path at the edge of the forest.
 // SND remove much of drone/buzz
 
 
 
                 * [They push on.] Several determined creatures continue the chase down the path and into the forest, while the rest of the swarm circles menacingly above the treetops.
+                    -- SYS_SOUND_806
 // SND just a few drones remain
 
 
@@ -275,6 +281,7 @@ SCENE 04
 // this is dual use. used after isle exploration as well.
 // SND engine sound
     - SYS_SCENE_4_10
+    -   SYS_SOUND_436
     -   CHR_TRO_REL
     -   "I'll position the boat directly over the anchor, while Julian pulls in the line," says Troy.
 
@@ -443,6 +450,7 @@ SCENE 04
 
         = draws_abeam
 // SND back to clear weather sounds: birds, water, engine
+        -   SYS_SOUND_446
         -   The last of the fog burns off just as the <i>Lakesong</i> draws abeam the mouth of the cove. The blue sky and warm afternoon sun are a welcome sight to the friends, who take in the lush beauty of the tranquil island.
 
                         * ["Hey, where did that other boat go?" says Alexis.]
@@ -468,6 +476,7 @@ SCENE 04
 === tro_on_it_turns ===
 // SND intro buzzing sound in distance
     -   SYS_SCENE_4_13
+    -   SYS_SOUND_447
     -   CHR_TRO_REL
     -   "Those creatures are coming this way!" Julian points over the island. {run_away:"Here we go again!"}
 
@@ -489,6 +498,7 @@ SCENE 04
 -   SYS_CHAP_13
 // this is where you can rejoin from explore island track
 // SND drone sounds getting closer
+    -   SYS_SOUND_448
     -   CHR_JUL_SUR
     -   Julian keeps his eyes aft over the stern of the boat, tracking the rapidly approaching swarm. It has cleared the island and now flies over open water in pursuit of the boat.
 
@@ -590,6 +600,7 @@ SCENE 04
 
 === post_shudder_full ===
 // SND put drone sound more distant
+    -   SYS_SOUND_449
     -   The <i>Lakesong</i> continues to move quickly over the water, gaining more and more distance from the odd, flying creatures chasing them.
 
             { shuffle:
@@ -605,6 +616,7 @@ SCENE 04
 == yes_engine_problem ==
 
         *    Suddenly, an alarm sounds[.] and the engine cuts out, leaving only the buzzing of the rapidly-approaching creatures.
+            -   SYS_SOUND_450
             -> what_happened_engine
 // SND kill engine sound
 
@@ -614,6 +626,7 @@ SCENE 04
         -   "What happened, Troy?" asks Alexis.
 
             * ["I'm not sure," says Troy.]
+            -> not_sure_alarm
 
         = not_sure_alarm
         -   CHR_TRO_SAD
@@ -622,6 +635,7 @@ SCENE 04
 
                     ** "And so are we," says Julian[.], as the flying creature quickly catch up to the stricken <i>Lakesong</i>.
 // SND creatures/buzzing close
+                    - SYS_SOUND_451
                     -> creatures_circle
 
         = creatures_circle
@@ -645,6 +659,7 @@ SCENE 04
         -   CHR_TRO_SUR
         -   CHR_MIA_REL
 // SND speedboat approach
+        -   SYS_SOUND_452
         -   "And it's coming really fast," he Troy.
         -   "Coming to rescue us, I hope," says Mia.
 
@@ -654,6 +669,7 @@ SCENE 04
         -   CHR_ALX_ANG
         -   CHR_TRO_ANG
 // SND kill speedboat
+        -   SYS_SOUND_453
         -   As the speedboat draws close to the Lakesong, the friends see what Alexis means. Inside the speedboat are three figures with black ski masks hiding their faces!
 
                 * ["Put your hands up and prepare to be boarded!"]
@@ -675,6 +691,7 @@ SCENE 04
 
 === chased_keep_current ===
 // SND buzzing closer
+    -   SYS_SOUND_454
     -   CHR_TRO_REL
     -   Troy keeps the current speed for now. He knows he still has time to evaluate the <i>Lakesong's</i> condition before the swarm of creatures overtakes the boat.
 
@@ -751,6 +768,7 @@ SCENE 04
           -- CHR_JUL_SUR
           -- CHR_TRO_REL
 // SND buzzing much closer
+          -- SYS_SOUND_455
           Julian shouts over the increasing buzzing sound of the flying creatures as they get closer and closer to the fleeing boat.
 
                         ** [Troy nudges the throttle again.]
@@ -770,6 +788,7 @@ SCENE 04
 
             * [The distance from the creatures gradually increases.] 
                 -- SYS_SCENE_4_14
+                -- SYS_SOUND_456
                 --  CHR_JUL_REL
                 Julian watches as the swarm recedes. Then, one by one, the creatures begin peeling off and returning north.
 
@@ -786,6 +805,7 @@ SCENE 04
 
         = mia_photo_burst
 // SND creature sounds fading
+        -   SYS_SOUND_457
         -   CHR_MIA_REL
         -   With her phone's camera, Mia takes a quick photo burst of the departing creatures.
 
