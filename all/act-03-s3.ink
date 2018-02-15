@@ -18,7 +18,7 @@ SCENE 03
     = fog_less_thick_maybe
     -   CHR_TRO_REL
     -   CHR_ALX_REL
-    -   "That's good news," he says. "Taking on water is the most likely problem after running aground."
+    -   "Phew," he says. "Taking on water is the most common problem you can have after running aground."
     -   "And the fog seems less thick now," says Alexis. "That's more good news!"
     -   "Agreed," says Troy. "It's still pretty thick, but I can see twice as far as I could when we first entered the fog."
 
@@ -31,19 +31,10 @@ SCENE 03
     -   CHR_JUL_SUR
     -   CHR_MIA_REL
     -   "What? I don't see anything," says Mia.
-        "Well, it's gone now, but I swear I caught a glimpse of a shoreline."
+    -   "Well, it's gone now, but I swear I caught a glimpse of a shoreline!"
+    -   Troy shakes his head. "Our last position before we lost visibility was pretty far from shore," he says.
 
-            * ["Unlikely," says Troy.]
-                -> unlikely_far_from_shore
-
-    = unlikely_far_from_shore
-    -   CHR_TRO_REL
-    -   CHR_JUL_SUR
-    -   "Our last position before we lost visibility was pretty far from shore," he says.
-
-        "Look! There it is again," says Julian, pointing.
-
-            * ["I see it too," says Mia.]
+            * ["Look! There it is again," says Julian.]
                 -> see_it_too
     = see_it_too
     -   CHR_MIA_REL
@@ -59,17 +50,10 @@ SCENE 03
     -   CHR_JUL_SML
     -   CHR_TRO_REL
     -   "That's doubtful," says Troy. "There are <i>hundreds</i> of islands scattered all over the lake."
+    -   "The evidence is clear!" says Julian. "Going north? Check. Fog? Check! Loss of cell signal? <i>Check!"</i>
 
-             - (opts)
-                * [Julian is certain.]
-                -- CHR_JUL_SAD
-                "The evidence is clear," says Julian. -> fog
+                * [Troy isn't convinced.] -> tro_not_convinced
 
-                * (fog) ["C'mon, Troy, look..."] {"Going north? Check. Fog? Check. Loss of cell signal? Check."| He looks at Mia and Alexis for support, but neither says a word.}
-
-                * {fog} [Troy isn't convinced.] -> tro_not_convinced
-
-            -   -> opts
 
 == tro_not_convinced ==
     -   CHR_ALX_SML
@@ -78,7 +62,7 @@ SCENE 03
         - (opts)
             *   ["No flipping way!" says Julian.]
                 -- CHR_JUL_REL
-                "What if Troy's wrong and that <i>is</i> Kalkomey Isle? Getting attacked by mutant creatures is not high on my list of—of entertainment preferences!"
+                "What if that <i>is</i> Kalkomey Isle? Getting attacked by mutant creatures is not high on my list of—of entertainment preferences!"
 
 
             *   ["We do have the paddleboards," says Troy.]
@@ -118,7 +102,7 @@ SCENE 03
 === go_to_island ===
 VAR explore_island = true
     -   CHR_ALX_SML
-    -   "Yes!" says Alexis. "Let's get those paddleboards off the racks and into the water."
+    -   "Yes!" says Alexis. "Let's get those paddleboards into the water!"
 
             * [Launch the paddleboards.]
             -> paddleboard_safety
@@ -159,7 +143,9 @@ VAR explore_island = true
             -- CHR_ALX_SML
             -- CHR_JUL_SAD
 
-            "What about two out of three?" asks Julian, but Alexis shakes him off. "Let's get these paddleboards off the racks."
+            "Uh... what about two out of three?" asks Julian, but Alexis ignores him.
+
+            "Let's get these paddleboards off the racks!" she says.
 
                 ** [Launch the paddleboards.]
                 -> paddleboard_safety
@@ -185,14 +171,14 @@ VAR explore_island = true
 -   SYS_SCENE_4_11
 -   SYS_SOUND_432
 // SND paddling
-    -   Troy and Mia navigate one board, while Alexis and Julian take the other. 
-    
-        * [Behind them...]
+    -   Troy and Mia navigate one board, while Alexis and Julian take the other.
+
+        * [They leave the boat's lights shining.]
             -> behind_them
-    
+
     = behind_them
     -   SYS_ACHIEVE_6_3
-    -   Behind them, the Lakesong's masthead and stern lights shine brightly, acting as the all-around white light required when a boat is anchored in fog or darkness. 
+    -   The Lakesong's masthead and stern lights shine brightly, acting as the all-around white light required when a boat is anchored in fog or darkness.
 
             * They arrive on the small beach[.], and as they look around, a few things immediately catch their attention.
 
@@ -205,7 +191,7 @@ VAR explore_island = true
                 *   [Explore object 1: An old dock.]
                     -- CHR_ALX_REL
                     -- CHR_TRO_REL
-                    "Hey, this looks like an old dock hidden beneath this overgrowth," says Alexis, peeling back tree limbs.
+                    "Hey, there's an old dock here," says Alexis, peeling back tree limbs and overgrown vines.
                     "But look!" says Troy. "Parts of it are brand new."
 
                         ** ["Someone must be still using it," says Alexis]
@@ -213,7 +199,7 @@ VAR explore_island = true
                 *   [Explore object 2: A hidden rake.]
                     -- CHR_MIA_REL
                     -- CHR_JUL_REL
-                    Mia sees a handle sticking out of the brush. She finds it's connected to a rake.
+                    Mia sees a handle sticking out of the brush. It's connected to a rake.
                     "Who would hide a rake out here?" asks Mia.
                     "Maybe to rake away footprints?" wonders Julian.
                         ** ["Eww... that's creepy," says Mia.]
@@ -221,10 +207,10 @@ VAR explore_island = true
                 *   [Explore object 3: An old sign.]
                     -- CHR_TRO_REL
                     -- CHR_MIA_REL
-                    Troy finds a sign laying face-down and picks it up.
+                    Troy finds a worn-down sign laying on the sand and picks it up.
 
                     "What's it say?" asks Mia.
-                    "Most of it is washed out," he says. "Looks like part of a logo... and the words 'GENETICS' and "FIELD STUDY."
+                    "Looks like part of a logo... and the words 'GENETICS' and "FIELD STUDY."
                         ** [Julian's eyes open wide.]
 
                 *   {loop} [Enough exploring.]
@@ -237,7 +223,7 @@ VAR explore_island = true
 
             - (done)
             - CHR_TRO_SUR
-            -   "If this is Kalkomey Isle, it sure doesn't appear to be abandoned," says Troy. "Somebody's certainly been here recently."
+            -   "If this is Kalkomey Isle, it sure isn't abandoned," says Troy.
 
                 As the fog slowly dissipates, more of the island becomes visible.
 
@@ -249,7 +235,7 @@ VAR explore_island = true
     -   CHR_ALX_SML
     -   Alexis points to a narrow footpath leading into the woods... and further into the island.
 
-        "Let's see where that path goes!" she says.
+        "Let's see where it goes!" she says.
 
             *   [Follow the path, since it's still too foggy to boat away from the island.]
                 -> follow_the_path
@@ -282,7 +268,7 @@ VAR explore_island = true
     -   CHR_JUL_REL
     -   "The <i>Lakesong</i> is well-anchored," he says. "Besides, I think it's safer if we all stick to together."
 
-      "Well, since you put it that way, bro," says Julian, laughing nervously. "I mean, if the boat is OK and all." Julian falls into line with his friends as they walk to the start of the path.
+      "Well, since you put it that way, bro," says Julian, laughing nervously. "I mean, if the boat is OK and all..."
 
-            * [Down the path.]
+            * [The friends walk down the path.]
                 -> enter_the_path

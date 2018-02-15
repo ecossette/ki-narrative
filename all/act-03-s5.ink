@@ -7,7 +7,7 @@ SCENE 05
 
 === inspect_for_damage
     -   CHR_TRO_SUR
-    -    Troy finds no damage nor any sign that the boat has taken on water.
+    -    Troy finds no sign that the boat has taken on water.
         "We're looking good," says Troy. "We got lucky. No damage from running aground{lightning_strike_occurs: and only the busted radio from getting too close to the storm}."
 
             * [Depart for Laketown.]
@@ -25,7 +25,7 @@ SCENE 05
 
     = discuss_the_isle
     -   CHR_MIA_REL
-    -   "So how's everyone feeling after our first visit to Kalkomey Isle?" Mia asks her friends.
+    -   "How's everyone feeling after our first visit to Kalkomey Isle?" Mia asks her friends.
 
         -   (opts)
 
@@ -41,7 +41,7 @@ SCENE 05
 
                 * ["Frustrated," says Troy.]
                 --   CHR_TRO_REL
-                    "If we knew the engine was going to OK," says Troy, briefly looking back toward the island, "we might have gotten a better look at those creatures."
+                    "If we knew the engine was going to be OK," says Troy, "we might have gotten a better look at those creatures!"
 
                 *    {loop} [Enough talking.]
                             -> done
@@ -78,9 +78,9 @@ SCENE 05
 == mia_photos_look ==
     -   CHR_TRO_REL
     -   CHR_MIA_REL
-    -   Mia takes out her phone. "Like I said, the light was poor and the creatures were moving." She swipes through her recent photos. "This one isn't too bad."
+    -   Mia takes out her phone and checks her photo app. "Like I said, the light was poor and the creatures were moving... but this one isn't too bad!"
 
-        Mia holds the phone out to Troy, as Julian and Alexis also move in for a look.
+        Troy, Julian, and Alexis move in for a look.
 
             * ["And zooming..."]
                 -> blow_it_up
@@ -97,39 +97,30 @@ SCENE 05
         -   CHR_TRO_REL
         -   CHR_JUL_REL
         -   "Even pixelated, I'm pretty sure there is something inorganic at work here," says Troy.
+        -   "What do you mean by <i>inorganic</i>?" says Julian.
 
-                * ["Inorganic?" asks Julian.]
-                    -> inorganic
-            
-        = inorganic
-        -   CHR_TRO_REL
-        -   CHR_JUL_REL
-        "What do you mean by <i>inorganic</i>?" says Julian.
-            
-            "As in not natural," says Troy. 
-
-                * [Julian smirks.]
+                * ["As in... not natural," says Troy.]
                 ->what_natural_mutant
 
         = what_natural_mutant
         -   CHR_JUL_SML
         -   CHR_ALX_REL
-        -   "Well, yeah, what is natural about a genetic mutation?" asks Julian.
+        -   Julian smirks. "Well, yeah, what is natural about a genetic mutation?"
 
-        -   "No, Julian," says Alexis. "Troy means that he doesn't think these are living organisms!"
+        -   "No, Julian," says Alexis. "Troy means that these aren't living organisms!"
 
-                * ["Right," says Troy.]
+                * ["They're mechanical," says Troy.]
                     -> tro_points_photo
 
         = tro_points_photo
         -   CHR_TRO_SUR
-        -   "Something mechanical." Troy points to a spot on the photo. "Look here... to me, that looks like a propeller." Alexis nods in agreement, but Julian looks doubtful.
+        -   Troy points to a spot on the photo. "Look here... to me, that looks like a propeller!" Alexis nods in agreement, but Julian looks doubtful.
 
             * ["Could be," says Mia.]
                 -> when_home_photo
 
         = when_home_photo
-// add to mystery achievement 
+// add to mystery achievement
 -   SYS_ACHIEVE_7_2
         -   CHR_MIA_REL
         -   "When I get home I may be able to clean up the photo a bit on my computer."
@@ -157,30 +148,30 @@ SCENE 05
                     // launch study guide of night nav here, upon close send student to night nav activity
                     ** [Onward]
                         -> night_nav_mini
-                
+
                 *   [Go directly to the night navigation activity.]
                     // launch night nav activity here move to return_to_marina_day_one upon complete
                     -> night_nav_mini
-                            
+
         = night_nav_mini
         - SYS_MINIGAME_23
             * [Onward]
             -> return_marina_day_one
-                        
+
 === return_marina_day_one
 // SND bring in dock sounds
 // SND no bird sounds since it's after dark
     -   CHR_MPO_REL
-    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock.  The man repeatedly points toward an empty slip, while the woman looks on with a sad expression. Captain Garcia nods and takes notes.
-                    
-        *   [Dock the Lakesong.] 
+    -   Entering the marina at <i>slow, no wake speed</i>, the friends see Captain Garcia and another marine patrol officer talking with a man and woman on the dock. The man repeatedly points toward an empty slip, while the woman looks on with a sad expression. Captain Garcia nods and takes notes.
+
+        *   [Dock the Lakesong.]
             ** {do_wind_none} [There is <b>no</b> wind or current.]
                 -> no_wind_s3
             ** {do_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
                 -> wind_toward_dock_s3
             ** {do_wind_away} [The wind and current direction is <b>away</b> from the dock.]
                 -> wind_away_dock_s3
-    
+
 // launch the docking activity again Here
 // need build another tunnel similar to casting off?
     = no_wind_s3
@@ -188,7 +179,7 @@ SCENE 05
     -   SYS_MINIGAME_4_24
         * [OK]
             -> after_docking_ahoy
-    
+
     = wind_toward_dock_s3
     ~ do_wind_toward = false
     -   SYS_MINIGAME_5_24
@@ -200,7 +191,7 @@ SCENE 05
     -   SYS_MINIGAME_6_24
         * [OK]
             -> after_docking_ahoy
-                
+
 == after_docking_ahoy
 -   SYS_CHAP_14
 // SND kill engine sound but keep regular dock sounds
@@ -215,7 +206,7 @@ SCENE 05
 
         = mac_approach
         -   CHR_DID_REL
-        -   Mac approaches the <i>Lakesong</i>. "I haven't seen weather like that in years."
+        -   "I haven't seen weather like that in years," Mac says.
 
                 *"What's going on over there?" asks Mia[.], pointing toward the marine patrol officers and the couple.
                     -> mia_ask_police_couple
@@ -223,22 +214,14 @@ SCENE 05
         = mia_ask_police_couple
         -   CHR_MIA_REL
         -   CHR_DID_SAD
-            - (opts)
+        -   "We've had another boat robbery," he says bitterly. "The thieves used the storm as cover to strike again."
 
-                *   ["Sad news..."]
-                    -- CHR_DID_SAD
-                    "Well, that's some sad news, you see, as we've had another boat robbery," he says bitterly.-> storm
-
-                *   (storm) ["The storm hit hard..."] "{As bad as the storm was, it wasn't enough to deter the thieves|They used the storm as cover to strike again}."
-
-                *  {storm} ["Another robbery!"] -> another_robbery
-
-            -  -> opts
+                *  ["Another robbery!"] -> another_robbery
 
         = another_robbery
         -   CHR_DID_REL
         -   CHR_TRO_REL
-            "Yep, those are the owners. The Crowleys. They owned the <i>Dee Stress</i> an—"
+            "Those are the owners. The Crowleys. They owned the <i>Dee Stress,</i> an—"
 
             "An outboard cabin cruiser in the same length class as the <i>Lakesong</i>," says Troy. Mac nods.
 
@@ -246,7 +229,7 @@ SCENE 05
 
         = reward_announce
         -   CHR_DID_SML
-        -   Mac pauses before continuing. "There's now a reward for anyone who offers information that leads to an arrest!" Mac looks at each of the friends in turn. "The reward is a boat... a big one, too."
+        -   "There's now a reward for anyone who offers information that leads to an arrest!" Mac seems excited. "The reward is a boat... a big one, too."
 
                 * [Ask Mac if he knows anything.]
                     -> ask_robbery_questions
@@ -306,7 +289,7 @@ SCENE 05
             * ["Depends on what's involved," says Julian.]
             --  CHR_JUL_REL
             --  CHR_TRO_SML
-                "Like, would taking a shot at that reward include <i>encountering flying creatures</i> again?"
+                "Like, would 'taking a shot' at that reward include <i>encountering flying creatures</i> again?"
 
                 Troy looks at Julian and grins.
 
@@ -394,7 +377,7 @@ SCENE 05
 
     = scary_says_jul
     -   CHR_JUL_REL
-    -   "What's scary about being chased {enter_the_path:, not once but twice,} by a genetic mutation that is part bat, part falcon, and part hornet?" says Julian sarcastically.
+    -   "What's 'scary' about being chased {enter_the_path:, not once but twice,} by a genetic mutation that is part bat, part falcon, and part hornet?" Julian says, dripping with sarcasm.
 
             * ["What if they aren't 'creatures' at all?" says Troy.]
                 -> man_made_theory
@@ -432,7 +415,7 @@ SCENE 05
 
     = curious_cat
     -   CHR_JUL_SAD
-    -   "And curiosity killed the cat is how I heard it."
+    -   "And curiosity killed the cat, is how I heard it."
 
         It's clear that Julian is reluctant to return to the island, so his three friends decide to:
 
@@ -452,15 +435,10 @@ SCENE 05
 
     = right_but
     -   CHR_TRO_REL
-    -   "But," says Troy, "we can't do it without Julian. My plan requires all four of us."
-
-            *   [Julian perks up.]
-                -> jul_perk_up
-
-    = jul_perk_up
     -   CHR_JUL_REL
-    -   "Really," says Julian. "You need me?"
-        "Absolutely, says Troy.
+    -   "But," says Troy, "we can't do it without Julian. My plan requires all four of us."
+    -   Julian perks up. "Really," says Julian. "You need me?"
+    -   "Absolutely, says Troy.
 
             * Julian grins.[]
                 -> meet_0900
@@ -479,6 +457,14 @@ SCENE 05
     -   CHR_TRO_REL
     -   "My plan requires all four of us."
     ->  jul_perk_up
+    
+     = jul_perk_up
+    -   CHR_JUL_REL
+    -   "Really," says Julian. "You need me?"
+        "Absolutely, says Troy.
+
+            * Julian grins.[]
+                -> meet_0900
 
 === meet_0900 ===
     -   CHR_JUL_SML
@@ -490,6 +476,3 @@ SCENE 05
             // launch quiz 3.2 here, continue to day_two_begins
             -- SYS_QUIZ_06
             -> day_two_begins
-
-
-

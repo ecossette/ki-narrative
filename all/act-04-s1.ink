@@ -13,9 +13,9 @@ SCENE 01
     {
 
         - lightning_strike_occurs:
-        Troy arrives at the dock the early the following morning and begins work on swapping the damaged radio with a new one. The time passes quickly for Troy as he focuses on his task.
+        Troy arrives at the dock the early the following morning and begins to swap the damaged radio with a new one.
         - else:
-        Troy arrives at the dock early the following morning and begins preparing the boat for another day on the lake—a day that will include a return to Kalkomey Isle.
+        Troy arrives at the dock early the following morning and begins to prepare the boat for another day on the lake—a day that will include a return to Kalkomey Isle.
 
 
     }
@@ -27,7 +27,7 @@ SCENE 01
     - CHR_TRO_SUR
     "Fire!" he hears someone shout. "There's a fire at the storage shed!"
 
-    Troy looks and sees that a small fire has broken out on next to one of the storage sheds on the marina. Since he is closest to the fire, he grabs one of the fire extinguishers from the boat and rushes to the shed.
+    Troy sees that a small fire has broken out next to one of the storage sheds on the marina! Since he is closest to the fire, he grabs one of the fire extinguishers from the boat and rushes to the shed.
 
         * [Put out the fire.]
             - SYS_MINIGAME_30
@@ -45,20 +45,17 @@ SCENE 01
         -> ahoy_troy
 
     = ahoy_troy
-    -   CHR_TRO_SML
-    -   Troy sees Mia, Alexis, and Julian approaching the <i>Lakesong</i>.
-
-        * ["Good morning!" says Troy. "Ready and rested?"]
+    -   CHR_TRO_REL
+    -   CHR_ALX_REL
+    -   Troy smiles as Mia, Alexis, and Julian arrive at the <i>Lakesong</i>.
             -> kayaks_racked
 
     == kayaks_racked ==
-    -   CHR_TRO_REL
-    -   CHR_ALX_REL
-    Alexis notices that two kayaks are now in the <i>Lakesong's</i> racks instead of the paddleboards from yesterday.
+    Alexis notices that two kayaks are now in the <i>Lakesong's</i> racks instead of the paddleboards.
      - (opts)
                 *    ["So 'Operation Kayak' is a go?" says Alexis.]
                     -- CHR_TRO_REL
-                     "Yes, we just need do our pre-departure check, fuel up, and then our plan is in motion," he says. -> smaller
+                     "Yes, we just need do our pre-departure check and fuel up. Then our plan is in motion," he says. -> smaller
 
                 *    (smaller) ["They're smaller than I'd expected," says Mia.] {Troy looks at the kayaks and a sly grin appears on his face. "The kayaks are small, maneuverable, and quiet. Exactly what we need."|"The kayaks are going to be perfect for investigating that cove."}
 
@@ -72,7 +69,7 @@ SCENE 01
                             -> ready_cast_off
 
                 }
-        
+
         -     -> opts
 
         = radio_fix_complete
@@ -108,35 +105,35 @@ SCENE 01
 
 
 == check_conditions_day_2 ==
-    
+
     -   With the pre-departure checklist complete, the four friends don their life vests and prepare to cast off.
 
      * [Check the conditions.]
         -> co_wind_direction_3
-                        
+
 === co_wind_direction_3 ===
     -   The friends check the wind and current and find the following conditions.
-    
+
         * {co_wind_none} [There is <b>no</b> wind or current.]
             -> no_wind_co3
         * {co_wind_toward} [The wind and current direction is <b>toward</b> the dock.]
             -> wind_toward_dock_co3
         * {co_wind_away} [The wind and current direction is <b>away</b> from the dock.]
             -> wind_away_dock_co3
-    
+
 == no_wind_co3 ==
     ~ co_wind_none = false
     -   SYS_MINIGAME_1_31
         * [OK]
             -> toward_fuel
-    
+
 == wind_toward_dock_co3 ==
     ~ co_wind_toward = false
     -   SYS_MINIGAME_2_31
         * [OK]
             -> toward_fuel
 
-== wind_away_dock_co3 == 
+== wind_away_dock_co3 ==
     ~ co_wind_away = false
     -   SYS_MINIGAME_3_31
         * [OK]
@@ -166,12 +163,12 @@ SCENE 01
 == launch_retrieve_review ==
     *   [Review launching and retrieving a vessel.]
         -- SYS_PDF_31
-            ** [OK.] 
+            ** [OK.]
                 -> trailer_activity
 
     *   [Skip the review and go directly to the activity.]
         -> trailer_activity
-            
+
 == trailer_activity ==
     - SYS_MINIGAME_32
         -> proceed_to_fueling
@@ -182,16 +179,16 @@ SCENE 01
 
             * [The fuel depot.]
                 -> fueling_depot
-                
+
 == fueling_depot ==
     -  SYS_ACHIEVE_2_4
     -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
-        
+
         * [Dock to at the fuel station.]
             -> next_pump
-            
+
 == next_pump ==
-    -   The friends tie up the boat and step onto the dock. Just ahead at the next pump, they see Cletus filling several large fuel containters on the deck of a boat. 
+    -   The friends tie up the boat and step onto the dock. At the next pump, they see Cletus filling several large fuel containers on the deck of a boat.
 
      - (opts)
                 *    [ Cletus checks out the <i>Lakesong</i>.]
@@ -207,10 +204,10 @@ SCENE 01
         = fueling
         -   CHR_CLT_REL
         -   CHR_TRO_REL
-        
+
         - "The only thing better than a day on the lake is another day on the lake," says Troy. "Power, sail, or paddle... it's all good."
 
-            "That so?," says Cletus. "Must be nice to have all day to play." Cletus says nothing more, turning his back as he continues to fill the canisters. 
+            "That so?" says Cletus. "Must be nice to have all day to play." Cletus turns his back and continues to fill the canisters.
 
         * [Fuel the boat.]
             - SYS_MINIGAME_34
@@ -232,7 +229,7 @@ SCENE 01
                     -- CHR_TRO_REL
                      "That's a duck-hunting boat, and the puppy is learning how to behave on the water," he says.  -> dog
 
-                *    (dog) [Troy gives the horn two quick toots.] 
+                *    (dog) [Troy gives the horn two quick toots.]
                     -- SYS_SOUND_444
                     {Troy's passing signal startles the puppy. "The dogs need to get accustomed to being in a boat the same as you or me."|"Anglers and hunters are boaters, too, as are their four-legged passengers."}
 
@@ -254,7 +251,7 @@ SCENE 01
 // add to other water activities badge here
     -   SYS_SCENE_4_16
     -   The journey north toward Kalkomey Isle is a long one, but all four agree that the time is passing more quickly than expected. The warm and sunny weather helps too at least until...
-           
+
             * [They hit the fog.] -> infamous_fog
 
 == infamous_fog ==
@@ -264,7 +261,7 @@ SCENE 01
         - (opts)
                 *    [ Troy turns on the lights and slows the boat.]
                     -- CHR_TRO_REL
-                     As the fully illuminated <i>Lakesong</i> slows, the sound of the engine decreases, allowing Troy to speak in a quiet voice. "Let's keep a sharp lookout in this fog," he says.  -> lookout
+                     The fully illuminated <i>Lakesong</i> slows. "Let's keep a sharp lookout in this fog," Troy says.  -> lookout
 
                 *    (lookout) ["The cove should be straight ahead," says Troy.] {"I spent some time studying the charts last night, and the sandbars are all to the west, near the beach, but still..."|"We know there's more than sandbars out here."}
 
@@ -275,38 +272,38 @@ SCENE 01
  === fog_talk ===
     -   CHR_TRO_REL
     -   SYS_SOUND_440
-    -   Troy gives the first prolonged blast from the horn, as the <i>Lakesong</i> continues straight ahead into the fog where Troy expects to find the cove. A couple of times, the boat shudders briefly as it meets some cross currents.
+    -   Troy gives the first prolonged blast from the horn, as the <i>Lakesong</i> continues straight ahead into the fog. A few times, the boat shudders briefly as it meets some cross currents.
 
     -   "I think that cross current is where the cold water is flowing in," says Troy.
-            
+
         * ["How cold is it?" asks Mia.]
             -> how_cold
-                
+
             = how_cold
             -   CHR_TRO_REL
             -   CHR_MIA_REL
             -   "I dunno," says Troy. "Maybe fifty degrees? I sure wouldn't want to find out first-hand."
-            
+
                 * [Review <i>Cold Water Immersion and Hypothermia</i>.]
                 // launch the sg for cold water immersion and hypo
                     -- SYS_PDF_33
                     -> another_prolonged
-        
-        
-        
+
+
+
             = another_prolonged
             //  add to emergency prep badge
- 
+
             -   Troy gives another prolonged blast on the horn.
             -   SYS_SCENE_8_14
-    
+
             - (opts)
                     *    [ Four pairs of eyes scan the area ahead.]
                         -- CHR_TRO_REL
                          Troy has the throttle just a bit over idle, keeping their speed to a minimum in the reduced visibility. All the boat's navigation lights are on.  -> birds
-    
+
                     *    (birds) ["The fog isn't as bad as yesterday," says Alexis.] {"Looks like we've got about 100 yards of visibility, give or take," says Troy. "Enough for us to launch without being seen."|"The fog should burn off later," he says, "making it easier to find each other."}
-    
+
                     *    {birds} [The sound of birds...] -> bird_sounds
             -     -> opts
 
@@ -315,7 +312,7 @@ SCENE 01
     -   SYS_SOUND_445
     -   CHR_TRO_SML
     -   The sound of birds signal their arrival at the island.
-        "There's the cove!" says Troy. "As we planned, we'll launch the kayaks from there." Troy gives another prolonged blast from the horn, keeping to the rule of signaling once every two minutes during reduced visibility.
+        "There's the cove!" says Troy. "That's where we'll launch the kayaks." Troy gives another prolonged blast from the horn, keeping to the rule of signaling once every two minutes during reduced visibility.
 
             * [ Review the plan.]
                 -> review_plan
@@ -330,7 +327,7 @@ SCENE 01
             *    [The kayaks.]
                 -- CHR_TRO_REL
                 -- CHR_ALX_REL
-                "Troy and Julian will head out in the kayaks to investigate the shoreline of the cove. You'll spend up to two hours looking for clues about what happened to the boat we saw disappear yesterday," says Alexis.
+                "Troy and Julian will head out in the kayaks to investigate the cove," says Alexis. "You'll spend up to two hours looking for clues about what happened to the boat we saw disappear yesterday."
             *    [The <i>Lakesong</i>.]
                 --  CHR_TRO_REL
                 --  CHR_JUL_REL
@@ -376,7 +373,7 @@ SCENE 01
         = before_set_off
         -   CHR_TRO_REL
         -   CHR_JUL_REL
-        "Before we set off, take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PFD pockets, says Troy. 
+        "Before we set off, take all the signal devices—the flares, mirror, and whistle—out of your bag and put them in your PFD pockets, says Troy.
 
             * ["And you've got the walkie-talkie?" asks Julian.]
                 -> no_two_way
@@ -405,9 +402,9 @@ SCENE 01
         = hope_for_fog
         -   CHR_JUL_REL
         -   CHR_ALX_REL
-        -   "The fog is our cover," he says. "It'll hide us from people—and creatures." Julian scans the foggy overhead nervously.
+        -   "The fog is our cover," he says. "It'll hide us from people—and creatures." Julian scans the foggy sky overhead nervously.
 
-        -   "Based on the photo Mia enlarged and cleaned up," says Alexis, "I'm convinced that there really are no creatures, just drones."
+        -   "Based on the photo Mia enlarged," says Alexis, "I'm convinced that they really are just drones."
 
             * [ "Creatures, drones, thieves... same diff," says Julian.]
                 -> all_reason_for_cover
@@ -443,7 +440,7 @@ SCENE 01
                     ** [Alexis mimics the signal.]
                     --- CHR_TRO_REL
                     --- SYS_SOUND_807
-                        "Right, good, give two short toots of the horn, count to 3 and give one long toot," says Troy.  "When we hear your signal, we'll blow the whistle. Give two quick toots to acknowledge it. If you don't hear us, repeat your signal and we'll send a flare."
+                        "Right, good, give two short toots of the horn, count to 3, and give one long toot," says Troy.  "When we hear your signal, we'll blow the whistle. Give two quick toots to acknowledge it. If you don't hear us, repeat your signal and we'll send a flare."
 
             *    ["If the fog clears..."]
                 --    CHR_TRO_REL
@@ -451,7 +448,7 @@ SCENE 01
 
             *    ["If the <i>Lakesong</i> is spotted..."]
                 --    CHR_TRO_REL
-                You're unlikely to be seen in the fog, but when things clear, you'll be visible—and so will everything else," says Troy. "You'll be able to see a boat coming from a distance, same with the drones. Do what you need to do to evade contact, then circle back for us when you can."
+                "You're unlikely to be seen in the fog, but when things clear, you'll be visible—and so will everything else," says Troy. "You'll be able to see boats or drones coming from a distance. Evade contact, then circle back for us when you can."
 
             // We require the player to ask at least one question
             *    {loop} [Alexis cuts Troy off.]
@@ -478,9 +475,9 @@ SCENE 01
 === continue_adventure ===
         -   CHR_TRO_REL
         -   CHR_JUL_REL
-        -   "See you in two hours, give-or-take," says Troy, giving his flashlight a quick test. He and Julian push off from the boat and begin paddling toward the shoreline.
+        -   "See you in two hours, give-or-take," says Troy. He and Julian push off from the boat and begin paddling toward the shoreline.
 
-            "Good luck!" Mia and Alexis call in unison. Alexis starts the <i>Lakesong's</i> engine and prepares to depart the cove.
+            "Good luck!" Mia and Alexis call. Alexis starts the <i>Lakesong's</i> engine and prepares to depart the cove.
 
             Continue the adventure by...
 

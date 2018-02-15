@@ -169,19 +169,19 @@ what_remember is {what_remember}
     -   "Yeah, a little bit," says {who_has_memory}. "This morning, in addition to remembering the {what_remember} that I told the police about, I also had a fuzzy memory of <>
 
                 {
-                    - julian_tree_looking && not monkey_watching:
+                    - julian_tree_looking && not monkey_eyes_him:
                     seeing a crashed drone stuck high in a tree." {who_has_memory} checks the lights.
 
                         * ["Now that you mention it..."]
                             -> now_mention_it
 
-                    - julian_tree_looking && monkey_watching:
+                    - julian_tree_looking && monkey_eyes_him:
                     seeing a crashed drone in a tree and—I know this is going to sound crazy—seeing monkeys." {who_has_memory} checks the bilge.
 
                         * ["Monkeys!?]
                             -> monkeys
 
-                    - monkey_watching:
+                    - monkey_eyes_him:
                     seeing—I know this is going to sound crazy—seeing monkeys."
 
                         * ["Monkeys!?]
