@@ -2,10 +2,10 @@
 === return_post_rescue ===
     -   SYS_QUIZ_28
     -> return_post_rescue_2
-    
+
 === return_post_rescue_2 ===
     -   CHR_ALX_REL
-    -   Alexis adjusts the throttle, giving the boat a little more speed for the return to Laketown. The afternoon sky is bright blue, and the <i>Lakesong</i> casts a long shadow across the rippling waters of the lake. Under different circumstances, it would be the ideal conditions for boating.
+    -   Alexis adjusts the throttle, giving the boat a little more speed for the return to Laketown. The afternoon sky is bright blue. Under different circumstances, it would be the ideal conditions for boating.
 
         In the distance...
 
@@ -45,10 +45,10 @@
 
     = mia_drive
     -   CHR_MIA_SUR
-    
-        
+
+
         -   (opts3)
-                
+
                 *  [Mia looks at Alexis in disbelief.]
                 --  CHR_MIA_SUR
                     "Me? Drive the boat?" she says. -> nods
@@ -56,7 +56,7 @@
 
                 * (nods) [Mia shakes her head.] {Alexis nods and offers the wheel to Mia. "Really, are you sure?" asks Mia.| "But I don't... yesterday was my only time."}
 
-                * {nods} ["You passed your boat education course, right?" asks Alexis.] 
+                * {nods} ["You passed your boat education course, right?" asks Alexis.]
                     -> yes_passed
 
         -   -> opts3
@@ -64,7 +64,7 @@
     =   yes_passed
     -   CHR_MIA_REL
     -   "Yes, last night," says Mia, "when I couldn't fall asleep."
-    -   "Let's put your knowledge to work, then," says Alexis with a grin.  "Captain Chen, you have the con!"
+    -   "Let's put your knowledge to work, then," says Alexis with a grin. "Captain Chen, you have the con!"
 
                 * [Mia's eyes grow wide.]
                     -> mia_beams
@@ -74,32 +74,32 @@
     -   SYS_ACHIEVE_1_5
     -   "Really?" she says, stepping forward with a tentative smile on her face.
 
-            * ["Absolutely," says Alexis.] 
+            * ["Absolutely," says Alexis.]
             --  CHR_ALX_REL
             --  CHR_MIA_SML
             "Absolutely," says Alexis, as Mia takes the wheel. "On a beautiful day like this, we'll encounter plenty of traffic, starting with crossing traffic ahead now at two o'clock."
 
                 ** ["Bring it!" says Mia.]
                     -> bring_it
-            
+
         = bring_it
                 -   CHR_MIA_REL
                 -   CHR_ALX_REL
                 "Bring it!" says Mia.
                 "And remember the encounter toots," says Alexis.
-                
-                    -   (opts2) 
-                    
+
+                    -   (opts2)
+
                         *   ["One toot for port," says Mia.]
                             -- CHR_MIA_REL
                             "One toot for a turn to port," says Mia.-> two
-                    
-                    
-                        *   (two)["Starboard has two syllables."]{"Starboard has two syllables, so it gets one toot."|"Since port only has one syllable—one toot."}
-                    
+
+
+                        *   (two)["Starboard has two syllables."]{"Starboard has two syllables, so it gets twos toots."|"Since port only has one syllable—one toot."}
+
                         *   {two}[With Mia at the helm...]
                             -> encounter_activity
-                    
+
                     -   -> opts2
 
 
@@ -112,19 +112,19 @@
             -- SYS_PDF_41
                 ** [Go to the <i>Encountering Other Vessels</i> activity.]
                     -> encounter_mini
-    
+
         * [Go directly to the <i>Encountering Other Vessels</i> activity.]
                     -> encounter_mini
 
-                     
+
 === encounter_mini ===
     - SYS_MINIGAME_40
         -> post_encounter_logic
-    
-=== post_encounter_logic === 
-    // need to add if/then here for two possible paths 
+
+=== post_encounter_logic ===
+    // need to add if/then here for two possible paths
     -> approach_discuss_suspicion
-    
+
 
 === approach_discuss_suspicion ===
     -   SYS_SCENE_8_33
@@ -245,21 +245,18 @@
 
 == cletus ==
         ~ accomplice = CLETUS
-        -> accomplice_is
+         ->->
 
 == maura_and_ian ==
         ~ accomplice = MAURA_AND_IAN
-        -> accomplice_is
+         ->->
 
 == mac ==
         ~ accomplice = MAC
-        -> accomplice_is
+        ->->
 
-== accomplice_is ==
-    //~ accomplice = CLETUS
-    //- The accomplice is {accomplice}
 
-    ->->
+   
 
 
 === return_marina_day_two ===
@@ -272,10 +269,10 @@
             * [Dock the boat.]
                 -> docking_wind_direction
 
- 
-/****** 
 
-docking tunnel 
+/******
+
+docking tunnel
 the story will flow in/out of this tunnel on several occasion during play
 
 ******/
@@ -289,7 +286,7 @@ the story will flow in/out of this tunnel on several occasion during play
             -> wind_toward_dock_s5
         * {do_wind_away} [The wind and current direction is <b>away</b> from the dock.]
             -> wind_away_dock_s5
-    
+
 // launch the docking activity again Here
 // need build another tunnel similar to casting off?
     = no_wind_s5
@@ -297,7 +294,7 @@ the story will flow in/out of this tunnel on several occasion during play
     -   SYS_MINIGAME_4_41
         * [OK]
             -> docking_completed_s5
-    
+
     = wind_toward_dock_s5
     ~ do_wind_toward = false
     -   SYS_MINIGAME_5_41
@@ -312,31 +309,31 @@ the story will flow in/out of this tunnel on several occasion during play
 
 
 == docking_completed_s5==
-    -   With the boat docked, <> 
-        
+    -   With the boat docked, <>
+
         {
-            
+
             - return_post_rescue_2: Mia and Alexis begin <>
-        
+
             - recovery_fine_aboard_boat: the group begins <>
-            
+
             - else: DEBUG: Condition should not be possible <>
-        
+
         }
-    
-    
+
+
         a final cross-check that the boat is secure including checking the lines.
-        
-        
+
+
         -> line_handling_review_2
-    
+
         = line_handling_review_2
-    
+
           * [Review the <i>Line Handling</i> material.]
              // study guide inserts
                 -- SYS_PDF_43
                     -> post_docking_logic
-                     
+
 == post_docking_logic ==
 {
     - return_post_rescue_2:
@@ -350,5 +347,3 @@ the story will flow in/out of this tunnel on several occasion during play
     * [DEBUG: GO TO 'REPORT TO POLICE"] -> report_to_police
     * [DEBUG: GO TO 'MET BY POLICE"] -> met_by_police
 }
-    
-    

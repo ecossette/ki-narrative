@@ -7,7 +7,11 @@ VAR parts = 0
 
 --------------------------------------------------------------------------------*/
 
--> intro
+//-> intro
+-> report_to_police
+
+
+
 
 === intro ===
 -   SYS_CHAP_01
@@ -27,7 +31,7 @@ VAR parts = 0
     *   [Troy] -> intro_troy
     *   [Alexis] -> intro_alexis
     *   [Julian] -> intro_julian
-    *   [] -> intro_mia
+    *   [Mia] -> intro_mia
 
 === intro_troy ===
     -   CHR_TRO_DEF
@@ -65,7 +69,7 @@ VAR parts = 0
 
 === intro_mia ===
     -   CHR_MIA_DEF
-    -   "I've never been on a boat before," she says. "I skimmed a boating safety study guide last night, but I'm still a little worried."
+    -   "I've never been on a boat before. I skimmed a boating safety study guide last night, but I'm still a little worried."
 
     -   Does Mia have anything to be nervous about?
         *   No[.], her previous study will help, and she's with more experienced boaters. But she needs to stay alert, to communicate with her friends in case she has noticed something they have not, and to pay attention to the most experienced boater, Troy.
@@ -117,7 +121,7 @@ VAR parts = 0
 == longest ==
     -   CHR_ALX_REL
     -   Right! The length of a vessel is measured from the bow to the stern.
-        * [Why is this important to know?] It is important to know the length of a boat because its length determines what equipment a vessel must have to comply with the law.
+        * [Why is this important to know?] It is important to know the length of a boat because its length determines what equipment a vessel must be equipped with to comply with the law.
 
             ** [The group is ready to board.]
             -> want_review_pob
@@ -340,7 +344,7 @@ VAR parts = 0
     -   CHR_CLR
     -   Before starting the pre-departure checklist, let's make sure you're familiar with the items on the checklist.
 
-        * [Launch Study Guide]
+        * [Launch Study Guide ]
             -- SYS_PDF_03
         //Launch the modal for the pre-departure checklist study guide info. Upon student close, send them to post_predep_check_sg
 
@@ -371,10 +375,10 @@ VAR parts = 0
 === review_checklist_minigame
 // Launch the checklist minigame here. Upon successful completion of the minigame send student forward to = after_checklist
     - SYS_MINIGAME_02
-    -> after_checklist_minigame
+    -> after_checklist
 
 
-=== after_checklist_minigame
+    =   after_checklist
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   After completing the checklist, problems were found with two items.
@@ -475,12 +479,23 @@ VAR parts = 0
             --  CHR_TRO_REL
             Troy smiles. "I'm sure Vincent will like hearing that. I'll tell him when we're back."
             // appreciate seemed slightly formal?
-                -> troy_seems
+                -> but_alx_notices
+
+ == but_alx_notices ==
+            But Alexis has noticed that Troy's smile seemed slightly forced. She thinks he seems:
+            * [Pensive.]
+                    -> troy_seems("pensive")
+            * [Agitated.]
+                     -> troy_seems("agitated")
+            * [Worried.]
+                     -> troy_seems("worried")
 
 
-== troy_seems ==
+== troy_seems(adj) ==
     -   CHR_ALX_REL
     -   CHR_TRO_FRN
+    -   "You OK, Troy? You seem a bit {adj}," Alexis asks.
+    // this didn't really work for me. Tweaked
         "The <i>Lakesong</i> is an awesome boat," Troy says, "but there used to be a lot of even larger and more impressive boats here... before all the robberies started."
         //would they call the boat a vessel? Feels unnatural to me, but I'll go with you here.
             * ["Robberies?" says Julian.] -> robberies
@@ -503,13 +518,13 @@ VAR parts = 0
             * ["Robberies?" says Julian.] -> robberies
 
 == the_dock ==
-    -   CHR_MIA_SML
+    -   CHR_JUL_SML
     -   CHR_ALX_SML
     -   "Alexis, you sure weren't kidding earlier when you said it looked like the <i>Lakesong</i> is one of the biggest boats on the Laketown docks!" Julian exclaims, beaming.
     //should this be addressed to Troy, not Alexis? Tweaked. Or has she been on it before? (In which case, spell this out?)
-        * ["Seriously," says Mia. "Way bigger than expected."]
+        "Seriously," Mia adds. "I had imagined a much smaller boat."
         // no idea what?
-        -> troy_seems
+        -> but_alx_notices
 
 === robberies ===
     --   CHR_JUL_SAD
@@ -617,7 +632,7 @@ VAR parts = 0
     -   CHR_TRO_REL
     -   Troy answers.
 
-        *  "We need PFDs[."], and a few other things," says Troy.
+        *  "We need PFDs[."], and a few other things."
             -- CHR_TRO_REL
             -- CHR_WLD_IMP
             ->PFDs_top_list
@@ -647,15 +662,15 @@ VAR parts = 0
 
 === PFD_display ===
     -   CHR_WLD_REL
-    -   As he leads them to the life jackets, Mr. Willard asks what type they need. Troy, Alexis, Julian, and Mia all have differing opinions.
+    -   Mr. Willard asks what type of PFDs they need. Troy, Alexis, Julian, and Mia all have differing opinions.
 
     - (opts)
-    - {| "What else?" asks Mr. Willard. | "OK, who's next?" asks Mr. Willard. | Mr. Willard has heard from all but one.}
-        *    "The safest life jacket[."] you sell," replies Troy .
+    - {| "What else?" asks Mr. Willard. | "OK, who's next?" asks Mr. Willard . | Mr. Willard has heard from all but one.}
+        *    "The safest PFD[."] you sell," replies Troy .
             --  CHR_TRO_REL
             --  CHR_WLD_REL
-            --  "I only sell Coast Guard–approved PFDs, so they are all safe," Mr. Willard says. "But you need to also consider both the fit and the type of water activities you'll be doing."
-        *    "Something good for many activities[."], especially skiing and paddlesports," says Alexis.
+            --  "I only sell Coast Guard–approved vests, so they are all safe," Mr. Willard says. "But you need to also consider both the fit and the type of water activities you'll be doing."
+        *    "A PFD good for many activities[."], especially skiing and paddlesports," says Alexis.
             --   CHR_ALX_SML
             --   CHR_WLD_REL
             -- "OK, that rules out an inflatable vest, as they are not suited for an activity like skiing where submersion is expected," Mr. Willard replies.
@@ -664,7 +679,7 @@ VAR parts = 0
             --   CHR_JUL_SML
             --   CHR_WLD_REL
             --  The others laugh, but Mr. Willard says, "He makes a good point. It is important to choose a PFD you like or else you won't wear it."
-        *   "A comfortable life jacket[."] that's not huge and bulky," Mia says.
+        *   "A comfortable PFD[."] that's not huge and bulky," Mia says.
             --   CHR_MIA_REL
             --   CHR_WLD_SML
             -- "Comfort is very important because if it isn't comfortable, you won't wear it," responds Mr. Willard.
@@ -691,9 +706,9 @@ VAR parts = 0
 // question loop only need show willard
     - CHR_WLD_REL
     - "I'll show a range of PFD types at various prices and we can go from there," the shopkeeper says.
-
+    - While Mr. Willard begins selecting PFDs for the friends to try on, they pepper him with additional PFD questions.
     - (opts)
-    - { While Mr. Willard begins selecting PFDs for the friends to try on, they continue to ask questions.| Mr. Willard's answers are short but helpful.| }
+    - { | Cost and comfort are major concerns among the friends. | Mr. Willard's answers are short but helpful.}
         *    "Are the less expensive models just as safe?"[] Troy asks the whistling Mr. Willard.
             -- CHR_WLD_REL
             -- CHR_TRO_REL
@@ -798,7 +813,7 @@ VAR pfd_tryer = "Mia"
 == j_well_played ==
 -   CHR_JUL_SML
 -   Mr. Willard points to Julian, who nods and says, "Well played, Mr. Willard. Being first comes naturally to me."
-*   [Mr. Willard says nothing.]. 
+*   Mr. Willard says nothing[.]. He just sizes up Julian.
     -> julian_sizing
 
 === mia_sizing ===
@@ -838,7 +853,6 @@ VAR pfd_tryer = "Mia"
 === julian_sizing ===
 ~ pfd_tryer = "Julian"
     -   CHR_WLD_SML
-    -   Mr. Willard looks at Julian, mentally sizing him up.
     -   "You look to be about a medium," Mr. Willard concludes.
     -   CHR_JUL_SML
 
@@ -886,11 +900,7 @@ VAR pfd_tryer = "Mia"
     - CHR_JUL_SML
     - "Well, it's clearly not too snug, as you had no trouble buckling all the straps," says Mr. Willard diplomatically. "But it looks a tad too big."
 
-            * [Julian disagrees.] 
-            --  CHR_JUL_SML
-            --  CHR_WLD_REL
-            Julian shakes his head and puffs out his chest. 
-            "Naw, it's not too big," he says. "It just needs some minor adjustments, that's all."
+            * Julian responds by[...] shaking his head, puffing out his chest, and declaring, "Naw, it's not too big... just needs some minor adjustments, that's all."
 
                 ** "There's one sure way to tell," says Mr. Willard[.], prompting a series of questions from the others.
                 -> how_tell_too_loose ->
@@ -1211,7 +1221,7 @@ VAR pfd_tryer = "Mia"
     -   CHR_ALX_SML
     -   CHR_TRO_SML
     -   "And then we'll spend the afternoon skiing," says Troy.
-        * ["Yeeeessssss!" Alexis whoops.]
+        * "Yeeeessssss!" Alexis whoops[.], and they all laugh.
             -> enter_cletus
 
 === enter_cletus ===
@@ -1287,13 +1297,13 @@ VAR pfd_tryer = "Mia"
             *   "Are there many dead zones[?" asks Mia] on the lake?" asks Mia asks with a worried expression.
                 --   CHR_WLD_REL
                 --  CHR_MIA_REL
-                    ** [Mr. Willard nods.]
-                    -> stick_to_south
+                -- Mr. Willard nods.
+                -> stick_to_south
 
             *   "I've never lost my cell signal[," proclaims Julian] in all the times I've been on the lake," says Julian.
                 --   CHR_WLD_FRN
                 --   CHR_JUL_REL
-                    ** [Mr. Willard frowns.]
+                --   Mr. Willard frowns.
                 -> stick_to_south
 
 == stick_to_south ==
@@ -1322,23 +1332,29 @@ VAR pfd_tryer = "Mia"
             --   CHR_WLD_GPY
             -- "Take my word on it," says Mr. Willard. -> dreary
 
-        *    (dreary) ["Fog is creepy but cool," says Alexis.] {"With no cellphone signal and that fog?" Mr. Willard's face clouds over. "Well, you just better pray your radio doesn't quit on you."| "Your phones will quit, and you'll be in a cold fog thick as pea soup."}
+        *    (dreary) ["Fog is creepy but cool," says Alexis.]
+            -- CHR_WLD_GPY
+        {"It's a dreary, cold fog," counters Mr. Willard. | "Thick as pea soup."}
 
         *    {dreary} [Mia shivers.] -> fog_north
 
         -     -> opts
 
 === fog_north ===
+    -   CHR_WLD_REL
     -   CHR_MIA_SAD
-    -   CHR_ALX_REL
     -   "I don't like the cold at all," says Mia.
+        -> cold_enough
 
-    -    "I'm not too fond of it myself," says Alexis.
 
-        * [""Fog on a beautiful day like this?" says Julian.] 
+== cold_enough ==
+    -   CHR_MIA_REL
+    -   CHR_ALX_REL
+   -    "I'm not too fond of it myself," says Alexis.
+
+        * "I still don't get it," says Julian.[] "Fog on a beautiful day like this?"
             -> fog_exp
-        
-        * ["We get the picture," says Troy.]
+        * "We get the picture," says Troy.
 
             -> hypo_too
 
@@ -1354,10 +1370,13 @@ VAR pfd_tryer = "Mia"
     -   CHR_WLD_REL
     -   CHR_ALX_REL
 
-        "The lake water is cold enough up north that hypothermia is a concern," adds Mr. Willard.
+        "The lake water is cold enough up nort that hypothermia is a concern," adds Mr. Willard.
 
-            *   ["Wait, did you just say <i>'hypothermia'</i>?" asks Alexis.]
+            *   "Wait, did you just say <i>'hypothermia'</i>?" asks Alexis.[]
+                --   CHR_WLD_REL
+                --   CHR_ALX_REL
 
+                Mr. Willard nods. "I did, indeed."
                 -> hypothermia_discussion
 
 === hypothermia_discussion ===
@@ -1394,14 +1413,14 @@ VAR pfd_tryer = "Mia"
 == here_the_deal ==
     -   CHR_WLD_SKP
     -   "Here's the deal," Mr. Willard says, crossing his arms. "The human body cools considerably faster in cold water than it does in air."
-        * [Alexis nods.] -> nobody_in_cold_water
+        * [The four friends nod.] -> nobody_in_cold_water
 
 == nobody_in_cold_water ==
 // unlock emergency prep here
 -   SYS_ACHIEVE_5_1
     -   CHR_WLD_SKP
     -   CHR_ALX_REL
-    -   "I think I speak for everyone," Alexis says, "when I say that none of us want to find that out first hand."
+    -   "I think I speak for everyone," Alexis says, "when I say that none of us want to find that out firsthand."
         * ["C'mon, Willard! Tell these kids the truth!" says Cletus.]
             -> tell_em_willard
 
@@ -1517,15 +1536,15 @@ VAR pfd_tryer = "Mia"
     -   "Genetic research is what I heard," says Cletus, his eyes wide and serious. "These scientists made a strange and dangerous mutant from three different flying species."
 
         - (opts)
-        -{Cletus explains that first they took...| | }
-            *    "A falcon[."], for its size and sight." Cletus points at his eyes and adds...
+        -{Cletus explains that first they took...|Then added...|And finally...}
+            *    "A falcon[."], for its size and sight."
                 --   CHR_CLT_REL
-            *    "A bat[."], for its sonar." Cletus quickly and repeatedly opens and closes his hands, before going on...
+            *    "A bat[."], for its sonar."
                 --   CHR_CLT_REL
-            *    "A tiger hornet[."], for its relentless hunt-and-kill instinct." Cletus bares his teeth, and continues... 
+            *    "A tiger hornet[."], for its relentless hunt-and-kill instinct."
                 --   CHR_CLT_REL
             // We require the player to ask at least one question
-            *    {loop} [Mr. Willard interrupts.]
+            *    {loop} [Enough talking.]
                 -> done
         - (loop)
             // loop a few times
@@ -1542,7 +1561,8 @@ VAR pfd_tryer = "Mia"
 == nothing_about_polLination ==
     -   CHR_MIA_PUZ
     -   "A hornet doesn't make sense," Mia concludes. "Unlike bees, they aren't involved in pollination."
-        **  [Cletus shakes his head, annoyed.]
+    -   Troy nods in agreement.
+        **  [Cletus shakes his head.]
             -> no_pollen
 
  === no_pollen ===

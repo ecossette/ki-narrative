@@ -7,22 +7,11 @@
     -   CHR_MIA_REL
     -   In the open waters away from the island, the fog clears, giving Mia and Alexis good visibility from the deck of the <i>Lakesong</i>.
 
-    To kill time until their planned rendezvous with the kayaks...
-
-    -   (opts)
-
-        * [Mia takes a turn at the helm.]
-            -- CHR_MIA_SML
-            "I still think I like jet-skiing the most," she says. "But I've got to admit this is pretty awesome!" -> loops
-
-        * (loops) [Alexis loops in wide circles.] {The boat cruises nicely, making wide, crisscrossed loops, and the time passes quickly as the girls enjoy taking turns at the wheel.| Just as Alexis did, Mia cruises in lazy circles. "I couldn't fall asleep last night, so I finished the boat education course and got my certificate." Alexis smiles at the excitement in Mia's voice, but then...}
-
-        * {loops} [Something catches Alexis' attention.]
+    * [Something catches Alexis' attention.]
                     -> attention
 
 
 
-    -   -> opts
 
     = attention
     -   CHR_ALX_REL
@@ -43,7 +32,7 @@
     -   SYS_SCENE_4_13
     -   CHR_ALX_REL
     -   CHR_MIA_SUR
-    -   "It's the creatures!" Mia exclaims. "I mean the drones," she adds correcting herself.
+    -   "It's the creatures!" Mia exclaims. "I mean the drones," she adds, correcting herself.
 
         "Six of one... half a dozen of the other," says Alexis taking the wheel and hitting the throttle. "Either way, we're outta here."
 
@@ -83,7 +72,7 @@
             -   -> opts
 
 == alexis_plan ==
-    -   CHR_ALX_REL  
+    -   CHR_ALX_REL
     -   "Look, we know we can outrun them because we proved that yesterday," Alexis says. "But I'm guessing they also have a range limit and a limited flying time."
 
         -   (opts)
@@ -117,20 +106,14 @@
         -   CHR_ALX_REL
         -   Eventually, the creature-drones abandon their pursuit and peel off on a course straight back to the island.
 
-                * ["Running low on power I suspect," Alexis says.]
+                * ["Running low on power, I bet," Alexis says.]
                 --  CHR_ALX_SML
                 --  CHR_MIA_REL
-                "Carrying that extra weight of the disguise has to degrade their flight time and speed," says Alexis.
+                "Carrying that heavy disguse probably makes their flight time shorter," says Mia. "That all worked out better than I expected!"
 
-                    ** ["Speaking of time...?" says Mia.]
-                    ---  CHR_ALX_REL
-                    ---  CHR_MIA_REL
+                Alexis checks her watch. "Look, we're still on schedule! We'll arrive at the cove right at the planned hour."
 
-                    Alexis checks her watch.
-
-                    "Perfect timing," she says. "We'll arrive at the cove right at the planned hour."
-
-                        *** [Change course for a return to the cove.]
+                        ** [Change course for a return to the cove.]
                             -> see_something
 
 == see_something ==
@@ -200,19 +183,19 @@
 
             - cletus_in_distance:
                 -> cletus_dist_discuss
-            
+
 
             - mac_in_distance:
                 -> mac_dist_discuss
-            
+
 
             - ian_in_distance:
                 -> ian_dist_discuss
-            
+
         }
 
     -> DONE
-        
+
         = cletus_dist_discuss
         -   CHR_ALX_REL
         -   CHR_MIA_REL
@@ -223,17 +206,17 @@
                     "{who_saw} seems a bit odd."
                     "That's an understatement," says Alexis with a laugh.
                     -> spotted_us
-        
-        
+
+
         = mac_dist_discuss
-       
+
         "I wonder what {who_saw} is doing out here," says Alexis.
             "Well, he did say he comes out this way to fish," says Mia.
                 ** ["Yeah, but he's not fishing now," says Alexis]
 
                     -> spotted_us
-        
-        
+
+
         = ian_dist_discuss
         -   CHR_ALX_REL
         -   CHR_MIA_REL
@@ -245,19 +228,19 @@
 
                     -> spotted_us
 
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         = spotted_us
         -   CHR_MIA_REL
         * ["You think he spotted us?" asks Mia.]
             --   CHR_ALX_REL
             --   CHR_MIA_REL
-            --   "I don't think he saw us," says Alexis. "{who_saw} is going the other way, and judging by the wake, he's in a real hurry."
+            --   "I don't think he saw us," says Alexis. "He's going the other way, and judging by the wake, he's in a real hurry."
 
                 ** [They turn their attention to the cove ahead.]
                     -> nearing_the_cove
@@ -268,7 +251,7 @@
     -   CHR_ALX_REL
     -   CHR_MIA_REL
 
-    -   "Something's flashing," says Mia. "Do you think it's someone signaling with a mirror?
+    -   "Something's flashing," says Mia. "Do you think it's someone signaling with a mirror?"
 
             * ["Could be," says Alexis.]
             --  CHR_ALX_REL
@@ -278,11 +261,9 @@
 
             *   [Mia tries the binoculars.]
                 --  CHR_MIA_REL
-                Mia takes a look through the binoculars and sees another flash. -> flash
+                Mia takes a look through the binoculars and sees another flash. "There it goes again... it <i>does</i> seem random," she says. "And it's pretty far away."
 
-            *   (flash) [There's another flash.] {"There it goes again... it does seem random," Mia says.|"Whatever it is, it's pretty far away."}
-
-            *   {flash} ["Now we have a decision," says Alexis.]
+                ** ["Now we have a decision," says Alexis.]
                     -> investigate_flash_or_not
 
         -   -> opts
@@ -310,7 +291,7 @@
             - (loop)
                 // loop
                 { -> opts | -> opts | }
-               
+
                 They see another flash, which doesn't make the decision any easier.
 
             - (done)
@@ -329,21 +310,12 @@
 ~ what_distract = SMOKE
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   "Is that smoke?" asks Mia.
-    -   "Yeah, and it looks reddish," says Alexis, "It could be from a flare."
+    -   "That looks like reddish smoke," says Alexis, "Was that a flare?"
+    -   Mia reaches for the binoculars, but just catches the smoke fading out. "I think you're right. It's red smoke—or was," she says. "It's really far away, though."
 
-        -   (opts)
-
-            * [Mia reaches for the binoculars.]
-            --  CHR_MIA_REL
-            Mia watches through the binoculars as the last of the smoke fades out. -> smoke
-
-            * (smoke) [The smoke quickly dissipates.] {"I think you're right that it's red smoke—or was," says Mia.|"It's really far away, though, and now it's gone, so can't say for sure."}
-
-            *  {smoke} ["We have to investigate," says Alexis.]
+            *  ["We have to investigate," says Alexis.]
                 -> investigate_smoke_or_not
 
-        -   ->  opts
 
 == investigate_smoke_or_not ==
     -   CHR_ALX_REL
@@ -358,7 +330,7 @@
                 ** ["Good point," says Alexis.]
                     ---   CHR_ALX_REL
                     ---   CHR_MIA_REL
-                "Maybe we just caught the tail end of the VDS, or it was a dud," she says. "We should have enough time, though, to get there and back."
+                "Maybe we just caught the tail end of the VDS, or it was a dud," she says. "We should have enough time to get there and back, though."
 
                     *** [Mia nods.]
                         ----   CHR_ALX_REL
@@ -370,7 +342,7 @@
                         **** [Pass.]
                             ~ investigate_distraction = 0
                             -> no_investigate
-                            
+
                         **** [Investigate.]
                             ~ investigate_distraction = 1
                             -> investigate
@@ -465,27 +437,27 @@
 
             - mac_on_beach:
                 -> mac_beach_discuss
-            
+
 
             - maura_on_beach:
                 -> maura_beach_discuss
-            
+
 
         }
 
-        
+
         = cletus_beach_discuss
         -   CHR_ALX_REL
         -   CHR_MIA_REL
         "Kind of strange to find {who_saw} out here after all his stories saying how spooky Kalkomey Isle is," says Alexis.
-                ** ["He's the last person I want to run into out here," says Mia.]
+                ** ["He's the last person I want to see out here," says Mia.]
                     --   CHR_ALX_REL
                     --   CHR_MIA_REL
                     "{who_saw} seems a bit odd."
                     "That's an understatement," says Alexis..
                     -> spotted_us
-        
-        
+
+
         = mac_beach_discuss
         -   CHR_ALX_REL
         -   CHR_MIA_REL
@@ -494,26 +466,26 @@
                 ** ["Yeah, but he's not fishing now," says Alexis]
 
                     -> spotted_us
-        
+
         = maura_beach_discuss
         -   CHR_ALX_REL
         -   CHR_MIA_REL
-        "How ironic," says Alexis. "I mean just yesterday {who_saw} said she'd never been to Kalkomey Isle."
+        "How ironic," says Alexis. "Just yesterday {who_saw} said she'd never been to Kalkomey Isle."
                 ** ["And by herself?" says Mia.]
                     --   CHR_ALX_REL
                     --   CHR_MIA_REL
-                    "Seriously, {who_saw} didn't strike me as the strong, independent type," Alexis says.
+                    "Seriously, {who_saw} didn't strike me as someone who goes on a hike in a dirty, 'scary' forest," Alexis says.
                     -> spotted_us
-        
-        
-        
-        
+
+
+
+
         = spotted_us
         -   CHR_MIA_REL
         * ["You think we've been spotted?" asks Mia.]
             --   CHR_ALX_REL
             --   CHR_MIA_REL
-            --   "Maybe," says Alexis. "Although {who_saw} looks to be focused on something... but I can't get a clear view of what."
+            --   "Maybe," says Alexis. "Although {who_saw} looks focused on something... but I can't get a clear view of what."
 
                 ** ["We should head back," says Mia.]
                 ---   CHR_ALX_REL
@@ -530,12 +502,10 @@
 == no_investigate ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   Since it's not clear that the {what_distract} they saw was actually some sort of signal, Mia and Alexis choose not to investigate. They are concerned about the safety of their own fellow crew members—Julian and Troy on the kayaks—and want to be certain to meet at the planned time in the cove.
+    -   Since it's not clear that the {what_distract} they saw was actually a signal, Mia and Alexis choose not to investigate. They are concerned about the safety of their fellow crew members—Julian and Troy—and want to be sure they reach the cove at the planned time.
 
             * [They wait and circle.]
             As they bide their time waiting for the rendezvous, they see no more {what_distract} or anything else noteworthy. They are anxious to learn if Julian and Troy found anything interesting.
 
                 ** [Return to the cove.]
                     -> nearing_the_cove
-                    
-                    

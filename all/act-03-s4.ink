@@ -785,6 +785,7 @@ SCENE 04
                     -> more_like
 
         = we_did_it
+        -   SYS_SOUND_457
         -   CHR_JUL_SML
 
             * "We did it!" says Julian.[] "The mutants are flying back to their rotten island home."

@@ -5,21 +5,21 @@
     -   CHR_MIA_REL
     -   SYS_SOUND_813
 
-    - In the foggy cove, Mia and Alexis repeat the signal again—but just as before, there is no response from Julian and Troy. 
+    - In the foggy cove, Mia and Alexis repeat the signal again—but just as before, there is no response from Julian and Troy.
 
         * [They wait and repeat the signal several times.]
             --  The cove remains frustratingly still.
             -> no_response_hour_two
-    
+
 === second_entry_cove_clear ===
     -   CHR_ALX_REL
     -   CHR_MIA_REL
 
-    -   Mia and Alexis enter the cove, but there is no sign of the kayaks. Alexis wonders if there is a chance that Julian and Troy are hunkered down somewhere out of sight along the shoreline. 
+    -   Mia and Alexis enter the cove, but there is no sign of the kayaks. Alexis wonders if there is a chance that Julian and Troy are hunkered down somewhere out of sight along the shoreline.
 
         * [Alexis signals with the boat's horn.]
             --   SYS_SOUND_813
-            -- "Nothing and more nothing," says Mia frustrated. 
+            -- "Nothing and more nothing," says Mia, frustrated.
             -> no_response_hour_two
 
 == no_response_hour_two ==
@@ -265,9 +265,9 @@
         -   CHR_ALX_REL
         -   Alexis takes a deep breath to collect her wits, then switches the boat's radio to channel 68 to follow the transmission and join it in progress.
 
-            "... correct both are unresponsive and breathing is irregular," says the voice of the rescuer.
+            "... correct, both are unresponsive and breathing is irregular," says the voice of the rescuer.
 
-                ** "Copy that {rescue_boat}.[] "Medevac chopper en-route. ETA 25 minutes. Over."
+                ** "Copy that, {rescue_boat}.[] "Medevac chopper en-route. ETA 25 minutes. Over."
                     -> mia_sob
 
         = mia_sob
@@ -278,7 +278,7 @@
                     -- CHR_MIA_SAD
                     Mia begins to sob while Alexis—jaw clenched—instinctively sets a course toward Laketown. -> ok
 
-                * (ok) ["They're g-g-gonna be OK, right?"] {"Right? They're gonna be OK?" asks Mia, but she knows it's a rhetorical question. They have no way of knowing.| Alexis shivers, thinking how cold the water must have been as Julian and Troy waited for rescue.}
+                * (ok) ["They're g-g-gonna be OK, right?"] {"Right? They're gonna be OK?" asks Mia, but she knows they have no way of telling.| Alexis shivers, thinking how cold the water must have been as Julian and Troy waited for rescue.}
 
                 *   {ok} [Review the stages of cold water immersion.]
                         -> cold_water_review_mandatory
@@ -348,7 +348,7 @@
 // waiting to call has a influence on the medical condition of the boys once they are rescued, otherwise the narrative flow doesn't change.
 ~   hypo_severity = 3
 
-    - Alexis takes the boat out of the cove. She and Mia scan up and down the coast of the island, but see nothing. Alexis notes the direction of the current, and follows it east, figuring that Troy and Julian would have gone with the current. A few minutes pass, then a few more but there's no sign of Julian, Troy, or the kayaks.
+    - Alexis takes the boat out of the cove. She and Mia scan the coast of the island, but see nothing. Alexis notes the direction of the current, and follows it east—Troy and Julian could have gone with the current. A few minutes pass, but there's no sign of their friends.
 
             * [Alexis reaches for the radio.]
 

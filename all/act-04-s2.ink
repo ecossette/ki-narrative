@@ -475,6 +475,7 @@
     -   "That's not a boat motor," he says. "I think it's a generator. And it's coming from over there." Troy points into the forest on the left bank.
 
             * [Troy spots a sandy area.] 
+                -> sandy_area
             
     = sandy_area
     -   SYS_SOUND_708

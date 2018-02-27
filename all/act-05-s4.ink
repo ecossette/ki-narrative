@@ -49,7 +49,7 @@ wait to call for help = hypo extreme / full memory loss
 
 
 === report_to_police ===
-// complete boat achievment 
+// complete boat achievment
 -   SYS_SCENE_8_20
 -   SYS_ACHIEVE_1_5
     -   After securing the <i>Lakesong</i> for the day, the four friends go directly to the marine police station located at the marina.
@@ -60,54 +60,88 @@ wait to call for help = hypo extreme / full memory loss
 
     = police_welcome
     -   SYS_SCENE_8_21
-    - CHR_MPO_REL
-    -   After brief reintroductions and an exchange of pleasantries, they tell the captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering "hmmm" or "interesting" and taking notes on a small notepad." 
+    -   CHR_MPO_REL
+    -   They tell the captain everything about their two visits to Kalkomey Isle. Captain Garcia listens intently, occasionally muttering "hmmm" or "interesting." He takes notes on a small notepad.
 
         *   ["And that's everything," says Troy.]
             -> that_everything
-    
+
     
     = that_everything
-    - CHR_TRO_REL
-    - CHR_MPO_REL
-    "And that's everything," says Troy, concluding the recap of events. "What do you think, Captain"    
-        
+    -   CHR_TRO_REL
+    -   CHR_MPO_REL
+    -   Troy looks at the Captain anxiously. "What do you think, Captain?" he asks.
+
         Captain Garcia stops writing and puts down his pen.
 
 
         -   (opts)
 
-            *   [He leans back in his chair.]
+            *   ["Let's see if I've got this right," he says.]
                 --  CHR_MPO_REL
-                He leans back in his chair. "Flying drones disguised as mutant creatures, disappearing boats...?" The friends exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you, it's just that..." he trails off. -> dark
+                "Flying drones disguised as mutant creatures, disappearing boats...?" says the Captain.  -> lean
 
-            *   (dark) [His face grows dark.] {Captain Garcia's face grows dark. "You know Kalkomey Isle is private property?" he says. "You could be fined—or worse—for trespassing."| Captain Garcia is about to say more, but he changes his mind.}
+            *   (lean) [He looks closely at each of the four.] {"Well, that's quite a story you've got there," he says.| "Of course, you're not the first ones to come back with some wild tales from that area."}
 
-            *   {dark} [ "Private property?!" ]
+            *   {lean} [The friends exchange worried glances.]
                 -> private_property
 
         -   -> opts
 
 
-    = private_property
+   = private_property
     -   CHR_TRO_SUR
     -   CHR_MPO_REL
-    - "Private property?" exclaims Troy. "We didn't know!"
-
-        "I can understand that, as it's not marked as such on the charts," says the Captain.{no_go_island: "And from what you say, you never did set foot on the island itself.} "Though private property it is."
-
-        -   (opts2)
-
-            *   [Captain Garcia looks at his notes.]
-                -- CHR_MPO_REL
-                Captain Garcia looks at his notes. "Realistically, you've given us the best leads we've had so far, and for that I thank you, but..." -> looks
-
-            *   (looks) [Captain Garcia looks at each friend in turn.] {Captain Garcia looks at each friend in turn. "I need you all to promise me you won't go out to Kalkomey Isle—neither on it nor around it—again," he says, his eyes heavy and serious.|"It's just too dangerous out there with or without thieves. Let the police take it from here."}
-
-            *   {looks} ["Yes, sir!"]
+    -   Captain Garcia looks closely at each of the four. "I need you to tell me the truth," he says.
+    
+        -   (opts2)    
+            
+            *   [Troy starts to speak.]
+            --  CHR_TRO_SAD
+            Troy starts to speak but the Captain holds up his hand. "Hold on a second," the Captain says. -> nothing
+            
+            *   (nothing) [Troy and the others say nothing.] {The friends wait in silence for the for the Captain to continue.|"It's not that I don't believe you, but there's just one thing..."} 
+            
+            
+            *   {nothing} ["This Kalkomey Isle..." says the Captain.]
+                -> ki_private
+            
+        -   -> opts2 
+           
+    = ki_private
+    -   CHR_MPO_REL
+    -   CHR_TRO_SUR
+    -   "Did you know the island is private property?"
+    -   "Private property?" exclaims Troy. "No, we didn't know!"
+            
+           "I can understand that, as it's not marked as such on the charts," says the Captain. "Though private property it is. <>
+           
+            {
+                
+                - no_go_island: From what you say, though, you never did set foot on the island itself, so you're in the clear there."
+                
+                - else: By going on the island, you could be fined—or worse—for trespassing."
+            
+            }
+           
+            
+                *   [Captain Garcia looks again at his notes.]
+                    -> truth_is
+    
+    
+    = truth_is
+    -   CHR_MPO_REL
+    -   "Realistically, you've given us the best leads we've had so far," says the Captain. "You've been very helpful, but this is where it ends."
+    
+        *   [The Captain's serious tone is noted.]
+            -> no_more_ki
+        
+    = no_more_ki
+    -   CHR_MPO_REL
+    -   "I need you all to promise me you won't go out to Kalkomey Isle—neither on it nor around it—again," he says, his eyes stern and unblinking. "It's just too dangerous out there with or without thieves. Let the police take it from here."
+    
+            *   ["Yes, sir!"]
                 -> yes_sir
-
-        -   -> opts2
 
     = yes_sir
     -   CHR_ALX_REL
@@ -115,6 +149,7 @@ wait to call for help = hypo extreme / full memory loss
 
                 * ["Just one more thing," he says.]
                     -> suspect_anyone_office
+
 
 === suspect_anyone_office ===
     -   CHR_MPO_REL
@@ -136,7 +171,7 @@ wait to call for help = hypo extreme / full memory loss
     -   CHR_TRO_REL
     -   CHR_MPO_REL
     -   "No, sir, we sure don't," says Troy, shaking his head.
-        "Understood," says Captain Garcia, "it's in our hands now. You did the right thing by coming in, but remember what I said: no more visits to Kalkomey Isle."
+        "Understood," says Captain Garcia. "It's in our hands now. You did the right thing by coming in, but remember what I said: no more visits to Kalkomey Isle."
 
             * [They agree and depart.]
                 -> conclude_day_two
@@ -180,7 +215,7 @@ wait to call for help = hypo extreme / full memory loss
     = hunch
     -   CHR_MPO_REL
     -   CHR_ALX_REL
-    -   "A hunch is what we call it," says the Captain, "And sometimes a hunch can be as much value as months of rational analysis, so you needn't feel embarrassed by having one, Ms. Baker nor the rest of you."
+    -   "A hunch is what we call it," says the Captain, "And sometimes a hunch can be as much value as months of rational analysis, so you needn't feel embarrassed by having one, Ms. Baker. That goes for the rest of you, too."
 
         -   (opts3)
 
@@ -256,7 +291,7 @@ wait to call for help = hypo extreme / full memory loss
 
         = and_reward
         -   CHR_TRO_SML
-        -   "And the reward, too," says Troy in response to Julian's comment. "And speaking of rewards... It's two for one night at Spinozzi's. My treat!" Mia, Alexis, and Julian agree it's a great idea and they happily make their way down the dock while discussing their favorite pizza toppings.
+        -   "And speaking of rewards," says Troy, "It's two-for-one night at Spinozzi's. My treat!" Mia, Alexis, and Julian agree it's a great idea and they happily make their way down the dock while discussing their favorite pizza toppings.
 
             * [Several days later...]
                 -> on_dock_day_03
@@ -268,27 +303,27 @@ wait to call for help = hypo extreme / full memory loss
  // tunnel sent to depends on if we followed kayaks or followed boat
  // if we followed kayaks we participated in what happened.
  // we need SHUFFLE condition if followed boat.
- // in BOTH cases we need to shuffle memory loss conditions. 
- 
+ // in BOTH cases we need to shuffle memory loss conditions.
+
     {
-    
+
         - join_mia_alx_second_attempt:
             -> hypothermia_condition_decision_tree ->
-    
+
         - follow_boat_2:
             -> set_kayak_conditions_for_no_follow ->
-            
+
         - else:
             -> set_kayak_conditions_for_no_follow ->
             //DEBUG: This condition should not be possible.
     }
- 
- 
- 
 
- 
+
+
+
+
 /*- DEBUG met by police
-    
+
 
     - DEBUG: hypothermia severity is {hypo_severity}
 
@@ -304,8 +339,8 @@ wait to call for help = hypo extreme / full memory loss
    /* DEBUG: hypo severity is {hypo_severity}
     DEBUG: kayak status is {kayak_status}
     DEBUG: flare status is {flare_early}
-    DEBUG: 
-        { 
+    DEBUG:
+        {
             - follow_boat_2:
             follow boat 2 turn is flagged.
             - join_mia_alx_second_attempt:
@@ -314,7 +349,7 @@ wait to call for help = hypo extreme / full memory loss
             neither is flagged
         }
     */
-    
+
     -   Shortly after securing the boat, they see Captain Garcia of the Marine Patrol walking purposefully toward them.
 
         "Ms. Chen, Ms. Baker," Captain Garcia greets them.
@@ -373,7 +408,7 @@ wait to call for help = hypo extreme / full memory loss
         = ian_recover
         -   CHR_MIA_REL
         -   CHR_MPO_REL
-        -   "Mr. Murphey," asks Mia, "Ian Murphey?" She thinks that is what Ian said his last name was.
+        -   "Mr. Murphey?" asks Mia, trying to remember what Ian said his last name was. "Ian Murphey?"
 
             "That's him," says Captain Garcia. "From Oceanside. Right... you helped him and his friend out yesterday. The young lady?"
 
@@ -441,21 +476,23 @@ wait to call for help = hypo extreme / full memory loss
 
         = hypo_03_report
         -   CHR_MPO_REL
-        -  {rescuer} reports that he just stumbled upon them. There was no emergency signal, nor was there any sign of kayaks," says the Captain. "He found them huddling together to conserve body heat—which was a very smart move by your friends. Probably saved their lives. But without a kayak to help get their bodies out of the cold water, they suffered maximum exposure. And that most likely accounts for their memory loss".
+        -  {rescuer} reports that he just stumbled upon them. There was no emergency signal, nor was there any sign of kayaks," says the Captain. "He found them huddling together to conserve body heat—which probably saved their lives."
+        * ["They could have died?" blurts Mia.] "Yes," says Captain Garcia. "Without a kayak to help get their bodies out of the cold water, they suffered maximum exposure. And that most likely accounts for their memory loss".
 
-                * ["Memory loss?"]
+                ** ["Memory loss?"]
                 -> memory_loss
 
         = hypo_02_report
         -   CHR_MPO_REL
-        -   "{rescuer} found them after seeing a flare, but there was no sign of the kayaks," says the Captain. "He found them huddling together to conserve body heat—which was very smart, probably saved their lives. But without a kayak to help get their bodies out of the cold water, they suffered greater exposure. That probably accounts for their memory loss."
+        -   "{rescuer} found them after seeing a flare, but there was no sign of the kayaks," says the Captain. "He found them huddling together to conserve body heat—very smart. Probably saved their lives."
+        * ["They could have died?" blurts Mia.] "Yes," says Captain Carcia. "Without a kayak to help get their bodies out of the cold water, they suffered greater exposure. That probably accounts for their memory loss."
 
                 * ["Memory loss?"]
                 -> memory_loss
 
         = hypo_01_report
         -   CHR_MPO_REL
-        -   "{rescuer} reports he just stumbled upon them—there was no emergency signal. But they did have one kayak still, so there were able to get much of their bodies out of the water. That quite possibly saved their lives," says the Captain. "As it is, they are both suffering from memory loss related to the trauma."
+        -   "{rescuer} reports he just stumbled upon them—there was no emergency signal. But they did have one kayak still, so there were able to get much of their bodies out of the water. That may have saved their lives," says the Captain. "They are both suffering from memory loss related to the trauma."
 
                 * ["Memory loss?"]
                 -> memory_loss
@@ -463,7 +500,7 @@ wait to call for help = hypo extreme / full memory loss
 
         = hypo_00_report
         -   CHR_MPO_REL
-        -   "{rescuer} found them after seeing a flare, which was fortunate," says the Captain. "Also when he found them they still had a kayak, so they were both able to get much of their bodies out the water. That quite possibly saved their lives. They should be released from the hospital tomorrow and be fine."
+        -   "{rescuer} found them after seeing a flare, which was fortunate," says the Captain. "When he found them they still had a kayak, so they were both able to get much of their bodies out the water. That may have saved their lives. They should be released from the hospital tomorrow and be fine."
 
                 *   ["How did they end up in the water?" asks Alexis.]
                     -> how_capsize
@@ -551,7 +588,7 @@ wait to call for help = hypo extreme / full memory loss
         = post_trauma
         -   CHR_MPO_REL
         -   CHR_MIA_REL
-        -   "Look, I'm not ruling out the possibility of monkeys on Kalkomey Isle," he says, "but you should also know that after a traumatic event, it's quite normal for people to, er... become confused."
+        -   "Look, I'm not ruling out the possibility of monkeys on Kalkomey Isle," he says. "But after a traumatic event, it's quite normal for people to, er... become confused."
 
             "What else did Julian and Troy say?" asks Mia. "Did—"
 
@@ -586,7 +623,7 @@ wait to call for help = hypo extreme / full memory loss
 
             *   [He flips through his notes.]
                 --  CHR_MPO_REL
-                He flips though his notes. "Flying drones disguised as mutant creatures, disappearing boats...?" The girls exchanged worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you, it's just that..." he trails off. -> dark
+                He flips though his notes. "Flying drones disguised as mutant creatures, disappearing boats...?" The girls exchange worried glances, fearing that Captain Garcia doesn't believe them. "It's not that I don't believe you, it's just that..." he trails off. -> dark
 
             *   (dark) [His face grows dark.] {Captain Garcia's face grows dark. "You know Kalkomey Isle is private property?" he says. "You could be fined—or worse—for trespassing."| Captain Garcia is about to say more, but he changes his mind.}
 
@@ -600,9 +637,29 @@ wait to call for help = hypo extreme / full memory loss
         -    CHR_MPO_REL
         - "Private property?" says Alexis, surprised. "We didn't know!"
 
-        "I can understand that, as it's not marked on the charts," says the Captain. {no_go_island: "And from what you say, the two of you never did set foot on the island itself.} "Though private property it is. And that means I need to get a warrant to follow up what you {hypo_severity < 3: and the two young men} have told me."
+        "I can understand that, as it's not marked on the charts," says the Captain. "Setting foot on {no_go_island: "And from what you say, the two of you never did set foot on the island itself.} "Though private property it is. And that means I need to get a warrant to follow up on what you {hypo_severity < 3: and the two young men} have told me."
 
 
+        
+        {
+        
+            - no_go_island: The girls are both glad they didn't explore the beach.
+            
+            
+            - else: The girls wonder if this means they are in trouble for exploring the island. 
+        
+        
+        }
+        
+        
+            *   ["And since it's private property..."]
+                -> since_private
+            
+        
+        = since_private
+        -   CHR_MPO_REL
+        -   "And since it's private property, that means I need to get a warrant to follow up on what you {hypo_severity < 3: and the two young men} have told me."
+        
         -   (opts2)
 
             *   [Captain Garcia looks at his notes.]
@@ -756,16 +813,16 @@ wait to call for help = hypo extreme / full memory loss
     -   CHR_ALX_REL
     -   CHR_MIA_REL
     -   After the Captain departs, Mia and Alexis begin a maintenance check on the boat.
-    
+
             * [Review the <i>Vessel Maintenance</i> material.]
              // study guide inserts
              -- SYS_PDF_42
                 -> check_is_good
-    
-    
-   
-    
-    
+
+
+
+
+
     = check_is_good
     -   "Everything looks good," says Alexis. "So we're done."
 
@@ -790,7 +847,7 @@ wait to call for help = hypo extreme / full memory loss
 
     = several_days_later
     -   CHR_ALX_REL
-    -   "Easy enough," says Alexis, and the two girls hasten the pace and secure the boat for the night.    
+    -   "Easy enough," says Alexis, and the two girls hasten the pace and secure the boat for the night.
 
             * [Several days later...]
             -> on_dock_day_03
@@ -927,54 +984,54 @@ wait to call for help = hypo extreme / full memory loss
     {
         - search_more_wait_call:
         ~ hypo_severity = 3
-       
+
 
         - else:
 
         {shuffle:
 
         -   ~ hypo_severity = 0
-            
-            
-            
-        
+
+
+
+
         -   ~ hypo_severity = 1
-            
-            
+
+
             {shuffle:
-            
+
                 -
                 ~ who_lost_memory = TROY
-                ~ what_remember = STREAM 
-                
+                ~ what_remember = STREAM
+
                 -
                 ~ who_lost_memory = JULIAN
                 ~ what_remember = CAVE
 
-            
+
             }
-            
-           
-            
+
+
+
         -   ~ hypo_severity = 2
-           
+
            {shuffle:
-            
+
                 -
                 ~ who_lost_memory = TROY
-                ~ what_remember = STREAM 
-                
+                ~ what_remember = STREAM
+
                 -
                 ~ who_lost_memory = JULIAN
                 ~ what_remember = CAVE
 
-            
+
             }
-            
-            
-        
+
+
+
         -   ~ hypo_severity = 3
-            
+
 
         }
     }
@@ -993,45 +1050,45 @@ wait to call for help = hypo extreme / full memory loss
     {
         - kayak_status > 0 && flare_early > 0:
             ~ hypo_severity = 0
-            
+
 
         - kayak_status > 0 && flare_early < 1:
             ~ hypo_severity = 1
-            
+
             {shuffle:
-            
+
                 -
                 ~ who_lost_memory = TROY
-                ~ what_remember = STREAM 
-                
+                ~ what_remember = STREAM
+
                 -
                 ~ who_lost_memory = JULIAN
                 ~ what_remember = CAVE
 
-            
+
             }
-            
+
 
         - kayak_status < 1 && flare_early > 0:
             ~ hypo_severity = 2
-            
+
             {shuffle:
-            
+
                 -
                 ~ who_lost_memory = TROY
-                ~ what_remember = STREAM 
-                
+                ~ what_remember = STREAM
+
                 -
                 ~ who_lost_memory = JULIAN
                 ~ what_remember = CAVE
 
-            
+
             }
-           
+
 
         - kayak_status < 1 && flare_early < 1:
             ~ hypo_severity = 3
-            
+
 
         - else:
         DEBUG: This else condition should never occur.
@@ -1046,31 +1103,31 @@ wait to call for help = hypo extreme / full memory loss
 // this below is no longer used? 1/14/2017
 
 == hypo_00 ==
- 
+
     ~ hypo_severity = 0
-        
+
         /* DEBUG:
             kept a kayak
             got flare off early
             hypo condition is {hypo_severity}
         */
-        
+
 
         ->->
 
 == hypo_01 ==
 
     ~ hypo_severity = 1
-        
+
         /* DEBUG:
             kept a kayak
             did not flare early
             hypo condition is {hypo_severity}
         */
-        
+
 
         // we need to randomize for who remembered what
-        
+
         {shuffle:
 
             -
@@ -1092,7 +1149,7 @@ wait to call for help = hypo extreme / full memory loss
 
 == hypo_02 ==
     ~ hypo_severity = 2
-        
+
         /*DEBUG:
             lost kayaks
             got flare off early
@@ -1100,7 +1157,7 @@ wait to call for help = hypo extreme / full memory loss
         */
 
          // we need to randomize for who remembered what
-        
+
         {shuffle:
 
             -

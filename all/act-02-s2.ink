@@ -63,7 +63,7 @@
 
 == pfd_on_seated ==
         -   CHR_TRO_REL
-        -   Once Alexis, Mia and Julian are seated and wearing their life jackets, Troy continues.
+        -   After Alexis, Mia and Julian are seated and wearing their life jackets, Troy gives everyone a quick, onboard safety discussion before continuing the cast off procedure.
 
             "We'll keep the boat tied to the dock while I warm up the engine."
 

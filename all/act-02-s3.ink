@@ -9,7 +9,7 @@
 
         = drills
         -   CHR_TRO_REL
-        Troy conducts a couple of 'what if' emergency drills with the group. He also reminds his friends on the importance of keeping a proper lookout—looking <i>and</i> listening—at all times.
+        Troy conducts a couple of 'what if' emergency drills with his three passengers. He also reminds his friends on the importance of keeping a proper lookout—looking <i>and</i> listening—at all times.
     //otherwise it sounded like the number of eyes was relevant
 
            * ["Hey, what's that?" Mia asks suddenly.]

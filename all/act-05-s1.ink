@@ -2,12 +2,12 @@
 
 
 === recovery_fine_aboard_boat ===
-// add to safe boat op 
+// add to safe boat op
     -   SYS_SCENE_8_32
     -   SYS_ACHIEVE_4_5
     -   CHR_ALX_REL
 ~ hypo_severity = -1
-    -   With everyone safely aboard, Alexis immediately begins driving the <i>Lakesong</i> out of the cove, while Julian and Alexis finish securing the kayaks.
+    -   With everyone safely aboard, Alexis immediately begins driving the <i>Lakesong</i> out of the cove, while Julian and Troy finish securing the kayaks.
 
             * [Julian and Troy tell their story.]
             -- CHR_TRO_REL
@@ -64,16 +64,16 @@
 
     {
         - fog_persists || fog_condition == FOG:
-        Mia tells the guys how the fog persisted. For quite a while they saw nothing at all, slowly cruising through the fog and sounding the horn every two minutes.
+        Mia tells the guys how the fog persisted. For quite a while they saw nothing at all.
 
                 * ["And then..." says Alexis.]
                     -> quick_recovery_fog_met
 
 
         - the_fog_clears || fog_condition == CLEAR:
-        They begin by saying that the fog cleared quickly after leaving the cove. They took turns at the helm, cruising the boat in large circles to kill time as they waited for the rendezvous hour with the kayaks.
+        Alexis tells how the fog cleared quickly after leaving the cove. She and Mia tried to kill time as they waited for the rendezvous hour.
 
-                    * ["For quite a while we saw nothing at all," says Mia.]
+                    * ["At first we saw nothing at all," says Mia.]
 
                     {sees_creatures:
                         -> quick_recovery_clear_exp
@@ -202,7 +202,7 @@
 
 
                 - quick_recovery_fog_clears && quick_recovery_saw_0:
-                cleraed quickly—quicker than expected. Despite having good visibility, they saw nothing out of the ordinary. They took turns at the helm and cruised in large circles, killing time until the rendezvous hour with the kayaks.
+                cleared quickly—quicker than expected. Despite having good visibility, they saw nothing out of the ordinary. They killed time until the rendezvous hour.
 
                         *   ["Somebody else was out here, though," says Troy.]
                             -> somebody_else
@@ -213,7 +213,7 @@
                   -> quick_recovery_fog_met
 
                 -   quick_recovery_fog_clears:
-                cleared quickly after leaving the cove. They took turns at the helm, cruising the boat in large circles to kill time while waiting for the rendezvous hour with the kayaks.
+                cleared quickly after leaving the cove. They killed time while waiting for the rendezvous hour.
 
                     "For quite a while we saw nothing at all," says Mia.
                     -> quick_recovery_clear_exp
@@ -265,16 +265,12 @@
 
 
 === quick_recovery_fog_met ===
-    -   CHR_ALX_SML
+-- CHR_TRO_SUR
+-- CHR_ALX_REL
     -   "And then—you'll never guess who we ran into!" says Alexis.
+    -   Troy is surprised. "Wait, you ran into someone else out here? In the fog?" asks Troy.
 
-            * [Troy is surprised.]
-            -- CHR_TRO_SUR
-            -- CHR_JUL_REL
-
-            "Wait, you ran into someone else out here? In the fog?" asks Troy.
-
-                ** ["Who?" demands Julian.]
+                * ["Who?" demands Julian.]
                 --- CHR_JUL_REL
                 --- CHR_MIA_REL
 
@@ -306,8 +302,8 @@
 
             - else:
             DEBUG: This state should not be possible in gameplay. If you are REVIEWING or TESTING the game, you'll need to rewind.
-            
-        
+
+
         }
 
     -> DONE
@@ -409,7 +405,7 @@
             {
                 - quick_recovery_saw_c:
                 ** [Alexis gives a Troy a skeptical face.]
-               
+
                     "Hey, I know Cletus may give off a suspicious vibe, but we can't go around making assumptions just by how people look," Troy explains.
 
                         *** [Alexis smirks.]
@@ -543,23 +539,21 @@
     -   CHR_TRO_REL
     -   Alexis turns slightly to starboard to avoid a lateral rock marker ahead. "Do you think we have enough info to give to the police?" she says, watching the marker slip past.
 
-        -   (opts)
 
             *   [Troy nods.]
                 -- CHR_TRO_REL
-                "We have to tell the police what we've found for sure," says Troy. -> steps
+                "One, we know about the hidden stream. Two, we know about the drones disguised as creatures. There's definitely something fishy going on."
 
-            *   (steps) [Troy checks off what they know.] {Troy checks off what they know. "One, we know about the hidden stream. Two, we know about the drones disguised as creatures."|"There's definitely something fishy going on."}
-
-            *   {steps} ["But enough for the reward?" asks Julian.]
+            **   ["But is that enough for the reward?" asks Julian.]
                 -> tro_checks_off
 
-        -   -> opts
 
 == tro_checks_off ==
     -   CHR_TRO_REL
     -   CHR_JUL_REL
-    -   "But do we have enough to lead directly to the police catching the thieves and we get the reward?" says Troy repeating Julian's question. "Well, that I don't know."
+    -   "Are the police actually gonna be able to catch the thieves with this information?" asks Julian.
+
+    -   "Well, that I don't know," says Troy.
 
         -   (opts)
 
@@ -591,7 +585,7 @@
     = tro_safe_sound
     -   SYS_QUIZ_18
     -> tro_safe_sound_2
-    
+
 === tro_safe_sound_2 ===
     -   CHR_TRO_REL
     -   Troy watches as Kalkomey Isle slowly grows smaller in the distance. "It was a successful mission," he says. "In the end, we know more than we did yesterday, and we're on our way home safe and sound."
@@ -625,34 +619,32 @@
     -   CHR_TRO_SML
     -   "Really?" she says, a big smile on her face. "I can drive for a while?"
 
-            *["Absolutely," says Troy.] 
+            *["Absolutely," says Troy.]
                 -> plenty_traffic
-    
-    = plenty_traffic    
+
+    = plenty_traffic
     -   CHR_TRO_REL
     -   CHR_MIA_SML
         "On a beautiful day like this, we'll probably encounter plenty of traffic as we get closer to the marina. It'll be a good chance for you to put your knowledge to the test."
 
                 ** ["Bring it!" says Mia.]
                     -> bring_it
-                
+
                 = bring_it
                 -   CHR_MIA_REL
                 -   CHR_TRO_REL
                 "Bring it!" says Mia.
                 "And remember the encounter toots," says Troy.
-                
-                    -   (opts) 
-                    
+
+                    -   (opts)
+
                         *   ["One toot for port," says Mia.]
                             "One toot passing on the give-way vessel's port side," says Mia. -> two
-                    
-                    
-                        *   (two)["Starboard has two syllables."]{"Starboard has two syllables, so it gets one toot."|"Since port only has one syllable—one toot."}
-                    
+
+
+                        *   (two)["Starboard has two syllables."]{"Starboard has two syllables, so it gets two toots."|"Since port only has one syllable—one toot."}
+
                         *   {two}[With Mia at the helm...]
                             -> encounter_activity
-                    
+
                     -   -> opts
-                
-                

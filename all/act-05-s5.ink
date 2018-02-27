@@ -29,24 +29,24 @@ what_remember is {what_remember}
 
         -   who_has_memory == TROY:
             ~ chr="TRO"
-    
+
         -   who_has_memory == JULIAN:
             ~ chr="JUL"
     }
     -   SYS_QUIZ_09
     -> on_dock_day_03_2
-    
-    
+
+
 === on_dock_day_03_2 ===
 -   SYS_CHAP_17
 -   SYS_SCENE_1
     - Several days later, we join the friends on the <i>Lakesong</i> preparing for another day on the lake by running through their pre-departure safety checklist.
-    
+
         * [Complete pre-departure checklist.]
         -   SYS_ACHIEVE_3_5
             -> hypo_severity_sorter
         // upon taking choice above we'll complete their trip planning achievment then pass along to sorter
-        
+
 
     = hypo_severity_sorter
         {
@@ -65,9 +65,9 @@ what_remember is {what_remember}
 
             - hypo_severity == -1:
                 -> hypo_neg01_chat
-                
+
             - else:
-                DEBUG: This condition should not be possible. 
+                DEBUG: This condition should not be possible.
 
 
         }
@@ -101,12 +101,12 @@ what_remember is {what_remember}
                 {
                     - hypo_severity == 1 && who_has_memory == JULIAN:
 
-                        * [Yeah, a little bit...," says Julian.]
+                        * [Yeah, a little bit..." says Julian.]
                         -> hypo_01_memory
 
                     - hypo_severity == 1 && who_has_memory == TROY:
 
-                        * [Yeah, a little bit...," says Troy.]
+                        * [Yeah, a little bit..." says Troy.]
                         -> hypo_01_memory
 
                     - else:
@@ -372,7 +372,7 @@ what_remember is {what_remember}
 === willard_and_accomplice ===
 // this is a full solve condition
 
-    -   Several days later, we join the four friends preparing the <i>Lakesong</i> for departure and discussing the breaking news that the boat robbery case was solved. Both Mr. Willard and {accomplice} were both arrested.
+    -   Several days later, we join the four friends preparing the <i>Lakesong</i> for departure and discussing the breaking news that the boat robbery case was solved.  Mr. Willard and {accomplice} were {accomplice == "MAURA_AND_IAN": all} arrested.
 
         {
             - on_kayaks_saw == WILLARD:
@@ -467,34 +467,34 @@ what_remember is {what_remember}
                     - else:
 
                        * "<i>Detective</i> Mac?" says Mia impressed.
-     
+
 
                             ** ["That's right," he says. "MacKensie was my cover name."]
                             -> mac_on_case
 
 
                 }
-        
+
         = thought_detective_suspicious
         -   CHR_DTM_SAD
         -   CHR_ALX_SAD
             "Detective?" says Alexis, her face flushing with embarrassment.
-    
+
             * ["That's right," he says.]
                 -> detective_business
-    
+
         = detective_business
         -   CHR_DTM_SML
         -   "I heard y'all thought I was suspicious," he says with a good-natured laugh. "No hard feelings. Working undercover, it's my job to get into everyone's business."
-    
+
             *   [Alexis is relieved.]
                 -> alx_relieved
-    
+
         = alx_relieved
         -   CHR_DTM_SML
         -   CHR_ALX_SML
         -   Alexis is relieved to hear that Mac didn't take their suspicion personally, and in hindsight wonders why they didn't figure it was {accomplice} involved with Willard.
-    
+
             * [Mac resumes his recap...]
                 -> mac_on_case
 
@@ -574,15 +574,14 @@ what_remember is {what_remember}
 
 == accomplice_resolve ==
     -   CHR_{chr}_REL
-    -   "We tried to get Willard to tell us who else he was working with," says {police_finale}, pausing as a passing boat roars past. {police_finale} nods to the boat's operator.
+    -   "We tried to get Willard to tell us who else he was working with," says {police_finale}. "But he wouldn't say."
 
-            * [The four friends anxiously wait.]
+            * ["What! So we still don't know?" asks Julian.]
                 -> willard_no_say
 
         = willard_no_say
         -   CHR_{chr}_REL
-        - As the sound of the boat engine fades, {police_finale} resumes his story.
-        "Willard wouldn't tell us anything about who he was working with," says {police_finale}. <>
+        - "Willard clammed up," says {police_finale}. <>
 
             {
 
@@ -701,8 +700,8 @@ what_remember is {what_remember}
 
                 * [Julian grins.]
                     -> jul_grins_reward
-                
-        
+
+
         = jul_grins_reward
         - CHR_JUL_SML
         -   "Does this mean what I think it means?" asks Julian.
@@ -864,11 +863,11 @@ what_remember is {what_remember}
                 -> start_boat
 
     = start_boat
-    -   CHR_MPO_REL 
+    -   CHR_MPO_REL
     -   CHR_MPO_REL
     -   Troy starts the <i>Lakesong</i>. The Captain stops along the dock and hollers back, "No plans to head north, right?"
 
-            *   ["Not a chance, Captain!"] 
+            *   ["Not a chance, Captain!"]
                 --  CHR_TRO_SML
                 "Not a chance, Captain!" says Troy. "Not a chance."
 

@@ -37,10 +37,11 @@ VAR knows_strangers_name = false
 
                     Julian looks up at the cloudless blue sky and makes a face.
 
-                        ** ["I know what you're thinking," he says.]
+                        ** ["I know what you're thinking," the man says.]
                             -> thinking_weather
 
                 = thinking_weather
+                -   CHR_DID_REL
                 "But I'm never wrong about the weather," the man says with a chuckle. "The name's MacKensie, by the way, though everyone just calls me Mac."
 
                         **  [Mac touches the brim of his hat.]
@@ -324,10 +325,12 @@ VAR knows_strangers_name = false
                     "Definitely looks like he's trying to max out his load," says Julian, watching as the man carefully distributes the boxes along the bow of his boat.
                     //max it [what?] out, or reach the limit?
                 }
-
-                * "See how he's keeping the boxes low and even?" asks Troy.[] "That will help prevent capsizing."
+                
+                * ["See how he's keeping the boxes low and even?" asks Troy.]
                 --    CHR_MIA_REL
                 --    CHR_TRO_REL
+                "With the boxes stacked low and even like that," says Troy, "it will help prevent capsizing."
+               
 
 
                 -> alx_creeps
@@ -344,8 +347,10 @@ VAR knows_strangers_name = false
             = alx_creeps
 
 
-                *   "I'm just glad he's gone," adds Alexis.[] "Something about him seems phoney."
-                    -- CHR_ALX_REL
+                *   ["I'm just glad he's gone," adds Alexis.] 
+                 -- CHR_ALX_REL
+                "Something about him seems phoney."
+                  
                     ** [Mia disagrees with Alexis.]
                     --- CHR_ALX_REL
                     --- CHR_MIA_REL

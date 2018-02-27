@@ -133,7 +133,7 @@ SCENE 01
         * [OK]
             -> toward_fuel
 
-== wind_away_dock_co3 ==
+== wind_away_dock_co3 == 
     ~ co_wind_away = false
     -   SYS_MINIGAME_3_31
         * [OK]
@@ -174,6 +174,7 @@ SCENE 01
         -> proceed_to_fueling
 
 == proceed_to_fueling ==
+    -   SYS_SOUND_827
     -   CHR_TRO_REL
     -   Troy pilots the <i>Lakesong</i> toward the marina's fuel station. As the friends discovered during the pre-departure check, the boat needs to be topped off with fuel before heading out for the day.
 
@@ -181,6 +182,7 @@ SCENE 01
                 -> fueling_depot
 
 == fueling_depot ==
+    -  SYS_SOUND_827
     -  SYS_ACHIEVE_2_4
     -  The <i>Lakesong</i> arrives at the fuel dock and Troy prepares to dock alongside one of the empty pumps.
 
@@ -429,8 +431,6 @@ SCENE 01
     *    -> fog_or_no
 
 == fog_or_no ==
-// add trip planning badge
--   SYS_ACHIEVE_3_4
     -   CHR_TRO_REL
     * "For or no fog, we'll be good," says Troy.[] "The plan accounts for both possibilities..."
 
@@ -473,6 +473,8 @@ SCENE 01
 
 
 === continue_adventure ===
+// add trip planning badge
+        -   SYS_ACHIEVE_3_4
         -   CHR_TRO_REL
         -   CHR_JUL_REL
         -   "See you in two hours, give-or-take," says Troy. He and Julian push off from the boat and begin paddling toward the shoreline.

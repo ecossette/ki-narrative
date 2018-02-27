@@ -117,7 +117,7 @@ VAR explore_island = true
 
         "When you're on a paddleboard, you're still a boater," says Troy. "So you need to follow the same safety practices, including wearing a PFD."
 
-        -> on_paddeboards
+        -> on_paddleboards
 
 
 == flip_go_island ==
@@ -165,7 +165,7 @@ VAR explore_island = true
             -> no_go_island
 
 
-== on_paddeboards ==
+== on_paddleboards ==
 // add to other water activities badge
 // close in on the island
 -   SYS_SCENE_4_11
