@@ -9,6 +9,8 @@ VAR parts = 0
 
 -> intro
 
+
+
 === intro ===
 -   SYS_CHAP_01
 -   Late spring. The Laketown Docks.
@@ -34,13 +36,13 @@ VAR parts = 0
     -   Troy is the most experienced.
     -   "You don't need to worry. I grew up on the shores of Strar Lake. My brother Vincent and I spent as much time on the water as we could. I know what I'm doing!"
     Mia laughs at Troy's defensive tone.
-        *   [Next] -> Group_Intro
+        *   [- next -] -> Group_Intro
 
 === intro_alexis ===
     -   CHR_ALX_DEF
     -   Alexis has a moderate level of experience.
     -   "I got my boating education certificate a few years ago. I had to, so I could drive my uncle's boat when we visited his lake cabin. So I've got the certificate <i>and</i> experience."
-        *   [Next] -> Group_Intro
+        *   [- next -] -> Group_Intro
 === intro_julian ===
     -   CHR_JUL_ARO
     -   Julian has some boating experience.
@@ -61,7 +63,7 @@ VAR parts = 0
 == julian_ok_exaggerate
     -   CHR_JUL_GRN
     -   "OK, OK, so I've been boating just a handful of times. But I'm a really quick learner!"
-        *   [Next] -> Group_Intro
+        *   [- next -] -> Group_Intro
 
 === intro_mia ===
     -   CHR_MIA_DEF

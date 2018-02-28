@@ -265,7 +265,7 @@ SCENE 02
 
     = check_leaks
     - CHR_TRO_REL
-    - Troy gives the <i>Lakesong</i> a careful but quick check for leaks, and also gives the sound signal for a boat restricted in her ability to maneuver: two prolonged blasts in succession, with an interval of about 2 seconds between them.
+    - Troy gives the <i>Lakesong</i> a careful but quick check for leaks, and also gives the sound signal for a boat restricted in her ability to maneuver: three blasts in succession, namely one prolonged followed by two short blasts.
 
         * [Troy wipes his brow.]
             -> no_leaks_so_far

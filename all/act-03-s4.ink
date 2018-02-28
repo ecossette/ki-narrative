@@ -436,6 +436,7 @@ SCENE 04
 
                 * ["Know what else is strange?"]
                     -> know_else_strange ->
+                    
                     -> tro_on_it_turns
 
 
