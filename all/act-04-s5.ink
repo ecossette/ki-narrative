@@ -350,7 +350,7 @@
 
             "At least there's only one," says Mia. "And it's leaving us alone."
 
-                *   [At least... for now.]
+                *   [<i>At least for now</i>, Alexis thinks to herself.]
                     -> make_way_cove
 
 === make_way_cove
