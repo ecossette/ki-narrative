@@ -213,7 +213,6 @@ SCENE 04
 === no_go_island ===
 // add to other water activities badge
 -   SYS_ACHIEVE_6_3
--   SYS_SCENE_4_17 //Just keep running foggy animation here
 -   SYS_SOUND_434 // SND just light water bg sounds here
     -   Having decided not to explore the island, the friends pass the time waiting for the fog to clear by playing cards.
 
@@ -222,7 +221,6 @@ SCENE 04
 
 
 === mount_paddle_return_early ===
-    -   SYS_SCENE_4_17 //Just keep running foggy animation here
     -   SYS_SOUND_435 // SND just light water bg sounds here
     - The friends re-board the <i>Lakesong</i> and stow the paddleboards. To pass the time until the fog clears, they play cards.
 
@@ -400,8 +398,8 @@ SCENE 04
                         -> draws_abeam
 
         = draws_abeam
-// SND back to clear weather sounds: birds, water, engine
-        -   SYS_SOUND_446
+        -   SYS_SCENE_4_29 // Burn out fog
+        -   SYS_SOUND_446 // SND back to clear weather sounds: birds, water, engine
         -   The last of the fog burns off just as the <i>Lakesong</i> draws abeam the mouth of the cove. The blue sky and warm afternoon sun are a welcome sight to the friends, who take in the lush beauty of the tranquil island.
 
                         * ["Hey, where did that other boat go?" says Alexis.]
@@ -477,7 +475,7 @@ SCENE 04
 == eye_creatures ==
 -   SYS_CHAP_13
 // this is where you can rejoin from explore island track
-    - SYS_SCENE_4_13 //Continue with open water here but with the creature-drone animation dropped in above the text box.
+    - SYS_SCENE_4_28 //Continue with open water here but with the creature-drone animation dropped in above the text box. (also bringing the bugs)
 // SND drone sounds getting closer
     -   SYS_SOUND_448
     -   CHR_JUL_SUR
@@ -730,8 +728,8 @@ SCENE 04
         * ["Fifty yards!"]
           -- CHR_JUL_SUR
           -- CHR_TRO_REL
-// SND buzzing much closer
-          -- SYS_SOUND_455
+          -- SYS_SCENE_4_26 // Fade in close creatures
+          -- SYS_SOUND_455 // SND buzzing much closer
           Julian shouts over the increasing buzzing sound of the flying creatures as they get closer and closer to the fleeing boat.
 
                         ** [Troy nudges the throttle again.]
@@ -750,7 +748,7 @@ SCENE 04
         }
 
             * [The distance from the creatures gradually increases.]
-                -- SYS_SCENE_4 //By this point, the creature animation should be removed.                
+                -- SYS_SCENE_4_27 //By this point, the creature animation should be removed. (We fade them out)
                 -- SYS_SOUND_456
                 --  CHR_JUL_REL
                 Julian watches as the swarm recedes. Then, one by one, the creatures begin peeling off and returning north.
