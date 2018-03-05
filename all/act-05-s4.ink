@@ -225,7 +225,7 @@ wait to call for help = hypo extreme / full memory loss
 
             *    (notebook) [Captain Garcia glances at his notebook.] {Captain Garcia glances at the notebook on his desk. "You've already involved yourselves plenty... more than most."|"Of course, since you're already involved..." The Captain smiles reassuringly.}
 
-            *   {notebook} [Alexis speaks...]
+            *   {notebook} [Alexis agrees.]
                 -> hunch_decision
 
         -   -> opts3
@@ -233,7 +233,7 @@ wait to call for help = hypo extreme / full memory loss
 == hunch_decision ==
     -   CHR_MPO_REL
     -   CHR_ALX_REL
-    -   "OK, since you put it that way," says Alexis. "Our hunch—and it's just a hunch—is that {suspect_whom} is somehow involved."
+    -   Alexis agrees with the Captain. "OK, since you put it that way," she says. "Our hunch—and it's just a hunch—is that {suspect_whom} is somehow involved."
 
                 {
 

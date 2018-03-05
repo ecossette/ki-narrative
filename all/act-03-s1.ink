@@ -255,9 +255,9 @@ SCENE 01
                     -> choppy
 
         = choppy
+        -   SYS_SCENE_4_07
 // SND bring storms sounds closer but still distant, still infrequent rumbles
 // SND fade out the bird sounds if not already out
-        - SYS_SCENE_8_00
         - As the boat continues straight on to Laketown, the water becomes very choppy. Troy has no choice but to back off the throttle and slow down to keep his passengers from bouncing around.
 
                 * [Troy issues a command.]
@@ -446,9 +446,8 @@ VAR is_radio_damaged = true
     -   CHR_MIA_SUR
     -   CHR_JUL_SUR
 // lightning flash
-    //-   SYS_SCENE_4_07
-    - SYS_SCENE_8_01
-    - SYS_SOUND_801
+    -   SYS_SCENE_4_24
+    -   SYS_SOUND_422 //lightning crack
     - Suddenly, there is an enormous crack of lightning!
 
 
@@ -459,7 +458,6 @@ VAR is_radio_damaged = true
         "What just happened?" Julian asks, his eyes wide with surprise.
 
             * ["We were struck by lightning!" says Troy.] 
-                -- SYS_SCENE_8_00
                 -> check_passenger_health
 
 
@@ -474,16 +472,12 @@ VAR is_radio_damaged = true
             "I'm fine, but that radio antenna? Not so good," says Alexis, pointing to the top of the <i>Lakesong</i>. -> looks
 
             *   (looks) [Julian looks up.] {Julian stares at the boat's twisted attenna, as lightning flashes and cracks nearby.|"Look, the fiberglass is completely melted!"}
-                //lightning flash
-                -- SYS_SCENE_8_01
-                -- SYS_SOUND_801
 
             * {looks} ["Mia?..." asks Troy.] -> how_is_mia
             
             -   -> opts
 
 == how_is_mia ==
-    - SYS_SCENE_8_00
         - CHR_MIA_SAD
         - CHR_TRO_REL
                 Mia doesn't answer. She looks dazed.
@@ -597,6 +591,7 @@ VAR is_radio_damaged = true
                 After anchoring the boat and calling the marine patrol, the four friends huddle together. The rain comes down hard. The thunder makes it impossible to talk. They are wet, cold, and disappointed, especially Troy.
 
                     ** [Rewind the story and make a different decision.]
+                        -- SYS_SOUND_437 //switch to engine on
                         <i>Previously...</i>
                         Alexis worries they can't outrun the storm. Mia reminds Troy that lightning can strike far from the center of a storm. Julian thinks they may as well press on.
 

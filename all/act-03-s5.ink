@@ -15,7 +15,7 @@ SCENE 05
 
     = make_way_laketown
 // general open water sounds
-    -   SYS_SCENE_4_15
+    -   SYS_SCENE_4_15 //sunset transition
     -   The <i>Lakesong</i> cruises south toward Laketown as a beautiful sunset fills the western sky.
 
         * [The friends discuss what happened.]
@@ -126,7 +126,7 @@ SCENE 05
         -   "When I get home I may be able to clean up the photo a bit on my computer."
 
              * [Darkness sets in.]
-                -- SYS_SCENE_4_15
+                -- SYS_SCENE_4 // fade scene to darkness
                 -- CHR_TRO_REL
                 Troy texts his brother Vincent. He needs to update him on the change in their float plan to account for the later return to shore.
 
@@ -193,6 +193,7 @@ SCENE 05
             -> after_docking_ahoy
 
 == after_docking_ahoy
+//give some movement to town at night
 -   SYS_CHAP_14
 // SND kill engine sound but keep regular dock sounds
     -   CHR_TRO_REL

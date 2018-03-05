@@ -13,6 +13,7 @@ SCENE 02
 
 == avoid_storm ==
 // SND storms continue sounding in distance
+    - SYS_SOUND_437 //switch to engine on (if not already on)
     - CHR_TRO_REL
     - "We'll head east-northeast toward Brodaht Island," says Troy, pushing the wheel over. "That was on the edge of the watch area, so we should be safe there."
 
@@ -265,6 +266,7 @@ SCENE 02
 
     = check_leaks
     - CHR_TRO_REL
+    - SYS_SOUND_458 //two long blasts
     - Troy gives the <i>Lakesong</i> a careful but quick check for leaks, and also gives the sound signal for a boat restricted in her ability to maneuver: three blasts in succession, namely one prolonged followed by two short blasts.
 
         * [Troy wipes his brow.]
@@ -636,7 +638,6 @@ SCENE 02
             -> anchoring_review
 
 == anchoring_review ==
-    -   SYS_SCENE_8_02
     -   Having decided to sit tight and wait for the fog to clear, the friends make preparations to drop anchor.
 
         * [Review the material on anchoring.]

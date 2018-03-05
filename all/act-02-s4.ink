@@ -227,6 +227,8 @@
         -> passed_fst
 
     = passed_fst
+    -   CHR_MPO_REL
+    -   CHR_IAN_REL
         "OK, Mr. Murphey, you passed."
 
         // SOUND Kill circle of death

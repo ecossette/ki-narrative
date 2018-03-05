@@ -111,7 +111,7 @@ VAR explore_island = true
 
 
 == paddleboard_safety ==
-    -   SYS_SCENE_8_03
+    -   SYS_SOUND_439 //switch to cutsource
     -   CHR_TRO_REL
     -   Before setting off, Troy reminds his friends about basic paddleboard safety.
 
