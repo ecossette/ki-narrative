@@ -292,6 +292,7 @@
             //Definitely don't need the above line. This section could be cut down to: Please could you tow us, we'll make lunch; we were hoping to ski, info about that, ok.
 
         - (done)
+        -   CHR_TRO_REL
             * "Ok," says Troy.[] "Let's get the boat rigged for tow." He points at Maura and Ian. "And you two definitely need to get into life jackets!"
         //this bit could be in the earlier sentence, doesn't need to be a separate click away.
             * [Captain Garcia has a parting warning.]
