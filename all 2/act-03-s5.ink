@@ -208,12 +208,8 @@ SCENE 05
         = mac_approach
         -   CHR_DID_REL
         -   "I haven't seen weather like that in years," Mac says.
-        
-                * ["What's going on over there?" asks Mia.]. 
-                -- CHR_DID_REL
-                -- CHR_MIA_REL
-                
-                Mia points toward the marine patrol officers and the couple.
+
+                *"What's going on over there?" asks Mia[.], pointing toward the marine patrol officers and the couple.
                     -> mia_ask_police_couple
 
         = mia_ask_police_couple
@@ -303,13 +299,13 @@ SCENE 05
 
                  {
                     - robbery_questions_loop || ask_robbery_questions && go_to_island:
-                        "The only clues we have are what Mac told us and what we saw on the beach," says Alexis.
+                        "The only clues we have are what that man told us and what we saw on the beach," says Alexis.
 
                     - go_to_island && not ask_robbery_questions || robbery_questions_loop:
                         "The only clues we have are what we saw on the beach," says Alexis.
 
                     - robbery_questions_loop || ask_robbery_questions:
-                        "The only clues we have are what Mac told us," says Alexis. "And that wasn't much."
+                        "The only clues we have are what that man told us," says Alexis. "And that wasn't much."
 
                     - else:
                     // no clue paths taken

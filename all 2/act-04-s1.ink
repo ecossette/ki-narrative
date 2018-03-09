@@ -252,13 +252,12 @@ SCENE 01
 === arrive_ki ===
 // add to other water activities badge here
     -   SYS_SCENE_4_16
-    -   SYS_ACHIEVE_6_4
     -   The journey north toward Kalkomey Isle is a long one, but all four agree that the time is passing more quickly than expected. The warm and sunny weather helps too at least until...
 
             * [They hit the fog.] -> infamous_fog
 
 == infamous_fog ==
-    
+    -   SYS_ACHIEVE_6_4
     -   Just as the four friends discovered the day before, the stories of thick fog in this part of the lake are true enough.
 
         - (opts)

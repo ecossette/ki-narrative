@@ -788,7 +788,7 @@ SCENE 04
         -   SYS_SOUND_457 // SND creature sounds fading
         -   CHR_JUL_SML
 
-           * ["We did it!" says Julian.] "The mutants are flying back to their rotten island home."
+            * "We did it!" says Julian.[] "The mutants are flying back to their rotten island home."
                 -> close_call
 
         = close_call

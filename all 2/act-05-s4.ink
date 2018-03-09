@@ -824,16 +824,12 @@ wait to call for help = hypo extreme / full memory loss
 
 
     = check_is_good
-    -   CHR_ALX_REL
-    -   CHR_MIA_REL
     -   "Everything looks good," says Alexis. "So we're done."
 
 
         -   (opts)
 
             *   ["Now all we can do is wait," says Mia.]
-            --   CHR_ALX_REL
-            --   CHR_MIA_REL
                 {
                     - hypo_severity == 3:
                     "So true," says Alexis. "I still can't believe that neither Julian nor Troy can remember anything." -> ugh

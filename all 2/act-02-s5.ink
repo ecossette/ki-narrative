@@ -243,7 +243,7 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
         //is it just the PWC that makes it dangerous, or is it any wake jumping? I assumed the latter
         //lose not loose (I may not have spotted this elsewhere, do double check for it)
 
-                * ["Message received. Sorry," says Julian.] "No more wake jumping for me!"
+                * "Message received. Sorry," says Julian.[] "No more wake jumping for me!"
                     --   CHR_IAN_REL
                     --   CHR_JUL_SAD
 
