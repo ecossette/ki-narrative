@@ -18,7 +18,6 @@ VAR houseboat_st = 0
                 -> review_naslba_6_2
 
         = review_naslba_6_2
-        -   CHR_ALX_SML
         -   Before we rejoin the friends, let's do a quick review of the safety issues related to <i>water skiing, towed devices, and wake sports</i>.
 
             * [Launch the review.]
@@ -28,7 +27,7 @@ VAR houseboat_st = 0
         = mia_pwc_choice
         // bump up other activities badge here
         -   SYS_PDF_16
-       
+        -   SYS_ACHIEVE_6_2
         // SOUND water generic continue until next sound
         -   CHR_IAN_REL
         -   But before they can get started, Ian has to make some adjustments.
@@ -52,7 +51,6 @@ VAR houseboat_st = 0
                 -> mia_chooses_ian
 
         = mia_chooses_jul
-        -   SYS_ACHIEVE_6_2
         -   CHR_IAN_REL
         -   CHR_JUL_REL
         -   "OK, cool," says Ian, "but Julian and I need to swap PWCs because the one he's on is only rated for two people."

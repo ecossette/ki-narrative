@@ -3,8 +3,7 @@
     -> follow_kayaks_2
 
 === follow_kayaks_2 ===
-//    -   SYS_SCENE_4_11
-    -   SYS_SCENE_8_24
+    -   SYS_SOUND_427   //cut engine sound
     -    The kayaks slide into the fog and quickly lose sight of the <i>Lakesong</i>. Julian is an experienced rower, and Troy has to work to keep pace. They reach the cove's shoreline and start to follow it, keeping an eye out for anything unusual.
 
         *  [The minutes pass... 15, 20, then 30 minutes...]
@@ -253,7 +252,7 @@
         {
 
              - turn_back_before_cave:
-                SYS_SCENE_8_30
+                SYS_SCENE_8_28
                 * [Wait for Mia and Alexis]
                     -> wait_for_mia_alexis
 
@@ -435,8 +434,8 @@
 == overhead_buzzing ==
     -   CHR_JUL_REL
     -   CHR_TRO_REL
-    - Overhead they hear a buzzing eerily similar to what they heard yesterday, but the tree canopy is too thick for them to see if it's the disguised drones.
     -   SYS_SOUND_705
+    - Overhead they hear a buzzing eerily similar to what they heard yesterday, but the tree canopy is too thick for them to see if it's the disguised drones.
 
      Troy pulls alongside Julian and says, "I think we should go a little further."
 
@@ -453,7 +452,6 @@
 
     = tro_so_slow
     -   CHR_TRO_SML
-    -   SYS_SOUND_706
     -   "Since I'm so slow, I better get a head-start," says Troy, grinning.
 
         Julian pulls in behind Troy. They paddle forward down the middle of the stream and around the next bend, then around yet another. And then they hear...
@@ -478,7 +476,6 @@
                 -> sandy_area
             
     = sandy_area
-    -   SYS_SOUND_708
     -   CHR_TRO_SUR
     -   CHR_JUL_SUR
     -   "C'mon, Jules, let's pull up on to that sand," says Troy pointing to a sandy area along the same bank.      
@@ -529,7 +526,7 @@
 
     =   toward_sound
     -   SYS_SCENE_5_05
-    -   SYS_SOUND_710
+    -   SYS_SOUND_505   //generator
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Troy and Julian set off in the direction of the persistent engine sound Troy thinks is a generator.
@@ -537,6 +534,7 @@
         * [They pick their way carefully through the thick underbrush.]
         --   CHR_JUL_REL
         --   CHR_TRO_REL
+        --   SYS_SOUND_506  //murmur and drill
 
         After several minutes, ahead they see the stream doubling back again. In addition to the engine sound, they can now hear the sound of power tools... and the occasional muffled voice.
 
@@ -544,7 +542,7 @@
                     -> thieves_hideaway
 
 == thieves_hideaway ==
-    -   SYS_SCENE_7
+    -   SYS_SCENE_8_34  //load static cave with stream
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   {They reach the stream bank and peer out from underbrush, being careful to remain well-hidden. There is much to see.| Without a doubt, this is the hideaway, some 50 yards ahead of their hidden position.|}
@@ -589,7 +587,7 @@
         = monkeys_shriek
         -   CHR_JUL_SUR
         -   CHR_TRO_SUR
-        -   SYS_SOUND_711
+        -   SYS_SOUND_828 //monkey shriek
         -   Suddenly several monkeys begin shrieking somewhere behind Troy and Julian's hiding spot. The thief turns and looks their way.
 
                 * [They recognize the face immediately.]
@@ -598,6 +596,7 @@
         = it_is_willard
         ~ on_kayaks_saw = WILLARD
         -   CHR_WLD_REL
+        -   SYS_SOUND_829 //bring in power boat sound low volume
             "Mr. Willard!" they say in unison.
 
             Then they realize what caused the monkeys to stir. They hear the sound of a power boat in the near distance. They see it begin to come around the bend toward the cave.
@@ -608,6 +607,7 @@
         = both_lay_flat
         -   CHR_JUL_SUR
         -   CHR_TRO_SUR
+        -   SYS_SOUND_830 //increase power boat volume
         -   Laying flat on the ground to present the absolute lowest profile, both Julian and Troy break into a cold sweat. They hope whoever is in the boat won't see them when it passes their position.
 
                 * [The boat approaches...]
@@ -616,6 +616,7 @@
         = boat_approaches
         -   CHR_JUL_REL
         -   CHR_TRO_REL
+        -   SYS_SOUND_831 //fade out the the power boat sound
         -   As they lay hidden, the boat approaches... and passes them. Looking out from their hiding spot, neither is able to get a look at the boat's driver before it disappears into one of the smaller caves.
 
                 * [Mr. Willard follows it.]
@@ -695,7 +696,7 @@
 
 
             *  (move)  [Move away from the vine curtain.]
-                --  SYS_SCENE_8_26
+                --  SYS_SCENE_8_28
                 --  {They paddle away from the entrance to the stream and stay close to the cove's shoreline to eliminate any chance of colliding with a boat in the fog.|"I think we missed them."}
 
             *   {move} [Julian sighs.] -> sigh
@@ -713,7 +714,6 @@
 
 == doubtful_in_cove ==
     //-   SYS_SCENE_4_17
-    -  SYS_SCENE_8_27
     -   CHR_TRO_REL
     -   "Doubtful," says Troy. "If we missed the rendezvous, the plan was for Mia and Alexis to leave and return again later. If I know Alexis, she's sticking to the plan."
 
@@ -777,7 +777,7 @@
                     -> out_of_cove
 
 == out_of_cove ==
-    -   SYS_SCENE_4_18
+    -   SYS_SCENE_4_30
     -   CHR_JUL_REL
     -   CHR_TRO_REL
     -   Troy was right about the fog. Shortly after leaving the cove, they break into clearer conditions. There is still patchy fog in spots, but visibility is much improved.

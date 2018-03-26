@@ -886,9 +886,7 @@ what_remember is {what_remember}
                 You'll be given the opportunity to take a practice exam or proceed directly to the final exam. Good luck!
 
                 *** [Onward!]
-                    FPO: Hand off to final exam course LMS occurs here.
-
-                -> END
+                    -> lms_handoff
 
 
 
@@ -902,9 +900,7 @@ what_remember is {what_remember}
                 You'll be given the opportunity to take a practice exam or proceed directly the final exam. Good luck!
 
                 *** [Onward!]
-                    FPO: Hand off to final exam course LMS occurs here.
-
-                -> END
+                    -> lms_handoff
 
 
 
@@ -917,6 +913,10 @@ what_remember is {what_remember}
         You'll be given the opportunity to take a Practice Exam or proceed directly the final. Good luck!
 
                 *** [Onward!]
-                    FPO: Hand off to final exam course LMS occurs here.
+                    -> lms_handoff
+                
+=== lms_handoff ===
+-   SYS_GAMEOVER
+-   Thanks for playing.
+-> END
 
-                -> END

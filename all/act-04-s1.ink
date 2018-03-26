@@ -251,14 +251,13 @@ SCENE 01
 
 === arrive_ki ===
 // add to other water activities badge here
-    -   SYS_SCENE_4_16
-    -   SYS_ACHIEVE_6_4
+    -   SYS_SCENE_4_16 // fade in fog
     -   The journey north toward Kalkomey Isle is a long one, but all four agree that the time is passing more quickly than expected. The warm and sunny weather helps too at least until...
 
             * [They hit the fog.] -> infamous_fog
 
 == infamous_fog ==
-    
+    -   SYS_ACHIEVE_6_4
     -   Just as the four friends discovered the day before, the stories of thick fog in this part of the lake are true enough.
 
         - (opts)
@@ -298,7 +297,6 @@ SCENE 01
             //  add to emergency prep badge
 
             -   Troy gives another prolonged blast on the horn.
-            -   SYS_SCENE_8_14
 
             - (opts)
                     *    [ Four pairs of eyes scan the area ahead.]
@@ -312,7 +310,7 @@ SCENE 01
 
 == bird_sounds ==
     -   SYS_SCENE_4_10
-    -   SYS_SOUND_445
+    -   SYS_SOUND_445 // play gull one-shot and start ambient gull audio
     -   CHR_TRO_SML
     -   The sound of birds signal their arrival at the island.
         "There's the cove!" says Troy. "That's where we'll launch the kayaks." Troy gives another prolonged blast from the horn, keeping to the rule of signaling once every two minutes during reduced visibility.
@@ -322,7 +320,6 @@ SCENE 01
 
 == review_plan ==
     -   SYS_CHAP_16
-    -   SYS_SCENE_8_15
     -   CHR_TRO_REL
     -   "Let's go over the plan one more time," says Troy.
 

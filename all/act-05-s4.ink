@@ -281,7 +281,6 @@ wait to call for help = hypo extreme / full memory loss
 === conclude_day_two ===
 -   SYS_ACHIEVE_7_4
     -   CHR_TRO_REL
-    -   SYS_SCENE_6_01
     -   Walking along the dock in the setting sun, the four make plans for their next boating outing—an outing that won't include Kalkomey Isle.
 
         "Now all we can do is wait," says Troy. "We'll find out soon enough if what we told Captain Garcia proves helpful in finding the thieves."
@@ -824,16 +823,12 @@ wait to call for help = hypo extreme / full memory loss
 
 
     = check_is_good
-    -   CHR_ALX_REL
-    -   CHR_MIA_REL
     -   "Everything looks good," says Alexis. "So we're done."
 
 
         -   (opts)
 
             *   ["Now all we can do is wait," says Mia.]
-            --   CHR_ALX_REL
-            --   CHR_MIA_REL
                 {
                     - hypo_severity == 3:
                     "So true," says Alexis. "I still can't believe that neither Julian nor Troy can remember anything." -> ugh

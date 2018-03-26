@@ -177,7 +177,7 @@
                         "Nothing so far. But no..." Alexis pauses, as she considers how best to say it. "No sign of casualties either."
                         //bit dramatic.
 
-                            *** ["We're looking for the person who was in that boat?" asks Julian.] Julian has recognised the seriousness of the situation.
+                            *** ["We're looking for the person who was in that boat?" asks Julian.] Julian has recognized the seriousness of the situation.
                             // What does Julian think it mean? Just have him clock on as from our viewpoint he could mean everyone's drowned or everyone's swam away. Changed as it was unclear.
                             //People should still be looking out. Don't make Mia too wimpy.
                             -> casualties_explained

@@ -3,7 +3,6 @@
 === second_entry_cove_fog ===
     -   CHR_ALX_REL
     -   CHR_MIA_REL
-    -   SYS_SOUND_813
 
     - In the foggy cove, Mia and Alexis repeat the signal again—but just as before, there is no response from Julian and Troy.
 
@@ -18,7 +17,6 @@
     -   Mia and Alexis enter the cove, but there is no sign of the kayaks. Alexis wonders if there is a chance that Julian and Troy are hunkered down somewhere out of sight along the shoreline.
 
         * [Alexis signals with the boat's horn.]
-            --   SYS_SOUND_813
             -- "Nothing and more nothing," says Mia, frustrated.
             -> no_response_hour_two
 
@@ -161,6 +159,7 @@
 == leave_cove_after_pan_call ==
     -   CHR_ALX_REL
     -   CHR_MIA_REL
+    -   SYS_SCENE_4_29 // burn off fog
     -   Alexis pushes the throttle forward and puts the boat on a course to exit the cove.
 
         "Aren't you going to try the radio again?" asks Mia.
@@ -171,7 +170,6 @@
 
                 ** [Leave the cove.]
                 --- CHR_ALX_REL
-                --- SYS_SCENE_4
                 Once in open water, Alexis repeats the pan-pan distress call at the proper two-minute mark.
 
                     *** [The radio squawks to life.]

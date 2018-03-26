@@ -3,7 +3,6 @@
     -> follow_boat_2
 
 === follow_boat_2 ===
-    -   SYS_SCENE_8_16
     -   CHR_MIA_REL
     -   CHR_ALX_REL
     - Mia and Alexis watch Julian and Troy paddle off and disappear into the fog. Alexis starts the <i>Lakesong's</i> engine and slowly takes the boat out of the cove while Mia provides a steady lookout.
@@ -16,8 +15,8 @@
 // this thread account for the player choice NOT to explore the stream at all.
 // will need to account for having seen stream for the solve matrix later
 // will need to account for this case and branch off to a path where the girls find them in the cove.
--  SYS_SCENE_8_29
--  SYS_SOUND_820
+-   SYS_SCENE_4_17  //crash load fog with zoomed island
+-   SYS_SOUND_407   //switch to engine on
 -   Following the plan, after leaving Julian and Troy to investigate the cove on the kayaks, Alexis took the <i>Lakesong</i> away from the cove to put some distance between the boat and the island.
 
     -   (opts)
@@ -28,7 +27,6 @@
             Alexis takes the boat in slow circles as they wait for the appointed rendezvous time. -> blast
 
         * (blast) [Alexis gives the horn a prolonged blast.]
-        - SYS_SOUND_821
         {Per the rules for operating in fog, Alexis gives a prolonged blast on the horn every two minutes.| Mia keeps a sharp lookout as they slowly circle with the island in the distance.}
 
         * {blast} [After some time passes...]
@@ -73,7 +71,6 @@
 == fog_persists ==
 // the fog persists user path that leads to meeting someone in the fog.
 ~ fog_condition = FOG
-    -   SYS_SCENE_8_17
     -   CHR_MIA_REL
     -   CHR_ALX_REL
     -   "I was hoping the fog would clear up by now," says Alexis. "But no luck."
@@ -94,7 +91,6 @@
 == boat_horn ==
     -   CHR_MIA_SUR
     -   CHR_ALX_SUR
-    -   SYS_SOUND_815
     -   Alexis is interrupted by a prolonged blast from a boat horn in the near distance, somewhere in the fog.
 
             - (opts)
@@ -480,7 +476,6 @@
 
                 * [Speaking of the guys," says Alexis.]
                 --   CHR_ALX_SML
-                --   SYS_SCENE_8_18
                 "It's time to head back to the cove," says Alexis. "And look! The fog is finally breaking up!"
 
                     ** [Reverse direction.]
@@ -493,7 +488,7 @@
                         -> return_to_cove
 
             = return_to_cove
-            -   SYS_SCENE_4_19
+            -   SYS_SCENE_4_19 // burn out fog
             -   The remaining fogs burns off during their cruise back to the island, giving them plenty of visibility. They encounter no other boats.
 
                     *   [As they near the cove...]

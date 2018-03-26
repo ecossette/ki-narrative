@@ -123,6 +123,7 @@ SCENE 04
 
     * ["Oh, no!"]
         -- CHR_MIA_SUR
+        -- SYS_SCENE_9_03 //add mid-drone images
         "They're coming this way," says Mia. "And fast!"
             -> everybody_looks_tro
 
@@ -140,7 +141,7 @@ SCENE 04
 // end strange birds tunnel
 
 === run_away ===
-    -   SYS_SCENE_9_03 //add mid-drone images
+    -   SYS_SCENE_9_04 //add far-drone images
     -   SYS_SOUND_904 //drone sound gets loudest
     -   Mia, Alexis, Julian, and Troy sprint back toward the treeline... while the flying creatures close in with a terrible buzzing sound!
 
@@ -788,7 +789,7 @@ SCENE 04
         -   SYS_SOUND_457 // SND creature sounds fading
         -   CHR_JUL_SML
 
-           * ["We did it!" says Julian.] "The mutants are flying back to their rotten island home."
+            * "We did it!" says Julian.[] "The mutants are flying back to their rotten island home."
                 -> close_call
 
         = close_call
