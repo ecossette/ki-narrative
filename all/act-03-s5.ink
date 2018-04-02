@@ -199,22 +199,24 @@ SCENE 05
     -   CHR_TRO_REL
     -   With the <i>Lakesong</i> successfully docked, Troy instructs his three friends on the tasks needed to secure the boat for the night.
 
-        *   "Ahoy there!" a voice shouts.
+        *   ["Ahoy there!" a voice shouts.]
         --  CHR_DID_REL
+        --  The look up to see someone approaching along the dock.
         --  It's Mac, the man they met earlier.
 
             ** ["Quite a day, eh?" he says.] -> mac_approach
 
         = mac_approach
         -   CHR_DID_REL
-        -   "I haven't seen weather like that in years," Mac says.
+        -   "I haven't seen weather like that in years," Mac says. "Glad to see you made it back safe and sound."
 
-                *"What's going on over there?" asks Mia[.], pointing toward the marine patrol officers and the couple.
+                * ["What's going on over there?" asks Mia.]
                     -> mia_ask_police_couple
 
         = mia_ask_police_couple
         -   CHR_MIA_REL
         -   CHR_DID_SAD
+        -   Mia points toward the marine patrol officers and couple they saw coming in.
         -   "We've had another boat robbery," he says bitterly. "The thieves used the storm as cover to strike again."
 
                 *  ["Another robbery!"] -> another_robbery
@@ -331,7 +333,7 @@ SCENE 05
                 Troy has already begun to put his plan into action.
 
             - (done)
-                "I texted Vincent and he said the boat's ours again tomorrow, if we want it," says Troy.
+                "I texted my brother, and he said the boat's ours again tomorrow, if we want it," says Troy.
 
                     -> tro_awaits_answer
 

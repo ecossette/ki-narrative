@@ -587,7 +587,8 @@ SCENE 02
             { -> opts | -> opts | }
 
             Troy nods his head. "You're not showing any symptoms of CO poisoning," he says.
-            "Like I said, I'm fine," insists Julian.
+            * ["Like I said, I'm fine," insists Julian.] -> done
+        
         - (done)
         -   CHR_TRO_SUR
         -   CHR_JUL_REL

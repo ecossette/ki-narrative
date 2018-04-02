@@ -107,7 +107,7 @@ SCENE 04
             -- CHR_ALX_REL
             "They're flying more like a swarm than a flock..." -> creatures
 
-        *    (creatures) ["They don't sound like birds."] {"Birds don't <i>buzz</i> like that," Alexis says.| says Alexis, "more like really large bees."}
+        *    (creatures) ["They don't sound like birds."] {"Birds don't <i>buzz</i> like that," Alexis says.|says Alexis, "more like really large bees."}
 
         *    {creatures} ["Those are the creatures!"]
             -> coming_this_way_fast
@@ -796,7 +796,13 @@ SCENE 04
         -   CHR_MIA_SML
         -   CHR_JUL_SML
         -   "And not a moment too soon," says Mia.
-            "Seriously, they were like right freaking on top of us!"
+            * ["Seriously..." says Julian.] -> top_of_us
+            
+            
+        = top_of_us    
+        -   CHR_JUL_SUR
+        -   CHR_ALX_REL
+        -   Julian is still excited from the chase. "They were like right freaking on top of us!"
 
                 * ["More like {distance}," says Alexis.]
                     -> more_like

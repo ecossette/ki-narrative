@@ -10,24 +10,24 @@ VAR houseboat_st = 0
 
 == pwc_return_houseboat ==
     -   CHR_ALX_SML
-     // SOUND pwc generic
     - SYS_SOUND_419
     -   Ian, Mia, and Julian return to the houseboat on the PWCs.
 
             * "Let the water skiing commence!"[] shouts an enthusiastic Alexis.
-                -> review_naslba_6_2
+                -> mia_pwc_choice
 
+/* removd extra review 4.2.18
         = review_naslba_6_2
         -   Before we rejoin the friends, let's do a quick review of the safety issues related to <i>water skiing, towed devices, and wake sports</i>.
 
             * [Launch the review.]
                 -> mia_pwc_choice
 
-
+*/
         = mia_pwc_choice
-        // bump up other activities badge here
-        -   SYS_PDF_16
-        -   SYS_ACHIEVE_6_2
+       
+        //-   SYS_PDF_16
+        
         // SOUND water generic continue until next sound
         -   CHR_IAN_REL
         -   But before they can get started, Ian has to make some adjustments.
@@ -109,8 +109,9 @@ VAR houseboat_st = 0
                         --- SYS_PDF_16
                             -> skiing_hazards
 
-                    ** [Continue without a review.]
-                            -> skiing_hazards
+                    // forcing review 4.2.2018
+                    // ** [Continue without a review.]
+                           // -> skiing_hazards
 
 
 == skiing_hazards ==
@@ -140,6 +141,7 @@ VAR houseboat_st = 0
 == skiing_time ==
     // SOUND pwc generic mixed with PWC passby and acceleration
     //- SYS_SOUND_420
+    -   SYS_ACHIEVE_6_2
     - After a successful review of skier hand signals, the water skiing begins. Everyone takes a turn.
     //trim where you can
 

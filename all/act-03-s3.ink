@@ -50,7 +50,7 @@ SCENE 03
     -   CHR_JUL_SML
     -   CHR_TRO_REL
     -   "That's doubtful," says Troy. "There are <i>hundreds</i> of islands scattered all over the lake."
-    -   "The evidence is clear!" says Julian. "Going north? Check. Fog? Check! Loss of cell signal? <i>Check!"</i>
+    -   "But look at the facts!" says Julian. "Going north? Check. Fog? Check! Loss of cell signal? <i>Check!"</i>
 
                 * [Troy isn't convinced.] -> tro_not_convinced
 
@@ -70,10 +70,11 @@ SCENE 03
                 "And the boat is anchored securely. As long as we don't venture too far..."
 
 
-            *   ["Won't it be dark soon?" asks Mia.]
+            *   ["Do we have time?" asks Mia.]
                 -- CHR_MIA_REL
                 -- CHR_TRO_REL
-                "Not for a while," says Troy. "The fog and the overcast sky make it seem later than it really is. Still, we would need to keep an eye on the time."
+                "I mean what if it gets dark?"
+                "We should be good," says Troy. "The fog and the overcast sky make it seem later than it really is. Still, we'd need to keep an eye on the time."
 
             *   {loop} [Alexis has heard enough.]
                     -> done
@@ -173,12 +174,12 @@ VAR explore_island = true
 // SND paddling
     -   Troy and Mia navigate one board, while Alexis and Julian take the other.
 
-        * [They leave the boat's lights shining.]
+        * [They paddle toward the beach.]
             -> behind_them
 
     = behind_them
     -   SYS_ACHIEVE_6_3
-    -   The Lakesong's masthead and stern lights shine brightly, acting as the all-around white light required when a boat is anchored in fog or darkness.
+    -   The Lakesong's masthead and stern lights shine brightly in the distance, acting as the all-around white light required when a boat is anchored in fog or darkness.
 
             * They arrive on the small beach[.], and as they look around, a few things immediately catch their attention.
 

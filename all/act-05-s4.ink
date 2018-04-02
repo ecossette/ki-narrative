@@ -484,9 +484,10 @@ wait to call for help = hypo extreme / full memory loss
         = hypo_02_report
         -   CHR_MPO_REL
         -   "{rescuer} found them after seeing a flare, but there was no sign of the kayaks," says the Captain. "He found them huddling together to conserve body heat—very smart. Probably saved their lives."
+        
         * ["They could have died?" blurts Mia.] "Yes," says Captain Carcia. "Without a kayak to help get their bodies out of the cold water, they suffered greater exposure. That probably accounts for their memory loss."
 
-                * ["Memory loss?"]
+                ** ["Memory loss?"]
                 -> memory_loss
 
         = hypo_01_report

@@ -11,6 +11,7 @@ VAR parts = 0
 
 
 
+
 === intro ===
 -   SYS_CHAP_01
 -   Late spring. The Laketown Docks.
@@ -397,7 +398,7 @@ VAR parts = 0
     = tro_frowns
     -   CHR_TRO_SUR
     -   CHR_JUL_SAD
-    -   "OK, we're going to need to delay our departure," he says. "We'll need to replace the expired flares and the torn life jacket before we cast off."
+    -   "OK, we're going to need to delay our departure," he says. "We'll need to replace the expired flares Alexis found and the torn life jacket Mia noticed before we cast off."
     
         -   (opts2)
     
@@ -1382,7 +1383,7 @@ VAR pfd_tryer = "Mia"
             -- "I wish it were," the shopkeeper answers. "One of the biggest dangers in outdoor survival situations is hypothermia."
             -- Alexis frowns.
         // We require the player to ask at least one question
-        *    {loop >1} [Onward.]
+        *    {loop >1} [Onward!]
             -> done
     - (loop)
         // loop a few times

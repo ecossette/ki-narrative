@@ -262,7 +262,7 @@
             = see_head
                 - CHR_MIA_REL
                 - CHR_ALX_SML
-                - Mia points in the distance a head bobbing in the water.
+                - Mia points in the distance. "Look there!"
                     //head made me think beheaded
                     "I see them too!" calls Alexis. "And another one, over there! Neither has a PFD!"
 

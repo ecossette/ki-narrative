@@ -89,7 +89,7 @@ SCENE 01
      - (opts)
                 *    [Troy points to Mia and Julian.]
                     -- CHR_TRO_REL
-                     "Can you two do the same checks you did yesterday?" he asks. They both nod. -> bfa
+                     "I'd like you to do the same checks you did yesterday, OK?" he says. Mia and Julian agree. -> bfa
 
                 *    (bfa) ["I've already checked the lights," says Troy.] {Troy calls to Alexis. "Since I've already checked the lights, can you check the backfire flame arrestor instead?"|"I'm going to double-check our kayak supplies, too."}
 

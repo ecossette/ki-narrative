@@ -892,7 +892,7 @@
         -   CHR_TRO_REL
         -   "Make sure the tether is attached to your paddle," says Troy, "it'll give us something to hang on to and keep us with the kayaks if we dump."
 
-            Julian double-checks his lanyard just before...
+            Julian double-checks his leash just before...
 
             * [Both kayaks capsize!]
                 -> capsized
@@ -972,7 +972,7 @@
             -- CHR_JUL_SAD
             "Hope s-soon... 'cause..." says Julian breathlessly.-> clings
 
-            *   (clings) [Julian clings to his oar.] {Julian clings to the paddle attached by lanyard to his kayak. "...it's getting... difficult... to hang on," he says.|"... I...I c-c-can't... hold..."}
+            *   (clings) [Julian clings to his oar.] {Julian clings to the paddle attached by leash to his kayak. "...it's getting... difficult... to hang on," he says.|"... I...I c-c-can't... hold..."}
 
             *   {clings} [Julian loses his grip.]
                 -> loses_kayak
@@ -991,7 +991,7 @@
 
             *   (reaches) [Troy reaches out.] {With his left hand, Troy reaches and grabs Julian by his PFD, pulling him close.| He didn't attach it to his paddle because he planned to attach it to his PFD.}
 
-            *   {reaches} [Troy wants to attach the lanyard.]
+            *   {reaches} [Troy wants to attach the leash.]
                 -> lanyard_attach
 
         -   -> opts
@@ -1038,7 +1038,7 @@
 === lose_remaining_kayak ===
 ~  kayak_status = 0
     -   CHR_TRO_SAD
-    -   Troy is unable to attach the leash to his PFD and in his final effort he loses hold of the lanyard and the kayak is lost.
+    -   Troy is unable to attach the leash to his PFD and in his final effort he loses hold of the leash and the kayak is lost.
 
             * [Focus on survival.]
             -> focus_survival

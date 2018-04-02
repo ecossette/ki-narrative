@@ -52,7 +52,7 @@
                 //I mean, this is adrenaline anger bluntness here. But the words convey the tone pretty clearly.
                 Maura looks away.
 
-                * Troy cuts the engine[.], and they pull Ian over the <i>Lakesong's</i> stern to safety.
+                * Troy cuts the engine[.], and they pull the second victim over the <i>Lakesong's</i> stern to safety.
                 // SOUND ambient no engine, reduce vol a bit on circle
                     -- SYS_SOUND_411
                     -> recover_victim_2
