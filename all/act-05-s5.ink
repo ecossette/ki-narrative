@@ -883,7 +883,7 @@ what_remember is {what_remember}
         * You were successful in solving the mystery[!], and you have successfully completed all of your boat education achievements, which qualifies you to take the final exam.
 
             ** Congratulations![]
-                You'll be given the opportunity to take a practice exam or proceed directly to the final exam. Good luck!
+                Before you proceed to the final exam, your state has some additional required information for you to read. 
 
                 *** [Onward!]
                     -> lms_handoff
@@ -897,7 +897,7 @@ what_remember is {what_remember}
         * You were successful in partially solving the mystery[...], and you have successfully completed all of your boat education achievements, which qualifies you to take the final exam.
 
             ** Congratulations![]
-                You'll be given the opportunity to take a practice exam or proceed directly the final exam. Good luck!
+                Before you proceed to the final exam, your state has some additional required information for you to read. 
 
                 *** [Onward!]
                     -> lms_handoff
@@ -910,7 +910,7 @@ what_remember is {what_remember}
         * Although you didn't solve the mystery[...], you did successfully complete all of your boat education achievements, which qualifies you to take the final exam.
 
             ** Congratulations![]
-        You'll be given the opportunity to take a Practice Exam or proceed directly the final. Good luck!
+        Before you proceed to the final exam, your state has some additional required information for you to read. 
 
                 *** [Onward!]
                     -> lms_handoff
