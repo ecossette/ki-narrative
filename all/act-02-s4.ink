@@ -90,6 +90,9 @@
             "Sorry, I just know we're going to get lectured about not wearing PFDs."
 
                 * "Nor the engine cut-off switch lanyard," adds Alexis[.], surprised at how lightly the couple are taking what happened.
+                
+                
+                
                 //maybe make her less bitchy by adding something like I've done here
 
                 -> at_least_hurry
@@ -135,15 +138,20 @@
 
           "You two were mighty lucky you were thrown outside the circle of death," Captain Garcia says to the pair.
 
-            * [Captain Garcia continues...]
-                -> captain_continues
+                * [Review propeller intervention and awarness.]
+                    // insert prop intervention study guide here
+                    -> captain_continues
+                    
+                * [Continue without review.]
+                
+                    -> captain_continues
 
         = captain_continues
 // add to equipment here
 -   SYS_ACHIEVE_2_3
         -   CHR_MPO_REL
         -   CHR_IAN_REL
-        -   "But if you had used your engine cut-off switch lanyard, your engine would have stopped as soon as you were tossed."
+        -   Captain Garcia continues. "But if you had used your engine cut-off switch lanyard, your engine would have stopped as soon as you were tossed."
 
                 *   "I realize that now, sir[."], says Ian politely. "I won't make that mistake again."
                     --   CHR_MPO_REL

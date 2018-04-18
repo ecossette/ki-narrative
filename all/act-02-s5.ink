@@ -111,13 +111,18 @@ The <i>Lakesong</i> approaches a large houseboat. Docked alongside it is another
             --   CHR_MAU_REL
 
                 Ian nods and adds in a more serious tone, "Yeah, like I learned this morning with not wearing my kill switch lanyard."
-            //because Ian gets on one later, tweaked here.
-                ** [Julian mounts his PWC.]
-                    -> jul_pfd_ok
+                
+                    ** [Review steering and stoping a PWC.]
+                        // insert study guide content here
+                            -> jul_pfd_ok
+                    
+                    ** [Continue without review.]
+                             -> jul_pfd_ok
+    
 
         = jul_pfd_ok
         -   CHR_IAN_REL
-        -   Mia is about to get on her PWC, when Alexis says, "Don't forget—you're wearing an inflatable life vest, Mia."
+        -   Juian mounts his PWC. Mia is about to get on her PWC, when Alexis says, "Don't forget—you're wearing an inflatable life vest, Mia."
 
             "Good point," says Ian, handing Mia a Type III foam vest. "Here, take this one."
 

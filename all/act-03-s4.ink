@@ -231,9 +231,17 @@ SCENE 04
 == fog_clears ==
 // SND can bring back bird sounds here
     -   SYS_SOUND_436
-    -   While the island remains foggy, over the lake and around the <i>Lakesong</i> the fog finally begins to burn off.
+    -   While the island remains foggy, over the lake and around the <i>Lakesong</i> the fog finally begins to burn off. Before starting the boat, Troy turns on the <i>Lakesong's</i> ventilation system. 
+    
+            * [Review the material on ventilation systems.]
+                // launch sg material here
+                -> engine_then_anchor
+                
+    =   engine_then_anchor
+    -   CHR_TRO_REL
+        Satisfied with the ventilation, Troy issues a command. 
 
-        *  ["Prepare to retrieve the anchor," says Troy.]
+            *  ["Prepare to retrieve the anchor," he says.]
             -> prepare_retrieve_anchor
 
 

@@ -220,7 +220,8 @@
                         --- CHR_TRO_SML
                             "We've seen no evidence of that so far, Mia. That's a good sign."
                             -> how_long_loop
-
+            
+            
             == how_long_loop
             -   CHR_TRO_REL
             -   SYS_SOUND_405
