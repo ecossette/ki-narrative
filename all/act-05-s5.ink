@@ -3,6 +3,7 @@
 
 === temp_debug_solve_matrix ===
 // for debugging the final ending sequences
+// also used for skipping ahead testing when variables are not presents
 ~ hypo_severity = 3
 ~ who_saw = MAC
 ~ where_saw = FOG
@@ -11,9 +12,12 @@
 ~ who_lost_memory = TROY
 ~ suspect_whom = CLETUS
 ~ accomplice = CLETUS
+
+-> hypo_severity_sorter
+
 //~ on_kayaks_saw = STREAM
 
-
+/*
 hypo severity is {hypo_severity}
 who saw is {who_saw}
 suspect is {suspect_whom}
@@ -23,6 +27,7 @@ what_remember is {what_remember}
     *   [Test]
         -> on_dock_day_03
 
+*/
 
 === on_dock_day_03 ===
     {
@@ -48,7 +53,7 @@ what_remember is {what_remember}
         // upon taking choice above we'll complete their trip planning achievment then pass along to sorter
 
 
-    = hypo_severity_sorter
+== hypo_severity_sorter ==
         {
             // hypo 3
             - hypo_severity == 3:
@@ -67,7 +72,9 @@ what_remember is {what_remember}
                 -> hypo_neg01_chat
 
             - else:
-                DEBUG: This condition should not be possible.
+                //DEBUG: This condition should not be possible.
+                //DEBUG: else condition set
+                -> temp_debug_solve_matrix
 
 
         }

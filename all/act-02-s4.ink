@@ -148,7 +148,6 @@
 
         = captain_continues
 // add to equipment here
--   SYS_ACHIEVE_2_3
         -   CHR_MPO_REL
         -   CHR_IAN_REL
         -   Captain Garcia continues. "But if you had used your engine cut-off switch lanyard, your engine would have stopped as soon as you were tossed."
@@ -164,6 +163,7 @@
                         -> ian_tells_story
 
         = ian_tells_story
+        -   SYS_ACHIEVE_2_3
         -   CHR_MPO_REL
         -   CHR_IAN_REL
         -   Ian tells his version of events to Captain Garcia who listens quietly without interrupting.
