@@ -885,12 +885,9 @@ what_remember is {what_remember}
 
 === the_end_solved ===
 -   SYS_ACHIEVE_7_5
-    -  This concludes The Mystery of Kalkomey Isle interactive boating education course.
+    -  Great work! You were successful in solving the mystery, and you've completed all of your boating safety education achievements!
 
-        * You were successful in solving the mystery[!], and you have successfully completed all of your boat education achievements, which qualifies you to take the final exam.
-
-            ** Congratulations![]
-                Before you proceed to the final exam, your state has some additional required information for you to read. 
+        Before you proceed to the final exam, your state has some additional required safety information for you to read. 
 
                 *** [Onward!]
                     -> lms_handoff
@@ -899,12 +896,9 @@ what_remember is {what_remember}
 
 === the_end_partial_solved ===
 -   SYS_ACHIEVE_7_5
-    -  This concludes The Mystery of Kalkomey Isle interactive boating education course.
-
-        * You were successful in partially solving the mystery[...], and you have successfully completed all of your boat education achievements, which qualifies you to take the final exam.
-
-            ** Congratulations![]
-                Before you proceed to the final exam, your state has some additional required information for you to read. 
+    -  Well-done! You were successful in partially solving the mystery, and you've completed all of your boat education achievements!
+    
+        Before you proceed to the final exam, your state has some additional required safety information for you to read. 
 
                 *** [Onward!]
                     -> lms_handoff
@@ -914,16 +908,18 @@ what_remember is {what_remember}
 === the_end_unsolved ===
 -   This concludes The Mystery of Kalkomey Isle interactive boating education course.
 
-        * Although you didn't solve the mystery[...], you did successfully complete all of your boat education achievements, which qualifies you to take the final exam.
+        * Although you didn't solve the mystery[...], you did successfully complete all of your boat education achievements. Nice work!
 
-            ** Congratulations![]
-        Before you proceed to the final exam, your state has some additional required information for you to read. 
+        Before you proceed to the final exam, your state has some additional required safety information for you to read. 
 
                 *** [Onward!]
                     -> lms_handoff
                 
 === lms_handoff ===
 -   SYS_GAMEOVER
--   Thanks for playing.
+-   This demo version of the course does not include the final exam. 
+
+    Thanks for playing!
+
 -> END
 
